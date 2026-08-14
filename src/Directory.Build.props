@@ -6,7 +6,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright 2026 Llama Cloud</Copyright>
     <PackageProjectUrl>https://developers.llamaindex.ai/</PackageProjectUrl>
-    <RepositoryUrl>https://www.github.com/run-llama/llamacloud-prod-csharp</RepositoryUrl>
+    <RepositoryUrl>https://www.github.com/run-llama/llama-parse-csharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
     <!-- Documentation-->

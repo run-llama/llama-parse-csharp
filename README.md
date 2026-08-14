@@ -8,9 +8,10 @@ The REST API documentation can be found on [developers.llamaindex.ai](https://de
 
 ## Installation
 
+Install the package from [NuGet](https://www.nuget.org/packages/LlamaIndex.LlamaCloud):
+
 ```bash
-git clone git@github.com:run-llama/llamacloud-prod-csharp.git
-dotnet add reference llamacloud-prod-csharp/src/LlamaIndex.LlamaCloud
+dotnet add package LlamaIndex.LlamaCloud
 ```
 
 ## Requirements
@@ -434,4 +435,4 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/run-llama/llamacloud-prod-csharp/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/run-llama/llama-parse-csharp/issues) with questions, bugs, or suggestions.
