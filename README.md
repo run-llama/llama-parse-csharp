@@ -8,10 +8,10 @@ The REST API documentation can be found on [developers.llamaindex.ai](https://de
 
 ## Installation
 
-Install the package from [NuGet](https://www.nuget.org/packages/LlamaIndex.LlamaCloud):
+Install the package from [NuGet](https://www.nuget.org/packages/LlamaCloud):
 
 ```bash
-dotnet add package LlamaIndex.LlamaCloud
+dotnet add package LlamaCloud
 ```
 
 ## Requirements
@@ -24,8 +24,8 @@ See the [`examples`](examples) directory for complete and runnable examples.
 
 ```csharp
 using System;
-using LlamaIndex.LlamaCloud;
-using Parsing = LlamaIndex.LlamaCloud.Models.Parsing;
+using LlamaCloud;
+using Parsing = LlamaCloud.Models.Parsing;
 
 LlamaCloudClient client = new();
 
@@ -46,7 +46,7 @@ Console.WriteLine(parsing);
 Configure the client using environment variables:
 
 ```csharp
-using LlamaIndex.LlamaCloud;
+using LlamaCloud;
 
 // Configured using the LLAMA_CLOUD_API_KEY and LLAMA_CLOUD_BASE_URL environment variables
 LlamaCloudClient client = new();
@@ -55,7 +55,7 @@ LlamaCloudClient client = new();
 Or manually:
 
 ```csharp
-using LlamaIndex.LlamaCloud;
+using LlamaCloud;
 
 LlamaCloudClient client = new() { ApiKey = "My API Key" };
 ```
@@ -117,7 +117,7 @@ For non-streaming responses, you can deserialize the response into an instance o
 
 ```csharp
 using System;
-using LlamaIndex.LlamaCloud.Models.Beta.Indexes;
+using LlamaCloud.Models.Beta.Indexes;
 
 var response = await client.WithRawResponse.Beta.Indexes.List();
 IndexListPage deserialized = await response.Deserialize();
@@ -208,7 +208,7 @@ The API may also explicitly instruct the SDK to retry or not retry a request.
 To set a custom number of retries, configure the client using the `MaxRetries` method:
 
 ```csharp
-using LlamaIndex.LlamaCloud;
+using LlamaCloud;
 
 LlamaCloudClient client = new() { MaxRetries = 3 };
 ```
@@ -235,7 +235,7 @@ To set a custom timeout, configure the client using the `Timeout` option:
 
 ```csharp
 using System;
-using LlamaIndex.LlamaCloud;
+using LlamaCloud;
 
 LlamaCloudClient client = new() { Timeout = TimeSpan.FromSeconds(42) };
 ```
@@ -261,7 +261,7 @@ To route requests through a proxy, configure your client with a custom [`HttpCli
 ```csharp
 using System.Net;
 using System.Net.Http;
-using LlamaIndex.LlamaCloud;
+using LlamaCloud;
 
 var httpClient = new HttpClient
 (
@@ -285,7 +285,7 @@ To set undocumented parameters, a constructor exists that accepts dictionaries f
 ```csharp
 using System.Collections.Generic;
 using System.Text.Json;
-using LlamaIndex.LlamaCloud.Models.Parsing;
+using LlamaCloud.Models.Parsing;
 
 ParsingCreateParams parameters = new
 (
@@ -318,7 +318,7 @@ This can also be used to set a documented parameter to an undocumented or not ye
 ```csharp
 using System.Collections.Generic;
 using System.Text.Json;
-using LlamaIndex.LlamaCloud.Models.Parsing;
+using LlamaCloud.Models.Parsing;
 
 var parameters = ParsingCreateParams.FromRawUnchecked
 (
@@ -342,7 +342,7 @@ Undocumented properties, or undocumented values of documented properties, on nes
 ```csharp
 using System.Collections.Generic;
 using System.Text.Json;
-using LlamaIndex.LlamaCloud.Models.Parsing;
+using LlamaCloud.Models.Parsing;
 
 ParsingCreateParams parameters = new()
 {
@@ -361,7 +361,7 @@ Required properties on the nested parameter can also be changed or omitted using
 ```csharp
 using System.Collections.Generic;
 using System.Text.Json;
-using LlamaIndex.LlamaCloud.Models.Parsing;
+using LlamaCloud.Models.Parsing;
 
 ParsingCreateParams parameters = new()
 {
@@ -407,7 +407,7 @@ parsing.Validate();
 Or configure the client using the `ResponseValidation` option:
 
 ```csharp
-using LlamaIndex.LlamaCloud;
+using LlamaCloud;
 
 LlamaCloudClient client = new() { ResponseValidation = true };
 ```
