@@ -1,0 +1,136 @@
+using System;
+using System.Collections.Frozen;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Net.Http;
+using System.Text.Json;
+using LlamaCloud.Core;
+
+namespace LlamaCloud.Models.Pipelines.Documents;
+
+/// <summary>
+/// Return a list of chunks for a pipeline document.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
+/// </summary>
+[Obsolete("deprecated")]
+public record class DocumentGetChunksParams : ParamsBase
+{
+    public required string PipelineID { get; init; }
+
+    public string? DocumentID { get; init; }
+
+    public DocumentGetChunksParams() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public DocumentGetChunksParams(DocumentGetChunksParams documentGetChunksParams)
+        : base(documentGetChunksParams)
+    {
+        this.PipelineID = documentGetChunksParams.PipelineID;
+        this.DocumentID = documentGetChunksParams.DocumentID;
+    }
+#pragma warning restore CS8618
+
+    public DocumentGetChunksParams(
+        IReadOnlyDictionary<string, JsonElement> rawHeaderData,
+        IReadOnlyDictionary<string, JsonElement> rawQueryData
+    )
+    {
+        this._rawHeaderData = new(rawHeaderData);
+        this._rawQueryData = new(rawQueryData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    DocumentGetChunksParams(
+        FrozenDictionary<string, JsonElement> rawHeaderData,
+        FrozenDictionary<string, JsonElement> rawQueryData,
+        string pipelineID,
+        string documentID
+    )
+    {
+        this._rawHeaderData = new(rawHeaderData);
+        this._rawQueryData = new(rawQueryData);
+        this.PipelineID = pipelineID;
+        this.DocumentID = documentID;
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
+    public static DocumentGetChunksParams FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawHeaderData,
+        IReadOnlyDictionary<string, JsonElement> rawQueryData,
+        string pipelineID,
+        string documentID
+    )
+    {
+        return new(
+            FrozenDictionary.ToFrozenDictionary(rawHeaderData),
+            FrozenDictionary.ToFrozenDictionary(rawQueryData),
+            pipelineID,
+            documentID
+        );
+    }
+
+    public override string ToString() =>
+        JsonSerializer.Serialize(
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["PipelineID"] = JsonSerializer.SerializeToElement(this.PipelineID),
+                    ["DocumentID"] = JsonSerializer.SerializeToElement(this.DocumentID),
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                }
+            ),
+            ModelBase.ToStringSerializerOptions
+        );
+
+    public virtual bool Equals(DocumentGetChunksParams? other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+        return this.PipelineID.Equals(other.PipelineID)
+            && (this.DocumentID?.Equals(other.DocumentID) ?? other.DocumentID == null)
+            && this._rawHeaderData.Equals(other._rawHeaderData)
+            && this._rawQueryData.Equals(other._rawQueryData);
+    }
+
+    public override Uri Url(ClientOptions options)
+    {
+        return new UriBuilder(
+            options.BaseUrl.ToString().TrimEnd('/')
+                + string.Format(
+                    "/api/v1/pipelines/{0}/documents/{1}/chunks",
+                    this.PipelineID,
+                    this.DocumentID
+                )
+        )
+        {
+            Query = this.QueryString(options),
+        }.Uri;
+    }
+
+    internal override void AddHeadersToRequest(HttpRequestMessage request, ClientOptions options)
+    {
+        ParamsBase.AddDefaultHeaders(request, options);
+        foreach (var item in this.RawHeaderData)
+        {
+            ParamsBase.AddHeaderElementToRequest(request, item.Key, item.Value);
+        }
+    }
+
+    public override int GetHashCode()
+    {
+        return 0;
+    }
+}
