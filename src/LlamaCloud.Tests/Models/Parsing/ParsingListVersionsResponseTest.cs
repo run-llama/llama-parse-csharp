@@ -15,13 +15,13 @@ public class ParsingListVersionsResponseTest : TestBase
         {
             Agentic = [Agentic.V2026_08_19],
             AgenticPlus = [AgenticPlus.V2026_07_08],
-            CostEffective = [CostEffective.V2026_08_11],
+            CostEffective = [CostEffective.V2026_08_19],
             Fast = [Fast.V2026_06_15],
         };
 
         List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_08_19];
         List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_07_08];
-        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_11];
+        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_19];
         List<ApiEnum<string, Fast>> expectedFast = [Fast.V2026_06_15];
 
         Assert.Equal(expectedAgentic.Count, model.Agentic.Count);
@@ -53,7 +53,7 @@ public class ParsingListVersionsResponseTest : TestBase
         {
             Agentic = [Agentic.V2026_08_19],
             AgenticPlus = [AgenticPlus.V2026_07_08],
-            CostEffective = [CostEffective.V2026_08_11],
+            CostEffective = [CostEffective.V2026_08_19],
             Fast = [Fast.V2026_06_15],
         };
 
@@ -73,7 +73,7 @@ public class ParsingListVersionsResponseTest : TestBase
         {
             Agentic = [Agentic.V2026_08_19],
             AgenticPlus = [AgenticPlus.V2026_07_08],
-            CostEffective = [CostEffective.V2026_08_11],
+            CostEffective = [CostEffective.V2026_08_19],
             Fast = [Fast.V2026_06_15],
         };
 
@@ -86,7 +86,7 @@ public class ParsingListVersionsResponseTest : TestBase
 
         List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_08_19];
         List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_07_08];
-        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_11];
+        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_19];
         List<ApiEnum<string, Fast>> expectedFast = [Fast.V2026_06_15];
 
         Assert.Equal(expectedAgentic.Count, deserialized.Agentic.Count);
@@ -118,7 +118,7 @@ public class ParsingListVersionsResponseTest : TestBase
         {
             Agentic = [Agentic.V2026_08_19],
             AgenticPlus = [AgenticPlus.V2026_07_08],
-            CostEffective = [CostEffective.V2026_08_11],
+            CostEffective = [CostEffective.V2026_08_19],
             Fast = [Fast.V2026_06_15],
         };
 
@@ -132,7 +132,7 @@ public class ParsingListVersionsResponseTest : TestBase
         {
             Agentic = [Agentic.V2026_08_19],
             AgenticPlus = [AgenticPlus.V2026_07_08],
-            CostEffective = [CostEffective.V2026_08_11],
+            CostEffective = [CostEffective.V2026_08_19],
             Fast = [Fast.V2026_06_15],
         };
 
@@ -417,6 +417,7 @@ public class AgenticPlusTest : TestBase
 public class CostEffectiveTest : TestBase
 {
     [Theory]
+    [InlineData(CostEffective.V2026_08_19)]
     [InlineData(CostEffective.V2026_08_11)]
     [InlineData(CostEffective.V2026_08_08)]
     [InlineData(CostEffective.V2026_07_23)]
@@ -451,6 +452,7 @@ public class CostEffectiveTest : TestBase
     }
 
     [Theory]
+    [InlineData(CostEffective.V2026_08_19)]
     [InlineData(CostEffective.V2026_08_11)]
     [InlineData(CostEffective.V2026_08_08)]
     [InlineData(CostEffective.V2026_07_23)]
