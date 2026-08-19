@@ -1261,8 +1261,8 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::Version.Latest)]
+    [InlineData(Parsing::Version.V2026_08_19)]
     [InlineData(Parsing::Version.V2026_08_11)]
-    [InlineData(Parsing::Version.V2026_07_24)]
     [InlineData(Parsing::Version.V2026_07_08)]
     [InlineData(Parsing::Version.V2026_06_15)]
     public void Validation_Works(Parsing::Version rawValue)
@@ -1286,8 +1286,8 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::Version.Latest)]
+    [InlineData(Parsing::Version.V2026_08_19)]
     [InlineData(Parsing::Version.V2026_08_11)]
-    [InlineData(Parsing::Version.V2026_07_24)]
     [InlineData(Parsing::Version.V2026_07_08)]
     [InlineData(Parsing::Version.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::Version rawValue)
@@ -7665,8 +7665,8 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_08_19)]
     [InlineData(Parsing::ParsingConfVersion.V2026_08_11)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_07_24)]
     [InlineData(Parsing::ParsingConfVersion.V2026_07_08)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void Validation_Works(Parsing::ParsingConfVersion rawValue)
@@ -7690,8 +7690,8 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_08_19)]
     [InlineData(Parsing::ParsingConfVersion.V2026_08_11)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_07_24)]
     [InlineData(Parsing::ParsingConfVersion.V2026_07_08)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::ParsingConfVersion rawValue)
