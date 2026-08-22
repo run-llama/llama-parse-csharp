@@ -35,7 +35,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -75,7 +75,7 @@ public class ClassifyCancelResponseTest : TestBase
         string expectedFileInput = "file_input";
         string expectedProjectID = "project_id";
         ApiEnum<string, ClassifyCancelResponseStatus> expectedStatus =
-            ClassifyCancelResponseStatus.Completed;
+            ClassifyCancelResponseStatus.Cancelled;
         string expectedUserID = "user_id";
         string expectedConfigurationID = "configuration_id";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
@@ -133,7 +133,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -185,7 +185,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -232,7 +232,7 @@ public class ClassifyCancelResponseTest : TestBase
         string expectedFileInput = "file_input";
         string expectedProjectID = "project_id";
         ApiEnum<string, ClassifyCancelResponseStatus> expectedStatus =
-            ClassifyCancelResponseStatus.Completed;
+            ClassifyCancelResponseStatus.Cancelled;
         string expectedUserID = "user_id";
         string expectedConfigurationID = "configuration_id";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
@@ -290,7 +290,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -336,7 +336,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
         };
 
@@ -383,7 +383,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
         };
 
@@ -417,7 +417,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
 
             ConfigurationID = null,
@@ -472,7 +472,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
 
             ConfigurationID = null,
@@ -514,7 +514,7 @@ public class ClassifyCancelResponseTest : TestBase
             DocumentInputType = ClassifyCancelResponseDocumentInputType.FileID,
             FileInput = "file_input",
             ProjectID = "project_id",
-            Status = ClassifyCancelResponseStatus.Completed,
+            Status = ClassifyCancelResponseStatus.Cancelled,
             UserID = "user_id",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -595,6 +595,7 @@ public class ClassifyCancelResponseDocumentInputTypeTest : TestBase
 public class ClassifyCancelResponseStatusTest : TestBase
 {
     [Theory]
+    [InlineData(ClassifyCancelResponseStatus.Cancelled)]
     [InlineData(ClassifyCancelResponseStatus.Completed)]
     [InlineData(ClassifyCancelResponseStatus.Failed)]
     [InlineData(ClassifyCancelResponseStatus.Pending)]
@@ -619,6 +620,7 @@ public class ClassifyCancelResponseStatusTest : TestBase
     }
 
     [Theory]
+    [InlineData(ClassifyCancelResponseStatus.Cancelled)]
     [InlineData(ClassifyCancelResponseStatus.Completed)]
     [InlineData(ClassifyCancelResponseStatus.Failed)]
     [InlineData(ClassifyCancelResponseStatus.Pending)]
