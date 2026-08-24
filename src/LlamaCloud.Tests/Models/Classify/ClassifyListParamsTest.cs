@@ -22,7 +22,7 @@ public class ClassifyListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Status = Status.Completed,
+            Status = Status.Cancelled,
         };
 
         string expectedConfigurationID = "cfg-11111111-2222-3333-4444-555555555555";
@@ -37,7 +37,7 @@ public class ClassifyListParamsTest : TestBase
         long expectedPageSize = 1;
         string expectedPageToken = "page_token";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        ApiEnum<string, Status> expectedStatus = Status.Completed;
+        ApiEnum<string, Status> expectedStatus = Status.Cancelled;
 
         Assert.Equal(expectedConfigurationID, parameters.ConfigurationID);
         Assert.Equal(expectedCreatedAtOnOrAfter, parameters.CreatedAtOnOrAfter);
@@ -129,7 +129,7 @@ public class ClassifyListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Status = Status.Completed,
+            Status = Status.Cancelled,
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -137,7 +137,7 @@ public class ClassifyListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v2/classify?configuration_id=cfg-11111111-2222-3333-4444-555555555555&created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&job_ids=string&job_ids=string&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&status=COMPLETED"
+                    "https://api.cloud.llamaindex.ai/api/v2/classify?configuration_id=cfg-11111111-2222-3333-4444-555555555555&created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&job_ids=string&job_ids=string&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&status=CANCELLED"
                 ),
                 url
             )
@@ -157,7 +157,7 @@ public class ClassifyListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Status = Status.Completed,
+            Status = Status.Cancelled,
         };
 
         ClassifyListParams copied = new(parameters);
@@ -169,6 +169,7 @@ public class ClassifyListParamsTest : TestBase
 public class StatusTest : TestBase
 {
     [Theory]
+    [InlineData(Status.Cancelled)]
     [InlineData(Status.Completed)]
     [InlineData(Status.Failed)]
     [InlineData(Status.Pending)]
@@ -193,6 +194,7 @@ public class StatusTest : TestBase
     }
 
     [Theory]
+    [InlineData(Status.Cancelled)]
     [InlineData(Status.Completed)]
     [InlineData(Status.Failed)]
     [InlineData(Status.Pending)]
