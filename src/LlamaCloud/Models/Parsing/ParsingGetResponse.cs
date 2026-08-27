@@ -3941,6 +3941,25 @@ public sealed record class MarkdownResultPage : JsonModel
         init { this._rawData.Set("header", value); }
     }
 
+    /// <summary>
+    /// Printed line numbers linked to final page markdown
+    /// </summary>
+    public IReadOnlyList<LineNumber>? LineNumbers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<LineNumber>>("line_numbers");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<LineNumber>?>(
+                "line_numbers",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -3952,6 +3971,10 @@ public sealed record class MarkdownResultPage : JsonModel
         }
         _ = this.Footer;
         _ = this.Header;
+        foreach (var item in this.LineNumbers ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public MarkdownResultPage()
@@ -3994,6 +4017,94 @@ class MarkdownResultPageFromRaw : IFromRawJson<MarkdownResultPage>
     /// <inheritdoc/>
     public MarkdownResultPage FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         MarkdownResultPage.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Source line number linked to final page markdown.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<LineNumber, LineNumberFromRaw>))]
+public sealed record class LineNumber : JsonModel
+{
+    /// <summary>
+    /// Zero-based exclusive UTF-16 code-unit offset in final page markdown
+    /// </summary>
+    public required long EndIndex
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("end_index");
+        }
+        init { this._rawData.Set("end_index", value); }
+    }
+
+    /// <summary>
+    /// Printed source line number
+    /// </summary>
+    public required string LineNumberValue
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("line_number");
+        }
+        init { this._rawData.Set("line_number", value); }
+    }
+
+    /// <summary>
+    /// Zero-based inclusive UTF-16 code-unit offset in final page markdown
+    /// </summary>
+    public required long StartIndex
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("start_index");
+        }
+        init { this._rawData.Set("start_index", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.EndIndex;
+        _ = this.LineNumberValue;
+        _ = this.StartIndex;
+    }
+
+    public LineNumber() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public LineNumber(LineNumber lineNumber)
+        : base(lineNumber) { }
+#pragma warning restore CS8618
+
+    public LineNumber(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    LineNumber(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="LineNumberFromRaw.FromRawUnchecked"/>
+    public static LineNumber FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class LineNumberFromRaw : IFromRawJson<LineNumber>
+{
+    /// <inheritdoc/>
+    public LineNumber FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        LineNumber.FromRawUnchecked(rawData);
 }
 
 [JsonConverter(typeof(JsonModelConverter<FailedMarkdownPage, FailedMarkdownPageFromRaw>))]
@@ -4116,6 +4227,19 @@ public sealed record class Metadata : JsonModel
         }
     }
 
+    /// <summary>
+    /// Document-level metadata information.
+    /// </summary>
+    public Document? Document
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Document>("document");
+        }
+        init { this._rawData.Set("document", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -4123,6 +4247,7 @@ public sealed record class Metadata : JsonModel
         {
             item.Validate();
         }
+        this.Document?.Validate();
     }
 
     public Metadata() { }
@@ -4330,6 +4455,170 @@ class MetadataPageFromRaw : IFromRawJson<MetadataPage>
     /// <inheritdoc/>
     public MetadataPage FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         MetadataPage.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Document-level metadata information.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Document, DocumentFromRaw>))]
+public sealed record class Document : JsonModel
+{
+    /// <summary>
+    /// Mean confidence score across pages scored by the high-effort confidence judge (0-1)
+    /// </summary>
+    public double? Confidence
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<double>("confidence");
+        }
+        init { this._rawData.Set("confidence", value); }
+    }
+
+    /// <summary>
+    /// Coverage and worst-page details for document confidence.
+    /// </summary>
+    public ConfidenceBreakdown? ConfidenceBreakdown
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ConfidenceBreakdown>("confidence_breakdown");
+        }
+        init { this._rawData.Set("confidence_breakdown", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Confidence;
+        this.ConfidenceBreakdown?.Validate();
+    }
+
+    public Document() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Document(Document document)
+        : base(document) { }
+#pragma warning restore CS8618
+
+    public Document(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Document(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="DocumentFromRaw.FromRawUnchecked"/>
+    public static Document FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class DocumentFromRaw : IFromRawJson<Document>
+{
+    /// <inheritdoc/>
+    public Document FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Document.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Coverage and worst-page details for document confidence.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<ConfidenceBreakdown, ConfidenceBreakdownFromRaw>))]
+public sealed record class ConfidenceBreakdown : JsonModel
+{
+    /// <summary>
+    /// Lowest confidence score among pages scored by the high-effort confidence judge
+    /// </summary>
+    public required double MinPageScore
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<double>("min_page_score");
+        }
+        init { this._rawData.Set("min_page_score", value); }
+    }
+
+    /// <summary>
+    /// Number of pages successfully scored by the high-effort confidence judge
+    /// </summary>
+    public required long ScoredPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("scored_pages");
+        }
+        init { this._rawData.Set("scored_pages", value); }
+    }
+
+    /// <summary>
+    /// Total number of pages in the parsed document
+    /// </summary>
+    public required long TotalPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("total_pages");
+        }
+        init { this._rawData.Set("total_pages", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.MinPageScore;
+        _ = this.ScoredPages;
+        _ = this.TotalPages;
+    }
+
+    public ConfidenceBreakdown() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ConfidenceBreakdown(ConfidenceBreakdown confidenceBreakdown)
+        : base(confidenceBreakdown) { }
+#pragma warning restore CS8618
+
+    public ConfidenceBreakdown(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ConfidenceBreakdown(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ConfidenceBreakdownFromRaw.FromRawUnchecked"/>
+    public static ConfidenceBreakdown FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ConfidenceBreakdownFromRaw : IFromRawJson<ConfidenceBreakdown>
+{
+    /// <inheritdoc/>
+    public ConfidenceBreakdown FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ConfidenceBreakdown.FromRawUnchecked(rawData);
 }
 
 /// <summary>

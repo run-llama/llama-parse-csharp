@@ -317,6 +317,7 @@ public class ConfigurationCreateParametersTest : TestBase
                 ImagesToSave = [ImagesToSave.Embedded],
                 Markdown = new()
                 {
+                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,
@@ -610,6 +611,7 @@ public class ConfigurationCreateParametersTest : TestBase
                 ImagesToSave = [ImagesToSave.Embedded],
                 Markdown = new()
                 {
+                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,

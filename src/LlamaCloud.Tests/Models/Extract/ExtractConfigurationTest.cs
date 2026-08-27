@@ -797,6 +797,7 @@ public class TierTest : TestBase
     [InlineData(Tier.Agentic)]
     [InlineData(Tier.AgenticPlus)]
     [InlineData(Tier.CostEffective)]
+    [InlineData(Tier.Turbo)]
     public void Validation_Works(Tier rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -820,6 +821,7 @@ public class TierTest : TestBase
     [InlineData(Tier.Agentic)]
     [InlineData(Tier.AgenticPlus)]
     [InlineData(Tier.CostEffective)]
+    [InlineData(Tier.Turbo)]
     public void SerializationRoundtrip_Works(Tier rawValue)
     {
         // force implicit conversion because Theory can't do that for us
