@@ -246,7 +246,7 @@ public sealed record class ExtractConfiguration : JsonModel
 
     /// <summary>
     /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page),
-    /// agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
+    /// agentic_plus (50 credits/page), or turbo (35 credits/page)
     /// </summary>
     public ApiEnum<string, Tier>? Tier
     {
@@ -824,7 +824,7 @@ sealed class ExtractionTargetConverter : JsonConverter<ExtractionTarget>
 
 /// <summary>
 /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus
-/// (50 credits/page), or turbo (35 credits/page, experimental)
+/// (50 credits/page), or turbo (35 credits/page)
 /// </summary>
 [JsonConverter(typeof(TierConverter))]
 public enum Tier
