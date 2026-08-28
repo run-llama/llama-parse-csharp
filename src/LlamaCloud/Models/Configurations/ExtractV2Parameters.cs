@@ -259,7 +259,7 @@ public sealed record class ExtractV2Parameters : JsonModel
 
     /// <summary>
     /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page),
-    /// or agentic_plus (50 credits/page)
+    /// agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
     /// </summary>
     public ApiEnum<string, ExtractV2ParametersTier>? Tier
     {
@@ -839,8 +839,8 @@ sealed class ExtractionTargetConverter : JsonConverter<ExtractionTarget>
 }
 
 /// <summary>
-/// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus
-/// (50 credits/page)
+/// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus
+/// (50 credits/page), or turbo (35 credits/page, experimental)
 /// </summary>
 [JsonConverter(typeof(ExtractV2ParametersTierConverter))]
 public enum ExtractV2ParametersTier
@@ -848,6 +848,7 @@ public enum ExtractV2ParametersTier
     Agentic,
     AgenticPlus,
     CostEffective,
+    Turbo,
 }
 
 sealed class ExtractV2ParametersTierConverter : JsonConverter<ExtractV2ParametersTier>
@@ -863,6 +864,7 @@ sealed class ExtractV2ParametersTierConverter : JsonConverter<ExtractV2Parameter
             "agentic" => ExtractV2ParametersTier.Agentic,
             "agentic_plus" => ExtractV2ParametersTier.AgenticPlus,
             "cost_effective" => ExtractV2ParametersTier.CostEffective,
+            "turbo" => ExtractV2ParametersTier.Turbo,
             _ => (ExtractV2ParametersTier)(-1),
         };
     }
@@ -880,6 +882,7 @@ sealed class ExtractV2ParametersTierConverter : JsonConverter<ExtractV2Parameter
                 ExtractV2ParametersTier.Agentic => "agentic",
                 ExtractV2ParametersTier.AgenticPlus => "agentic_plus",
                 ExtractV2ParametersTier.CostEffective => "cost_effective",
+                ExtractV2ParametersTier.Turbo => "turbo",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

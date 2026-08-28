@@ -3,15 +3,14 @@ using LlamaCloud.Exceptions;
 using LlamaCloud.Models;
 using LlamaCloud.Models.Beta.Indexes;
 using LlamaCloud.Models.Beta.Retrieval;
-using LlamaCloud.Models.Beta.Sheets;
 using LlamaCloud.Models.Classifier.Jobs;
 using LlamaCloud.Models.DataSinks;
 using LlamaCloud.Models.DataSources;
 using LlamaCloud.Models.JobDataPoints;
 using LlamaCloud.Models.Pipelines.Documents;
 using LlamaCloud.Models.Retrievers;
+using LlamaCloud.Models.Split;
 using Batches = LlamaCloud.Models.Batches;
-using BetaSplit = LlamaCloud.Models.Beta.Split;
 using Chat = LlamaCloud.Models.Beta.Chat;
 using Classify = LlamaCloud.Models.Classify;
 using Configurations = LlamaCloud.Models.Configurations;
@@ -21,8 +20,7 @@ using Extract = LlamaCloud.Models.Extract;
 using Files = LlamaCloud.Models.Pipelines.Files;
 using Parsing = LlamaCloud.Models.Parsing;
 using Pipelines = LlamaCloud.Models.Pipelines;
-using Sheets = LlamaCloud.Models.Sheets;
-using Split = LlamaCloud.Models.Split;
+using Split = LlamaCloud.Models.Beta.Split;
 using WebhookConfigs = LlamaCloud.Models.WebhookConfigs;
 
 namespace LlamaCloud.Core;
@@ -57,34 +55,17 @@ public abstract record class ModelBase
             new ApiEnumConverter<bool, CloudSharepointDataSourceSupportsAccessControl>(),
             new ApiEnumConverter<string, DistanceMethod>(),
             new ApiEnumConverter<string, VectorType>(),
-            new ApiEnumConverter<string, TableMergeSensitivity>(),
-            new ApiEnumConverter<string, Tier>(),
-            new ApiEnumConverter<string, Sheets::WebhookEvent>(),
-            new ApiEnumConverter<string, Sheets::Status>(),
-            new ApiEnumConverter<string, Sheets::RegionType>(),
-            new ApiEnumConverter<string, Split::DocumentInputType>(),
-            new ApiEnumConverter<
-                string,
-                Split::SplitCreateResponseSplittingStrategyAllowUncategorized
-            >(),
-            new ApiEnumConverter<string, Split::SplitListResponseDocumentInputType>(),
-            new ApiEnumConverter<
-                string,
-                Split::SplitListResponseSplittingStrategyAllowUncategorized
-            >(),
-            new ApiEnumConverter<string, Split::SplitCancelResponseDocumentInputType>(),
-            new ApiEnumConverter<
-                string,
-                Split::SplitCancelResponseSplittingStrategyAllowUncategorized
-            >(),
-            new ApiEnumConverter<string, Split::SplitGetResponseDocumentInputType>(),
-            new ApiEnumConverter<
-                string,
-                Split::SplitGetResponseSplittingStrategyAllowUncategorized
-            >(),
-            new ApiEnumConverter<string, Split::AllowUncategorized>(),
-            new ApiEnumConverter<string, Split::WebhookEvent>(),
-            new ApiEnumConverter<string, Split::Status>(),
+            new ApiEnumConverter<string, DocumentInputType>(),
+            new ApiEnumConverter<string, SplitCreateResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, SplitListResponseDocumentInputType>(),
+            new ApiEnumConverter<string, SplitListResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, SplitCancelResponseDocumentInputType>(),
+            new ApiEnumConverter<string, SplitCancelResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, SplitGetResponseDocumentInputType>(),
+            new ApiEnumConverter<string, SplitGetResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, AllowUncategorized>(),
+            new ApiEnumConverter<string, WebhookEvent>(),
+            new ApiEnumConverter<string, Status>(),
             new ApiEnumConverter<string, Parsing::Type>(),
             new ApiEnumConverter<string, Parsing::FailPageMode>(),
             new ApiEnumConverter<string, Parsing::FooterItemType>(),
@@ -292,11 +273,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Chat::ToolCallType>(),
             new ApiEnumConverter<string, Chat::ToolResultType>(),
             new ApiEnumConverter<string, Chat::UserInputType>(),
-            new ApiEnumConverter<string, SheetsJobStatus>(),
-            new ApiEnumConverter<string, ParametersWebhookConfigurationWebhookEvent>(),
-            new ApiEnumConverter<string, WebhookEvent>(),
-            new ApiEnumConverter<string, Status>(),
-            new ApiEnumConverter<string, RegionType>(),
             new ApiEnumConverter<string, Directories::DirectoryCreateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryUpdateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryListResponseType>(),
@@ -304,8 +280,8 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Directories::Type>(),
             new ApiEnumConverter<string, Directories::DirectoryListParamsType>(),
             new ApiEnumConverter<string, Directories::TypeModel>(),
-            new ApiEnumConverter<string, BetaSplit::AllowUncategorized>(),
-            new ApiEnumConverter<string, BetaSplit::Status>(),
+            new ApiEnumConverter<string, Split::AllowUncategorized>(),
+            new ApiEnumConverter<string, Split::Status>(),
         },
     };
 

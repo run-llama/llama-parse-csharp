@@ -515,6 +515,7 @@ public class ConfigurationResponseParametersTest : TestBase
                     ImagesToSave = [Configurations::ImagesToSave.Embedded],
                     Markdown = new()
                     {
+                        AnnotateLineNumbers = true,
                         AnnotateLinks = true,
                         AnnotateRevisions = true,
                         InlineImages = true,
@@ -830,6 +831,7 @@ public class ConfigurationResponseParametersTest : TestBase
                     ImagesToSave = [Configurations::ImagesToSave.Embedded],
                     Markdown = new()
                     {
+                        AnnotateLineNumbers = true,
                         AnnotateLinks = true,
                         AnnotateRevisions = true,
                         InlineImages = true,

@@ -246,7 +246,7 @@ public sealed record class ExtractConfiguration : JsonModel
 
     /// <summary>
     /// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page),
-    /// or agentic_plus (50 credits/page)
+    /// agentic_plus (50 credits/page), or turbo (35 credits/page, experimental)
     /// </summary>
     public ApiEnum<string, Tier>? Tier
     {
@@ -823,8 +823,8 @@ sealed class ExtractionTargetConverter : JsonConverter<ExtractionTarget>
 }
 
 /// <summary>
-/// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), or agentic_plus
-/// (50 credits/page)
+/// Extract tier: cost_effective (5 credits/page), agentic (15 credits/page), agentic_plus
+/// (50 credits/page), or turbo (35 credits/page, experimental)
 /// </summary>
 [JsonConverter(typeof(TierConverter))]
 public enum Tier
@@ -832,6 +832,7 @@ public enum Tier
     Agentic,
     AgenticPlus,
     CostEffective,
+    Turbo,
 }
 
 sealed class TierConverter : JsonConverter<Tier>
@@ -847,6 +848,7 @@ sealed class TierConverter : JsonConverter<Tier>
             "agentic" => Tier.Agentic,
             "agentic_plus" => Tier.AgenticPlus,
             "cost_effective" => Tier.CostEffective,
+            "turbo" => Tier.Turbo,
             _ => (Tier)(-1),
         };
     }
@@ -860,6 +862,7 @@ sealed class TierConverter : JsonConverter<Tier>
                 Tier.Agentic => "agentic",
                 Tier.AgenticPlus => "agentic_plus",
                 Tier.CostEffective => "cost_effective",
+                Tier.Turbo => "turbo",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

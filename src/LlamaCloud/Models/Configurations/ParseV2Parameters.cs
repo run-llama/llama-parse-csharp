@@ -1477,6 +1477,19 @@ sealed class ImagesToSaveConverter : JsonConverter<ImagesToSave>
 public sealed record class Markdown : JsonModel
 {
     /// <summary>
+    /// Detect printed gutter line numbers and return their Markdown offsets
+    /// </summary>
+    public bool? AnnotateLineNumbers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("annotate_line_numbers");
+        }
+        init { this._rawData.Set("annotate_line_numbers", value); }
+    }
+
+    /// <summary>
     /// Add link annotations to markdown output in the format [text](url). When false,
     /// only the link text is included
     /// </summary>
@@ -1541,6 +1554,7 @@ public sealed record class Markdown : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.AnnotateLineNumbers;
         _ = this.AnnotateLinks;
         _ = this.AnnotateRevisions;
         _ = this.InlineImages;

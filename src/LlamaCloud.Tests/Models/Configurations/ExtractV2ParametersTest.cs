@@ -803,6 +803,7 @@ public class ExtractV2ParametersTierTest : TestBase
     [InlineData(ExtractV2ParametersTier.Agentic)]
     [InlineData(ExtractV2ParametersTier.AgenticPlus)]
     [InlineData(ExtractV2ParametersTier.CostEffective)]
+    [InlineData(ExtractV2ParametersTier.Turbo)]
     public void Validation_Works(ExtractV2ParametersTier rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -826,6 +827,7 @@ public class ExtractV2ParametersTierTest : TestBase
     [InlineData(ExtractV2ParametersTier.Agentic)]
     [InlineData(ExtractV2ParametersTier.AgenticPlus)]
     [InlineData(ExtractV2ParametersTier.CostEffective)]
+    [InlineData(ExtractV2ParametersTier.Turbo)]
     public void SerializationRoundtrip_Works(ExtractV2ParametersTier rawValue)
     {
         // force implicit conversion because Theory can't do that for us

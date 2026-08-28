@@ -34,6 +34,16 @@ public sealed record class LlamaParseParameters : JsonModel
         init { this._rawData.Set("aggressive_table_extraction", value); }
     }
 
+    public bool? AnnotateLineNumbers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("annotate_line_numbers");
+        }
+        init { this._rawData.Set("annotate_line_numbers", value); }
+    }
+
     public bool? AnnotateLinks
     {
         get
@@ -1285,6 +1295,7 @@ public sealed record class LlamaParseParameters : JsonModel
     {
         _ = this.AdaptiveLongTable;
         _ = this.AggressiveTableExtraction;
+        _ = this.AnnotateLineNumbers;
         _ = this.AnnotateLinks;
         _ = this.AnnotateRevisions;
         _ = this.AutoMode;
