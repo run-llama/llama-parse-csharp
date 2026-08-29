@@ -11,6 +11,8 @@ namespace LlamaCloud.Models.Pipelines;
 /// <summary>
 /// Search for pipelines by name, type, or project.
 ///
+/// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
+///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
