@@ -109,6 +109,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Parsing::WebhookOutputFormat>(),
             new ApiEnumConverter<string, Parsing::Status>(),
             new ApiEnumConverter<string, Extract::ExtractionTarget>(),
+            new ApiEnumConverter<string, Extract::ParseTier>(),
             new ApiEnumConverter<string, Extract::Tier>(),
             new ApiEnumConverter<
                 string,
@@ -168,6 +169,7 @@ public abstract record class ModelBase
             >(),
             new ApiEnumConverter<string, Configurations::ConfigurationResponseProductType>(),
             new ApiEnumConverter<string, Configurations::ExtractionTarget>(),
+            new ApiEnumConverter<string, Configurations::ParseTier>(),
             new ApiEnumConverter<string, Configurations::ExtractV2ParametersTier>(),
             new ApiEnumConverter<string, Configurations::ParseV2ParametersTier>(),
             new ApiEnumConverter<string, Configurations::Version>(),

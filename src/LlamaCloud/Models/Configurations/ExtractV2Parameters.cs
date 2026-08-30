@@ -173,12 +173,12 @@ public sealed record class ExtractV2Parameters : JsonModel
     /// Turbo extract does not support parse configuration or produce a parse output;
     /// use another tier if your workflow requires parsed text.
     /// </summary>
-    public string? ParseTier
+    public ApiEnum<string, ParseTier>? ParseTier
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("parse_tier");
+            return this._rawData.GetNullableClass<ApiEnum<string, ParseTier>>("parse_tier");
         }
         init { this._rawData.Set("parse_tier", value); }
     }
@@ -325,7 +325,7 @@ public sealed record class ExtractV2Parameters : JsonModel
         this.ExtractionTarget?.Validate();
         _ = this.MaxPages;
         _ = this.ParseConfigID;
-        _ = this.ParseTier;
+        this.ParseTier?.Validate();
         _ = this.SheetNames;
         _ = this.SpreadsheetMode;
         _ = this.SystemPrompt;
@@ -829,6 +829,61 @@ sealed class ExtractionTargetConverter : JsonConverter<ExtractionTarget>
                 ExtractionTarget.PerDoc => "per_doc",
                 ExtractionTarget.PerPage => "per_page",
                 ExtractionTarget.PerTableRow => "per_table_row",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Parse tier to use before extraction. Defaults to the extract tier if not specified.
+/// Turbo extract does not support parse configuration or produce a parse output;
+/// use another tier if your workflow requires parsed text.
+/// </summary>
+[JsonConverter(typeof(ParseTierConverter))]
+public enum ParseTier
+{
+    Agentic,
+    AgenticPlus,
+    CostEffective,
+    Fast,
+}
+
+sealed class ParseTierConverter : JsonConverter<ParseTier>
+{
+    public override ParseTier Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "agentic" => ParseTier.Agentic,
+            "agentic_plus" => ParseTier.AgenticPlus,
+            "cost_effective" => ParseTier.CostEffective,
+            "fast" => ParseTier.Fast,
+            _ => (ParseTier)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ParseTier value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ParseTier.Agentic => "agentic",
+                ParseTier.AgenticPlus => "agentic_plus",
+                ParseTier.CostEffective => "cost_effective",
+                ParseTier.Fast => "fast",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
