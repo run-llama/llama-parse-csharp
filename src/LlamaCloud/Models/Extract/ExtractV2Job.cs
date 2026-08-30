@@ -279,7 +279,7 @@ public record class ExtractResult : ModelBase
     }
 
     public ExtractResult(
-        IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>> value,
+        IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>> value,
         JsonElement? element = null
     )
     {
@@ -319,29 +319,29 @@ public record class ExtractResult : ModelBase
 
     /// <summary>
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
-    /// type <see cref="List{T}"/> where <c>T</c> is a <c>Dictionary&lt;string, UnnamedSchemaWithArrayParent3Item?&gt;</c>.
+    /// type <see cref="List{T}"/> where <c>T</c> is a <c>Dictionary&lt;string, UnnamedSchemaWithArrayParent2Item?&gt;</c>.
     ///
     /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
-    /// if (instance.TryPickUnnamedSchemaWithArrayParent3Items(out var value)) {
-    ///     // `value` is of type `IReadOnlyList&lt;IReadOnlyDictionary&lt;string, UnnamedSchemaWithArrayParent3Item?&gt;&gt;`
+    /// if (instance.TryPickUnnamedSchemaWithArrayParent2Items(out var value)) {
+    ///     // `value` is of type `IReadOnlyList&lt;IReadOnlyDictionary&lt;string, UnnamedSchemaWithArrayParent2Item?&gt;&gt;`
     ///     Console.WriteLine(value);
     /// }
     /// </code>
     /// </example>
     /// </summary>
-    public bool TryPickUnnamedSchemaWithArrayParent3Items(
+    public bool TryPickUnnamedSchemaWithArrayParent2Items(
         [NotNullWhen(true)]
             out IReadOnlyList<
-            IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>
+            IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>
         >? value
     )
     {
         value =
             this.Value
-            as IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>>;
+            as IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>>;
         return value != null;
     }
 
@@ -360,7 +360,7 @@ public record class ExtractResult : ModelBase
     /// <code>
     /// instance.Switch(
     ///     (IReadOnlyDictionary&lt;string, UnionMember0Item?&gt; value) =&gt; {...},
-    ///     (IReadOnlyList&lt;IReadOnlyDictionary&lt;string, UnnamedSchemaWithArrayParent3Item?&gt;&gt; value) =&gt; {...}
+    ///     (IReadOnlyList&lt;IReadOnlyDictionary&lt;string, UnnamedSchemaWithArrayParent2Item?&gt;&gt; value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -368,8 +368,8 @@ public record class ExtractResult : ModelBase
     public void Switch(
         Action<IReadOnlyDictionary<string, UnionMember0Item?>> unionMember0Items,
         Action<
-            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>>
-        > unnamedSchemaWithArrayParent3Items
+            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>>
+        > unnamedSchemaWithArrayParent2Items
     )
     {
         switch (this.Value)
@@ -378,9 +378,9 @@ public record class ExtractResult : ModelBase
                 unionMember0Items(value);
                 break;
             case IReadOnlyList<
-                IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>
+                IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>
             > value:
-                unnamedSchemaWithArrayParent3Items(value);
+                unnamedSchemaWithArrayParent2Items(value);
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
@@ -405,7 +405,7 @@ public record class ExtractResult : ModelBase
     /// <code>
     /// var result = instance.Match(
     ///     (IReadOnlyDictionary&lt;string, UnionMember0Item?&gt; value) =&gt; {...},
-    ///     (IReadOnlyList&lt;IReadOnlyDictionary&lt;string, UnnamedSchemaWithArrayParent3Item?&gt;&gt; value) =&gt; {...}
+    ///     (IReadOnlyList&lt;IReadOnlyDictionary&lt;string, UnnamedSchemaWithArrayParent2Item?&gt;&gt; value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -413,16 +413,16 @@ public record class ExtractResult : ModelBase
     public T Match<T>(
         Func<IReadOnlyDictionary<string, UnionMember0Item?>, T> unionMember0Items,
         Func<
-            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>>,
+            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>>,
             T
-        > unnamedSchemaWithArrayParent3Items
+        > unnamedSchemaWithArrayParent2Items
     )
     {
         return this.Value switch
         {
             IReadOnlyDictionary<string, UnionMember0Item?> value => unionMember0Items(value),
-            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>> value =>
-                unnamedSchemaWithArrayParent3Items(value),
+            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>> value =>
+                unnamedSchemaWithArrayParent2Items(value),
             _ => throw new LlamaCloudInvalidDataException(
                 "Data did not match any variant of ExtractResult"
             ),
@@ -433,8 +433,8 @@ public record class ExtractResult : ModelBase
         new((IReadOnlyDictionary<string, UnionMember0Item?>)value);
 
     public static implicit operator ExtractResult(
-        List<Dictionary<string, UnnamedSchemaWithArrayParent3Item?>> value
-    ) => new((IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>>)value);
+        List<Dictionary<string, UnnamedSchemaWithArrayParent2Item?>> value
+    ) => new((IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>>)value);
 
     /// <summary>
     /// Validates that the instance was constructed with a known variant and that this variant is valid
@@ -462,9 +462,9 @@ public record class ExtractResult : ModelBase
                     item?.Validate();
                 }
             },
-            (unnamedSchemaWithArrayParent3Items) =>
+            (unnamedSchemaWithArrayParent2Items) =>
             {
-                foreach (var item in unnamedSchemaWithArrayParent3Items)
+                foreach (var item in unnamedSchemaWithArrayParent2Items)
                 {
                     foreach (var item1 in item.Values)
                     {
@@ -496,7 +496,7 @@ public record class ExtractResult : ModelBase
         return this.Value switch
         {
             IReadOnlyDictionary<string, UnionMember0Item?> _ => 0,
-            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent3Item?>> _ => 1,
+            IReadOnlyList<IReadOnlyDictionary<string, UnnamedSchemaWithArrayParent2Item?>> _ => 1,
             _ => -1,
         };
     }
@@ -534,7 +534,7 @@ sealed class ExtractResultConverter : JsonConverter<ExtractResult?>
         try
         {
             var deserialized = JsonSerializer.Deserialize<
-                List<Dictionary<string, UnnamedSchemaWithArrayParent3Item?>>
+                List<Dictionary<string, UnnamedSchemaWithArrayParent2Item?>>
             >(element, options);
             if (deserialized != null)
             {
@@ -973,8 +973,8 @@ sealed class UnionMember0ItemConverter : JsonConverter<UnionMember0Item?>
     }
 }
 
-[JsonConverter(typeof(UnnamedSchemaWithArrayParent3ItemConverter))]
-public record class UnnamedSchemaWithArrayParent3Item : ModelBase
+[JsonConverter(typeof(UnnamedSchemaWithArrayParent2ItemConverter))]
+public record class UnnamedSchemaWithArrayParent2Item : ModelBase
 {
     public object? Value { get; } = null;
 
@@ -991,7 +991,7 @@ public record class UnnamedSchemaWithArrayParent3Item : ModelBase
         }
     }
 
-    public UnnamedSchemaWithArrayParent3Item(
+    public UnnamedSchemaWithArrayParent2Item(
         IReadOnlyDictionary<string, JsonElement> value,
         JsonElement? element = null
     )
@@ -1000,7 +1000,7 @@ public record class UnnamedSchemaWithArrayParent3Item : ModelBase
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent3Item(
+    public UnnamedSchemaWithArrayParent2Item(
         IReadOnlyList<JsonElement> value,
         JsonElement? element = null
     )
@@ -1009,25 +1009,25 @@ public record class UnnamedSchemaWithArrayParent3Item : ModelBase
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent3Item(string value, JsonElement? element = null)
+    public UnnamedSchemaWithArrayParent2Item(string value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent3Item(double value, JsonElement? element = null)
+    public UnnamedSchemaWithArrayParent2Item(double value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent3Item(bool value, JsonElement? element = null)
+    public UnnamedSchemaWithArrayParent2Item(bool value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent3Item(JsonElement element)
+    public UnnamedSchemaWithArrayParent2Item(JsonElement element)
     {
         this._element = element;
     }
@@ -1189,7 +1189,7 @@ public record class UnnamedSchemaWithArrayParent3Item : ModelBase
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
-                    "Data did not match any variant of UnnamedSchemaWithArrayParent3Item"
+                    "Data did not match any variant of UnnamedSchemaWithArrayParent2Item"
                 );
         }
     }
@@ -1234,23 +1234,23 @@ public record class UnnamedSchemaWithArrayParent3Item : ModelBase
             double value => @double(value),
             bool value => @bool(value),
             _ => throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of UnnamedSchemaWithArrayParent3Item"
+                "Data did not match any variant of UnnamedSchemaWithArrayParent2Item"
             ),
         };
     }
 
-    public static implicit operator UnnamedSchemaWithArrayParent3Item(
+    public static implicit operator UnnamedSchemaWithArrayParent2Item(
         Dictionary<string, JsonElement> value
     ) => new((IReadOnlyDictionary<string, JsonElement>)value);
 
-    public static implicit operator UnnamedSchemaWithArrayParent3Item(List<JsonElement> value) =>
+    public static implicit operator UnnamedSchemaWithArrayParent2Item(List<JsonElement> value) =>
         new((IReadOnlyList<JsonElement>)value);
 
-    public static implicit operator UnnamedSchemaWithArrayParent3Item(string value) => new(value);
+    public static implicit operator UnnamedSchemaWithArrayParent2Item(string value) => new(value);
 
-    public static implicit operator UnnamedSchemaWithArrayParent3Item(double value) => new(value);
+    public static implicit operator UnnamedSchemaWithArrayParent2Item(double value) => new(value);
 
-    public static implicit operator UnnamedSchemaWithArrayParent3Item(bool value) => new(value);
+    public static implicit operator UnnamedSchemaWithArrayParent2Item(bool value) => new(value);
 
     /// <summary>
     /// Validates that the instance was constructed with a known variant and that this variant is valid
@@ -1267,12 +1267,12 @@ public record class UnnamedSchemaWithArrayParent3Item : ModelBase
         if (this.Value == null)
         {
             throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of UnnamedSchemaWithArrayParent3Item"
+                "Data did not match any variant of UnnamedSchemaWithArrayParent2Item"
             );
         }
     }
 
-    public virtual bool Equals(UnnamedSchemaWithArrayParent3Item? other) =>
+    public virtual bool Equals(UnnamedSchemaWithArrayParent2Item? other) =>
         other != null
         && this.VariantIndex() == other.VariantIndex()
         && JsonElement.DeepEquals(this.Json, other.Json);
@@ -1302,10 +1302,10 @@ public record class UnnamedSchemaWithArrayParent3Item : ModelBase
     }
 }
 
-sealed class UnnamedSchemaWithArrayParent3ItemConverter
-    : JsonConverter<UnnamedSchemaWithArrayParent3Item?>
+sealed class UnnamedSchemaWithArrayParent2ItemConverter
+    : JsonConverter<UnnamedSchemaWithArrayParent2Item?>
 {
-    public override UnnamedSchemaWithArrayParent3Item? Read(
+    public override UnnamedSchemaWithArrayParent2Item? Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options
@@ -1377,7 +1377,7 @@ sealed class UnnamedSchemaWithArrayParent3ItemConverter
 
     public override void Write(
         Utf8JsonWriter writer,
-        UnnamedSchemaWithArrayParent3Item? value,
+        UnnamedSchemaWithArrayParent2Item? value,
         JsonSerializerOptions options
     )
     {
