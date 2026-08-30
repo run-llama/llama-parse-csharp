@@ -86,8 +86,9 @@ public record class FileListParams : ParamsBase
     }
 
     /// <summary>
-    /// A comma-separated list of fields to order by, sorted in ascending order.
-    /// Use 'field_name desc' to specify descending order.
+    /// Order the results. One of 'name' (ascending), 'id' (ascending) or 'created_at'
+    /// (descending). An explicit asc/desc modifier and multi-field ordering are
+    /// not supported; anything else is rejected.
     /// </summary>
     public string? OrderBy
     {
