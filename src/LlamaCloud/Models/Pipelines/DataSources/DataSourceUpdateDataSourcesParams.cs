@@ -36,6 +36,16 @@ public record class DataSourceUpdateDataSourcesParams : ParamsBase
         init { this.RawBodyData = JsonSerializer.SerializeToElement(value); }
     }
 
+    public string? ProjectID
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("project_id");
+        }
+        init { this._rawQueryData.Set("project_id", value); }
+    }
+
     public DataSourceUpdateDataSourcesParams() { }
 
 #pragma warning disable CS8618

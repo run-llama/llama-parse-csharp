@@ -18,6 +18,7 @@ public class DocumentListParamsTest : TestBase
             Limit = 0,
             OnlyApiDataSourceDocuments = true,
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Skip = 0,
             StatusRefreshPolicy = StatusRefreshPolicy.Cached,
         };
@@ -27,6 +28,7 @@ public class DocumentListParamsTest : TestBase
         long expectedLimit = 0;
         bool expectedOnlyApiDataSourceDocuments = true;
         bool expectedOnlyDirectUpload = true;
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         long expectedSkip = 0;
         ApiEnum<string, StatusRefreshPolicy> expectedStatusRefreshPolicy =
             StatusRefreshPolicy.Cached;
@@ -36,6 +38,7 @@ public class DocumentListParamsTest : TestBase
         Assert.Equal(expectedLimit, parameters.Limit);
         Assert.Equal(expectedOnlyApiDataSourceDocuments, parameters.OnlyApiDataSourceDocuments);
         Assert.Equal(expectedOnlyDirectUpload, parameters.OnlyDirectUpload);
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.Equal(expectedSkip, parameters.Skip);
         Assert.Equal(expectedStatusRefreshPolicy, parameters.StatusRefreshPolicy);
     }
@@ -49,6 +52,7 @@ public class DocumentListParamsTest : TestBase
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             OnlyApiDataSourceDocuments = true,
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         Assert.Null(parameters.Limit);
@@ -68,6 +72,7 @@ public class DocumentListParamsTest : TestBase
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             OnlyApiDataSourceDocuments = true,
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 
             // Null should be interpreted as omitted for these properties
             Limit = null,
@@ -100,6 +105,8 @@ public class DocumentListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("only_api_data_source_documents"));
         Assert.Null(parameters.OnlyDirectUpload);
         Assert.False(parameters.RawQueryData.ContainsKey("only_direct_upload"));
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -115,6 +122,7 @@ public class DocumentListParamsTest : TestBase
             FileID = null,
             OnlyApiDataSourceDocuments = null,
             OnlyDirectUpload = null,
+            ProjectID = null,
         };
 
         Assert.Null(parameters.FileID);
@@ -123,6 +131,8 @@ public class DocumentListParamsTest : TestBase
         Assert.True(parameters.RawQueryData.ContainsKey("only_api_data_source_documents"));
         Assert.Null(parameters.OnlyDirectUpload);
         Assert.True(parameters.RawQueryData.ContainsKey("only_direct_upload"));
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -135,6 +145,7 @@ public class DocumentListParamsTest : TestBase
             Limit = 0,
             OnlyApiDataSourceDocuments = true,
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Skip = 0,
             StatusRefreshPolicy = StatusRefreshPolicy.Cached,
         };
@@ -144,7 +155,7 @@ public class DocumentListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/documents/paginated?file_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&limit=0&only_api_data_source_documents=true&only_direct_upload=true&skip=0&status_refresh_policy=cached"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/documents/paginated?file_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&limit=0&only_api_data_source_documents=true&only_direct_upload=true&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&skip=0&status_refresh_policy=cached"
                 ),
                 url
             )
@@ -161,6 +172,7 @@ public class DocumentListParamsTest : TestBase
             Limit = 0,
             OnlyApiDataSourceDocuments = true,
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Skip = 0,
             StatusRefreshPolicy = StatusRefreshPolicy.Cached,
         };

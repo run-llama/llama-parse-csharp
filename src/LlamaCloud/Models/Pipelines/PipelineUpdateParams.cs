@@ -29,6 +29,16 @@ public record class PipelineUpdateParams : ParamsBase
 
     public string? PipelineID { get; init; }
 
+    public string? ProjectID
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("project_id");
+        }
+        init { this._rawQueryData.Set("project_id", value); }
+    }
+
     /// <summary>
     /// Schema for creating a data sink.
     /// </summary>

@@ -41,6 +41,16 @@ public record class DataSourceUpdateParams : ParamsBase
         init { this._rawBodyData.Set("source_type", value); }
     }
 
+    public string? ProjectID
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("project_id");
+        }
+        init { this._rawQueryData.Set("project_id", value); }
+    }
+
     /// <summary>
     /// Component that implements the data source
     /// </summary>

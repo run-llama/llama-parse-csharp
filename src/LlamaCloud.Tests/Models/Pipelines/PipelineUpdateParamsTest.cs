@@ -15,6 +15,7 @@ public class PipelineUpdateParamsTest : TestBase
         var parameters = new Pipelines::PipelineUpdateParams
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSink = new()
             {
                 Component = new(
@@ -262,6 +263,7 @@ public class PipelineUpdateParamsTest : TestBase
         };
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         Pipelines::DataSinkCreate expectedDataSink = new()
         {
             Component = new(
@@ -510,6 +512,7 @@ public class PipelineUpdateParamsTest : TestBase
             };
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.Equal(expectedDataSink, parameters.DataSink);
         Assert.Equal(expectedDataSinkID, parameters.DataSinkID);
         Assert.Equal(expectedEmbeddingConfig, parameters.EmbeddingConfig);
@@ -532,6 +535,8 @@ public class PipelineUpdateParamsTest : TestBase
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.DataSink);
         Assert.False(parameters.RawBodyData.ContainsKey("data_sink"));
         Assert.Null(parameters.DataSinkID);
@@ -565,6 +570,7 @@ public class PipelineUpdateParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 
+            ProjectID = null,
             DataSink = null,
             DataSinkID = null,
             EmbeddingConfig = null,
@@ -579,6 +585,8 @@ public class PipelineUpdateParamsTest : TestBase
             TransformConfig = null,
         };
 
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.DataSink);
         Assert.True(parameters.RawBodyData.ContainsKey("data_sink"));
         Assert.Null(parameters.DataSinkID);
@@ -611,6 +619,7 @@ public class PipelineUpdateParamsTest : TestBase
         Pipelines::PipelineUpdateParams parameters = new()
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -618,7 +627,7 @@ public class PipelineUpdateParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -631,6 +640,7 @@ public class PipelineUpdateParamsTest : TestBase
         var parameters = new Pipelines::PipelineUpdateParams
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSink = new()
             {
                 Component = new(

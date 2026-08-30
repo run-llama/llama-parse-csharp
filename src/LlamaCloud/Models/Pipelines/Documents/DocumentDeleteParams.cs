@@ -22,6 +22,16 @@ public record class DocumentDeleteParams : ParamsBase
 
     public string? DocumentID { get; init; }
 
+    public string? ProjectID
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("project_id");
+        }
+        init { this._rawQueryData.Set("project_id", value); }
+    }
+
     public DocumentDeleteParams() { }
 
 #pragma warning disable CS8618

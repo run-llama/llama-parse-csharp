@@ -33,6 +33,7 @@ public class FileCreateParamsTest : TestBase
                     },
                 },
             ],
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -55,6 +56,7 @@ public class FileCreateParamsTest : TestBase
                 },
             },
         ];
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
         Assert.Equal(expectedBody.Count, parameters.Body.Count);
@@ -62,6 +64,71 @@ public class FileCreateParamsTest : TestBase
         {
             Assert.Equal(expectedBody[i], parameters.Body[i]);
         }
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
+    }
+
+    [Fact]
+    public void OptionalNullableParamsUnsetAreNotSet_Works()
+    {
+        var parameters = new FileCreateParams
+        {
+            PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Body =
+            [
+                new()
+                {
+                    FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomMetadata = new Dictionary<string, CustomMetadata?>()
+                    {
+                        {
+                            "foo",
+                            new(
+                                new Dictionary<string, JsonElement>()
+                                {
+                                    { "foo", JsonSerializer.SerializeToElement("bar") },
+                                }
+                            )
+                        },
+                    },
+                },
+            ],
+        };
+
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
+    }
+
+    [Fact]
+    public void OptionalNullableParamsSetToNullAreSetToNull_Works()
+    {
+        var parameters = new FileCreateParams
+        {
+            PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Body =
+            [
+                new()
+                {
+                    FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomMetadata = new Dictionary<string, CustomMetadata?>()
+                    {
+                        {
+                            "foo",
+                            new(
+                                new Dictionary<string, JsonElement>()
+                                {
+                                    { "foo", JsonSerializer.SerializeToElement("bar") },
+                                }
+                            )
+                        },
+                    },
+                },
+            ],
+
+            ProjectID = null,
+        };
+
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -89,6 +156,7 @@ public class FileCreateParamsTest : TestBase
                     },
                 },
             ],
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -96,7 +164,7 @@ public class FileCreateParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/files"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/files?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -128,6 +196,7 @@ public class FileCreateParamsTest : TestBase
                     },
                 },
             ],
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         FileCreateParams copied = new(parameters);

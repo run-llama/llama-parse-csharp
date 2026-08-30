@@ -17,6 +17,7 @@ public class DataSourceUpdateParamsTest : TestBase
         {
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SourceType = DataSourceUpdateParamsSourceType.AzureStorageBlob,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Component = new(
                 new Dictionary<string, JsonElement>()
                 {
@@ -41,6 +42,7 @@ public class DataSourceUpdateParamsTest : TestBase
         string expectedDataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         ApiEnum<string, DataSourceUpdateParamsSourceType> expectedSourceType =
             DataSourceUpdateParamsSourceType.AzureStorageBlob;
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         DataSourceUpdateParamsComponent expectedComponent = new(
             new Dictionary<string, JsonElement>()
             {
@@ -63,6 +65,7 @@ public class DataSourceUpdateParamsTest : TestBase
 
         Assert.Equal(expectedDataSourceID, parameters.DataSourceID);
         Assert.Equal(expectedSourceType, parameters.SourceType);
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.Equal(expectedComponent, parameters.Component);
         Assert.NotNull(parameters.CustomMetadata);
         Assert.Equal(expectedCustomMetadata.Count, parameters.CustomMetadata.Count);
@@ -84,6 +87,8 @@ public class DataSourceUpdateParamsTest : TestBase
             SourceType = DataSourceUpdateParamsSourceType.AzureStorageBlob,
         };
 
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Component);
         Assert.False(parameters.RawBodyData.ContainsKey("component"));
         Assert.Null(parameters.CustomMetadata);
@@ -100,11 +105,14 @@ public class DataSourceUpdateParamsTest : TestBase
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SourceType = DataSourceUpdateParamsSourceType.AzureStorageBlob,
 
+            ProjectID = null,
             Component = null,
             CustomMetadata = null,
             Name = null,
         };
 
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Component);
         Assert.True(parameters.RawBodyData.ContainsKey("component"));
         Assert.Null(parameters.CustomMetadata);
@@ -120,6 +128,7 @@ public class DataSourceUpdateParamsTest : TestBase
         {
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SourceType = DataSourceUpdateParamsSourceType.AzureStorageBlob,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -127,7 +136,7 @@ public class DataSourceUpdateParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/data-sources/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/data-sources/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -141,6 +150,7 @@ public class DataSourceUpdateParamsTest : TestBase
         {
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SourceType = DataSourceUpdateParamsSourceType.AzureStorageBlob,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Component = new(
                 new Dictionary<string, JsonElement>()
                 {
