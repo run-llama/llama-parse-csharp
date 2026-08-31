@@ -26,7 +26,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             Rerank = new() { Enabled = true, TopN = 5 },
             ScoreThreshold = 0,
             StaticFilters = new()
@@ -53,7 +53,7 @@ public class RetrievalRetrieveParamsTest : TestBase
             },
         };
         double expectedFullTextPipelineWeight = 0;
-        long expectedNumCandidates = 0;
+        long expectedNumCandidates = 1;
         Rerank expectedRerank = new() { Enabled = true, TopN = 5 };
         double expectedScoreThreshold = 0;
         StaticFilters expectedStaticFilters = new()
@@ -105,7 +105,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             ScoreThreshold = 0,
             StaticFilters = new()
             {
@@ -140,7 +140,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             ScoreThreshold = 0,
             StaticFilters = new()
             {
@@ -271,7 +271,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             Rerank = new() { Enabled = true, TopN = 5 },
             ScoreThreshold = 0,
             StaticFilters = new()
