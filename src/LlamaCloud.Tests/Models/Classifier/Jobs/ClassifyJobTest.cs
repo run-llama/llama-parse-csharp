@@ -31,7 +31,7 @@ public class ClassifyJobTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
             JobRecordID = "job_record_id",
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -57,7 +57,7 @@ public class ClassifyJobTest : TestBase
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedErrorMessage = "error_message";
         string expectedJobRecordID = "job_record_id";
-        ApiEnum<string, ClassifyJobMode> expectedMode = ClassifyJobMode.Fast;
+        ApiEnum<string, Mode> expectedMode = Mode.Fast;
         ClassifyParsingConfiguration expectedParsingConfiguration = new()
         {
             Lang = ParsingLanguages.Abq,
@@ -105,7 +105,7 @@ public class ClassifyJobTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
             JobRecordID = "job_record_id",
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -145,7 +145,7 @@ public class ClassifyJobTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
             JobRecordID = "job_record_id",
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -178,7 +178,7 @@ public class ClassifyJobTest : TestBase
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedErrorMessage = "error_message";
         string expectedJobRecordID = "job_record_id";
-        ApiEnum<string, ClassifyJobMode> expectedMode = ClassifyJobMode.Fast;
+        ApiEnum<string, Mode> expectedMode = Mode.Fast;
         ClassifyParsingConfiguration expectedParsingConfiguration = new()
         {
             Lang = ParsingLanguages.Abq,
@@ -226,7 +226,7 @@ public class ClassifyJobTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
             JobRecordID = "job_record_id",
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -381,7 +381,7 @@ public class ClassifyJobTest : TestBase
             Status = StatusEnum.Cancelled,
             UserID = "user_id",
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -418,7 +418,7 @@ public class ClassifyJobTest : TestBase
             Status = StatusEnum.Cancelled,
             UserID = "user_id",
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -448,7 +448,7 @@ public class ClassifyJobTest : TestBase
             Status = StatusEnum.Cancelled,
             UserID = "user_id",
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -490,7 +490,7 @@ public class ClassifyJobTest : TestBase
             Status = StatusEnum.Cancelled,
             UserID = "user_id",
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -528,7 +528,7 @@ public class ClassifyJobTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
             JobRecordID = "job_record_id",
-            Mode = ClassifyJobMode.Fast,
+            Mode = Mode.Fast,
             ParsingConfiguration = new()
             {
                 Lang = ParsingLanguages.Abq,
@@ -544,22 +544,22 @@ public class ClassifyJobTest : TestBase
     }
 }
 
-public class ClassifyJobModeTest : TestBase
+public class ModeTest : TestBase
 {
     [Theory]
-    [InlineData(ClassifyJobMode.Fast)]
-    [InlineData(ClassifyJobMode.Multimodal)]
-    public void Validation_Works(ClassifyJobMode rawValue)
+    [InlineData(Mode.Fast)]
+    [InlineData(Mode.Multimodal)]
+    public void Validation_Works(Mode rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ClassifyJobMode> value = rawValue;
+        ApiEnum<string, Mode> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, ClassifyJobMode>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Mode>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -569,15 +569,15 @@ public class ClassifyJobModeTest : TestBase
     }
 
     [Theory]
-    [InlineData(ClassifyJobMode.Fast)]
-    [InlineData(ClassifyJobMode.Multimodal)]
-    public void SerializationRoundtrip_Works(ClassifyJobMode rawValue)
+    [InlineData(Mode.Fast)]
+    [InlineData(Mode.Multimodal)]
+    public void SerializationRoundtrip_Works(Mode rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ClassifyJobMode> value = rawValue;
+        ApiEnum<string, Mode> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ClassifyJobMode>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Mode>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -588,12 +588,12 @@ public class ClassifyJobModeTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, ClassifyJobMode>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Mode>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ClassifyJobMode>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Mode>>(
             json,
             ModelBase.SerializerOptions
         );
