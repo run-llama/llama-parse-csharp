@@ -499,9 +499,9 @@ public class ValueFilterValueTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent0sValidationWorks()
+    public void UnnamedSchemaWithArrayParent1sValidationWorks()
     {
-        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent0("string")]);
+        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent1("string")]);
         value.Validate();
     }
 
@@ -545,9 +545,9 @@ public class ValueFilterValueTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent0sSerializationRoundtripWorks()
+    public void UnnamedSchemaWithArrayParent1sSerializationRoundtripWorks()
     {
-        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent0("string")]);
+        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent1("string")]);
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ValueFilterValue>(
             element,
@@ -558,35 +558,35 @@ public class ValueFilterValueTest : TestBase
     }
 }
 
-public class UnnamedSchemaWithArrayParent0Test : TestBase
+public class UnnamedSchemaWithArrayParent1Test : TestBase
 {
     [Fact]
     public void StringValidationWorks()
     {
-        UnnamedSchemaWithArrayParent0 value = "string";
+        UnnamedSchemaWithArrayParent1 value = "string";
         value.Validate();
     }
 
     [Fact]
     public void BoolValidationWorks()
     {
-        UnnamedSchemaWithArrayParent0 value = true;
+        UnnamedSchemaWithArrayParent1 value = true;
         value.Validate();
     }
 
     [Fact]
     public void DoubleValidationWorks()
     {
-        UnnamedSchemaWithArrayParent0 value = 0;
+        UnnamedSchemaWithArrayParent1 value = 0;
         value.Validate();
     }
 
     [Fact]
     public void StringSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent0 value = "string";
+        UnnamedSchemaWithArrayParent1 value = "string";
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent0>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1>(
             element,
             ModelBase.SerializerOptions
         );
@@ -597,9 +597,9 @@ public class UnnamedSchemaWithArrayParent0Test : TestBase
     [Fact]
     public void BoolSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent0 value = true;
+        UnnamedSchemaWithArrayParent1 value = true;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent0>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1>(
             element,
             ModelBase.SerializerOptions
         );
@@ -610,9 +610,9 @@ public class UnnamedSchemaWithArrayParent0Test : TestBase
     [Fact]
     public void DoubleSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent0 value = 0;
+        UnnamedSchemaWithArrayParent1 value = 0;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent0>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1>(
             element,
             ModelBase.SerializerOptions
         );
