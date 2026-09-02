@@ -103,7 +103,7 @@ public interface IParsingService
     );
 
     /// <summary>
-    /// List the parse versions accepted by each tier.
+    /// List the parse versions accepted by each tier and what `latest` resolves to.
     /// </summary>
     Task<ParsingListVersionsResponse> ListVersions(
         ParsingListVersionsParams? parameters = null,

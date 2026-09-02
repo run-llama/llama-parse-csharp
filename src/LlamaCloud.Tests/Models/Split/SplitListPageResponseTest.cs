@@ -41,6 +41,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -78,6 +80,8 @@ public class SplitListPageResponseTest : TestBase
                 {
                     AllowUncategorized =
                         SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                    CustomInstructions = "Start a new segment at every signature page.",
+                    MinPagesPerSplit = 1,
                 },
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -128,6 +132,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -179,6 +185,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -223,6 +231,8 @@ public class SplitListPageResponseTest : TestBase
                 {
                     AllowUncategorized =
                         SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                    CustomInstructions = "Start a new segment at every signature page.",
+                    MinPagesPerSplit = 1,
                 },
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -273,6 +283,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -318,6 +330,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -364,6 +378,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -407,6 +423,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -456,6 +474,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -502,6 +522,8 @@ public class SplitListPageResponseTest : TestBase
                     {
                         AllowUncategorized =
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
+                        CustomInstructions = "Start a new segment at every signature page.",
+                        MinPagesPerSplit = 1,
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),

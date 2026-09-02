@@ -100,6 +100,19 @@ public sealed record class ParsingListVersionsResponse : JsonModel
         }
     }
 
+    /// <summary>
+    /// Version `latest` currently resolves to, per tier
+    /// </summary>
+    public required Latest Latest
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<Latest>("latest");
+        }
+        init { this._rawData.Set("latest", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -119,6 +132,7 @@ public sealed record class ParsingListVersionsResponse : JsonModel
         {
             item.Validate();
         }
+        this.Latest.Validate();
     }
 
     public ParsingListVersionsResponse() { }
@@ -601,4 +615,106 @@ sealed class FastConverter : JsonConverter<Fast>
             options
         );
     }
+}
+
+/// <summary>
+/// Version `latest` currently resolves to, per tier
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Latest, LatestFromRaw>))]
+public sealed record class Latest : JsonModel
+{
+    /// <summary>
+    /// Version `latest` resolves to for the agentic tier
+    /// </summary>
+    public required string Agentic
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("agentic");
+        }
+        init { this._rawData.Set("agentic", value); }
+    }
+
+    /// <summary>
+    /// Version `latest` resolves to for the agentic_plus tier
+    /// </summary>
+    public required string AgenticPlus
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("agentic_plus");
+        }
+        init { this._rawData.Set("agentic_plus", value); }
+    }
+
+    /// <summary>
+    /// Version `latest` resolves to for the cost_effective tier
+    /// </summary>
+    public required string CostEffective
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("cost_effective");
+        }
+        init { this._rawData.Set("cost_effective", value); }
+    }
+
+    /// <summary>
+    /// Version `latest` resolves to for the fast tier
+    /// </summary>
+    public required string Fast
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("fast");
+        }
+        init { this._rawData.Set("fast", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Agentic;
+        _ = this.AgenticPlus;
+        _ = this.CostEffective;
+        _ = this.Fast;
+    }
+
+    public Latest() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Latest(Latest latest)
+        : base(latest) { }
+#pragma warning restore CS8618
+
+    public Latest(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Latest(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="LatestFromRaw.FromRawUnchecked"/>
+    public static Latest FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class LatestFromRaw : IFromRawJson<Latest>
+{
+    /// <inheritdoc/>
+    public Latest FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Latest.FromRawUnchecked(rawData);
 }

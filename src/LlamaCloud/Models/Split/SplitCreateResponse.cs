@@ -368,10 +368,47 @@ public sealed record class SplitCreateResponseSplittingStrategy : JsonModel
         }
     }
 
+    /// <summary>
+    /// Free-form guidance for where segment boundaries are placed.
+    /// </summary>
+    public string? CustomInstructions
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("custom_instructions");
+        }
+        init { this._rawData.Set("custom_instructions", value); }
+    }
+
+    /// <summary>
+    /// Minimum pages per segment. Shorter segments are merged into an adjacent segment;
+    /// 1 disables merging.
+    /// </summary>
+    public long? MinPagesPerSplit
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("min_pages_per_split");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("min_pages_per_split", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.AllowUncategorized?.Validate();
+        _ = this.CustomInstructions;
+        _ = this.MinPagesPerSplit;
     }
 
     public SplitCreateResponseSplittingStrategy() { }
