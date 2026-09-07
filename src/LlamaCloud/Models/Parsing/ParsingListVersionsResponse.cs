@@ -176,6 +176,7 @@ class ParsingListVersionsResponseFromRaw : IFromRawJson<ParsingListVersionsRespo
 [JsonConverter(typeof(AgenticConverter))]
 public enum Agentic
 {
+    V2026_09_07,
     V2026_08_19,
     V2026_07_24,
     V2026_07_23,
@@ -231,6 +232,7 @@ sealed class AgenticConverter : JsonConverter<Agentic>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-09-07" => Agentic.V2026_09_07,
             "2026-08-19" => Agentic.V2026_08_19,
             "2026-07-24" => Agentic.V2026_07_24,
             "2026-07-23" => Agentic.V2026_07_23,
@@ -284,6 +286,7 @@ sealed class AgenticConverter : JsonConverter<Agentic>
             writer,
             value switch
             {
+                Agentic.V2026_09_07 => "2026-09-07",
                 Agentic.V2026_08_19 => "2026-08-19",
                 Agentic.V2026_07_24 => "2026-07-24",
                 Agentic.V2026_07_23 => "2026-07-23",
