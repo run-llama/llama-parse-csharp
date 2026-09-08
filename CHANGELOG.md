@@ -3,6 +3,10 @@
 ## [1.7.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.6.0...v1.7.0) (2026-09-08)
 
 
+### ⚠ BREAKING CHANGES
+
+* **classifier:** the classify v1 job methods (`client.Classifier.Jobs.Create`, `.List`, `.Get`, `.GetResults`) are removed. The `/api/v1/classifier/jobs*` routes were unpublished from the API surface; use `client.Classify` instead.
+
 ### Features
 
 * **api:** add paginated GET /api/v2/pipelines, deprecate the v1 list ([#25587](https://github.com/run-llama/llama-parse-csharp/issues/25587)) ([5febd21](https://github.com/run-llama/llama-parse-csharp/commit/5febd21980a6e8226756efd9c82c541c17d9c08b))
