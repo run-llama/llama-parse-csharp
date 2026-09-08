@@ -6,21 +6,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using LlamaCloud.Core;
 using LlamaCloud.Exceptions;
-using LlamaCloud.Services.Classifier;
+using LlamaCloud.Services;
 
-namespace LlamaCloud.Models.Classifier.Jobs;
+namespace LlamaCloud.Models.Pipelines;
 
 /// <summary>
-/// A single page from the paginated endpoint that <see cref="IJobService.List(JobListParams, CancellationToken)"/> queries.
+/// A single page from the paginated endpoint that <see cref="IPipelineService.ListPaginated(PipelineListPaginatedParams, CancellationToken)"/> queries.
 /// </summary>
-public sealed class JobListPage(
-    IJobServiceWithRawResponse service,
-    JobListParams parameters,
-    JobListPageResponse response
-) : IPage<ClassifyJob>
+public sealed class PipelineListPaginatedPage(
+    IPipelineServiceWithRawResponse service,
+    PipelineListPaginatedParams parameters,
+    PipelineListPaginatedPageResponse response
+) : IPage<PipelineListPaginatedResponse>
 {
     /// <inheritdoc/>
-    public IReadOnlyList<ClassifyJob> Items
+    public IReadOnlyList<PipelineListPaginatedResponse> Items
     {
         get { return response.Items; }
     }
@@ -41,17 +41,18 @@ public sealed class JobListPage(
     }
 
     /// <inheritdoc/>
-    async Task<IPage<ClassifyJob>> IPage<ClassifyJob>.Next(CancellationToken cancellationToken) =>
-        await this.Next(cancellationToken).ConfigureAwait(false);
+    async Task<IPage<PipelineListPaginatedResponse>> IPage<PipelineListPaginatedResponse>.Next(
+        CancellationToken cancellationToken
+    ) => await this.Next(cancellationToken).ConfigureAwait(false);
 
     /// <inheritdoc cref="IPage{T}.Next"/>
-    public async Task<JobListPage> Next(CancellationToken cancellationToken = default)
+    public async Task<PipelineListPaginatedPage> Next(CancellationToken cancellationToken = default)
     {
         var nextCursor =
             response.NextPageToken
             ?? throw new InvalidOperationException("Cannot request next page");
         using var nextResponse = await service
-            .List(parameters with { PageToken = nextCursor }, cancellationToken)
+            .ListPaginated(parameters with { PageToken = nextCursor }, cancellationToken)
             .ConfigureAwait(false);
         return await nextResponse.Deserialize(cancellationToken).ConfigureAwait(false);
     }
@@ -70,7 +71,7 @@ public sealed class JobListPage(
 
     public override bool Equals(object? obj)
     {
-        if (obj is not JobListPage other)
+        if (obj is not PipelineListPaginatedPage other)
         {
             return false;
         }

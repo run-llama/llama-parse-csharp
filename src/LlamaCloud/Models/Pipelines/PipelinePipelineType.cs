@@ -8,16 +8,16 @@ namespace LlamaCloud.Models.Pipelines;
 /// <summary>
 /// Enum for representing the type of a pipeline
 /// </summary>
-[JsonConverter(typeof(PipelineTypeConverter))]
-public enum PipelineType
+[JsonConverter(typeof(PipelinePipelineTypeConverter))]
+public enum PipelinePipelineType
 {
     Managed,
     Playground,
 }
 
-sealed class PipelineTypeConverter : JsonConverter<PipelineType>
+sealed class PipelinePipelineTypeConverter : JsonConverter<PipelinePipelineType>
 {
-    public override PipelineType Read(
+    public override PipelinePipelineType Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -25,15 +25,15 @@ sealed class PipelineTypeConverter : JsonConverter<PipelineType>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "MANAGED" => PipelineType.Managed,
-            "PLAYGROUND" => PipelineType.Playground,
-            _ => (PipelineType)(-1),
+            "MANAGED" => PipelinePipelineType.Managed,
+            "PLAYGROUND" => PipelinePipelineType.Playground,
+            _ => (PipelinePipelineType)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        PipelineType value,
+        PipelinePipelineType value,
         JsonSerializerOptions options
     )
     {
@@ -41,8 +41,8 @@ sealed class PipelineTypeConverter : JsonConverter<PipelineType>
             writer,
             value switch
             {
-                PipelineType.Managed => "MANAGED",
-                PipelineType.Playground => "PLAYGROUND",
+                PipelinePipelineType.Managed => "MANAGED",
+                PipelinePipelineType.Playground => "PLAYGROUND",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -6,27 +6,34 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using LlamaCloud.Core;
 
-namespace LlamaCloud.Models.Classifier.Jobs;
+namespace LlamaCloud.Models.Pipelines;
 
 /// <summary>
-/// Paginated list of classify jobs.
+/// A page of pipelines.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<JobListPageResponse, JobListPageResponseFromRaw>))]
-public sealed record class JobListPageResponse : JsonModel
+[JsonConverter(
+    typeof(JsonModelConverter<
+        PipelineListPaginatedPageResponse,
+        PipelineListPaginatedPageResponseFromRaw
+    >)
+)]
+public sealed record class PipelineListPaginatedPageResponse : JsonModel
 {
     /// <summary>
     /// The list of items.
     /// </summary>
-    public required IReadOnlyList<ClassifyJob> Items
+    public required IReadOnlyList<PipelineListPaginatedResponse> Items
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<ClassifyJob>>("items");
+            return this._rawData.GetNotNullStruct<ImmutableArray<PipelineListPaginatedResponse>>(
+                "items"
+            );
         }
         init
         {
-            this._rawData.Set<ImmutableArray<ClassifyJob>>(
+            this._rawData.Set<ImmutableArray<PipelineListPaginatedResponse>>(
                 "items",
                 ImmutableArray.ToImmutableArray(value)
             );
@@ -72,29 +79,31 @@ public sealed record class JobListPageResponse : JsonModel
         _ = this.TotalSize;
     }
 
-    public JobListPageResponse() { }
+    public PipelineListPaginatedPageResponse() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public JobListPageResponse(JobListPageResponse jobListPageResponse)
-        : base(jobListPageResponse) { }
+    public PipelineListPaginatedPageResponse(
+        PipelineListPaginatedPageResponse pipelineListPaginatedPageResponse
+    )
+        : base(pipelineListPaginatedPageResponse) { }
 #pragma warning restore CS8618
 
-    public JobListPageResponse(IReadOnlyDictionary<string, JsonElement> rawData)
+    public PipelineListPaginatedPageResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    JobListPageResponse(FrozenDictionary<string, JsonElement> rawData)
+    PipelineListPaginatedPageResponse(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="JobListPageResponseFromRaw.FromRawUnchecked"/>
-    public static JobListPageResponse FromRawUnchecked(
+    /// <inheritdoc cref="PipelineListPaginatedPageResponseFromRaw.FromRawUnchecked"/>
+    public static PipelineListPaginatedPageResponse FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -102,16 +111,17 @@ public sealed record class JobListPageResponse : JsonModel
     }
 
     [SetsRequiredMembers]
-    public JobListPageResponse(IReadOnlyList<ClassifyJob> items)
+    public PipelineListPaginatedPageResponse(IReadOnlyList<PipelineListPaginatedResponse> items)
         : this()
     {
         this.Items = items;
     }
 }
 
-class JobListPageResponseFromRaw : IFromRawJson<JobListPageResponse>
+class PipelineListPaginatedPageResponseFromRaw : IFromRawJson<PipelineListPaginatedPageResponse>
 {
     /// <inheritdoc/>
-    public JobListPageResponse FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        JobListPageResponse.FromRawUnchecked(rawData);
+    public PipelineListPaginatedPageResponse FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => PipelineListPaginatedPageResponse.FromRawUnchecked(rawData);
 }

@@ -6,19 +6,23 @@ using System.Net.Http;
 using System.Text.Json;
 using LlamaCloud.Core;
 
-namespace LlamaCloud.Models.Classifier.Jobs;
+namespace LlamaCloud.Models.Parsing;
 
 /// <summary>
-/// Get a classify job. Experimental: not production-ready and subject to change.
+/// Delete a parse job and its results.
+///
+/// <para>The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel
+/// a job that is still running before deleting it.</para>
+///
+/// <para>Returns the identifiers of the deleted job.</para>
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-[Obsolete("Please use `client.classify.get()`")]
-public record class JobGetParams : ParamsBase
+public record class ParsingDeleteParams : ParamsBase
 {
-    public string? ClassifyJobID { get; init; }
+    public string? JobID { get; init; }
 
     public string? OrganizationID
     {
@@ -40,18 +44,18 @@ public record class JobGetParams : ParamsBase
         init { this._rawQueryData.Set("project_id", value); }
     }
 
-    public JobGetParams() { }
+    public ParsingDeleteParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public JobGetParams(JobGetParams jobGetParams)
-        : base(jobGetParams)
+    public ParsingDeleteParams(ParsingDeleteParams parsingDeleteParams)
+        : base(parsingDeleteParams)
     {
-        this.ClassifyJobID = jobGetParams.ClassifyJobID;
+        this.JobID = parsingDeleteParams.JobID;
     }
 #pragma warning restore CS8618
 
-    public JobGetParams(
+    public ParsingDeleteParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -62,29 +66,29 @@ public record class JobGetParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    JobGetParams(
+    ParsingDeleteParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData,
-        string classifyJobID
+        string jobID
     )
     {
         this._rawHeaderData = new(rawHeaderData);
         this._rawQueryData = new(rawQueryData);
-        this.ClassifyJobID = classifyJobID;
+        this.JobID = jobID;
     }
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static JobGetParams FromRawUnchecked(
+    public static ParsingDeleteParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
-        string classifyJobID
+        string jobID
     )
     {
         return new(
             FrozenDictionary.ToFrozenDictionary(rawHeaderData),
             FrozenDictionary.ToFrozenDictionary(rawQueryData),
-            classifyJobID
+            jobID
         );
     }
 
@@ -93,7 +97,7 @@ public record class JobGetParams : ParamsBase
             FriendlyJsonPrinter.PrintValue(
                 new Dictionary<string, JsonElement>()
                 {
-                    ["ClassifyJobID"] = JsonSerializer.SerializeToElement(this.ClassifyJobID),
+                    ["JobID"] = JsonSerializer.SerializeToElement(this.JobID),
                     ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
                         JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
                     ),
@@ -105,13 +109,13 @@ public record class JobGetParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(JobGetParams? other)
+    public virtual bool Equals(ParsingDeleteParams? other)
     {
         if (other == null)
         {
             return false;
         }
-        return (this.ClassifyJobID?.Equals(other.ClassifyJobID) ?? other.ClassifyJobID == null)
+        return (this.JobID?.Equals(other.JobID) ?? other.JobID == null)
             && this._rawHeaderData.Equals(other._rawHeaderData)
             && this._rawQueryData.Equals(other._rawQueryData);
     }
@@ -119,8 +123,7 @@ public record class JobGetParams : ParamsBase
     public override Uri Url(ClientOptions options)
     {
         return new UriBuilder(
-            options.BaseUrl.ToString().TrimEnd('/')
-                + string.Format("/api/v1/classifier/jobs/{0}", this.ClassifyJobID)
+            options.BaseUrl.ToString().TrimEnd('/') + string.Format("/api/v2/parse/{0}", this.JobID)
         )
         {
             Query = this.QueryString(options),

@@ -11,6 +11,8 @@ namespace LlamaCloud.Models.Pipelines;
 /// <summary>
 /// Search for pipelines by name, type, or project.
 ///
+/// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
+///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
@@ -41,12 +43,12 @@ public record class PipelineListParams : ParamsBase
     /// <summary>
     /// Enum for representing the type of a pipeline
     /// </summary>
-    public ApiEnum<string, PipelineType>? PipelineType
+    public ApiEnum<string, PipelinePipelineType>? PipelineType
     {
         get
         {
             this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<ApiEnum<string, PipelineType>>(
+            return this._rawQueryData.GetNullableClass<ApiEnum<string, PipelinePipelineType>>(
                 "pipeline_type"
             );
         }

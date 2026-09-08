@@ -78,12 +78,6 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         get { return _files.Value; }
     }
 
-    readonly Lazy<ISheetService> _sheets;
-    public ISheetService Sheets
-    {
-        get { return _sheets.Value; }
-    }
-
     readonly Lazy<ISplitService> _split;
     public ISplitService Split
     {
@@ -188,7 +182,6 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
 
         _withRawResponse = new(() => new LlamaCloudClientWithRawResponse(this._options));
         _files = new(() => new FileService(this));
-        _sheets = new(() => new SheetService(this));
         _split = new(() => new SplitService(this));
         _parsing = new(() => new ParsingService(this));
         _extract = new(() => new ExtractService(this));
@@ -284,12 +277,6 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
     public IFileServiceWithRawResponse Files
     {
         get { return _files.Value; }
-    }
-
-    readonly Lazy<ISheetServiceWithRawResponse> _sheets;
-    public ISheetServiceWithRawResponse Sheets
-    {
-        get { return _sheets.Value; }
     }
 
     readonly Lazy<ISplitServiceWithRawResponse> _split;
@@ -587,7 +574,6 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
         _options = new();
 
         _files = new(() => new FileServiceWithRawResponse(this));
-        _sheets = new(() => new SheetServiceWithRawResponse(this));
         _split = new(() => new SplitServiceWithRawResponse(this));
         _parsing = new(() => new ParsingServiceWithRawResponse(this));
         _extract = new(() => new ExtractServiceWithRawResponse(this));

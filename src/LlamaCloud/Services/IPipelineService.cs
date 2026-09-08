@@ -92,6 +92,8 @@ public interface IPipelineService
 
     /// <summary>
     /// Search for pipelines by name, type, or project.
+    ///
+    /// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
     /// </summary>
     [Obsolete("deprecated")]
     Task<List<Pipeline>> List(
@@ -147,6 +149,14 @@ public interface IPipelineService
     Task<ManagedIngestionStatusResponse> GetStatus(
         string pipelineID,
         PipelineGetStatusParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// List the pipelines in a project, newest first.
+    /// </summary>
+    Task<PipelineListPaginatedPage> ListPaginated(
+        PipelineListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 
@@ -295,6 +305,15 @@ public interface IPipelineServiceWithRawResponse
     Task<HttpResponse<ManagedIngestionStatusResponse>> GetStatus(
         string pipelineID,
         PipelineGetStatusParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>get /api/v2/pipelines</c>, but is otherwise the
+    /// same as <see cref="IPipelineService.ListPaginated(PipelineListPaginatedParams?, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<PipelineListPaginatedPage>> ListPaginated(
+        PipelineListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

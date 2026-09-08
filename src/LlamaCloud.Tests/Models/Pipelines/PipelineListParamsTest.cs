@@ -13,14 +13,14 @@ public class PipelineListParamsTest : TestBase
         {
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PipelineName = "pipeline_name",
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectName = "project_name",
         };
 
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedPipelineName = "pipeline_name";
-        ApiEnum<string, PipelineType> expectedPipelineType = PipelineType.Managed;
+        ApiEnum<string, PipelinePipelineType> expectedPipelineType = PipelinePipelineType.Managed;
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedProjectName = "project_name";
 
@@ -79,7 +79,7 @@ public class PipelineListParamsTest : TestBase
         {
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PipelineName = "pipeline_name",
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectName = "project_name",
         };
@@ -103,7 +103,7 @@ public class PipelineListParamsTest : TestBase
         {
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PipelineName = "pipeline_name",
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectName = "project_name",
         };

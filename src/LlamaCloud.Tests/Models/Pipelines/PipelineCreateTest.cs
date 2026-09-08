@@ -198,7 +198,7 @@ public class PipelineCreateTest : TestBase
                 ExcludedEmbedMetadataKeys = ["string"],
                 ExcludedLlmMetadataKeys = ["string"],
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -437,7 +437,7 @@ public class PipelineCreateTest : TestBase
             ExcludedEmbedMetadataKeys = ["string"],
             ExcludedLlmMetadataKeys = ["string"],
         };
-        ApiEnum<string, PipelineType> expectedPipelineType = PipelineType.Managed;
+        ApiEnum<string, PipelinePipelineType> expectedPipelineType = PipelinePipelineType.Managed;
         PresetRetrievalParams expectedPresetRetrievalParameters = new()
         {
             Alpha = 0,
@@ -699,7 +699,7 @@ public class PipelineCreateTest : TestBase
                 ExcludedEmbedMetadataKeys = ["string"],
                 ExcludedLlmMetadataKeys = ["string"],
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -952,7 +952,7 @@ public class PipelineCreateTest : TestBase
                 ExcludedEmbedMetadataKeys = ["string"],
                 ExcludedLlmMetadataKeys = ["string"],
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -1198,7 +1198,7 @@ public class PipelineCreateTest : TestBase
             ExcludedEmbedMetadataKeys = ["string"],
             ExcludedLlmMetadataKeys = ["string"],
         };
-        ApiEnum<string, PipelineType> expectedPipelineType = PipelineType.Managed;
+        ApiEnum<string, PipelinePipelineType> expectedPipelineType = PipelinePipelineType.Managed;
         PresetRetrievalParams expectedPresetRetrievalParameters = new()
         {
             Alpha = 0,
@@ -1460,7 +1460,7 @@ public class PipelineCreateTest : TestBase
                 ExcludedEmbedMetadataKeys = ["string"],
                 ExcludedLlmMetadataKeys = ["string"],
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -1935,7 +1935,7 @@ public class PipelineCreateTest : TestBase
                 ],
                 WebhookUrl = "webhook_url",
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -2147,7 +2147,7 @@ public class PipelineCreateTest : TestBase
                 ],
                 WebhookUrl = "webhook_url",
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -2342,7 +2342,7 @@ public class PipelineCreateTest : TestBase
                 ],
                 WebhookUrl = "webhook_url",
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -2564,7 +2564,7 @@ public class PipelineCreateTest : TestBase
                 ],
                 WebhookUrl = "webhook_url",
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -2813,7 +2813,7 @@ public class PipelineCreateTest : TestBase
                 ExcludedEmbedMetadataKeys = ["string"],
                 ExcludedLlmMetadataKeys = ["string"],
             },
-            PipelineType = PipelineType.Managed,
+            PipelineType = PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,

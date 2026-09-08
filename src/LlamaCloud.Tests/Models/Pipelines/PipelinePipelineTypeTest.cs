@@ -5,22 +5,22 @@ using LlamaCloud.Models.Pipelines;
 
 namespace LlamaCloud.Tests.Models.Pipelines;
 
-public class PipelineTypeTest : TestBase
+public class PipelinePipelineTypeTest : TestBase
 {
     [Theory]
-    [InlineData(PipelineType.Managed)]
-    [InlineData(PipelineType.Playground)]
-    public void Validation_Works(PipelineType rawValue)
+    [InlineData(PipelinePipelineType.Managed)]
+    [InlineData(PipelinePipelineType.Playground)]
+    public void Validation_Works(PipelinePipelineType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, PipelineType> value = rawValue;
+        ApiEnum<string, PipelinePipelineType> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, PipelineType>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PipelinePipelineType>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -30,15 +30,15 @@ public class PipelineTypeTest : TestBase
     }
 
     [Theory]
-    [InlineData(PipelineType.Managed)]
-    [InlineData(PipelineType.Playground)]
-    public void SerializationRoundtrip_Works(PipelineType rawValue)
+    [InlineData(PipelinePipelineType.Managed)]
+    [InlineData(PipelinePipelineType.Playground)]
+    public void SerializationRoundtrip_Works(PipelinePipelineType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, PipelineType> value = rawValue;
+        ApiEnum<string, PipelinePipelineType> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PipelineType>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PipelinePipelineType>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -49,12 +49,12 @@ public class PipelineTypeTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, PipelineType>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PipelinePipelineType>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PipelineType>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PipelinePipelineType>>(
             json,
             ModelBase.SerializerOptions
         );

@@ -26,7 +26,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             Rerank = new() { Enabled = true, TopN = 5 },
             ScoreThreshold = 0,
             StaticFilters = new()
@@ -53,7 +53,7 @@ public class RetrievalRetrieveParamsTest : TestBase
             },
         };
         double expectedFullTextPipelineWeight = 0;
-        long expectedNumCandidates = 0;
+        long expectedNumCandidates = 1;
         Rerank expectedRerank = new() { Enabled = true, TopN = 5 };
         double expectedScoreThreshold = 0;
         StaticFilters expectedStaticFilters = new()
@@ -105,7 +105,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             ScoreThreshold = 0,
             StaticFilters = new()
             {
@@ -140,7 +140,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             ScoreThreshold = 0,
             StaticFilters = new()
             {
@@ -271,7 +271,7 @@ public class RetrievalRetrieveParamsTest : TestBase
                 },
             },
             FullTextPipelineWeight = 0,
-            NumCandidates = 0,
+            NumCandidates = 1,
             Rerank = new() { Enabled = true, TopN = 5 },
             ScoreThreshold = 0,
             StaticFilters = new()
@@ -499,9 +499,9 @@ public class ValueFilterValueTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent2sValidationWorks()
+    public void UnnamedSchemaWithArrayParent1sValidationWorks()
     {
-        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent2("string")]);
+        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent1("string")]);
         value.Validate();
     }
 
@@ -545,9 +545,9 @@ public class ValueFilterValueTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent2sSerializationRoundtripWorks()
+    public void UnnamedSchemaWithArrayParent1sSerializationRoundtripWorks()
     {
-        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent2("string")]);
+        ValueFilterValue value = new([new UnnamedSchemaWithArrayParent1("string")]);
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ValueFilterValue>(
             element,
@@ -558,35 +558,35 @@ public class ValueFilterValueTest : TestBase
     }
 }
 
-public class UnnamedSchemaWithArrayParent2Test : TestBase
+public class UnnamedSchemaWithArrayParent1Test : TestBase
 {
     [Fact]
     public void StringValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2 value = "string";
+        UnnamedSchemaWithArrayParent1 value = "string";
         value.Validate();
     }
 
     [Fact]
     public void BoolValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2 value = true;
+        UnnamedSchemaWithArrayParent1 value = true;
         value.Validate();
     }
 
     [Fact]
     public void DoubleValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2 value = 0;
+        UnnamedSchemaWithArrayParent1 value = 0;
         value.Validate();
     }
 
     [Fact]
     public void StringSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2 value = "string";
+        UnnamedSchemaWithArrayParent1 value = "string";
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1>(
             element,
             ModelBase.SerializerOptions
         );
@@ -597,9 +597,9 @@ public class UnnamedSchemaWithArrayParent2Test : TestBase
     [Fact]
     public void BoolSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2 value = true;
+        UnnamedSchemaWithArrayParent1 value = true;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1>(
             element,
             ModelBase.SerializerOptions
         );
@@ -610,9 +610,9 @@ public class UnnamedSchemaWithArrayParent2Test : TestBase
     [Fact]
     public void DoubleSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2 value = 0;
+        UnnamedSchemaWithArrayParent1 value = 0;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1>(
             element,
             ModelBase.SerializerOptions
         );

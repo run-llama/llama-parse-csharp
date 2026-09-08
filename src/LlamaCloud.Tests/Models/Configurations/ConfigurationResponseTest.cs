@@ -453,7 +453,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = "fast",
+                ParseTier = Configurations::ParseTier.Fast,
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -673,6 +673,8 @@ public class ConfigurationResponseParametersTest : TestBase
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,
+                    CustomInstructions = "Start a new segment at every signature page.",
+                    MinPagesPerSplit = 1,
                 },
             };
         value.Validate();
@@ -762,7 +764,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = "fast",
+                ParseTier = Configurations::ParseTier.Fast,
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -996,6 +998,8 @@ public class ConfigurationResponseParametersTest : TestBase
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,
+                    CustomInstructions = "Start a new segment at every signature page.",
+                    MinPagesPerSplit = 1,
                 },
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);

@@ -1,25 +1,25 @@
 using System;
-using LlamaCloud.Models.Classifier.Jobs;
+using LlamaCloud.Models.Parsing;
 
-namespace LlamaCloud.Tests.Models.Classifier.Jobs;
+namespace LlamaCloud.Tests.Models.Parsing;
 
-public class JobGetResultsParamsTest : TestBase
+public class ParsingDeleteParamsTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var parameters = new JobGetResultsParams
+        var parameters = new ParsingDeleteParams
         {
-            ClassifyJobID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            JobID = "job_id",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
-        string expectedClassifyJobID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        string expectedJobID = "job_id";
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
-        Assert.Equal(expectedClassifyJobID, parameters.ClassifyJobID);
+        Assert.Equal(expectedJobID, parameters.JobID);
         Assert.Equal(expectedOrganizationID, parameters.OrganizationID);
         Assert.Equal(expectedProjectID, parameters.ProjectID);
     }
@@ -27,10 +27,7 @@ public class JobGetResultsParamsTest : TestBase
     [Fact]
     public void OptionalNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new JobGetResultsParams
-        {
-            ClassifyJobID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-        };
+        var parameters = new ParsingDeleteParams { JobID = "job_id" };
 
         Assert.Null(parameters.OrganizationID);
         Assert.False(parameters.RawQueryData.ContainsKey("organization_id"));
@@ -41,9 +38,9 @@ public class JobGetResultsParamsTest : TestBase
     [Fact]
     public void OptionalNullableParamsSetToNullAreSetToNull_Works()
     {
-        var parameters = new JobGetResultsParams
+        var parameters = new ParsingDeleteParams
         {
-            ClassifyJobID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            JobID = "job_id",
 
             OrganizationID = null,
             ProjectID = null,
@@ -58,9 +55,9 @@ public class JobGetResultsParamsTest : TestBase
     [Fact]
     public void Url_Works()
     {
-        JobGetResultsParams parameters = new()
+        ParsingDeleteParams parameters = new()
         {
-            ClassifyJobID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            JobID = "job_id",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
@@ -70,7 +67,7 @@ public class JobGetResultsParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/classifier/jobs/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/results?organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v2/parse/job_id?organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -80,14 +77,14 @@ public class JobGetResultsParamsTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var parameters = new JobGetResultsParams
+        var parameters = new ParsingDeleteParams
         {
-            ClassifyJobID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            JobID = "job_id",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
-        JobGetResultsParams copied = new(parameters);
+        ParsingDeleteParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
     }

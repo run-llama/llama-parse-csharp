@@ -164,12 +164,12 @@ public record class PipelineCreateParams : ParamsBase
     /// <summary>
     /// Type of pipeline. Either PLAYGROUND or MANAGED.
     /// </summary>
-    public ApiEnum<string, PipelineType>? PipelineType
+    public ApiEnum<string, PipelinePipelineType>? PipelineType
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<ApiEnum<string, PipelineType>>(
+            return this._rawBodyData.GetNullableClass<ApiEnum<string, PipelinePipelineType>>(
                 "pipeline_type"
             );
         }
