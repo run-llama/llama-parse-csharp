@@ -3,7 +3,7 @@
     <!-- Metadata -->
     <AssemblyTitle>Llama Cloud C#</AssemblyTitle>
     <AssemblyName>LlamaCloud</AssemblyName>
-    <VersionPrefix>1.7.0</VersionPrefix>
+    <VersionPrefix>1.7.1</VersionPrefix>
     <Description>The official .NET library for the Llama Cloud API.</Description>
     <OutputType>Library</OutputType>
     <PackageReadmeFile>README.md</PackageReadmeFile>

@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.1](https://github.com/run-llama/llama-parse-csharp/compare/v1.7.0...v1.7.1) (2026-09-08)
+
+
+### Documentation
+
+* **changelog:** record the classify v1 job removal in 1.7.0 ([c6ebdbf](https://github.com/run-llama/llama-parse-csharp/commit/c6ebdbf849908690c64c45ee7ef3d9386ed6dd4a))
+* **changelog:** record the classify v1 job removal in 1.7.0 ([4bc1096](https://github.com/run-llama/llama-parse-csharp/commit/4bc1096921a0b094f45a9a76e387f23bfce4afbc))
+
 ## [1.7.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.6.0...v1.7.0) (2026-09-08)
 
 
