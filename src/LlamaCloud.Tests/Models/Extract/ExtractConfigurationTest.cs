@@ -31,7 +31,7 @@ public class ExtractConfigurationTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -59,7 +59,7 @@ public class ExtractConfigurationTest : TestBase
         ApiEnum<string, ExtractionTarget> expectedExtractionTarget = ExtractionTarget.PerDoc;
         long expectedMaxPages = 10;
         string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
-        string expectedParseTier = "fast";
+        ApiEnum<string, ParseTier> expectedParseTier = ParseTier.Fast;
         List<string> expectedSheetNames = ["Sheet 1", "Q4 Summary"];
         bool expectedSpreadsheetMode = true;
         string expectedSystemPrompt =
@@ -118,7 +118,7 @@ public class ExtractConfigurationTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -160,7 +160,7 @@ public class ExtractConfigurationTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -195,7 +195,7 @@ public class ExtractConfigurationTest : TestBase
         ApiEnum<string, ExtractionTarget> expectedExtractionTarget = ExtractionTarget.PerDoc;
         long expectedMaxPages = 10;
         string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
-        string expectedParseTier = "fast";
+        ApiEnum<string, ParseTier> expectedParseTier = ParseTier.Fast;
         List<string> expectedSheetNames = ["Sheet 1", "Q4 Summary"];
         bool expectedSpreadsheetMode = true;
         string expectedSystemPrompt =
@@ -254,7 +254,7 @@ public class ExtractConfigurationTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -286,7 +286,7 @@ public class ExtractConfigurationTest : TestBase
             },
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SystemPrompt =
                 "Extract all monetary values in USD. If a currency is not specified, assume USD.",
@@ -328,7 +328,7 @@ public class ExtractConfigurationTest : TestBase
             },
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SystemPrompt =
                 "Extract all monetary values in USD. If a currency is not specified, assume USD.",
@@ -357,7 +357,7 @@ public class ExtractConfigurationTest : TestBase
             },
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SystemPrompt =
                 "Extract all monetary values in USD. If a currency is not specified, assume USD.",
@@ -408,7 +408,7 @@ public class ExtractConfigurationTest : TestBase
             },
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SystemPrompt =
                 "Extract all monetary values in USD. If a currency is not specified, assume USD.",
@@ -602,7 +602,7 @@ public class ExtractConfigurationTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -783,6 +783,68 @@ public class ExtractionTargetTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ExtractionTarget>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class ParseTierTest : TestBase
+{
+    [Theory]
+    [InlineData(ParseTier.Agentic)]
+    [InlineData(ParseTier.AgenticPlus)]
+    [InlineData(ParseTier.CostEffective)]
+    [InlineData(ParseTier.Fast)]
+    public void Validation_Works(ParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ParseTier> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ParseTier.Agentic)]
+    [InlineData(ParseTier.AgenticPlus)]
+    [InlineData(ParseTier.CostEffective)]
+    [InlineData(ParseTier.Fast)]
+    public void SerializationRoundtrip_Works(ParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ParseTier> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
             json,
             ModelBase.SerializerOptions
         );

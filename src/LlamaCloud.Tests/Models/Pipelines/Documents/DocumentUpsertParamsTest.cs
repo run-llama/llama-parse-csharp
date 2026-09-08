@@ -28,6 +28,7 @@ public class DocumentUpsertParamsTest : TestBase
                     PagePositions = [0],
                 },
             ],
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -46,6 +47,7 @@ public class DocumentUpsertParamsTest : TestBase
                 PagePositions = [0],
             },
         ];
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
         Assert.Equal(expectedBody.Count, parameters.Body.Count);
@@ -53,6 +55,63 @@ public class DocumentUpsertParamsTest : TestBase
         {
             Assert.Equal(expectedBody[i], parameters.Body[i]);
         }
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
+    }
+
+    [Fact]
+    public void OptionalNullableParamsUnsetAreNotSet_Works()
+    {
+        var parameters = new DocumentUpsertParams
+        {
+            PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Body =
+            [
+                new()
+                {
+                    Metadata = new Dictionary<string, JsonElement>()
+                    {
+                        { "foo", JsonSerializer.SerializeToElement("bar") },
+                    },
+                    Text = "text",
+                    ID = "id",
+                    ExcludedEmbedMetadataKeys = ["string"],
+                    ExcludedLlmMetadataKeys = ["string"],
+                    PagePositions = [0],
+                },
+            ],
+        };
+
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
+    }
+
+    [Fact]
+    public void OptionalNullableParamsSetToNullAreSetToNull_Works()
+    {
+        var parameters = new DocumentUpsertParams
+        {
+            PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Body =
+            [
+                new()
+                {
+                    Metadata = new Dictionary<string, JsonElement>()
+                    {
+                        { "foo", JsonSerializer.SerializeToElement("bar") },
+                    },
+                    Text = "text",
+                    ID = "id",
+                    ExcludedEmbedMetadataKeys = ["string"],
+                    ExcludedLlmMetadataKeys = ["string"],
+                    PagePositions = [0],
+                },
+            ],
+
+            ProjectID = null,
+        };
+
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -76,6 +135,7 @@ public class DocumentUpsertParamsTest : TestBase
                     PagePositions = [0],
                 },
             ],
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -83,7 +143,7 @@ public class DocumentUpsertParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/documents"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/documents?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -111,6 +171,7 @@ public class DocumentUpsertParamsTest : TestBase
                     PagePositions = [0],
                 },
             ],
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         DocumentUpsertParams copied = new(parameters);

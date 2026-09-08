@@ -21,7 +21,12 @@ public class SplitCreateParamsTest : TestBase
             Configuration = new()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
-                SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+                SplittingStrategy = new()
+                {
+                    AllowUncategorized = AllowUncategorized.Forbid,
+                    CustomInstructions = "Start a new segment at every signature page.",
+                    MinPagesPerSplit = 1,
+                },
             },
             ConfigurationID = "cfg-11111111-2222-3333-4444-555555555555",
             TransactionID = "tx-unique-idempotency-key",
@@ -48,7 +53,12 @@ public class SplitCreateParamsTest : TestBase
         Configuration expectedConfiguration = new()
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
         string expectedConfigurationID = "cfg-11111111-2222-3333-4444-555555555555";
         string expectedTransactionID = "tx-unique-idempotency-key";
@@ -180,7 +190,12 @@ public class SplitCreateParamsTest : TestBase
             Configuration = new()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
-                SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+                SplittingStrategy = new()
+                {
+                    AllowUncategorized = AllowUncategorized.Forbid,
+                    CustomInstructions = "Start a new segment at every signature page.",
+                    MinPagesPerSplit = 1,
+                },
             },
             ConfigurationID = "cfg-11111111-2222-3333-4444-555555555555",
             TransactionID = "tx-unique-idempotency-key",
@@ -215,13 +230,20 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
+            CustomInstructions = "Start a new segment at every signature page.",
+            MinPagesPerSplit = 1,
         };
 
         Assert.Equal(expectedCategories.Count, model.Categories.Count);
@@ -238,7 +260,12 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -256,7 +283,12 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -270,6 +302,8 @@ public class ConfigurationTest : TestBase
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
+            CustomInstructions = "Start a new segment at every signature page.",
+            MinPagesPerSplit = 1,
         };
 
         Assert.Equal(expectedCategories.Count, deserialized.Categories.Count);
@@ -286,7 +320,12 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
 
         model.Validate();
@@ -344,7 +383,12 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
 
         Configuration copied = new(model);
@@ -358,17 +402,31 @@ public class SplittingStrategyTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new SplittingStrategy { AllowUncategorized = AllowUncategorized.Forbid };
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            CustomInstructions = "Start a new segment at every signature page.",
+            MinPagesPerSplit = 1,
+        };
 
         ApiEnum<string, AllowUncategorized> expectedAllowUncategorized = AllowUncategorized.Forbid;
+        string expectedCustomInstructions = "Start a new segment at every signature page.";
+        long expectedMinPagesPerSplit = 1;
 
         Assert.Equal(expectedAllowUncategorized, model.AllowUncategorized);
+        Assert.Equal(expectedCustomInstructions, model.CustomInstructions);
+        Assert.Equal(expectedMinPagesPerSplit, model.MinPagesPerSplit);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new SplittingStrategy { AllowUncategorized = AllowUncategorized.Forbid };
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            CustomInstructions = "Start a new segment at every signature page.",
+            MinPagesPerSplit = 1,
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<SplittingStrategy>(
@@ -382,7 +440,12 @@ public class SplittingStrategyTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new SplittingStrategy { AllowUncategorized = AllowUncategorized.Forbid };
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            CustomInstructions = "Start a new segment at every signature page.",
+            MinPagesPerSplit = 1,
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<SplittingStrategy>(
@@ -392,14 +455,23 @@ public class SplittingStrategyTest : TestBase
         Assert.NotNull(deserialized);
 
         ApiEnum<string, AllowUncategorized> expectedAllowUncategorized = AllowUncategorized.Forbid;
+        string expectedCustomInstructions = "Start a new segment at every signature page.";
+        long expectedMinPagesPerSplit = 1;
 
         Assert.Equal(expectedAllowUncategorized, deserialized.AllowUncategorized);
+        Assert.Equal(expectedCustomInstructions, deserialized.CustomInstructions);
+        Assert.Equal(expectedMinPagesPerSplit, deserialized.MinPagesPerSplit);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new SplittingStrategy { AllowUncategorized = AllowUncategorized.Forbid };
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            CustomInstructions = "Start a new segment at every signature page.",
+            MinPagesPerSplit = 1,
+        };
 
         model.Validate();
     }
@@ -407,16 +479,24 @@ public class SplittingStrategyTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new SplittingStrategy { };
+        var model = new SplittingStrategy
+        {
+            CustomInstructions = "Start a new segment at every signature page.",
+        };
 
         Assert.Null(model.AllowUncategorized);
         Assert.False(model.RawData.ContainsKey("allow_uncategorized"));
+        Assert.Null(model.MinPagesPerSplit);
+        Assert.False(model.RawData.ContainsKey("min_pages_per_split"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new SplittingStrategy { };
+        var model = new SplittingStrategy
+        {
+            CustomInstructions = "Start a new segment at every signature page.",
+        };
 
         model.Validate();
     }
@@ -426,12 +506,17 @@ public class SplittingStrategyTest : TestBase
     {
         var model = new SplittingStrategy
         {
+            CustomInstructions = "Start a new segment at every signature page.",
+
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
+            MinPagesPerSplit = null,
         };
 
         Assert.Null(model.AllowUncategorized);
         Assert.False(model.RawData.ContainsKey("allow_uncategorized"));
+        Assert.Null(model.MinPagesPerSplit);
+        Assert.False(model.RawData.ContainsKey("min_pages_per_split"));
     }
 
     [Fact]
@@ -439,8 +524,65 @@ public class SplittingStrategyTest : TestBase
     {
         var model = new SplittingStrategy
         {
+            CustomInstructions = "Start a new segment at every signature page.",
+
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
+            MinPagesPerSplit = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            MinPagesPerSplit = 1,
+        };
+
+        Assert.Null(model.CustomInstructions);
+        Assert.False(model.RawData.ContainsKey("custom_instructions"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            MinPagesPerSplit = 1,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            MinPagesPerSplit = 1,
+
+            CustomInstructions = null,
+        };
+
+        Assert.Null(model.CustomInstructions);
+        Assert.True(model.RawData.ContainsKey("custom_instructions"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            MinPagesPerSplit = 1,
+
+            CustomInstructions = null,
         };
 
         model.Validate();
@@ -449,7 +591,12 @@ public class SplittingStrategyTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new SplittingStrategy { AllowUncategorized = AllowUncategorized.Forbid };
+        var model = new SplittingStrategy
+        {
+            AllowUncategorized = AllowUncategorized.Forbid,
+            CustomInstructions = "Start a new segment at every signature page.",
+            MinPagesPerSplit = 1,
+        };
 
         SplittingStrategy copied = new(model);
 

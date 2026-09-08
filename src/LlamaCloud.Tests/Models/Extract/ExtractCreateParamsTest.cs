@@ -48,7 +48,7 @@ public class ExtractCreateParamsTest : TestBase
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = "fast",
+                ParseTier = ParseTier.Fast,
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -109,7 +109,7 @@ public class ExtractCreateParamsTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -269,7 +269,7 @@ public class ExtractCreateParamsTest : TestBase
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = "fast",
+                ParseTier = ParseTier.Fast,
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =

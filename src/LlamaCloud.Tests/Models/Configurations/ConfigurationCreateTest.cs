@@ -261,7 +261,7 @@ public class ConfigurationCreateParametersTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -465,7 +465,12 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
         value.Validate();
     }
@@ -549,7 +554,7 @@ public class ConfigurationCreateParametersTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = "fast",
+            ParseTier = ParseTier.Fast,
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -765,7 +770,12 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ConfigurationCreateParameters>(
