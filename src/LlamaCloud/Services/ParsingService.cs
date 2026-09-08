@@ -59,6 +59,30 @@ public sealed class ParsingService : IParsingService
     }
 
     /// <inheritdoc/>
+    public async Task<ParsingDeleteResponse> Delete(
+        ParsingDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.Delete(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<ParsingDeleteResponse> Delete(
+        string jobID,
+        ParsingDeleteParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Delete(parameters with { JobID = jobID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
     public async Task<ParsingCancelResponse> Cancel(
         ParsingCancelParams parameters,
         CancellationToken cancellationToken = default
@@ -191,6 +215,51 @@ public sealed class ParsingServiceWithRawResponse : IParsingServiceWithRawRespon
                 return new ParsingListPage(this, parameters, page);
             }
         );
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<ParsingDeleteResponse>> Delete(
+        ParsingDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.JobID == null)
+        {
+            throw new LlamaCloudInvalidDataException("'parameters.JobID' cannot be null");
+        }
+
+        HttpRequest<ParsingDeleteParams> request = new()
+        {
+            Method = HttpMethod.Delete,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var parsing = await response
+                    .Deserialize<ParsingDeleteResponse>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    parsing.Validate();
+                }
+                return parsing;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<ParsingDeleteResponse>> Delete(
+        string jobID,
+        ParsingDeleteParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Delete(parameters with { JobID = jobID }, cancellationToken);
     }
 
     /// <inheritdoc/>

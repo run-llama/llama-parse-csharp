@@ -205,7 +205,7 @@ public class PipelineUpsertParamsTest : TestBase
                 ExcludedEmbedMetadataKeys = ["string"],
                 ExcludedLlmMetadataKeys = ["string"],
             },
-            PipelineType = Pipelines::PipelineType.Managed,
+            PipelineType = Pipelines::PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -455,8 +455,8 @@ public class PipelineUpsertParamsTest : TestBase
             ExcludedEmbedMetadataKeys = ["string"],
             ExcludedLlmMetadataKeys = ["string"],
         };
-        ApiEnum<string, Pipelines::PipelineType> expectedPipelineType =
-            Pipelines::PipelineType.Managed;
+        ApiEnum<string, Pipelines::PipelinePipelineType> expectedPipelineType =
+            Pipelines::PipelinePipelineType.Managed;
         Pipelines::PresetRetrievalParams expectedPresetRetrievalParameters = new()
         {
             Alpha = 0,
@@ -834,7 +834,7 @@ public class PipelineUpsertParamsTest : TestBase
                 ],
                 WebhookUrl = "webhook_url",
             },
-            PipelineType = Pipelines::PipelineType.Managed,
+            PipelineType = Pipelines::PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -1054,7 +1054,7 @@ public class PipelineUpsertParamsTest : TestBase
                 ],
                 WebhookUrl = "webhook_url",
             },
-            PipelineType = Pipelines::PipelineType.Managed,
+            PipelineType = Pipelines::PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,
@@ -1354,7 +1354,7 @@ public class PipelineUpsertParamsTest : TestBase
                 ExcludedEmbedMetadataKeys = ["string"],
                 ExcludedLlmMetadataKeys = ["string"],
             },
-            PipelineType = Pipelines::PipelineType.Managed,
+            PipelineType = Pipelines::PipelinePipelineType.Managed,
             PresetRetrievalParameters = new()
             {
                 Alpha = 0,

@@ -82,6 +82,16 @@ public class PipelineServiceTest : TestBase
     }
 
     [Fact(Skip = "Mock server tests are disabled")]
+    public async Task ListPaginated_Works()
+    {
+        var page = await this.client.Pipelines.ListPaginated(
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        page.Validate();
+    }
+
+    [Fact(Skip = "Mock server tests are disabled")]
     public async Task Upsert_Works()
     {
         var pipeline = await this.client.Pipelines.Upsert(

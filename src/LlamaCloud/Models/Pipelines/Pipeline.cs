@@ -167,12 +167,14 @@ public sealed record class Pipeline : JsonModel
     /// <summary>
     /// Type of pipeline. Either PLAYGROUND or MANAGED.
     /// </summary>
-    public ApiEnum<string, PipelineType>? PipelineType
+    public ApiEnum<string, PipelinePipelineType>? PipelineType
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<ApiEnum<string, PipelineType>>("pipeline_type");
+            return this._rawData.GetNullableClass<ApiEnum<string, PipelinePipelineType>>(
+                "pipeline_type"
+            );
         }
         init
         {

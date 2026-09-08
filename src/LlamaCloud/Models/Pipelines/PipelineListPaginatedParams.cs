@@ -1,25 +1,34 @@
-using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using LlamaCloud.Core;
+using LlamaCloud.Exceptions;
+using System = System;
 
 namespace LlamaCloud.Models.Pipelines;
 
 /// <summary>
-/// Search for pipelines by name, type, or project.
-///
-/// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
+/// List the pipelines in a project, newest first.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-[Obsolete("deprecated")]
-public record class PipelineListParams : ParamsBase
+public record class PipelineListPaginatedParams : ParamsBase
 {
+    public string? Name
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("name");
+        }
+        init { this._rawQueryData.Set("name", value); }
+    }
+
     public string? OrganizationID
     {
         get
@@ -30,25 +39,32 @@ public record class PipelineListParams : ParamsBase
         init { this._rawQueryData.Set("organization_id", value); }
     }
 
-    public string? PipelineName
+    public long? PageSize
     {
         get
         {
             this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("pipeline_name");
+            return this._rawQueryData.GetNullableStruct<long>("page_size");
         }
-        init { this._rawQueryData.Set("pipeline_name", value); }
+        init { this._rawQueryData.Set("page_size", value); }
     }
 
-    /// <summary>
-    /// Enum for representing the type of a pipeline
-    /// </summary>
-    public ApiEnum<string, PipelinePipelineType>? PipelineType
+    public string? PageToken
     {
         get
         {
             this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<ApiEnum<string, PipelinePipelineType>>(
+            return this._rawQueryData.GetNullableClass<string>("page_token");
+        }
+        init { this._rawQueryData.Set("page_token", value); }
+    }
+
+    public ApiEnum<string, PipelineType>? PipelineType
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<ApiEnum<string, PipelineType>>(
                 "pipeline_type"
             );
         }
@@ -65,25 +81,15 @@ public record class PipelineListParams : ParamsBase
         init { this._rawQueryData.Set("project_id", value); }
     }
 
-    public string? ProjectName
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("project_name");
-        }
-        init { this._rawQueryData.Set("project_name", value); }
-    }
-
-    public PipelineListParams() { }
+    public PipelineListPaginatedParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public PipelineListParams(PipelineListParams pipelineListParams)
-        : base(pipelineListParams) { }
+    public PipelineListPaginatedParams(PipelineListPaginatedParams pipelineListPaginatedParams)
+        : base(pipelineListPaginatedParams) { }
 #pragma warning restore CS8618
 
-    public PipelineListParams(
+    public PipelineListPaginatedParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -94,7 +100,7 @@ public record class PipelineListParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    PipelineListParams(
+    PipelineListPaginatedParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData
     )
@@ -105,7 +111,7 @@ public record class PipelineListParams : ParamsBase
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static PipelineListParams FromRawUnchecked(
+    public static PipelineListPaginatedParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -132,7 +138,7 @@ public record class PipelineListParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(PipelineListParams? other)
+    public virtual bool Equals(PipelineListPaginatedParams? other)
     {
         if (other == null)
         {
@@ -142,9 +148,9 @@ public record class PipelineListParams : ParamsBase
             && this._rawQueryData.Equals(other._rawQueryData);
     }
 
-    public override Uri Url(ClientOptions options)
+    public override System::Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/api/v1/pipelines")
+        return new System::UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/api/v2/pipelines")
         {
             Query = this.QueryString(options),
         }.Uri;
@@ -162,5 +168,49 @@ public record class PipelineListParams : ParamsBase
     public override int GetHashCode()
     {
         return 0;
+    }
+}
+
+[JsonConverter(typeof(PipelineTypeConverter))]
+public enum PipelineType
+{
+    Managed,
+    Playground,
+}
+
+sealed class PipelineTypeConverter : JsonConverter<PipelineType>
+{
+    public override PipelineType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "MANAGED" => PipelineType.Managed,
+            "PLAYGROUND" => PipelineType.Playground,
+            _ => (PipelineType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        PipelineType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                PipelineType.Managed => "MANAGED",
+                PipelineType.Playground => "PLAYGROUND",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }

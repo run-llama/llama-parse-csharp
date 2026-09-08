@@ -231,6 +231,18 @@ public sealed class PipelineService : IPipelineService
     }
 
     /// <inheritdoc/>
+    public async Task<PipelineListPaginatedPage> ListPaginated(
+        PipelineListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.ListPaginated(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
     [Obsolete("deprecated")]
     public async Task<Pipeline> Upsert(
         PipelineUpsertParams parameters,
@@ -577,6 +589,36 @@ public sealed class PipelineServiceWithRawResponse : IPipelineServiceWithRawResp
         parameters ??= new();
 
         return this.GetStatus(parameters with { PipelineID = pipelineID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<PipelineListPaginatedPage>> ListPaginated(
+        PipelineListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        HttpRequest<PipelineListPaginatedParams> request = new()
+        {
+            Method = HttpMethod.Get,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var page = await response
+                    .Deserialize<PipelineListPaginatedPageResponse>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    page.Validate();
+                }
+                return new PipelineListPaginatedPage(this, parameters, page);
+            }
+        );
     }
 
     /// <inheritdoc/>

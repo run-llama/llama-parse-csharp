@@ -23,6 +23,17 @@ public class ParsingServiceTest : TestBase
     }
 
     [Fact(Skip = "Mock server tests are disabled")]
+    public async Task Delete_Works()
+    {
+        var parsing = await this.client.Parsing.Delete(
+            "job_id",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        parsing.Validate();
+    }
+
+    [Fact(Skip = "Mock server tests are disabled")]
     public async Task Cancel_Works()
     {
         var response = await this.client.Parsing.Cancel(

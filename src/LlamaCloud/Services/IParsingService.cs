@@ -59,6 +59,26 @@ public interface IParsingService
     );
 
     /// <summary>
+    /// Delete a parse job and its results.
+    ///
+    /// <para>The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel
+    /// a job that is still running before deleting it.</para>
+    ///
+    /// <para>Returns the identifiers of the deleted job.</para>
+    /// </summary>
+    Task<ParsingDeleteResponse> Delete(
+        ParsingDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Delete(ParsingDeleteParams, CancellationToken)"/>
+    Task<ParsingDeleteResponse> Delete(
+        string jobID,
+        ParsingDeleteParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// Cancel a running parse job.
     ///
     /// <para>Stops processing and marks the job as CANCELLED. Returns the updated job.
@@ -139,6 +159,22 @@ public interface IParsingServiceWithRawResponse
     /// </summary>
     Task<HttpResponse<ParsingListPage>> List(
         ParsingListParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>delete /api/v2/parse/{job_id}</c>, but is otherwise the
+    /// same as <see cref="IParsingService.Delete(ParsingDeleteParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<ParsingDeleteResponse>> Delete(
+        ParsingDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Delete(ParsingDeleteParams, CancellationToken)"/>
+    Task<HttpResponse<ParsingDeleteResponse>> Delete(
+        string jobID,
+        ParsingDeleteParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

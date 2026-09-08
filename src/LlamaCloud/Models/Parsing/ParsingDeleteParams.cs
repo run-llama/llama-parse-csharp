@@ -6,20 +6,24 @@ using System.Net.Http;
 using System.Text.Json;
 using LlamaCloud.Core;
 
-namespace LlamaCloud.Models.Pipelines;
+namespace LlamaCloud.Models.Parsing;
 
 /// <summary>
-/// Search for pipelines by name, type, or project.
+/// Delete a parse job and its results.
 ///
-/// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
+/// <para>The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel
+/// a job that is still running before deleting it.</para>
+///
+/// <para>Returns the identifiers of the deleted job.</para>
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-[Obsolete("deprecated")]
-public record class PipelineListParams : ParamsBase
+public record class ParsingDeleteParams : ParamsBase
 {
+    public string? JobID { get; init; }
+
     public string? OrganizationID
     {
         get
@@ -28,31 +32,6 @@ public record class PipelineListParams : ParamsBase
             return this._rawQueryData.GetNullableClass<string>("organization_id");
         }
         init { this._rawQueryData.Set("organization_id", value); }
-    }
-
-    public string? PipelineName
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("pipeline_name");
-        }
-        init { this._rawQueryData.Set("pipeline_name", value); }
-    }
-
-    /// <summary>
-    /// Enum for representing the type of a pipeline
-    /// </summary>
-    public ApiEnum<string, PipelinePipelineType>? PipelineType
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<ApiEnum<string, PipelinePipelineType>>(
-                "pipeline_type"
-            );
-        }
-        init { this._rawQueryData.Set("pipeline_type", value); }
     }
 
     public string? ProjectID
@@ -65,25 +44,18 @@ public record class PipelineListParams : ParamsBase
         init { this._rawQueryData.Set("project_id", value); }
     }
 
-    public string? ProjectName
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("project_name");
-        }
-        init { this._rawQueryData.Set("project_name", value); }
-    }
-
-    public PipelineListParams() { }
+    public ParsingDeleteParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public PipelineListParams(PipelineListParams pipelineListParams)
-        : base(pipelineListParams) { }
+    public ParsingDeleteParams(ParsingDeleteParams parsingDeleteParams)
+        : base(parsingDeleteParams)
+    {
+        this.JobID = parsingDeleteParams.JobID;
+    }
 #pragma warning restore CS8618
 
-    public PipelineListParams(
+    public ParsingDeleteParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -94,25 +66,29 @@ public record class PipelineListParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    PipelineListParams(
+    ParsingDeleteParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
-        FrozenDictionary<string, JsonElement> rawQueryData
+        FrozenDictionary<string, JsonElement> rawQueryData,
+        string jobID
     )
     {
         this._rawHeaderData = new(rawHeaderData);
         this._rawQueryData = new(rawQueryData);
+        this.JobID = jobID;
     }
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static PipelineListParams FromRawUnchecked(
+    public static ParsingDeleteParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
-        IReadOnlyDictionary<string, JsonElement> rawQueryData
+        IReadOnlyDictionary<string, JsonElement> rawQueryData,
+        string jobID
     )
     {
         return new(
             FrozenDictionary.ToFrozenDictionary(rawHeaderData),
-            FrozenDictionary.ToFrozenDictionary(rawQueryData)
+            FrozenDictionary.ToFrozenDictionary(rawQueryData),
+            jobID
         );
     }
 
@@ -121,6 +97,7 @@ public record class PipelineListParams : ParamsBase
             FriendlyJsonPrinter.PrintValue(
                 new Dictionary<string, JsonElement>()
                 {
+                    ["JobID"] = JsonSerializer.SerializeToElement(this.JobID),
                     ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
                         JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
                     ),
@@ -132,19 +109,22 @@ public record class PipelineListParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(PipelineListParams? other)
+    public virtual bool Equals(ParsingDeleteParams? other)
     {
         if (other == null)
         {
             return false;
         }
-        return this._rawHeaderData.Equals(other._rawHeaderData)
+        return (this.JobID?.Equals(other.JobID) ?? other.JobID == null)
+            && this._rawHeaderData.Equals(other._rawHeaderData)
             && this._rawQueryData.Equals(other._rawQueryData);
     }
 
     public override Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/api/v1/pipelines")
+        return new UriBuilder(
+            options.BaseUrl.ToString().TrimEnd('/') + string.Format("/api/v2/parse/{0}", this.JobID)
+        )
         {
             Query = this.QueryString(options),
         }.Uri;
