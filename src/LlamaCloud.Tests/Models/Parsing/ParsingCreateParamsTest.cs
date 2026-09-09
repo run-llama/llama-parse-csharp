@@ -63,6 +63,7 @@ public class ParsingCreateParamsTest : TestBase
                 ImagesToSave = [Parsing::ImagesToSave.Embedded],
                 Markdown = new()
                 {
+                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,
@@ -257,6 +258,7 @@ public class ParsingCreateParamsTest : TestBase
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -581,6 +583,7 @@ public class ParsingCreateParamsTest : TestBase
                 ImagesToSave = [Parsing::ImagesToSave.Embedded],
                 Markdown = new()
                 {
+                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,
@@ -790,6 +793,7 @@ public class ParsingCreateParamsTest : TestBase
                 ImagesToSave = [Parsing::ImagesToSave.Embedded],
                 Markdown = new()
                 {
+                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,
@@ -1044,6 +1048,7 @@ public class ParsingCreateParamsTest : TestBase
                 ImagesToSave = [Parsing::ImagesToSave.Embedded],
                 Markdown = new()
                 {
+                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,
@@ -1261,9 +1266,8 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::Version.Latest)]
-    [InlineData(Parsing::Version.V2026_08_08)]
-    [InlineData(Parsing::Version.V2026_07_24)]
-    [InlineData(Parsing::Version.V2026_07_08)]
+    [InlineData(Parsing::Version.V2026_09_09)]
+    [InlineData(Parsing::Version.V2026_08_19)]
     [InlineData(Parsing::Version.V2026_06_15)]
     public void Validation_Works(Parsing::Version rawValue)
     {
@@ -1286,9 +1290,8 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::Version.Latest)]
-    [InlineData(Parsing::Version.V2026_08_08)]
-    [InlineData(Parsing::Version.V2026_07_24)]
-    [InlineData(Parsing::Version.V2026_07_08)]
+    [InlineData(Parsing::Version.V2026_09_09)]
+    [InlineData(Parsing::Version.V2026_08_19)]
     [InlineData(Parsing::Version.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::Version rawValue)
     {
@@ -2384,6 +2387,7 @@ public class OutputOptionsTest : TestBase
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2424,6 +2428,7 @@ public class OutputOptionsTest : TestBase
         ];
         Parsing::Markdown expectedMarkdown = new()
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -2489,6 +2494,7 @@ public class OutputOptionsTest : TestBase
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2535,6 +2541,7 @@ public class OutputOptionsTest : TestBase
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2582,6 +2589,7 @@ public class OutputOptionsTest : TestBase
         ];
         Parsing::Markdown expectedMarkdown = new()
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -2647,6 +2655,7 @@ public class OutputOptionsTest : TestBase
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2769,6 +2778,7 @@ public class OutputOptionsTest : TestBase
             ],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2811,6 +2821,7 @@ public class OutputOptionsTest : TestBase
             ],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2848,6 +2859,7 @@ public class OutputOptionsTest : TestBase
             ],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2894,6 +2906,7 @@ public class OutputOptionsTest : TestBase
             ],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -2937,6 +2950,7 @@ public class OutputOptionsTest : TestBase
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             Markdown = new()
             {
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 InlineImages = true,
@@ -3091,6 +3105,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3103,6 +3118,7 @@ public class MarkdownTest : TestBase
             },
         };
 
+        bool expectedAnnotateLineNumbers = true;
         bool expectedAnnotateLinks = true;
         bool expectedAnnotateRevisions = true;
         bool expectedInlineImages = true;
@@ -3114,6 +3130,7 @@ public class MarkdownTest : TestBase
             OutputTablesAsMarkdown = true,
         };
 
+        Assert.Equal(expectedAnnotateLineNumbers, model.AnnotateLineNumbers);
         Assert.Equal(expectedAnnotateLinks, model.AnnotateLinks);
         Assert.Equal(expectedAnnotateRevisions, model.AnnotateRevisions);
         Assert.Equal(expectedInlineImages, model.InlineImages);
@@ -3125,6 +3142,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3151,6 +3169,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3170,6 +3189,7 @@ public class MarkdownTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        bool expectedAnnotateLineNumbers = true;
         bool expectedAnnotateLinks = true;
         bool expectedAnnotateRevisions = true;
         bool expectedInlineImages = true;
@@ -3181,6 +3201,7 @@ public class MarkdownTest : TestBase
             OutputTablesAsMarkdown = true,
         };
 
+        Assert.Equal(expectedAnnotateLineNumbers, deserialized.AnnotateLineNumbers);
         Assert.Equal(expectedAnnotateLinks, deserialized.AnnotateLinks);
         Assert.Equal(expectedAnnotateRevisions, deserialized.AnnotateRevisions);
         Assert.Equal(expectedInlineImages, deserialized.InlineImages);
@@ -3192,6 +3213,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3212,6 +3234,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3226,6 +3249,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3239,6 +3263,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3256,6 +3281,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -3281,6 +3307,8 @@ public class MarkdownTest : TestBase
             },
         };
 
+        Assert.Null(model.AnnotateLineNumbers);
+        Assert.False(model.RawData.ContainsKey("annotate_line_numbers"));
         Assert.Null(model.AnnotateLinks);
         Assert.False(model.RawData.ContainsKey("annotate_links"));
         Assert.Null(model.AnnotateRevisions);
@@ -3319,11 +3347,14 @@ public class MarkdownTest : TestBase
                 OutputTablesAsMarkdown = true,
             },
 
+            AnnotateLineNumbers = null,
             AnnotateLinks = null,
             AnnotateRevisions = null,
             InlineImages = null,
         };
 
+        Assert.Null(model.AnnotateLineNumbers);
+        Assert.True(model.RawData.ContainsKey("annotate_line_numbers"));
         Assert.Null(model.AnnotateLinks);
         Assert.True(model.RawData.ContainsKey("annotate_links"));
         Assert.Null(model.AnnotateRevisions);
@@ -3345,6 +3376,7 @@ public class MarkdownTest : TestBase
                 OutputTablesAsMarkdown = true,
             },
 
+            AnnotateLineNumbers = null,
             AnnotateLinks = null,
             AnnotateRevisions = null,
             InlineImages = null,
@@ -3358,6 +3390,7 @@ public class MarkdownTest : TestBase
     {
         var model = new Parsing::Markdown
         {
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             InlineImages = true,
@@ -7665,9 +7698,8 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_08_08)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_07_24)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_07_08)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_09_09)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_08_19)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void Validation_Works(Parsing::ParsingConfVersion rawValue)
     {
@@ -7690,9 +7722,8 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_08_08)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_07_24)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_07_08)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_09_09)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_08_19)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::ParsingConfVersion rawValue)
     {

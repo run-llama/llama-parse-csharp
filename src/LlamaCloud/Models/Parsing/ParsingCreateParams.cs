@@ -59,7 +59,7 @@ public record class ParsingCreateParams : ParamsBase
     /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-08` - `agentic`: `2026-07-24` - `agentic_plus`: `2026-07-08`</para>
+    /// `2026-08-19` - `agentic`: `2026-09-09` - `agentic_plus`: `2026-08-19`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -570,8 +570,8 @@ sealed class TierConverter : JsonConverter<Tier>
 /// <summary>
 /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-08`
-/// - `agentic`: `2026-07-24` - `agentic_plus`: `2026-07-08`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
+/// - `agentic`: `2026-09-09` - `agentic_plus`: `2026-08-19`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -579,9 +579,8 @@ sealed class TierConverter : JsonConverter<Tier>
 public enum Version
 {
     Latest,
-    V2026_08_08,
-    V2026_07_24,
-    V2026_07_08,
+    V2026_09_09,
+    V2026_08_19,
     V2026_06_15,
 }
 
@@ -596,9 +595,8 @@ sealed class VersionConverter : JsonConverter<Version>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => Version.Latest,
-            "2026-08-08" => Version.V2026_08_08,
-            "2026-07-24" => Version.V2026_07_24,
-            "2026-07-08" => Version.V2026_07_08,
+            "2026-09-09" => Version.V2026_09_09,
+            "2026-08-19" => Version.V2026_08_19,
             "2026-06-15" => Version.V2026_06_15,
             _ => (Version)(-1),
         };
@@ -611,9 +609,8 @@ sealed class VersionConverter : JsonConverter<Version>
             value switch
             {
                 Version.Latest => "latest",
-                Version.V2026_08_08 => "2026-08-08",
-                Version.V2026_07_24 => "2026-07-24",
-                Version.V2026_07_08 => "2026-07-08",
+                Version.V2026_09_09 => "2026-09-09",
+                Version.V2026_08_19 => "2026-08-19",
                 Version.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -1616,6 +1613,19 @@ sealed class ImagesToSaveConverter : JsonConverter<ImagesToSave>
 public sealed record class Markdown : JsonModel
 {
     /// <summary>
+    /// Detect printed gutter line numbers and return their Markdown offsets
+    /// </summary>
+    public bool? AnnotateLineNumbers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("annotate_line_numbers");
+        }
+        init { this._rawData.Set("annotate_line_numbers", value); }
+    }
+
+    /// <summary>
     /// Add link annotations to markdown output in the format [text](url). When false,
     /// only the link text is included
     /// </summary>
@@ -1680,6 +1690,7 @@ public sealed record class Markdown : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.AnnotateLineNumbers;
         _ = this.AnnotateLinks;
         _ = this.AnnotateRevisions;
         _ = this.InlineImages;
@@ -3392,7 +3403,7 @@ public sealed record class ParsingConf : JsonModel
     /// or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-08` - `agentic`: `2026-07-24` - `agentic_plus`: `2026-07-08`</para>
+    /// `2026-08-19` - `agentic`: `2026-09-09` - `agentic_plus`: `2026-08-19`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -3913,8 +3924,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin
 /// one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-08`
-/// - `agentic`: `2026-07-24` - `agentic_plus`: `2026-07-08`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
+/// - `agentic`: `2026-09-09` - `agentic_plus`: `2026-08-19`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -3922,9 +3933,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 public enum ParsingConfVersion
 {
     Latest,
-    V2026_08_08,
-    V2026_07_24,
-    V2026_07_08,
+    V2026_09_09,
+    V2026_08_19,
     V2026_06_15,
 }
 
@@ -3939,9 +3949,8 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => ParsingConfVersion.Latest,
-            "2026-08-08" => ParsingConfVersion.V2026_08_08,
-            "2026-07-24" => ParsingConfVersion.V2026_07_24,
-            "2026-07-08" => ParsingConfVersion.V2026_07_08,
+            "2026-09-09" => ParsingConfVersion.V2026_09_09,
+            "2026-08-19" => ParsingConfVersion.V2026_08_19,
             "2026-06-15" => ParsingConfVersion.V2026_06_15,
             _ => (ParsingConfVersion)(-1),
         };
@@ -3958,9 +3967,8 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
             value switch
             {
                 ParsingConfVersion.Latest => "latest",
-                ParsingConfVersion.V2026_08_08 => "2026-08-08",
-                ParsingConfVersion.V2026_07_24 => "2026-07-24",
-                ParsingConfVersion.V2026_07_08 => "2026-07-08",
+                ParsingConfVersion.V2026_09_09 => "2026-09-09",
+                ParsingConfVersion.V2026_08_19 => "2026-08-19",
                 ParsingConfVersion.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
