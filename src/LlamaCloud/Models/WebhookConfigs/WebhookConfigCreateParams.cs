@@ -61,8 +61,7 @@ public record class WebhookConfigCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// Events to subscribe to. If null, all events are delivered. An empty list subscribes
-    /// to nothing and is rejected.
+    /// Events to subscribe to. If null, all events are delivered.
     /// </summary>
     public IReadOnlyList<ApiEnum<string, WebhookEvent>>? WebhookEvents
     {

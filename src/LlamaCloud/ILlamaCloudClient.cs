@@ -53,6 +53,8 @@ public interface ILlamaCloudClient : IDisposable
 
     IFileService Files { get; }
 
+    ISheetService Sheets { get; }
+
     ISplitService Split { get; }
 
     IParsingService Parsing { get; }
@@ -116,6 +118,8 @@ public interface ILlamaCloudClientWithRawResponse : IDisposable
     ILlamaCloudClientWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     IFileServiceWithRawResponse Files { get; }
+
+    ISheetServiceWithRawResponse Sheets { get; }
 
     ISplitServiceWithRawResponse Split { get; }
 

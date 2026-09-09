@@ -261,7 +261,7 @@ public class ConfigurationCreateParametersTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = ParseTier.Fast,
+            ParseTier = "fast",
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -317,7 +317,6 @@ public class ConfigurationCreateParametersTest : TestBase
                 ImagesToSave = [ImagesToSave.Embedded],
                 Markdown = new()
                 {
-                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,
@@ -465,12 +464,7 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new()
-            {
-                AllowUncategorized = AllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
-            },
+            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
         value.Validate();
     }
@@ -554,7 +548,7 @@ public class ConfigurationCreateParametersTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = ParseTier.Fast,
+            ParseTier = "fast",
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -616,7 +610,6 @@ public class ConfigurationCreateParametersTest : TestBase
                 ImagesToSave = [ImagesToSave.Embedded],
                 Markdown = new()
                 {
-                    AnnotateLineNumbers = true,
                     AnnotateLinks = true,
                     AnnotateRevisions = true,
                     InlineImages = true,
@@ -770,12 +763,7 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
-            SplittingStrategy = new()
-            {
-                AllowUncategorized = AllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
-            },
+            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ConfigurationCreateParameters>(

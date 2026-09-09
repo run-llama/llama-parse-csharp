@@ -91,16 +91,6 @@ public record class FileListParams : ParamsBase
         init { this._rawQueryData.Set("order_by", value); }
     }
 
-    public string? ProjectID
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("project_id");
-        }
-        init { this._rawQueryData.Set("project_id", value); }
-    }
-
     /// <summary>
     /// Filter by file statuses
     /// </summary>

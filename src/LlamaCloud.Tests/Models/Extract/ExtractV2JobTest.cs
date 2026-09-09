@@ -39,7 +39,7 @@ public class ExtractV2JobTest : TestBase
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = ParseTier.Fast,
+                ParseTier = "fast",
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -202,7 +202,7 @@ public class ExtractV2JobTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = ParseTier.Fast,
+            ParseTier = "fast",
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -381,7 +381,7 @@ public class ExtractV2JobTest : TestBase
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = ParseTier.Fast,
+                ParseTier = "fast",
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -558,7 +558,7 @@ public class ExtractV2JobTest : TestBase
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = ParseTier.Fast,
+                ParseTier = "fast",
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -728,7 +728,7 @@ public class ExtractV2JobTest : TestBase
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-            ParseTier = ParseTier.Fast,
+            ParseTier = "fast",
             SheetNames = ["Sheet 1", "Q4 Summary"],
             SpreadsheetMode = true,
             SystemPrompt =
@@ -907,7 +907,7 @@ public class ExtractV2JobTest : TestBase
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = ParseTier.Fast,
+                ParseTier = "fast",
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -1184,7 +1184,7 @@ public class ExtractV2JobTest : TestBase
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = ParseTier.Fast,
+                ParseTier = "fast",
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -1350,11 +1350,11 @@ public class ExtractResultTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent2ItemsValidationWorks()
+    public void UnnamedSchemaWithArrayParent1ItemsValidationWorks()
     {
         ExtractResult value = new(
             [
-                new Dictionary<string, UnnamedSchemaWithArrayParent2Item?>()
+                new Dictionary<string, UnnamedSchemaWithArrayParent1Item?>()
                 {
                     {
                         "foo",
@@ -1398,11 +1398,11 @@ public class ExtractResultTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent2ItemsSerializationRoundtripWorks()
+    public void UnnamedSchemaWithArrayParent1ItemsSerializationRoundtripWorks()
     {
         ExtractResult value = new(
             [
-                new Dictionary<string, UnnamedSchemaWithArrayParent2Item?>()
+                new Dictionary<string, UnnamedSchemaWithArrayParent1Item?>()
                 {
                     {
                         "foo",
@@ -1539,12 +1539,12 @@ public class UnionMember0ItemTest : TestBase
     }
 }
 
-public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
+public class UnnamedSchemaWithArrayParent1ItemTest : TestBase
 {
     [Fact]
     public void JsonElementsValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent1Item value = new(
             new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1556,7 +1556,7 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void JsonElementsValidationWorks1()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent1Item value = new(
             [JsonSerializer.Deserialize<JsonElement>("{}")]
         );
         value.Validate();
@@ -1565,35 +1565,35 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void StringValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = "string";
+        UnnamedSchemaWithArrayParent1Item value = "string";
         value.Validate();
     }
 
     [Fact]
     public void DoubleValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = 0;
+        UnnamedSchemaWithArrayParent1Item value = 0;
         value.Validate();
     }
 
     [Fact]
     public void BoolValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = true;
+        UnnamedSchemaWithArrayParent1Item value = true;
         value.Validate();
     }
 
     [Fact]
     public void JsonElementsSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent1Item value = new(
             new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             }
         );
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1604,11 +1604,11 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void JsonElementsSerializationRoundtripWorks1()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent1Item value = new(
             [JsonSerializer.Deserialize<JsonElement>("{}")]
         );
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1619,9 +1619,9 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void StringSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = "string";
+        UnnamedSchemaWithArrayParent1Item value = "string";
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1632,9 +1632,9 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void DoubleSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = 0;
+        UnnamedSchemaWithArrayParent1Item value = 0;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1645,9 +1645,9 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void BoolSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = true;
+        UnnamedSchemaWithArrayParent1Item value = true;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent1Item>(
             element,
             ModelBase.SerializerOptions
         );

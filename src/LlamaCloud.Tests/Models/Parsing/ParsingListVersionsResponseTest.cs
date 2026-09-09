@@ -13,30 +13,16 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_09_07],
-            AgenticPlus = [AgenticPlus.V2026_08_19],
-            CostEffective = [CostEffective.V2026_08_19],
+            Agentic = [Agentic.V2026_07_24],
+            AgenticPlus = [AgenticPlus.V2026_07_08],
+            CostEffective = [CostEffective.V2026_08_08],
             Fast = [Fast.V2026_06_15],
-            Latest = new()
-            {
-                Agentic = "agentic",
-                AgenticPlus = "agentic_plus",
-                CostEffective = "cost_effective",
-                Fast = "fast",
-            },
         };
 
-        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_09_07];
-        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_08_19];
-        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_19];
+        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_07_24];
+        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_07_08];
+        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_08];
         List<ApiEnum<string, Fast>> expectedFast = [Fast.V2026_06_15];
-        Latest expectedLatest = new()
-        {
-            Agentic = "agentic",
-            AgenticPlus = "agentic_plus",
-            CostEffective = "cost_effective",
-            Fast = "fast",
-        };
 
         Assert.Equal(expectedAgentic.Count, model.Agentic.Count);
         for (int i = 0; i < expectedAgentic.Count; i++)
@@ -58,7 +44,6 @@ public class ParsingListVersionsResponseTest : TestBase
         {
             Assert.Equal(expectedFast[i], model.Fast[i]);
         }
-        Assert.Equal(expectedLatest, model.Latest);
     }
 
     [Fact]
@@ -66,17 +51,10 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_09_07],
-            AgenticPlus = [AgenticPlus.V2026_08_19],
-            CostEffective = [CostEffective.V2026_08_19],
+            Agentic = [Agentic.V2026_07_24],
+            AgenticPlus = [AgenticPlus.V2026_07_08],
+            CostEffective = [CostEffective.V2026_08_08],
             Fast = [Fast.V2026_06_15],
-            Latest = new()
-            {
-                Agentic = "agentic",
-                AgenticPlus = "agentic_plus",
-                CostEffective = "cost_effective",
-                Fast = "fast",
-            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -93,17 +71,10 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_09_07],
-            AgenticPlus = [AgenticPlus.V2026_08_19],
-            CostEffective = [CostEffective.V2026_08_19],
+            Agentic = [Agentic.V2026_07_24],
+            AgenticPlus = [AgenticPlus.V2026_07_08],
+            CostEffective = [CostEffective.V2026_08_08],
             Fast = [Fast.V2026_06_15],
-            Latest = new()
-            {
-                Agentic = "agentic",
-                AgenticPlus = "agentic_plus",
-                CostEffective = "cost_effective",
-                Fast = "fast",
-            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -113,17 +84,10 @@ public class ParsingListVersionsResponseTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_09_07];
-        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_08_19];
-        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_19];
+        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_07_24];
+        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_07_08];
+        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_08_08];
         List<ApiEnum<string, Fast>> expectedFast = [Fast.V2026_06_15];
-        Latest expectedLatest = new()
-        {
-            Agentic = "agentic",
-            AgenticPlus = "agentic_plus",
-            CostEffective = "cost_effective",
-            Fast = "fast",
-        };
 
         Assert.Equal(expectedAgentic.Count, deserialized.Agentic.Count);
         for (int i = 0; i < expectedAgentic.Count; i++)
@@ -145,7 +109,6 @@ public class ParsingListVersionsResponseTest : TestBase
         {
             Assert.Equal(expectedFast[i], deserialized.Fast[i]);
         }
-        Assert.Equal(expectedLatest, deserialized.Latest);
     }
 
     [Fact]
@@ -153,17 +116,10 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_09_07],
-            AgenticPlus = [AgenticPlus.V2026_08_19],
-            CostEffective = [CostEffective.V2026_08_19],
+            Agentic = [Agentic.V2026_07_24],
+            AgenticPlus = [AgenticPlus.V2026_07_08],
+            CostEffective = [CostEffective.V2026_08_08],
             Fast = [Fast.V2026_06_15],
-            Latest = new()
-            {
-                Agentic = "agentic",
-                AgenticPlus = "agentic_plus",
-                CostEffective = "cost_effective",
-                Fast = "fast",
-            },
         };
 
         model.Validate();
@@ -174,17 +130,10 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_09_07],
-            AgenticPlus = [AgenticPlus.V2026_08_19],
-            CostEffective = [CostEffective.V2026_08_19],
+            Agentic = [Agentic.V2026_07_24],
+            AgenticPlus = [AgenticPlus.V2026_07_08],
+            CostEffective = [CostEffective.V2026_08_08],
             Fast = [Fast.V2026_06_15],
-            Latest = new()
-            {
-                Agentic = "agentic",
-                AgenticPlus = "agentic_plus",
-                CostEffective = "cost_effective",
-                Fast = "fast",
-            },
         };
 
         ParsingListVersionsResponse copied = new(model);
@@ -196,8 +145,6 @@ public class ParsingListVersionsResponseTest : TestBase
 public class AgenticTest : TestBase
 {
     [Theory]
-    [InlineData(Agentic.V2026_09_07)]
-    [InlineData(Agentic.V2026_08_19)]
     [InlineData(Agentic.V2026_07_24)]
     [InlineData(Agentic.V2026_07_23)]
     [InlineData(Agentic.V2026_07_15)]
@@ -260,8 +207,6 @@ public class AgenticTest : TestBase
     }
 
     [Theory]
-    [InlineData(Agentic.V2026_09_07)]
-    [InlineData(Agentic.V2026_08_19)]
     [InlineData(Agentic.V2026_07_24)]
     [InlineData(Agentic.V2026_07_23)]
     [InlineData(Agentic.V2026_07_15)]
@@ -338,7 +283,6 @@ public class AgenticTest : TestBase
 public class AgenticPlusTest : TestBase
 {
     [Theory]
-    [InlineData(AgenticPlus.V2026_08_19)]
     [InlineData(AgenticPlus.V2026_07_08)]
     [InlineData(AgenticPlus.V2026_06_18)]
     [InlineData(AgenticPlus.V2026_06_11)]
@@ -398,7 +342,6 @@ public class AgenticPlusTest : TestBase
     }
 
     [Theory]
-    [InlineData(AgenticPlus.V2026_08_19)]
     [InlineData(AgenticPlus.V2026_07_08)]
     [InlineData(AgenticPlus.V2026_06_18)]
     [InlineData(AgenticPlus.V2026_06_11)]
@@ -472,8 +415,6 @@ public class AgenticPlusTest : TestBase
 public class CostEffectiveTest : TestBase
 {
     [Theory]
-    [InlineData(CostEffective.V2026_08_19)]
-    [InlineData(CostEffective.V2026_08_11)]
     [InlineData(CostEffective.V2026_08_08)]
     [InlineData(CostEffective.V2026_07_23)]
     [InlineData(CostEffective.V2026_06_26)]
@@ -507,8 +448,6 @@ public class CostEffectiveTest : TestBase
     }
 
     [Theory]
-    [InlineData(CostEffective.V2026_08_19)]
-    [InlineData(CostEffective.V2026_08_11)]
     [InlineData(CostEffective.V2026_08_08)]
     [InlineData(CostEffective.V2026_07_23)]
     [InlineData(CostEffective.V2026_06_26)]
@@ -608,103 +547,5 @@ public class FastTest : TestBase
         );
 
         Assert.Equal(value, deserialized);
-    }
-}
-
-public class LatestTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Latest
-        {
-            Agentic = "agentic",
-            AgenticPlus = "agentic_plus",
-            CostEffective = "cost_effective",
-            Fast = "fast",
-        };
-
-        string expectedAgentic = "agentic";
-        string expectedAgenticPlus = "agentic_plus";
-        string expectedCostEffective = "cost_effective";
-        string expectedFast = "fast";
-
-        Assert.Equal(expectedAgentic, model.Agentic);
-        Assert.Equal(expectedAgenticPlus, model.AgenticPlus);
-        Assert.Equal(expectedCostEffective, model.CostEffective);
-        Assert.Equal(expectedFast, model.Fast);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Latest
-        {
-            Agentic = "agentic",
-            AgenticPlus = "agentic_plus",
-            CostEffective = "cost_effective",
-            Fast = "fast",
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Latest>(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Latest
-        {
-            Agentic = "agentic",
-            AgenticPlus = "agentic_plus",
-            CostEffective = "cost_effective",
-            Fast = "fast",
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Latest>(element, ModelBase.SerializerOptions);
-        Assert.NotNull(deserialized);
-
-        string expectedAgentic = "agentic";
-        string expectedAgenticPlus = "agentic_plus";
-        string expectedCostEffective = "cost_effective";
-        string expectedFast = "fast";
-
-        Assert.Equal(expectedAgentic, deserialized.Agentic);
-        Assert.Equal(expectedAgenticPlus, deserialized.AgenticPlus);
-        Assert.Equal(expectedCostEffective, deserialized.CostEffective);
-        Assert.Equal(expectedFast, deserialized.Fast);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Latest
-        {
-            Agentic = "agentic",
-            AgenticPlus = "agentic_plus",
-            CostEffective = "cost_effective",
-            Fast = "fast",
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Latest
-        {
-            Agentic = "agentic",
-            AgenticPlus = "agentic_plus",
-            CostEffective = "cost_effective",
-            Fast = "fast",
-        };
-
-        Latest copied = new(model);
-
-        Assert.Equal(model, copied);
     }
 }

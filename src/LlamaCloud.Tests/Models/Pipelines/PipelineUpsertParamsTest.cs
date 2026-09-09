@@ -59,7 +59,6 @@ public class PipelineUpsertParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
-                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,
@@ -309,7 +308,6 @@ public class PipelineUpsertParamsTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -694,7 +692,6 @@ public class PipelineUpsertParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
-                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,
@@ -914,7 +911,6 @@ public class PipelineUpsertParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
-                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,
@@ -1208,7 +1204,6 @@ public class PipelineUpsertParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
-                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,

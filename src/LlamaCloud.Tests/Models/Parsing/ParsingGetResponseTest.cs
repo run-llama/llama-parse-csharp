@@ -239,22 +239,11 @@ public class ParsingGetResponseTest : TestBase
                         PageNumber = 0,
                         Footer = "footer",
                         Header = "header",
-                        LineNumbers =
-                        [
-                            new()
-                            {
-                                EndIndex = 0,
-                                LineNumberValue = "line_number",
-                                StartIndex = 0,
-                            },
-                        ],
                     },
                 ]
             ),
             MarkdownFull = "markdown_full",
-            Metadata = new()
-            {
-                Pages =
+            Metadata = new(
                 [
                     new()
                     {
@@ -267,18 +256,8 @@ public class ParsingGetResponseTest : TestBase
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
                     },
-                ],
-                Document = new()
-                {
-                    Confidence = 0,
-                    ConfidenceBreakdown = new()
-                    {
-                        MinPageScore = 0,
-                        ScoredPages = 0,
-                        TotalPages = 0,
-                    },
-                },
-            },
+                ]
+            ),
             RawParameters = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -524,22 +503,11 @@ public class ParsingGetResponseTest : TestBase
                     PageNumber = 0,
                     Footer = "footer",
                     Header = "header",
-                    LineNumbers =
-                    [
-                        new()
-                        {
-                            EndIndex = 0,
-                            LineNumberValue = "line_number",
-                            StartIndex = 0,
-                        },
-                    ],
                 },
             ]
         );
         string expectedMarkdownFull = "markdown_full";
-        Parsing::Metadata expectedMetadata = new()
-        {
-            Pages =
+        Parsing::Metadata expectedMetadata = new(
             [
                 new()
                 {
@@ -552,18 +520,8 @@ public class ParsingGetResponseTest : TestBase
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
                 },
-            ],
-            Document = new()
-            {
-                Confidence = 0,
-                ConfidenceBreakdown = new()
-                {
-                    MinPageScore = 0,
-                    ScoredPages = 0,
-                    TotalPages = 0,
-                },
-            },
-        };
+            ]
+        );
         Dictionary<string, JsonElement> expectedRawParameters = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -848,22 +806,11 @@ public class ParsingGetResponseTest : TestBase
                         PageNumber = 0,
                         Footer = "footer",
                         Header = "header",
-                        LineNumbers =
-                        [
-                            new()
-                            {
-                                EndIndex = 0,
-                                LineNumberValue = "line_number",
-                                StartIndex = 0,
-                            },
-                        ],
                     },
                 ]
             ),
             MarkdownFull = "markdown_full",
-            Metadata = new()
-            {
-                Pages =
+            Metadata = new(
                 [
                     new()
                     {
@@ -876,18 +823,8 @@ public class ParsingGetResponseTest : TestBase
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
                     },
-                ],
-                Document = new()
-                {
-                    Confidence = 0,
-                    ConfidenceBreakdown = new()
-                    {
-                        MinPageScore = 0,
-                        ScoredPages = 0,
-                        TotalPages = 0,
-                    },
-                },
-            },
+                ]
+            ),
             RawParameters = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1147,22 +1084,11 @@ public class ParsingGetResponseTest : TestBase
                         PageNumber = 0,
                         Footer = "footer",
                         Header = "header",
-                        LineNumbers =
-                        [
-                            new()
-                            {
-                                EndIndex = 0,
-                                LineNumberValue = "line_number",
-                                StartIndex = 0,
-                            },
-                        ],
                     },
                 ]
             ),
             MarkdownFull = "markdown_full",
-            Metadata = new()
-            {
-                Pages =
+            Metadata = new(
                 [
                     new()
                     {
@@ -1175,18 +1101,8 @@ public class ParsingGetResponseTest : TestBase
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
                     },
-                ],
-                Document = new()
-                {
-                    Confidence = 0,
-                    ConfidenceBreakdown = new()
-                    {
-                        MinPageScore = 0,
-                        ScoredPages = 0,
-                        TotalPages = 0,
-                    },
-                },
-            },
+                ]
+            ),
             RawParameters = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1439,22 +1355,11 @@ public class ParsingGetResponseTest : TestBase
                     PageNumber = 0,
                     Footer = "footer",
                     Header = "header",
-                    LineNumbers =
-                    [
-                        new()
-                        {
-                            EndIndex = 0,
-                            LineNumberValue = "line_number",
-                            StartIndex = 0,
-                        },
-                    ],
                 },
             ]
         );
         string expectedMarkdownFull = "markdown_full";
-        Parsing::Metadata expectedMetadata = new()
-        {
-            Pages =
+        Parsing::Metadata expectedMetadata = new(
             [
                 new()
                 {
@@ -1467,18 +1372,8 @@ public class ParsingGetResponseTest : TestBase
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
                 },
-            ],
-            Document = new()
-            {
-                Confidence = 0,
-                ConfidenceBreakdown = new()
-                {
-                    MinPageScore = 0,
-                    ScoredPages = 0,
-                    TotalPages = 0,
-                },
-            },
-        };
+            ]
+        );
         Dictionary<string, JsonElement> expectedRawParameters = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1763,22 +1658,11 @@ public class ParsingGetResponseTest : TestBase
                         PageNumber = 0,
                         Footer = "footer",
                         Header = "header",
-                        LineNumbers =
-                        [
-                            new()
-                            {
-                                EndIndex = 0,
-                                LineNumberValue = "line_number",
-                                StartIndex = 0,
-                            },
-                        ],
                     },
                 ]
             ),
             MarkdownFull = "markdown_full",
-            Metadata = new()
-            {
-                Pages =
+            Metadata = new(
                 [
                     new()
                     {
@@ -1791,18 +1675,8 @@ public class ParsingGetResponseTest : TestBase
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
                     },
-                ],
-                Document = new()
-                {
-                    Confidence = 0,
-                    ConfidenceBreakdown = new()
-                    {
-                        MinPageScore = 0,
-                        ScoredPages = 0,
-                        TotalPages = 0,
-                    },
-                },
-            },
+                ]
+            ),
             RawParameters = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -2230,22 +2104,11 @@ public class ParsingGetResponseTest : TestBase
                         PageNumber = 0,
                         Footer = "footer",
                         Header = "header",
-                        LineNumbers =
-                        [
-                            new()
-                            {
-                                EndIndex = 0,
-                                LineNumberValue = "line_number",
-                                StartIndex = 0,
-                            },
-                        ],
                     },
                 ]
             ),
             MarkdownFull = "markdown_full",
-            Metadata = new()
-            {
-                Pages =
+            Metadata = new(
                 [
                     new()
                     {
@@ -2258,18 +2121,8 @@ public class ParsingGetResponseTest : TestBase
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
                     },
-                ],
-                Document = new()
-                {
-                    Confidence = 0,
-                    ConfidenceBreakdown = new()
-                    {
-                        MinPageScore = 0,
-                        ScoredPages = 0,
-                        TotalPages = 0,
-                    },
-                },
-            },
+                ]
+            ),
             RawParameters = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -8963,15 +8816,6 @@ public class ParsingGetResponseMarkdownTest : TestBase
                     PageNumber = 0,
                     Footer = "footer",
                     Header = "header",
-                    LineNumbers =
-                    [
-                        new()
-                        {
-                            EndIndex = 0,
-                            LineNumberValue = "line_number",
-                            StartIndex = 0,
-                        },
-                    ],
                 },
             ],
         };
@@ -8984,15 +8828,6 @@ public class ParsingGetResponseMarkdownTest : TestBase
                 PageNumber = 0,
                 Footer = "footer",
                 Header = "header",
-                LineNumbers =
-                [
-                    new()
-                    {
-                        EndIndex = 0,
-                        LineNumberValue = "line_number",
-                        StartIndex = 0,
-                    },
-                ],
             },
         ];
 
@@ -9016,15 +8851,6 @@ public class ParsingGetResponseMarkdownTest : TestBase
                     PageNumber = 0,
                     Footer = "footer",
                     Header = "header",
-                    LineNumbers =
-                    [
-                        new()
-                        {
-                            EndIndex = 0,
-                            LineNumberValue = "line_number",
-                            StartIndex = 0,
-                        },
-                    ],
                 },
             ],
         };
@@ -9051,15 +8877,6 @@ public class ParsingGetResponseMarkdownTest : TestBase
                     PageNumber = 0,
                     Footer = "footer",
                     Header = "header",
-                    LineNumbers =
-                    [
-                        new()
-                        {
-                            EndIndex = 0,
-                            LineNumberValue = "line_number",
-                            StartIndex = 0,
-                        },
-                    ],
                 },
             ],
         };
@@ -9079,15 +8896,6 @@ public class ParsingGetResponseMarkdownTest : TestBase
                 PageNumber = 0,
                 Footer = "footer",
                 Header = "header",
-                LineNumbers =
-                [
-                    new()
-                    {
-                        EndIndex = 0,
-                        LineNumberValue = "line_number",
-                        StartIndex = 0,
-                    },
-                ],
             },
         ];
 
@@ -9111,15 +8919,6 @@ public class ParsingGetResponseMarkdownTest : TestBase
                     PageNumber = 0,
                     Footer = "footer",
                     Header = "header",
-                    LineNumbers =
-                    [
-                        new()
-                        {
-                            EndIndex = 0,
-                            LineNumberValue = "line_number",
-                            StartIndex = 0,
-                        },
-                    ],
                 },
             ],
         };
@@ -9140,15 +8939,6 @@ public class ParsingGetResponseMarkdownTest : TestBase
                     PageNumber = 0,
                     Footer = "footer",
                     Header = "header",
-                    LineNumbers =
-                    [
-                        new()
-                        {
-                            EndIndex = 0,
-                            LineNumberValue = "line_number",
-                            StartIndex = 0,
-                        },
-                    ],
                 },
             ],
         };
@@ -9170,15 +8960,6 @@ public class ParsingGetResponseMarkdownPageTest : TestBase
             PageNumber = 0,
             Footer = "footer",
             Header = "header",
-            LineNumbers =
-            [
-                new()
-                {
-                    EndIndex = 0,
-                    LineNumberValue = "line_number",
-                    StartIndex = 0,
-                },
-            ],
         };
         value.Validate();
     }
@@ -9203,15 +8984,6 @@ public class ParsingGetResponseMarkdownPageTest : TestBase
             PageNumber = 0,
             Footer = "footer",
             Header = "header",
-            LineNumbers =
-            [
-                new()
-                {
-                    EndIndex = 0,
-                    LineNumberValue = "line_number",
-                    StartIndex = 0,
-                },
-            ],
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseMarkdownPage>(
@@ -9251,15 +9023,6 @@ public class MarkdownResultPageTest : TestBase
             PageNumber = 0,
             Footer = "footer",
             Header = "header",
-            LineNumbers =
-            [
-                new()
-                {
-                    EndIndex = 0,
-                    LineNumberValue = "line_number",
-                    StartIndex = 0,
-                },
-            ],
         };
 
         string expectedMarkdown = "markdown";
@@ -9267,27 +9030,12 @@ public class MarkdownResultPageTest : TestBase
         JsonElement expectedSuccess = JsonSerializer.SerializeToElement(true);
         string expectedFooter = "footer";
         string expectedHeader = "header";
-        List<Parsing::LineNumber> expectedLineNumbers =
-        [
-            new()
-            {
-                EndIndex = 0,
-                LineNumberValue = "line_number",
-                StartIndex = 0,
-            },
-        ];
 
         Assert.Equal(expectedMarkdown, model.Markdown);
         Assert.Equal(expectedPageNumber, model.PageNumber);
         Assert.True(JsonElement.DeepEquals(expectedSuccess, model.Success));
         Assert.Equal(expectedFooter, model.Footer);
         Assert.Equal(expectedHeader, model.Header);
-        Assert.NotNull(model.LineNumbers);
-        Assert.Equal(expectedLineNumbers.Count, model.LineNumbers.Count);
-        for (int i = 0; i < expectedLineNumbers.Count; i++)
-        {
-            Assert.Equal(expectedLineNumbers[i], model.LineNumbers[i]);
-        }
     }
 
     [Fact]
@@ -9299,15 +9047,6 @@ public class MarkdownResultPageTest : TestBase
             PageNumber = 0,
             Footer = "footer",
             Header = "header",
-            LineNumbers =
-            [
-                new()
-                {
-                    EndIndex = 0,
-                    LineNumberValue = "line_number",
-                    StartIndex = 0,
-                },
-            ],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -9328,15 +9067,6 @@ public class MarkdownResultPageTest : TestBase
             PageNumber = 0,
             Footer = "footer",
             Header = "header",
-            LineNumbers =
-            [
-                new()
-                {
-                    EndIndex = 0,
-                    LineNumberValue = "line_number",
-                    StartIndex = 0,
-                },
-            ],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -9351,27 +9081,12 @@ public class MarkdownResultPageTest : TestBase
         JsonElement expectedSuccess = JsonSerializer.SerializeToElement(true);
         string expectedFooter = "footer";
         string expectedHeader = "header";
-        List<Parsing::LineNumber> expectedLineNumbers =
-        [
-            new()
-            {
-                EndIndex = 0,
-                LineNumberValue = "line_number",
-                StartIndex = 0,
-            },
-        ];
 
         Assert.Equal(expectedMarkdown, deserialized.Markdown);
         Assert.Equal(expectedPageNumber, deserialized.PageNumber);
         Assert.True(JsonElement.DeepEquals(expectedSuccess, deserialized.Success));
         Assert.Equal(expectedFooter, deserialized.Footer);
         Assert.Equal(expectedHeader, deserialized.Header);
-        Assert.NotNull(deserialized.LineNumbers);
-        Assert.Equal(expectedLineNumbers.Count, deserialized.LineNumbers.Count);
-        for (int i = 0; i < expectedLineNumbers.Count; i++)
-        {
-            Assert.Equal(expectedLineNumbers[i], deserialized.LineNumbers[i]);
-        }
     }
 
     [Fact]
@@ -9383,15 +9098,6 @@ public class MarkdownResultPageTest : TestBase
             PageNumber = 0,
             Footer = "footer",
             Header = "header",
-            LineNumbers =
-            [
-                new()
-                {
-                    EndIndex = 0,
-                    LineNumberValue = "line_number",
-                    StartIndex = 0,
-                },
-            ],
         };
 
         model.Validate();
@@ -9406,8 +9112,6 @@ public class MarkdownResultPageTest : TestBase
         Assert.False(model.RawData.ContainsKey("footer"));
         Assert.Null(model.Header);
         Assert.False(model.RawData.ContainsKey("header"));
-        Assert.Null(model.LineNumbers);
-        Assert.False(model.RawData.ContainsKey("line_numbers"));
     }
 
     [Fact]
@@ -9428,15 +9132,12 @@ public class MarkdownResultPageTest : TestBase
 
             Footer = null,
             Header = null,
-            LineNumbers = null,
         };
 
         Assert.Null(model.Footer);
         Assert.True(model.RawData.ContainsKey("footer"));
         Assert.Null(model.Header);
         Assert.True(model.RawData.ContainsKey("header"));
-        Assert.Null(model.LineNumbers);
-        Assert.True(model.RawData.ContainsKey("line_numbers"));
     }
 
     [Fact]
@@ -9449,7 +9150,6 @@ public class MarkdownResultPageTest : TestBase
 
             Footer = null,
             Header = null,
-            LineNumbers = null,
         };
 
         model.Validate();
@@ -9464,113 +9164,9 @@ public class MarkdownResultPageTest : TestBase
             PageNumber = 0,
             Footer = "footer",
             Header = "header",
-            LineNumbers =
-            [
-                new()
-                {
-                    EndIndex = 0,
-                    LineNumberValue = "line_number",
-                    StartIndex = 0,
-                },
-            ],
         };
 
         Parsing::MarkdownResultPage copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class LineNumberTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Parsing::LineNumber
-        {
-            EndIndex = 0,
-            LineNumberValue = "line_number",
-            StartIndex = 0,
-        };
-
-        long expectedEndIndex = 0;
-        string expectedLineNumberValue = "line_number";
-        long expectedStartIndex = 0;
-
-        Assert.Equal(expectedEndIndex, model.EndIndex);
-        Assert.Equal(expectedLineNumberValue, model.LineNumberValue);
-        Assert.Equal(expectedStartIndex, model.StartIndex);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Parsing::LineNumber
-        {
-            EndIndex = 0,
-            LineNumberValue = "line_number",
-            StartIndex = 0,
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::LineNumber>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Parsing::LineNumber
-        {
-            EndIndex = 0,
-            LineNumberValue = "line_number",
-            StartIndex = 0,
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::LineNumber>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        long expectedEndIndex = 0;
-        string expectedLineNumberValue = "line_number";
-        long expectedStartIndex = 0;
-
-        Assert.Equal(expectedEndIndex, deserialized.EndIndex);
-        Assert.Equal(expectedLineNumberValue, deserialized.LineNumberValue);
-        Assert.Equal(expectedStartIndex, deserialized.StartIndex);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Parsing::LineNumber
-        {
-            EndIndex = 0,
-            LineNumberValue = "line_number",
-            StartIndex = 0,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Parsing::LineNumber
-        {
-            EndIndex = 0,
-            LineNumberValue = "line_number",
-            StartIndex = 0,
-        };
-
-        Parsing::LineNumber copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -9667,16 +9263,6 @@ public class MetadataTest : TestBase
                     TriggeredAutoMode = true,
                 },
             ],
-            Document = new()
-            {
-                Confidence = 0,
-                ConfidenceBreakdown = new()
-                {
-                    MinPageScore = 0,
-                    ScoredPages = 0,
-                    TotalPages = 0,
-                },
-            },
         };
 
         List<Parsing::MetadataPage> expectedPages =
@@ -9693,23 +9279,12 @@ public class MetadataTest : TestBase
                 TriggeredAutoMode = true,
             },
         ];
-        Parsing::Document expectedDocument = new()
-        {
-            Confidence = 0,
-            ConfidenceBreakdown = new()
-            {
-                MinPageScore = 0,
-                ScoredPages = 0,
-                TotalPages = 0,
-            },
-        };
 
         Assert.Equal(expectedPages.Count, model.Pages.Count);
         for (int i = 0; i < expectedPages.Count; i++)
         {
             Assert.Equal(expectedPages[i], model.Pages[i]);
         }
-        Assert.Equal(expectedDocument, model.Document);
     }
 
     [Fact]
@@ -9731,16 +9306,6 @@ public class MetadataTest : TestBase
                     TriggeredAutoMode = true,
                 },
             ],
-            Document = new()
-            {
-                Confidence = 0,
-                ConfidenceBreakdown = new()
-                {
-                    MinPageScore = 0,
-                    ScoredPages = 0,
-                    TotalPages = 0,
-                },
-            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -9771,16 +9336,6 @@ public class MetadataTest : TestBase
                     TriggeredAutoMode = true,
                 },
             ],
-            Document = new()
-            {
-                Confidence = 0,
-                ConfidenceBreakdown = new()
-                {
-                    MinPageScore = 0,
-                    ScoredPages = 0,
-                    TotalPages = 0,
-                },
-            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -9804,23 +9359,12 @@ public class MetadataTest : TestBase
                 TriggeredAutoMode = true,
             },
         ];
-        Parsing::Document expectedDocument = new()
-        {
-            Confidence = 0,
-            ConfidenceBreakdown = new()
-            {
-                MinPageScore = 0,
-                ScoredPages = 0,
-                TotalPages = 0,
-            },
-        };
 
         Assert.Equal(expectedPages.Count, deserialized.Pages.Count);
         for (int i = 0; i < expectedPages.Count; i++)
         {
             Assert.Equal(expectedPages[i], deserialized.Pages[i]);
         }
-        Assert.Equal(expectedDocument, deserialized.Document);
     }
 
     [Fact]
@@ -9842,118 +9386,6 @@ public class MetadataTest : TestBase
                     TriggeredAutoMode = true,
                 },
             ],
-            Document = new()
-            {
-                Confidence = 0,
-                ConfidenceBreakdown = new()
-                {
-                    MinPageScore = 0,
-                    ScoredPages = 0,
-                    TotalPages = 0,
-                },
-            },
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new Parsing::Metadata
-        {
-            Pages =
-            [
-                new()
-                {
-                    PageNumber = 0,
-                    Confidence = 0,
-                    CostOptimized = true,
-                    OriginalOrientationAngle = 0,
-                    PrintedPageNumber = "printed_page_number",
-                    SlideSectionName = "slide_section_name",
-                    SpeakerNotes = "speaker_notes",
-                    TriggeredAutoMode = true,
-                },
-            ],
-        };
-
-        Assert.Null(model.Document);
-        Assert.False(model.RawData.ContainsKey("document"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new Parsing::Metadata
-        {
-            Pages =
-            [
-                new()
-                {
-                    PageNumber = 0,
-                    Confidence = 0,
-                    CostOptimized = true,
-                    OriginalOrientationAngle = 0,
-                    PrintedPageNumber = "printed_page_number",
-                    SlideSectionName = "slide_section_name",
-                    SpeakerNotes = "speaker_notes",
-                    TriggeredAutoMode = true,
-                },
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new Parsing::Metadata
-        {
-            Pages =
-            [
-                new()
-                {
-                    PageNumber = 0,
-                    Confidence = 0,
-                    CostOptimized = true,
-                    OriginalOrientationAngle = 0,
-                    PrintedPageNumber = "printed_page_number",
-                    SlideSectionName = "slide_section_name",
-                    SpeakerNotes = "speaker_notes",
-                    TriggeredAutoMode = true,
-                },
-            ],
-
-            Document = null,
-        };
-
-        Assert.Null(model.Document);
-        Assert.True(model.RawData.ContainsKey("document"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new Parsing::Metadata
-        {
-            Pages =
-            [
-                new()
-                {
-                    PageNumber = 0,
-                    Confidence = 0,
-                    CostOptimized = true,
-                    OriginalOrientationAngle = 0,
-                    PrintedPageNumber = "printed_page_number",
-                    SlideSectionName = "slide_section_name",
-                    SpeakerNotes = "speaker_notes",
-                    TriggeredAutoMode = true,
-                },
-            ],
-
-            Document = null,
         };
 
         model.Validate();
@@ -9978,16 +9410,6 @@ public class MetadataTest : TestBase
                     TriggeredAutoMode = true,
                 },
             ],
-            Document = new()
-            {
-                Confidence = 0,
-                ConfidenceBreakdown = new()
-                {
-                    MinPageScore = 0,
-                    ScoredPages = 0,
-                    TotalPages = 0,
-                },
-            },
         };
 
         Parsing::Metadata copied = new(model);
@@ -10211,260 +9633,6 @@ public class MetadataPageTest : TestBase
         };
 
         Parsing::MetadataPage copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class DocumentTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Parsing::Document
-        {
-            Confidence = 0,
-            ConfidenceBreakdown = new()
-            {
-                MinPageScore = 0,
-                ScoredPages = 0,
-                TotalPages = 0,
-            },
-        };
-
-        double expectedConfidence = 0;
-        Parsing::ConfidenceBreakdown expectedConfidenceBreakdown = new()
-        {
-            MinPageScore = 0,
-            ScoredPages = 0,
-            TotalPages = 0,
-        };
-
-        Assert.Equal(expectedConfidence, model.Confidence);
-        Assert.Equal(expectedConfidenceBreakdown, model.ConfidenceBreakdown);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Parsing::Document
-        {
-            Confidence = 0,
-            ConfidenceBreakdown = new()
-            {
-                MinPageScore = 0,
-                ScoredPages = 0,
-                TotalPages = 0,
-            },
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::Document>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Parsing::Document
-        {
-            Confidence = 0,
-            ConfidenceBreakdown = new()
-            {
-                MinPageScore = 0,
-                ScoredPages = 0,
-                TotalPages = 0,
-            },
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::Document>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        double expectedConfidence = 0;
-        Parsing::ConfidenceBreakdown expectedConfidenceBreakdown = new()
-        {
-            MinPageScore = 0,
-            ScoredPages = 0,
-            TotalPages = 0,
-        };
-
-        Assert.Equal(expectedConfidence, deserialized.Confidence);
-        Assert.Equal(expectedConfidenceBreakdown, deserialized.ConfidenceBreakdown);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Parsing::Document
-        {
-            Confidence = 0,
-            ConfidenceBreakdown = new()
-            {
-                MinPageScore = 0,
-                ScoredPages = 0,
-                TotalPages = 0,
-            },
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new Parsing::Document { };
-
-        Assert.Null(model.Confidence);
-        Assert.False(model.RawData.ContainsKey("confidence"));
-        Assert.Null(model.ConfidenceBreakdown);
-        Assert.False(model.RawData.ContainsKey("confidence_breakdown"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new Parsing::Document { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new Parsing::Document { Confidence = null, ConfidenceBreakdown = null };
-
-        Assert.Null(model.Confidence);
-        Assert.True(model.RawData.ContainsKey("confidence"));
-        Assert.Null(model.ConfidenceBreakdown);
-        Assert.True(model.RawData.ContainsKey("confidence_breakdown"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new Parsing::Document { Confidence = null, ConfidenceBreakdown = null };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Parsing::Document
-        {
-            Confidence = 0,
-            ConfidenceBreakdown = new()
-            {
-                MinPageScore = 0,
-                ScoredPages = 0,
-                TotalPages = 0,
-            },
-        };
-
-        Parsing::Document copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ConfidenceBreakdownTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Parsing::ConfidenceBreakdown
-        {
-            MinPageScore = 0,
-            ScoredPages = 0,
-            TotalPages = 0,
-        };
-
-        double expectedMinPageScore = 0;
-        long expectedScoredPages = 0;
-        long expectedTotalPages = 0;
-
-        Assert.Equal(expectedMinPageScore, model.MinPageScore);
-        Assert.Equal(expectedScoredPages, model.ScoredPages);
-        Assert.Equal(expectedTotalPages, model.TotalPages);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Parsing::ConfidenceBreakdown
-        {
-            MinPageScore = 0,
-            ScoredPages = 0,
-            TotalPages = 0,
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::ConfidenceBreakdown>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Parsing::ConfidenceBreakdown
-        {
-            MinPageScore = 0,
-            ScoredPages = 0,
-            TotalPages = 0,
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::ConfidenceBreakdown>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        double expectedMinPageScore = 0;
-        long expectedScoredPages = 0;
-        long expectedTotalPages = 0;
-
-        Assert.Equal(expectedMinPageScore, deserialized.MinPageScore);
-        Assert.Equal(expectedScoredPages, deserialized.ScoredPages);
-        Assert.Equal(expectedTotalPages, deserialized.TotalPages);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Parsing::ConfidenceBreakdown
-        {
-            MinPageScore = 0,
-            ScoredPages = 0,
-            TotalPages = 0,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Parsing::ConfidenceBreakdown
-        {
-            MinPageScore = 0,
-            ScoredPages = 0,
-            TotalPages = 0,
-        };
-
-        Parsing::ConfidenceBreakdown copied = new(model);
 
         Assert.Equal(model, copied);
     }

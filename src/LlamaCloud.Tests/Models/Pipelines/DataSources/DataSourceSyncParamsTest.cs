@@ -13,18 +13,15 @@ public class DataSourceSyncParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PipelineFileIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
         };
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedDataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         List<string> expectedPipelineFileIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
         Assert.Equal(expectedDataSourceID, parameters.DataSourceID);
-        Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.NotNull(parameters.PipelineFileIds);
         Assert.Equal(expectedPipelineFileIds.Count, parameters.PipelineFileIds.Count);
         for (int i = 0; i < expectedPipelineFileIds.Count; i++)
@@ -42,8 +39,6 @@ public class DataSourceSyncParamsTest : TestBase
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
-        Assert.Null(parameters.ProjectID);
-        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.PipelineFileIds);
         Assert.False(parameters.RawBodyData.ContainsKey("pipeline_file_ids"));
     }
@@ -56,12 +51,9 @@ public class DataSourceSyncParamsTest : TestBase
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 
-            ProjectID = null,
             PipelineFileIds = null,
         };
 
-        Assert.Null(parameters.ProjectID);
-        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.PipelineFileIds);
         Assert.True(parameters.RawBodyData.ContainsKey("pipeline_file_ids"));
     }
@@ -73,7 +65,6 @@ public class DataSourceSyncParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -81,7 +72,7 @@ public class DataSourceSyncParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/data-sources/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/sync?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/data-sources/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/sync"
                 ),
                 url
             )
@@ -95,7 +86,6 @@ public class DataSourceSyncParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PipelineFileIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
         };
 
