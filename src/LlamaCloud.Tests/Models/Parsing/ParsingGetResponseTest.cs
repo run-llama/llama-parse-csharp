@@ -122,6 +122,7 @@ public class ParsingGetResponseTest : TestBase
                             },
                         ],
                         PageNumber = 0,
+                        DetectedFormTypes = ["string"],
                         PageHeight = 0,
                         PageWidth = 0,
                     },
@@ -386,6 +387,7 @@ public class ParsingGetResponseTest : TestBase
                         },
                     ],
                     PageNumber = 0,
+                    DetectedFormTypes = ["string"],
                     PageHeight = 0,
                     PageWidth = 0,
                 },
@@ -689,6 +691,7 @@ public class ParsingGetResponseTest : TestBase
                             },
                         ],
                         PageNumber = 0,
+                        DetectedFormTypes = ["string"],
                         PageHeight = 0,
                         PageWidth = 0,
                     },
@@ -967,6 +970,7 @@ public class ParsingGetResponseTest : TestBase
                             },
                         ],
                         PageNumber = 0,
+                        DetectedFormTypes = ["string"],
                         PageHeight = 0,
                         PageWidth = 0,
                     },
@@ -1238,6 +1242,7 @@ public class ParsingGetResponseTest : TestBase
                         },
                     ],
                     PageNumber = 0,
+                    DetectedFormTypes = ["string"],
                     PageHeight = 0,
                     PageWidth = 0,
                 },
@@ -1541,6 +1546,7 @@ public class ParsingGetResponseTest : TestBase
                             },
                         ],
                         PageNumber = 0,
+                        DetectedFormTypes = ["string"],
                         PageHeight = 0,
                         PageWidth = 0,
                     },
@@ -1987,6 +1993,7 @@ public class ParsingGetResponseTest : TestBase
                             },
                         ],
                         PageNumber = 0,
+                        DetectedFormTypes = ["string"],
                         PageHeight = 0,
                         PageWidth = 0,
                     },
@@ -2701,6 +2708,7 @@ public class ParsingGetResponseFormsTest : TestBase
                         },
                     ],
                     PageNumber = 0,
+                    DetectedFormTypes = ["string"],
                     PageHeight = 0,
                     PageWidth = 0,
                 },
@@ -2798,6 +2806,7 @@ public class ParsingGetResponseFormsTest : TestBase
                     },
                 ],
                 PageNumber = 0,
+                DetectedFormTypes = ["string"],
                 PageHeight = 0,
                 PageWidth = 0,
             },
@@ -2906,6 +2915,7 @@ public class ParsingGetResponseFormsTest : TestBase
                         },
                     ],
                     PageNumber = 0,
+                    DetectedFormTypes = ["string"],
                     PageHeight = 0,
                     PageWidth = 0,
                 },
@@ -3017,6 +3027,7 @@ public class ParsingGetResponseFormsTest : TestBase
                         },
                     ],
                     PageNumber = 0,
+                    DetectedFormTypes = ["string"],
                     PageHeight = 0,
                     PageWidth = 0,
                 },
@@ -3121,6 +3132,7 @@ public class ParsingGetResponseFormsTest : TestBase
                     },
                 ],
                 PageNumber = 0,
+                DetectedFormTypes = ["string"],
                 PageHeight = 0,
                 PageWidth = 0,
             },
@@ -3229,6 +3241,7 @@ public class ParsingGetResponseFormsTest : TestBase
                         },
                     ],
                     PageNumber = 0,
+                    DetectedFormTypes = ["string"],
                     PageHeight = 0,
                     PageWidth = 0,
                 },
@@ -3334,6 +3347,7 @@ public class ParsingGetResponseFormsTest : TestBase
                         },
                     ],
                     PageNumber = 0,
+                    DetectedFormTypes = ["string"],
                     PageHeight = 0,
                     PageWidth = 0,
                 },
@@ -3440,6 +3454,7 @@ public class PageTest : TestBase
                 },
             ],
             PageNumber = 0,
+            DetectedFormTypes = ["string"],
             PageHeight = 0,
             PageWidth = 0,
         };
@@ -3545,6 +3560,7 @@ public class PageTest : TestBase
                 },
             ],
             PageNumber = 0,
+            DetectedFormTypes = ["string"],
             PageHeight = 0,
             PageWidth = 0,
         };
@@ -3665,6 +3681,7 @@ public class FormsResultPageTest : TestBase
                 },
             ],
             PageNumber = 0,
+            DetectedFormTypes = ["string"],
             PageHeight = 0,
             PageWidth = 0,
         };
@@ -3757,6 +3774,7 @@ public class FormsResultPageTest : TestBase
         ];
         long expectedPageNumber = 0;
         JsonElement expectedSuccess = JsonSerializer.SerializeToElement(true);
+        List<string> expectedDetectedFormTypes = ["string"];
         double expectedPageHeight = 0;
         double expectedPageWidth = 0;
 
@@ -3767,6 +3785,12 @@ public class FormsResultPageTest : TestBase
         }
         Assert.Equal(expectedPageNumber, model.PageNumber);
         Assert.True(JsonElement.DeepEquals(expectedSuccess, model.Success));
+        Assert.NotNull(model.DetectedFormTypes);
+        Assert.Equal(expectedDetectedFormTypes.Count, model.DetectedFormTypes.Count);
+        for (int i = 0; i < expectedDetectedFormTypes.Count; i++)
+        {
+            Assert.Equal(expectedDetectedFormTypes[i], model.DetectedFormTypes[i]);
+        }
         Assert.Equal(expectedPageHeight, model.PageHeight);
         Assert.Equal(expectedPageWidth, model.PageWidth);
     }
@@ -3863,6 +3887,7 @@ public class FormsResultPageTest : TestBase
                 },
             ],
             PageNumber = 0,
+            DetectedFormTypes = ["string"],
             PageHeight = 0,
             PageWidth = 0,
         };
@@ -3968,6 +3993,7 @@ public class FormsResultPageTest : TestBase
                 },
             ],
             PageNumber = 0,
+            DetectedFormTypes = ["string"],
             PageHeight = 0,
             PageWidth = 0,
         };
@@ -4067,6 +4093,7 @@ public class FormsResultPageTest : TestBase
         ];
         long expectedPageNumber = 0;
         JsonElement expectedSuccess = JsonSerializer.SerializeToElement(true);
+        List<string> expectedDetectedFormTypes = ["string"];
         double expectedPageHeight = 0;
         double expectedPageWidth = 0;
 
@@ -4077,6 +4104,12 @@ public class FormsResultPageTest : TestBase
         }
         Assert.Equal(expectedPageNumber, deserialized.PageNumber);
         Assert.True(JsonElement.DeepEquals(expectedSuccess, deserialized.Success));
+        Assert.NotNull(deserialized.DetectedFormTypes);
+        Assert.Equal(expectedDetectedFormTypes.Count, deserialized.DetectedFormTypes.Count);
+        for (int i = 0; i < expectedDetectedFormTypes.Count; i++)
+        {
+            Assert.Equal(expectedDetectedFormTypes[i], deserialized.DetectedFormTypes[i]);
+        }
         Assert.Equal(expectedPageHeight, deserialized.PageHeight);
         Assert.Equal(expectedPageWidth, deserialized.PageWidth);
     }
@@ -4173,6 +4206,7 @@ public class FormsResultPageTest : TestBase
                 },
             ],
             PageNumber = 0,
+            DetectedFormTypes = ["string"],
             PageHeight = 0,
             PageWidth = 0,
         };
@@ -4274,6 +4308,8 @@ public class FormsResultPageTest : TestBase
             PageNumber = 0,
         };
 
+        Assert.Null(model.DetectedFormTypes);
+        Assert.False(model.RawData.ContainsKey("detected_form_types"));
         Assert.Null(model.PageHeight);
         Assert.False(model.RawData.ContainsKey("page_height"));
         Assert.Null(model.PageWidth);
@@ -4470,10 +4506,13 @@ public class FormsResultPageTest : TestBase
             ],
             PageNumber = 0,
 
+            DetectedFormTypes = null,
             PageHeight = null,
             PageWidth = null,
         };
 
+        Assert.Null(model.DetectedFormTypes);
+        Assert.True(model.RawData.ContainsKey("detected_form_types"));
         Assert.Null(model.PageHeight);
         Assert.True(model.RawData.ContainsKey("page_height"));
         Assert.Null(model.PageWidth);
@@ -4573,6 +4612,7 @@ public class FormsResultPageTest : TestBase
             ],
             PageNumber = 0,
 
+            DetectedFormTypes = null,
             PageHeight = null,
             PageWidth = null,
         };
@@ -4672,6 +4712,7 @@ public class FormsResultPageTest : TestBase
                 },
             ],
             PageNumber = 0,
+            DetectedFormTypes = ["string"],
             PageHeight = 0,
             PageWidth = 0,
         };
