@@ -98,6 +98,7 @@ public sealed class WebhookConfigService : IWebhookConfigService
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<List<WebhookConfigResponse>> List(
         WebhookConfigListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -269,6 +270,7 @@ public sealed class WebhookConfigServiceWithRawResponse : IWebhookConfigServiceW
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<HttpResponse<List<WebhookConfigResponse>>> List(
         WebhookConfigListParams? parameters = null,
         CancellationToken cancellationToken = default

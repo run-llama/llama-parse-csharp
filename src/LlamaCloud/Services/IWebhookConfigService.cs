@@ -68,6 +68,7 @@ public interface IWebhookConfigService
     /// <summary>
     /// List the webhook configurations for the current project, newest first.
     /// </summary>
+    [Obsolete("deprecated")]
     Task<List<WebhookConfigResponse>> List(
         WebhookConfigListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -147,6 +148,7 @@ public interface IWebhookConfigServiceWithRawResponse
     /// Returns a raw HTTP response for <c>get /api/v1/beta/webhook-configs</c>, but is otherwise the
     /// same as <see cref="IWebhookConfigService.List(WebhookConfigListParams?, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("deprecated")]
     Task<HttpResponse<List<WebhookConfigResponse>>> List(
         WebhookConfigListParams? parameters = null,
         CancellationToken cancellationToken = default
