@@ -1350,11 +1350,11 @@ public class ExtractResultTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent2ItemsValidationWorks()
+    public void UnnamedSchemaWithArrayParent3ItemsValidationWorks()
     {
         ExtractResult value = new(
             [
-                new Dictionary<string, UnnamedSchemaWithArrayParent2Item?>()
+                new Dictionary<string, UnnamedSchemaWithArrayParent3Item?>()
                 {
                     {
                         "foo",
@@ -1398,11 +1398,11 @@ public class ExtractResultTest : TestBase
     }
 
     [Fact]
-    public void UnnamedSchemaWithArrayParent2ItemsSerializationRoundtripWorks()
+    public void UnnamedSchemaWithArrayParent3ItemsSerializationRoundtripWorks()
     {
         ExtractResult value = new(
             [
-                new Dictionary<string, UnnamedSchemaWithArrayParent2Item?>()
+                new Dictionary<string, UnnamedSchemaWithArrayParent3Item?>()
                 {
                     {
                         "foo",
@@ -1539,12 +1539,12 @@ public class UnionMember0ItemTest : TestBase
     }
 }
 
-public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
+public class UnnamedSchemaWithArrayParent3ItemTest : TestBase
 {
     [Fact]
     public void JsonElementsValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent3Item value = new(
             new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1556,7 +1556,7 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void JsonElementsValidationWorks1()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent3Item value = new(
             [JsonSerializer.Deserialize<JsonElement>("{}")]
         );
         value.Validate();
@@ -1565,35 +1565,35 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void StringValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = "string";
+        UnnamedSchemaWithArrayParent3Item value = "string";
         value.Validate();
     }
 
     [Fact]
     public void DoubleValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = 0;
+        UnnamedSchemaWithArrayParent3Item value = 0;
         value.Validate();
     }
 
     [Fact]
     public void BoolValidationWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = true;
+        UnnamedSchemaWithArrayParent3Item value = true;
         value.Validate();
     }
 
     [Fact]
     public void JsonElementsSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent3Item value = new(
             new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             }
         );
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent3Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1604,11 +1604,11 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void JsonElementsSerializationRoundtripWorks1()
     {
-        UnnamedSchemaWithArrayParent2Item value = new(
+        UnnamedSchemaWithArrayParent3Item value = new(
             [JsonSerializer.Deserialize<JsonElement>("{}")]
         );
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent3Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1619,9 +1619,9 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void StringSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = "string";
+        UnnamedSchemaWithArrayParent3Item value = "string";
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent3Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1632,9 +1632,9 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void DoubleSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = 0;
+        UnnamedSchemaWithArrayParent3Item value = 0;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent3Item>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1645,9 +1645,9 @@ public class UnnamedSchemaWithArrayParent2ItemTest : TestBase
     [Fact]
     public void BoolSerializationRoundtripWorks()
     {
-        UnnamedSchemaWithArrayParent2Item value = true;
+        UnnamedSchemaWithArrayParent3Item value = true;
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent2Item>(
+        var deserialized = JsonSerializer.Deserialize<UnnamedSchemaWithArrayParent3Item>(
             element,
             ModelBase.SerializerOptions
         );
