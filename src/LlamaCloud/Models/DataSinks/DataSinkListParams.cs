@@ -9,12 +9,15 @@ using LlamaCloud.Core;
 namespace LlamaCloud.Models.DataSinks;
 
 /// <summary>
-/// List data sinks for a given project.
+/// List a project's data sinks. Returns at most the first 50.
+///
+/// <para>Deprecated: use `GET /api/v1/beta/data-sinks`, which is paginated.</para>
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
+[Obsolete("deprecated")]
 public record class DataSinkListParams : ParamsBase
 {
     public string? OrganizationID

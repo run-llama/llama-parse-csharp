@@ -70,6 +70,7 @@ public sealed class DataSinkService : IDataSinkService
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<List<DataSink>> List(
         DataSinkListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -212,6 +213,7 @@ public sealed class DataSinkServiceWithRawResponse : IDataSinkServiceWithRawResp
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<HttpResponse<List<DataSink>>> List(
         DataSinkListParams? parameters = null,
         CancellationToken cancellationToken = default
