@@ -71,4 +71,14 @@ public class DataSinkServiceTest : TestBase
         );
         dataSink.Validate();
     }
+
+    [Fact(Skip = "Mock server tests are disabled")]
+    public async Task ListPaginated_Works()
+    {
+        var page = await this.client.DataSinks.ListPaginated(
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        page.Validate();
+    }
 }

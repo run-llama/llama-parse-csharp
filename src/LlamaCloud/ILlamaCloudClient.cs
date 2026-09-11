@@ -79,6 +79,8 @@ public interface ILlamaCloudClient : IDisposable
 
     IDataSinkService DataSinks { get; }
 
+    IExtractionAgentService ExtractionAgents { get; }
+
     IDataSourceService DataSources { get; }
 
     IPipelineService Pipelines { get; }
@@ -144,6 +146,8 @@ public interface ILlamaCloudClientWithRawResponse : IDisposable
     IJobDataPointServiceWithRawResponse JobDataPoints { get; }
 
     IDataSinkServiceWithRawResponse DataSinks { get; }
+
+    IExtractionAgentServiceWithRawResponse ExtractionAgents { get; }
 
     IDataSourceServiceWithRawResponse DataSources { get; }
 

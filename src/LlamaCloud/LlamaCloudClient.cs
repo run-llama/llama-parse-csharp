@@ -156,6 +156,12 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         get { return _dataSinks.Value; }
     }
 
+    readonly Lazy<IExtractionAgentService> _extractionAgents;
+    public IExtractionAgentService ExtractionAgents
+    {
+        get { return _extractionAgents.Value; }
+    }
+
     readonly Lazy<IDataSourceService> _dataSources;
     public IDataSourceService DataSources
     {
@@ -201,6 +207,7 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         _v2Projects = new(() => new V2ProjectService(this));
         _jobDataPoints = new(() => new JobDataPointService(this));
         _dataSinks = new(() => new DataSinkService(this));
+        _extractionAgents = new(() => new ExtractionAgentService(this));
         _dataSources = new(() => new DataSourceService(this));
         _pipelines = new(() => new PipelineService(this));
         _retrievers = new(() => new RetrieverService(this));
@@ -362,6 +369,12 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
     public IDataSinkServiceWithRawResponse DataSinks
     {
         get { return _dataSinks.Value; }
+    }
+
+    readonly Lazy<IExtractionAgentServiceWithRawResponse> _extractionAgents;
+    public IExtractionAgentServiceWithRawResponse ExtractionAgents
+    {
+        get { return _extractionAgents.Value; }
     }
 
     readonly Lazy<IDataSourceServiceWithRawResponse> _dataSources;
@@ -600,6 +613,7 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
         _v2Projects = new(() => new V2ProjectServiceWithRawResponse(this));
         _jobDataPoints = new(() => new JobDataPointServiceWithRawResponse(this));
         _dataSinks = new(() => new DataSinkServiceWithRawResponse(this));
+        _extractionAgents = new(() => new ExtractionAgentServiceWithRawResponse(this));
         _dataSources = new(() => new DataSourceServiceWithRawResponse(this));
         _pipelines = new(() => new PipelineServiceWithRawResponse(this));
         _retrievers = new(() => new RetrieverServiceWithRawResponse(this));

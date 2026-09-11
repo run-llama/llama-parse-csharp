@@ -84,6 +84,14 @@ public interface IDataSinkService
         DataSinkGetParams? parameters = null,
         CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// List the data sinks in a project, newest first.
+    /// </summary>
+    Task<DataSinkListPaginatedPage> ListPaginated(
+        DataSinkListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
 }
 
 /// <summary>
@@ -163,6 +171,15 @@ public interface IDataSinkServiceWithRawResponse
     Task<HttpResponse<DataSink>> Get(
         string dataSinkID,
         DataSinkGetParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>get /api/v1/beta/data-sinks</c>, but is otherwise the
+    /// same as <see cref="IDataSinkService.ListPaginated(DataSinkListPaginatedParams?, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<DataSinkListPaginatedPage>> ListPaginated(
+        DataSinkListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }

@@ -7,6 +7,7 @@ using LlamaCloud.Models.Beta.Sheets;
 using LlamaCloud.Models.Classifier.Jobs;
 using LlamaCloud.Models.DataSinks;
 using LlamaCloud.Models.DataSources;
+using LlamaCloud.Models.ExtractionAgents;
 using LlamaCloud.Models.JobDataPoints;
 using LlamaCloud.Models.Pipelines.Documents;
 using LlamaCloud.Models.Retrievers;
@@ -232,6 +233,13 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, DataSinkSinkType>(),
             new ApiEnumConverter<string, SinkType>(),
             new ApiEnumConverter<string, DataSinkUpdateParamsSinkType>(),
+            new ApiEnumConverter<string, ChunkMode>(),
+            new ApiEnumConverter<string, ExtractModel>(),
+            new ApiEnumConverter<string, ExtractionMode>(),
+            new ApiEnumConverter<string, ExtractionTarget>(),
+            new ApiEnumConverter<string, ParseModel>(),
+            new ApiEnumConverter<string, Priority>(),
+            new ApiEnumConverter<string, CustomConfiguration>(),
             new ApiEnumConverter<string, DataSourceSourceType>(),
             new ApiEnumConverter<string, ReaderVersion>(),
             new ApiEnumConverter<string, SourceType>(),
