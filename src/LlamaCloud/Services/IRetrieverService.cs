@@ -56,6 +56,7 @@ public interface IRetrieverService
     /// <summary>
     /// List Retrievers for a project.
     /// </summary>
+    [Obsolete("deprecated")]
     Task<List<RetrieverRetriever>> List(
         RetrieverListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -149,6 +150,7 @@ public interface IRetrieverServiceWithRawResponse
     /// Returns a raw HTTP response for <c>get /api/v1/retrievers</c>, but is otherwise the
     /// same as <see cref="IRetrieverService.List(RetrieverListParams?, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("deprecated")]
     Task<HttpResponse<List<RetrieverRetriever>>> List(
         RetrieverListParams? parameters = null,
         CancellationToken cancellationToken = default

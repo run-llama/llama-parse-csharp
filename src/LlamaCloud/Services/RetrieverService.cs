@@ -78,6 +78,7 @@ public sealed class RetrieverService : IRetrieverService
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<List<RetrieverRetriever>> List(
         RetrieverListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -256,6 +257,7 @@ public sealed class RetrieverServiceWithRawResponse : IRetrieverServiceWithRawRe
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<HttpResponse<List<RetrieverRetriever>>> List(
         RetrieverListParams? parameters = null,
         CancellationToken cancellationToken = default
