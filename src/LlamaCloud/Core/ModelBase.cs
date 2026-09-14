@@ -8,7 +8,6 @@ using LlamaCloud.Models.Classifier.Jobs;
 using LlamaCloud.Models.DataSinks;
 using LlamaCloud.Models.DataSources;
 using LlamaCloud.Models.ExtractionAgents;
-using LlamaCloud.Models.JobDataPoints;
 using LlamaCloud.Models.Pipelines.Documents;
 using LlamaCloud.Models.Retrievers;
 using Batches = LlamaCloud.Models.Batches;
@@ -229,7 +228,6 @@ public abstract record class ModelBase
                 string,
                 WebhookConfigs::WebhookConfigUpdateParamsWebhookOutputFormat
             >(),
-            new ApiEnumConverter<string, JobType>(),
             new ApiEnumConverter<string, DataSinkSinkType>(),
             new ApiEnumConverter<string, SinkType>(),
             new ApiEnumConverter<string, DataSinkUpdateParamsSinkType>(),
