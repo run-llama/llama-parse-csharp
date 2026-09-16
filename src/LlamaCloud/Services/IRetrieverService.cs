@@ -90,6 +90,14 @@ public interface IRetrieverService
     );
 
     /// <summary>
+    /// List the retrievers in a project, newest first.
+    /// </summary>
+    Task<RetrieverListPaginatedPage> ListPaginated(
+        RetrieverListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// Retrieve data using specified pipelines without creating a persistent retriever.
     /// </summary>
     Task<CompositeRetrievalResult> Search(
@@ -185,6 +193,15 @@ public interface IRetrieverServiceWithRawResponse
     Task<HttpResponse<RetrieverRetriever>> Get(
         string retrieverID,
         RetrieverGetParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>get /api/v1/beta/retrievers</c>, but is otherwise the
+    /// same as <see cref="IRetrieverService.ListPaginated(RetrieverListPaginatedParams?, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<RetrieverListPaginatedPage>> ListPaginated(
+        RetrieverListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

@@ -137,6 +137,18 @@ public sealed class RetrieverService : IRetrieverService
     }
 
     /// <inheritdoc/>
+    public async Task<RetrieverListPaginatedPage> ListPaginated(
+        RetrieverListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.ListPaginated(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
     public async Task<CompositeRetrievalResult> Search(
         RetrieverSearchParams parameters,
         CancellationToken cancellationToken = default
@@ -364,6 +376,36 @@ public sealed class RetrieverServiceWithRawResponse : IRetrieverServiceWithRawRe
         parameters ??= new();
 
         return this.Get(parameters with { RetrieverID = retrieverID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<RetrieverListPaginatedPage>> ListPaginated(
+        RetrieverListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        HttpRequest<RetrieverListPaginatedParams> request = new()
+        {
+            Method = HttpMethod.Get,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var page = await response
+                    .Deserialize<RetrieverListPaginatedPageResponse>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    page.Validate();
+                }
+                return new RetrieverListPaginatedPage(this, parameters, page);
+            }
+        );
     }
 
     /// <inheritdoc/>

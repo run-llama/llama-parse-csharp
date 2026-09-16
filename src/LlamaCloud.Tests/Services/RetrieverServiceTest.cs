@@ -117,6 +117,16 @@ public class RetrieverServiceTest : TestBase
     }
 
     [Fact(Skip = "Mock server tests are disabled")]
+    public async Task ListPaginated_Works()
+    {
+        var page = await this.client.Retrievers.ListPaginated(
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        page.Validate();
+    }
+
+    [Fact(Skip = "Mock server tests are disabled")]
     public async Task Search_Works()
     {
         var compositeRetrievalResult = await this.client.Retrievers.Search(

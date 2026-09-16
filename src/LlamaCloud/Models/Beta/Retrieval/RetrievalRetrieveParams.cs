@@ -745,7 +745,7 @@ public record class ValueFilterValue : ModelBase
     }
 
     public ValueFilterValue(
-        IReadOnlyList<UnnamedSchemaWithArrayParent2> value,
+        IReadOnlyList<UnnamedSchemaWithArrayParent0> value,
         JsonElement? element = null
     )
     {
@@ -823,24 +823,24 @@ public record class ValueFilterValue : ModelBase
 
     /// <summary>
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
-    /// type <see cref="List{T}"/> where <c>T</c> is a <c>UnnamedSchemaWithArrayParent2</c>.
+    /// type <see cref="List{T}"/> where <c>T</c> is a <c>UnnamedSchemaWithArrayParent0</c>.
     ///
     /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
-    /// if (instance.TryPickUnnamedSchemaWithArrayParent2s(out var value)) {
-    ///     // `value` is of type `IReadOnlyList&lt;UnnamedSchemaWithArrayParent2&gt;`
+    /// if (instance.TryPickUnnamedSchemaWithArrayParent0s(out var value)) {
+    ///     // `value` is of type `IReadOnlyList&lt;UnnamedSchemaWithArrayParent0&gt;`
     ///     Console.WriteLine(value);
     /// }
     /// </code>
     /// </example>
     /// </summary>
-    public bool TryPickUnnamedSchemaWithArrayParent2s(
-        [NotNullWhen(true)] out IReadOnlyList<UnnamedSchemaWithArrayParent2>? value
+    public bool TryPickUnnamedSchemaWithArrayParent0s(
+        [NotNullWhen(true)] out IReadOnlyList<UnnamedSchemaWithArrayParent0>? value
     )
     {
-        value = this.Value as IReadOnlyList<UnnamedSchemaWithArrayParent2>;
+        value = this.Value as IReadOnlyList<UnnamedSchemaWithArrayParent0>;
         return value != null;
     }
 
@@ -861,7 +861,7 @@ public record class ValueFilterValue : ModelBase
     ///     (string value) =&gt; {...},
     ///     (bool value) =&gt; {...},
     ///     (double value) =&gt; {...},
-    ///     (IReadOnlyList&lt;UnnamedSchemaWithArrayParent2&gt; value) =&gt; {...}
+    ///     (IReadOnlyList&lt;UnnamedSchemaWithArrayParent0&gt; value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -870,7 +870,7 @@ public record class ValueFilterValue : ModelBase
         Action<string> @string,
         Action<bool> @bool,
         Action<double> @double,
-        Action<IReadOnlyList<UnnamedSchemaWithArrayParent2>> unnamedSchemaWithArrayParent2s
+        Action<IReadOnlyList<UnnamedSchemaWithArrayParent0>> unnamedSchemaWithArrayParent0s
     )
     {
         switch (this.Value)
@@ -884,8 +884,8 @@ public record class ValueFilterValue : ModelBase
             case double value:
                 @double(value);
                 break;
-            case IReadOnlyList<UnnamedSchemaWithArrayParent2> value:
-                unnamedSchemaWithArrayParent2s(value);
+            case IReadOnlyList<UnnamedSchemaWithArrayParent0> value:
+                unnamedSchemaWithArrayParent0s(value);
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
@@ -912,7 +912,7 @@ public record class ValueFilterValue : ModelBase
     ///     (string value) =&gt; {...},
     ///     (bool value) =&gt; {...},
     ///     (double value) =&gt; {...},
-    ///     (IReadOnlyList&lt;UnnamedSchemaWithArrayParent2&gt; value) =&gt; {...}
+    ///     (IReadOnlyList&lt;UnnamedSchemaWithArrayParent0&gt; value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -921,7 +921,7 @@ public record class ValueFilterValue : ModelBase
         Func<string, T> @string,
         Func<bool, T> @bool,
         Func<double, T> @double,
-        Func<IReadOnlyList<UnnamedSchemaWithArrayParent2>, T> unnamedSchemaWithArrayParent2s
+        Func<IReadOnlyList<UnnamedSchemaWithArrayParent0>, T> unnamedSchemaWithArrayParent0s
     )
     {
         return this.Value switch
@@ -929,7 +929,7 @@ public record class ValueFilterValue : ModelBase
             string value => @string(value),
             bool value => @bool(value),
             double value => @double(value),
-            IReadOnlyList<UnnamedSchemaWithArrayParent2> value => unnamedSchemaWithArrayParent2s(
+            IReadOnlyList<UnnamedSchemaWithArrayParent0> value => unnamedSchemaWithArrayParent0s(
                 value
             ),
             _ => throw new LlamaCloudInvalidDataException(
@@ -944,8 +944,8 @@ public record class ValueFilterValue : ModelBase
 
     public static implicit operator ValueFilterValue(double value) => new(value);
 
-    public static implicit operator ValueFilterValue(List<UnnamedSchemaWithArrayParent2> value) =>
-        new((IReadOnlyList<UnnamedSchemaWithArrayParent2>)value);
+    public static implicit operator ValueFilterValue(List<UnnamedSchemaWithArrayParent0> value) =>
+        new((IReadOnlyList<UnnamedSchemaWithArrayParent0>)value);
 
     /// <summary>
     /// Validates that the instance was constructed with a known variant and that this variant is valid
@@ -969,9 +969,9 @@ public record class ValueFilterValue : ModelBase
             (_) => { },
             (_) => { },
             (_) => { },
-            (unnamedSchemaWithArrayParent2s) =>
+            (unnamedSchemaWithArrayParent0s) =>
             {
-                foreach (var item in unnamedSchemaWithArrayParent2s)
+                foreach (var item in unnamedSchemaWithArrayParent0s)
                 {
                     item.Validate();
                 }
@@ -1002,7 +1002,7 @@ public record class ValueFilterValue : ModelBase
             string _ => 0,
             bool _ => 1,
             double _ => 2,
-            IReadOnlyList<UnnamedSchemaWithArrayParent2> _ => 3,
+            IReadOnlyList<UnnamedSchemaWithArrayParent0> _ => 3,
             _ => -1,
         };
     }
@@ -1050,7 +1050,7 @@ sealed class ValueFilterValueConverter : JsonConverter<ValueFilterValue>
 
         try
         {
-            var deserialized = JsonSerializer.Deserialize<List<UnnamedSchemaWithArrayParent2>>(
+            var deserialized = JsonSerializer.Deserialize<List<UnnamedSchemaWithArrayParent0>>(
                 element,
                 options
             );
@@ -1081,8 +1081,8 @@ sealed class ValueFilterValueConverter : JsonConverter<ValueFilterValue>
     }
 }
 
-[JsonConverter(typeof(UnnamedSchemaWithArrayParent2Converter))]
-public record class UnnamedSchemaWithArrayParent2 : ModelBase
+[JsonConverter(typeof(UnnamedSchemaWithArrayParent0Converter))]
+public record class UnnamedSchemaWithArrayParent0 : ModelBase
 {
     public object? Value { get; } = null;
 
@@ -1099,25 +1099,25 @@ public record class UnnamedSchemaWithArrayParent2 : ModelBase
         }
     }
 
-    public UnnamedSchemaWithArrayParent2(string value, JsonElement? element = null)
+    public UnnamedSchemaWithArrayParent0(string value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent2(bool value, JsonElement? element = null)
+    public UnnamedSchemaWithArrayParent0(bool value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent2(double value, JsonElement? element = null)
+    public UnnamedSchemaWithArrayParent0(double value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public UnnamedSchemaWithArrayParent2(JsonElement element)
+    public UnnamedSchemaWithArrayParent0(JsonElement element)
     {
         this._element = element;
     }
@@ -1221,7 +1221,7 @@ public record class UnnamedSchemaWithArrayParent2 : ModelBase
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
-                    "Data did not match any variant of UnnamedSchemaWithArrayParent2"
+                    "Data did not match any variant of UnnamedSchemaWithArrayParent0"
                 );
         }
     }
@@ -1256,16 +1256,16 @@ public record class UnnamedSchemaWithArrayParent2 : ModelBase
             bool value => @bool(value),
             double value => @double(value),
             _ => throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of UnnamedSchemaWithArrayParent2"
+                "Data did not match any variant of UnnamedSchemaWithArrayParent0"
             ),
         };
     }
 
-    public static implicit operator UnnamedSchemaWithArrayParent2(string value) => new(value);
+    public static implicit operator UnnamedSchemaWithArrayParent0(string value) => new(value);
 
-    public static implicit operator UnnamedSchemaWithArrayParent2(bool value) => new(value);
+    public static implicit operator UnnamedSchemaWithArrayParent0(bool value) => new(value);
 
-    public static implicit operator UnnamedSchemaWithArrayParent2(double value) => new(value);
+    public static implicit operator UnnamedSchemaWithArrayParent0(double value) => new(value);
 
     /// <summary>
     /// Validates that the instance was constructed with a known variant and that this variant is valid
@@ -1282,12 +1282,12 @@ public record class UnnamedSchemaWithArrayParent2 : ModelBase
         if (this.Value == null)
         {
             throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of UnnamedSchemaWithArrayParent2"
+                "Data did not match any variant of UnnamedSchemaWithArrayParent0"
             );
         }
     }
 
-    public virtual bool Equals(UnnamedSchemaWithArrayParent2? other) =>
+    public virtual bool Equals(UnnamedSchemaWithArrayParent0? other) =>
         other != null
         && this.VariantIndex() == other.VariantIndex()
         && JsonElement.DeepEquals(this.Json, other.Json);
@@ -1315,9 +1315,9 @@ public record class UnnamedSchemaWithArrayParent2 : ModelBase
     }
 }
 
-sealed class UnnamedSchemaWithArrayParent2Converter : JsonConverter<UnnamedSchemaWithArrayParent2>
+sealed class UnnamedSchemaWithArrayParent0Converter : JsonConverter<UnnamedSchemaWithArrayParent0>
 {
-    public override UnnamedSchemaWithArrayParent2? Read(
+    public override UnnamedSchemaWithArrayParent0? Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options
@@ -1360,7 +1360,7 @@ sealed class UnnamedSchemaWithArrayParent2Converter : JsonConverter<UnnamedSchem
 
     public override void Write(
         Utf8JsonWriter writer,
-        UnnamedSchemaWithArrayParent2 value,
+        UnnamedSchemaWithArrayParent0 value,
         JsonSerializerOptions options
     )
     {

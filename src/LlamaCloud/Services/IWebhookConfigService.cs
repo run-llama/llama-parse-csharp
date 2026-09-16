@@ -88,6 +88,14 @@ public interface IWebhookConfigService
         WebhookConfigDeleteParams? parameters = null,
         CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// List the webhook configurations for the current project, newest first.
+    /// </summary>
+    Task<WebhookConfigListPaginatedPage> ListPaginated(
+        WebhookConfigListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
 }
 
 /// <summary>
@@ -167,6 +175,15 @@ public interface IWebhookConfigServiceWithRawResponse
     Task<HttpResponse> Delete(
         string configID,
         WebhookConfigDeleteParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>get /api/v2/webhook-configs</c>, but is otherwise the
+    /// same as <see cref="IWebhookConfigService.ListPaginated(WebhookConfigListPaginatedParams?, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<WebhookConfigListPaginatedPage>> ListPaginated(
+        WebhookConfigListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }
