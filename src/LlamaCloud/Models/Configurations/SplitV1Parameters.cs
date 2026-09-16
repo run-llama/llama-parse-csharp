@@ -50,6 +50,39 @@ public sealed record class SplitV1Parameters : JsonModel
     }
 
     /// <summary>
+    /// Saved parse configuration ID controlling how the document is read before splitting.
+    /// Takes precedence over parse_tier. Configurations restricted to a page subset
+    /// (target_pages or max_pages) are rejected, since split results always number
+    /// pages relative to the full document. Ignored when a completed parse job is
+    /// supplied as file_input.
+    /// </summary>
+    public string? ParseConfigID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("parse_config_id");
+        }
+        init { this._rawData.Set("parse_config_id", value); }
+    }
+
+    /// <summary>
+    /// Parse tier used to read the document before splitting. Defaults to fast.
+    /// Ignored when a completed parse job is supplied as file_input.
+    /// </summary>
+    public ApiEnum<string, SplitV1ParametersParseTier>? ParseTier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, SplitV1ParametersParseTier>>(
+                "parse_tier"
+            );
+        }
+        init { this._rawData.Set("parse_tier", value); }
+    }
+
+    /// <summary>
     /// Strategy for splitting documents.
     /// </summary>
     public global::LlamaCloud.Models.Configurations.SplittingStrategy? SplittingStrategy
@@ -85,6 +118,8 @@ public sealed record class SplitV1Parameters : JsonModel
         {
             throw new LlamaCloudInvalidDataException("Invalid value given for constant");
         }
+        _ = this.ParseConfigID;
+        this.ParseTier?.Validate();
         this.SplittingStrategy?.Validate();
     }
 
@@ -135,6 +170,60 @@ class SplitV1ParametersFromRaw : IFromRawJson<SplitV1Parameters>
     /// <inheritdoc/>
     public SplitV1Parameters FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         SplitV1Parameters.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Parse tier used to read the document before splitting. Defaults to fast. Ignored
+/// when a completed parse job is supplied as file_input.
+/// </summary>
+[JsonConverter(typeof(SplitV1ParametersParseTierConverter))]
+public enum SplitV1ParametersParseTier
+{
+    Agentic,
+    AgenticPlus,
+    CostEffective,
+    Fast,
+}
+
+sealed class SplitV1ParametersParseTierConverter : JsonConverter<SplitV1ParametersParseTier>
+{
+    public override SplitV1ParametersParseTier Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "agentic" => SplitV1ParametersParseTier.Agentic,
+            "agentic_plus" => SplitV1ParametersParseTier.AgenticPlus,
+            "cost_effective" => SplitV1ParametersParseTier.CostEffective,
+            "fast" => SplitV1ParametersParseTier.Fast,
+            _ => (SplitV1ParametersParseTier)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SplitV1ParametersParseTier value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SplitV1ParametersParseTier.Agentic => "agentic",
+                SplitV1ParametersParseTier.AgenticPlus => "agentic_plus",
+                SplitV1ParametersParseTier.CostEffective => "cost_effective",
+                SplitV1ParametersParseTier.Fast => "fast",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

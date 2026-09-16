@@ -158,6 +158,32 @@ public sealed record class SplitListResponse : JsonModel
     }
 
     /// <summary>
+    /// Saved parse configuration ID requested for this job, if any.
+    /// </summary>
+    public string? ParseConfigID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("parse_config_id");
+        }
+        init { this._rawData.Set("parse_config_id", value); }
+    }
+
+    /// <summary>
+    /// Parse tier requested for this job, if any.
+    /// </summary>
+    public string? ParseTier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("parse_tier");
+        }
+        init { this._rawData.Set("parse_tier", value); }
+    }
+
+    /// <summary>
     /// Result of a completed split job.
     /// </summary>
     public Split::SplitResultResponse? Result
@@ -235,6 +261,8 @@ public sealed record class SplitListResponse : JsonModel
         _ = this.ConfigurationID;
         _ = this.CreatedAt;
         _ = this.ErrorMessage;
+        _ = this.ParseConfigID;
+        _ = this.ParseTier;
         this.Result?.Validate();
         this.SplittingStrategy?.Validate();
         _ = this.TransactionID;

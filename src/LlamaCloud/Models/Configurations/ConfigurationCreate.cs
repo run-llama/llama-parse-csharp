@@ -137,6 +137,21 @@ public record class ConfigurationCreateParameters : ModelBase
         }
     }
 
+    public string? ParseConfigID
+    {
+        get
+        {
+            return Match<string?>(
+                classifyV2: (_) => null,
+                extractV2: (x) => x.ParseConfigID,
+                parseV2: (_) => null,
+                splitV1: (x) => x.ParseConfigID,
+                spreadsheetV1: (_) => null,
+                untyped: (_) => null
+            );
+        }
+    }
+
     public ConfigurationCreateParameters(ClassifyV2Parameters value, JsonElement? element = null)
     {
         this.Value = value;

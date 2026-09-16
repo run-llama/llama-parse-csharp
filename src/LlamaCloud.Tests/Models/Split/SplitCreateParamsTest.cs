@@ -21,6 +21,8 @@ public class SplitCreateParamsTest : TestBase
             Configuration = new()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = ParseTier.Fast,
                 SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
             },
             ConfigurationID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -48,6 +50,8 @@ public class SplitCreateParamsTest : TestBase
         Configuration expectedConfiguration = new()
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
         string expectedConfigurationID = "cfg-11111111-2222-3333-4444-555555555555";
@@ -180,6 +184,8 @@ public class SplitCreateParamsTest : TestBase
             Configuration = new()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = ParseTier.Fast,
                 SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
             },
             ConfigurationID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -215,10 +221,14 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
+        string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
+        ApiEnum<string, ParseTier> expectedParseTier = ParseTier.Fast;
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
@@ -229,6 +239,8 @@ public class ConfigurationTest : TestBase
         {
             Assert.Equal(expectedCategories[i], model.Categories[i]);
         }
+        Assert.Equal(expectedParseConfigID, model.ParseConfigID);
+        Assert.Equal(expectedParseTier, model.ParseTier);
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
     }
 
@@ -238,6 +250,8 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
 
@@ -256,6 +270,8 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
 
@@ -267,6 +283,8 @@ public class ConfigurationTest : TestBase
         Assert.NotNull(deserialized);
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
+        string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
+        ApiEnum<string, ParseTier> expectedParseTier = ParseTier.Fast;
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
@@ -277,6 +295,8 @@ public class ConfigurationTest : TestBase
         {
             Assert.Equal(expectedCategories[i], deserialized.Categories[i]);
         }
+        Assert.Equal(expectedParseConfigID, deserialized.ParseConfigID);
+        Assert.Equal(expectedParseTier, deserialized.ParseTier);
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
     }
 
@@ -286,6 +306,8 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
 
@@ -295,7 +317,12 @@ public class ConfigurationTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Configuration { Categories = [new() { Name = "x", Description = "x" }] };
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
+        };
 
         Assert.Null(model.SplittingStrategy);
         Assert.False(model.RawData.ContainsKey("splitting_strategy"));
@@ -304,7 +331,12 @@ public class ConfigurationTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Configuration { Categories = [new() { Name = "x", Description = "x" }] };
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
+        };
 
         model.Validate();
     }
@@ -315,6 +347,8 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -330,9 +364,71 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+        };
+
+        Assert.Null(model.ParseConfigID);
+        Assert.False(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.False(model.RawData.ContainsKey("parse_tier"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+
+            ParseConfigID = null,
+            ParseTier = null,
+        };
+
+        Assert.Null(model.ParseConfigID);
+        Assert.True(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.True(model.RawData.ContainsKey("parse_tier"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
+
+            ParseConfigID = null,
+            ParseTier = null,
         };
 
         model.Validate();
@@ -344,12 +440,76 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
 
         Configuration copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class ParseTierTest : TestBase
+{
+    [Theory]
+    [InlineData(ParseTier.Agentic)]
+    [InlineData(ParseTier.AgenticPlus)]
+    [InlineData(ParseTier.CostEffective)]
+    [InlineData(ParseTier.Fast)]
+    public void Validation_Works(ParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ParseTier> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ParseTier.Agentic)]
+    [InlineData(ParseTier.AgenticPlus)]
+    [InlineData(ParseTier.CostEffective)]
+    [InlineData(ParseTier.Fast)]
+    public void SerializationRoundtrip_Works(ParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ParseTier> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 

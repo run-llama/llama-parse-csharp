@@ -82,6 +82,7 @@ public abstract record class ModelBase
                 string,
                 Split::SplitGetResponseSplittingStrategyAllowUncategorized
             >(),
+            new ApiEnumConverter<string, Split::ParseTier>(),
             new ApiEnumConverter<string, Split::AllowUncategorized>(),
             new ApiEnumConverter<string, Split::WebhookEvent>(),
             new ApiEnumConverter<string, Split::Status>(),
@@ -202,6 +203,7 @@ public abstract record class ModelBase
                 Configurations::ProcessingOptionsSpecializedChartParsing
             >(),
             new ApiEnumConverter<string, Configurations::WebhookOutputFormat>(),
+            new ApiEnumConverter<string, Configurations::SplitV1ParametersParseTier>(),
             new ApiEnumConverter<string, Configurations::AllowUncategorized>(),
             new ApiEnumConverter<string, Configurations::TableMergeSensitivity>(),
             new ApiEnumConverter<string, Configurations::Tier>(),

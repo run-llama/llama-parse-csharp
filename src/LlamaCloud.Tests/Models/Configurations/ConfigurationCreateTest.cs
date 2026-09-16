@@ -464,6 +464,8 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
         value.Validate();
@@ -763,6 +765,8 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new() { AllowUncategorized = AllowUncategorized.Forbid },
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);

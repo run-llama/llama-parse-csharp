@@ -25,6 +25,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -53,6 +55,8 @@ public class SplitCreateResponseTest : TestBase
         string expectedConfigurationID = "configuration_id";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedErrorMessage = "error_message";
+        string expectedParseConfigID = "parse_config_id";
+        string expectedParseTier = "parse_tier";
         Split::SplitResultResponse expectedResult = new(
             [
                 new()
@@ -84,6 +88,8 @@ public class SplitCreateResponseTest : TestBase
         Assert.Equal(expectedConfigurationID, model.ConfigurationID);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedErrorMessage, model.ErrorMessage);
+        Assert.Equal(expectedParseConfigID, model.ParseConfigID);
+        Assert.Equal(expectedParseTier, model.ParseTier);
         Assert.Equal(expectedResult, model.Result);
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
         Assert.Equal(expectedTransactionID, model.TransactionID);
@@ -105,6 +111,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -147,6 +155,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -182,6 +192,8 @@ public class SplitCreateResponseTest : TestBase
         string expectedConfigurationID = "configuration_id";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedErrorMessage = "error_message";
+        string expectedParseConfigID = "parse_config_id";
+        string expectedParseTier = "parse_tier";
         Split::SplitResultResponse expectedResult = new(
             [
                 new()
@@ -213,6 +225,8 @@ public class SplitCreateResponseTest : TestBase
         Assert.Equal(expectedConfigurationID, deserialized.ConfigurationID);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedErrorMessage, deserialized.ErrorMessage);
+        Assert.Equal(expectedParseConfigID, deserialized.ParseConfigID);
+        Assert.Equal(expectedParseTier, deserialized.ParseTier);
         Assert.Equal(expectedResult, deserialized.Result);
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
@@ -234,6 +248,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -270,6 +286,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -303,6 +321,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -335,6 +355,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -371,6 +393,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()
@@ -415,6 +439,10 @@ public class SplitCreateResponseTest : TestBase
         Assert.False(model.RawData.ContainsKey("created_at"));
         Assert.Null(model.ErrorMessage);
         Assert.False(model.RawData.ContainsKey("error_message"));
+        Assert.Null(model.ParseConfigID);
+        Assert.False(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.False(model.RawData.ContainsKey("parse_tier"));
         Assert.Null(model.Result);
         Assert.False(model.RawData.ContainsKey("result"));
         Assert.Null(model.TransactionID);
@@ -464,6 +492,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = null,
             CreatedAt = null,
             ErrorMessage = null,
+            ParseConfigID = null,
+            ParseTier = null,
             Result = null,
             TransactionID = null,
             UpdatedAt = null,
@@ -475,6 +505,10 @@ public class SplitCreateResponseTest : TestBase
         Assert.True(model.RawData.ContainsKey("created_at"));
         Assert.Null(model.ErrorMessage);
         Assert.True(model.RawData.ContainsKey("error_message"));
+        Assert.Null(model.ParseConfigID);
+        Assert.True(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.True(model.RawData.ContainsKey("parse_tier"));
         Assert.Null(model.Result);
         Assert.True(model.RawData.ContainsKey("result"));
         Assert.Null(model.TransactionID);
@@ -503,6 +537,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = null,
             CreatedAt = null,
             ErrorMessage = null,
+            ParseConfigID = null,
+            ParseTier = null,
             Result = null,
             TransactionID = null,
             UpdatedAt = null,
@@ -526,6 +562,8 @@ public class SplitCreateResponseTest : TestBase
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
+            ParseConfigID = "parse_config_id",
+            ParseTier = "parse_tier",
             Result = new(
                 [
                     new()

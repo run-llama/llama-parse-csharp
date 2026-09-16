@@ -669,6 +669,8 @@ public class ConfigurationResponseParametersTest : TestBase
             new Configurations::SplitV1Parameters()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = Configurations::SplitV1ParametersParseTier.Fast,
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,
@@ -991,6 +993,8 @@ public class ConfigurationResponseParametersTest : TestBase
             new Configurations::SplitV1Parameters()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = Configurations::SplitV1ParametersParseTier.Fast,
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,

@@ -14,7 +14,23 @@ using Split = LlamaCloud.Models.Beta.Split;
 namespace LlamaCloud.Models.Split;
 
 /// <summary>
-/// Create a document split job.
+/// Create a split job.
+///
+/// <para>## Document input</para>
+///
+/// <para>Set `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying
+/// a parse job reuses its output instead of reading the document again.</para>
+///
+/// <para>## Parse settings</para>
+///
+/// <para>`configuration.parse_tier` and `configuration.parse_config_id` control
+/// how the document is read before splitting; both are ignored when a parse job
+/// is supplied. A parse configuration restricted to a page subset (`target_pages`
+/// or `max_pages`) is rejected, since split results always number pages relative
+/// to the full document.</para>
+///
+/// <para>The job runs asynchronously. Poll `GET /split/jobs/{split_job_id}` or register
+/// a webhook to monitor completion.</para>
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
@@ -281,6 +297,37 @@ public sealed record class Configuration : JsonModel
     }
 
     /// <summary>
+    /// Saved parse configuration ID controlling how the document is read before splitting.
+    /// Takes precedence over parse_tier. Configurations restricted to a page subset
+    /// (target_pages or max_pages) are rejected, since split results always number
+    /// pages relative to the full document. Ignored when a completed parse job is
+    /// supplied as file_input.
+    /// </summary>
+    public string? ParseConfigID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("parse_config_id");
+        }
+        init { this._rawData.Set("parse_config_id", value); }
+    }
+
+    /// <summary>
+    /// Parse tier used to read the document before splitting. Defaults to fast.
+    /// Ignored when a completed parse job is supplied as file_input.
+    /// </summary>
+    public ApiEnum<string, ParseTier>? ParseTier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, ParseTier>>("parse_tier");
+        }
+        init { this._rawData.Set("parse_tier", value); }
+    }
+
+    /// <summary>
     /// Strategy for splitting documents.
     /// </summary>
     public SplittingStrategy? SplittingStrategy
@@ -308,6 +355,8 @@ public sealed record class Configuration : JsonModel
         {
             item.Validate();
         }
+        _ = this.ParseConfigID;
+        this.ParseTier?.Validate();
         this.SplittingStrategy?.Validate();
     }
 
@@ -351,6 +400,60 @@ class ConfigurationFromRaw : IFromRawJson<Configuration>
     /// <inheritdoc/>
     public Configuration FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Configuration.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Parse tier used to read the document before splitting. Defaults to fast. Ignored
+/// when a completed parse job is supplied as file_input.
+/// </summary>
+[JsonConverter(typeof(ParseTierConverter))]
+public enum ParseTier
+{
+    Agentic,
+    AgenticPlus,
+    CostEffective,
+    Fast,
+}
+
+sealed class ParseTierConverter : JsonConverter<ParseTier>
+{
+    public override ParseTier Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "agentic" => ParseTier.Agentic,
+            "agentic_plus" => ParseTier.AgenticPlus,
+            "cost_effective" => ParseTier.CostEffective,
+            "fast" => ParseTier.Fast,
+            _ => (ParseTier)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ParseTier value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ParseTier.Agentic => "agentic",
+                ParseTier.AgenticPlus => "agentic_plus",
+                ParseTier.CostEffective => "cost_effective",
+                ParseTier.Fast => "fast",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
