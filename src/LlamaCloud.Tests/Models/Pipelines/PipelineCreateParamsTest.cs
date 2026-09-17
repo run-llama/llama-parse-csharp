@@ -59,6 +59,7 @@ public class PipelineCreateParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,
@@ -308,6 +309,7 @@ public class PipelineCreateParamsTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
+            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -691,6 +693,7 @@ public class PipelineCreateParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,
@@ -910,6 +913,7 @@ public class PipelineCreateParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,
@@ -1203,6 +1207,7 @@ public class PipelineCreateParamsTest : TestBase
             {
                 AdaptiveLongTable = true,
                 AggressiveTableExtraction = true,
+                AnnotateLineNumbers = true,
                 AnnotateLinks = true,
                 AnnotateRevisions = true,
                 AutoMode = true,

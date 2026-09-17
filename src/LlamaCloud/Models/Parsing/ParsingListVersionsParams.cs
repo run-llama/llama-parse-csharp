@@ -9,7 +9,7 @@ using LlamaCloud.Core;
 namespace LlamaCloud.Models.Parsing;
 
 /// <summary>
-/// List the parse versions accepted by each tier.
+/// List the parse versions accepted by each tier and what `latest` resolves to.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

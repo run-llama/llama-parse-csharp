@@ -169,7 +169,7 @@ public record class RetrievalRetrieveParams : ParamsBase
     }
 
     /// <summary>
-    /// Maximum number of results to return.
+    /// Maximum number of results to return. Values above 500 are capped at 500.
     /// </summary>
     public long? TopK
     {

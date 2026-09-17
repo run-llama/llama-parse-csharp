@@ -148,12 +148,12 @@ public sealed record class ClassifyJob : JsonModel
     /// <summary>
     /// The classification mode to use
     /// </summary>
-    public ApiEnum<string, ClassifyJobMode>? Mode
+    public ApiEnum<string, Mode>? Mode
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<ApiEnum<string, ClassifyJobMode>>("mode");
+            return this._rawData.GetNullableClass<ApiEnum<string, Mode>>("mode");
         }
         init
         {
@@ -260,16 +260,16 @@ class ClassifyJobFromRaw : IFromRawJson<ClassifyJob>
 /// <summary>
 /// The classification mode to use
 /// </summary>
-[JsonConverter(typeof(ClassifyJobModeConverter))]
-public enum ClassifyJobMode
+[JsonConverter(typeof(ModeConverter))]
+public enum Mode
 {
     Fast,
     Multimodal,
 }
 
-sealed class ClassifyJobModeConverter : JsonConverter<ClassifyJobMode>
+sealed class ModeConverter : JsonConverter<Mode>
 {
-    public override ClassifyJobMode Read(
+    public override Mode Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options
@@ -277,24 +277,20 @@ sealed class ClassifyJobModeConverter : JsonConverter<ClassifyJobMode>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "FAST" => ClassifyJobMode.Fast,
-            "MULTIMODAL" => ClassifyJobMode.Multimodal,
-            _ => (ClassifyJobMode)(-1),
+            "FAST" => Mode.Fast,
+            "MULTIMODAL" => Mode.Multimodal,
+            _ => (Mode)(-1),
         };
     }
 
-    public override void Write(
-        Utf8JsonWriter writer,
-        ClassifyJobMode value,
-        JsonSerializerOptions options
-    )
+    public override void Write(Utf8JsonWriter writer, Mode value, JsonSerializerOptions options)
     {
         JsonSerializer.Serialize(
             writer,
             value switch
             {
-                ClassifyJobMode.Fast => "FAST",
-                ClassifyJobMode.Multimodal => "MULTIMODAL",
+                Mode.Fast => "FAST",
+                Mode.Multimodal => "MULTIMODAL",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

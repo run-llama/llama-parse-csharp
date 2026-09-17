@@ -36,6 +36,16 @@ public record class MetadataCreateParams : ParamsBase
         init { this._rawBodyData.Set("upload_file", value); }
     }
 
+    public string? ProjectID
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("project_id");
+        }
+        init { this._rawQueryData.Set("project_id", value); }
+    }
+
     public MetadataCreateParams() { }
 
 #pragma warning disable CS8618

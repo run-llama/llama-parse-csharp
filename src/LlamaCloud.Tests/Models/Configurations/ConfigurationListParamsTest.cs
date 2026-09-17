@@ -17,7 +17,7 @@ public class ConfigurationListParamsTest : TestBase
             LatestOnly = true,
             Name = "name",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProductType = [ProductType.ClassifyV2, ProductType.ExtractV2],
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -26,7 +26,7 @@ public class ConfigurationListParamsTest : TestBase
         bool expectedLatestOnly = true;
         string expectedName = "name";
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        long expectedPageSize = 0;
+        long expectedPageSize = 1;
         string expectedPageToken = "page_token";
         List<ApiEnum<string, ProductType>> expectedProductType =
         [
@@ -56,7 +56,7 @@ public class ConfigurationListParamsTest : TestBase
         {
             Name = "name",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProductType = [ProductType.ClassifyV2, ProductType.ExtractV2],
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -73,7 +73,7 @@ public class ConfigurationListParamsTest : TestBase
         {
             Name = "name",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProductType = [ProductType.ClassifyV2, ProductType.ExtractV2],
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -142,7 +142,7 @@ public class ConfigurationListParamsTest : TestBase
             LatestOnly = true,
             Name = "name",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProductType = [ProductType.ClassifyV2, ProductType.ExtractV2],
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -153,7 +153,7 @@ public class ConfigurationListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/beta/configurations?latest_only=true&name=name&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=0&page_token=page_token&product_type=classify_v2&product_type=extract_v2&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/beta/configurations?latest_only=true&name=name&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&product_type=classify_v2&product_type=extract_v2&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -168,7 +168,7 @@ public class ConfigurationListParamsTest : TestBase
             LatestOnly = true,
             Name = "name",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProductType = [ProductType.ClassifyV2, ProductType.ExtractV2],
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
