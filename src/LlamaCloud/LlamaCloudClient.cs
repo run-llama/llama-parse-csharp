@@ -138,12 +138,6 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         get { return _v2Projects.Value; }
     }
 
-    readonly Lazy<IJobDataPointService> _jobDataPoints;
-    public IJobDataPointService JobDataPoints
-    {
-        get { return _jobDataPoints.Value; }
-    }
-
     readonly Lazy<IDataSinkService> _dataSinks;
     public IDataSinkService DataSinks
     {
@@ -198,7 +192,6 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         _webhookConfigs = new(() => new WebhookConfigService(this));
         _projects = new(() => new ProjectService(this));
         _v2Projects = new(() => new V2ProjectService(this));
-        _jobDataPoints = new(() => new JobDataPointService(this));
         _dataSinks = new(() => new DataSinkService(this));
         _extractionAgents = new(() => new ExtractionAgentService(this));
         _dataSources = new(() => new DataSourceService(this));
@@ -344,12 +337,6 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
     public IV2ProjectServiceWithRawResponse V2Projects
     {
         get { return _v2Projects.Value; }
-    }
-
-    readonly Lazy<IJobDataPointServiceWithRawResponse> _jobDataPoints;
-    public IJobDataPointServiceWithRawResponse JobDataPoints
-    {
-        get { return _jobDataPoints.Value; }
     }
 
     readonly Lazy<IDataSinkServiceWithRawResponse> _dataSinks;
@@ -597,7 +584,6 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
         _webhookConfigs = new(() => new WebhookConfigServiceWithRawResponse(this));
         _projects = new(() => new ProjectServiceWithRawResponse(this));
         _v2Projects = new(() => new V2ProjectServiceWithRawResponse(this));
-        _jobDataPoints = new(() => new JobDataPointServiceWithRawResponse(this));
         _dataSinks = new(() => new DataSinkServiceWithRawResponse(this));
         _extractionAgents = new(() => new ExtractionAgentServiceWithRawResponse(this));
         _dataSources = new(() => new DataSourceServiceWithRawResponse(this));

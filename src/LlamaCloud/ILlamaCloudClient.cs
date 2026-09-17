@@ -73,8 +73,6 @@ public interface ILlamaCloudClient : IDisposable
 
     IV2ProjectService V2Projects { get; }
 
-    IJobDataPointService JobDataPoints { get; }
-
     IDataSinkService DataSinks { get; }
 
     IExtractionAgentService ExtractionAgents { get; }
@@ -138,8 +136,6 @@ public interface ILlamaCloudClientWithRawResponse : IDisposable
     IProjectServiceWithRawResponse Projects { get; }
 
     IV2ProjectServiceWithRawResponse V2Projects { get; }
-
-    IJobDataPointServiceWithRawResponse JobDataPoints { get; }
 
     IDataSinkServiceWithRawResponse DataSinks { get; }
 
