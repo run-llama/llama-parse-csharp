@@ -14,17 +14,20 @@ public class DocumentGetStatusCountsParamsTest : TestBase
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedDataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedFileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         bool expectedOnlyDirectUpload = true;
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
         Assert.Equal(expectedDataSourceID, parameters.DataSourceID);
         Assert.Equal(expectedFileID, parameters.FileID);
         Assert.Equal(expectedOnlyDirectUpload, parameters.OnlyDirectUpload);
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
     }
 
     [Fact]
@@ -35,6 +38,7 @@ public class DocumentGetStatusCountsParamsTest : TestBase
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         Assert.Null(parameters.OnlyDirectUpload);
@@ -49,6 +53,7 @@ public class DocumentGetStatusCountsParamsTest : TestBase
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 
             // Null should be interpreted as omitted for these properties
             OnlyDirectUpload = null,
@@ -71,6 +76,8 @@ public class DocumentGetStatusCountsParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("data_source_id"));
         Assert.Null(parameters.FileID);
         Assert.False(parameters.RawQueryData.ContainsKey("file_id"));
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -83,12 +90,15 @@ public class DocumentGetStatusCountsParamsTest : TestBase
 
             DataSourceID = null,
             FileID = null,
+            ProjectID = null,
         };
 
         Assert.Null(parameters.DataSourceID);
         Assert.True(parameters.RawQueryData.ContainsKey("data_source_id"));
         Assert.Null(parameters.FileID);
         Assert.True(parameters.RawQueryData.ContainsKey("file_id"));
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -100,6 +110,7 @@ public class DocumentGetStatusCountsParamsTest : TestBase
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -107,7 +118,7 @@ public class DocumentGetStatusCountsParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/documents/status-counts?data_source_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&file_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&only_direct_upload=true"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/documents/status-counts?data_source_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&file_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&only_direct_upload=true&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -123,6 +134,7 @@ public class DocumentGetStatusCountsParamsTest : TestBase
             DataSourceID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             OnlyDirectUpload = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         DocumentGetStatusCountsParams copied = new(parameters);

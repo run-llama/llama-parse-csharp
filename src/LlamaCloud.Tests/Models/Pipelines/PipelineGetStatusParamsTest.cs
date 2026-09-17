@@ -12,13 +12,16 @@ public class PipelineGetStatusParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FullDetails = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         bool expectedFullDetails = true;
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
         Assert.Equal(expectedFullDetails, parameters.FullDetails);
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
     }
 
     [Fact]
@@ -31,6 +34,8 @@ public class PipelineGetStatusParamsTest : TestBase
 
         Assert.Null(parameters.FullDetails);
         Assert.False(parameters.RawQueryData.ContainsKey("full_details"));
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -41,10 +46,13 @@ public class PipelineGetStatusParamsTest : TestBase
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 
             FullDetails = null,
+            ProjectID = null,
         };
 
         Assert.Null(parameters.FullDetails);
         Assert.True(parameters.RawQueryData.ContainsKey("full_details"));
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -54,6 +62,7 @@ public class PipelineGetStatusParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FullDetails = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -61,7 +70,7 @@ public class PipelineGetStatusParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/status?full_details=true"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/status?full_details=true&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -75,6 +84,7 @@ public class PipelineGetStatusParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FullDetails = true,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         PipelineGetStatusParams copied = new(parameters);

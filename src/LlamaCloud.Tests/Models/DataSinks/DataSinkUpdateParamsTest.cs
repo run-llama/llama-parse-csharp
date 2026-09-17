@@ -17,6 +17,7 @@ public class DataSinkUpdateParamsTest : TestBase
         {
             DataSinkID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SinkType = DataSinkUpdateParamsSinkType.AstraDB,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Component = new(
                 new Dictionary<string, JsonElement>()
                 {
@@ -29,6 +30,7 @@ public class DataSinkUpdateParamsTest : TestBase
         string expectedDataSinkID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         ApiEnum<string, DataSinkUpdateParamsSinkType> expectedSinkType =
             DataSinkUpdateParamsSinkType.AstraDB;
+        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         DataSinkUpdateParamsComponent expectedComponent = new(
             new Dictionary<string, JsonElement>()
             {
@@ -39,6 +41,7 @@ public class DataSinkUpdateParamsTest : TestBase
 
         Assert.Equal(expectedDataSinkID, parameters.DataSinkID);
         Assert.Equal(expectedSinkType, parameters.SinkType);
+        Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.Equal(expectedComponent, parameters.Component);
         Assert.Equal(expectedName, parameters.Name);
     }
@@ -52,6 +55,8 @@ public class DataSinkUpdateParamsTest : TestBase
             SinkType = DataSinkUpdateParamsSinkType.AstraDB,
         };
 
+        Assert.Null(parameters.ProjectID);
+        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Component);
         Assert.False(parameters.RawBodyData.ContainsKey("component"));
         Assert.Null(parameters.Name);
@@ -66,10 +71,13 @@ public class DataSinkUpdateParamsTest : TestBase
             DataSinkID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SinkType = DataSinkUpdateParamsSinkType.AstraDB,
 
+            ProjectID = null,
             Component = null,
             Name = null,
         };
 
+        Assert.Null(parameters.ProjectID);
+        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Component);
         Assert.True(parameters.RawBodyData.ContainsKey("component"));
         Assert.Null(parameters.Name);
@@ -83,6 +91,7 @@ public class DataSinkUpdateParamsTest : TestBase
         {
             DataSinkID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SinkType = DataSinkUpdateParamsSinkType.AstraDB,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -90,7 +99,7 @@ public class DataSinkUpdateParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/data-sinks/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/data-sinks/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -104,6 +113,7 @@ public class DataSinkUpdateParamsTest : TestBase
         {
             DataSinkID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SinkType = DataSinkUpdateParamsSinkType.AstraDB,
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Component = new(
                 new Dictionary<string, JsonElement>()
                 {
