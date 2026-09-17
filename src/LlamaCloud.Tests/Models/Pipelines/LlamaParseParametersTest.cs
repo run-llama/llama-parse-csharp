@@ -16,7 +16,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -155,7 +154,6 @@ public class LlamaParseParametersTest : TestBase
 
         bool expectedAdaptiveLongTable = true;
         bool expectedAggressiveTableExtraction = true;
-        bool expectedAnnotateLineNumbers = true;
         bool expectedAnnotateLinks = true;
         bool expectedAnnotateRevisions = true;
         bool expectedAutoMode = true;
@@ -299,7 +297,6 @@ public class LlamaParseParametersTest : TestBase
 
         Assert.Equal(expectedAdaptiveLongTable, model.AdaptiveLongTable);
         Assert.Equal(expectedAggressiveTableExtraction, model.AggressiveTableExtraction);
-        Assert.Equal(expectedAnnotateLineNumbers, model.AnnotateLineNumbers);
         Assert.Equal(expectedAnnotateLinks, model.AnnotateLinks);
         Assert.Equal(expectedAnnotateRevisions, model.AnnotateRevisions);
         Assert.Equal(expectedAutoMode, model.AutoMode);
@@ -476,7 +473,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -629,7 +625,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -775,7 +770,6 @@ public class LlamaParseParametersTest : TestBase
 
         bool expectedAdaptiveLongTable = true;
         bool expectedAggressiveTableExtraction = true;
-        bool expectedAnnotateLineNumbers = true;
         bool expectedAnnotateLinks = true;
         bool expectedAnnotateRevisions = true;
         bool expectedAutoMode = true;
@@ -919,7 +913,6 @@ public class LlamaParseParametersTest : TestBase
 
         Assert.Equal(expectedAdaptiveLongTable, deserialized.AdaptiveLongTable);
         Assert.Equal(expectedAggressiveTableExtraction, deserialized.AggressiveTableExtraction);
-        Assert.Equal(expectedAnnotateLineNumbers, deserialized.AnnotateLineNumbers);
         Assert.Equal(expectedAnnotateLinks, deserialized.AnnotateLinks);
         Assert.Equal(expectedAnnotateRevisions, deserialized.AnnotateRevisions);
         Assert.Equal(expectedAutoMode, deserialized.AutoMode);
@@ -1123,7 +1116,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -1270,7 +1262,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -1417,7 +1408,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -1563,7 +1553,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -1713,7 +1702,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,
@@ -1864,8 +1852,6 @@ public class LlamaParseParametersTest : TestBase
         Assert.False(model.RawData.ContainsKey("adaptive_long_table"));
         Assert.Null(model.AggressiveTableExtraction);
         Assert.False(model.RawData.ContainsKey("aggressive_table_extraction"));
-        Assert.Null(model.AnnotateLineNumbers);
-        Assert.False(model.RawData.ContainsKey("annotate_line_numbers"));
         Assert.Null(model.AnnotateLinks);
         Assert.False(model.RawData.ContainsKey("annotate_links"));
         Assert.Null(model.AnnotateRevisions);
@@ -2121,7 +2107,6 @@ public class LlamaParseParametersTest : TestBase
 
             AdaptiveLongTable = null,
             AggressiveTableExtraction = null,
-            AnnotateLineNumbers = null,
             AnnotateLinks = null,
             AnnotateRevisions = null,
             AutoMode = null,
@@ -2246,8 +2231,6 @@ public class LlamaParseParametersTest : TestBase
         Assert.True(model.RawData.ContainsKey("adaptive_long_table"));
         Assert.Null(model.AggressiveTableExtraction);
         Assert.True(model.RawData.ContainsKey("aggressive_table_extraction"));
-        Assert.Null(model.AnnotateLineNumbers);
-        Assert.True(model.RawData.ContainsKey("annotate_line_numbers"));
         Assert.Null(model.AnnotateLinks);
         Assert.True(model.RawData.ContainsKey("annotate_links"));
         Assert.Null(model.AnnotateRevisions);
@@ -2495,7 +2478,6 @@ public class LlamaParseParametersTest : TestBase
 
             AdaptiveLongTable = null,
             AggressiveTableExtraction = null,
-            AnnotateLineNumbers = null,
             AnnotateLinks = null,
             AnnotateRevisions = null,
             AutoMode = null,
@@ -2626,7 +2608,6 @@ public class LlamaParseParametersTest : TestBase
         {
             AdaptiveLongTable = true,
             AggressiveTableExtraction = true,
-            AnnotateLineNumbers = true,
             AnnotateLinks = true,
             AnnotateRevisions = true,
             AutoMode = true,

@@ -50,7 +50,7 @@ public record class WebhookConfigUpdateParams : ParamsBase
     }
 
     /// <summary>
-    /// Updated event subscriptions. Omit to leave unchanged; [] is rejected.
+    /// Updated event subscriptions.
     /// </summary>
     public IReadOnlyList<ApiEnum<string, WebhookConfigUpdateParamsWebhookEvent>>? WebhookEvents
     {

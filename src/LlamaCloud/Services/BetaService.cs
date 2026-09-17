@@ -32,6 +32,7 @@ public sealed class BetaService : IBetaService
         _retrieval = new(() => new Beta::RetrievalService(client));
         _chat = new(() => new Beta::ChatService(client));
         _agentData = new(() => new Beta::AgentDataService(client));
+        _sheets = new(() => new Beta::SheetService(client));
         _directories = new(() => new Beta::DirectoryService(client));
         _split = new(() => new Beta::SplitService(client));
     }
@@ -58,6 +59,12 @@ public sealed class BetaService : IBetaService
     public Beta::IAgentDataService AgentData
     {
         get { return _agentData.Value; }
+    }
+
+    readonly Lazy<Beta::ISheetService> _sheets;
+    public Beta::ISheetService Sheets
+    {
+        get { return _sheets.Value; }
     }
 
     readonly Lazy<Beta::IDirectoryService> _directories;
@@ -92,6 +99,7 @@ public sealed class BetaServiceWithRawResponse : IBetaServiceWithRawResponse
         _retrieval = new(() => new Beta::RetrievalServiceWithRawResponse(client));
         _chat = new(() => new Beta::ChatServiceWithRawResponse(client));
         _agentData = new(() => new Beta::AgentDataServiceWithRawResponse(client));
+        _sheets = new(() => new Beta::SheetServiceWithRawResponse(client));
         _directories = new(() => new Beta::DirectoryServiceWithRawResponse(client));
         _split = new(() => new Beta::SplitServiceWithRawResponse(client));
     }
@@ -118,6 +126,12 @@ public sealed class BetaServiceWithRawResponse : IBetaServiceWithRawResponse
     public Beta::IAgentDataServiceWithRawResponse AgentData
     {
         get { return _agentData.Value; }
+    }
+
+    readonly Lazy<Beta::ISheetServiceWithRawResponse> _sheets;
+    public Beta::ISheetServiceWithRawResponse Sheets
+    {
+        get { return _sheets.Value; }
     }
 
     readonly Lazy<Beta::IDirectoryServiceWithRawResponse> _directories;

@@ -40,8 +40,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -72,8 +70,6 @@ public class SplitCreateResponseTest : TestBase
         SplitCreateResponseSplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            CustomInstructions = "Start a new segment at every signature page.",
-            MinPagesPerSplit = 1,
         };
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
@@ -130,8 +126,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -176,8 +170,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -215,8 +207,6 @@ public class SplitCreateResponseTest : TestBase
         SplitCreateResponseSplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            CustomInstructions = "Start a new segment at every signature page.",
-            MinPagesPerSplit = 1,
         };
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
@@ -273,8 +263,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -442,8 +430,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
         };
 
@@ -480,8 +466,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
         };
 
@@ -503,8 +487,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
 
             ConfigurationID = null,
@@ -550,8 +532,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
 
             ConfigurationID = null,
@@ -597,8 +577,6 @@ public class SplitCreateResponseTest : TestBase
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-                CustomInstructions = "Start a new segment at every signature page.",
-                MinPagesPerSplit = 1,
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -678,8 +656,6 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
         var model = new SplitCreateResponseSplittingStrategy
         {
             AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            CustomInstructions = "Start a new segment at every signature page.",
-            MinPagesPerSplit = 1,
         };
 
         ApiEnum<
@@ -687,12 +663,8 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
             SplitCreateResponseSplittingStrategyAllowUncategorized
         > expectedAllowUncategorized =
             SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid;
-        string expectedCustomInstructions = "Start a new segment at every signature page.";
-        long expectedMinPagesPerSplit = 1;
 
         Assert.Equal(expectedAllowUncategorized, model.AllowUncategorized);
-        Assert.Equal(expectedCustomInstructions, model.CustomInstructions);
-        Assert.Equal(expectedMinPagesPerSplit, model.MinPagesPerSplit);
     }
 
     [Fact]
@@ -701,8 +673,6 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
         var model = new SplitCreateResponseSplittingStrategy
         {
             AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            CustomInstructions = "Start a new segment at every signature page.",
-            MinPagesPerSplit = 1,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -720,8 +690,6 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
         var model = new SplitCreateResponseSplittingStrategy
         {
             AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            CustomInstructions = "Start a new segment at every signature page.",
-            MinPagesPerSplit = 1,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -736,12 +704,8 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
             SplitCreateResponseSplittingStrategyAllowUncategorized
         > expectedAllowUncategorized =
             SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid;
-        string expectedCustomInstructions = "Start a new segment at every signature page.";
-        long expectedMinPagesPerSplit = 1;
 
         Assert.Equal(expectedAllowUncategorized, deserialized.AllowUncategorized);
-        Assert.Equal(expectedCustomInstructions, deserialized.CustomInstructions);
-        Assert.Equal(expectedMinPagesPerSplit, deserialized.MinPagesPerSplit);
     }
 
     [Fact]
@@ -750,8 +714,6 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
         var model = new SplitCreateResponseSplittingStrategy
         {
             AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            CustomInstructions = "Start a new segment at every signature page.",
-            MinPagesPerSplit = 1,
         };
 
         model.Validate();
@@ -760,24 +722,16 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new SplitCreateResponseSplittingStrategy
-        {
-            CustomInstructions = "Start a new segment at every signature page.",
-        };
+        var model = new SplitCreateResponseSplittingStrategy { };
 
         Assert.Null(model.AllowUncategorized);
         Assert.False(model.RawData.ContainsKey("allow_uncategorized"));
-        Assert.Null(model.MinPagesPerSplit);
-        Assert.False(model.RawData.ContainsKey("min_pages_per_split"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new SplitCreateResponseSplittingStrategy
-        {
-            CustomInstructions = "Start a new segment at every signature page.",
-        };
+        var model = new SplitCreateResponseSplittingStrategy { };
 
         model.Validate();
     }
@@ -787,17 +741,12 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
     {
         var model = new SplitCreateResponseSplittingStrategy
         {
-            CustomInstructions = "Start a new segment at every signature page.",
-
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
-            MinPagesPerSplit = null,
         };
 
         Assert.Null(model.AllowUncategorized);
         Assert.False(model.RawData.ContainsKey("allow_uncategorized"));
-        Assert.Null(model.MinPagesPerSplit);
-        Assert.False(model.RawData.ContainsKey("min_pages_per_split"));
     }
 
     [Fact]
@@ -805,65 +754,8 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
     {
         var model = new SplitCreateResponseSplittingStrategy
         {
-            CustomInstructions = "Start a new segment at every signature page.",
-
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
-            MinPagesPerSplit = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new SplitCreateResponseSplittingStrategy
-        {
-            AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            MinPagesPerSplit = 1,
-        };
-
-        Assert.Null(model.CustomInstructions);
-        Assert.False(model.RawData.ContainsKey("custom_instructions"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new SplitCreateResponseSplittingStrategy
-        {
-            AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            MinPagesPerSplit = 1,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new SplitCreateResponseSplittingStrategy
-        {
-            AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            MinPagesPerSplit = 1,
-
-            CustomInstructions = null,
-        };
-
-        Assert.Null(model.CustomInstructions);
-        Assert.True(model.RawData.ContainsKey("custom_instructions"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new SplitCreateResponseSplittingStrategy
-        {
-            AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            MinPagesPerSplit = 1,
-
-            CustomInstructions = null,
         };
 
         model.Validate();
@@ -875,8 +767,6 @@ public class SplitCreateResponseSplittingStrategyTest : TestBase
         var model = new SplitCreateResponseSplittingStrategy
         {
             AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
-            CustomInstructions = "Start a new segment at every signature page.",
-            MinPagesPerSplit = 1,
         };
 
         SplitCreateResponseSplittingStrategy copied = new(model);

@@ -11,40 +11,11 @@ public class MetadataDeleteAllParamsTest : TestBase
         var parameters = new MetadataDeleteAllParams
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
-        Assert.Equal(expectedProjectID, parameters.ProjectID);
-    }
-
-    [Fact]
-    public void OptionalNullableParamsUnsetAreNotSet_Works()
-    {
-        var parameters = new MetadataDeleteAllParams
-        {
-            PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-        };
-
-        Assert.Null(parameters.ProjectID);
-        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
-    }
-
-    [Fact]
-    public void OptionalNullableParamsSetToNullAreSetToNull_Works()
-    {
-        var parameters = new MetadataDeleteAllParams
-        {
-            PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-
-            ProjectID = null,
-        };
-
-        Assert.Null(parameters.ProjectID);
-        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
     }
 
     [Fact]
@@ -53,7 +24,6 @@ public class MetadataDeleteAllParamsTest : TestBase
         MetadataDeleteAllParams parameters = new()
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -61,7 +31,7 @@ public class MetadataDeleteAllParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/metadata?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/metadata"
                 ),
                 url
             )
@@ -74,7 +44,6 @@ public class MetadataDeleteAllParamsTest : TestBase
         var parameters = new MetadataDeleteAllParams
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         MetadataDeleteAllParams copied = new(parameters);

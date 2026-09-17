@@ -236,7 +236,6 @@ public record class ClassifyListParams : ParamsBase
 [JsonConverter(typeof(StatusConverter))]
 public enum Status
 {
-    Cancelled,
     Completed,
     Failed,
     Pending,
@@ -253,7 +252,6 @@ sealed class StatusConverter : JsonConverter<Status>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "CANCELLED" => Status.Cancelled,
             "COMPLETED" => Status.Completed,
             "FAILED" => Status.Failed,
             "PENDING" => Status.Pending,
@@ -268,7 +266,6 @@ sealed class StatusConverter : JsonConverter<Status>
             writer,
             value switch
             {
-                Status.Cancelled => "CANCELLED",
                 Status.Completed => "COMPLETED",
                 Status.Failed => "FAILED",
                 Status.Pending => "PENDING",

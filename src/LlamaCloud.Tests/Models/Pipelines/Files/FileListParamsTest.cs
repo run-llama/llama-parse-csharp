@@ -21,7 +21,6 @@ public class FileListParamsTest : TestBase
             Offset = 0,
             OnlyManuallyUploaded = true,
             OrderBy = "order_by",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Statuses = [Status.Cancelled, Status.Error],
         };
 
@@ -32,7 +31,6 @@ public class FileListParamsTest : TestBase
         long expectedOffset = 0;
         bool expectedOnlyManuallyUploaded = true;
         string expectedOrderBy = "order_by";
-        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         List<ApiEnum<string, Status>> expectedStatuses = [Status.Cancelled, Status.Error];
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
@@ -42,7 +40,6 @@ public class FileListParamsTest : TestBase
         Assert.Equal(expectedOffset, parameters.Offset);
         Assert.Equal(expectedOnlyManuallyUploaded, parameters.OnlyManuallyUploaded);
         Assert.Equal(expectedOrderBy, parameters.OrderBy);
-        Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.NotNull(parameters.Statuses);
         Assert.Equal(expectedStatuses.Count, parameters.Statuses.Count);
         for (int i = 0; i < expectedStatuses.Count; i++)
@@ -62,7 +59,6 @@ public class FileListParamsTest : TestBase
             Limit = 0,
             Offset = 0,
             OrderBy = "order_by",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Statuses = [Status.Cancelled, Status.Error],
         };
 
@@ -81,7 +77,6 @@ public class FileListParamsTest : TestBase
             Limit = 0,
             Offset = 0,
             OrderBy = "order_by",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Statuses = [Status.Cancelled, Status.Error],
 
             // Null should be interpreted as omitted for these properties
@@ -111,8 +106,6 @@ public class FileListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("offset"));
         Assert.Null(parameters.OrderBy);
         Assert.False(parameters.RawQueryData.ContainsKey("order_by"));
-        Assert.Null(parameters.ProjectID);
-        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Statuses);
         Assert.False(parameters.RawQueryData.ContainsKey("statuses"));
     }
@@ -130,7 +123,6 @@ public class FileListParamsTest : TestBase
             Limit = null,
             Offset = null,
             OrderBy = null,
-            ProjectID = null,
             Statuses = null,
         };
 
@@ -144,8 +136,6 @@ public class FileListParamsTest : TestBase
         Assert.True(parameters.RawQueryData.ContainsKey("offset"));
         Assert.Null(parameters.OrderBy);
         Assert.True(parameters.RawQueryData.ContainsKey("order_by"));
-        Assert.Null(parameters.ProjectID);
-        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Statuses);
         Assert.True(parameters.RawQueryData.ContainsKey("statuses"));
     }
@@ -162,7 +152,6 @@ public class FileListParamsTest : TestBase
             Offset = 0,
             OnlyManuallyUploaded = true,
             OrderBy = "order_by",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Statuses = [Status.Cancelled, Status.Error],
         };
 
@@ -171,7 +160,7 @@ public class FileListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/files2?data_source_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&file_name_contains=file_name_contains&limit=0&offset=0&only_manually_uploaded=true&order_by=order_by&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&statuses=CANCELLED&statuses=ERROR"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/files2?data_source_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&file_name_contains=file_name_contains&limit=0&offset=0&only_manually_uploaded=true&order_by=order_by&statuses=CANCELLED&statuses=ERROR"
                 ),
                 url
             )
@@ -190,7 +179,6 @@ public class FileListParamsTest : TestBase
             Offset = 0,
             OnlyManuallyUploaded = true,
             OrderBy = "order_by",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Statuses = [Status.Cancelled, Status.Error],
         };
 

@@ -15,7 +15,6 @@ public class FileUpdateParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             CustomMetadata = new Dictionary<string, FileUpdateParamsCustomMetadata?>()
             {
                 {
@@ -32,7 +31,6 @@ public class FileUpdateParamsTest : TestBase
 
         string expectedPipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedFileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         Dictionary<string, FileUpdateParamsCustomMetadata?> expectedCustomMetadata = new()
         {
             {
@@ -48,7 +46,6 @@ public class FileUpdateParamsTest : TestBase
 
         Assert.Equal(expectedPipelineID, parameters.PipelineID);
         Assert.Equal(expectedFileID, parameters.FileID);
-        Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.NotNull(parameters.CustomMetadata);
         Assert.Equal(expectedCustomMetadata.Count, parameters.CustomMetadata.Count);
         foreach (var item in expectedCustomMetadata)
@@ -68,8 +65,6 @@ public class FileUpdateParamsTest : TestBase
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
-        Assert.Null(parameters.ProjectID);
-        Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.CustomMetadata);
         Assert.False(parameters.RawBodyData.ContainsKey("custom_metadata"));
     }
@@ -82,12 +77,9 @@ public class FileUpdateParamsTest : TestBase
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 
-            ProjectID = null,
             CustomMetadata = null,
         };
 
-        Assert.Null(parameters.ProjectID);
-        Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.CustomMetadata);
         Assert.True(parameters.RawBodyData.ContainsKey("custom_metadata"));
     }
@@ -99,7 +91,6 @@ public class FileUpdateParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -107,7 +98,7 @@ public class FileUpdateParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/files/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e?project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/pipelines/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e/files/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -121,7 +112,6 @@ public class FileUpdateParamsTest : TestBase
         {
             PipelineID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             FileID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             CustomMetadata = new Dictionary<string, FileUpdateParamsCustomMetadata?>()
             {
                 {

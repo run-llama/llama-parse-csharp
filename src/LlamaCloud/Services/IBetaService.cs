@@ -32,6 +32,8 @@ public interface IBetaService
 
     Beta::IAgentDataService AgentData { get; }
 
+    Beta::ISheetService Sheets { get; }
+
     Beta::IDirectoryService Directories { get; }
 
     Beta::ISplitService Split { get; }
@@ -57,6 +59,8 @@ public interface IBetaServiceWithRawResponse
     Beta::IChatServiceWithRawResponse Chat { get; }
 
     Beta::IAgentDataServiceWithRawResponse AgentData { get; }
+
+    Beta::ISheetServiceWithRawResponse Sheets { get; }
 
     Beta::IDirectoryServiceWithRawResponse Directories { get; }
 

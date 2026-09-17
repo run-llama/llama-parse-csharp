@@ -216,7 +216,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                 ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = Configurations::ParseTier.Fast,
+                ParseTier = "fast",
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -278,7 +278,6 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                     ImagesToSave = [Configurations::ImagesToSave.Embedded],
                     Markdown = new()
                     {
-                        AnnotateLineNumbers = true,
                         AnnotateLinks = true,
                         AnnotateRevisions = true,
                         InlineImages = true,
@@ -438,8 +437,6 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,
-                    CustomInstructions = "Start a new segment at every signature page.",
-                    MinPagesPerSplit = 1,
                 },
             };
         value.Validate();
@@ -529,7 +526,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                 ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
-                ParseTier = Configurations::ParseTier.Fast,
+                ParseTier = "fast",
                 SheetNames = ["Sheet 1", "Q4 Summary"],
                 SpreadsheetMode = true,
                 SystemPrompt =
@@ -598,7 +595,6 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                     ImagesToSave = [Configurations::ImagesToSave.Embedded],
                     Markdown = new()
                     {
-                        AnnotateLineNumbers = true,
                         AnnotateLinks = true,
                         AnnotateRevisions = true,
                         InlineImages = true,
@@ -765,8 +761,6 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,
-                    CustomInstructions = "Start a new segment at every signature page.",
-                    MinPagesPerSplit = 1,
                 },
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
