@@ -21,6 +21,14 @@ namespace LlamaCloud.Models.Split;
 /// <para>Set `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying
 /// a parse job reuses its output instead of reading the document again.</para>
 ///
+/// <para>## Page selection</para>
+///
+/// <para>`configuration.target_pages` selects which pages of a supplied parse job
+/// to split (1-based; `1-50`, `1,3,5-7`). Pages are read in ascending document order,
+/// and each segment's `pages` are the parse job's own page numbers, so segments
+/// map straight back to the original document. Requires a parse job as `file_input`;
+/// passing it with a file ID returns 400.</para>
+///
 /// <para>## Parse settings</para>
 ///
 /// <para>`configuration.parse_tier` and `configuration.parse_config_id` control
@@ -297,11 +305,11 @@ public sealed record class Configuration : JsonModel
     }
 
     /// <summary>
-    /// Saved parse configuration ID controlling how the document is read before splitting.
-    /// Takes precedence over parse_tier. Configurations restricted to a page subset
-    /// (target_pages or max_pages) are rejected, since split results always number
-    /// pages relative to the full document. Ignored when a completed parse job is
-    /// supplied as file_input.
+    /// Saved parse configuration ID to control how the document is parsed before
+    /// splitting. Takes precedence over parse_tier. Configurations that restrict
+    /// pages (`target_pages` or `max_pages` on the parse configuration) are rejected:
+    /// split results number pages relative to the full document. Ignored when a
+    /// completed parse job is supplied as file_input.
     /// </summary>
     public string? ParseConfigID
     {
@@ -348,6 +356,20 @@ public sealed record class Configuration : JsonModel
         }
     }
 
+    /// <summary>
+    /// Comma-separated page numbers or ranges to split (1-based). Omit to split all
+    /// pages. Requires a completed parse job as file_input.
+    /// </summary>
+    public string? TargetPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("target_pages");
+        }
+        init { this._rawData.Set("target_pages", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -358,6 +380,7 @@ public sealed record class Configuration : JsonModel
         _ = this.ParseConfigID;
         this.ParseTier?.Validate();
         this.SplittingStrategy?.Validate();
+        _ = this.TargetPages;
     }
 
     public Configuration() { }

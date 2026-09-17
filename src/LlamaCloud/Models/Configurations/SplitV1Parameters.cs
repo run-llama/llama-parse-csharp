@@ -50,11 +50,11 @@ public sealed record class SplitV1Parameters : JsonModel
     }
 
     /// <summary>
-    /// Saved parse configuration ID controlling how the document is read before splitting.
-    /// Takes precedence over parse_tier. Configurations restricted to a page subset
-    /// (target_pages or max_pages) are rejected, since split results always number
-    /// pages relative to the full document. Ignored when a completed parse job is
-    /// supplied as file_input.
+    /// Saved parse configuration ID to control how the document is parsed before
+    /// splitting. Takes precedence over parse_tier. Configurations that restrict
+    /// pages (`target_pages` or `max_pages` on the parse configuration) are rejected:
+    /// split results number pages relative to the full document. Ignored when a
+    /// completed parse job is supplied as file_input.
     /// </summary>
     public string? ParseConfigID
     {
@@ -105,6 +105,20 @@ public sealed record class SplitV1Parameters : JsonModel
         }
     }
 
+    /// <summary>
+    /// Comma-separated page numbers or ranges to split (1-based). Omit to split all
+    /// pages. Requires a completed parse job as file_input.
+    /// </summary>
+    public string? TargetPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("target_pages");
+        }
+        init { this._rawData.Set("target_pages", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -121,6 +135,7 @@ public sealed record class SplitV1Parameters : JsonModel
         _ = this.ParseConfigID;
         this.ParseTier?.Validate();
         this.SplittingStrategy?.Validate();
+        _ = this.TargetPages;
     }
 
     public SplitV1Parameters()

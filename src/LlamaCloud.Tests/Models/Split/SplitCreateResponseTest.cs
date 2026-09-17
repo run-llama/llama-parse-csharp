@@ -43,6 +43,7 @@ public class SplitCreateResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -75,6 +76,7 @@ public class SplitCreateResponseTest : TestBase
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "target_pages";
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
@@ -96,6 +98,7 @@ public class SplitCreateResponseTest : TestBase
         Assert.Equal(expectedParseTier, model.ParseTier);
         Assert.Equal(expectedResult, model.Result);
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, model.TargetPages);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
     }
@@ -133,6 +136,7 @@ public class SplitCreateResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -179,6 +183,7 @@ public class SplitCreateResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -218,6 +223,7 @@ public class SplitCreateResponseTest : TestBase
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "target_pages";
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
@@ -239,6 +245,7 @@ public class SplitCreateResponseTest : TestBase
         Assert.Equal(expectedParseTier, deserialized.ParseTier);
         Assert.Equal(expectedResult, deserialized.Result);
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, deserialized.TargetPages);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
     }
@@ -276,6 +283,7 @@ public class SplitCreateResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -310,6 +318,7 @@ public class SplitCreateResponseTest : TestBase
                     },
                 ]
             ),
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -345,6 +354,7 @@ public class SplitCreateResponseTest : TestBase
                     },
                 ]
             ),
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -379,6 +389,7 @@ public class SplitCreateResponseTest : TestBase
                     },
                 ]
             ),
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
@@ -417,6 +428,7 @@ public class SplitCreateResponseTest : TestBase
                     },
                 ]
             ),
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
@@ -459,6 +471,8 @@ public class SplitCreateResponseTest : TestBase
         Assert.False(model.RawData.ContainsKey("parse_tier"));
         Assert.Null(model.Result);
         Assert.False(model.RawData.ContainsKey("result"));
+        Assert.Null(model.TargetPages);
+        Assert.False(model.RawData.ContainsKey("target_pages"));
         Assert.Null(model.TransactionID);
         Assert.False(model.RawData.ContainsKey("transaction_id"));
         Assert.Null(model.UpdatedAt);
@@ -513,6 +527,7 @@ public class SplitCreateResponseTest : TestBase
             ParseConfigID = null,
             ParseTier = null,
             Result = null,
+            TargetPages = null,
             TransactionID = null,
             UpdatedAt = null,
         };
@@ -529,6 +544,8 @@ public class SplitCreateResponseTest : TestBase
         Assert.True(model.RawData.ContainsKey("parse_tier"));
         Assert.Null(model.Result);
         Assert.True(model.RawData.ContainsKey("result"));
+        Assert.Null(model.TargetPages);
+        Assert.True(model.RawData.ContainsKey("target_pages"));
         Assert.Null(model.TransactionID);
         Assert.True(model.RawData.ContainsKey("transaction_id"));
         Assert.Null(model.UpdatedAt);
@@ -560,6 +577,7 @@ public class SplitCreateResponseTest : TestBase
             ParseConfigID = null,
             ParseTier = null,
             Result = null,
+            TargetPages = null,
             TransactionID = null,
             UpdatedAt = null,
         };
@@ -600,6 +618,7 @@ public class SplitCreateResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };

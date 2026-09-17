@@ -220,6 +220,19 @@ public sealed record class SplitGetResponse : JsonModel
     }
 
     /// <summary>
+    /// Page selection requested for this job, if any.
+    /// </summary>
+    public string? TargetPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("target_pages");
+        }
+        init { this._rawData.Set("target_pages", value); }
+    }
+
+    /// <summary>
     /// Idempotency key scoped to the project, if one was provided.
     /// </summary>
     public string? TransactionID
@@ -265,6 +278,7 @@ public sealed record class SplitGetResponse : JsonModel
         _ = this.ParseTier;
         this.Result?.Validate();
         this.SplittingStrategy?.Validate();
+        _ = this.TargetPages;
         _ = this.TransactionID;
         _ = this.UpdatedAt;
     }

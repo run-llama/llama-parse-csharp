@@ -23,6 +23,7 @@ public class SplitV1ParametersTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
         };
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
@@ -36,6 +37,7 @@ public class SplitV1ParametersTest : TestBase
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "1,3,5-7";
 
         Assert.Equal(expectedCategories.Count, model.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -46,6 +48,7 @@ public class SplitV1ParametersTest : TestBase
         Assert.Equal(expectedParseConfigID, model.ParseConfigID);
         Assert.Equal(expectedParseTier, model.ParseTier);
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, model.TargetPages);
     }
 
     [Fact]
@@ -62,6 +65,7 @@ public class SplitV1ParametersTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -87,6 +91,7 @@ public class SplitV1ParametersTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -107,6 +112,7 @@ public class SplitV1ParametersTest : TestBase
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "1,3,5-7";
 
         Assert.Equal(expectedCategories.Count, deserialized.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -117,6 +123,7 @@ public class SplitV1ParametersTest : TestBase
         Assert.Equal(expectedParseConfigID, deserialized.ParseConfigID);
         Assert.Equal(expectedParseTier, deserialized.ParseTier);
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, deserialized.TargetPages);
     }
 
     [Fact]
@@ -133,6 +140,7 @@ public class SplitV1ParametersTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
         };
 
         model.Validate();
@@ -146,6 +154,7 @@ public class SplitV1ParametersTest : TestBase
             Categories = [new() { Name = "x", Description = "x" }],
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
         };
 
         Assert.Null(model.SplittingStrategy);
@@ -160,6 +169,7 @@ public class SplitV1ParametersTest : TestBase
             Categories = [new() { Name = "x", Description = "x" }],
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
         };
 
         model.Validate();
@@ -173,6 +183,7 @@ public class SplitV1ParametersTest : TestBase
             Categories = [new() { Name = "x", Description = "x" }],
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -190,6 +201,7 @@ public class SplitV1ParametersTest : TestBase
             Categories = [new() { Name = "x", Description = "x" }],
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -216,6 +228,8 @@ public class SplitV1ParametersTest : TestBase
         Assert.False(model.RawData.ContainsKey("parse_config_id"));
         Assert.Null(model.ParseTier);
         Assert.False(model.RawData.ContainsKey("parse_tier"));
+        Assert.Null(model.TargetPages);
+        Assert.False(model.RawData.ContainsKey("target_pages"));
     }
 
     [Fact]
@@ -250,12 +264,15 @@ public class SplitV1ParametersTest : TestBase
 
             ParseConfigID = null,
             ParseTier = null,
+            TargetPages = null,
         };
 
         Assert.Null(model.ParseConfigID);
         Assert.True(model.RawData.ContainsKey("parse_config_id"));
         Assert.Null(model.ParseTier);
         Assert.True(model.RawData.ContainsKey("parse_tier"));
+        Assert.Null(model.TargetPages);
+        Assert.True(model.RawData.ContainsKey("target_pages"));
     }
 
     [Fact]
@@ -273,6 +290,7 @@ public class SplitV1ParametersTest : TestBase
 
             ParseConfigID = null,
             ParseTier = null,
+            TargetPages = null,
         };
 
         model.Validate();
@@ -292,6 +310,7 @@ public class SplitV1ParametersTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
         };
 
         SplitV1Parameters copied = new(model);

@@ -441,6 +441,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "1,3,5-7",
             };
         value.Validate();
     }
@@ -768,6 +769,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "1,3,5-7",
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =

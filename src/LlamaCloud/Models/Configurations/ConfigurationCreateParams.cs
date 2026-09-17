@@ -252,6 +252,21 @@ public record class Parameters : ModelBase
         }
     }
 
+    public string? TargetPages
+    {
+        get
+        {
+            return Match<string?>(
+                classifyV2: (_) => null,
+                extractV2: (x) => x.TargetPages,
+                parseV2: (_) => null,
+                splitV1: (x) => x.TargetPages,
+                spreadsheetV1: (_) => null,
+                untyped: (_) => null
+            );
+        }
+    }
+
     public Parameters(ClassifyV2Parameters value, JsonElement? element = null)
     {
         this.Value = value;
