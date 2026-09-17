@@ -18,7 +18,7 @@ public class ParsingListParamsTest : TestBase
             CreatedAtOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             JobIds = ["string", "string"],
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Status = Status.Cancelled,
@@ -32,7 +32,7 @@ public class ParsingListParamsTest : TestBase
         );
         List<string> expectedJobIds = ["string", "string"];
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        long expectedPageSize = 0;
+        long expectedPageSize = 1;
         string expectedPageToken = "page_token";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         ApiEnum<string, Status> expectedStatus = Status.Cancelled;
@@ -117,7 +117,7 @@ public class ParsingListParamsTest : TestBase
             CreatedAtOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             JobIds = ["string", "string"],
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Status = Status.Cancelled,
@@ -128,7 +128,7 @@ public class ParsingListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v2/parse?created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&job_ids=string&job_ids=string&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=0&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&status=CANCELLED"
+                    "https://api.cloud.llamaindex.ai/api/v2/parse?created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&job_ids=string&job_ids=string&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&status=CANCELLED"
                 ),
                 url
             )
@@ -144,7 +144,7 @@ public class ParsingListParamsTest : TestBase
             CreatedAtOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             JobIds = ["string", "string"],
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Status = Status.Cancelled,

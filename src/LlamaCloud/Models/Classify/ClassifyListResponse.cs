@@ -83,7 +83,7 @@ public sealed record class ClassifyListResponse : JsonModel
     }
 
     /// <summary>
-    /// Current job status: PENDING, RUNNING, COMPLETED, or FAILED
+    /// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
     /// </summary>
     public required ApiEnum<string, ClassifyListResponseStatus> Status
     {
@@ -310,11 +310,12 @@ sealed class ClassifyListResponseDocumentInputTypeConverter
 }
 
 /// <summary>
-/// Current job status: PENDING, RUNNING, COMPLETED, or FAILED
+/// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
 /// </summary>
 [JsonConverter(typeof(ClassifyListResponseStatusConverter))]
 public enum ClassifyListResponseStatus
 {
+    Cancelled,
     Completed,
     Failed,
     Pending,
@@ -331,6 +332,7 @@ sealed class ClassifyListResponseStatusConverter : JsonConverter<ClassifyListRes
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "CANCELLED" => ClassifyListResponseStatus.Cancelled,
             "COMPLETED" => ClassifyListResponseStatus.Completed,
             "FAILED" => ClassifyListResponseStatus.Failed,
             "PENDING" => ClassifyListResponseStatus.Pending,
@@ -349,6 +351,7 @@ sealed class ClassifyListResponseStatusConverter : JsonConverter<ClassifyListRes
             writer,
             value switch
             {
+                ClassifyListResponseStatus.Cancelled => "CANCELLED",
                 ClassifyListResponseStatus.Completed => "COMPLETED",
                 ClassifyListResponseStatus.Failed => "FAILED",
                 ClassifyListResponseStatus.Pending => "PENDING",

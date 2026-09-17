@@ -92,6 +92,8 @@ public interface IPipelineService
 
     /// <summary>
     /// Search for pipelines by name, type, or project.
+    ///
+    /// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
     /// </summary>
     [Obsolete("deprecated")]
     Task<List<Pipeline>> List(
