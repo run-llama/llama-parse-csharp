@@ -59,6 +59,30 @@ public sealed class ClassifyService : IClassifyService
     }
 
     /// <inheritdoc/>
+    public async Task<ClassifyDeleteResponse> Delete(
+        ClassifyDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.Delete(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<ClassifyDeleteResponse> Delete(
+        string jobID,
+        ClassifyDeleteParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Delete(parameters with { JobID = jobID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
     public async Task<ClassifyCancelResponse> Cancel(
         ClassifyCancelParams parameters,
         CancellationToken cancellationToken = default
@@ -181,6 +205,51 @@ public sealed class ClassifyServiceWithRawResponse : IClassifyServiceWithRawResp
                 return new ClassifyListPage(this, parameters, page);
             }
         );
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<ClassifyDeleteResponse>> Delete(
+        ClassifyDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.JobID == null)
+        {
+            throw new LlamaCloudInvalidDataException("'parameters.JobID' cannot be null");
+        }
+
+        HttpRequest<ClassifyDeleteParams> request = new()
+        {
+            Method = HttpMethod.Delete,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var classify = await response
+                    .Deserialize<ClassifyDeleteResponse>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    classify.Validate();
+                }
+                return classify;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<ClassifyDeleteResponse>> Delete(
+        string jobID,
+        ClassifyDeleteParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Delete(parameters with { JobID = jobID }, cancellationToken);
     }
 
     /// <inheritdoc/>
