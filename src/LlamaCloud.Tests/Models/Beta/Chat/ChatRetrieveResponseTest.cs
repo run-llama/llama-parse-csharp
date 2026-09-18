@@ -32,6 +32,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -65,6 +66,8 @@ public class ChatRetrieveResponseTest : TestBase
         ];
         string expectedLastUpdatedAt = "2026-04-22T12:34:41.342245";
         string expectedSessionID = "ses-abc123";
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> expectedSharedAccess =
+            ChatRetrieveResponseSharedAccess.ReadOnly;
         string expectedGeneratedTitle = "What were the main findings in Q3?...";
         List<string> expectedIndexIds = ["idx-abc123", "idx-def456"];
         ChatRetrieveResponseJobMetadata expectedJobMetadata = new()
@@ -85,6 +88,7 @@ public class ChatRetrieveResponseTest : TestBase
         }
         Assert.Equal(expectedLastUpdatedAt, model.LastUpdatedAt);
         Assert.Equal(expectedSessionID, model.SessionID);
+        Assert.Equal(expectedSharedAccess, model.SharedAccess);
         Assert.Equal(expectedGeneratedTitle, model.GeneratedTitle);
         Assert.NotNull(model.IndexIds);
         Assert.Equal(expectedIndexIds.Count, model.IndexIds.Count);
@@ -119,6 +123,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -166,6 +171,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -206,6 +212,8 @@ public class ChatRetrieveResponseTest : TestBase
         ];
         string expectedLastUpdatedAt = "2026-04-22T12:34:41.342245";
         string expectedSessionID = "ses-abc123";
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> expectedSharedAccess =
+            ChatRetrieveResponseSharedAccess.ReadOnly;
         string expectedGeneratedTitle = "What were the main findings in Q3?...";
         List<string> expectedIndexIds = ["idx-abc123", "idx-def456"];
         ChatRetrieveResponseJobMetadata expectedJobMetadata = new()
@@ -226,6 +234,7 @@ public class ChatRetrieveResponseTest : TestBase
         }
         Assert.Equal(expectedLastUpdatedAt, deserialized.LastUpdatedAt);
         Assert.Equal(expectedSessionID, deserialized.SessionID);
+        Assert.Equal(expectedSharedAccess, deserialized.SharedAccess);
         Assert.Equal(expectedGeneratedTitle, deserialized.GeneratedTitle);
         Assert.NotNull(deserialized.IndexIds);
         Assert.Equal(expectedIndexIds.Count, deserialized.IndexIds.Count);
@@ -260,6 +269,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -301,6 +311,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
         };
 
         Assert.Null(model.GeneratedTitle);
@@ -335,6 +346,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
         };
 
         model.Validate();
@@ -364,6 +376,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
 
             GeneratedTitle = null,
             IndexIds = null,
@@ -402,6 +415,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
 
             GeneratedTitle = null,
             IndexIds = null,
@@ -435,6 +449,7 @@ public class ChatRetrieveResponseTest : TestBase
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -2660,6 +2675,62 @@ public class UserInputTypeTest : TestBase
             json,
             ModelBase.SerializerOptions
         );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class ChatRetrieveResponseSharedAccessTest : TestBase
+{
+    [Theory]
+    [InlineData(ChatRetrieveResponseSharedAccess.Query)]
+    [InlineData(ChatRetrieveResponseSharedAccess.ReadOnly)]
+    public void Validation_Works(ChatRetrieveResponseSharedAccess rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ChatRetrieveResponseSharedAccess>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ChatRetrieveResponseSharedAccess.Query)]
+    [InlineData(ChatRetrieveResponseSharedAccess.ReadOnly)]
+    public void SerializationRoundtrip_Works(ChatRetrieveResponseSharedAccess rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, ChatRetrieveResponseSharedAccess>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ChatRetrieveResponseSharedAccess>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, ChatRetrieveResponseSharedAccess>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }

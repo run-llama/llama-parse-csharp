@@ -18,6 +18,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -41,6 +42,7 @@ public class ChatListPageResponseTest : TestBase
             {
                 LastUpdatedAt = "2026-04-22T12:34:41.342245",
                 SessionID = "ses-abc123",
+                SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                 GeneratedTitle = "What were the main findings in Q3?...",
                 IndexIds = ["idx-abc123", "idx-def456"],
                 JobMetadata = new()
@@ -76,6 +78,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -113,6 +116,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -143,6 +147,7 @@ public class ChatListPageResponseTest : TestBase
             {
                 LastUpdatedAt = "2026-04-22T12:34:41.342245",
                 SessionID = "ses-abc123",
+                SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                 GeneratedTitle = "What were the main findings in Q3?...",
                 IndexIds = ["idx-abc123", "idx-def456"],
                 JobMetadata = new()
@@ -178,6 +183,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -209,6 +215,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -240,6 +247,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -270,6 +278,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -303,6 +312,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
@@ -335,6 +345,7 @@ public class ChatListPageResponseTest : TestBase
                 {
                     LastUpdatedAt = "2026-04-22T12:34:41.342245",
                     SessionID = "ses-abc123",
+                    SharedAccess = ChatListResponseSharedAccess.ReadOnly,
                     GeneratedTitle = "What were the main findings in Q3?...",
                     IndexIds = ["idx-abc123", "idx-def456"],
                     JobMetadata = new()
