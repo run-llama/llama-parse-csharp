@@ -851,6 +851,30 @@ public sealed record class Stop : JsonModel
         init { this._rawData.Set("usage", value); }
     }
 
+    /// <summary>
+    /// Requested indexes this turn could not query.
+    /// </summary>
+    public IReadOnlyList<string>? SkippedIndexIds
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<string>>("skipped_index_ids");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<string>?>(
+                "skipped_index_ids",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     public ApiEnum<string, global::LlamaCloud.Models.Beta.Chat.Type>? Type
     {
         get
@@ -877,6 +901,7 @@ public sealed record class Stop : JsonModel
         _ = this.Error;
         _ = this.IsError;
         this.Usage.Validate();
+        _ = this.SkippedIndexIds;
         this.Type?.Validate();
     }
 

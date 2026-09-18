@@ -26,6 +26,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -58,6 +59,7 @@ public class ChatRetrieveResponseTest : TestBase
                     TotalOutputTokens = 0,
                     Turns = 0,
                 },
+                SkippedIndexIds = ["string"],
                 Type = Type.Stop,
             },
         ];
@@ -111,6 +113,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -157,6 +160,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -196,6 +200,7 @@ public class ChatRetrieveResponseTest : TestBase
                     TotalOutputTokens = 0,
                     Turns = 0,
                 },
+                SkippedIndexIds = ["string"],
                 Type = Type.Stop,
             },
         ];
@@ -249,6 +254,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -289,6 +295,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -322,6 +329,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -350,6 +358,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -387,6 +396,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -419,6 +429,7 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
@@ -460,6 +471,7 @@ public class EventTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
         value.Validate();
@@ -548,6 +560,7 @@ public class EventTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
@@ -663,6 +676,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -675,11 +689,18 @@ public class StopTest : TestBase
             TotalOutputTokens = 0,
             Turns = 0,
         };
+        List<string> expectedSkippedIndexIds = ["string"];
         ApiEnum<string, Type> expectedType = Type.Stop;
 
         Assert.Equal(expectedError, model.Error);
         Assert.Equal(expectedIsError, model.IsError);
         Assert.Equal(expectedUsage, model.Usage);
+        Assert.NotNull(model.SkippedIndexIds);
+        Assert.Equal(expectedSkippedIndexIds.Count, model.SkippedIndexIds.Count);
+        for (int i = 0; i < expectedSkippedIndexIds.Count; i++)
+        {
+            Assert.Equal(expectedSkippedIndexIds[i], model.SkippedIndexIds[i]);
+        }
         Assert.Equal(expectedType, model.Type);
     }
 
@@ -697,6 +718,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -720,6 +742,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -736,11 +759,18 @@ public class StopTest : TestBase
             TotalOutputTokens = 0,
             Turns = 0,
         };
+        List<string> expectedSkippedIndexIds = ["string"];
         ApiEnum<string, Type> expectedType = Type.Stop;
 
         Assert.Equal(expectedError, deserialized.Error);
         Assert.Equal(expectedIsError, deserialized.IsError);
         Assert.Equal(expectedUsage, deserialized.Usage);
+        Assert.NotNull(deserialized.SkippedIndexIds);
+        Assert.Equal(expectedSkippedIndexIds.Count, deserialized.SkippedIndexIds.Count);
+        for (int i = 0; i < expectedSkippedIndexIds.Count; i++)
+        {
+            Assert.Equal(expectedSkippedIndexIds[i], deserialized.SkippedIndexIds[i]);
+        }
         Assert.Equal(expectedType, deserialized.Type);
     }
 
@@ -758,6 +788,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -780,6 +811,8 @@ public class StopTest : TestBase
             },
         };
 
+        Assert.Null(model.SkippedIndexIds);
+        Assert.False(model.RawData.ContainsKey("skipped_index_ids"));
         Assert.Null(model.Type);
         Assert.False(model.RawData.ContainsKey("type"));
     }
@@ -819,9 +852,12 @@ public class StopTest : TestBase
             },
 
             // Null should be interpreted as omitted for these properties
+            SkippedIndexIds = null,
             Type = null,
         };
 
+        Assert.Null(model.SkippedIndexIds);
+        Assert.False(model.RawData.ContainsKey("skipped_index_ids"));
         Assert.Null(model.Type);
         Assert.False(model.RawData.ContainsKey("type"));
     }
@@ -842,6 +878,7 @@ public class StopTest : TestBase
             },
 
             // Null should be interpreted as omitted for these properties
+            SkippedIndexIds = null,
             Type = null,
         };
 
@@ -862,6 +899,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
