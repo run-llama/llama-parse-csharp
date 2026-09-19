@@ -119,6 +119,20 @@ public sealed record class SplitV1Parameters : JsonModel
         init { this._rawData.Set("target_pages", value); }
     }
 
+    /// <summary>
+    /// Split version to run. Omit for the current release. Preview versions are
+    /// selectable by name and never resolved automatically.
+    /// </summary>
+    public string? Version
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("version");
+        }
+        init { this._rawData.Set("version", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -136,6 +150,7 @@ public sealed record class SplitV1Parameters : JsonModel
         this.ParseTier?.Validate();
         this.SplittingStrategy?.Validate();
         _ = this.TargetPages;
+        _ = this.Version;
     }
 
     public SplitV1Parameters()

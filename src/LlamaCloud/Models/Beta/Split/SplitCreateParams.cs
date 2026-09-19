@@ -242,6 +242,20 @@ public sealed record class Configuration : JsonModel
         }
     }
 
+    /// <summary>
+    /// Split version to run. Omit for the current release. Preview versions are
+    /// selectable by name and never resolved automatically.
+    /// </summary>
+    public string? Version
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("version");
+        }
+        init { this._rawData.Set("version", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -250,6 +264,7 @@ public sealed record class Configuration : JsonModel
             item.Validate();
         }
         this.SplittingStrategy?.Validate();
+        _ = this.Version;
     }
 
     public Configuration() { }

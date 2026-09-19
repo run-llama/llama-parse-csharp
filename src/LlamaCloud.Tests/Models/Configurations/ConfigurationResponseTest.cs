@@ -679,6 +679,7 @@ public class ConfigurationResponseParametersTest : TestBase
                     MinPagesPerSplit = 1,
                 },
                 TargetPages = "1,3,5-7",
+                Version = "latest",
             };
         value.Validate();
     }
@@ -1007,6 +1008,7 @@ public class ConfigurationResponseParametersTest : TestBase
                     MinPagesPerSplit = 1,
                 },
                 TargetPages = "1,3,5-7",
+                Version = "latest",
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =

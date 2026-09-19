@@ -24,6 +24,7 @@ public class SplitV1ParametersTest : TestBase
                 MinPagesPerSplit = 1,
             },
             TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
@@ -38,6 +39,7 @@ public class SplitV1ParametersTest : TestBase
             MinPagesPerSplit = 1,
         };
         string expectedTargetPages = "1,3,5-7";
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, model.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -49,6 +51,7 @@ public class SplitV1ParametersTest : TestBase
         Assert.Equal(expectedParseTier, model.ParseTier);
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
         Assert.Equal(expectedTargetPages, model.TargetPages);
+        Assert.Equal(expectedVersion, model.Version);
     }
 
     [Fact]
@@ -66,6 +69,7 @@ public class SplitV1ParametersTest : TestBase
                 MinPagesPerSplit = 1,
             },
             TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -92,6 +96,7 @@ public class SplitV1ParametersTest : TestBase
                 MinPagesPerSplit = 1,
             },
             TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -113,6 +118,7 @@ public class SplitV1ParametersTest : TestBase
             MinPagesPerSplit = 1,
         };
         string expectedTargetPages = "1,3,5-7";
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, deserialized.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -124,6 +130,7 @@ public class SplitV1ParametersTest : TestBase
         Assert.Equal(expectedParseTier, deserialized.ParseTier);
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
         Assert.Equal(expectedTargetPages, deserialized.TargetPages);
+        Assert.Equal(expectedVersion, deserialized.Version);
     }
 
     [Fact]
@@ -141,6 +148,7 @@ public class SplitV1ParametersTest : TestBase
                 MinPagesPerSplit = 1,
             },
             TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         model.Validate();
@@ -155,6 +163,7 @@ public class SplitV1ParametersTest : TestBase
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
             TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         Assert.Null(model.SplittingStrategy);
@@ -170,6 +179,7 @@ public class SplitV1ParametersTest : TestBase
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
             TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         model.Validate();
@@ -184,6 +194,7 @@ public class SplitV1ParametersTest : TestBase
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
             TargetPages = "1,3,5-7",
+            Version = "latest",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -202,6 +213,7 @@ public class SplitV1ParametersTest : TestBase
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = SplitV1ParametersParseTier.Fast,
             TargetPages = "1,3,5-7",
+            Version = "latest",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -230,6 +242,8 @@ public class SplitV1ParametersTest : TestBase
         Assert.False(model.RawData.ContainsKey("parse_tier"));
         Assert.Null(model.TargetPages);
         Assert.False(model.RawData.ContainsKey("target_pages"));
+        Assert.Null(model.Version);
+        Assert.False(model.RawData.ContainsKey("version"));
     }
 
     [Fact]
@@ -265,6 +279,7 @@ public class SplitV1ParametersTest : TestBase
             ParseConfigID = null,
             ParseTier = null,
             TargetPages = null,
+            Version = null,
         };
 
         Assert.Null(model.ParseConfigID);
@@ -273,6 +288,8 @@ public class SplitV1ParametersTest : TestBase
         Assert.True(model.RawData.ContainsKey("parse_tier"));
         Assert.Null(model.TargetPages);
         Assert.True(model.RawData.ContainsKey("target_pages"));
+        Assert.Null(model.Version);
+        Assert.True(model.RawData.ContainsKey("version"));
     }
 
     [Fact]
@@ -291,6 +308,7 @@ public class SplitV1ParametersTest : TestBase
             ParseConfigID = null,
             ParseTier = null,
             TargetPages = null,
+            Version = null,
         };
 
         model.Validate();
@@ -311,6 +329,7 @@ public class SplitV1ParametersTest : TestBase
                 MinPagesPerSplit = 1,
             },
             TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         SplitV1Parameters copied = new(model);
