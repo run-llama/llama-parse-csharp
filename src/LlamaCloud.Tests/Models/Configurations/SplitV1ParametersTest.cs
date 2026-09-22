@@ -15,22 +15,31 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
         JsonElement expectedProductType = JsonSerializer.SerializeToElement("split_v1");
+        string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
+        ApiEnum<string, SplitV1ParametersParseTier> expectedParseTier =
+            SplitV1ParametersParseTier.Fast;
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "1,3,5-7";
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, model.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -38,7 +47,11 @@ public class SplitV1ParametersTest : TestBase
             Assert.Equal(expectedCategories[i], model.Categories[i]);
         }
         Assert.True(JsonElement.DeepEquals(expectedProductType, model.ProductType));
+        Assert.Equal(expectedParseConfigID, model.ParseConfigID);
+        Assert.Equal(expectedParseTier, model.ParseTier);
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, model.TargetPages);
+        Assert.Equal(expectedVersion, model.Version);
     }
 
     [Fact]
@@ -47,12 +60,16 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -70,12 +87,16 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -87,12 +108,17 @@ public class SplitV1ParametersTest : TestBase
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
         JsonElement expectedProductType = JsonSerializer.SerializeToElement("split_v1");
+        string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
+        ApiEnum<string, SplitV1ParametersParseTier> expectedParseTier =
+            SplitV1ParametersParseTier.Fast;
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "1,3,5-7";
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, deserialized.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -100,7 +126,11 @@ public class SplitV1ParametersTest : TestBase
             Assert.Equal(expectedCategories[i], deserialized.Categories[i]);
         }
         Assert.True(JsonElement.DeepEquals(expectedProductType, deserialized.ProductType));
+        Assert.Equal(expectedParseConfigID, deserialized.ParseConfigID);
+        Assert.Equal(expectedParseTier, deserialized.ParseTier);
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, deserialized.TargetPages);
+        Assert.Equal(expectedVersion, deserialized.Version);
     }
 
     [Fact]
@@ -109,12 +139,16 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         model.Validate();
@@ -126,6 +160,10 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         Assert.Null(model.SplittingStrategy);
@@ -138,6 +176,10 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         model.Validate();
@@ -149,6 +191,10 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -164,6 +210,10 @@ public class SplitV1ParametersTest : TestBase
         var model = new SplitV1Parameters
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -173,7 +223,7 @@ public class SplitV1ParametersTest : TestBase
     }
 
     [Fact]
-    public void CopyConstructor_Works()
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
         var model = new SplitV1Parameters
         {
@@ -186,9 +236,167 @@ public class SplitV1ParametersTest : TestBase
             },
         };
 
+        Assert.Null(model.ParseConfigID);
+        Assert.False(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.False(model.RawData.ContainsKey("parse_tier"));
+        Assert.Null(model.TargetPages);
+        Assert.False(model.RawData.ContainsKey("target_pages"));
+        Assert.Null(model.Version);
+        Assert.False(model.RawData.ContainsKey("version"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new SplitV1Parameters
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new SplitV1Parameters
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+
+            ParseConfigID = null,
+            ParseTier = null,
+            TargetPages = null,
+            Version = null,
+        };
+
+        Assert.Null(model.ParseConfigID);
+        Assert.True(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.True(model.RawData.ContainsKey("parse_tier"));
+        Assert.Null(model.TargetPages);
+        Assert.True(model.RawData.ContainsKey("target_pages"));
+        Assert.Null(model.Version);
+        Assert.True(model.RawData.ContainsKey("version"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new SplitV1Parameters
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+
+            ParseConfigID = null,
+            ParseTier = null,
+            TargetPages = null,
+            Version = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SplitV1Parameters
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
+        };
+
         SplitV1Parameters copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class SplitV1ParametersParseTierTest : TestBase
+{
+    [Theory]
+    [InlineData(SplitV1ParametersParseTier.Agentic)]
+    [InlineData(SplitV1ParametersParseTier.AgenticPlus)]
+    [InlineData(SplitV1ParametersParseTier.CostEffective)]
+    [InlineData(SplitV1ParametersParseTier.Fast)]
+    public void Validation_Works(SplitV1ParametersParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SplitV1ParametersParseTier> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SplitV1ParametersParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(SplitV1ParametersParseTier.Agentic)]
+    [InlineData(SplitV1ParametersParseTier.AgenticPlus)]
+    [InlineData(SplitV1ParametersParseTier.CostEffective)]
+    [InlineData(SplitV1ParametersParseTier.Fast)]
+    public void SerializationRoundtrip_Works(SplitV1ParametersParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SplitV1ParametersParseTier> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, SplitV1ParametersParseTier>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SplitV1ParametersParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, SplitV1ParametersParseTier>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 

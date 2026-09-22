@@ -5,6 +5,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using LlamaCloud.Core;
+using LlamaCloud.Exceptions;
+using System = System;
 
 namespace LlamaCloud.Models.Beta.Chat;
 
@@ -38,6 +40,22 @@ public sealed record class ChatListResponse : JsonModel
             return this._rawData.GetNotNullClass<string>("session_id");
         }
         init { this._rawData.Set("session_id", value); }
+    }
+
+    /// <summary>
+    /// What this chat's share link grants: read_only (transcript only) or query (viewers
+    /// may ask new questions).
+    /// </summary>
+    public required ApiEnum<string, ChatListResponseSharedAccess> SharedAccess
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, ChatListResponseSharedAccess>>(
+                "shared_access"
+            );
+        }
+        init { this._rawData.Set("shared_access", value); }
     }
 
     /// <summary>
@@ -91,6 +109,7 @@ public sealed record class ChatListResponse : JsonModel
     {
         _ = this.LastUpdatedAt;
         _ = this.SessionID;
+        this.SharedAccess.Validate();
         _ = this.GeneratedTitle;
         _ = this.IndexIds;
         this.JobMetadata?.Validate();
@@ -131,6 +150,54 @@ class ChatListResponseFromRaw : IFromRawJson<ChatListResponse>
     /// <inheritdoc/>
     public ChatListResponse FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         ChatListResponse.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// What this chat's share link grants: read_only (transcript only) or query (viewers
+/// may ask new questions).
+/// </summary>
+[JsonConverter(typeof(ChatListResponseSharedAccessConverter))]
+public enum ChatListResponseSharedAccess
+{
+    Query,
+    ReadOnly,
+}
+
+sealed class ChatListResponseSharedAccessConverter : JsonConverter<ChatListResponseSharedAccess>
+{
+    public override ChatListResponseSharedAccess Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "query" => ChatListResponseSharedAccess.Query,
+            "read_only" => ChatListResponseSharedAccess.ReadOnly,
+            _ => (ChatListResponseSharedAccess)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ChatListResponseSharedAccess value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ChatListResponseSharedAccess.Query => "query",
+                ChatListResponseSharedAccess.ReadOnly => "read_only",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

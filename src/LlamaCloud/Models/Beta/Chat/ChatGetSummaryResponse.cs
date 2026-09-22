@@ -5,6 +5,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using LlamaCloud.Core;
+using LlamaCloud.Exceptions;
+using System = System;
 
 namespace LlamaCloud.Models.Beta.Chat;
 
@@ -38,6 +40,22 @@ public sealed record class ChatGetSummaryResponse : JsonModel
             return this._rawData.GetNotNullClass<string>("session_id");
         }
         init { this._rawData.Set("session_id", value); }
+    }
+
+    /// <summary>
+    /// What this chat's share link grants: read_only (transcript only) or query (viewers
+    /// may ask new questions).
+    /// </summary>
+    public required ApiEnum<string, ChatGetSummaryResponseSharedAccess> SharedAccess
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, ChatGetSummaryResponseSharedAccess>
+            >("shared_access");
+        }
+        init { this._rawData.Set("shared_access", value); }
     }
 
     /// <summary>
@@ -93,6 +111,7 @@ public sealed record class ChatGetSummaryResponse : JsonModel
     {
         _ = this.LastUpdatedAt;
         _ = this.SessionID;
+        this.SharedAccess.Validate();
         _ = this.GeneratedTitle;
         _ = this.IndexIds;
         this.JobMetadata?.Validate();
@@ -134,6 +153,55 @@ class ChatGetSummaryResponseFromRaw : IFromRawJson<ChatGetSummaryResponse>
     public ChatGetSummaryResponse FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => ChatGetSummaryResponse.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// What this chat's share link grants: read_only (transcript only) or query (viewers
+/// may ask new questions).
+/// </summary>
+[JsonConverter(typeof(ChatGetSummaryResponseSharedAccessConverter))]
+public enum ChatGetSummaryResponseSharedAccess
+{
+    Query,
+    ReadOnly,
+}
+
+sealed class ChatGetSummaryResponseSharedAccessConverter
+    : JsonConverter<ChatGetSummaryResponseSharedAccess>
+{
+    public override ChatGetSummaryResponseSharedAccess Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "query" => ChatGetSummaryResponseSharedAccess.Query,
+            "read_only" => ChatGetSummaryResponseSharedAccess.ReadOnly,
+            _ => (ChatGetSummaryResponseSharedAccess)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ChatGetSummaryResponseSharedAccess value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ChatGetSummaryResponseSharedAccess.Query => "query",
+                ChatGetSummaryResponseSharedAccess.ReadOnly => "read_only",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

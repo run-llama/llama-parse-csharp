@@ -56,6 +56,7 @@ public interface IRetrieverService
     /// <summary>
     /// List Retrievers for a project.
     /// </summary>
+    [Obsolete("deprecated")]
     Task<List<RetrieverRetriever>> List(
         RetrieverListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -85,6 +86,14 @@ public interface IRetrieverService
     Task<RetrieverRetriever> Get(
         string retrieverID,
         RetrieverGetParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// List the retrievers in a project, newest first.
+    /// </summary>
+    Task<RetrieverListPaginatedPage> ListPaginated(
+        RetrieverListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 
@@ -149,6 +158,7 @@ public interface IRetrieverServiceWithRawResponse
     /// Returns a raw HTTP response for <c>get /api/v1/retrievers</c>, but is otherwise the
     /// same as <see cref="IRetrieverService.List(RetrieverListParams?, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("deprecated")]
     Task<HttpResponse<List<RetrieverRetriever>>> List(
         RetrieverListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -183,6 +193,15 @@ public interface IRetrieverServiceWithRawResponse
     Task<HttpResponse<RetrieverRetriever>> Get(
         string retrieverID,
         RetrieverGetParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>get /api/v1/beta/retrievers</c>, but is otherwise the
+    /// same as <see cref="IRetrieverService.ListPaginated(RetrieverListPaginatedParams?, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<RetrieverListPaginatedPage>> ListPaginated(
+        RetrieverListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

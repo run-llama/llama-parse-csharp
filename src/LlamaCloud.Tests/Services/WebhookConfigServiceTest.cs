@@ -58,4 +58,14 @@ public class WebhookConfigServiceTest : TestBase
             TestContext.Current.CancellationToken
         );
     }
+
+    [Fact(Skip = "Mock server tests are disabled")]
+    public async Task ListPaginated_Works()
+    {
+        var page = await this.client.WebhookConfigs.ListPaginated(
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        page.Validate();
+    }
 }

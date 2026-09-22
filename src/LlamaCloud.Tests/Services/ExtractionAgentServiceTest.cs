@@ -1,15 +1,14 @@
 using System.Threading.Tasks;
-using LlamaCloud.Models.JobDataPoints;
 
 namespace LlamaCloud.Tests.Services;
 
-public class JobDataPointServiceTest : TestBase
+public class ExtractionAgentServiceTest : TestBase
 {
     [Fact(Skip = "Mock server tests are disabled")]
     public async Task List_Works()
     {
-        var page = await this.client.JobDataPoints.List(
-            new() { JobType = JobType.Parse },
+        var page = await this.client.ExtractionAgents.List(
+            new(),
             TestContext.Current.CancellationToken
         );
         page.Validate();

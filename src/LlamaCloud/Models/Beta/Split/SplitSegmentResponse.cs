@@ -41,7 +41,7 @@ public sealed record class SplitSegmentResponse : JsonModel
     }
 
     /// <summary>
-    /// 1-indexed page numbers in this split.
+    /// Page numbers in this segment, as numbered by the input document.
     /// </summary>
     public required IReadOnlyList<long> Pages
     {
