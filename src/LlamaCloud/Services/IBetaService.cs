@@ -30,6 +30,8 @@ public interface IBetaService
 
     Beta::IChatService Chat { get; }
 
+    Beta::IAttachmentService Attachments { get; }
+
     Beta::IAgentDataService AgentData { get; }
 
     Beta::IDirectoryService Directories { get; }
@@ -55,6 +57,8 @@ public interface IBetaServiceWithRawResponse
     Beta::IRetrievalServiceWithRawResponse Retrieval { get; }
 
     Beta::IChatServiceWithRawResponse Chat { get; }
+
+    Beta::IAttachmentServiceWithRawResponse Attachments { get; }
 
     Beta::IAgentDataServiceWithRawResponse AgentData { get; }
 
