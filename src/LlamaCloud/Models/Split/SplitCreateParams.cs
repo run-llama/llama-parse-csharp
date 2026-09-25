@@ -14,7 +14,31 @@ using Split = LlamaCloud.Models.Beta.Split;
 namespace LlamaCloud.Models.Split;
 
 /// <summary>
-/// Create a document split job.
+/// Create a split job.
+///
+/// <para>## Document input</para>
+///
+/// <para>Set `file_input` to a file ID or a completed parse job ID (`pjb-...`). Supplying
+/// a parse job reuses its output instead of reading the document again.</para>
+///
+/// <para>## Page selection</para>
+///
+/// <para>`configuration.target_pages` selects which pages of a supplied parse job
+/// to split (1-based; `1-50`, `1,3,5-7`). Pages are read in ascending document order,
+/// and each segment's `pages` are the parse job's own page numbers, so segments
+/// map straight back to the original document. Requires a parse job as `file_input`;
+/// passing it with a file ID returns 400.</para>
+///
+/// <para>## Parse settings</para>
+///
+/// <para>`configuration.parse_tier` and `configuration.parse_config_id` control
+/// how the document is read before splitting; both are ignored when a parse job
+/// is supplied. A parse configuration restricted to a page subset (`target_pages`
+/// or `max_pages`) is rejected, since split results always number pages relative
+/// to the full document.</para>
+///
+/// <para>The job runs asynchronously. Poll `GET /split/jobs/{split_job_id}` or register
+/// a webhook to monitor completion.</para>
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
@@ -281,6 +305,37 @@ public sealed record class Configuration : JsonModel
     }
 
     /// <summary>
+    /// Saved parse configuration ID to control how the document is parsed before
+    /// splitting. Takes precedence over parse_tier. Configurations that restrict
+    /// pages (`target_pages` or `max_pages` on the parse configuration) are rejected:
+    /// split results number pages relative to the full document. Ignored when a
+    /// completed parse job is supplied as file_input.
+    /// </summary>
+    public string? ParseConfigID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("parse_config_id");
+        }
+        init { this._rawData.Set("parse_config_id", value); }
+    }
+
+    /// <summary>
+    /// Parse tier used to read the document before splitting. Defaults to fast.
+    /// Ignored when a completed parse job is supplied as file_input.
+    /// </summary>
+    public ApiEnum<string, ParseTier>? ParseTier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, ParseTier>>("parse_tier");
+        }
+        init { this._rawData.Set("parse_tier", value); }
+    }
+
+    /// <summary>
     /// Strategy for splitting documents.
     /// </summary>
     public SplittingStrategy? SplittingStrategy
@@ -301,6 +356,34 @@ public sealed record class Configuration : JsonModel
         }
     }
 
+    /// <summary>
+    /// Comma-separated page numbers or ranges to split (1-based). Omit to split all
+    /// pages. Requires a completed parse job as file_input.
+    /// </summary>
+    public string? TargetPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("target_pages");
+        }
+        init { this._rawData.Set("target_pages", value); }
+    }
+
+    /// <summary>
+    /// Split version to run. Omit for the current release. Preview versions are
+    /// selectable by name and never resolved automatically.
+    /// </summary>
+    public string? Version
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("version");
+        }
+        init { this._rawData.Set("version", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -308,7 +391,11 @@ public sealed record class Configuration : JsonModel
         {
             item.Validate();
         }
+        _ = this.ParseConfigID;
+        this.ParseTier?.Validate();
         this.SplittingStrategy?.Validate();
+        _ = this.TargetPages;
+        _ = this.Version;
     }
 
     public Configuration() { }
@@ -351,6 +438,60 @@ class ConfigurationFromRaw : IFromRawJson<Configuration>
     /// <inheritdoc/>
     public Configuration FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Configuration.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Parse tier used to read the document before splitting. Defaults to fast. Ignored
+/// when a completed parse job is supplied as file_input.
+/// </summary>
+[JsonConverter(typeof(ParseTierConverter))]
+public enum ParseTier
+{
+    Agentic,
+    AgenticPlus,
+    CostEffective,
+    Fast,
+}
+
+sealed class ParseTierConverter : JsonConverter<ParseTier>
+{
+    public override ParseTier Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "agentic" => ParseTier.Agentic,
+            "agentic_plus" => ParseTier.AgenticPlus,
+            "cost_effective" => ParseTier.CostEffective,
+            "fast" => ParseTier.Fast,
+            _ => (ParseTier)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ParseTier value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ParseTier.Agentic => "agentic",
+                ParseTier.AgenticPlus => "agentic_plus",
+                ParseTier.CostEffective => "cost_effective",
+                ParseTier.Fast => "fast",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

@@ -59,7 +59,7 @@ public record class ParsingCreateParams : ParamsBase
     /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-19` - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+    /// `2026-08-19` - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -571,7 +571,7 @@ sealed class TierConverter : JsonConverter<Tier>
 /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
 ///
 /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
-/// - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+/// - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -579,7 +579,7 @@ sealed class TierConverter : JsonConverter<Tier>
 public enum Version
 {
     Latest,
-    V2026_09_07,
+    V2026_09_24,
     V2026_08_19,
     V2026_06_15,
 }
@@ -595,7 +595,7 @@ sealed class VersionConverter : JsonConverter<Version>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => Version.Latest,
-            "2026-09-07" => Version.V2026_09_07,
+            "2026-09-24" => Version.V2026_09_24,
             "2026-08-19" => Version.V2026_08_19,
             "2026-06-15" => Version.V2026_06_15,
             _ => (Version)(-1),
@@ -609,7 +609,7 @@ sealed class VersionConverter : JsonConverter<Version>
             value switch
             {
                 Version.Latest => "latest",
-                Version.V2026_09_07 => "2026-09-07",
+                Version.V2026_09_24 => "2026-09-24",
                 Version.V2026_08_19 => "2026-08-19",
                 Version.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
@@ -3403,7 +3403,7 @@ public sealed record class ParsingConf : JsonModel
     /// or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-19` - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+    /// `2026-08-19` - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -3925,7 +3925,7 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 /// one of that tier's dated versions.
 ///
 /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
-/// - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+/// - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -3933,7 +3933,7 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 public enum ParsingConfVersion
 {
     Latest,
-    V2026_09_07,
+    V2026_09_24,
     V2026_08_19,
     V2026_06_15,
 }
@@ -3949,7 +3949,7 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => ParsingConfVersion.Latest,
-            "2026-09-07" => ParsingConfVersion.V2026_09_07,
+            "2026-09-24" => ParsingConfVersion.V2026_09_24,
             "2026-08-19" => ParsingConfVersion.V2026_08_19,
             "2026-06-15" => ParsingConfVersion.V2026_06_15,
             _ => (ParsingConfVersion)(-1),
@@ -3967,7 +3967,7 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
             value switch
             {
                 ParsingConfVersion.Latest => "latest",
-                ParsingConfVersion.V2026_09_07 => "2026-09-07",
+                ParsingConfVersion.V2026_09_24 => "2026-09-24",
                 ParsingConfVersion.V2026_08_19 => "2026-08-19",
                 ParsingConfVersion.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(

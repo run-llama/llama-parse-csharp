@@ -465,12 +465,16 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
         value.Validate();
     }
@@ -770,12 +774,16 @@ public class ConfigurationCreateParametersTest : TestBase
         ConfigurationCreateParameters value = new SplitV1Parameters()
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = SplitV1ParametersParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ConfigurationCreateParameters>(

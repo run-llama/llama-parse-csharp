@@ -1,73 +1,32 @@
 using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using LlamaCloud.Core;
-using LlamaCloud.Exceptions;
 
-namespace LlamaCloud.Models.JobDataPoints;
+namespace LlamaCloud.Models.Retrievers;
 
 /// <summary>
-/// Returns paginated job data points for the current project.
+/// List the retrievers in a project, newest first.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-public record class JobDataPointListParams : ParamsBase
+public record class RetrieverListPaginatedParams : ParamsBase
 {
     /// <summary>
-    /// Job type to query.
+    /// Return `total_size`, a count of every row matching the filter. It is a second
+    /// query on every page, so it is off unless asked for.
     /// </summary>
-    public required ApiEnum<string, JobType> JobType
+    public bool? IncludeTotal
     {
         get
         {
             this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNotNullClass<ApiEnum<string, JobType>>("job_type");
-        }
-        init { this._rawQueryData.Set("job_type", value); }
-    }
-
-    /// <summary>
-    /// Include items created at or after this timestamp (inclusive)
-    /// </summary>
-    public DateTimeOffset? CreatedAtOnOrAfter
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("created_at_on_or_after");
-        }
-        init { this._rawQueryData.Set("created_at_on_or_after", value); }
-    }
-
-    /// <summary>
-    /// Include items created at or before this timestamp (inclusive)
-    /// </summary>
-    public DateTimeOffset? CreatedAtOnOrBefore
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("created_at_on_or_before");
-        }
-        init { this._rawQueryData.Set("created_at_on_or_before", value); }
-    }
-
-    /// <summary>
-    /// Hours of history to include.
-    /// </summary>
-    public long? Hours
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableStruct<long>("hours");
+            return this._rawQueryData.GetNullableStruct<bool>("include_total");
         }
         init
         {
@@ -76,8 +35,18 @@ public record class JobDataPointListParams : ParamsBase
                 return;
             }
 
-            this._rawQueryData.Set("hours", value);
+            this._rawQueryData.Set("include_total", value);
         }
+    }
+
+    public string? Name
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("name");
+        }
+        init { this._rawQueryData.Set("name", value); }
     }
 
     public string? OrganizationID
@@ -91,7 +60,7 @@ public record class JobDataPointListParams : ParamsBase
     }
 
     /// <summary>
-    /// Number of items per page.
+    /// Number of items per page
     /// </summary>
     public long? PageSize
     {
@@ -100,11 +69,19 @@ public record class JobDataPointListParams : ParamsBase
             this._rawQueryData.Freeze();
             return this._rawQueryData.GetNullableStruct<long>("page_size");
         }
-        init { this._rawQueryData.Set("page_size", value); }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("page_size", value);
+        }
     }
 
     /// <summary>
-    /// Cursor token for the next page.
+    /// Cursor from the previous page's `next_page_token`.
     /// </summary>
     public string? PageToken
     {
@@ -126,34 +103,15 @@ public record class JobDataPointListParams : ParamsBase
         init { this._rawQueryData.Set("project_id", value); }
     }
 
-    /// <summary>
-    /// Filter by status.
-    /// </summary>
-    public IReadOnlyList<string>? Status
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableStruct<ImmutableArray<string>>("status");
-        }
-        init
-        {
-            this._rawQueryData.Set<ImmutableArray<string>?>(
-                "status",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    public JobDataPointListParams() { }
+    public RetrieverListPaginatedParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public JobDataPointListParams(JobDataPointListParams jobDataPointListParams)
-        : base(jobDataPointListParams) { }
+    public RetrieverListPaginatedParams(RetrieverListPaginatedParams retrieverListPaginatedParams)
+        : base(retrieverListPaginatedParams) { }
 #pragma warning restore CS8618
 
-    public JobDataPointListParams(
+    public RetrieverListPaginatedParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -164,7 +122,7 @@ public record class JobDataPointListParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    JobDataPointListParams(
+    RetrieverListPaginatedParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData
     )
@@ -175,7 +133,7 @@ public record class JobDataPointListParams : ParamsBase
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static JobDataPointListParams FromRawUnchecked(
+    public static RetrieverListPaginatedParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -202,7 +160,7 @@ public record class JobDataPointListParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(JobDataPointListParams? other)
+    public virtual bool Equals(RetrieverListPaginatedParams? other)
     {
         if (other == null)
         {
@@ -214,7 +172,7 @@ public record class JobDataPointListParams : ParamsBase
 
     public override Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/api/v1/job-data-points")
+        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/api/v1/beta/retrievers")
         {
             Query = this.QueryString(options),
         }.Uri;
@@ -232,51 +190,5 @@ public record class JobDataPointListParams : ParamsBase
     public override int GetHashCode()
     {
         return 0;
-    }
-}
-
-/// <summary>
-/// Job type to query.
-/// </summary>
-[JsonConverter(typeof(JobTypeConverter))]
-public enum JobType
-{
-    Classify,
-    Extract,
-    Parse,
-}
-
-sealed class JobTypeConverter : JsonConverter<JobType>
-{
-    public override JobType Read(
-        ref Utf8JsonReader reader,
-        Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "classify" => JobType.Classify,
-            "extract" => JobType.Extract,
-            "parse" => JobType.Parse,
-            _ => (JobType)(-1),
-        };
-    }
-
-    public override void Write(Utf8JsonWriter writer, JobType value, JsonSerializerOptions options)
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                JobType.Classify => "classify",
-                JobType.Extract => "extract",
-                JobType.Parse => "parse",
-                _ => throw new LlamaCloudInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
     }
 }

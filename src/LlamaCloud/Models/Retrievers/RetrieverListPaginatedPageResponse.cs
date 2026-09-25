@@ -6,29 +6,32 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using LlamaCloud.Core;
 
-namespace LlamaCloud.Models.JobDataPoints;
+namespace LlamaCloud.Models.Retrievers;
 
 /// <summary>
-/// Paginated list of job data points.
+/// A page of retrievers.
 /// </summary>
 [JsonConverter(
-    typeof(JsonModelConverter<JobDataPointListPageResponse, JobDataPointListPageResponseFromRaw>)
+    typeof(JsonModelConverter<
+        RetrieverListPaginatedPageResponse,
+        RetrieverListPaginatedPageResponseFromRaw
+    >)
 )]
-public sealed record class JobDataPointListPageResponse : JsonModel
+public sealed record class RetrieverListPaginatedPageResponse : JsonModel
 {
     /// <summary>
     /// The list of items.
     /// </summary>
-    public required IReadOnlyList<JobDataPoint> Items
+    public required IReadOnlyList<RetrieverRetriever> Items
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<JobDataPoint>>("items");
+            return this._rawData.GetNotNullStruct<ImmutableArray<RetrieverRetriever>>("items");
         }
         init
         {
-            this._rawData.Set<ImmutableArray<JobDataPoint>>(
+            this._rawData.Set<ImmutableArray<RetrieverRetriever>>(
                 "items",
                 ImmutableArray.ToImmutableArray(value)
             );
@@ -74,29 +77,31 @@ public sealed record class JobDataPointListPageResponse : JsonModel
         _ = this.TotalSize;
     }
 
-    public JobDataPointListPageResponse() { }
+    public RetrieverListPaginatedPageResponse() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public JobDataPointListPageResponse(JobDataPointListPageResponse jobDataPointListPageResponse)
-        : base(jobDataPointListPageResponse) { }
+    public RetrieverListPaginatedPageResponse(
+        RetrieverListPaginatedPageResponse retrieverListPaginatedPageResponse
+    )
+        : base(retrieverListPaginatedPageResponse) { }
 #pragma warning restore CS8618
 
-    public JobDataPointListPageResponse(IReadOnlyDictionary<string, JsonElement> rawData)
+    public RetrieverListPaginatedPageResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    JobDataPointListPageResponse(FrozenDictionary<string, JsonElement> rawData)
+    RetrieverListPaginatedPageResponse(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="JobDataPointListPageResponseFromRaw.FromRawUnchecked"/>
-    public static JobDataPointListPageResponse FromRawUnchecked(
+    /// <inheritdoc cref="RetrieverListPaginatedPageResponseFromRaw.FromRawUnchecked"/>
+    public static RetrieverListPaginatedPageResponse FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -104,17 +109,17 @@ public sealed record class JobDataPointListPageResponse : JsonModel
     }
 
     [SetsRequiredMembers]
-    public JobDataPointListPageResponse(IReadOnlyList<JobDataPoint> items)
+    public RetrieverListPaginatedPageResponse(IReadOnlyList<RetrieverRetriever> items)
         : this()
     {
         this.Items = items;
     }
 }
 
-class JobDataPointListPageResponseFromRaw : IFromRawJson<JobDataPointListPageResponse>
+class RetrieverListPaginatedPageResponseFromRaw : IFromRawJson<RetrieverListPaginatedPageResponse>
 {
     /// <inheritdoc/>
-    public JobDataPointListPageResponse FromRawUnchecked(
+    public RetrieverListPaginatedPageResponse FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => JobDataPointListPageResponse.FromRawUnchecked(rawData);
+    ) => RetrieverListPaginatedPageResponse.FromRawUnchecked(rawData);
 }

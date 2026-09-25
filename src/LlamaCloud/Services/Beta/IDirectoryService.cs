@@ -31,6 +31,10 @@ public interface IDirectoryService
 
     /// <summary>
     /// Create a new directory within the specified project.
+    ///
+    /// <para>A connector subscription syncs into at most one directory. Creating a
+    /// second one for the same subscription returns `409` with the existing directory's
+    /// id in `detail.directory_id`.</para>
     /// </summary>
     Task<DirectoryCreateResponse> Create(
         DirectoryCreateParams parameters,

@@ -964,6 +964,25 @@ public sealed record class FormsResultPage : JsonModel
     }
 
     /// <summary>
+    /// Form types detected on the page (e.g. 'w2', 'other'), or null if not a form
+    /// </summary>
+    public IReadOnlyList<string>? DetectedFormTypes
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<string>>("detected_form_types");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<string>?>(
+                "detected_form_types",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Height of the page in points
     /// </summary>
     public double? PageHeight
@@ -1001,6 +1020,7 @@ public sealed record class FormsResultPage : JsonModel
         {
             throw new LlamaCloudInvalidDataException("Invalid value given for constant");
         }
+        _ = this.DetectedFormTypes;
         _ = this.PageHeight;
         _ = this.PageWidth;
     }

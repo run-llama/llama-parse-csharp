@@ -14,6 +14,10 @@ namespace LlamaCloud.Models.Beta.Directories;
 /// <summary>
 /// Create a new directory within the specified project.
 ///
+/// <para>A connector subscription syncs into at most one directory. Creating a second
+/// one for the same subscription returns `409` with the existing directory's id
+/// in `detail.directory_id`.</para>
+///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>

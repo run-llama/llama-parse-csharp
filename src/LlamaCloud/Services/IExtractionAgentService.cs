@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using LlamaCloud.Core;
-using LlamaCloud.Models.JobDataPoints;
+using LlamaCloud.Models.ExtractionAgents;
 
 namespace LlamaCloud.Services;
 
@@ -11,49 +11,49 @@ namespace LlamaCloud.Services;
 /// changes in non-major versions. We may add new methods in the future that cause
 /// existing derived classes to break.
 /// </summary>
-public interface IJobDataPointService
+public interface IExtractionAgentService
 {
     /// <summary>
     /// Returns a view of this service that provides access to raw HTTP responses
     /// for each method.
     /// </summary>
-    IJobDataPointServiceWithRawResponse WithRawResponse { get; }
+    IExtractionAgentServiceWithRawResponse WithRawResponse { get; }
 
     /// <summary>
     /// Returns a view of this service with the given option modifications applied.
     ///
     /// <para>The original service is not modified.</para>
     /// </summary>
-    IJobDataPointService WithOptions(Func<ClientOptions, ClientOptions> modifier);
+    IExtractionAgentService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns paginated job data points for the current project.
+    /// List the extraction agents in a project, newest first.
     /// </summary>
-    Task<JobDataPointListPage> List(
-        JobDataPointListParams parameters,
+    Task<ExtractionAgentListPage> List(
+        ExtractionAgentListParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }
 
 /// <summary>
-/// A view of <see cref="IJobDataPointService"/> that provides access to raw
+/// A view of <see cref="IExtractionAgentService"/> that provides access to raw
 /// HTTP responses for each method.
 /// </summary>
-public interface IJobDataPointServiceWithRawResponse
+public interface IExtractionAgentServiceWithRawResponse
 {
     /// <summary>
     /// Returns a view of this service with the given option modifications applied.
     ///
     /// <para>The original service is not modified.</para>
     /// </summary>
-    IJobDataPointServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
+    IExtractionAgentServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for <c>get /api/v1/job-data-points</c>, but is otherwise the
-    /// same as <see cref="IJobDataPointService.List(JobDataPointListParams, CancellationToken)"/>.
+    /// Returns a raw HTTP response for <c>get /api/v1/beta/extraction-agents</c>, but is otherwise the
+    /// same as <see cref="IExtractionAgentService.List(ExtractionAgentListParams?, CancellationToken)"/>.
     /// </summary>
-    Task<HttpResponse<JobDataPointListPage>> List(
-        JobDataPointListParams parameters,
+    Task<HttpResponse<ExtractionAgentListPage>> List(
+        ExtractionAgentListParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }

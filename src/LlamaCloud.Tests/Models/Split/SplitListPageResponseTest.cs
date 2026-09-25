@@ -27,6 +27,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -44,6 +46,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -66,6 +69,8 @@ public class SplitListPageResponseTest : TestBase
                 ConfigurationID = "configuration_id",
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 ErrorMessage = "error_message",
+                ParseConfigID = "parse_config_id",
+                ParseTier = "parse_tier",
                 Result = new(
                     [
                         new()
@@ -83,6 +88,7 @@ public class SplitListPageResponseTest : TestBase
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "target_pages",
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -118,6 +124,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -135,6 +143,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -171,6 +180,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -188,6 +199,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -217,6 +229,8 @@ public class SplitListPageResponseTest : TestBase
                 ConfigurationID = "configuration_id",
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 ErrorMessage = "error_message",
+                ParseConfigID = "parse_config_id",
+                ParseTier = "parse_tier",
                 Result = new(
                     [
                         new()
@@ -234,6 +248,7 @@ public class SplitListPageResponseTest : TestBase
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "target_pages",
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -269,6 +284,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -286,6 +303,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -316,6 +334,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -333,6 +353,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -364,6 +385,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -381,6 +404,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -409,6 +433,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -426,6 +452,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -460,6 +487,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -477,6 +506,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -508,6 +538,8 @@ public class SplitListPageResponseTest : TestBase
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
+                    ParseConfigID = "parse_config_id",
+                    ParseTier = "parse_tier",
                     Result = new(
                         [
                             new()
@@ -525,6 +557,7 @@ public class SplitListPageResponseTest : TestBase
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
                     },
+                    TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },

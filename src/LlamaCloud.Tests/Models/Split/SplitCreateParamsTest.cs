@@ -21,12 +21,16 @@ public class SplitCreateParamsTest : TestBase
             Configuration = new()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = ParseTier.Fast,
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = AllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "1,3,5-7",
+                Version = "latest",
             },
             ConfigurationID = "cfg-11111111-2222-3333-4444-555555555555",
             TransactionID = "tx-unique-idempotency-key",
@@ -53,12 +57,16 @@ public class SplitCreateParamsTest : TestBase
         Configuration expectedConfiguration = new()
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
         string expectedConfigurationID = "cfg-11111111-2222-3333-4444-555555555555";
         string expectedTransactionID = "tx-unique-idempotency-key";
@@ -190,12 +198,16 @@ public class SplitCreateParamsTest : TestBase
             Configuration = new()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = ParseTier.Fast,
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = AllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "1,3,5-7",
+                Version = "latest",
             },
             ConfigurationID = "cfg-11111111-2222-3333-4444-555555555555",
             TransactionID = "tx-unique-idempotency-key",
@@ -230,28 +242,40 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
+        string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
+        ApiEnum<string, ParseTier> expectedParseTier = ParseTier.Fast;
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "1,3,5-7";
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, model.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
         {
             Assert.Equal(expectedCategories[i], model.Categories[i]);
         }
+        Assert.Equal(expectedParseConfigID, model.ParseConfigID);
+        Assert.Equal(expectedParseTier, model.ParseTier);
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, model.TargetPages);
+        Assert.Equal(expectedVersion, model.Version);
     }
 
     [Fact]
@@ -260,12 +284,16 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -283,12 +311,16 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -299,19 +331,27 @@ public class ConfigurationTest : TestBase
         Assert.NotNull(deserialized);
 
         List<Split::SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
+        string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
+        ApiEnum<string, ParseTier> expectedParseTier = ParseTier.Fast;
         SplittingStrategy expectedSplittingStrategy = new()
         {
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedTargetPages = "1,3,5-7";
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, deserialized.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
         {
             Assert.Equal(expectedCategories[i], deserialized.Categories[i]);
         }
+        Assert.Equal(expectedParseConfigID, deserialized.ParseConfigID);
+        Assert.Equal(expectedParseTier, deserialized.ParseTier);
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
+        Assert.Equal(expectedTargetPages, deserialized.TargetPages);
+        Assert.Equal(expectedVersion, deserialized.Version);
     }
 
     [Fact]
@@ -320,12 +360,16 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
             SplittingStrategy = new()
             {
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
         };
 
         model.Validate();
@@ -334,7 +378,14 @@ public class ConfigurationTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Configuration { Categories = [new() { Name = "x", Description = "x" }] };
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
+        };
 
         Assert.Null(model.SplittingStrategy);
         Assert.False(model.RawData.ContainsKey("splitting_strategy"));
@@ -343,7 +394,14 @@ public class ConfigurationTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Configuration { Categories = [new() { Name = "x", Description = "x" }] };
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
+        };
 
         model.Validate();
     }
@@ -354,6 +412,10 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -369,6 +431,10 @@ public class ConfigurationTest : TestBase
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
+            TargetPages = "1,3,5-7",
+            Version = "latest",
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
@@ -378,7 +444,7 @@ public class ConfigurationTest : TestBase
     }
 
     [Fact]
-    public void CopyConstructor_Works()
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
         var model = new Configuration
         {
@@ -391,9 +457,167 @@ public class ConfigurationTest : TestBase
             },
         };
 
+        Assert.Null(model.ParseConfigID);
+        Assert.False(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.False(model.RawData.ContainsKey("parse_tier"));
+        Assert.Null(model.TargetPages);
+        Assert.False(model.RawData.ContainsKey("target_pages"));
+        Assert.Null(model.Version);
+        Assert.False(model.RawData.ContainsKey("version"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+
+            ParseConfigID = null,
+            ParseTier = null,
+            TargetPages = null,
+            Version = null,
+        };
+
+        Assert.Null(model.ParseConfigID);
+        Assert.True(model.RawData.ContainsKey("parse_config_id"));
+        Assert.Null(model.ParseTier);
+        Assert.True(model.RawData.ContainsKey("parse_tier"));
+        Assert.Null(model.TargetPages);
+        Assert.True(model.RawData.ContainsKey("target_pages"));
+        Assert.Null(model.Version);
+        Assert.True(model.RawData.ContainsKey("version"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+
+            ParseConfigID = null,
+            ParseTier = null,
+            TargetPages = null,
+            Version = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+            ParseTier = ParseTier.Fast,
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+            TargetPages = "1,3,5-7",
+            Version = "latest",
+        };
+
         Configuration copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class ParseTierTest : TestBase
+{
+    [Theory]
+    [InlineData(ParseTier.Agentic)]
+    [InlineData(ParseTier.AgenticPlus)]
+    [InlineData(ParseTier.CostEffective)]
+    [InlineData(ParseTier.Fast)]
+    public void Validation_Works(ParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ParseTier> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ParseTier.Agentic)]
+    [InlineData(ParseTier.AgenticPlus)]
+    [InlineData(ParseTier.CostEffective)]
+    [InlineData(ParseTier.Fast)]
+    public void SerializationRoundtrip_Works(ParseTier rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ParseTier> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ParseTier>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 

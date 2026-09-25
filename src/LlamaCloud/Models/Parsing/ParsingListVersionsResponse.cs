@@ -176,6 +176,9 @@ class ParsingListVersionsResponseFromRaw : IFromRawJson<ParsingListVersionsRespo
 [JsonConverter(typeof(AgenticConverter))]
 public enum Agentic
 {
+    V2026_09_24,
+    V2026_09_13,
+    V2026_09_09,
     V2026_09_07,
     V2026_08_19,
     V2026_07_24,
@@ -232,6 +235,9 @@ sealed class AgenticConverter : JsonConverter<Agentic>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-09-24" => Agentic.V2026_09_24,
+            "2026-09-13" => Agentic.V2026_09_13,
+            "2026-09-09" => Agentic.V2026_09_09,
             "2026-09-07" => Agentic.V2026_09_07,
             "2026-08-19" => Agentic.V2026_08_19,
             "2026-07-24" => Agentic.V2026_07_24,
@@ -286,6 +292,9 @@ sealed class AgenticConverter : JsonConverter<Agentic>
             writer,
             value switch
             {
+                Agentic.V2026_09_24 => "2026-09-24",
+                Agentic.V2026_09_13 => "2026-09-13",
+                Agentic.V2026_09_09 => "2026-09-09",
                 Agentic.V2026_09_07 => "2026-09-07",
                 Agentic.V2026_08_19 => "2026-08-19",
                 Agentic.V2026_07_24 => "2026-07-24",
@@ -342,6 +351,8 @@ sealed class AgenticConverter : JsonConverter<Agentic>
 [JsonConverter(typeof(AgenticPlusConverter))]
 public enum AgenticPlus
 {
+    V2026_09_24,
+    V2026_09_11,
     V2026_08_19,
     V2026_07_08,
     V2026_06_18,
@@ -394,6 +405,8 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-09-24" => AgenticPlus.V2026_09_24,
+            "2026-09-11" => AgenticPlus.V2026_09_11,
             "2026-08-19" => AgenticPlus.V2026_08_19,
             "2026-07-08" => AgenticPlus.V2026_07_08,
             "2026-06-18" => AgenticPlus.V2026_06_18,
@@ -448,6 +461,8 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
             writer,
             value switch
             {
+                AgenticPlus.V2026_09_24 => "2026-09-24",
+                AgenticPlus.V2026_09_11 => "2026-09-11",
                 AgenticPlus.V2026_08_19 => "2026-08-19",
                 AgenticPlus.V2026_07_08 => "2026-07-08",
                 AgenticPlus.V2026_06_18 => "2026-06-18",

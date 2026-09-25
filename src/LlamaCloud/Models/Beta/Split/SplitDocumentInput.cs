@@ -14,7 +14,9 @@ namespace LlamaCloud.Models.Beta.Split;
 public sealed record class SplitDocumentInput : JsonModel
 {
     /// <summary>
-    /// Type of document input. Valid values are: file_id
+    /// The beta `POST /api/v1/beta/split/jobs` endpoint accepts only `file_id`.
+    /// To use a Parse job as input, call `POST /api/v1/split/jobs` instead, where
+    /// you can pass the Parse job ID as `file_input`.
     /// </summary>
     public required string Type
     {
