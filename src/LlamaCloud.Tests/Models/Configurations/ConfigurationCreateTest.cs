@@ -337,6 +337,7 @@ public class ConfigurationCreateParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -640,6 +641,7 @@ public class ConfigurationCreateParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()

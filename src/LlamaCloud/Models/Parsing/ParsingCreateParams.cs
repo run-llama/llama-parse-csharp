@@ -59,7 +59,7 @@ public record class ParsingCreateParams : ParamsBase
     /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-19` - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
+    /// `2026-09-28` - `agentic`: `2026-09-28` - `agentic_plus`: `2026-09-28`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -570,8 +570,8 @@ sealed class TierConverter : JsonConverter<Tier>
 /// <summary>
 /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
-/// - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
+/// - `agentic`: `2026-09-28` - `agentic_plus`: `2026-09-28`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -579,8 +579,7 @@ sealed class TierConverter : JsonConverter<Tier>
 public enum Version
 {
     Latest,
-    V2026_09_24,
-    V2026_08_19,
+    V2026_09_28,
     V2026_06_15,
 }
 
@@ -595,8 +594,7 @@ sealed class VersionConverter : JsonConverter<Version>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => Version.Latest,
-            "2026-09-24" => Version.V2026_09_24,
-            "2026-08-19" => Version.V2026_08_19,
+            "2026-09-28" => Version.V2026_09_28,
             "2026-06-15" => Version.V2026_06_15,
             _ => (Version)(-1),
         };
@@ -609,8 +607,7 @@ sealed class VersionConverter : JsonConverter<Version>
             value switch
             {
                 Version.Latest => "latest",
-                Version.V2026_09_24 => "2026-09-24",
-                Version.V2026_08_19 => "2026-08-19",
+                Version.V2026_09_28 => "2026-09-28",
                 Version.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -1458,6 +1455,26 @@ public sealed record class OutputOptions : JsonModel
         }
     }
 
+    /// <summary>
+    /// What to do with watermark text stamped across the page (e.g., 'CONFIDENTIAL',
+    /// 'DRAFT'): 'move_to_end' (default) keeps it as the last block of the page's
+    /// markdown and text output, 'move_to_start' as the first block, and 'remove'
+    /// drops it. In every mode the detected text is reported in the page's `watermark`
+    /// metadata. Requires version 2026-09-28 or later on the cost_effective, agentic,
+    /// and agentic_plus tiers; ignored otherwise
+    /// </summary>
+    public ApiEnum<string, WatermarkHandling>? WatermarkHandling
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, WatermarkHandling>>(
+                "watermark_handling"
+            );
+        }
+        init { this._rawData.Set("watermark_handling", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1475,6 +1492,7 @@ public sealed record class OutputOptions : JsonModel
         _ = this.SaveOutputPdf;
         this.SpatialText?.Validate();
         this.TablesAsSpreadsheet?.Validate();
+        this.WatermarkHandling?.Validate();
     }
 
     public OutputOptions() { }
@@ -2012,6 +2030,61 @@ class TablesAsSpreadsheetFromRaw : IFromRawJson<TablesAsSpreadsheet>
     /// <inheritdoc/>
     public TablesAsSpreadsheet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         TablesAsSpreadsheet.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// What to do with watermark text stamped across the page (e.g., 'CONFIDENTIAL',
+/// 'DRAFT'): 'move_to_end' (default) keeps it as the last block of the page's markdown
+/// and text output, 'move_to_start' as the first block, and 'remove' drops it. In
+/// every mode the detected text is reported in the page's `watermark` metadata.
+/// Requires version 2026-09-28 or later on the cost_effective, agentic, and agentic_plus
+/// tiers; ignored otherwise
+/// </summary>
+[JsonConverter(typeof(WatermarkHandlingConverter))]
+public enum WatermarkHandling
+{
+    MoveToEnd,
+    MoveToStart,
+    Remove,
+}
+
+sealed class WatermarkHandlingConverter : JsonConverter<WatermarkHandling>
+{
+    public override WatermarkHandling Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "move_to_end" => WatermarkHandling.MoveToEnd,
+            "move_to_start" => WatermarkHandling.MoveToStart,
+            "remove" => WatermarkHandling.Remove,
+            _ => (WatermarkHandling)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        WatermarkHandling value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                WatermarkHandling.MoveToEnd => "move_to_end",
+                WatermarkHandling.MoveToStart => "move_to_start",
+                WatermarkHandling.Remove => "remove",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
@@ -3403,7 +3476,7 @@ public sealed record class ParsingConf : JsonModel
     /// or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-19` - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
+    /// `2026-09-28` - `agentic`: `2026-09-28` - `agentic_plus`: `2026-09-28`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -3924,8 +3997,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin
 /// one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
-/// - `agentic`: `2026-09-24` - `agentic_plus`: `2026-09-24`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
+/// - `agentic`: `2026-09-28` - `agentic_plus`: `2026-09-28`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -3933,8 +4006,7 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 public enum ParsingConfVersion
 {
     Latest,
-    V2026_09_24,
-    V2026_08_19,
+    V2026_09_28,
     V2026_06_15,
 }
 
@@ -3949,8 +4021,7 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => ParsingConfVersion.Latest,
-            "2026-09-24" => ParsingConfVersion.V2026_09_24,
-            "2026-08-19" => ParsingConfVersion.V2026_08_19,
+            "2026-09-28" => ParsingConfVersion.V2026_09_28,
             "2026-06-15" => ParsingConfVersion.V2026_06_15,
             _ => (ParsingConfVersion)(-1),
         };
@@ -3967,8 +4038,7 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
             value switch
             {
                 ParsingConfVersion.Latest => "latest",
-                ParsingConfVersion.V2026_09_24 => "2026-09-24",
-                ParsingConfVersion.V2026_08_19 => "2026-08-19",
+                ParsingConfVersion.V2026_09_28 => "2026-09-28",
                 ParsingConfVersion.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

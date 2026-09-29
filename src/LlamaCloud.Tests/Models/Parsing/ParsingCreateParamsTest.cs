@@ -83,6 +83,7 @@ public class ParsingCreateParamsTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = Parsing::WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -278,6 +279,7 @@ public class ParsingCreateParamsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
         Parsing::PageRanges expectedPageRanges = new()
         {
@@ -603,6 +605,7 @@ public class ParsingCreateParamsTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = Parsing::WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -813,6 +816,7 @@ public class ParsingCreateParamsTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = Parsing::WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -1068,6 +1072,7 @@ public class ParsingCreateParamsTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = Parsing::WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -1266,8 +1271,7 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::Version.Latest)]
-    [InlineData(Parsing::Version.V2026_09_24)]
-    [InlineData(Parsing::Version.V2026_08_19)]
+    [InlineData(Parsing::Version.V2026_09_28)]
     [InlineData(Parsing::Version.V2026_06_15)]
     public void Validation_Works(Parsing::Version rawValue)
     {
@@ -1290,8 +1294,7 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::Version.Latest)]
-    [InlineData(Parsing::Version.V2026_09_24)]
-    [InlineData(Parsing::Version.V2026_08_19)]
+    [InlineData(Parsing::Version.V2026_09_28)]
     [InlineData(Parsing::Version.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::Version rawValue)
     {
@@ -2407,6 +2410,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
 
         List<string> expectedAdditionalOutputs =
@@ -2452,6 +2456,8 @@ public class OutputOptionsTest : TestBase
             Enable = true,
             GuessSheetName = true,
         };
+        ApiEnum<string, Parsing::WatermarkHandling> expectedWatermarkHandling =
+            Parsing::WatermarkHandling.Remove;
 
         Assert.NotNull(model.AdditionalOutputs);
         Assert.Equal(expectedAdditionalOutputs.Count, model.AdditionalOutputs.Count);
@@ -2476,6 +2482,7 @@ public class OutputOptionsTest : TestBase
         Assert.Equal(expectedSaveOutputPdf, model.SaveOutputPdf);
         Assert.Equal(expectedSpatialText, model.SpatialText);
         Assert.Equal(expectedTablesAsSpreadsheet, model.TablesAsSpreadsheet);
+        Assert.Equal(expectedWatermarkHandling, model.WatermarkHandling);
     }
 
     [Fact]
@@ -2514,6 +2521,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -2561,6 +2569,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -2613,6 +2622,8 @@ public class OutputOptionsTest : TestBase
             Enable = true,
             GuessSheetName = true,
         };
+        ApiEnum<string, Parsing::WatermarkHandling> expectedWatermarkHandling =
+            Parsing::WatermarkHandling.Remove;
 
         Assert.NotNull(deserialized.AdditionalOutputs);
         Assert.Equal(expectedAdditionalOutputs.Count, deserialized.AdditionalOutputs.Count);
@@ -2637,6 +2648,7 @@ public class OutputOptionsTest : TestBase
         Assert.Equal(expectedSaveOutputPdf, deserialized.SaveOutputPdf);
         Assert.Equal(expectedSpatialText, deserialized.SpatialText);
         Assert.Equal(expectedTablesAsSpreadsheet, deserialized.TablesAsSpreadsheet);
+        Assert.Equal(expectedWatermarkHandling, deserialized.WatermarkHandling);
     }
 
     [Fact]
@@ -2675,6 +2687,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
 
         model.Validate();
@@ -2688,6 +2701,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
 
         Assert.Null(model.AdditionalOutputs);
@@ -2710,6 +2724,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
 
         model.Validate();
@@ -2723,6 +2738,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
 
             // Null should be interpreted as omitted for these properties
             AdditionalOutputs = null,
@@ -2752,6 +2768,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [Parsing::ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
 
             // Null should be interpreted as omitted for these properties
             AdditionalOutputs = null,
@@ -2805,6 +2822,8 @@ public class OutputOptionsTest : TestBase
         Assert.False(model.RawData.ContainsKey("images_to_save"));
         Assert.Null(model.SaveOutputPdf);
         Assert.False(model.RawData.ContainsKey("save_output_pdf"));
+        Assert.Null(model.WatermarkHandling);
+        Assert.False(model.RawData.ContainsKey("watermark_handling"));
     }
 
     [Fact]
@@ -2882,6 +2901,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = null,
             ImagesToSave = null,
             SaveOutputPdf = null,
+            WatermarkHandling = null,
         };
 
         Assert.Null(model.ExtractPrintedPageNumber);
@@ -2890,6 +2910,8 @@ public class OutputOptionsTest : TestBase
         Assert.True(model.RawData.ContainsKey("images_to_save"));
         Assert.Null(model.SaveOutputPdf);
         Assert.True(model.RawData.ContainsKey("save_output_pdf"));
+        Assert.Null(model.WatermarkHandling);
+        Assert.True(model.RawData.ContainsKey("watermark_handling"));
     }
 
     [Fact]
@@ -2929,6 +2951,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = null,
             ImagesToSave = null,
             SaveOutputPdf = null,
+            WatermarkHandling = null,
         };
 
         model.Validate();
@@ -2970,6 +2993,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = Parsing::WatermarkHandling.Remove,
         };
 
         Parsing::OutputOptions copied = new(model);
@@ -3883,6 +3907,66 @@ public class TablesAsSpreadsheetTest : TestBase
         Parsing::TablesAsSpreadsheet copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class WatermarkHandlingTest : TestBase
+{
+    [Theory]
+    [InlineData(Parsing::WatermarkHandling.MoveToEnd)]
+    [InlineData(Parsing::WatermarkHandling.MoveToStart)]
+    [InlineData(Parsing::WatermarkHandling.Remove)]
+    public void Validation_Works(Parsing::WatermarkHandling rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Parsing::WatermarkHandling> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Parsing::WatermarkHandling>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Parsing::WatermarkHandling.MoveToEnd)]
+    [InlineData(Parsing::WatermarkHandling.MoveToStart)]
+    [InlineData(Parsing::WatermarkHandling.Remove)]
+    public void SerializationRoundtrip_Works(Parsing::WatermarkHandling rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Parsing::WatermarkHandling> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Parsing::WatermarkHandling>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Parsing::WatermarkHandling>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Parsing::WatermarkHandling>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 
@@ -7698,8 +7782,7 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_09_24)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_08_19)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_09_28)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void Validation_Works(Parsing::ParsingConfVersion rawValue)
     {
@@ -7722,8 +7805,7 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_09_24)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_08_19)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_09_28)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::ParsingConfVersion rawValue)
     {

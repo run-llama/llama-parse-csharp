@@ -787,6 +787,7 @@ public class ParsingGetResponseTest : TestBase
                         SlideSectionName = "slide_section_name",
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
+                        Watermark = "watermark",
                     },
                 ],
                 Document = new()
@@ -1589,6 +1590,7 @@ public class ParsingGetResponseTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
             Document = new()
@@ -2434,6 +2436,7 @@ public class ParsingGetResponseTest : TestBase
                         SlideSectionName = "slide_section_name",
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
+                        Watermark = "watermark",
                     },
                 ],
                 Document = new()
@@ -3254,6 +3257,7 @@ public class ParsingGetResponseTest : TestBase
                         SlideSectionName = "slide_section_name",
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
+                        Watermark = "watermark",
                     },
                 ],
                 Document = new()
@@ -4063,6 +4067,7 @@ public class ParsingGetResponseTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
             Document = new()
@@ -4908,6 +4913,7 @@ public class ParsingGetResponseTest : TestBase
                         SlideSectionName = "slide_section_name",
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
+                        Watermark = "watermark",
                     },
                 ],
                 Document = new()
@@ -5896,6 +5902,7 @@ public class ParsingGetResponseTest : TestBase
                         SlideSectionName = "slide_section_name",
                         SpeakerNotes = "speaker_notes",
                         TriggeredAutoMode = true,
+                        Watermark = "watermark",
                     },
                 ],
                 Document = new()
@@ -23378,6 +23385,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
             Document = new()
@@ -23404,6 +23412,7 @@ public class MetadataTest : TestBase
                 SlideSectionName = "slide_section_name",
                 SpeakerNotes = "speaker_notes",
                 TriggeredAutoMode = true,
+                Watermark = "watermark",
             },
         ];
         Parsing::Document expectedDocument = new()
@@ -23442,6 +23451,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
             Document = new()
@@ -23482,6 +23492,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
             Document = new()
@@ -23515,6 +23526,7 @@ public class MetadataTest : TestBase
                 SlideSectionName = "slide_section_name",
                 SpeakerNotes = "speaker_notes",
                 TriggeredAutoMode = true,
+                Watermark = "watermark",
             },
         ];
         Parsing::Document expectedDocument = new()
@@ -23553,6 +23565,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
             Document = new()
@@ -23587,6 +23600,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
         };
@@ -23612,6 +23626,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
         };
@@ -23636,6 +23651,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
 
@@ -23663,6 +23679,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
 
@@ -23689,6 +23706,7 @@ public class MetadataTest : TestBase
                     SlideSectionName = "slide_section_name",
                     SpeakerNotes = "speaker_notes",
                     TriggeredAutoMode = true,
+                    Watermark = "watermark",
                 },
             ],
             Document = new()
@@ -23724,6 +23742,7 @@ public class MetadataPageTest : TestBase
             SlideSectionName = "slide_section_name",
             SpeakerNotes = "speaker_notes",
             TriggeredAutoMode = true,
+            Watermark = "watermark",
         };
 
         long expectedPageNumber = 0;
@@ -23734,6 +23753,7 @@ public class MetadataPageTest : TestBase
         string expectedSlideSectionName = "slide_section_name";
         string expectedSpeakerNotes = "speaker_notes";
         bool expectedTriggeredAutoMode = true;
+        string expectedWatermark = "watermark";
 
         Assert.Equal(expectedPageNumber, model.PageNumber);
         Assert.Equal(expectedConfidence, model.Confidence);
@@ -23743,6 +23763,7 @@ public class MetadataPageTest : TestBase
         Assert.Equal(expectedSlideSectionName, model.SlideSectionName);
         Assert.Equal(expectedSpeakerNotes, model.SpeakerNotes);
         Assert.Equal(expectedTriggeredAutoMode, model.TriggeredAutoMode);
+        Assert.Equal(expectedWatermark, model.Watermark);
     }
 
     [Fact]
@@ -23758,6 +23779,7 @@ public class MetadataPageTest : TestBase
             SlideSectionName = "slide_section_name",
             SpeakerNotes = "speaker_notes",
             TriggeredAutoMode = true,
+            Watermark = "watermark",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -23782,6 +23804,7 @@ public class MetadataPageTest : TestBase
             SlideSectionName = "slide_section_name",
             SpeakerNotes = "speaker_notes",
             TriggeredAutoMode = true,
+            Watermark = "watermark",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -23799,6 +23822,7 @@ public class MetadataPageTest : TestBase
         string expectedSlideSectionName = "slide_section_name";
         string expectedSpeakerNotes = "speaker_notes";
         bool expectedTriggeredAutoMode = true;
+        string expectedWatermark = "watermark";
 
         Assert.Equal(expectedPageNumber, deserialized.PageNumber);
         Assert.Equal(expectedConfidence, deserialized.Confidence);
@@ -23808,6 +23832,7 @@ public class MetadataPageTest : TestBase
         Assert.Equal(expectedSlideSectionName, deserialized.SlideSectionName);
         Assert.Equal(expectedSpeakerNotes, deserialized.SpeakerNotes);
         Assert.Equal(expectedTriggeredAutoMode, deserialized.TriggeredAutoMode);
+        Assert.Equal(expectedWatermark, deserialized.Watermark);
     }
 
     [Fact]
@@ -23823,6 +23848,7 @@ public class MetadataPageTest : TestBase
             SlideSectionName = "slide_section_name",
             SpeakerNotes = "speaker_notes",
             TriggeredAutoMode = true,
+            Watermark = "watermark",
         };
 
         model.Validate();
@@ -23847,6 +23873,8 @@ public class MetadataPageTest : TestBase
         Assert.False(model.RawData.ContainsKey("speaker_notes"));
         Assert.Null(model.TriggeredAutoMode);
         Assert.False(model.RawData.ContainsKey("triggered_auto_mode"));
+        Assert.Null(model.Watermark);
+        Assert.False(model.RawData.ContainsKey("watermark"));
     }
 
     [Fact]
@@ -23871,6 +23899,7 @@ public class MetadataPageTest : TestBase
             SlideSectionName = null,
             SpeakerNotes = null,
             TriggeredAutoMode = null,
+            Watermark = null,
         };
 
         Assert.Null(model.Confidence);
@@ -23887,6 +23916,8 @@ public class MetadataPageTest : TestBase
         Assert.True(model.RawData.ContainsKey("speaker_notes"));
         Assert.Null(model.TriggeredAutoMode);
         Assert.True(model.RawData.ContainsKey("triggered_auto_mode"));
+        Assert.Null(model.Watermark);
+        Assert.True(model.RawData.ContainsKey("watermark"));
     }
 
     [Fact]
@@ -23903,6 +23934,7 @@ public class MetadataPageTest : TestBase
             SlideSectionName = null,
             SpeakerNotes = null,
             TriggeredAutoMode = null,
+            Watermark = null,
         };
 
         model.Validate();
@@ -23921,6 +23953,7 @@ public class MetadataPageTest : TestBase
             SlideSectionName = "slide_section_name",
             SpeakerNotes = "speaker_notes",
             TriggeredAutoMode = true,
+            Watermark = "watermark",
         };
 
         Parsing::MetadataPage copied = new(model);

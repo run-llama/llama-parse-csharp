@@ -4422,6 +4422,20 @@ public sealed record class MetadataPage : JsonModel
         init { this._rawData.Set("triggered_auto_mode", value); }
     }
 
+    /// <summary>
+    /// Watermark text detected on the page (e.g., 'CONFIDENTIAL'). Only reported
+    /// on version 2026-09-28 or later of the cost_effective, agentic, and agentic_plus tiers
+    /// </summary>
+    public string? Watermark
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("watermark");
+        }
+        init { this._rawData.Set("watermark", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -4433,6 +4447,7 @@ public sealed record class MetadataPage : JsonModel
         _ = this.SlideSectionName;
         _ = this.SpeakerNotes;
         _ = this.TriggeredAutoMode;
+        _ = this.Watermark;
     }
 
     public MetadataPage() { }
