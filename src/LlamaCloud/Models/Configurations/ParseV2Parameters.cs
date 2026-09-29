@@ -975,6 +975,19 @@ class ImageFromRaw : IFromRawJson<Image>
 public sealed record class Presentation : JsonModel
 {
     /// <summary>
+    /// Include hidden PPTX slides in the output. Omitted or false skips hidden slides.
+    /// </summary>
+    public bool? IncludeHiddenSlides
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("include_hidden_slides");
+        }
+        init { this._rawData.Set("include_hidden_slides", value); }
+    }
+
+    /// <summary>
     /// Extract content positioned outside the visible slide area. Some presentations
     /// have hidden notes or content that extends beyond slide boundaries
     /// </summary>
@@ -1005,6 +1018,7 @@ public sealed record class Presentation : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.IncludeHiddenSlides;
         _ = this.OutOfBoundsContent;
         _ = this.SkipEmbeddedData;
     }

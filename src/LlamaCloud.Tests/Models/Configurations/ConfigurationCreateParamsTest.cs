@@ -296,7 +296,12 @@ public class ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -606,7 +611,12 @@ public class ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,

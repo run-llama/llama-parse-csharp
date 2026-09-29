@@ -37,7 +37,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -218,7 +223,12 @@ public class ParseV2ParametersTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -426,7 +436,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -620,7 +635,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -808,7 +828,12 @@ public class ParseV2ParametersTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -1022,7 +1047,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1318,7 +1348,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1510,7 +1545,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1693,7 +1733,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1891,7 +1936,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -2084,7 +2134,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -2639,7 +2694,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2658,6 +2718,7 @@ public class InputOptionsTest : TestBase
         JsonElement expectedPdf = JsonSerializer.Deserialize<JsonElement>("{}");
         Presentation expectedPresentation = new()
         {
+            IncludeHiddenSlides = true,
             OutOfBoundsContent = true,
             SkipEmbeddedData = true,
         };
@@ -2689,7 +2750,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2720,7 +2786,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2746,6 +2817,7 @@ public class InputOptionsTest : TestBase
         JsonElement expectedPdf = JsonSerializer.Deserialize<JsonElement>("{}");
         Presentation expectedPresentation = new()
         {
+            IncludeHiddenSlides = true,
             OutOfBoundsContent = true,
             SkipEmbeddedData = true,
         };
@@ -2777,7 +2849,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2868,7 +2945,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -3119,11 +3201,18 @@ public class PresentationTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
+        bool expectedIncludeHiddenSlides = true;
         bool expectedOutOfBoundsContent = true;
         bool expectedSkipEmbeddedData = true;
 
+        Assert.Equal(expectedIncludeHiddenSlides, model.IncludeHiddenSlides);
         Assert.Equal(expectedOutOfBoundsContent, model.OutOfBoundsContent);
         Assert.Equal(expectedSkipEmbeddedData, model.SkipEmbeddedData);
     }
@@ -3131,7 +3220,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Presentation>(
@@ -3145,7 +3239,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Presentation>(
@@ -3154,9 +3253,11 @@ public class PresentationTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        bool expectedIncludeHiddenSlides = true;
         bool expectedOutOfBoundsContent = true;
         bool expectedSkipEmbeddedData = true;
 
+        Assert.Equal(expectedIncludeHiddenSlides, deserialized.IncludeHiddenSlides);
         Assert.Equal(expectedOutOfBoundsContent, deserialized.OutOfBoundsContent);
         Assert.Equal(expectedSkipEmbeddedData, deserialized.SkipEmbeddedData);
     }
@@ -3164,7 +3265,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         model.Validate();
     }
@@ -3174,6 +3280,8 @@ public class PresentationTest : TestBase
     {
         var model = new Presentation { };
 
+        Assert.Null(model.IncludeHiddenSlides);
+        Assert.False(model.RawData.ContainsKey("include_hidden_slides"));
         Assert.Null(model.OutOfBoundsContent);
         Assert.False(model.RawData.ContainsKey("out_of_bounds_content"));
         Assert.Null(model.SkipEmbeddedData);
@@ -3191,8 +3299,15 @@ public class PresentationTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = null, SkipEmbeddedData = null };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = null,
+            OutOfBoundsContent = null,
+            SkipEmbeddedData = null,
+        };
 
+        Assert.Null(model.IncludeHiddenSlides);
+        Assert.True(model.RawData.ContainsKey("include_hidden_slides"));
         Assert.Null(model.OutOfBoundsContent);
         Assert.True(model.RawData.ContainsKey("out_of_bounds_content"));
         Assert.Null(model.SkipEmbeddedData);
@@ -3202,7 +3317,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = null, SkipEmbeddedData = null };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = null,
+            OutOfBoundsContent = null,
+            SkipEmbeddedData = null,
+        };
 
         model.Validate();
     }
@@ -3210,7 +3330,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         Presentation copied = new(model);
 
