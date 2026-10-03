@@ -52,7 +52,7 @@ public sealed record class ParseV2Parameters : JsonModel
     /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-19` - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+    /// `2026-09-28` - `agentic`: `2026-09-29` - `agentic_plus`: `2026-09-28`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -433,8 +433,8 @@ sealed class ParseV2ParametersTierConverter : JsonConverter<ParseV2ParametersTie
 /// <summary>
 /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
-/// - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
+/// - `agentic`: `2026-09-29` - `agentic_plus`: `2026-09-28`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -442,8 +442,8 @@ sealed class ParseV2ParametersTierConverter : JsonConverter<ParseV2ParametersTie
 public enum Version
 {
     Latest,
-    V2026_09_07,
-    V2026_08_19,
+    V2026_09_29,
+    V2026_09_28,
     V2026_06_15,
 }
 
@@ -458,8 +458,8 @@ sealed class VersionConverter : JsonConverter<global::LlamaCloud.Models.Configur
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => global::LlamaCloud.Models.Configurations.Version.Latest,
-            "2026-09-07" => global::LlamaCloud.Models.Configurations.Version.V2026_09_07,
-            "2026-08-19" => global::LlamaCloud.Models.Configurations.Version.V2026_08_19,
+            "2026-09-29" => global::LlamaCloud.Models.Configurations.Version.V2026_09_29,
+            "2026-09-28" => global::LlamaCloud.Models.Configurations.Version.V2026_09_28,
             "2026-06-15" => global::LlamaCloud.Models.Configurations.Version.V2026_06_15,
             _ => (global::LlamaCloud.Models.Configurations.Version)(-1),
         };
@@ -476,8 +476,8 @@ sealed class VersionConverter : JsonConverter<global::LlamaCloud.Models.Configur
             value switch
             {
                 global::LlamaCloud.Models.Configurations.Version.Latest => "latest",
-                global::LlamaCloud.Models.Configurations.Version.V2026_09_07 => "2026-09-07",
-                global::LlamaCloud.Models.Configurations.Version.V2026_08_19 => "2026-08-19",
+                global::LlamaCloud.Models.Configurations.Version.V2026_09_29 => "2026-09-29",
+                global::LlamaCloud.Models.Configurations.Version.V2026_09_28 => "2026-09-28",
                 global::LlamaCloud.Models.Configurations.Version.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -978,6 +978,19 @@ class ImageFromRaw : IFromRawJson<Image>
 public sealed record class Presentation : JsonModel
 {
     /// <summary>
+    /// Include hidden PPTX slides in the output. Omitted or false skips hidden slides.
+    /// </summary>
+    public bool? IncludeHiddenSlides
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("include_hidden_slides");
+        }
+        init { this._rawData.Set("include_hidden_slides", value); }
+    }
+
+    /// <summary>
     /// Extract content positioned outside the visible slide area. Some presentations
     /// have hidden notes or content that extends beyond slide boundaries
     /// </summary>
@@ -1008,6 +1021,7 @@ public sealed record class Presentation : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.IncludeHiddenSlides;
         _ = this.OutOfBoundsContent;
         _ = this.SkipEmbeddedData;
     }
@@ -1325,6 +1339,27 @@ public sealed record class OutputOptions : JsonModel
         }
     }
 
+    /// <summary>
+    /// What to do with watermark text stamped across the page (e.g., 'CONFIDENTIAL',
+    /// 'DRAFT'): 'move_to_end' (default) keeps it as the last block of the page's
+    /// markdown, 'move_to_start' as the first block, and 'remove' drops it. The text
+    /// output follows the same choice where the watermark is a line of its own in
+    /// the PDF text layer. In every mode the detected text is reported in the page's
+    /// `watermark` metadata. Requires version 2026-09-28 or later on the cost_effective,
+    /// agentic, and agentic_plus tiers; ignored otherwise
+    /// </summary>
+    public ApiEnum<string, WatermarkHandling>? WatermarkHandling
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, WatermarkHandling>>(
+                "watermark_handling"
+            );
+        }
+        init { this._rawData.Set("watermark_handling", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1342,6 +1377,7 @@ public sealed record class OutputOptions : JsonModel
         _ = this.SaveOutputPdf;
         this.SpatialText?.Validate();
         this.TablesAsSpreadsheet?.Validate();
+        this.WatermarkHandling?.Validate();
     }
 
     public OutputOptions() { }
@@ -1879,6 +1915,62 @@ class TablesAsSpreadsheetFromRaw : IFromRawJson<TablesAsSpreadsheet>
     /// <inheritdoc/>
     public TablesAsSpreadsheet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         TablesAsSpreadsheet.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// What to do with watermark text stamped across the page (e.g., 'CONFIDENTIAL',
+/// 'DRAFT'): 'move_to_end' (default) keeps it as the last block of the page's markdown,
+/// 'move_to_start' as the first block, and 'remove' drops it. The text output follows
+/// the same choice where the watermark is a line of its own in the PDF text layer.
+/// In every mode the detected text is reported in the page's `watermark` metadata.
+/// Requires version 2026-09-28 or later on the cost_effective, agentic, and agentic_plus
+/// tiers; ignored otherwise
+/// </summary>
+[JsonConverter(typeof(WatermarkHandlingConverter))]
+public enum WatermarkHandling
+{
+    MoveToEnd,
+    MoveToStart,
+    Remove,
+}
+
+sealed class WatermarkHandlingConverter : JsonConverter<WatermarkHandling>
+{
+    public override WatermarkHandling Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "move_to_end" => WatermarkHandling.MoveToEnd,
+            "move_to_start" => WatermarkHandling.MoveToStart,
+            "remove" => WatermarkHandling.Remove,
+            _ => (WatermarkHandling)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        WatermarkHandling value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                WatermarkHandling.MoveToEnd => "move_to_end",
+                WatermarkHandling.MoveToStart => "move_to_start",
+                WatermarkHandling.Remove => "remove",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
@@ -3270,7 +3362,7 @@ public sealed record class ParsingConf : JsonModel
     /// or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-08-19` - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+    /// `2026-09-28` - `agentic`: `2026-09-29` - `agentic_plus`: `2026-09-28`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -3791,8 +3883,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin
 /// one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-08-19`
-/// - `agentic`: `2026-09-07` - `agentic_plus`: `2026-08-19`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
+/// - `agentic`: `2026-09-29` - `agentic_plus`: `2026-09-28`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -3800,8 +3892,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 public enum ParsingConfVersion
 {
     Latest,
-    V2026_09_07,
-    V2026_08_19,
+    V2026_09_29,
+    V2026_09_28,
     V2026_06_15,
 }
 
@@ -3816,8 +3908,8 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => ParsingConfVersion.Latest,
-            "2026-09-07" => ParsingConfVersion.V2026_09_07,
-            "2026-08-19" => ParsingConfVersion.V2026_08_19,
+            "2026-09-29" => ParsingConfVersion.V2026_09_29,
+            "2026-09-28" => ParsingConfVersion.V2026_09_28,
             "2026-06-15" => ParsingConfVersion.V2026_06_15,
             _ => (ParsingConfVersion)(-1),
         };
@@ -3834,8 +3926,8 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
             value switch
             {
                 ParsingConfVersion.Latest => "latest",
-                ParsingConfVersion.V2026_09_07 => "2026-09-07",
-                ParsingConfVersion.V2026_08_19 => "2026-08-19",
+                ParsingConfVersion.V2026_09_29 => "2026-09-29",
+                ParsingConfVersion.V2026_09_28 => "2026-09-28",
                 ParsingConfVersion.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

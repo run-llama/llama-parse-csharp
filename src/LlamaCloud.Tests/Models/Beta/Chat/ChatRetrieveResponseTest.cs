@@ -26,11 +26,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -58,11 +60,14 @@ public class ChatRetrieveResponseTest : TestBase
                     TotalOutputTokens = 0,
                     Turns = 0,
                 },
+                SkippedIndexIds = ["string"],
                 Type = Type.Stop,
             },
         ];
         string expectedLastUpdatedAt = "2026-04-22T12:34:41.342245";
         string expectedSessionID = "ses-abc123";
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> expectedSharedAccess =
+            ChatRetrieveResponseSharedAccess.ReadOnly;
         string expectedGeneratedTitle = "What were the main findings in Q3?...";
         List<string> expectedIndexIds = ["idx-abc123", "idx-def456"];
         ChatRetrieveResponseJobMetadata expectedJobMetadata = new()
@@ -83,6 +88,7 @@ public class ChatRetrieveResponseTest : TestBase
         }
         Assert.Equal(expectedLastUpdatedAt, model.LastUpdatedAt);
         Assert.Equal(expectedSessionID, model.SessionID);
+        Assert.Equal(expectedSharedAccess, model.SharedAccess);
         Assert.Equal(expectedGeneratedTitle, model.GeneratedTitle);
         Assert.NotNull(model.IndexIds);
         Assert.Equal(expectedIndexIds.Count, model.IndexIds.Count);
@@ -111,11 +117,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -157,11 +165,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -196,11 +206,14 @@ public class ChatRetrieveResponseTest : TestBase
                     TotalOutputTokens = 0,
                     Turns = 0,
                 },
+                SkippedIndexIds = ["string"],
                 Type = Type.Stop,
             },
         ];
         string expectedLastUpdatedAt = "2026-04-22T12:34:41.342245";
         string expectedSessionID = "ses-abc123";
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> expectedSharedAccess =
+            ChatRetrieveResponseSharedAccess.ReadOnly;
         string expectedGeneratedTitle = "What were the main findings in Q3?...";
         List<string> expectedIndexIds = ["idx-abc123", "idx-def456"];
         ChatRetrieveResponseJobMetadata expectedJobMetadata = new()
@@ -221,6 +234,7 @@ public class ChatRetrieveResponseTest : TestBase
         }
         Assert.Equal(expectedLastUpdatedAt, deserialized.LastUpdatedAt);
         Assert.Equal(expectedSessionID, deserialized.SessionID);
+        Assert.Equal(expectedSharedAccess, deserialized.SharedAccess);
         Assert.Equal(expectedGeneratedTitle, deserialized.GeneratedTitle);
         Assert.NotNull(deserialized.IndexIds);
         Assert.Equal(expectedIndexIds.Count, deserialized.IndexIds.Count);
@@ -249,11 +263,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -289,11 +305,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
         };
 
         Assert.Null(model.GeneratedTitle);
@@ -322,11 +340,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
         };
 
         model.Validate();
@@ -350,11 +370,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
 
             GeneratedTitle = null,
             IndexIds = null,
@@ -387,11 +409,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
 
             GeneratedTitle = null,
             IndexIds = null,
@@ -419,11 +443,13 @@ public class ChatRetrieveResponseTest : TestBase
                         TotalOutputTokens = 0,
                         Turns = 0,
                     },
+                    SkippedIndexIds = ["string"],
                     Type = Type.Stop,
                 },
             ],
             LastUpdatedAt = "2026-04-22T12:34:41.342245",
             SessionID = "ses-abc123",
+            SharedAccess = ChatRetrieveResponseSharedAccess.ReadOnly,
             GeneratedTitle = "What were the main findings in Q3?...",
             IndexIds = ["idx-abc123", "idx-def456"],
             JobMetadata = new()
@@ -460,6 +486,7 @@ public class EventTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
         value.Validate();
@@ -548,6 +575,7 @@ public class EventTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
@@ -663,6 +691,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -675,11 +704,18 @@ public class StopTest : TestBase
             TotalOutputTokens = 0,
             Turns = 0,
         };
+        List<string> expectedSkippedIndexIds = ["string"];
         ApiEnum<string, Type> expectedType = Type.Stop;
 
         Assert.Equal(expectedError, model.Error);
         Assert.Equal(expectedIsError, model.IsError);
         Assert.Equal(expectedUsage, model.Usage);
+        Assert.NotNull(model.SkippedIndexIds);
+        Assert.Equal(expectedSkippedIndexIds.Count, model.SkippedIndexIds.Count);
+        for (int i = 0; i < expectedSkippedIndexIds.Count; i++)
+        {
+            Assert.Equal(expectedSkippedIndexIds[i], model.SkippedIndexIds[i]);
+        }
         Assert.Equal(expectedType, model.Type);
     }
 
@@ -697,6 +733,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -720,6 +757,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -736,11 +774,18 @@ public class StopTest : TestBase
             TotalOutputTokens = 0,
             Turns = 0,
         };
+        List<string> expectedSkippedIndexIds = ["string"];
         ApiEnum<string, Type> expectedType = Type.Stop;
 
         Assert.Equal(expectedError, deserialized.Error);
         Assert.Equal(expectedIsError, deserialized.IsError);
         Assert.Equal(expectedUsage, deserialized.Usage);
+        Assert.NotNull(deserialized.SkippedIndexIds);
+        Assert.Equal(expectedSkippedIndexIds.Count, deserialized.SkippedIndexIds.Count);
+        for (int i = 0; i < expectedSkippedIndexIds.Count; i++)
+        {
+            Assert.Equal(expectedSkippedIndexIds[i], deserialized.SkippedIndexIds[i]);
+        }
         Assert.Equal(expectedType, deserialized.Type);
     }
 
@@ -758,6 +803,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -780,6 +826,8 @@ public class StopTest : TestBase
             },
         };
 
+        Assert.Null(model.SkippedIndexIds);
+        Assert.False(model.RawData.ContainsKey("skipped_index_ids"));
         Assert.Null(model.Type);
         Assert.False(model.RawData.ContainsKey("type"));
     }
@@ -819,9 +867,12 @@ public class StopTest : TestBase
             },
 
             // Null should be interpreted as omitted for these properties
+            SkippedIndexIds = null,
             Type = null,
         };
 
+        Assert.Null(model.SkippedIndexIds);
+        Assert.False(model.RawData.ContainsKey("skipped_index_ids"));
         Assert.Null(model.Type);
         Assert.False(model.RawData.ContainsKey("type"));
     }
@@ -842,6 +893,7 @@ public class StopTest : TestBase
             },
 
             // Null should be interpreted as omitted for these properties
+            SkippedIndexIds = null,
             Type = null,
         };
 
@@ -862,6 +914,7 @@ public class StopTest : TestBase
                 TotalOutputTokens = 0,
                 Turns = 0,
             },
+            SkippedIndexIds = ["string"],
             Type = Type.Stop,
         };
 
@@ -2622,6 +2675,62 @@ public class UserInputTypeTest : TestBase
             json,
             ModelBase.SerializerOptions
         );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class ChatRetrieveResponseSharedAccessTest : TestBase
+{
+    [Theory]
+    [InlineData(ChatRetrieveResponseSharedAccess.Query)]
+    [InlineData(ChatRetrieveResponseSharedAccess.ReadOnly)]
+    public void Validation_Works(ChatRetrieveResponseSharedAccess rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ChatRetrieveResponseSharedAccess>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ChatRetrieveResponseSharedAccess.Query)]
+    [InlineData(ChatRetrieveResponseSharedAccess.ReadOnly)]
+    public void SerializationRoundtrip_Works(ChatRetrieveResponseSharedAccess rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ChatRetrieveResponseSharedAccess> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, ChatRetrieveResponseSharedAccess>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ChatRetrieveResponseSharedAccess>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, ChatRetrieveResponseSharedAccess>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }

@@ -3,17 +3,17 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using LlamaCloud.Core;
-using LlamaCloud.Models.JobDataPoints;
+using LlamaCloud.Models.ExtractionAgents;
 
 namespace LlamaCloud.Services;
 
 /// <inheritdoc/>
-public sealed class JobDataPointService : IJobDataPointService
+public sealed class ExtractionAgentService : IExtractionAgentService
 {
-    readonly Lazy<IJobDataPointServiceWithRawResponse> _withRawResponse;
+    readonly Lazy<IExtractionAgentServiceWithRawResponse> _withRawResponse;
 
     /// <inheritdoc/>
-    public IJobDataPointServiceWithRawResponse WithRawResponse
+    public IExtractionAgentServiceWithRawResponse WithRawResponse
     {
         get { return _withRawResponse.Value; }
     }
@@ -21,23 +21,23 @@ public sealed class JobDataPointService : IJobDataPointService
     readonly ILlamaCloudClient _client;
 
     /// <inheritdoc/>
-    public IJobDataPointService WithOptions(Func<ClientOptions, ClientOptions> modifier)
+    public IExtractionAgentService WithOptions(Func<ClientOptions, ClientOptions> modifier)
     {
-        return new JobDataPointService(this._client.WithOptions(modifier));
+        return new ExtractionAgentService(this._client.WithOptions(modifier));
     }
 
-    public JobDataPointService(ILlamaCloudClient client)
+    public ExtractionAgentService(ILlamaCloudClient client)
     {
         _client = client;
 
         _withRawResponse = new(() =>
-            new JobDataPointServiceWithRawResponse(client.WithRawResponse)
+            new ExtractionAgentServiceWithRawResponse(client.WithRawResponse)
         );
     }
 
     /// <inheritdoc/>
-    public async Task<JobDataPointListPage> List(
-        JobDataPointListParams parameters,
+    public async Task<ExtractionAgentListPage> List(
+        ExtractionAgentListParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -49,30 +49,32 @@ public sealed class JobDataPointService : IJobDataPointService
 }
 
 /// <inheritdoc/>
-public sealed class JobDataPointServiceWithRawResponse : IJobDataPointServiceWithRawResponse
+public sealed class ExtractionAgentServiceWithRawResponse : IExtractionAgentServiceWithRawResponse
 {
     readonly ILlamaCloudClientWithRawResponse _client;
 
     /// <inheritdoc/>
-    public IJobDataPointServiceWithRawResponse WithOptions(
+    public IExtractionAgentServiceWithRawResponse WithOptions(
         Func<ClientOptions, ClientOptions> modifier
     )
     {
-        return new JobDataPointServiceWithRawResponse(this._client.WithOptions(modifier));
+        return new ExtractionAgentServiceWithRawResponse(this._client.WithOptions(modifier));
     }
 
-    public JobDataPointServiceWithRawResponse(ILlamaCloudClientWithRawResponse client)
+    public ExtractionAgentServiceWithRawResponse(ILlamaCloudClientWithRawResponse client)
     {
         _client = client;
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<JobDataPointListPage>> List(
-        JobDataPointListParams parameters,
+    public async Task<HttpResponse<ExtractionAgentListPage>> List(
+        ExtractionAgentListParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
-        HttpRequest<JobDataPointListParams> request = new()
+        parameters ??= new();
+
+        HttpRequest<ExtractionAgentListParams> request = new()
         {
             Method = HttpMethod.Get,
             Params = parameters,
@@ -83,13 +85,13 @@ public sealed class JobDataPointServiceWithRawResponse : IJobDataPointServiceWit
             async (token) =>
             {
                 var page = await response
-                    .Deserialize<JobDataPointListPageResponse>(token)
+                    .Deserialize<ExtractionAgentListPageResponse>(token)
                     .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
                     page.Validate();
                 }
-                return new JobDataPointListPage(this, parameters, page);
+                return new ExtractionAgentListPage(this, parameters, page);
             }
         );
     }

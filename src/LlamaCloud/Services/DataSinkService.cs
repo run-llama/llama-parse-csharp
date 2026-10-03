@@ -70,6 +70,7 @@ public sealed class DataSinkService : IDataSinkService
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<List<DataSink>> List(
         DataSinkListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -125,6 +126,18 @@ public sealed class DataSinkService : IDataSinkService
         parameters ??= new();
 
         return this.Get(parameters with { DataSinkID = dataSinkID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public async Task<DataSinkListPaginatedPage> ListPaginated(
+        DataSinkListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.ListPaginated(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
     }
 }
 
@@ -212,6 +225,7 @@ public sealed class DataSinkServiceWithRawResponse : IDataSinkServiceWithRawResp
     }
 
     /// <inheritdoc/>
+    [Obsolete("deprecated")]
     public async Task<HttpResponse<List<DataSink>>> List(
         DataSinkListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -316,5 +330,35 @@ public sealed class DataSinkServiceWithRawResponse : IDataSinkServiceWithRawResp
         parameters ??= new();
 
         return this.Get(parameters with { DataSinkID = dataSinkID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<DataSinkListPaginatedPage>> ListPaginated(
+        DataSinkListPaginatedParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        HttpRequest<DataSinkListPaginatedParams> request = new()
+        {
+            Method = HttpMethod.Get,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var page = await response
+                    .Deserialize<DataSinkListPaginatedPageResponse>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    page.Validate();
+                }
+                return new DataSinkListPaginatedPage(this, parameters, page);
+            }
+        );
     }
 }

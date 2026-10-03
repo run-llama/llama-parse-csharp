@@ -57,6 +57,26 @@ public interface IClassifyService
     );
 
     /// <summary>
+    /// Delete a classify job and its result.
+    ///
+    /// <para>The job must be in a terminal state (COMPLETED, FAILED, CANCELLED). Cancel
+    /// a job that is still running before deleting it.</para>
+    ///
+    /// <para>Returns the identifiers of the deleted job.</para>
+    /// </summary>
+    Task<ClassifyDeleteResponse> Delete(
+        ClassifyDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Delete(ClassifyDeleteParams, CancellationToken)"/>
+    Task<ClassifyDeleteResponse> Delete(
+        string jobID,
+        ClassifyDeleteParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// Cancel a running classify job.
     ///
     /// <para>Stops processing and marks the job as CANCELLED. Returns the updated job.
@@ -122,6 +142,22 @@ public interface IClassifyServiceWithRawResponse
     /// </summary>
     Task<HttpResponse<ClassifyListPage>> List(
         ClassifyListParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>delete /api/v2/classify/{job_id}</c>, but is otherwise the
+    /// same as <see cref="IClassifyService.Delete(ClassifyDeleteParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<ClassifyDeleteResponse>> Delete(
+        ClassifyDeleteParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Delete(ClassifyDeleteParams, CancellationToken)"/>
+    Task<HttpResponse<ClassifyDeleteResponse>> Delete(
+        string jobID,
+        ClassifyDeleteParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

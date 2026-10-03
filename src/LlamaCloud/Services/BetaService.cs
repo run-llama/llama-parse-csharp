@@ -31,6 +31,7 @@ public sealed class BetaService : IBetaService
         _indexes = new(() => new Beta::IndexService(client));
         _retrieval = new(() => new Beta::RetrievalService(client));
         _chat = new(() => new Beta::ChatService(client));
+        _attachments = new(() => new Beta::AttachmentService(client));
         _agentData = new(() => new Beta::AgentDataService(client));
         _directories = new(() => new Beta::DirectoryService(client));
         _split = new(() => new Beta::SplitService(client));
@@ -52,6 +53,12 @@ public sealed class BetaService : IBetaService
     public Beta::IChatService Chat
     {
         get { return _chat.Value; }
+    }
+
+    readonly Lazy<Beta::IAttachmentService> _attachments;
+    public Beta::IAttachmentService Attachments
+    {
+        get { return _attachments.Value; }
     }
 
     readonly Lazy<Beta::IAgentDataService> _agentData;
@@ -91,6 +98,7 @@ public sealed class BetaServiceWithRawResponse : IBetaServiceWithRawResponse
         _indexes = new(() => new Beta::IndexServiceWithRawResponse(client));
         _retrieval = new(() => new Beta::RetrievalServiceWithRawResponse(client));
         _chat = new(() => new Beta::ChatServiceWithRawResponse(client));
+        _attachments = new(() => new Beta::AttachmentServiceWithRawResponse(client));
         _agentData = new(() => new Beta::AgentDataServiceWithRawResponse(client));
         _directories = new(() => new Beta::DirectoryServiceWithRawResponse(client));
         _split = new(() => new Beta::SplitServiceWithRawResponse(client));
@@ -112,6 +120,12 @@ public sealed class BetaServiceWithRawResponse : IBetaServiceWithRawResponse
     public Beta::IChatServiceWithRawResponse Chat
     {
         get { return _chat.Value; }
+    }
+
+    readonly Lazy<Beta::IAttachmentServiceWithRawResponse> _attachments;
+    public Beta::IAttachmentServiceWithRawResponse Attachments
+    {
+        get { return _attachments.Value; }
     }
 
     readonly Lazy<Beta::IAgentDataServiceWithRawResponse> _agentData;

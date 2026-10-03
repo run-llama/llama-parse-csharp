@@ -79,6 +79,27 @@ public record class ChatStreamParams : ParamsBase
         init { this._rawQueryData.Set("project_id", value); }
     }
 
+    /// <summary>
+    /// Fail the turn if any requested index cannot be queried.
+    /// </summary>
+    public bool? RequireAllIndexes
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableStruct<bool>("require_all_indexes");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("require_all_indexes", value);
+        }
+    }
+
     public ChatStreamParams() { }
 
 #pragma warning disable CS8618

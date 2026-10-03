@@ -37,7 +37,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -73,6 +78,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -217,7 +223,12 @@ public class ParseV2ParametersTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -253,6 +264,7 @@ public class ParseV2ParametersTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = WatermarkHandling.Remove,
         };
         PageRanges expectedPageRanges = new() { MaxPages = 1, TargetPages = "target_pages" };
         ProcessingControl expectedProcessingControl = new()
@@ -424,7 +436,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -460,6 +477,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -617,7 +635,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -653,6 +676,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -804,7 +828,12 @@ public class ParseV2ParametersTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -840,6 +869,7 @@ public class ParseV2ParametersTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = WatermarkHandling.Remove,
         };
         PageRanges expectedPageRanges = new() { MaxPages = 1, TargetPages = "target_pages" };
         ProcessingControl expectedProcessingControl = new()
@@ -1017,7 +1047,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1053,6 +1088,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -1312,7 +1348,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1348,6 +1389,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -1503,7 +1545,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1539,6 +1586,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -1685,7 +1733,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1721,6 +1774,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -1882,7 +1936,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -1918,6 +1977,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -2074,7 +2134,12 @@ public class ParseV2ParametersTest : TestBase
                 },
                 Image = new() { CameraPhotoCorrection = true },
                 Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                Presentation = new()
+                {
+                    IncludeHiddenSlides = true,
+                    OutOfBoundsContent = true,
+                    SkipEmbeddedData = true,
+                },
                 Spreadsheet = new()
                 {
                     DetectSubTablesInSheets = true,
@@ -2110,6 +2175,7 @@ public class ParseV2ParametersTest : TestBase
                     PreserveVerySmallText = true,
                 },
                 TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                WatermarkHandling = WatermarkHandling.Remove,
             },
             PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
             ProcessingControl = new()
@@ -2302,8 +2368,8 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Version.Latest)]
-    [InlineData(Version.V2026_09_07)]
-    [InlineData(Version.V2026_08_19)]
+    [InlineData(Version.V2026_09_29)]
+    [InlineData(Version.V2026_09_28)]
     [InlineData(Version.V2026_06_15)]
     public void Validation_Works(Version rawValue)
     {
@@ -2326,8 +2392,8 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Version.Latest)]
-    [InlineData(Version.V2026_09_07)]
-    [InlineData(Version.V2026_08_19)]
+    [InlineData(Version.V2026_09_29)]
+    [InlineData(Version.V2026_09_28)]
     [InlineData(Version.V2026_06_15)]
     public void SerializationRoundtrip_Works(Version rawValue)
     {
@@ -2630,7 +2696,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2649,6 +2720,7 @@ public class InputOptionsTest : TestBase
         JsonElement expectedPdf = JsonSerializer.Deserialize<JsonElement>("{}");
         Presentation expectedPresentation = new()
         {
+            IncludeHiddenSlides = true,
             OutOfBoundsContent = true,
             SkipEmbeddedData = true,
         };
@@ -2680,7 +2752,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2711,7 +2788,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2737,6 +2819,7 @@ public class InputOptionsTest : TestBase
         JsonElement expectedPdf = JsonSerializer.Deserialize<JsonElement>("{}");
         Presentation expectedPresentation = new()
         {
+            IncludeHiddenSlides = true,
             OutOfBoundsContent = true,
             SkipEmbeddedData = true,
         };
@@ -2768,7 +2851,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -2859,7 +2947,12 @@ public class InputOptionsTest : TestBase
             },
             Image = new() { CameraPhotoCorrection = true },
             Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-            Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+            Presentation = new()
+            {
+                IncludeHiddenSlides = true,
+                OutOfBoundsContent = true,
+                SkipEmbeddedData = true,
+            },
             Spreadsheet = new()
             {
                 DetectSubTablesInSheets = true,
@@ -3110,11 +3203,18 @@ public class PresentationTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
+        bool expectedIncludeHiddenSlides = true;
         bool expectedOutOfBoundsContent = true;
         bool expectedSkipEmbeddedData = true;
 
+        Assert.Equal(expectedIncludeHiddenSlides, model.IncludeHiddenSlides);
         Assert.Equal(expectedOutOfBoundsContent, model.OutOfBoundsContent);
         Assert.Equal(expectedSkipEmbeddedData, model.SkipEmbeddedData);
     }
@@ -3122,7 +3222,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Presentation>(
@@ -3136,7 +3241,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Presentation>(
@@ -3145,9 +3255,11 @@ public class PresentationTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        bool expectedIncludeHiddenSlides = true;
         bool expectedOutOfBoundsContent = true;
         bool expectedSkipEmbeddedData = true;
 
+        Assert.Equal(expectedIncludeHiddenSlides, deserialized.IncludeHiddenSlides);
         Assert.Equal(expectedOutOfBoundsContent, deserialized.OutOfBoundsContent);
         Assert.Equal(expectedSkipEmbeddedData, deserialized.SkipEmbeddedData);
     }
@@ -3155,7 +3267,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         model.Validate();
     }
@@ -3165,6 +3282,8 @@ public class PresentationTest : TestBase
     {
         var model = new Presentation { };
 
+        Assert.Null(model.IncludeHiddenSlides);
+        Assert.False(model.RawData.ContainsKey("include_hidden_slides"));
         Assert.Null(model.OutOfBoundsContent);
         Assert.False(model.RawData.ContainsKey("out_of_bounds_content"));
         Assert.Null(model.SkipEmbeddedData);
@@ -3182,8 +3301,15 @@ public class PresentationTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = null, SkipEmbeddedData = null };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = null,
+            OutOfBoundsContent = null,
+            SkipEmbeddedData = null,
+        };
 
+        Assert.Null(model.IncludeHiddenSlides);
+        Assert.True(model.RawData.ContainsKey("include_hidden_slides"));
         Assert.Null(model.OutOfBoundsContent);
         Assert.True(model.RawData.ContainsKey("out_of_bounds_content"));
         Assert.Null(model.SkipEmbeddedData);
@@ -3193,7 +3319,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = null, SkipEmbeddedData = null };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = null,
+            OutOfBoundsContent = null,
+            SkipEmbeddedData = null,
+        };
 
         model.Validate();
     }
@@ -3201,7 +3332,12 @@ public class PresentationTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Presentation { OutOfBoundsContent = true, SkipEmbeddedData = true };
+        var model = new Presentation
+        {
+            IncludeHiddenSlides = true,
+            OutOfBoundsContent = true,
+            SkipEmbeddedData = true,
+        };
 
         Presentation copied = new(model);
 
@@ -3395,6 +3531,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = WatermarkHandling.Remove,
         };
 
         List<string> expectedAdditionalOutputs =
@@ -3437,6 +3574,7 @@ public class OutputOptionsTest : TestBase
             Enable = true,
             GuessSheetName = true,
         };
+        ApiEnum<string, WatermarkHandling> expectedWatermarkHandling = WatermarkHandling.Remove;
 
         Assert.NotNull(model.AdditionalOutputs);
         Assert.Equal(expectedAdditionalOutputs.Count, model.AdditionalOutputs.Count);
@@ -3461,6 +3599,7 @@ public class OutputOptionsTest : TestBase
         Assert.Equal(expectedSaveOutputPdf, model.SaveOutputPdf);
         Assert.Equal(expectedSpatialText, model.SpatialText);
         Assert.Equal(expectedTablesAsSpreadsheet, model.TablesAsSpreadsheet);
+        Assert.Equal(expectedWatermarkHandling, model.WatermarkHandling);
     }
 
     [Fact]
@@ -3494,6 +3633,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = WatermarkHandling.Remove,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3536,6 +3676,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = WatermarkHandling.Remove,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3585,6 +3726,7 @@ public class OutputOptionsTest : TestBase
             Enable = true,
             GuessSheetName = true,
         };
+        ApiEnum<string, WatermarkHandling> expectedWatermarkHandling = WatermarkHandling.Remove;
 
         Assert.NotNull(deserialized.AdditionalOutputs);
         Assert.Equal(expectedAdditionalOutputs.Count, deserialized.AdditionalOutputs.Count);
@@ -3609,6 +3751,7 @@ public class OutputOptionsTest : TestBase
         Assert.Equal(expectedSaveOutputPdf, deserialized.SaveOutputPdf);
         Assert.Equal(expectedSpatialText, deserialized.SpatialText);
         Assert.Equal(expectedTablesAsSpreadsheet, deserialized.TablesAsSpreadsheet);
+        Assert.Equal(expectedWatermarkHandling, deserialized.WatermarkHandling);
     }
 
     [Fact]
@@ -3642,6 +3785,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = WatermarkHandling.Remove,
         };
 
         model.Validate();
@@ -3655,6 +3799,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = WatermarkHandling.Remove,
         };
 
         Assert.Null(model.AdditionalOutputs);
@@ -3677,6 +3822,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = WatermarkHandling.Remove,
         };
 
         model.Validate();
@@ -3690,6 +3836,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = WatermarkHandling.Remove,
 
             // Null should be interpreted as omitted for these properties
             AdditionalOutputs = null,
@@ -3719,6 +3866,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = true,
             ImagesToSave = [ImagesToSave.Embedded],
             SaveOutputPdf = true,
+            WatermarkHandling = WatermarkHandling.Remove,
 
             // Null should be interpreted as omitted for these properties
             AdditionalOutputs = null,
@@ -3767,6 +3915,8 @@ public class OutputOptionsTest : TestBase
         Assert.False(model.RawData.ContainsKey("images_to_save"));
         Assert.Null(model.SaveOutputPdf);
         Assert.False(model.RawData.ContainsKey("save_output_pdf"));
+        Assert.Null(model.WatermarkHandling);
+        Assert.False(model.RawData.ContainsKey("watermark_handling"));
     }
 
     [Fact]
@@ -3834,6 +3984,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = null,
             ImagesToSave = null,
             SaveOutputPdf = null,
+            WatermarkHandling = null,
         };
 
         Assert.Null(model.ExtractPrintedPageNumber);
@@ -3842,6 +3993,8 @@ public class OutputOptionsTest : TestBase
         Assert.True(model.RawData.ContainsKey("images_to_save"));
         Assert.Null(model.SaveOutputPdf);
         Assert.True(model.RawData.ContainsKey("save_output_pdf"));
+        Assert.Null(model.WatermarkHandling);
+        Assert.True(model.RawData.ContainsKey("watermark_handling"));
     }
 
     [Fact]
@@ -3876,6 +4029,7 @@ public class OutputOptionsTest : TestBase
             ExtractPrintedPageNumber = null,
             ImagesToSave = null,
             SaveOutputPdf = null,
+            WatermarkHandling = null,
         };
 
         model.Validate();
@@ -3912,6 +4066,7 @@ public class OutputOptionsTest : TestBase
                 PreserveVerySmallText = true,
             },
             TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+            WatermarkHandling = WatermarkHandling.Remove,
         };
 
         OutputOptions copied = new(model);
@@ -4816,6 +4971,66 @@ public class TablesAsSpreadsheetTest : TestBase
         TablesAsSpreadsheet copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class WatermarkHandlingTest : TestBase
+{
+    [Theory]
+    [InlineData(WatermarkHandling.MoveToEnd)]
+    [InlineData(WatermarkHandling.MoveToStart)]
+    [InlineData(WatermarkHandling.Remove)]
+    public void Validation_Works(WatermarkHandling rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, WatermarkHandling> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, WatermarkHandling>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(WatermarkHandling.MoveToEnd)]
+    [InlineData(WatermarkHandling.MoveToStart)]
+    [InlineData(WatermarkHandling.Remove)]
+    public void SerializationRoundtrip_Works(WatermarkHandling rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, WatermarkHandling> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, WatermarkHandling>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, WatermarkHandling>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, WatermarkHandling>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 
@@ -8584,8 +8799,8 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
-    [InlineData(ParsingConfVersion.V2026_09_07)]
-    [InlineData(ParsingConfVersion.V2026_08_19)]
+    [InlineData(ParsingConfVersion.V2026_09_29)]
+    [InlineData(ParsingConfVersion.V2026_09_28)]
     [InlineData(ParsingConfVersion.V2026_06_15)]
     public void Validation_Works(ParsingConfVersion rawValue)
     {
@@ -8608,8 +8823,8 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
-    [InlineData(ParsingConfVersion.V2026_09_07)]
-    [InlineData(ParsingConfVersion.V2026_08_19)]
+    [InlineData(ParsingConfVersion.V2026_09_29)]
+    [InlineData(ParsingConfVersion.V2026_09_28)]
     [InlineData(ParsingConfVersion.V2026_06_15)]
     public void SerializationRoundtrip_Works(ParsingConfVersion rawValue)
     {

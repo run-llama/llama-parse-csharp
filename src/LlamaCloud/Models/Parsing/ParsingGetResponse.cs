@@ -964,6 +964,25 @@ public sealed record class FormsResultPage : JsonModel
     }
 
     /// <summary>
+    /// Form types detected on the page (e.g. 'w2', 'other'), or null if not a form
+    /// </summary>
+    public IReadOnlyList<string>? DetectedFormTypes
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<string>>("detected_form_types");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<string>?>(
+                "detected_form_types",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Height of the page in points
     /// </summary>
     public double? PageHeight
@@ -1001,6 +1020,7 @@ public sealed record class FormsResultPage : JsonModel
         {
             throw new LlamaCloudInvalidDataException("Invalid value given for constant");
         }
+        _ = this.DetectedFormTypes;
         _ = this.PageHeight;
         _ = this.PageWidth;
     }
@@ -4402,6 +4422,20 @@ public sealed record class MetadataPage : JsonModel
         init { this._rawData.Set("triggered_auto_mode", value); }
     }
 
+    /// <summary>
+    /// Watermark text detected on the page (e.g., 'CONFIDENTIAL'). Only reported
+    /// on version 2026-09-28 or later of the cost_effective, agentic, and agentic_plus tiers
+    /// </summary>
+    public string? Watermark
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("watermark");
+        }
+        init { this._rawData.Set("watermark", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -4413,6 +4447,7 @@ public sealed record class MetadataPage : JsonModel
         _ = this.SlideSectionName;
         _ = this.SpeakerNotes;
         _ = this.TriggeredAutoMode;
+        _ = this.Watermark;
     }
 
     public MetadataPage() { }

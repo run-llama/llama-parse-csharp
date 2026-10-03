@@ -22,6 +22,17 @@ public class ClassifyServiceTest : TestBase
     }
 
     [Fact(Skip = "Mock server tests are disabled")]
+    public async Task Delete_Works()
+    {
+        var classify = await this.client.Classify.Delete(
+            "job_id",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        classify.Validate();
+    }
+
+    [Fact(Skip = "Mock server tests are disabled")]
     public async Task Cancel_Works()
     {
         var response = await this.client.Classify.Cancel(

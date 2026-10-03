@@ -156,6 +156,32 @@ public sealed record class SplitCancelResponse : JsonModel
     }
 
     /// <summary>
+    /// Saved parse configuration ID requested for this job, if any.
+    /// </summary>
+    public string? ParseConfigID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("parse_config_id");
+        }
+        init { this._rawData.Set("parse_config_id", value); }
+    }
+
+    /// <summary>
+    /// Parse tier requested for this job, if any.
+    /// </summary>
+    public string? ParseTier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("parse_tier");
+        }
+        init { this._rawData.Set("parse_tier", value); }
+    }
+
+    /// <summary>
     /// Result of a completed split job.
     /// </summary>
     public SplitResultResponse? Result
@@ -189,6 +215,19 @@ public sealed record class SplitCancelResponse : JsonModel
 
             this._rawData.Set("splitting_strategy", value);
         }
+    }
+
+    /// <summary>
+    /// Page selection requested for this job, if any.
+    /// </summary>
+    public string? TargetPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("target_pages");
+        }
+        init { this._rawData.Set("target_pages", value); }
     }
 
     /// <summary>
@@ -233,8 +272,11 @@ public sealed record class SplitCancelResponse : JsonModel
         _ = this.ConfigurationID;
         _ = this.CreatedAt;
         _ = this.ErrorMessage;
+        _ = this.ParseConfigID;
+        _ = this.ParseTier;
         this.Result?.Validate();
         this.SplittingStrategy?.Validate();
+        _ = this.TargetPages;
         _ = this.TransactionID;
         _ = this.UpdatedAt;
     }
