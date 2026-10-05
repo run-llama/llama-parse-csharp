@@ -106,8 +106,9 @@ public sealed record class SplitV1Parameters : JsonModel
     }
 
     /// <summary>
-    /// Comma-separated page numbers or ranges to split (1-based). Omit to split all
-    /// pages. Requires a completed parse job as file_input.
+    /// Comma-separated page numbers or ranges to split (1-based). Pages are split
+    /// in the order listed. Omit to split all pages. Requires a completed parse
+    /// job as file_input.
     /// </summary>
     public string? TargetPages
     {
