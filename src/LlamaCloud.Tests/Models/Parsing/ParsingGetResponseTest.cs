@@ -500,6 +500,7 @@ public class ParsingGetResponseTest : TestBase
                                                                 ],
                                                             ],
                                                         },
+                                                        Html = "html",
                                                         Label = "label",
                                                         Type = Parsing::FormTableType.Table,
                                                     },
@@ -1303,6 +1304,7 @@ public class ParsingGetResponseTest : TestBase
                                                             ],
                                                         ],
                                                     },
+                                                    Html = "html",
                                                     Label = "label",
                                                     Type = Parsing::FormTableType.Table,
                                                 },
@@ -1620,7 +1622,9 @@ public class ParsingGetResponseTest : TestBase
                 }
             },
         };
-        Parsing::Text expectedText = new([new() { PageNumber = 0, Text = "text" }]);
+        Parsing::ParsingGetResponseText expectedText = new(
+            [new() { PageNumber = 0, Text = "text" }]
+        );
         string expectedTextFull = "text_full";
 
         Assert.Equal(expectedJob, model.Job);
@@ -2149,6 +2153,7 @@ public class ParsingGetResponseTest : TestBase
                                                                 ],
                                                             ],
                                                         },
+                                                        Html = "html",
                                                         Label = "label",
                                                         Type = Parsing::FormTableType.Table,
                                                     },
@@ -2970,6 +2975,7 @@ public class ParsingGetResponseTest : TestBase
                                                                 ],
                                                             ],
                                                         },
+                                                        Html = "html",
                                                         Label = "label",
                                                         Type = Parsing::FormTableType.Table,
                                                     },
@@ -3780,6 +3786,7 @@ public class ParsingGetResponseTest : TestBase
                                                             ],
                                                         ],
                                                     },
+                                                    Html = "html",
                                                     Label = "label",
                                                     Type = Parsing::FormTableType.Table,
                                                 },
@@ -4097,7 +4104,9 @@ public class ParsingGetResponseTest : TestBase
                 }
             },
         };
-        Parsing::Text expectedText = new([new() { PageNumber = 0, Text = "text" }]);
+        Parsing::ParsingGetResponseText expectedText = new(
+            [new() { PageNumber = 0, Text = "text" }]
+        );
         string expectedTextFull = "text_full";
 
         Assert.Equal(expectedJob, deserialized.Job);
@@ -4626,6 +4635,7 @@ public class ParsingGetResponseTest : TestBase
                                                                 ],
                                                             ],
                                                         },
+                                                        Html = "html",
                                                         Label = "label",
                                                         Type = Parsing::FormTableType.Table,
                                                     },
@@ -5615,6 +5625,7 @@ public class ParsingGetResponseTest : TestBase
                                                                 ],
                                                             ],
                                                         },
+                                                        Html = "html",
                                                         Label = "label",
                                                         Type = Parsing::FormTableType.Table,
                                                     },
@@ -6868,6 +6879,7 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             ],
                                                         ],
                                                     },
+                                                    Html = "html",
                                                     Label = "label",
                                                     Type = Parsing::FormTableType.Table,
                                                 },
@@ -7466,6 +7478,7 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         ],
                                                     ],
                                                 },
+                                                Html = "html",
                                                 Label = "label",
                                                 Type = Parsing::FormTableType.Table,
                                             },
@@ -8091,6 +8104,7 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             ],
                                                         ],
                                                     },
+                                                    Html = "html",
                                                     Label = "label",
                                                     Type = Parsing::FormTableType.Table,
                                                 },
@@ -8719,6 +8733,7 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             ],
                                                         ],
                                                     },
+                                                    Html = "html",
                                                     Label = "label",
                                                     Type = Parsing::FormTableType.Table,
                                                 },
@@ -9324,6 +9339,7 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         ],
                                                     ],
                                                 },
+                                                Html = "html",
                                                 Label = "label",
                                                 Type = Parsing::FormTableType.Table,
                                             },
@@ -9949,6 +9965,7 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             ],
                                                         ],
                                                     },
+                                                    Html = "html",
                                                     Label = "label",
                                                     Type = Parsing::FormTableType.Table,
                                                 },
@@ -10571,6 +10588,7 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             ],
                                                         ],
                                                     },
+                                                    Html = "html",
                                                     Label = "label",
                                                     Type = Parsing::FormTableType.Table,
                                                 },
@@ -11178,6 +11196,7 @@ public class PageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -11784,6 +11803,7 @@ public class PageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -12405,6 +12425,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -12985,6 +13006,7 @@ public class FormsResultPageTest : TestBase
                                                 ],
                                             ],
                                         },
+                                        Html = "html",
                                         Label = "label",
                                         Type = Parsing::FormTableType.Table,
                                     },
@@ -13591,6 +13613,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -14197,6 +14220,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -14784,6 +14808,7 @@ public class FormsResultPageTest : TestBase
                                                 ],
                                             ],
                                         },
+                                        Html = "html",
                                         Label = "label",
                                         Type = Parsing::FormTableType.Table,
                                     },
@@ -15390,6 +15415,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -15990,6 +16016,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -16592,6 +16619,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -17189,6 +17217,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -17795,6 +17824,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -18396,6 +18426,7 @@ public class FormsResultPageTest : TestBase
                                                     ],
                                                 ],
                                             },
+                                            Html = "html",
                                             Label = "label",
                                             Type = Parsing::FormTableType.Table,
                                         },
@@ -24413,14 +24444,20 @@ public class ResultContentMetadataItemTest : TestBase
     }
 }
 
-public class TextTest : TestBase
+public class ParsingGetResponseTextTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
+        var model = new Parsing::ParsingGetResponseText
+        {
+            Pages = [new() { PageNumber = 0, Text = "text" }],
+        };
 
-        List<Parsing::TextPage> expectedPages = [new() { PageNumber = 0, Text = "text" }];
+        List<Parsing::ParsingGetResponseTextPage> expectedPages =
+        [
+            new() { PageNumber = 0, Text = "text" },
+        ];
 
         Assert.Equal(expectedPages.Count, model.Pages.Count);
         for (int i = 0; i < expectedPages.Count; i++)
@@ -24432,10 +24469,13 @@ public class TextTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
+        var model = new Parsing::ParsingGetResponseText
+        {
+            Pages = [new() { PageNumber = 0, Text = "text" }],
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::Text>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseText>(
             json,
             ModelBase.SerializerOptions
         );
@@ -24446,16 +24486,22 @@ public class TextTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
+        var model = new Parsing::ParsingGetResponseText
+        {
+            Pages = [new() { PageNumber = 0, Text = "text" }],
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::Text>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseText>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        List<Parsing::TextPage> expectedPages = [new() { PageNumber = 0, Text = "text" }];
+        List<Parsing::ParsingGetResponseTextPage> expectedPages =
+        [
+            new() { PageNumber = 0, Text = "text" },
+        ];
 
         Assert.Equal(expectedPages.Count, deserialized.Pages.Count);
         for (int i = 0; i < expectedPages.Count; i++)
@@ -24467,7 +24513,10 @@ public class TextTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
+        var model = new Parsing::ParsingGetResponseText
+        {
+            Pages = [new() { PageNumber = 0, Text = "text" }],
+        };
 
         model.Validate();
     }
@@ -24475,20 +24524,23 @@ public class TextTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
+        var model = new Parsing::ParsingGetResponseText
+        {
+            Pages = [new() { PageNumber = 0, Text = "text" }],
+        };
 
-        Parsing::Text copied = new(model);
+        Parsing::ParsingGetResponseText copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class TextPageTest : TestBase
+public class ParsingGetResponseTextPageTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
 
         long expectedPageNumber = 0;
         string expectedText = "text";
@@ -24500,10 +24552,10 @@ public class TextPageTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::TextPage>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseTextPage>(
             json,
             ModelBase.SerializerOptions
         );
@@ -24514,10 +24566,10 @@ public class TextPageTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::TextPage>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseTextPage>(
             element,
             ModelBase.SerializerOptions
         );
@@ -24533,7 +24585,7 @@ public class TextPageTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
 
         model.Validate();
     }
@@ -24541,9 +24593,9 @@ public class TextPageTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
 
-        Parsing::TextPage copied = new(model);
+        Parsing::ParsingGetResponseTextPage copied = new(model);
 
         Assert.Equal(model, copied);
     }

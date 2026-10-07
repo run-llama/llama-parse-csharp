@@ -233,6 +233,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
             Type = FormTableType.Table,
         };
@@ -457,6 +458,7 @@ public class FormTableTest : TestBase
                 ],
             ],
         };
+        string expectedHtml = "html";
         string expectedLabel = "label";
         ApiEnum<string, FormTableType> expectedType = FormTableType.Table;
 
@@ -483,6 +485,7 @@ public class FormTableTest : TestBase
             Assert.Equal(expectedColumns[i], model.Columns[i]);
         }
         Assert.Equal(expectedGrounding, model.Grounding);
+        Assert.Equal(expectedHtml, model.Html);
         Assert.Equal(expectedLabel, model.Label);
         Assert.Equal(expectedType, model.Type);
     }
@@ -712,6 +715,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
             Type = FormTableType.Table,
         };
@@ -947,6 +951,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
             Type = FormTableType.Table,
         };
@@ -1178,6 +1183,7 @@ public class FormTableTest : TestBase
                 ],
             ],
         };
+        string expectedHtml = "html";
         string expectedLabel = "label";
         ApiEnum<string, FormTableType> expectedType = FormTableType.Table;
 
@@ -1204,6 +1210,7 @@ public class FormTableTest : TestBase
             Assert.Equal(expectedColumns[i], deserialized.Columns[i]);
         }
         Assert.Equal(expectedGrounding, deserialized.Grounding);
+        Assert.Equal(expectedHtml, deserialized.Html);
         Assert.Equal(expectedLabel, deserialized.Label);
         Assert.Equal(expectedType, deserialized.Type);
     }
@@ -1433,6 +1440,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
             Type = FormTableType.Table,
         };
@@ -1665,6 +1673,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
         };
 
@@ -1897,6 +1906,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
         };
 
@@ -2128,6 +2138,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
 
             // Null should be interpreted as omitted for these properties
@@ -2363,6 +2374,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
 
             // Null should be interpreted as omitted for these properties
@@ -2392,6 +2404,8 @@ public class FormTableTest : TestBase
         Assert.False(model.RawData.ContainsKey("columns"));
         Assert.Null(model.Grounding);
         Assert.False(model.RawData.ContainsKey("grounding"));
+        Assert.Null(model.Html);
+        Assert.False(model.RawData.ContainsKey("html"));
         Assert.Null(model.Label);
         Assert.False(model.RawData.ContainsKey("label"));
     }
@@ -2426,6 +2440,7 @@ public class FormTableTest : TestBase
             Bbox = null,
             Columns = null,
             Grounding = null,
+            Html = null,
             Label = null,
         };
 
@@ -2437,6 +2452,8 @@ public class FormTableTest : TestBase
         Assert.True(model.RawData.ContainsKey("columns"));
         Assert.Null(model.Grounding);
         Assert.True(model.RawData.ContainsKey("grounding"));
+        Assert.Null(model.Html);
+        Assert.True(model.RawData.ContainsKey("html"));
         Assert.Null(model.Label);
         Assert.True(model.RawData.ContainsKey("label"));
     }
@@ -2456,6 +2473,7 @@ public class FormTableTest : TestBase
             Bbox = null,
             Columns = null,
             Grounding = null,
+            Html = null,
             Label = null,
         };
 
@@ -2687,6 +2705,7 @@ public class FormTableTest : TestBase
                     ],
                 ],
             },
+            Html = "html",
             Label = "label",
             Type = FormTableType.Table,
         };
@@ -3138,6 +3157,7 @@ public class RowTest : TestBase
                                             ],
                                         ],
                                     },
+                                    Html = "html",
                                     Label = "label",
                                     Type = FormTableType.Table,
                                 },
@@ -3700,6 +3720,7 @@ public class RowTest : TestBase
                                             ],
                                         ],
                                     },
+                                    Html = "html",
                                     Label = "label",
                                     Type = FormTableType.Table,
                                 },

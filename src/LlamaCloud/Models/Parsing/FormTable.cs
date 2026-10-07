@@ -109,6 +109,19 @@ public sealed record class FormTable : JsonModel
     }
 
     /// <summary>
+    /// HTML representation of the table, as a regular table item has.
+    /// </summary>
+    public string? Html
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("html");
+        }
+        init { this._rawData.Set("html", value); }
+    }
+
+    /// <summary>
     /// Printed table caption, if any
     /// </summary>
     public string? Label
@@ -159,6 +172,7 @@ public sealed record class FormTable : JsonModel
         }
         _ = this.Columns;
         this.Grounding?.Validate();
+        _ = this.Html;
         _ = this.Label;
         this.Type?.Validate();
     }
