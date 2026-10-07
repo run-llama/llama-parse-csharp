@@ -279,6 +279,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, CompositeRetrievalMode>(),
             new ApiEnumConverter<string, Type>(),
             new ApiEnumConverter<string, VectorTarget>(),
+            new ApiEnumConverter<string, Expand>(),
             new ApiEnumConverter<string, Operator>(),
             new ApiEnumConverter<string, NumericRangeFilterOperator>(),
             new ApiEnumConverter<string, ParsedDirectoryFileIDOperator>(),
