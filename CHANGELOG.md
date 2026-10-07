@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.8.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.7.0...v1.8.0) (2026-10-07)
+
+
+### Features
+
+* add redline prompt changes to new prod version ([#27635](https://github.com/run-llama/llama-parse-csharp/issues/27635)) ([d668fe7](https://github.com/run-llama/llama-parse-csharp/commit/d668fe7f5d348434d515027b6cbcab7bde8260ba))
+* **chat:** let a chat session refuse queries from its share link ([#27012](https://github.com/run-llama/llama-parse-csharp/issues/27012)) ([dec92c1](https://github.com/run-llama/llama-parse-csharp/commit/dec92c169284d56dd634348faa9392f1ec45f2a2))
+* **parse:** add detected_form_types to the per-page enriched forms output ([#26052](https://github.com/run-llama/llama-parse-csharp/issues/26052)) ([81df468](https://github.com/run-llama/llama-parse-csharp/commit/81df468d7e6896b7a09544ade5617d400f552b47))
+* **parse:** add option to include hidden PPTX slides ([#27938](https://github.com/run-llama/llama-parse-csharp/issues/27938)) ([f188e33](https://github.com/run-llama/llama-parse-csharp/commit/f188e3364e4b732d8c8a46dc7707d821532577a5))
+* **parse:** agentic 2026-09-09 — cache-stable prompt order + Flash Lite MINIMAL thinking ([#26273](https://github.com/run-llama/llama-parse-csharp/issues/26273)) ([f820ba4](https://github.com/run-llama/llama-parse-csharp/commit/f820ba4412152f77c92a5c6c9a3ff9065a3dafaf))
+* **parse:** apply watermark_handling to text output; add watermark e2e test ([#27932](https://github.com/run-llama/llama-parse-csharp/issues/27932)) ([a70e24f](https://github.com/run-llama/llama-parse-csharp/commit/a70e24f77b258a0a425158f03e3a1746d37455df))
+* **parse:** display enriched Forms granular highlights ([#26366](https://github.com/run-llama/llama-parse-csharp/issues/26366)) ([5c07972](https://github.com/run-llama/llama-parse-csharp/commit/5c0797292f93f3a67cde2b5feebf3f4165ed57f8))
+* **parse:** remove_watermark output option with 2026-09-28 tier versions ([#27813](https://github.com/run-llama/llama-parse-csharp/issues/27813)) ([b7e6cae](https://github.com/run-llama/llama-parse-csharp/commit/b7e6caeaa2a42c2de7c0ed4bf38883de97d826dc))
+* **parse:** ship the illegible-classification prompts as agentic_plus 2026-09-11 (latest) ([#26490](https://github.com/run-llama/llama-parse-csharp/issues/26490)) ([5e7dd7a](https://github.com/run-llama/llama-parse-csharp/commit/5e7dd7a4a4ad246fe49eb99903b65eaa2da3dabd))
+* **sdk:** publish beta.attachments list and get ([184eb3c](https://github.com/run-llama/llama-parse-csharp/commit/184eb3c066b2cda3fdc46d2037f56a66de36035e))
+* **split:** accept a parse config or parse_job_id like extract_v2 ([#26303](https://github.com/run-llama/llama-parse-csharp/issues/26303)) ([fc152c9](https://github.com/run-llama/llama-parse-csharp/commit/fc152c9b170d0a163c7bae55d00c5b96c8c3e720))
+* **split:** target_pages page selection when splitting a parse job ([#26921](https://github.com/run-llama/llama-parse-csharp/issues/26921)) ([72cb9fe](https://github.com/run-llama/llama-parse-csharp/commit/72cb9fe2d5bca3667742401815aa272e9cb61ebc))
+
+
+### Bug Fixes
+
+* **chat:** report every index a chat turn could not query ([#26981](https://github.com/run-llama/llama-parse-csharp/issues/26981)) ([cfe7db5](https://github.com/run-llama/llama-parse-csharp/commit/cfe7db561c6c7fea88b28da48cf1fbcebb2ca646))
+* **ci:** give resolver builds a real commit subject (LI-9592) ([974210c](https://github.com/run-llama/llama-parse-csharp/commit/974210cf7fe9b7a6b59c94d1aa812d39f86b3384))
+* **extract:** refuse to delete a non-terminal job (LI-8700) ([#23793](https://github.com/run-llama/llama-parse-csharp/issues/23793)) ([f5b6707](https://github.com/run-llama/llama-parse-csharp/commit/f5b6707330a4c68e8429386651105abf716d29e6))
+* **split:** process target_pages in the order written, matching Extract ([#28173](https://github.com/run-llama/llama-parse-csharp/issues/28173)) ([96a79e2](https://github.com/run-llama/llama-parse-csharp/commit/96a79e2b122f4295924ec014b75dc64412f8594b))
+
+
+### Chores
+
+* **sync:** resolve back-sync conflicts with production ([888c794](https://github.com/run-llama/llama-parse-csharp/commit/888c79483e57cd813b37c09d3439473d200455ab))
+
+
+### Documentation
+
+* **changelog:** record the classify v1 job removal in 1.7.0 ([c6ebdbf](https://github.com/run-llama/llama-parse-csharp/commit/c6ebdbf849908690c64c45ee7ef3d9386ed6dd4a))
+* **changelog:** record the classify v1 job removal in 1.7.0 ([4bc1096](https://github.com/run-llama/llama-parse-csharp/commit/4bc1096921a0b094f45a9a76e387f23bfce4afbc))
+* update Extract versions and pricing ([#28128](https://github.com/run-llama/llama-parse-csharp/issues/28128)) ([abf60f8](https://github.com/run-llama/llama-parse-csharp/commit/abf60f89bda422749b8969a37ed845eda228fd2b))
+
 ## [1.7.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.6.0...v1.7.0) (2026-09-08)
 
 
