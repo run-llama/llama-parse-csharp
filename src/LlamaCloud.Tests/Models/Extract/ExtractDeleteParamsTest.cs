@@ -11,23 +11,57 @@ public class ExtractDeleteParamsTest : TestBase
         var parameters = new ExtractDeleteParams
         {
             JobID = "job_id",
+            Force = true,
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedJobID = "job_id";
+        bool expectedForce = true;
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
         Assert.Equal(expectedJobID, parameters.JobID);
+        Assert.Equal(expectedForce, parameters.Force);
         Assert.Equal(expectedOrganizationID, parameters.OrganizationID);
         Assert.Equal(expectedProjectID, parameters.ProjectID);
     }
 
     [Fact]
+    public void OptionalNonNullableParamsUnsetAreNotSet_Works()
+    {
+        var parameters = new ExtractDeleteParams
+        {
+            JobID = "job_id",
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+        };
+
+        Assert.Null(parameters.Force);
+        Assert.False(parameters.RawQueryData.ContainsKey("force"));
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
+    {
+        var parameters = new ExtractDeleteParams
+        {
+            JobID = "job_id",
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+
+            // Null should be interpreted as omitted for these properties
+            Force = null,
+        };
+
+        Assert.Null(parameters.Force);
+        Assert.False(parameters.RawQueryData.ContainsKey("force"));
+    }
+
+    [Fact]
     public void OptionalNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new ExtractDeleteParams { JobID = "job_id" };
+        var parameters = new ExtractDeleteParams { JobID = "job_id", Force = true };
 
         Assert.Null(parameters.OrganizationID);
         Assert.False(parameters.RawQueryData.ContainsKey("organization_id"));
@@ -41,6 +75,7 @@ public class ExtractDeleteParamsTest : TestBase
         var parameters = new ExtractDeleteParams
         {
             JobID = "job_id",
+            Force = true,
 
             OrganizationID = null,
             ProjectID = null,
@@ -58,6 +93,7 @@ public class ExtractDeleteParamsTest : TestBase
         ExtractDeleteParams parameters = new()
         {
             JobID = "job_id",
+            Force = true,
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
@@ -67,7 +103,7 @@ public class ExtractDeleteParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v2/extract/job_id?organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v2/extract/job_id?force=true&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -80,6 +116,7 @@ public class ExtractDeleteParamsTest : TestBase
         var parameters = new ExtractDeleteParams
         {
             JobID = "job_id",
+            Force = true,
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
