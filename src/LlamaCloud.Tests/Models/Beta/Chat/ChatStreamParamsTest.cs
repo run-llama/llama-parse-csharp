@@ -16,6 +16,7 @@ public class ChatStreamParamsTest : TestBase
             Prompt = "What were the main findings in Q3?",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            RequireAllIndexes = true,
         };
 
         string expectedSessionID = "session_id";
@@ -23,6 +24,7 @@ public class ChatStreamParamsTest : TestBase
         string expectedPrompt = "What were the main findings in Q3?";
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        bool expectedRequireAllIndexes = true;
 
         Assert.Equal(expectedSessionID, parameters.SessionID);
         Assert.Equal(expectedIndexIds.Count, parameters.IndexIds.Count);
@@ -33,6 +35,42 @@ public class ChatStreamParamsTest : TestBase
         Assert.Equal(expectedPrompt, parameters.Prompt);
         Assert.Equal(expectedOrganizationID, parameters.OrganizationID);
         Assert.Equal(expectedProjectID, parameters.ProjectID);
+        Assert.Equal(expectedRequireAllIndexes, parameters.RequireAllIndexes);
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsUnsetAreNotSet_Works()
+    {
+        var parameters = new ChatStreamParams
+        {
+            SessionID = "session_id",
+            IndexIds = ["idx-abc123", "idx-def456"],
+            Prompt = "What were the main findings in Q3?",
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+        };
+
+        Assert.Null(parameters.RequireAllIndexes);
+        Assert.False(parameters.RawBodyData.ContainsKey("require_all_indexes"));
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
+    {
+        var parameters = new ChatStreamParams
+        {
+            SessionID = "session_id",
+            IndexIds = ["idx-abc123", "idx-def456"],
+            Prompt = "What were the main findings in Q3?",
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+
+            // Null should be interpreted as omitted for these properties
+            RequireAllIndexes = null,
+        };
+
+        Assert.Null(parameters.RequireAllIndexes);
+        Assert.False(parameters.RawBodyData.ContainsKey("require_all_indexes"));
     }
 
     [Fact]
@@ -43,6 +81,7 @@ public class ChatStreamParamsTest : TestBase
             SessionID = "session_id",
             IndexIds = ["idx-abc123", "idx-def456"],
             Prompt = "What were the main findings in Q3?",
+            RequireAllIndexes = true,
         };
 
         Assert.Null(parameters.OrganizationID);
@@ -59,6 +98,7 @@ public class ChatStreamParamsTest : TestBase
             SessionID = "session_id",
             IndexIds = ["idx-abc123", "idx-def456"],
             Prompt = "What were the main findings in Q3?",
+            RequireAllIndexes = true,
 
             OrganizationID = null,
             ProjectID = null,
@@ -104,6 +144,7 @@ public class ChatStreamParamsTest : TestBase
             Prompt = "What were the main findings in Q3?",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            RequireAllIndexes = true,
         };
 
         ChatStreamParams copied = new(parameters);

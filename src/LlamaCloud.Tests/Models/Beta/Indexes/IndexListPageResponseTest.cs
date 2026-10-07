@@ -32,6 +32,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -58,6 +59,7 @@ public class IndexListPageResponseTest : TestBase
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
+                SyncInProgress = true,
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         ];
@@ -97,6 +99,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -137,6 +140,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -170,6 +174,7 @@ public class IndexListPageResponseTest : TestBase
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
+                SyncInProgress = true,
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         ];
@@ -209,6 +214,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -243,6 +249,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -278,6 +285,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -310,6 +318,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -348,6 +357,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],
@@ -383,6 +393,7 @@ public class IndexListPageResponseTest : TestBase
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
+                    SyncInProgress = true,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             ],

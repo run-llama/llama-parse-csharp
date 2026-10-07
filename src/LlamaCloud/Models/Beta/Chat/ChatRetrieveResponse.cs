@@ -62,6 +62,22 @@ public sealed record class ChatRetrieveResponse : JsonModel
     }
 
     /// <summary>
+    /// What this chat's share link grants: read_only (transcript only) or query (viewers
+    /// may ask new questions).
+    /// </summary>
+    public required ApiEnum<string, ChatRetrieveResponseSharedAccess> SharedAccess
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, ChatRetrieveResponseSharedAccess>>(
+                "shared_access"
+            );
+        }
+        init { this._rawData.Set("shared_access", value); }
+    }
+
+    /// <summary>
     /// Auto-generated title derived from the first user message.
     /// </summary>
     public string? GeneratedTitle
@@ -116,6 +132,7 @@ public sealed record class ChatRetrieveResponse : JsonModel
         }
         _ = this.LastUpdatedAt;
         _ = this.SessionID;
+        this.SharedAccess.Validate();
         _ = this.GeneratedTitle;
         _ = this.IndexIds;
         this.JobMetadata?.Validate();
@@ -851,6 +868,30 @@ public sealed record class Stop : JsonModel
         init { this._rawData.Set("usage", value); }
     }
 
+    /// <summary>
+    /// Requested indexes this turn could not query.
+    /// </summary>
+    public IReadOnlyList<string>? SkippedIndexIds
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<string>>("skipped_index_ids");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<string>?>(
+                "skipped_index_ids",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     public ApiEnum<string, global::LlamaCloud.Models.Beta.Chat.Type>? Type
     {
         get
@@ -877,6 +918,7 @@ public sealed record class Stop : JsonModel
         _ = this.Error;
         _ = this.IsError;
         this.Usage.Validate();
+        _ = this.SkippedIndexIds;
         this.Type?.Validate();
     }
 
@@ -2013,6 +2055,55 @@ sealed class UserInputTypeConverter : JsonConverter<UserInputType>
             value switch
             {
                 UserInputType.UserInput => "user_input",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// What this chat's share link grants: read_only (transcript only) or query (viewers
+/// may ask new questions).
+/// </summary>
+[JsonConverter(typeof(ChatRetrieveResponseSharedAccessConverter))]
+public enum ChatRetrieveResponseSharedAccess
+{
+    Query,
+    ReadOnly,
+}
+
+sealed class ChatRetrieveResponseSharedAccessConverter
+    : JsonConverter<ChatRetrieveResponseSharedAccess>
+{
+    public override ChatRetrieveResponseSharedAccess Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "query" => ChatRetrieveResponseSharedAccess.Query,
+            "read_only" => ChatRetrieveResponseSharedAccess.ReadOnly,
+            _ => (ChatRetrieveResponseSharedAccess)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ChatRetrieveResponseSharedAccess value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ChatRetrieveResponseSharedAccess.Query => "query",
+                ChatRetrieveResponseSharedAccess.ReadOnly => "read_only",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

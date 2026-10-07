@@ -257,7 +257,12 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                     },
                     Image = new() { CameraPhotoCorrection = true },
                     Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                    Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                    Presentation = new()
+                    {
+                        IncludeHiddenSlides = true,
+                        OutOfBoundsContent = true,
+                        SkipEmbeddedData = true,
+                    },
                     Spreadsheet = new()
                     {
                         DetectSubTablesInSheets = true,
@@ -298,6 +303,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                         PreserveVerySmallText = true,
                     },
                     TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                    WatermarkHandling = Configurations::WatermarkHandling.Remove,
                 },
                 PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
                 ProcessingControl = new()
@@ -433,12 +439,16 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
             new Configurations::SplitV1Parameters()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = Configurations::SplitV1ParametersParseTier.Fast,
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "1,3,5-7",
+                Version = "latest",
             };
         value.Validate();
     }
@@ -575,7 +585,12 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                     },
                     Image = new() { CameraPhotoCorrection = true },
                     Pdf = JsonSerializer.Deserialize<JsonElement>("{}"),
-                    Presentation = new() { OutOfBoundsContent = true, SkipEmbeddedData = true },
+                    Presentation = new()
+                    {
+                        IncludeHiddenSlides = true,
+                        OutOfBoundsContent = true,
+                        SkipEmbeddedData = true,
+                    },
                     Spreadsheet = new()
                     {
                         DetectSubTablesInSheets = true,
@@ -616,6 +631,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                         PreserveVerySmallText = true,
                     },
                     TablesAsSpreadsheet = new() { Enable = true, GuessSheetName = true },
+                    WatermarkHandling = Configurations::WatermarkHandling.Remove,
                 },
                 PageRanges = new() { MaxPages = 1, TargetPages = "target_pages" },
                 ProcessingControl = new()
@@ -758,12 +774,16 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
             new Configurations::SplitV1Parameters()
             {
                 Categories = [new() { Name = "x", Description = "x" }],
+                ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
+                ParseTier = Configurations::SplitV1ParametersParseTier.Fast,
                 SplittingStrategy = new()
                 {
                     AllowUncategorized = Configurations::AllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                TargetPages = "1,3,5-7",
+                Version = "latest",
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =

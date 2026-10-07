@@ -172,12 +172,12 @@ public sealed record class ParsingGetResponse : JsonModel
     /// <summary>
     /// Plain text result (if requested)
     /// </summary>
-    public Text? Text
+    public ParsingGetResponseText? Text
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<Text>("text");
+            return this._rawData.GetNullableClass<ParsingGetResponseText>("text");
         }
         init { this._rawData.Set("text", value); }
     }
@@ -964,6 +964,25 @@ public sealed record class FormsResultPage : JsonModel
     }
 
     /// <summary>
+    /// Form types detected on the page (e.g. 'w2', 'other'), or null if not a form
+    /// </summary>
+    public IReadOnlyList<string>? DetectedFormTypes
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<string>>("detected_form_types");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<string>?>(
+                "detected_form_types",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Height of the page in points
     /// </summary>
     public double? PageHeight
@@ -1001,6 +1020,7 @@ public sealed record class FormsResultPage : JsonModel
         {
             throw new LlamaCloudInvalidDataException("Invalid value given for constant");
         }
+        _ = this.DetectedFormTypes;
         _ = this.PageHeight;
         _ = this.PageWidth;
     }
@@ -4402,6 +4422,20 @@ public sealed record class MetadataPage : JsonModel
         init { this._rawData.Set("triggered_auto_mode", value); }
     }
 
+    /// <summary>
+    /// Watermark text detected on the page (e.g., 'CONFIDENTIAL'). Only reported
+    /// on version 2026-09-28 or later of the cost_effective, agentic, and agentic_plus tiers
+    /// </summary>
+    public string? Watermark
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("watermark");
+        }
+        init { this._rawData.Set("watermark", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -4413,6 +4447,7 @@ public sealed record class MetadataPage : JsonModel
         _ = this.SlideSectionName;
         _ = this.SpeakerNotes;
         _ = this.TriggeredAutoMode;
+        _ = this.Watermark;
     }
 
     public MetadataPage() { }
@@ -4732,22 +4767,24 @@ class ResultContentMetadataItemFromRaw : IFromRawJson<ResultContentMetadataItem>
 /// <summary>
 /// Plain text result (if requested)
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<Text, TextFromRaw>))]
-public sealed record class Text : JsonModel
+[JsonConverter(typeof(JsonModelConverter<ParsingGetResponseText, ParsingGetResponseTextFromRaw>))]
+public sealed record class ParsingGetResponseText : JsonModel
 {
     /// <summary>
     /// List of text pages
     /// </summary>
-    public required IReadOnlyList<TextPage> Pages
+    public required IReadOnlyList<ParsingGetResponseTextPage> Pages
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<TextPage>>("pages");
+            return this._rawData.GetNotNullStruct<ImmutableArray<ParsingGetResponseTextPage>>(
+                "pages"
+            );
         }
         init
         {
-            this._rawData.Set<ImmutableArray<TextPage>>(
+            this._rawData.Set<ImmutableArray<ParsingGetResponseTextPage>>(
                 "pages",
                 ImmutableArray.ToImmutableArray(value)
             );
@@ -4763,50 +4800,55 @@ public sealed record class Text : JsonModel
         }
     }
 
-    public Text() { }
+    public ParsingGetResponseText() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public Text(Text text)
-        : base(text) { }
+    public ParsingGetResponseText(ParsingGetResponseText parsingGetResponseText)
+        : base(parsingGetResponseText) { }
 #pragma warning restore CS8618
 
-    public Text(IReadOnlyDictionary<string, JsonElement> rawData)
+    public ParsingGetResponseText(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    Text(FrozenDictionary<string, JsonElement> rawData)
+    ParsingGetResponseText(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="TextFromRaw.FromRawUnchecked"/>
-    public static Text FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    /// <inheritdoc cref="ParsingGetResponseTextFromRaw.FromRawUnchecked"/>
+    public static ParsingGetResponseText FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 
     [SetsRequiredMembers]
-    public Text(IReadOnlyList<TextPage> pages)
+    public ParsingGetResponseText(IReadOnlyList<ParsingGetResponseTextPage> pages)
         : this()
     {
         this.Pages = pages;
     }
 }
 
-class TextFromRaw : IFromRawJson<Text>
+class ParsingGetResponseTextFromRaw : IFromRawJson<ParsingGetResponseText>
 {
     /// <inheritdoc/>
-    public Text FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        Text.FromRawUnchecked(rawData);
+    public ParsingGetResponseText FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => ParsingGetResponseText.FromRawUnchecked(rawData);
 }
 
-[JsonConverter(typeof(JsonModelConverter<TextPage, TextPageFromRaw>))]
-public sealed record class TextPage : JsonModel
+[JsonConverter(
+    typeof(JsonModelConverter<ParsingGetResponseTextPage, ParsingGetResponseTextPageFromRaw>)
+)]
+public sealed record class ParsingGetResponseTextPage : JsonModel
 {
     /// <summary>
     /// Page number of the document
@@ -4841,37 +4883,40 @@ public sealed record class TextPage : JsonModel
         _ = this.Text;
     }
 
-    public TextPage() { }
+    public ParsingGetResponseTextPage() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public TextPage(TextPage textPage)
-        : base(textPage) { }
+    public ParsingGetResponseTextPage(ParsingGetResponseTextPage parsingGetResponseTextPage)
+        : base(parsingGetResponseTextPage) { }
 #pragma warning restore CS8618
 
-    public TextPage(IReadOnlyDictionary<string, JsonElement> rawData)
+    public ParsingGetResponseTextPage(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    TextPage(FrozenDictionary<string, JsonElement> rawData)
+    ParsingGetResponseTextPage(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="TextPageFromRaw.FromRawUnchecked"/>
-    public static TextPage FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    /// <inheritdoc cref="ParsingGetResponseTextPageFromRaw.FromRawUnchecked"/>
+    public static ParsingGetResponseTextPage FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 }
 
-class TextPageFromRaw : IFromRawJson<TextPage>
+class ParsingGetResponseTextPageFromRaw : IFromRawJson<ParsingGetResponseTextPage>
 {
     /// <inheritdoc/>
-    public TextPage FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        TextPage.FromRawUnchecked(rawData);
+    public ParsingGetResponseTextPage FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => ParsingGetResponseTextPage.FromRawUnchecked(rawData);
 }

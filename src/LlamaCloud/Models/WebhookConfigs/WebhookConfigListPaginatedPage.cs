@@ -8,19 +8,19 @@ using LlamaCloud.Core;
 using LlamaCloud.Exceptions;
 using LlamaCloud.Services;
 
-namespace LlamaCloud.Models.JobDataPoints;
+namespace LlamaCloud.Models.WebhookConfigs;
 
 /// <summary>
-/// A single page from the paginated endpoint that <see cref="IJobDataPointService.List(JobDataPointListParams, CancellationToken)"/> queries.
+/// A single page from the paginated endpoint that <see cref="IWebhookConfigService.ListPaginated(WebhookConfigListPaginatedParams, CancellationToken)"/> queries.
 /// </summary>
-public sealed class JobDataPointListPage(
-    IJobDataPointServiceWithRawResponse service,
-    JobDataPointListParams parameters,
-    JobDataPointListPageResponse response
-) : IPage<JobDataPoint>
+public sealed class WebhookConfigListPaginatedPage(
+    IWebhookConfigServiceWithRawResponse service,
+    WebhookConfigListPaginatedParams parameters,
+    WebhookConfigListPaginatedPageResponse response
+) : IPage<WebhookConfigResponse>
 {
     /// <inheritdoc/>
-    public IReadOnlyList<JobDataPoint> Items
+    public IReadOnlyList<WebhookConfigResponse> Items
     {
         get { return response.Items; }
     }
@@ -41,17 +41,20 @@ public sealed class JobDataPointListPage(
     }
 
     /// <inheritdoc/>
-    async Task<IPage<JobDataPoint>> IPage<JobDataPoint>.Next(CancellationToken cancellationToken) =>
-        await this.Next(cancellationToken).ConfigureAwait(false);
+    async Task<IPage<WebhookConfigResponse>> IPage<WebhookConfigResponse>.Next(
+        CancellationToken cancellationToken
+    ) => await this.Next(cancellationToken).ConfigureAwait(false);
 
     /// <inheritdoc cref="IPage{T}.Next"/>
-    public async Task<JobDataPointListPage> Next(CancellationToken cancellationToken = default)
+    public async Task<WebhookConfigListPaginatedPage> Next(
+        CancellationToken cancellationToken = default
+    )
     {
         var nextCursor =
             response.NextPageToken
             ?? throw new InvalidOperationException("Cannot request next page");
         using var nextResponse = await service
-            .List(parameters with { PageToken = nextCursor }, cancellationToken)
+            .ListPaginated(parameters with { PageToken = nextCursor }, cancellationToken)
             .ConfigureAwait(false);
         return await nextResponse.Deserialize(cancellationToken).ConfigureAwait(false);
     }
@@ -70,7 +73,7 @@ public sealed class JobDataPointListPage(
 
     public override bool Equals(object? obj)
     {
-        if (obj is not JobDataPointListPage other)
+        if (obj is not WebhookConfigListPaginatedPage other)
         {
             return false;
         }

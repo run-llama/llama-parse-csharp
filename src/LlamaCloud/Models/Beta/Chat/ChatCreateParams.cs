@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -6,7 +5,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using LlamaCloud.Core;
+using LlamaCloud.Exceptions;
+using System = System;
 
 namespace LlamaCloud.Models.Beta.Chat;
 
@@ -64,6 +66,22 @@ public record class ChatCreateParams : ParamsBase
                 value == null ? null : ImmutableArray.ToImmutableArray(value)
             );
         }
+    }
+
+    /// <summary>
+    /// What this chat's share link grants: read_only (transcript only) or query (viewers
+    /// may ask new questions). Null follows the deployment default.
+    /// </summary>
+    public ApiEnum<string, SharedAccess>? SharedAccess
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<ApiEnum<string, SharedAccess>>(
+                "shared_access"
+            );
+        }
+        init { this._rawBodyData.Set("shared_access", value); }
     }
 
     public ChatCreateParams() { }
@@ -144,9 +162,9 @@ public record class ChatCreateParams : ParamsBase
             && this._rawBodyData.Equals(other._rawBodyData);
     }
 
-    public override Uri Url(ClientOptions options)
+    public override System::Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/api/v1/chat")
+        return new System::UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/api/v1/chat")
         {
             Query = this.QueryString(options),
         }.Uri;
@@ -173,5 +191,53 @@ public record class ChatCreateParams : ParamsBase
     public override int GetHashCode()
     {
         return 0;
+    }
+}
+
+/// <summary>
+/// What this chat's share link grants: read_only (transcript only) or query (viewers
+/// may ask new questions). Null follows the deployment default.
+/// </summary>
+[JsonConverter(typeof(SharedAccessConverter))]
+public enum SharedAccess
+{
+    Query,
+    ReadOnly,
+}
+
+sealed class SharedAccessConverter : JsonConverter<SharedAccess>
+{
+    public override SharedAccess Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "query" => SharedAccess.Query,
+            "read_only" => SharedAccess.ReadOnly,
+            _ => (SharedAccess)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SharedAccess value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SharedAccess.Query => "query",
+                SharedAccess.ReadOnly => "read_only",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }

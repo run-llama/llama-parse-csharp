@@ -6,7 +6,7 @@ using LlamaCloud.Models.Beta.Retrieval;
 using LlamaCloud.Models.Classifier.Jobs;
 using LlamaCloud.Models.DataSinks;
 using LlamaCloud.Models.DataSources;
-using LlamaCloud.Models.JobDataPoints;
+using LlamaCloud.Models.ExtractionAgents;
 using LlamaCloud.Models.Pipelines.Documents;
 using LlamaCloud.Models.Retrievers;
 using LlamaCloud.Models.Split;
@@ -63,18 +63,23 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, SplitCancelResponseSplittingStrategyAllowUncategorized>(),
             new ApiEnumConverter<string, SplitGetResponseDocumentInputType>(),
             new ApiEnumConverter<string, SplitGetResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, ParseTier>(),
             new ApiEnumConverter<string, AllowUncategorized>(),
             new ApiEnumConverter<string, WebhookEvent>(),
             new ApiEnumConverter<string, Status>(),
             new ApiEnumConverter<string, Parsing::Type>(),
             new ApiEnumConverter<string, Parsing::FailPageMode>(),
             new ApiEnumConverter<string, Parsing::FooterItemType>(),
+            new ApiEnumConverter<string, Parsing::TextType>(),
             new ApiEnumConverter<string, Parsing::Field>(),
             new ApiEnumConverter<string, Parsing::FormFieldType>(),
+            new ApiEnumConverter<string, Parsing::ValueItemTextType>(),
             new ApiEnumConverter<string, Parsing::FormListItemType>(),
             new ApiEnumConverter<string, Parsing::FormListTextItemType>(),
+            new ApiEnumConverter<string, Parsing::FormSectionItemTextType>(),
             new ApiEnumConverter<string, Parsing::FormSectionType>(),
             new ApiEnumConverter<string, Parsing::FormTableType>(),
+            new ApiEnumConverter<string, Parsing::FormTableCellItemsItemTextType>(),
             new ApiEnumConverter<string, Parsing::HeaderItemType>(),
             new ApiEnumConverter<string, Parsing::HeadingItemType>(),
             new ApiEnumConverter<string, Parsing::ImageItemType>(),
@@ -100,6 +105,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Parsing::Version>(),
             new ApiEnumConverter<string, Parsing::GranularBbox>(),
             new ApiEnumConverter<string, Parsing::ImagesToSave>(),
+            new ApiEnumConverter<string, Parsing::WatermarkHandling>(),
             new ApiEnumConverter<string, Parsing::SpecializedChartParsing>(),
             new ApiEnumConverter<string, Parsing::ParsingConfTier>(),
             new ApiEnumConverter<string, Parsing::ParsingConfVersion>(),
@@ -173,6 +179,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Configurations::Version>(),
             new ApiEnumConverter<string, Configurations::GranularBbox>(),
             new ApiEnumConverter<string, Configurations::ImagesToSave>(),
+            new ApiEnumConverter<string, Configurations::WatermarkHandling>(),
             new ApiEnumConverter<string, Configurations::SpecializedChartParsing>(),
             new ApiEnumConverter<string, Configurations::ParsingConfTier>(),
             new ApiEnumConverter<string, Configurations::ParsingConfVersion>(),
@@ -183,6 +190,7 @@ public abstract record class ModelBase
                 Configurations::ProcessingOptionsSpecializedChartParsing
             >(),
             new ApiEnumConverter<string, Configurations::WebhookOutputFormat>(),
+            new ApiEnumConverter<string, Configurations::SplitV1ParametersParseTier>(),
             new ApiEnumConverter<string, Configurations::AllowUncategorized>(),
             new ApiEnumConverter<string, Configurations::TableMergeSensitivity>(),
             new ApiEnumConverter<string, Configurations::Tier>(),
@@ -209,10 +217,16 @@ public abstract record class ModelBase
                 string,
                 WebhookConfigs::WebhookConfigUpdateParamsWebhookOutputFormat
             >(),
-            new ApiEnumConverter<string, JobType>(),
             new ApiEnumConverter<string, DataSinkSinkType>(),
             new ApiEnumConverter<string, SinkType>(),
             new ApiEnumConverter<string, DataSinkUpdateParamsSinkType>(),
+            new ApiEnumConverter<string, ChunkMode>(),
+            new ApiEnumConverter<string, ExtractModel>(),
+            new ApiEnumConverter<string, ExtractionMode>(),
+            new ApiEnumConverter<string, ExtractionTarget>(),
+            new ApiEnumConverter<string, ParseModel>(),
+            new ApiEnumConverter<string, Priority>(),
+            new ApiEnumConverter<string, CustomConfiguration>(),
             new ApiEnumConverter<string, DataSourceSourceType>(),
             new ApiEnumConverter<string, ReaderVersion>(),
             new ApiEnumConverter<string, SourceType>(),
@@ -268,6 +282,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Operator>(),
             new ApiEnumConverter<string, NumericRangeFilterOperator>(),
             new ApiEnumConverter<string, ParsedDirectoryFileIDOperator>(),
+            new ApiEnumConverter<string, Chat::ChatCreateResponseSharedAccess>(),
             new ApiEnumConverter<string, Chat::Type>(),
             new ApiEnumConverter<string, Chat::TextDeltaType>(),
             new ApiEnumConverter<string, Chat::TextType>(),
@@ -276,6 +291,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Chat::ToolCallType>(),
             new ApiEnumConverter<string, Chat::ToolResultType>(),
             new ApiEnumConverter<string, Chat::UserInputType>(),
+            new ApiEnumConverter<string, Chat::ChatRetrieveResponseSharedAccess>(),
+            new ApiEnumConverter<string, Chat::ChatListResponseSharedAccess>(),
+            new ApiEnumConverter<string, Chat::ChatGetSummaryResponseSharedAccess>(),
+            new ApiEnumConverter<string, Chat::SharedAccess>(),
             new ApiEnumConverter<string, Directories::DirectoryCreateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryUpdateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryListResponseType>(),

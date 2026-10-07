@@ -28,6 +28,7 @@ public class IndexGetResponseTest : TestBase
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -46,6 +47,7 @@ public class IndexGetResponseTest : TestBase
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
         };
+        bool expectedSyncInProgress = true;
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, model.ID);
@@ -67,6 +69,7 @@ public class IndexGetResponseTest : TestBase
 
             Assert.True(JsonElement.DeepEquals(value, model.Metadata[item.Key]));
         }
+        Assert.Equal(expectedSyncInProgress, model.SyncInProgress);
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
     }
 
@@ -90,6 +93,7 @@ public class IndexGetResponseTest : TestBase
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -122,6 +126,7 @@ public class IndexGetResponseTest : TestBase
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -147,6 +152,7 @@ public class IndexGetResponseTest : TestBase
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
         };
+        bool expectedSyncInProgress = true;
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -168,6 +174,7 @@ public class IndexGetResponseTest : TestBase
 
             Assert.True(JsonElement.DeepEquals(value, deserialized.Metadata[item.Key]));
         }
+        Assert.Equal(expectedSyncInProgress, deserialized.SyncInProgress);
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
     }
 
@@ -191,6 +198,7 @@ public class IndexGetResponseTest : TestBase
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -213,6 +221,7 @@ public class IndexGetResponseTest : TestBase
             Description = "description",
             LastExportedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             LastSyncedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -236,6 +245,7 @@ public class IndexGetResponseTest : TestBase
             Description = "description",
             LastExportedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             LastSyncedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -258,6 +268,7 @@ public class IndexGetResponseTest : TestBase
             Description = "description",
             LastExportedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             LastSyncedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -284,6 +295,7 @@ public class IndexGetResponseTest : TestBase
             Description = "description",
             LastExportedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             LastSyncedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -319,6 +331,8 @@ public class IndexGetResponseTest : TestBase
         Assert.False(model.RawData.ContainsKey("last_exported_at"));
         Assert.Null(model.LastSyncedAt);
         Assert.False(model.RawData.ContainsKey("last_synced_at"));
+        Assert.Null(model.SyncInProgress);
+        Assert.False(model.RawData.ContainsKey("sync_in_progress"));
         Assert.Null(model.UpdatedAt);
         Assert.False(model.RawData.ContainsKey("updated_at"));
     }
@@ -365,6 +379,7 @@ public class IndexGetResponseTest : TestBase
             Description = null,
             LastExportedAt = null,
             LastSyncedAt = null,
+            SyncInProgress = null,
             UpdatedAt = null,
         };
 
@@ -376,6 +391,8 @@ public class IndexGetResponseTest : TestBase
         Assert.True(model.RawData.ContainsKey("last_exported_at"));
         Assert.Null(model.LastSyncedAt);
         Assert.True(model.RawData.ContainsKey("last_synced_at"));
+        Assert.Null(model.SyncInProgress);
+        Assert.True(model.RawData.ContainsKey("sync_in_progress"));
         Assert.Null(model.UpdatedAt);
         Assert.True(model.RawData.ContainsKey("updated_at"));
     }
@@ -401,6 +418,7 @@ public class IndexGetResponseTest : TestBase
             Description = null,
             LastExportedAt = null,
             LastSyncedAt = null,
+            SyncInProgress = null,
             UpdatedAt = null,
         };
 
@@ -427,6 +445,7 @@ public class IndexGetResponseTest : TestBase
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
+            SyncInProgress = true,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 

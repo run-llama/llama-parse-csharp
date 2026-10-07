@@ -9,7 +9,8 @@ using LlamaCloud.Core;
 namespace LlamaCloud.Models.Extract;
 
 /// <summary>
-/// Delete an extraction job and its results.
+/// Delete an extraction job and its results. A non-terminal job is refused; cancel
+/// it first, or pass force=true to delete a job whose workflow is gone.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
@@ -18,6 +19,24 @@ namespace LlamaCloud.Models.Extract;
 public record class ExtractDeleteParams : ParamsBase
 {
     public string? JobID { get; init; }
+
+    public bool? Force
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("force");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("force", value);
+        }
+    }
 
     public string? OrganizationID
     {

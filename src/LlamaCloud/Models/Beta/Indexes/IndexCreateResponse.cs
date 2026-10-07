@@ -184,6 +184,19 @@ public sealed record class IndexCreateResponse : JsonModel
     }
 
     /// <summary>
+    /// Whether a sync is running. Set only when getting a single index.
+    /// </summary>
+    public bool? SyncInProgress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("sync_in_progress");
+        }
+        init { this._rawData.Set("sync_in_progress", value); }
+    }
+
+    /// <summary>
     /// Update datetime
     /// </summary>
     public DateTimeOffset? UpdatedAt
@@ -211,6 +224,7 @@ public sealed record class IndexCreateResponse : JsonModel
         _ = this.LastExportedAt;
         _ = this.LastSyncedAt;
         _ = this.Metadata;
+        _ = this.SyncInProgress;
         _ = this.UpdatedAt;
     }
 

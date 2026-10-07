@@ -66,7 +66,8 @@ public interface IExtractService
     );
 
     /// <summary>
-    /// Delete an extraction job and its results.
+    /// Delete an extraction job and its results. A non-terminal job is refused; cancel
+    /// it first, or pass force=true to delete a job whose workflow is gone.
     /// </summary>
     Task<JsonElement> Delete(
         ExtractDeleteParams parameters,

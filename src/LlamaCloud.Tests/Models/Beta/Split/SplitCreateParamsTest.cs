@@ -26,6 +26,7 @@ public class SplitCreateParamsTest : TestBase
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                Version = "latest",
             },
             ConfigurationID = "configuration_id",
         };
@@ -42,6 +43,7 @@ public class SplitCreateParamsTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Version = "latest",
         };
         string expectedConfigurationID = "configuration_id";
 
@@ -132,6 +134,7 @@ public class SplitCreateParamsTest : TestBase
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
                 },
+                Version = "latest",
             },
             ConfigurationID = "configuration_id",
         };
@@ -156,6 +159,7 @@ public class ConfigurationTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Version = "latest",
         };
 
         List<SplitCategory> expectedCategories = [new() { Name = "x", Description = "x" }];
@@ -165,6 +169,7 @@ public class ConfigurationTest : TestBase
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, model.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -172,6 +177,7 @@ public class ConfigurationTest : TestBase
             Assert.Equal(expectedCategories[i], model.Categories[i]);
         }
         Assert.Equal(expectedSplittingStrategy, model.SplittingStrategy);
+        Assert.Equal(expectedVersion, model.Version);
     }
 
     [Fact]
@@ -186,6 +192,7 @@ public class ConfigurationTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Version = "latest",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -209,6 +216,7 @@ public class ConfigurationTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Version = "latest",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -225,6 +233,7 @@ public class ConfigurationTest : TestBase
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
         };
+        string expectedVersion = "latest";
 
         Assert.Equal(expectedCategories.Count, deserialized.Categories.Count);
         for (int i = 0; i < expectedCategories.Count; i++)
@@ -232,10 +241,103 @@ public class ConfigurationTest : TestBase
             Assert.Equal(expectedCategories[i], deserialized.Categories[i]);
         }
         Assert.Equal(expectedSplittingStrategy, deserialized.SplittingStrategy);
+        Assert.Equal(expectedVersion, deserialized.Version);
     }
 
     [Fact]
     public void Validation_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+            Version = "latest",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            Version = "latest",
+        };
+
+        Assert.Null(model.SplittingStrategy);
+        Assert.False(model.RawData.ContainsKey("splitting_strategy"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            Version = "latest",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            Version = "latest",
+
+            // Null should be interpreted as omitted for these properties
+            SplittingStrategy = null,
+        };
+
+        Assert.Null(model.SplittingStrategy);
+        Assert.False(model.RawData.ContainsKey("splitting_strategy"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            Version = "latest",
+
+            // Null should be interpreted as omitted for these properties
+            SplittingStrategy = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Configuration
+        {
+            Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
+        };
+
+        Assert.Null(model.Version);
+        Assert.False(model.RawData.ContainsKey("version"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
     {
         var model = new Configuration
         {
@@ -252,46 +354,39 @@ public class ConfigurationTest : TestBase
     }
 
     [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new Configuration { Categories = [new() { Name = "x", Description = "x" }] };
-
-        Assert.Null(model.SplittingStrategy);
-        Assert.False(model.RawData.ContainsKey("splitting_strategy"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new Configuration { Categories = [new() { Name = "x", Description = "x" }] };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
 
-            // Null should be interpreted as omitted for these properties
-            SplittingStrategy = null,
+            Version = null,
         };
 
-        Assert.Null(model.SplittingStrategy);
-        Assert.False(model.RawData.ContainsKey("splitting_strategy"));
+        Assert.Null(model.Version);
+        Assert.True(model.RawData.ContainsKey("version"));
     }
 
     [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
         var model = new Configuration
         {
             Categories = [new() { Name = "x", Description = "x" }],
+            SplittingStrategy = new()
+            {
+                AllowUncategorized = AllowUncategorized.Forbid,
+                CustomInstructions = "Start a new segment at every signature page.",
+                MinPagesPerSplit = 1,
+            },
 
-            // Null should be interpreted as omitted for these properties
-            SplittingStrategy = null,
+            Version = null,
         };
 
         model.Validate();
@@ -309,6 +404,7 @@ public class ConfigurationTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Version = "latest",
         };
 
         Configuration copied = new(model);

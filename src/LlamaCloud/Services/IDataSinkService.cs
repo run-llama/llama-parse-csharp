@@ -51,8 +51,11 @@ public interface IDataSinkService
     );
 
     /// <summary>
-    /// List data sinks for a given project.
+    /// List a project's data sinks. Returns at most the first 50.
+    ///
+    /// <para>Deprecated: use `GET /api/v1/beta/data-sinks`, which is paginated.</para>
     /// </summary>
+    [Obsolete("deprecated")]
     Task<List<DataSink>> List(
         DataSinkListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -79,6 +82,14 @@ public interface IDataSinkService
     Task<DataSink> Get(
         string dataSinkID,
         DataSinkGetParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// List the data sinks in a project, newest first.
+    /// </summary>
+    Task<DataSinkListPaginatedPage> ListPaginated(
+        DataSinkListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }
@@ -125,6 +136,7 @@ public interface IDataSinkServiceWithRawResponse
     /// Returns a raw HTTP response for <c>get /api/v1/data-sinks</c>, but is otherwise the
     /// same as <see cref="IDataSinkService.List(DataSinkListParams?, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("deprecated")]
     Task<HttpResponse<List<DataSink>>> List(
         DataSinkListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -159,6 +171,15 @@ public interface IDataSinkServiceWithRawResponse
     Task<HttpResponse<DataSink>> Get(
         string dataSinkID,
         DataSinkGetParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>get /api/v1/beta/data-sinks</c>, but is otherwise the
+    /// same as <see cref="IDataSinkService.ListPaginated(DataSinkListPaginatedParams?, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<DataSinkListPaginatedPage>> ListPaginated(
+        DataSinkListPaginatedParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }
