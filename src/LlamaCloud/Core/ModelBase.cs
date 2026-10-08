@@ -1,25 +1,28 @@
 using System.Text.Json;
 using LlamaCloud.Exceptions;
 using LlamaCloud.Models;
-using LlamaCloud.Models.Beta.Indexes;
-using LlamaCloud.Models.Beta.Retrieval;
 using LlamaCloud.Models.Classifier.Jobs;
 using LlamaCloud.Models.DataSinks;
 using LlamaCloud.Models.DataSources;
 using LlamaCloud.Models.ExtractionAgents;
+using LlamaCloud.Models.Indexes;
 using LlamaCloud.Models.Pipelines.Documents;
+using LlamaCloud.Models.Retrieval;
 using LlamaCloud.Models.Retrievers;
 using LlamaCloud.Models.Split;
 using Batches = LlamaCloud.Models.Batches;
-using Chat = LlamaCloud.Models.Beta.Chat;
+using BetaChat = LlamaCloud.Models.Beta.Chat;
+using Chat = LlamaCloud.Models.Chat;
 using Classify = LlamaCloud.Models.Classify;
 using Configurations = LlamaCloud.Models.Configurations;
 using DataSources = LlamaCloud.Models.Pipelines.DataSources;
 using Directories = LlamaCloud.Models.Beta.Directories;
 using Extract = LlamaCloud.Models.Extract;
 using Files = LlamaCloud.Models.Pipelines.Files;
+using Indexes = LlamaCloud.Models.Beta.Indexes;
 using Parsing = LlamaCloud.Models.Parsing;
 using Pipelines = LlamaCloud.Models.Pipelines;
+using Retrieval = LlamaCloud.Models.Beta.Retrieval;
 using Split = LlamaCloud.Models.Beta.Split;
 using WebhookConfigs = LlamaCloud.Models.WebhookConfigs;
 
@@ -296,6 +299,24 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Chat::ChatListResponseSharedAccess>(),
             new ApiEnumConverter<string, Chat::ChatGetSummaryResponseSharedAccess>(),
             new ApiEnumConverter<string, Chat::SharedAccess>(),
+            new ApiEnumConverter<string, Indexes::VectorTarget>(),
+            new ApiEnumConverter<string, Indexes::Expand>(),
+            new ApiEnumConverter<string, Retrieval::Operator>(),
+            new ApiEnumConverter<string, Retrieval::NumericRangeFilterOperator>(),
+            new ApiEnumConverter<string, Retrieval::ParsedDirectoryFileIDOperator>(),
+            new ApiEnumConverter<string, BetaChat::ChatCreateResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::Type>(),
+            new ApiEnumConverter<string, BetaChat::TextDeltaType>(),
+            new ApiEnumConverter<string, BetaChat::TextType>(),
+            new ApiEnumConverter<string, BetaChat::ThinkingDeltaType>(),
+            new ApiEnumConverter<string, BetaChat::ThinkingType>(),
+            new ApiEnumConverter<string, BetaChat::ToolCallType>(),
+            new ApiEnumConverter<string, BetaChat::ToolResultType>(),
+            new ApiEnumConverter<string, BetaChat::UserInputType>(),
+            new ApiEnumConverter<string, BetaChat::ChatRetrieveResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::ChatListResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::ChatGetSummaryResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::SharedAccess>(),
             new ApiEnumConverter<string, Directories::DirectoryCreateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryUpdateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryListResponseType>(),

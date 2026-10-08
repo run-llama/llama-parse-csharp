@@ -83,6 +83,12 @@ public interface ILlamaCloudClient : IDisposable
 
     IRetrieverService Retrievers { get; }
 
+    IIndexService Indexes { get; }
+
+    IRetrievalService Retrieval { get; }
+
+    IChatService Chat { get; }
+
     IBetaService Beta { get; }
 }
 
@@ -146,6 +152,12 @@ public interface ILlamaCloudClientWithRawResponse : IDisposable
     IPipelineServiceWithRawResponse Pipelines { get; }
 
     IRetrieverServiceWithRawResponse Retrievers { get; }
+
+    IIndexServiceWithRawResponse Indexes { get; }
+
+    IRetrievalServiceWithRawResponse Retrieval { get; }
+
+    IChatServiceWithRawResponse Chat { get; }
 
     IBetaServiceWithRawResponse Beta { get; }
 

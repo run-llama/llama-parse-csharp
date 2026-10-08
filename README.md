@@ -84,7 +84,7 @@ var page = await client
             Timeout = TimeSpan.FromSeconds(42),
         }
     )
-    .Beta.Indexes.List(parameters);
+    .Indexes.List(parameters);
 
 Console.WriteLine(page);
 ```
@@ -106,7 +106,7 @@ The SDK defines methods that deserialize responses into instances of C# classes.
 To access this data, prefix any HTTP method call on a client or service with `WithRawResponse`:
 
 ```csharp
-var response = await client.WithRawResponse.Beta.Indexes.List();
+var response = await client.WithRawResponse.Indexes.List();
 var statusCode = response.StatusCode;
 var headers = response.Headers;
 ```
@@ -117,9 +117,9 @@ For non-streaming responses, you can deserialize the response into an instance o
 
 ```csharp
 using System;
-using LlamaCloud.Models.Beta.Indexes;
+using LlamaCloud.Models.Indexes;
 
-var response = await client.WithRawResponse.Beta.Indexes.List();
+var response = await client.WithRawResponse.Indexes.List();
 IndexListPage deserialized = await response.Deserialize();
 Console.WriteLine(deserialized);
 ```
@@ -222,7 +222,7 @@ var page = await client
     .WithOptions(options =>
         options with { MaxRetries = 3 }
     )
-    .Beta.Indexes.List(parameters);
+    .Indexes.List(parameters);
 
 Console.WriteLine(page);
 ```
@@ -249,7 +249,7 @@ var page = await client
     .WithOptions(options =>
         options with { Timeout = TimeSpan.FromSeconds(42) }
     )
-    .Beta.Indexes.List(parameters);
+    .Indexes.List(parameters);
 
 Console.WriteLine(page);
 ```

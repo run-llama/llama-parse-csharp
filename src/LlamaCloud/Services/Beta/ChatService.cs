@@ -36,6 +36,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<ChatCreateResponse> Create(
         ChatCreateParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -48,6 +49,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<ChatRetrieveResponse> Retrieve(
         ChatRetrieveParams parameters,
         CancellationToken cancellationToken = default
@@ -60,6 +62,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<ChatRetrieveResponse> Retrieve(
         string sessionID,
         ChatRetrieveParams? parameters = null,
@@ -72,6 +75,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<ChatListPage> List(
         ChatListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -84,12 +88,14 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task Delete(ChatDeleteParams parameters, CancellationToken cancellationToken = default)
     {
         return this.WithRawResponse.Delete(parameters, cancellationToken);
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task Delete(
         string sessionID,
         ChatDeleteParams? parameters = null,
@@ -103,6 +109,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<ChatGetSummaryResponse> GetSummary(
         ChatGetSummaryParams parameters,
         CancellationToken cancellationToken = default
@@ -115,6 +122,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<ChatGetSummaryResponse> GetSummary(
         string sessionID,
         ChatGetSummaryParams? parameters = null,
@@ -127,6 +135,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<JsonElement> Stream(
         ChatStreamParams parameters,
         CancellationToken cancellationToken = default
@@ -139,6 +148,7 @@ public sealed class ChatService : IChatService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<JsonElement> Stream(
         string sessionID,
         ChatStreamParams parameters,
@@ -166,6 +176,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<HttpResponse<ChatCreateResponse>> Create(
         ChatCreateParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -196,6 +207,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<HttpResponse<ChatRetrieveResponse>> Retrieve(
         ChatRetrieveParams parameters,
         CancellationToken cancellationToken = default
@@ -229,6 +241,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<HttpResponse<ChatRetrieveResponse>> Retrieve(
         string sessionID,
         ChatRetrieveParams? parameters = null,
@@ -241,6 +254,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<HttpResponse<ChatListPage>> List(
         ChatListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -271,6 +285,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<HttpResponse> Delete(
         ChatDeleteParams parameters,
         CancellationToken cancellationToken = default
@@ -290,6 +305,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<HttpResponse> Delete(
         string sessionID,
         ChatDeleteParams? parameters = null,
@@ -302,6 +318,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<HttpResponse<ChatGetSummaryResponse>> GetSummary(
         ChatGetSummaryParams parameters,
         CancellationToken cancellationToken = default
@@ -335,6 +352,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<HttpResponse<ChatGetSummaryResponse>> GetSummary(
         string sessionID,
         ChatGetSummaryParams? parameters = null,
@@ -347,6 +365,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public async Task<HttpResponse<JsonElement>> Stream(
         ChatStreamParams parameters,
         CancellationToken cancellationToken = default
@@ -373,6 +392,7 @@ public sealed class ChatServiceWithRawResponse : IChatServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level chat resource instead")]
     public Task<HttpResponse<JsonElement>> Stream(
         string sessionID,
         ChatStreamParams parameters,

@@ -30,6 +30,7 @@ public interface IRetrievalService
     /// Retrieve relevant chunks via hybrid search (vector + full-text), with filtering
     /// on built-in or user-defined metadata.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<RetrievalRetrieveResponse> Retrieve(
         RetrievalRetrieveParams parameters,
         CancellationToken cancellationToken = default
@@ -38,6 +39,7 @@ public interface IRetrievalService
     /// <summary>
     /// Search for files by name.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<RetrievalFindPage> Find(
         RetrievalFindParams parameters,
         CancellationToken cancellationToken = default
@@ -46,6 +48,7 @@ public interface IRetrievalService
     /// <summary>
     /// Grep within a file's parsed content using a regex pattern.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<RetrievalGrepPage> Grep(
         RetrievalGrepParams parameters,
         CancellationToken cancellationToken = default
@@ -54,6 +57,7 @@ public interface IRetrievalService
     /// <summary>
     /// Read the parsed text content of a specific file.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<RetrievalReadResponse> Read(
         RetrievalReadParams parameters,
         CancellationToken cancellationToken = default
@@ -77,6 +81,7 @@ public interface IRetrievalServiceWithRawResponse
     /// Returns a raw HTTP response for <c>post /api/v1/retrieval/retrieve</c>, but is otherwise the
     /// same as <see cref="IRetrievalService.Retrieve(RetrievalRetrieveParams, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<HttpResponse<RetrievalRetrieveResponse>> Retrieve(
         RetrievalRetrieveParams parameters,
         CancellationToken cancellationToken = default
@@ -86,6 +91,7 @@ public interface IRetrievalServiceWithRawResponse
     /// Returns a raw HTTP response for <c>post /api/v1/retrieval/files/find</c>, but is otherwise the
     /// same as <see cref="IRetrievalService.Find(RetrievalFindParams, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<HttpResponse<RetrievalFindPage>> Find(
         RetrievalFindParams parameters,
         CancellationToken cancellationToken = default
@@ -95,6 +101,7 @@ public interface IRetrievalServiceWithRawResponse
     /// Returns a raw HTTP response for <c>post /api/v1/retrieval/files/grep</c>, but is otherwise the
     /// same as <see cref="IRetrievalService.Grep(RetrievalGrepParams, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<HttpResponse<RetrievalGrepPage>> Grep(
         RetrievalGrepParams parameters,
         CancellationToken cancellationToken = default
@@ -104,6 +111,7 @@ public interface IRetrievalServiceWithRawResponse
     /// Returns a raw HTTP response for <c>post /api/v1/retrieval/files/read</c>, but is otherwise the
     /// same as <see cref="IRetrievalService.Read(RetrievalReadParams, CancellationToken)"/>.
     /// </summary>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     Task<HttpResponse<RetrievalReadResponse>> Read(
         RetrievalReadParams parameters,
         CancellationToken cancellationToken = default
