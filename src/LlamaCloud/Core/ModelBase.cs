@@ -24,6 +24,7 @@ using Parsing = LlamaCloud.Models.Parsing;
 using Pipelines = LlamaCloud.Models.Pipelines;
 using Retrieval = LlamaCloud.Models.Beta.Retrieval;
 using Split = LlamaCloud.Models.Beta.Split;
+using Verify = LlamaCloud.Models.Alpha.Verify;
 using WebhookConfigs = LlamaCloud.Models.WebhookConfigs;
 
 namespace LlamaCloud.Core;
@@ -326,6 +327,25 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Directories::TypeModel>(),
             new ApiEnumConverter<string, Split::AllowUncategorized>(),
             new ApiEnumConverter<string, Split::Status>(),
+            new ApiEnumConverter<string, Verify::VerifyCreateResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::DocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyCreateResponseStatus>(),
+            new ApiEnumConverter<string, Verify::Verdict>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseDocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseStatus>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseResultVerdict>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseDocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseStatus>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseResultVerdict>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseDocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseStatus>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseResultVerdict>(),
+            new ApiEnumConverter<string, Verify::Tier>(),
+            new ApiEnumConverter<string, Verify::WebhookEvent>(),
+            new ApiEnumConverter<string, Verify::Status>(),
         },
     };
 

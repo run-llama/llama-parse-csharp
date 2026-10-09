@@ -192,6 +192,12 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         get { return _beta.Value; }
     }
 
+    readonly Lazy<IAlphaService> _alpha;
+    public IAlphaService Alpha
+    {
+        get { return _alpha.Value; }
+    }
+
     public void Dispose() => this.HttpClient.Dispose();
 
     public LlamaCloudClient()
@@ -219,6 +225,7 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         _retrieval = new(() => new RetrievalService(this));
         _chat = new(() => new ChatService(this));
         _beta = new(() => new BetaService(this));
+        _alpha = new(() => new AlphaService(this));
     }
 
     public LlamaCloudClient(ClientOptions options)
@@ -412,6 +419,12 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
     public IBetaServiceWithRawResponse Beta
     {
         get { return _beta.Value; }
+    }
+
+    readonly Lazy<IAlphaServiceWithRawResponse> _alpha;
+    public IAlphaServiceWithRawResponse Alpha
+    {
+        get { return _alpha.Value; }
     }
 
     /// <inheritdoc/>
@@ -632,6 +645,7 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
         _retrieval = new(() => new RetrievalServiceWithRawResponse(this));
         _chat = new(() => new ChatServiceWithRawResponse(this));
         _beta = new(() => new BetaServiceWithRawResponse(this));
+        _alpha = new(() => new AlphaServiceWithRawResponse(this));
     }
 
     public LlamaCloudClientWithRawResponse(ClientOptions options)

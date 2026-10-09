@@ -90,6 +90,8 @@ public interface ILlamaCloudClient : IDisposable
     IChatService Chat { get; }
 
     IBetaService Beta { get; }
+
+    IAlphaService Alpha { get; }
 }
 
 /// <summary>
@@ -160,6 +162,8 @@ public interface ILlamaCloudClientWithRawResponse : IDisposable
     IChatServiceWithRawResponse Chat { get; }
 
     IBetaServiceWithRawResponse Beta { get; }
+
+    IAlphaServiceWithRawResponse Alpha { get; }
 
     /// <summary>
     /// Sends a request to the Llama Cloud REST API.
