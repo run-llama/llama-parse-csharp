@@ -895,6 +895,11 @@ public class ExtractV2JobCreateWebhookConfigurationWebhookEventTest : TestBase
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.SplitProcessing)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.SplitSuccess)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.UnmappedEvent)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyCancelled)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyError)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyPending)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyRunning)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifySuccess)]
     public void Validation_Works(ExtractV2JobCreateWebhookConfigurationWebhookEvent rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -947,6 +952,11 @@ public class ExtractV2JobCreateWebhookConfigurationWebhookEventTest : TestBase
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.SplitProcessing)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.SplitSuccess)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.UnmappedEvent)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyCancelled)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyError)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyPending)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyRunning)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifySuccess)]
     public void SerializationRoundtrip_Works(
         ExtractV2JobCreateWebhookConfigurationWebhookEvent rawValue
     )

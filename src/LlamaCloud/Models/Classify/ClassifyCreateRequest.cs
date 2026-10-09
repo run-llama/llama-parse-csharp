@@ -384,6 +384,11 @@ public enum ClassifyCreateRequestWebhookConfigurationWebhookEvent
     SplitProcessing,
     SplitSuccess,
     UnmappedEvent,
+    VerifyCancelled,
+    VerifyError,
+    VerifyPending,
+    VerifyRunning,
+    VerifySuccess,
 }
 
 sealed class ClassifyCreateRequestWebhookConfigurationWebhookEventConverter
@@ -446,6 +451,12 @@ sealed class ClassifyCreateRequestWebhookConfigurationWebhookEventConverter
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.SplitProcessing,
             "split.success" => ClassifyCreateRequestWebhookConfigurationWebhookEvent.SplitSuccess,
             "unmapped_event" => ClassifyCreateRequestWebhookConfigurationWebhookEvent.UnmappedEvent,
+            "verify.cancelled" =>
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyCancelled,
+            "verify.error" => ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyError,
+            "verify.pending" => ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyPending,
+            "verify.running" => ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyRunning,
+            "verify.success" => ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifySuccess,
             _ => (ClassifyCreateRequestWebhookConfigurationWebhookEvent)(-1),
         };
     }
@@ -522,6 +533,15 @@ sealed class ClassifyCreateRequestWebhookConfigurationWebhookEventConverter
                     "split.success",
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.UnmappedEvent =>
                     "unmapped_event",
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyCancelled =>
+                    "verify.cancelled",
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyError => "verify.error",
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyPending =>
+                    "verify.pending",
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyRunning =>
+                    "verify.running",
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifySuccess =>
+                    "verify.success",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -264,6 +264,11 @@ public enum WebhookConfigResponseWebhookEvent
     SplitProcessing,
     SplitSuccess,
     UnmappedEvent,
+    VerifyCancelled,
+    VerifyError,
+    VerifyPending,
+    VerifyRunning,
+    VerifySuccess,
 }
 
 sealed class WebhookConfigResponseWebhookEventConverter
@@ -310,6 +315,11 @@ sealed class WebhookConfigResponseWebhookEventConverter
             "split.processing" => WebhookConfigResponseWebhookEvent.SplitProcessing,
             "split.success" => WebhookConfigResponseWebhookEvent.SplitSuccess,
             "unmapped_event" => WebhookConfigResponseWebhookEvent.UnmappedEvent,
+            "verify.cancelled" => WebhookConfigResponseWebhookEvent.VerifyCancelled,
+            "verify.error" => WebhookConfigResponseWebhookEvent.VerifyError,
+            "verify.pending" => WebhookConfigResponseWebhookEvent.VerifyPending,
+            "verify.running" => WebhookConfigResponseWebhookEvent.VerifyRunning,
+            "verify.success" => WebhookConfigResponseWebhookEvent.VerifySuccess,
             _ => (WebhookConfigResponseWebhookEvent)(-1),
         };
     }
@@ -359,6 +369,11 @@ sealed class WebhookConfigResponseWebhookEventConverter
                 WebhookConfigResponseWebhookEvent.SplitProcessing => "split.processing",
                 WebhookConfigResponseWebhookEvent.SplitSuccess => "split.success",
                 WebhookConfigResponseWebhookEvent.UnmappedEvent => "unmapped_event",
+                WebhookConfigResponseWebhookEvent.VerifyCancelled => "verify.cancelled",
+                WebhookConfigResponseWebhookEvent.VerifyError => "verify.error",
+                WebhookConfigResponseWebhookEvent.VerifyPending => "verify.pending",
+                WebhookConfigResponseWebhookEvent.VerifyRunning => "verify.running",
+                WebhookConfigResponseWebhookEvent.VerifySuccess => "verify.success",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

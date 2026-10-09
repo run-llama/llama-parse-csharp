@@ -34,6 +34,7 @@ public sealed class RetrievalService : IRetrievalService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<RetrievalRetrieveResponse> Retrieve(
         RetrievalRetrieveParams parameters,
         CancellationToken cancellationToken = default
@@ -46,6 +47,7 @@ public sealed class RetrievalService : IRetrievalService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<RetrievalFindPage> Find(
         RetrievalFindParams parameters,
         CancellationToken cancellationToken = default
@@ -58,6 +60,7 @@ public sealed class RetrievalService : IRetrievalService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<RetrievalGrepPage> Grep(
         RetrievalGrepParams parameters,
         CancellationToken cancellationToken = default
@@ -70,6 +73,7 @@ public sealed class RetrievalService : IRetrievalService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<RetrievalReadResponse> Read(
         RetrievalReadParams parameters,
         CancellationToken cancellationToken = default
@@ -99,6 +103,7 @@ public sealed class RetrievalServiceWithRawResponse : IRetrievalServiceWithRawRe
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<HttpResponse<RetrievalRetrieveResponse>> Retrieve(
         RetrievalRetrieveParams parameters,
         CancellationToken cancellationToken = default
@@ -127,6 +132,7 @@ public sealed class RetrievalServiceWithRawResponse : IRetrievalServiceWithRawRe
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<HttpResponse<RetrievalFindPage>> Find(
         RetrievalFindParams parameters,
         CancellationToken cancellationToken = default
@@ -155,6 +161,7 @@ public sealed class RetrievalServiceWithRawResponse : IRetrievalServiceWithRawRe
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<HttpResponse<RetrievalGrepPage>> Grep(
         RetrievalGrepParams parameters,
         CancellationToken cancellationToken = default
@@ -183,6 +190,7 @@ public sealed class RetrievalServiceWithRawResponse : IRetrievalServiceWithRawRe
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level retrieval resource instead")]
     public async Task<HttpResponse<RetrievalReadResponse>> Read(
         RetrievalReadParams parameters,
         CancellationToken cancellationToken = default

@@ -184,7 +184,7 @@ public sealed record class IndexListResponse : JsonModel
     }
 
     /// <summary>
-    /// Whether a sync is running. Set only when getting a single index.
+    /// Whether the index is syncing its source or exporting the result. Requires `expand=sync_in_progress`.
     /// </summary>
     public bool? SyncInProgress
     {

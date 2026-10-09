@@ -191,6 +191,11 @@ public class WebhookConfigUpdateParamsWebhookEventTest : TestBase
     [InlineData(WebhookConfigUpdateParamsWebhookEvent.SplitProcessing)]
     [InlineData(WebhookConfigUpdateParamsWebhookEvent.SplitSuccess)]
     [InlineData(WebhookConfigUpdateParamsWebhookEvent.UnmappedEvent)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyCancelled)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyError)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyPending)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyRunning)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifySuccess)]
     public void Validation_Works(WebhookConfigUpdateParamsWebhookEvent rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -243,6 +248,11 @@ public class WebhookConfigUpdateParamsWebhookEventTest : TestBase
     [InlineData(WebhookConfigUpdateParamsWebhookEvent.SplitProcessing)]
     [InlineData(WebhookConfigUpdateParamsWebhookEvent.SplitSuccess)]
     [InlineData(WebhookConfigUpdateParamsWebhookEvent.UnmappedEvent)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyCancelled)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyError)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyPending)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifyRunning)]
+    [InlineData(WebhookConfigUpdateParamsWebhookEvent.VerifySuccess)]
     public void SerializationRoundtrip_Works(WebhookConfigUpdateParamsWebhookEvent rawValue)
     {
         // force implicit conversion because Theory can't do that for us

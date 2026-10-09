@@ -36,6 +36,7 @@ public sealed class IndexService : IIndexService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<IndexCreateResponse> Create(
         IndexCreateParams parameters,
         CancellationToken cancellationToken = default
@@ -48,6 +49,7 @@ public sealed class IndexService : IIndexService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<IndexListPage> List(
         IndexListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -60,12 +62,14 @@ public sealed class IndexService : IIndexService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public Task Delete(IndexDeleteParams parameters, CancellationToken cancellationToken = default)
     {
         return this.WithRawResponse.Delete(parameters, cancellationToken);
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task Delete(
         string indexID,
         IndexDeleteParams? parameters = null,
@@ -79,6 +83,7 @@ public sealed class IndexService : IIndexService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<IndexGetResponse> Get(
         IndexGetParams parameters,
         CancellationToken cancellationToken = default
@@ -91,6 +96,7 @@ public sealed class IndexService : IIndexService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public Task<IndexGetResponse> Get(
         string indexID,
         IndexGetParams? parameters = null,
@@ -103,6 +109,7 @@ public sealed class IndexService : IIndexService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<JsonElement> Sync(
         IndexSyncParams parameters,
         CancellationToken cancellationToken = default
@@ -115,6 +122,7 @@ public sealed class IndexService : IIndexService
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public Task<JsonElement> Sync(
         string indexID,
         IndexSyncParams? parameters = null,
@@ -144,6 +152,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<HttpResponse<IndexCreateResponse>> Create(
         IndexCreateParams parameters,
         CancellationToken cancellationToken = default
@@ -172,6 +181,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<HttpResponse<IndexListPage>> List(
         IndexListParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -202,6 +212,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public Task<HttpResponse> Delete(
         IndexDeleteParams parameters,
         CancellationToken cancellationToken = default
@@ -221,6 +232,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public Task<HttpResponse> Delete(
         string indexID,
         IndexDeleteParams? parameters = null,
@@ -233,6 +245,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<HttpResponse<IndexGetResponse>> Get(
         IndexGetParams parameters,
         CancellationToken cancellationToken = default
@@ -266,6 +279,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public Task<HttpResponse<IndexGetResponse>> Get(
         string indexID,
         IndexGetParams? parameters = null,
@@ -278,6 +292,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public async Task<HttpResponse<JsonElement>> Sync(
         IndexSyncParams parameters,
         CancellationToken cancellationToken = default
@@ -304,6 +319,7 @@ public sealed class IndexServiceWithRawResponse : IIndexServiceWithRawResponse
     }
 
     /// <inheritdoc/>
+    [Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
     public Task<HttpResponse<JsonElement>> Sync(
         string indexID,
         IndexSyncParams? parameters = null,

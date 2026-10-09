@@ -168,10 +168,34 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         get { return _retrievers.Value; }
     }
 
+    readonly Lazy<IIndexService> _indexes;
+    public IIndexService Indexes
+    {
+        get { return _indexes.Value; }
+    }
+
+    readonly Lazy<IRetrievalService> _retrieval;
+    public IRetrievalService Retrieval
+    {
+        get { return _retrieval.Value; }
+    }
+
+    readonly Lazy<IChatService> _chat;
+    public IChatService Chat
+    {
+        get { return _chat.Value; }
+    }
+
     readonly Lazy<IBetaService> _beta;
     public IBetaService Beta
     {
         get { return _beta.Value; }
+    }
+
+    readonly Lazy<IAlphaService> _alpha;
+    public IAlphaService Alpha
+    {
+        get { return _alpha.Value; }
     }
 
     public void Dispose() => this.HttpClient.Dispose();
@@ -197,7 +221,11 @@ public sealed class LlamaCloudClient : ILlamaCloudClient
         _dataSources = new(() => new DataSourceService(this));
         _pipelines = new(() => new PipelineService(this));
         _retrievers = new(() => new RetrieverService(this));
+        _indexes = new(() => new IndexService(this));
+        _retrieval = new(() => new RetrievalService(this));
+        _chat = new(() => new ChatService(this));
         _beta = new(() => new BetaService(this));
+        _alpha = new(() => new AlphaService(this));
     }
 
     public LlamaCloudClient(ClientOptions options)
@@ -369,10 +397,34 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
         get { return _retrievers.Value; }
     }
 
+    readonly Lazy<IIndexServiceWithRawResponse> _indexes;
+    public IIndexServiceWithRawResponse Indexes
+    {
+        get { return _indexes.Value; }
+    }
+
+    readonly Lazy<IRetrievalServiceWithRawResponse> _retrieval;
+    public IRetrievalServiceWithRawResponse Retrieval
+    {
+        get { return _retrieval.Value; }
+    }
+
+    readonly Lazy<IChatServiceWithRawResponse> _chat;
+    public IChatServiceWithRawResponse Chat
+    {
+        get { return _chat.Value; }
+    }
+
     readonly Lazy<IBetaServiceWithRawResponse> _beta;
     public IBetaServiceWithRawResponse Beta
     {
         get { return _beta.Value; }
+    }
+
+    readonly Lazy<IAlphaServiceWithRawResponse> _alpha;
+    public IAlphaServiceWithRawResponse Alpha
+    {
+        get { return _alpha.Value; }
     }
 
     /// <inheritdoc/>
@@ -589,7 +641,11 @@ public sealed class LlamaCloudClientWithRawResponse : ILlamaCloudClientWithRawRe
         _dataSources = new(() => new DataSourceServiceWithRawResponse(this));
         _pipelines = new(() => new PipelineServiceWithRawResponse(this));
         _retrievers = new(() => new RetrieverServiceWithRawResponse(this));
+        _indexes = new(() => new IndexServiceWithRawResponse(this));
+        _retrieval = new(() => new RetrievalServiceWithRawResponse(this));
+        _chat = new(() => new ChatServiceWithRawResponse(this));
         _beta = new(() => new BetaServiceWithRawResponse(this));
+        _alpha = new(() => new AlphaServiceWithRawResponse(this));
     }
 
     public LlamaCloudClientWithRawResponse(ClientOptions options)

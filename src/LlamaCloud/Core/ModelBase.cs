@@ -1,26 +1,30 @@
 using System.Text.Json;
 using LlamaCloud.Exceptions;
 using LlamaCloud.Models;
-using LlamaCloud.Models.Beta.Indexes;
-using LlamaCloud.Models.Beta.Retrieval;
 using LlamaCloud.Models.Classifier.Jobs;
 using LlamaCloud.Models.DataSinks;
 using LlamaCloud.Models.DataSources;
 using LlamaCloud.Models.ExtractionAgents;
+using LlamaCloud.Models.Indexes;
 using LlamaCloud.Models.Pipelines.Documents;
+using LlamaCloud.Models.Retrieval;
 using LlamaCloud.Models.Retrievers;
 using LlamaCloud.Models.Split;
 using Batches = LlamaCloud.Models.Batches;
-using Chat = LlamaCloud.Models.Beta.Chat;
+using BetaChat = LlamaCloud.Models.Beta.Chat;
+using Chat = LlamaCloud.Models.Chat;
 using Classify = LlamaCloud.Models.Classify;
 using Configurations = LlamaCloud.Models.Configurations;
 using DataSources = LlamaCloud.Models.Pipelines.DataSources;
 using Directories = LlamaCloud.Models.Beta.Directories;
 using Extract = LlamaCloud.Models.Extract;
 using Files = LlamaCloud.Models.Pipelines.Files;
+using Indexes = LlamaCloud.Models.Beta.Indexes;
 using Parsing = LlamaCloud.Models.Parsing;
 using Pipelines = LlamaCloud.Models.Pipelines;
+using Retrieval = LlamaCloud.Models.Beta.Retrieval;
 using Split = LlamaCloud.Models.Beta.Split;
+using Verify = LlamaCloud.Models.Alpha.Verify;
 using WebhookConfigs = LlamaCloud.Models.WebhookConfigs;
 
 namespace LlamaCloud.Core;
@@ -279,6 +283,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, CompositeRetrievalMode>(),
             new ApiEnumConverter<string, Type>(),
             new ApiEnumConverter<string, VectorTarget>(),
+            new ApiEnumConverter<string, Expand>(),
             new ApiEnumConverter<string, Operator>(),
             new ApiEnumConverter<string, NumericRangeFilterOperator>(),
             new ApiEnumConverter<string, ParsedDirectoryFileIDOperator>(),
@@ -295,6 +300,24 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Chat::ChatListResponseSharedAccess>(),
             new ApiEnumConverter<string, Chat::ChatGetSummaryResponseSharedAccess>(),
             new ApiEnumConverter<string, Chat::SharedAccess>(),
+            new ApiEnumConverter<string, Indexes::VectorTarget>(),
+            new ApiEnumConverter<string, Indexes::Expand>(),
+            new ApiEnumConverter<string, Retrieval::Operator>(),
+            new ApiEnumConverter<string, Retrieval::NumericRangeFilterOperator>(),
+            new ApiEnumConverter<string, Retrieval::ParsedDirectoryFileIDOperator>(),
+            new ApiEnumConverter<string, BetaChat::ChatCreateResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::Type>(),
+            new ApiEnumConverter<string, BetaChat::TextDeltaType>(),
+            new ApiEnumConverter<string, BetaChat::TextType>(),
+            new ApiEnumConverter<string, BetaChat::ThinkingDeltaType>(),
+            new ApiEnumConverter<string, BetaChat::ThinkingType>(),
+            new ApiEnumConverter<string, BetaChat::ToolCallType>(),
+            new ApiEnumConverter<string, BetaChat::ToolResultType>(),
+            new ApiEnumConverter<string, BetaChat::UserInputType>(),
+            new ApiEnumConverter<string, BetaChat::ChatRetrieveResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::ChatListResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::ChatGetSummaryResponseSharedAccess>(),
+            new ApiEnumConverter<string, BetaChat::SharedAccess>(),
             new ApiEnumConverter<string, Directories::DirectoryCreateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryUpdateResponseType>(),
             new ApiEnumConverter<string, Directories::DirectoryListResponseType>(),
@@ -304,6 +327,25 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Directories::TypeModel>(),
             new ApiEnumConverter<string, Split::AllowUncategorized>(),
             new ApiEnumConverter<string, Split::Status>(),
+            new ApiEnumConverter<string, Verify::VerifyCreateResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::DocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyCreateResponseStatus>(),
+            new ApiEnumConverter<string, Verify::Verdict>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseDocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseStatus>(),
+            new ApiEnumConverter<string, Verify::VerifyListResponseResultVerdict>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseDocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseStatus>(),
+            new ApiEnumConverter<string, Verify::VerifyCancelResponseResultVerdict>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseConfigurationTier>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseDocumentInputType>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseStatus>(),
+            new ApiEnumConverter<string, Verify::VerifyGetResponseResultVerdict>(),
+            new ApiEnumConverter<string, Verify::Tier>(),
+            new ApiEnumConverter<string, Verify::WebhookEvent>(),
+            new ApiEnumConverter<string, Verify::Status>(),
         },
     };
 

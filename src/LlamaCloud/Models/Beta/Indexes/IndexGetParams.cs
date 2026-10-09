@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using LlamaCloud.Core;
+using LlamaCloud.Exceptions;
 
 namespace LlamaCloud.Models.Beta.Indexes;
 
@@ -15,9 +18,36 @@ namespace LlamaCloud.Models.Beta.Indexes;
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
+[Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
 public record class IndexGetParams : ParamsBase
 {
     public string? IndexID { get; init; }
+
+    /// <summary>
+    /// Fields to expand. Supported value: sync_in_progress.
+    /// </summary>
+    public IReadOnlyList<ApiEnum<string, Expand>>? Expand
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<ImmutableArray<ApiEnum<string, Expand>>>(
+                "expand"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set<ImmutableArray<ApiEnum<string, Expand>>?>(
+                "expand",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
 
     public string? OrganizationID
     {
@@ -138,5 +168,42 @@ public record class IndexGetParams : ParamsBase
     public override int GetHashCode()
     {
         return 0;
+    }
+}
+
+[JsonConverter(typeof(ExpandConverter))]
+public enum Expand
+{
+    SyncInProgress,
+}
+
+sealed class ExpandConverter : JsonConverter<Expand>
+{
+    public override Expand Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "sync_in_progress" => Expand.SyncInProgress,
+            _ => (Expand)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Expand value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Expand.SyncInProgress => "sync_in_progress",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }

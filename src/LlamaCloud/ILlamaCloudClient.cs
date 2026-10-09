@@ -83,7 +83,15 @@ public interface ILlamaCloudClient : IDisposable
 
     IRetrieverService Retrievers { get; }
 
+    IIndexService Indexes { get; }
+
+    IRetrievalService Retrieval { get; }
+
+    IChatService Chat { get; }
+
     IBetaService Beta { get; }
+
+    IAlphaService Alpha { get; }
 }
 
 /// <summary>
@@ -147,7 +155,15 @@ public interface ILlamaCloudClientWithRawResponse : IDisposable
 
     IRetrieverServiceWithRawResponse Retrievers { get; }
 
+    IIndexServiceWithRawResponse Indexes { get; }
+
+    IRetrievalServiceWithRawResponse Retrieval { get; }
+
+    IChatServiceWithRawResponse Chat { get; }
+
     IBetaServiceWithRawResponse Beta { get; }
+
+    IAlphaServiceWithRawResponse Alpha { get; }
 
     /// <summary>
     /// Sends a request to the Llama Cloud REST API.

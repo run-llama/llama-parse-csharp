@@ -19,6 +19,7 @@ namespace LlamaCloud.Models.Beta.Indexes;
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
+[Obsolete("Moved out of beta. Use the top-level indexes resource instead")]
 public record class IndexCreateParams : ParamsBase
 {
     readonly JsonDictionary _rawBodyData = new();

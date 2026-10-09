@@ -288,6 +288,11 @@ public enum WebhookConfigUpdateParamsWebhookEvent
     SplitProcessing,
     SplitSuccess,
     UnmappedEvent,
+    VerifyCancelled,
+    VerifyError,
+    VerifyPending,
+    VerifyRunning,
+    VerifySuccess,
 }
 
 sealed class WebhookConfigUpdateParamsWebhookEventConverter
@@ -336,6 +341,11 @@ sealed class WebhookConfigUpdateParamsWebhookEventConverter
             "split.processing" => WebhookConfigUpdateParamsWebhookEvent.SplitProcessing,
             "split.success" => WebhookConfigUpdateParamsWebhookEvent.SplitSuccess,
             "unmapped_event" => WebhookConfigUpdateParamsWebhookEvent.UnmappedEvent,
+            "verify.cancelled" => WebhookConfigUpdateParamsWebhookEvent.VerifyCancelled,
+            "verify.error" => WebhookConfigUpdateParamsWebhookEvent.VerifyError,
+            "verify.pending" => WebhookConfigUpdateParamsWebhookEvent.VerifyPending,
+            "verify.running" => WebhookConfigUpdateParamsWebhookEvent.VerifyRunning,
+            "verify.success" => WebhookConfigUpdateParamsWebhookEvent.VerifySuccess,
             _ => (WebhookConfigUpdateParamsWebhookEvent)(-1),
         };
     }
@@ -387,6 +397,11 @@ sealed class WebhookConfigUpdateParamsWebhookEventConverter
                 WebhookConfigUpdateParamsWebhookEvent.SplitProcessing => "split.processing",
                 WebhookConfigUpdateParamsWebhookEvent.SplitSuccess => "split.success",
                 WebhookConfigUpdateParamsWebhookEvent.UnmappedEvent => "unmapped_event",
+                WebhookConfigUpdateParamsWebhookEvent.VerifyCancelled => "verify.cancelled",
+                WebhookConfigUpdateParamsWebhookEvent.VerifyError => "verify.error",
+                WebhookConfigUpdateParamsWebhookEvent.VerifyPending => "verify.pending",
+                WebhookConfigUpdateParamsWebhookEvent.VerifyRunning => "verify.running",
+                WebhookConfigUpdateParamsWebhookEvent.VerifySuccess => "verify.success",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

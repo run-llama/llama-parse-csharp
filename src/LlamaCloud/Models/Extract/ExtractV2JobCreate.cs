@@ -341,6 +341,11 @@ public enum ExtractV2JobCreateWebhookConfigurationWebhookEvent
     SplitProcessing,
     SplitSuccess,
     UnmappedEvent,
+    VerifyCancelled,
+    VerifyError,
+    VerifyPending,
+    VerifyRunning,
+    VerifySuccess,
 }
 
 sealed class ExtractV2JobCreateWebhookConfigurationWebhookEventConverter
@@ -398,6 +403,12 @@ sealed class ExtractV2JobCreateWebhookConfigurationWebhookEventConverter
                 ExtractV2JobCreateWebhookConfigurationWebhookEvent.SplitProcessing,
             "split.success" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.SplitSuccess,
             "unmapped_event" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.UnmappedEvent,
+            "verify.cancelled" =>
+                ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyCancelled,
+            "verify.error" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyError,
+            "verify.pending" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyPending,
+            "verify.running" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyRunning,
+            "verify.success" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifySuccess,
             _ => (ExtractV2JobCreateWebhookConfigurationWebhookEvent)(-1),
         };
     }
@@ -465,6 +476,15 @@ sealed class ExtractV2JobCreateWebhookConfigurationWebhookEventConverter
                 ExtractV2JobCreateWebhookConfigurationWebhookEvent.SplitSuccess => "split.success",
                 ExtractV2JobCreateWebhookConfigurationWebhookEvent.UnmappedEvent =>
                     "unmapped_event",
+                ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyCancelled =>
+                    "verify.cancelled",
+                ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyError => "verify.error",
+                ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyPending =>
+                    "verify.pending",
+                ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifyRunning =>
+                    "verify.running",
+                ExtractV2JobCreateWebhookConfigurationWebhookEvent.VerifySuccess =>
+                    "verify.success",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
