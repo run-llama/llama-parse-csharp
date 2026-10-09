@@ -782,6 +782,11 @@ public class ClassifyCreateRequestWebhookConfigurationWebhookEventTest : TestBas
     [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.SplitProcessing)]
     [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.SplitSuccess)]
     [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.UnmappedEvent)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyCancelled)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyError)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyPending)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyRunning)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifySuccess)]
     public void Validation_Works(ClassifyCreateRequestWebhookConfigurationWebhookEvent rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -834,6 +839,11 @@ public class ClassifyCreateRequestWebhookConfigurationWebhookEventTest : TestBas
     [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.SplitProcessing)]
     [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.SplitSuccess)]
     [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.UnmappedEvent)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyCancelled)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyError)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyPending)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifyRunning)]
+    [InlineData(ClassifyCreateRequestWebhookConfigurationWebhookEvent.VerifySuccess)]
     public void SerializationRoundtrip_Works(
         ClassifyCreateRequestWebhookConfigurationWebhookEvent rawValue
     )

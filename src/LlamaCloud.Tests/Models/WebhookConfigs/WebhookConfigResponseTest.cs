@@ -314,6 +314,11 @@ public class WebhookConfigResponseWebhookEventTest : TestBase
     [InlineData(WebhookConfigResponseWebhookEvent.SplitProcessing)]
     [InlineData(WebhookConfigResponseWebhookEvent.SplitSuccess)]
     [InlineData(WebhookConfigResponseWebhookEvent.UnmappedEvent)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyCancelled)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyError)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyPending)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyRunning)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifySuccess)]
     public void Validation_Works(WebhookConfigResponseWebhookEvent rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -367,6 +372,11 @@ public class WebhookConfigResponseWebhookEventTest : TestBase
     [InlineData(WebhookConfigResponseWebhookEvent.SplitProcessing)]
     [InlineData(WebhookConfigResponseWebhookEvent.SplitSuccess)]
     [InlineData(WebhookConfigResponseWebhookEvent.UnmappedEvent)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyCancelled)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyError)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyPending)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifyRunning)]
+    [InlineData(WebhookConfigResponseWebhookEvent.VerifySuccess)]
     public void SerializationRoundtrip_Works(WebhookConfigResponseWebhookEvent rawValue)
     {
         // force implicit conversion because Theory can't do that for us

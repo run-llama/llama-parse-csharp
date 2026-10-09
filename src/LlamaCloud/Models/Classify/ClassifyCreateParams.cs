@@ -468,6 +468,11 @@ public enum WebhookEvent
     SplitProcessing,
     SplitSuccess,
     UnmappedEvent,
+    VerifyCancelled,
+    VerifyError,
+    VerifyPending,
+    VerifyRunning,
+    VerifySuccess,
 }
 
 sealed class WebhookEventConverter : JsonConverter<WebhookEvent>
@@ -513,6 +518,11 @@ sealed class WebhookEventConverter : JsonConverter<WebhookEvent>
             "split.processing" => WebhookEvent.SplitProcessing,
             "split.success" => WebhookEvent.SplitSuccess,
             "unmapped_event" => WebhookEvent.UnmappedEvent,
+            "verify.cancelled" => WebhookEvent.VerifyCancelled,
+            "verify.error" => WebhookEvent.VerifyError,
+            "verify.pending" => WebhookEvent.VerifyPending,
+            "verify.running" => WebhookEvent.VerifyRunning,
+            "verify.success" => WebhookEvent.VerifySuccess,
             _ => (WebhookEvent)(-1),
         };
     }
@@ -560,6 +570,11 @@ sealed class WebhookEventConverter : JsonConverter<WebhookEvent>
                 WebhookEvent.SplitProcessing => "split.processing",
                 WebhookEvent.SplitSuccess => "split.success",
                 WebhookEvent.UnmappedEvent => "unmapped_event",
+                WebhookEvent.VerifyCancelled => "verify.cancelled",
+                WebhookEvent.VerifyError => "verify.error",
+                WebhookEvent.VerifyPending => "verify.pending",
+                WebhookEvent.VerifyRunning => "verify.running",
+                WebhookEvent.VerifySuccess => "verify.success",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
