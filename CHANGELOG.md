@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.8.0...v1.9.0) (2026-10-09)
+
+
+### Features
+
+* **sdk:** move Index v2 indexes, retrieval and chat out of beta (PROD-10331) ([0f0828a](https://github.com/run-llama/llama-parse-csharp/commit/0f0828ad999a5f3820315385c2f7bea63e4be711))
+* **sdk:** publish Verify as client.alpha.verify (PROD-10334) ([6a4394f](https://github.com/run-llama/llama-parse-csharp/commit/6a4394fae84f4e0606a572ebcca565ac840d1206))
+
 ## [1.8.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.7.0...v1.8.0) (2026-10-07)
 
 
