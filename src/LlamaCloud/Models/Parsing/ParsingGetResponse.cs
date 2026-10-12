@@ -32,7 +32,8 @@ public sealed record class ParsingGetResponse : JsonModel
     }
 
     /// <summary>
-    /// Per-page form analysis results (one entry per page).
+    /// Beta: per-page form analysis results; node types the calling SDK predates
+    /// are left out.
     /// </summary>
     public ParsingGetResponseForms? Forms
     {
@@ -573,7 +574,8 @@ class JobUsageFromRaw : IFromRawJson<JobUsage>
 }
 
 /// <summary>
-/// Per-page form analysis results (one entry per page).
+/// Beta: per-page form analysis results; node types the calling SDK predates are
+/// left out.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<ParsingGetResponseForms, ParsingGetResponseFormsFromRaw>))]
 public sealed record class ParsingGetResponseForms : JsonModel

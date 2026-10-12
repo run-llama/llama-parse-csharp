@@ -17,7 +17,7 @@ namespace LlamaCloud.Models.Parsing;
 public sealed record class Form : JsonModel
 {
     /// <summary>
-    /// Structured representation: an ordered tree of sections, fields, and tables
+    /// Structured representation: an ordered tree of sections, fields, tables, and text
     /// </summary>
     public required IReadOnlyList<FormJson> Json
     {
