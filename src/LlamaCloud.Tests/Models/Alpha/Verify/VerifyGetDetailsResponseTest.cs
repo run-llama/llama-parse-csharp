@@ -25,7 +25,7 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Score = 0,
                     Tool = "tool",
                     Hard = true,
-                    MetadataTool = new Dictionary<string, JsonElement>()
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
@@ -81,7 +81,7 @@ public class VerifyGetDetailsResponseTest : TestBase
                 Score = 0,
                 Tool = "tool",
                 Hard = true,
-                MetadataTool = new Dictionary<string, JsonElement>()
+                Metadata = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
@@ -182,7 +182,7 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Score = 0,
                     Tool = "tool",
                     Hard = true,
-                    MetadataTool = new Dictionary<string, JsonElement>()
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
@@ -252,7 +252,7 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Score = 0,
                     Tool = "tool",
                     Hard = true,
-                    MetadataTool = new Dictionary<string, JsonElement>()
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
@@ -315,7 +315,7 @@ public class VerifyGetDetailsResponseTest : TestBase
                 Score = 0,
                 Tool = "tool",
                 Hard = true,
-                MetadataTool = new Dictionary<string, JsonElement>()
+                Metadata = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
@@ -416,7 +416,7 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Score = 0,
                     Tool = "tool",
                     Hard = true,
-                    MetadataTool = new Dictionary<string, JsonElement>()
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
@@ -556,7 +556,7 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Score = 0,
                     Tool = "tool",
                     Hard = true,
-                    MetadataTool = new Dictionary<string, JsonElement>()
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
@@ -731,7 +731,7 @@ public class EvidenceTest : TestBase
             Score = 0,
             Tool = "tool",
             Hard = true,
-            MetadataTool = new Dictionary<string, JsonElement>()
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
@@ -743,7 +743,7 @@ public class EvidenceTest : TestBase
         double expectedScore = 0;
         string expectedTool = "tool";
         bool expectedHard = true;
-        Dictionary<string, JsonElement> expectedMetadataTool = new()
+        Dictionary<string, JsonElement> expectedMetadata = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
         };
@@ -754,13 +754,13 @@ public class EvidenceTest : TestBase
         Assert.Equal(expectedScore, model.Score);
         Assert.Equal(expectedTool, model.Tool);
         Assert.Equal(expectedHard, model.Hard);
-        Assert.NotNull(model.MetadataTool);
-        Assert.Equal(expectedMetadataTool.Count, model.MetadataTool.Count);
-        foreach (var item in expectedMetadataTool)
+        Assert.NotNull(model.Metadata);
+        Assert.Equal(expectedMetadata.Count, model.Metadata.Count);
+        foreach (var item in expectedMetadata)
         {
-            Assert.True(model.MetadataTool.TryGetValue(item.Key, out var value));
+            Assert.True(model.Metadata.TryGetValue(item.Key, out var value));
 
-            Assert.True(JsonElement.DeepEquals(value, model.MetadataTool[item.Key]));
+            Assert.True(JsonElement.DeepEquals(value, model.Metadata[item.Key]));
         }
     }
 
@@ -775,7 +775,7 @@ public class EvidenceTest : TestBase
             Score = 0,
             Tool = "tool",
             Hard = true,
-            MetadataTool = new Dictionary<string, JsonElement>()
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
@@ -798,7 +798,7 @@ public class EvidenceTest : TestBase
             Score = 0,
             Tool = "tool",
             Hard = true,
-            MetadataTool = new Dictionary<string, JsonElement>()
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
@@ -817,7 +817,7 @@ public class EvidenceTest : TestBase
         double expectedScore = 0;
         string expectedTool = "tool";
         bool expectedHard = true;
-        Dictionary<string, JsonElement> expectedMetadataTool = new()
+        Dictionary<string, JsonElement> expectedMetadata = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
         };
@@ -828,13 +828,13 @@ public class EvidenceTest : TestBase
         Assert.Equal(expectedScore, deserialized.Score);
         Assert.Equal(expectedTool, deserialized.Tool);
         Assert.Equal(expectedHard, deserialized.Hard);
-        Assert.NotNull(deserialized.MetadataTool);
-        Assert.Equal(expectedMetadataTool.Count, deserialized.MetadataTool.Count);
-        foreach (var item in expectedMetadataTool)
+        Assert.NotNull(deserialized.Metadata);
+        Assert.Equal(expectedMetadata.Count, deserialized.Metadata.Count);
+        foreach (var item in expectedMetadata)
         {
-            Assert.True(deserialized.MetadataTool.TryGetValue(item.Key, out var value));
+            Assert.True(deserialized.Metadata.TryGetValue(item.Key, out var value));
 
-            Assert.True(JsonElement.DeepEquals(value, deserialized.MetadataTool[item.Key]));
+            Assert.True(JsonElement.DeepEquals(value, deserialized.Metadata[item.Key]));
         }
     }
 
@@ -849,7 +849,7 @@ public class EvidenceTest : TestBase
             Score = 0,
             Tool = "tool",
             Hard = true,
-            MetadataTool = new Dictionary<string, JsonElement>()
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
@@ -872,8 +872,8 @@ public class EvidenceTest : TestBase
 
         Assert.Null(model.Hard);
         Assert.False(model.RawData.ContainsKey("hard"));
-        Assert.Null(model.MetadataTool);
-        Assert.False(model.RawData.ContainsKey("metadata_tool"));
+        Assert.Null(model.Metadata);
+        Assert.False(model.RawData.ContainsKey("metadata"));
     }
 
     [Fact]
@@ -904,13 +904,13 @@ public class EvidenceTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             Hard = null,
-            MetadataTool = null,
+            Metadata = null,
         };
 
         Assert.Null(model.Hard);
         Assert.False(model.RawData.ContainsKey("hard"));
-        Assert.Null(model.MetadataTool);
-        Assert.False(model.RawData.ContainsKey("metadata_tool"));
+        Assert.Null(model.Metadata);
+        Assert.False(model.RawData.ContainsKey("metadata"));
     }
 
     [Fact]
@@ -926,7 +926,7 @@ public class EvidenceTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             Hard = null,
-            MetadataTool = null,
+            Metadata = null,
         };
 
         model.Validate();
@@ -943,7 +943,7 @@ public class EvidenceTest : TestBase
             Score = 0,
             Tool = "tool",
             Hard = true,
-            MetadataTool = new Dictionary<string, JsonElement>()
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },

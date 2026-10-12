@@ -437,13 +437,13 @@ public sealed record class Evidence : JsonModel
     /// <summary>
     /// Raw values from the tool behind this finding; the shape varies by tool
     /// </summary>
-    public IReadOnlyDictionary<string, JsonElement>? MetadataTool
+    public IReadOnlyDictionary<string, JsonElement>? Metadata
     {
         get
         {
             this._rawData.Freeze();
             return this._rawData.GetNullableClass<FrozenDictionary<string, JsonElement>>(
-                "metadata_tool"
+                "metadata"
             );
         }
         init
@@ -454,7 +454,7 @@ public sealed record class Evidence : JsonModel
             }
 
             this._rawData.Set<FrozenDictionary<string, JsonElement>?>(
-                "metadata_tool",
+                "metadata",
                 value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
             );
         }
@@ -469,7 +469,7 @@ public sealed record class Evidence : JsonModel
         _ = this.Score;
         _ = this.Tool;
         _ = this.Hard;
-        _ = this.MetadataTool;
+        _ = this.Metadata;
     }
 
     public Evidence() { }
