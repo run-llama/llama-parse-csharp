@@ -414,30 +414,6 @@ public sealed record class Evidence : JsonModel
     }
 
     /// <summary>
-    /// Tool-specific structured payload
-    /// </summary>
-    public IReadOnlyDictionary<string, JsonElement>? Data
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<FrozenDictionary<string, JsonElement>>("data");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set<FrozenDictionary<string, JsonElement>?>(
-                "data",
-                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
-            );
-        }
-    }
-
-    /// <summary>
     /// Whether this is hard (conclusive) evidence
     /// </summary>
     public bool? Hard
@@ -458,6 +434,32 @@ public sealed record class Evidence : JsonModel
         }
     }
 
+    /// <summary>
+    /// Raw values from the tool behind this finding; the shape varies by tool
+    /// </summary>
+    public IReadOnlyDictionary<string, JsonElement>? MetadataTool
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<FrozenDictionary<string, JsonElement>>(
+                "metadata_tool"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<FrozenDictionary<string, JsonElement>?>(
+                "metadata_tool",
+                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -466,8 +468,8 @@ public sealed record class Evidence : JsonModel
         _ = this.Family;
         _ = this.Score;
         _ = this.Tool;
-        _ = this.Data;
         _ = this.Hard;
+        _ = this.MetadataTool;
     }
 
     public Evidence() { }
