@@ -37,6 +37,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -220,6 +221,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                             )
                         },
                     },
+                    AdvancedCitations = false,
                     CiteSources = true,
                     ConfidenceScores = true,
                     DisableCache = true,
@@ -404,6 +406,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -601,6 +604,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -791,6 +795,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                             )
                         },
                     },
+                    AdvancedCitations = false,
                     CiteSources = true,
                     ConfidenceScores = true,
                     DisableCache = true,
@@ -975,6 +980,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -1166,6 +1172,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -1358,6 +1365,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -1547,6 +1555,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -1742,6 +1751,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,
@@ -1934,6 +1944,7 @@ public class ExtractV2JobQueryResponseTest : TestBase
                                 )
                             },
                         },
+                        AdvancedCitations = false,
                         CiteSources = true,
                         ConfidenceScores = true,
                         DisableCache = true,

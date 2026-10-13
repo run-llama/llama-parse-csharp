@@ -33,6 +33,7 @@ public class ExtractV2JobTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
@@ -196,6 +197,7 @@ public class ExtractV2JobTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -375,6 +377,7 @@ public class ExtractV2JobTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
@@ -552,6 +555,7 @@ public class ExtractV2JobTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
@@ -722,6 +726,7 @@ public class ExtractV2JobTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -901,6 +906,7 @@ public class ExtractV2JobTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
@@ -1178,6 +1184,7 @@ public class ExtractV2JobTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
