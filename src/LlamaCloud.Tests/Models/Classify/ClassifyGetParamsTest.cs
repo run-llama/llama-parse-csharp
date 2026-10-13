@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using LlamaCloud.Models.Classify;
 
 namespace LlamaCloud.Tests.Models.Classify;
@@ -11,23 +12,62 @@ public class ClassifyGetParamsTest : TestBase
         var parameters = new ClassifyGetParams
         {
             JobID = "job_id",
+            Expand = ["string"],
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedJobID = "job_id";
+        List<string> expectedExpand = ["string"];
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
         Assert.Equal(expectedJobID, parameters.JobID);
+        Assert.NotNull(parameters.Expand);
+        Assert.Equal(expectedExpand.Count, parameters.Expand.Count);
+        for (int i = 0; i < expectedExpand.Count; i++)
+        {
+            Assert.Equal(expectedExpand[i], parameters.Expand[i]);
+        }
         Assert.Equal(expectedOrganizationID, parameters.OrganizationID);
         Assert.Equal(expectedProjectID, parameters.ProjectID);
     }
 
     [Fact]
+    public void OptionalNonNullableParamsUnsetAreNotSet_Works()
+    {
+        var parameters = new ClassifyGetParams
+        {
+            JobID = "job_id",
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+        };
+
+        Assert.Null(parameters.Expand);
+        Assert.False(parameters.RawQueryData.ContainsKey("expand"));
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
+    {
+        var parameters = new ClassifyGetParams
+        {
+            JobID = "job_id",
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+
+            // Null should be interpreted as omitted for these properties
+            Expand = null,
+        };
+
+        Assert.Null(parameters.Expand);
+        Assert.False(parameters.RawQueryData.ContainsKey("expand"));
+    }
+
+    [Fact]
     public void OptionalNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new ClassifyGetParams { JobID = "job_id" };
+        var parameters = new ClassifyGetParams { JobID = "job_id", Expand = ["string"] };
 
         Assert.Null(parameters.OrganizationID);
         Assert.False(parameters.RawQueryData.ContainsKey("organization_id"));
@@ -41,6 +81,7 @@ public class ClassifyGetParamsTest : TestBase
         var parameters = new ClassifyGetParams
         {
             JobID = "job_id",
+            Expand = ["string"],
 
             OrganizationID = null,
             ProjectID = null,
@@ -58,6 +99,7 @@ public class ClassifyGetParamsTest : TestBase
         ClassifyGetParams parameters = new()
         {
             JobID = "job_id",
+            Expand = ["string"],
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
@@ -67,7 +109,7 @@ public class ClassifyGetParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v2/classify/job_id?organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v2/classify/job_id?expand=string&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -80,6 +122,7 @@ public class ClassifyGetParamsTest : TestBase
         var parameters = new ClassifyGetParams
         {
             JobID = "job_id",
+            Expand = ["string"],
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };

@@ -99,7 +99,8 @@ public interface IClassifyService
     /// Get a classify job by ID.
     ///
     /// <para>Returns the job status, configuration, and classify result when complete.
-    /// The result includes the matched document type, confidence score, and reasoning.</para>
+    /// The result includes the matched document type, confidence score, and reasoning.
+    /// Use `expand=usage` for credits billed against the job.</para>
     /// </summary>
     Task<ClassifyGetResponse> Get(
         ClassifyGetParams parameters,

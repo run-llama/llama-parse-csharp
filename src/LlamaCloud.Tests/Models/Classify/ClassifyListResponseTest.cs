@@ -49,6 +49,7 @@ public class ClassifyListResponseTest : TestBase
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Usage = new() { Credits = 30, ParseCredits = 3 },
         };
 
         string expectedID = "id";
@@ -89,6 +90,7 @@ public class ClassifyListResponseTest : TestBase
         };
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        ClassifyListResponseUsage expectedUsage = new() { Credits = 30, ParseCredits = 3 };
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedConfiguration, model.Configuration);
@@ -104,6 +106,7 @@ public class ClassifyListResponseTest : TestBase
         Assert.Equal(expectedResult, model.Result);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
+        Assert.Equal(expectedUsage, model.Usage);
     }
 
     [Fact]
@@ -147,6 +150,7 @@ public class ClassifyListResponseTest : TestBase
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Usage = new() { Credits = 30, ParseCredits = 3 },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -199,6 +203,7 @@ public class ClassifyListResponseTest : TestBase
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Usage = new() { Credits = 30, ParseCredits = 3 },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -246,6 +251,7 @@ public class ClassifyListResponseTest : TestBase
         };
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        ClassifyListResponseUsage expectedUsage = new() { Credits = 30, ParseCredits = 3 };
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedConfiguration, deserialized.Configuration);
@@ -261,6 +267,7 @@ public class ClassifyListResponseTest : TestBase
         Assert.Equal(expectedResult, deserialized.Result);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
+        Assert.Equal(expectedUsage, deserialized.Usage);
     }
 
     [Fact]
@@ -304,6 +311,7 @@ public class ClassifyListResponseTest : TestBase
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Usage = new() { Credits = 30, ParseCredits = 3 },
         };
 
         model.Validate();
@@ -354,6 +362,8 @@ public class ClassifyListResponseTest : TestBase
         Assert.False(model.RawData.ContainsKey("transaction_id"));
         Assert.Null(model.UpdatedAt);
         Assert.False(model.RawData.ContainsKey("updated_at"));
+        Assert.Null(model.Usage);
+        Assert.False(model.RawData.ContainsKey("usage"));
     }
 
     [Fact]
@@ -427,6 +437,7 @@ public class ClassifyListResponseTest : TestBase
             Result = null,
             TransactionID = null,
             UpdatedAt = null,
+            Usage = null,
         };
 
         Assert.Null(model.ConfigurationID);
@@ -443,6 +454,8 @@ public class ClassifyListResponseTest : TestBase
         Assert.True(model.RawData.ContainsKey("transaction_id"));
         Assert.Null(model.UpdatedAt);
         Assert.True(model.RawData.ContainsKey("updated_at"));
+        Assert.Null(model.Usage);
+        Assert.True(model.RawData.ContainsKey("usage"));
     }
 
     [Fact]
@@ -482,6 +495,7 @@ public class ClassifyListResponseTest : TestBase
             Result = null,
             TransactionID = null,
             UpdatedAt = null,
+            Usage = null,
         };
 
         model.Validate();
@@ -528,6 +542,7 @@ public class ClassifyListResponseTest : TestBase
             },
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Usage = new() { Credits = 30, ParseCredits = 3 },
         };
 
         ClassifyListResponse copied = new(model);
@@ -653,5 +668,109 @@ public class ClassifyListResponseStatusTest : TestBase
         );
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class ClassifyListResponseUsageTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new ClassifyListResponseUsage { Credits = 30, ParseCredits = 3 };
+
+        double expectedCredits = 30;
+        double expectedParseCredits = 3;
+
+        Assert.Equal(expectedCredits, model.Credits);
+        Assert.Equal(expectedParseCredits, model.ParseCredits);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new ClassifyListResponseUsage { Credits = 30, ParseCredits = 3 };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ClassifyListResponseUsage>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new ClassifyListResponseUsage { Credits = 30, ParseCredits = 3 };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ClassifyListResponseUsage>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        double expectedCredits = 30;
+        double expectedParseCredits = 3;
+
+        Assert.Equal(expectedCredits, deserialized.Credits);
+        Assert.Equal(expectedParseCredits, deserialized.ParseCredits);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new ClassifyListResponseUsage { Credits = 30, ParseCredits = 3 };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new ClassifyListResponseUsage { };
+
+        Assert.Null(model.Credits);
+        Assert.False(model.RawData.ContainsKey("credits"));
+        Assert.Null(model.ParseCredits);
+        Assert.False(model.RawData.ContainsKey("parse_credits"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new ClassifyListResponseUsage { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new ClassifyListResponseUsage { Credits = null, ParseCredits = null };
+
+        Assert.Null(model.Credits);
+        Assert.True(model.RawData.ContainsKey("credits"));
+        Assert.Null(model.ParseCredits);
+        Assert.True(model.RawData.ContainsKey("parse_credits"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new ClassifyListResponseUsage { Credits = null, ParseCredits = null };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new ClassifyListResponseUsage { Credits = 30, ParseCredits = 3 };
+
+        ClassifyListResponseUsage copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
