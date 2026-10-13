@@ -37,7 +37,7 @@ public interface IVerifyService
     /// `expand=result` to check status and retrieve results.</para>
     /// </summary>
     Task<VerifyCreateResponse> Create(
-        VerifyCreateParams? parameters = null,
+        VerifyCreateParams parameters,
         CancellationToken cancellationToken = default
     );
 
@@ -126,10 +126,10 @@ public interface IVerifyServiceWithRawResponse
 
     /// <summary>
     /// Returns a raw HTTP response for <c>post /api/alpha/verify</c>, but is otherwise the
-    /// same as <see cref="IVerifyService.Create(VerifyCreateParams?, CancellationToken)"/>.
+    /// same as <see cref="IVerifyService.Create(VerifyCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<VerifyCreateResponse>> Create(
-        VerifyCreateParams? parameters = null,
+        VerifyCreateParams parameters,
         CancellationToken cancellationToken = default
     );
 
