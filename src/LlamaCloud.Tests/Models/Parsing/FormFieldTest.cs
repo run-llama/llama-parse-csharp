@@ -743,7 +743,7 @@ public class FormFieldTest : TestBase
                 StartIndex = 0,
             },
         ];
-        FormFieldGrounding expectedGrounding = new()
+        Grounding expectedGrounding = new()
         {
             ID = new(
                 [
@@ -2909,7 +2909,7 @@ public class FormFieldTest : TestBase
                 StartIndex = 0,
             },
         ];
-        FormFieldGrounding expectedGrounding = new()
+        Grounding expectedGrounding = new()
         {
             ID = new(
                 [
@@ -8088,12 +8088,12 @@ public class FieldTest : TestBase
     }
 }
 
-public class FormFieldGroundingTest : TestBase
+public class GroundingTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGrounding
+        var model = new Grounding
         {
             ID = new(
                 [
@@ -8238,7 +8238,7 @@ public class FormFieldGroundingTest : TestBase
             ),
         };
 
-        FormFieldGroundingID expectedID = new(
+        ID expectedID = new(
             [
                 new()
                 {
@@ -8285,7 +8285,7 @@ public class FormFieldGroundingTest : TestBase
                 },
             ]
         );
-        FormFieldGroundingLabel expectedLabel = new(
+        Label expectedLabel = new(
             [
                 new()
                 {
@@ -8332,7 +8332,7 @@ public class FormFieldGroundingTest : TestBase
                 },
             ]
         );
-        FormFieldGroundingValue expectedValue = new(
+        Value expectedValue = new(
             [
                 new()
                 {
@@ -8388,7 +8388,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGrounding
+        var model = new Grounding
         {
             ID = new(
                 [
@@ -8534,10 +8534,7 @@ public class FormFieldGroundingTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGrounding>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Grounding>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -8545,7 +8542,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGrounding
+        var model = new Grounding
         {
             ID = new(
                 [
@@ -8691,13 +8688,13 @@ public class FormFieldGroundingTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGrounding>(
+        var deserialized = JsonSerializer.Deserialize<Grounding>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        FormFieldGroundingID expectedID = new(
+        ID expectedID = new(
             [
                 new()
                 {
@@ -8744,7 +8741,7 @@ public class FormFieldGroundingTest : TestBase
                 },
             ]
         );
-        FormFieldGroundingLabel expectedLabel = new(
+        Label expectedLabel = new(
             [
                 new()
                 {
@@ -8791,7 +8788,7 @@ public class FormFieldGroundingTest : TestBase
                 },
             ]
         );
-        FormFieldGroundingValue expectedValue = new(
+        Value expectedValue = new(
             [
                 new()
                 {
@@ -8847,7 +8844,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGrounding
+        var model = new Grounding
         {
             ID = new(
                 [
@@ -8998,7 +8995,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new FormFieldGrounding { };
+        var model = new Grounding { };
 
         Assert.Null(model.ID);
         Assert.False(model.RawData.ContainsKey("id"));
@@ -9011,7 +9008,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model = new FormFieldGrounding { };
+        var model = new Grounding { };
 
         model.Validate();
     }
@@ -9019,7 +9016,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new FormFieldGrounding
+        var model = new Grounding
         {
             ID = null,
             Label = null,
@@ -9037,7 +9034,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new FormFieldGrounding
+        var model = new Grounding
         {
             ID = null,
             Label = null,
@@ -9050,7 +9047,7 @@ public class FormFieldGroundingTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGrounding
+        var model = new Grounding
         {
             ID = new(
                 [
@@ -9195,18 +9192,18 @@ public class FormFieldGroundingTest : TestBase
             ),
         };
 
-        FormFieldGrounding copied = new(model);
+        Grounding copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingIDTest : TestBase
+public class IDTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingID
+        var model = new ID
         {
             Lines =
             [
@@ -9256,7 +9253,7 @@ public class FormFieldGroundingIDTest : TestBase
             ],
         };
 
-        List<FormFieldGroundingIDLine> expectedLines =
+        List<Line> expectedLines =
         [
             new()
             {
@@ -9313,7 +9310,7 @@ public class FormFieldGroundingIDTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingID
+        var model = new ID
         {
             Lines =
             [
@@ -9364,10 +9361,7 @@ public class FormFieldGroundingIDTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingID>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<ID>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -9375,7 +9369,7 @@ public class FormFieldGroundingIDTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingID
+        var model = new ID
         {
             Lines =
             [
@@ -9426,13 +9420,10 @@ public class FormFieldGroundingIDTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingID>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<ID>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        List<FormFieldGroundingIDLine> expectedLines =
+        List<Line> expectedLines =
         [
             new()
             {
@@ -9489,7 +9480,7 @@ public class FormFieldGroundingIDTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingID
+        var model = new ID
         {
             Lines =
             [
@@ -9545,7 +9536,7 @@ public class FormFieldGroundingIDTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingID
+        var model = new ID
         {
             Lines =
             [
@@ -9595,18 +9586,18 @@ public class FormFieldGroundingIDTest : TestBase
             ],
         };
 
-        FormFieldGroundingID copied = new(model);
+        ID copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingIDLineTest : TestBase
+public class LineTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -9667,7 +9658,7 @@ public class FormFieldGroundingIDLineTest : TestBase
             JsonSerializer.Deserialize<JsonElement>("{}"),
             JsonSerializer.Deserialize<JsonElement>("{}"),
         ];
-        List<FormFieldGroundingIDLineWord> expectedWords =
+        List<Word> expectedWords =
         [
             new()
             {
@@ -9708,7 +9699,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -9753,10 +9744,7 @@ public class FormFieldGroundingIDLineTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingIDLine>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Line>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -9764,7 +9752,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -9809,10 +9797,7 @@ public class FormFieldGroundingIDLineTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingIDLine>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Line>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
         BBox expectedBbox = new()
@@ -9832,7 +9817,7 @@ public class FormFieldGroundingIDLineTest : TestBase
             JsonSerializer.Deserialize<JsonElement>("{}"),
             JsonSerializer.Deserialize<JsonElement>("{}"),
         ];
-        List<FormFieldGroundingIDLineWord> expectedWords =
+        List<Word> expectedWords =
         [
             new()
             {
@@ -9873,7 +9858,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -9923,7 +9908,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -9951,7 +9936,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -9978,7 +9963,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -10008,7 +9993,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -10037,7 +10022,7 @@ public class FormFieldGroundingIDLineTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingIDLine
+        var model = new Line
         {
             Bbox = new()
             {
@@ -10081,18 +10066,18 @@ public class FormFieldGroundingIDLineTest : TestBase
             ],
         };
 
-        FormFieldGroundingIDLine copied = new(model);
+        Line copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingIDLineWordTest : TestBase
+public class WordTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingIDLineWord
+        var model = new Word
         {
             Bbox = new()
             {
@@ -10142,7 +10127,7 @@ public class FormFieldGroundingIDLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingIDLineWord
+        var model = new Word
         {
             Bbox = new()
             {
@@ -10164,10 +10149,7 @@ public class FormFieldGroundingIDLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingIDLineWord>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Word>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -10175,7 +10157,7 @@ public class FormFieldGroundingIDLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingIDLineWord
+        var model = new Word
         {
             Bbox = new()
             {
@@ -10197,10 +10179,7 @@ public class FormFieldGroundingIDLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingIDLineWord>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Word>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
         BBox expectedBbox = new()
@@ -10232,7 +10211,7 @@ public class FormFieldGroundingIDLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingIDLineWord
+        var model = new Word
         {
             Bbox = new()
             {
@@ -10259,7 +10238,7 @@ public class FormFieldGroundingIDLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingIDLineWord
+        var model = new Word
         {
             Bbox = new()
             {
@@ -10280,18 +10259,18 @@ public class FormFieldGroundingIDLineWordTest : TestBase
             ],
         };
 
-        FormFieldGroundingIDLineWord copied = new(model);
+        Word copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingLabelTest : TestBase
+public class LabelTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingLabel
+        var model = new Label
         {
             Lines =
             [
@@ -10341,7 +10320,7 @@ public class FormFieldGroundingLabelTest : TestBase
             ],
         };
 
-        List<FormFieldGroundingLabelLine> expectedLines =
+        List<LabelLine> expectedLines =
         [
             new()
             {
@@ -10398,7 +10377,7 @@ public class FormFieldGroundingLabelTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingLabel
+        var model = new Label
         {
             Lines =
             [
@@ -10449,10 +10428,7 @@ public class FormFieldGroundingLabelTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingLabel>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Label>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -10460,7 +10436,7 @@ public class FormFieldGroundingLabelTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingLabel
+        var model = new Label
         {
             Lines =
             [
@@ -10511,13 +10487,10 @@ public class FormFieldGroundingLabelTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingLabel>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Label>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        List<FormFieldGroundingLabelLine> expectedLines =
+        List<LabelLine> expectedLines =
         [
             new()
             {
@@ -10574,7 +10547,7 @@ public class FormFieldGroundingLabelTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingLabel
+        var model = new Label
         {
             Lines =
             [
@@ -10630,7 +10603,7 @@ public class FormFieldGroundingLabelTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingLabel
+        var model = new Label
         {
             Lines =
             [
@@ -10680,18 +10653,18 @@ public class FormFieldGroundingLabelTest : TestBase
             ],
         };
 
-        FormFieldGroundingLabel copied = new(model);
+        Label copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingLabelLineTest : TestBase
+public class LabelLineTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -10752,7 +10725,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
             JsonSerializer.Deserialize<JsonElement>("{}"),
             JsonSerializer.Deserialize<JsonElement>("{}"),
         ];
-        List<FormFieldGroundingLabelLineWord> expectedWords =
+        List<LabelLineWord> expectedWords =
         [
             new()
             {
@@ -10793,7 +10766,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -10838,10 +10811,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingLabelLine>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<LabelLine>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -10849,7 +10819,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -10894,7 +10864,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingLabelLine>(
+        var deserialized = JsonSerializer.Deserialize<LabelLine>(
             element,
             ModelBase.SerializerOptions
         );
@@ -10917,7 +10887,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
             JsonSerializer.Deserialize<JsonElement>("{}"),
             JsonSerializer.Deserialize<JsonElement>("{}"),
         ];
-        List<FormFieldGroundingLabelLineWord> expectedWords =
+        List<LabelLineWord> expectedWords =
         [
             new()
             {
@@ -10958,7 +10928,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -11008,7 +10978,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -11036,7 +11006,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -11063,7 +11033,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -11093,7 +11063,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -11122,7 +11092,7 @@ public class FormFieldGroundingLabelLineTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingLabelLine
+        var model = new LabelLine
         {
             Bbox = new()
             {
@@ -11166,18 +11136,18 @@ public class FormFieldGroundingLabelLineTest : TestBase
             ],
         };
 
-        FormFieldGroundingLabelLine copied = new(model);
+        LabelLine copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingLabelLineWordTest : TestBase
+public class LabelLineWordTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingLabelLineWord
+        var model = new LabelLineWord
         {
             Bbox = new()
             {
@@ -11227,7 +11197,7 @@ public class FormFieldGroundingLabelLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingLabelLineWord
+        var model = new LabelLineWord
         {
             Bbox = new()
             {
@@ -11249,7 +11219,7 @@ public class FormFieldGroundingLabelLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingLabelLineWord>(
+        var deserialized = JsonSerializer.Deserialize<LabelLineWord>(
             json,
             ModelBase.SerializerOptions
         );
@@ -11260,7 +11230,7 @@ public class FormFieldGroundingLabelLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingLabelLineWord
+        var model = new LabelLineWord
         {
             Bbox = new()
             {
@@ -11282,7 +11252,7 @@ public class FormFieldGroundingLabelLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingLabelLineWord>(
+        var deserialized = JsonSerializer.Deserialize<LabelLineWord>(
             element,
             ModelBase.SerializerOptions
         );
@@ -11317,7 +11287,7 @@ public class FormFieldGroundingLabelLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingLabelLineWord
+        var model = new LabelLineWord
         {
             Bbox = new()
             {
@@ -11344,7 +11314,7 @@ public class FormFieldGroundingLabelLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingLabelLineWord
+        var model = new LabelLineWord
         {
             Bbox = new()
             {
@@ -11365,18 +11335,18 @@ public class FormFieldGroundingLabelLineWordTest : TestBase
             ],
         };
 
-        FormFieldGroundingLabelLineWord copied = new(model);
+        LabelLineWord copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingValueTest : TestBase
+public class ValueTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingValue
+        var model = new Value
         {
             Lines =
             [
@@ -11426,7 +11396,7 @@ public class FormFieldGroundingValueTest : TestBase
             ],
         };
 
-        List<FormFieldGroundingValueLine> expectedLines =
+        List<ValueLine> expectedLines =
         [
             new()
             {
@@ -11483,7 +11453,7 @@ public class FormFieldGroundingValueTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingValue
+        var model = new Value
         {
             Lines =
             [
@@ -11534,10 +11504,7 @@ public class FormFieldGroundingValueTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingValue>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Value>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -11545,7 +11512,7 @@ public class FormFieldGroundingValueTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingValue
+        var model = new Value
         {
             Lines =
             [
@@ -11596,13 +11563,10 @@ public class FormFieldGroundingValueTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingValue>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<Value>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        List<FormFieldGroundingValueLine> expectedLines =
+        List<ValueLine> expectedLines =
         [
             new()
             {
@@ -11659,7 +11623,7 @@ public class FormFieldGroundingValueTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingValue
+        var model = new Value
         {
             Lines =
             [
@@ -11715,7 +11679,7 @@ public class FormFieldGroundingValueTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingValue
+        var model = new Value
         {
             Lines =
             [
@@ -11765,18 +11729,18 @@ public class FormFieldGroundingValueTest : TestBase
             ],
         };
 
-        FormFieldGroundingValue copied = new(model);
+        Value copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingValueLineTest : TestBase
+public class ValueLineTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -11837,7 +11801,7 @@ public class FormFieldGroundingValueLineTest : TestBase
             JsonSerializer.Deserialize<JsonElement>("{}"),
             JsonSerializer.Deserialize<JsonElement>("{}"),
         ];
-        List<FormFieldGroundingValueLineWord> expectedWords =
+        List<ValueLineWord> expectedWords =
         [
             new()
             {
@@ -11878,7 +11842,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -11923,10 +11887,7 @@ public class FormFieldGroundingValueLineTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingValueLine>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<ValueLine>(json, ModelBase.SerializerOptions);
 
         Assert.Equal(model, deserialized);
     }
@@ -11934,7 +11895,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -11979,7 +11940,7 @@ public class FormFieldGroundingValueLineTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingValueLine>(
+        var deserialized = JsonSerializer.Deserialize<ValueLine>(
             element,
             ModelBase.SerializerOptions
         );
@@ -12002,7 +11963,7 @@ public class FormFieldGroundingValueLineTest : TestBase
             JsonSerializer.Deserialize<JsonElement>("{}"),
             JsonSerializer.Deserialize<JsonElement>("{}"),
         ];
-        List<FormFieldGroundingValueLineWord> expectedWords =
+        List<ValueLineWord> expectedWords =
         [
             new()
             {
@@ -12043,7 +12004,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -12093,7 +12054,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -12121,7 +12082,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -12148,7 +12109,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -12178,7 +12139,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -12207,7 +12168,7 @@ public class FormFieldGroundingValueLineTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingValueLine
+        var model = new ValueLine
         {
             Bbox = new()
             {
@@ -12251,18 +12212,18 @@ public class FormFieldGroundingValueLineTest : TestBase
             ],
         };
 
-        FormFieldGroundingValueLine copied = new(model);
+        ValueLine copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FormFieldGroundingValueLineWordTest : TestBase
+public class ValueLineWordTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new FormFieldGroundingValueLineWord
+        var model = new ValueLineWord
         {
             Bbox = new()
             {
@@ -12312,7 +12273,7 @@ public class FormFieldGroundingValueLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormFieldGroundingValueLineWord
+        var model = new ValueLineWord
         {
             Bbox = new()
             {
@@ -12334,7 +12295,7 @@ public class FormFieldGroundingValueLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingValueLineWord>(
+        var deserialized = JsonSerializer.Deserialize<ValueLineWord>(
             json,
             ModelBase.SerializerOptions
         );
@@ -12345,7 +12306,7 @@ public class FormFieldGroundingValueLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormFieldGroundingValueLineWord
+        var model = new ValueLineWord
         {
             Bbox = new()
             {
@@ -12367,7 +12328,7 @@ public class FormFieldGroundingValueLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormFieldGroundingValueLineWord>(
+        var deserialized = JsonSerializer.Deserialize<ValueLineWord>(
             element,
             ModelBase.SerializerOptions
         );
@@ -12402,7 +12363,7 @@ public class FormFieldGroundingValueLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormFieldGroundingValueLineWord
+        var model = new ValueLineWord
         {
             Bbox = new()
             {
@@ -12429,7 +12390,7 @@ public class FormFieldGroundingValueLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormFieldGroundingValueLineWord
+        var model = new ValueLineWord
         {
             Bbox = new()
             {
@@ -12450,7 +12411,7 @@ public class FormFieldGroundingValueLineWordTest : TestBase
             ],
         };
 
-        FormFieldGroundingValueLineWord copied = new(model);
+        ValueLineWord copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -13848,9 +13809,9 @@ public class ValueItemTest : TestBase
     }
 
     [Fact]
-    public void TextValidationWorks()
+    public void FormTextValidationWorks()
     {
-        ValueItem value = new ValueItemText()
+        ValueItem value = new FormText()
         {
             Value = "value",
             Bbox =
@@ -14012,7 +13973,7 @@ public class ValueItemTest : TestBase
                     ]
                 ),
             },
-            Type = ValueItemTextType.Text,
+            Type = FormTextType.Text,
         };
         value.Validate();
     }
@@ -15326,9 +15287,9 @@ public class ValueItemTest : TestBase
     }
 
     [Fact]
-    public void TextSerializationRoundtripWorks()
+    public void FormTextSerializationRoundtripWorks()
     {
-        ValueItem value = new ValueItemText()
+        ValueItem value = new FormText()
         {
             Value = "value",
             Bbox =
@@ -15490,6388 +15451,11 @@ public class ValueItemTest : TestBase
                     ]
                 ),
             },
-            Type = ValueItemTextType.Text,
+            Type = FormTextType.Text,
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ValueItem>(
             element,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class ValueItemTextTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-            Type = ValueItemTextType.Text,
-        };
-
-        string expectedValue = "value";
-        List<BBox> expectedBbox =
-        [
-            new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-        ];
-        ValueItemTextGrounding expectedGrounding = new()
-        {
-            ID = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Label = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Value = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-        };
-        ApiEnum<string, ValueItemTextType> expectedType = ValueItemTextType.Text;
-
-        Assert.Equal(expectedValue, model.Value);
-        Assert.NotNull(model.Bbox);
-        Assert.Equal(expectedBbox.Count, model.Bbox.Count);
-        for (int i = 0; i < expectedBbox.Count; i++)
-        {
-            Assert.Equal(expectedBbox[i], model.Bbox[i]);
-        }
-        Assert.Equal(expectedGrounding, model.Grounding);
-        Assert.Equal(expectedType, model.Type);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-            Type = ValueItemTextType.Text,
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemText>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-            Type = ValueItemTextType.Text,
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemText>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedValue = "value";
-        List<BBox> expectedBbox =
-        [
-            new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-        ];
-        ValueItemTextGrounding expectedGrounding = new()
-        {
-            ID = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Label = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Value = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-        };
-        ApiEnum<string, ValueItemTextType> expectedType = ValueItemTextType.Text;
-
-        Assert.Equal(expectedValue, deserialized.Value);
-        Assert.NotNull(deserialized.Bbox);
-        Assert.Equal(expectedBbox.Count, deserialized.Bbox.Count);
-        for (int i = 0; i < expectedBbox.Count; i++)
-        {
-            Assert.Equal(expectedBbox[i], deserialized.Bbox[i]);
-        }
-        Assert.Equal(expectedGrounding, deserialized.Grounding);
-        Assert.Equal(expectedType, deserialized.Type);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-            Type = ValueItemTextType.Text,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-        };
-
-        Assert.Null(model.Type);
-        Assert.False(model.RawData.ContainsKey("type"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-
-            // Null should be interpreted as omitted for these properties
-            Type = null,
-        };
-
-        Assert.Null(model.Type);
-        Assert.False(model.RawData.ContainsKey("type"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-
-            // Null should be interpreted as omitted for these properties
-            Type = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new ValueItemText { Value = "value", Type = ValueItemTextType.Text };
-
-        Assert.Null(model.Bbox);
-        Assert.False(model.RawData.ContainsKey("bbox"));
-        Assert.Null(model.Grounding);
-        Assert.False(model.RawData.ContainsKey("grounding"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new ValueItemText { Value = "value", Type = ValueItemTextType.Text };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Type = ValueItemTextType.Text,
-
-            Bbox = null,
-            Grounding = null,
-        };
-
-        Assert.Null(model.Bbox);
-        Assert.True(model.RawData.ContainsKey("bbox"));
-        Assert.Null(model.Grounding);
-        Assert.True(model.RawData.ContainsKey("grounding"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Type = ValueItemTextType.Text,
-
-            Bbox = null,
-            Grounding = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemText
-        {
-            Value = "value",
-            Bbox =
-            [
-                new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-            ],
-            Grounding = new()
-            {
-                ID = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Label = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-                Value = new(
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                            Words =
-                            [
-                                new()
-                                {
-                                    Bbox = new()
-                                    {
-                                        H = 0,
-                                        W = 0,
-                                        X = 0,
-                                        Y = 0,
-                                        Confidence = 0,
-                                        EndIndex = 0,
-                                        Label = "label",
-                                        R = 0,
-                                        StartIndex = 0,
-                                    },
-                                    Span =
-                                    [
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    ],
-                                },
-                            ],
-                        },
-                    ]
-                ),
-            },
-            Type = ValueItemTextType.Text,
-        };
-
-        ValueItemText copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGrounding
-        {
-            ID = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Label = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Value = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-        };
-
-        ValueItemTextGroundingID expectedID = new(
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ]
-        );
-        ValueItemTextGroundingLabel expectedLabel = new(
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ]
-        );
-        ValueItemTextGroundingValue expectedValue = new(
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ]
-        );
-
-        Assert.Equal(expectedID, model.ID);
-        Assert.Equal(expectedLabel, model.Label);
-        Assert.Equal(expectedValue, model.Value);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGrounding
-        {
-            ID = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Label = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Value = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGrounding>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGrounding
-        {
-            ID = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Label = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Value = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGrounding>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        ValueItemTextGroundingID expectedID = new(
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ]
-        );
-        ValueItemTextGroundingLabel expectedLabel = new(
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ]
-        );
-        ValueItemTextGroundingValue expectedValue = new(
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ]
-        );
-
-        Assert.Equal(expectedID, deserialized.ID);
-        Assert.Equal(expectedLabel, deserialized.Label);
-        Assert.Equal(expectedValue, deserialized.Value);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGrounding
-        {
-            ID = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Label = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Value = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new ValueItemTextGrounding { };
-
-        Assert.Null(model.ID);
-        Assert.False(model.RawData.ContainsKey("id"));
-        Assert.Null(model.Label);
-        Assert.False(model.RawData.ContainsKey("label"));
-        Assert.Null(model.Value);
-        Assert.False(model.RawData.ContainsKey("value"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new ValueItemTextGrounding { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new ValueItemTextGrounding
-        {
-            ID = null,
-            Label = null,
-            Value = null,
-        };
-
-        Assert.Null(model.ID);
-        Assert.True(model.RawData.ContainsKey("id"));
-        Assert.Null(model.Label);
-        Assert.True(model.RawData.ContainsKey("label"));
-        Assert.Null(model.Value);
-        Assert.True(model.RawData.ContainsKey("value"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new ValueItemTextGrounding
-        {
-            ID = null,
-            Label = null,
-            Value = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGrounding
-        {
-            ID = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Label = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-            Value = new(
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                        Words =
-                        [
-                            new()
-                            {
-                                Bbox = new()
-                                {
-                                    H = 0,
-                                    W = 0,
-                                    X = 0,
-                                    Y = 0,
-                                    Confidence = 0,
-                                    EndIndex = 0,
-                                    Label = "label",
-                                    R = 0,
-                                    StartIndex = 0,
-                                },
-                                Span =
-                                [
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                                ],
-                            },
-                        ],
-                    },
-                ]
-            ),
-        };
-
-        ValueItemTextGrounding copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingIDTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingID
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        List<ValueItemTextGroundingIDLine> expectedLines =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-                Words =
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                    },
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedLines.Count, model.Lines.Count);
-        for (int i = 0; i < expectedLines.Count; i++)
-        {
-            Assert.Equal(expectedLines[i], model.Lines[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingID
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingID>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingID
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingID>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        List<ValueItemTextGroundingIDLine> expectedLines =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-                Words =
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                    },
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
-        for (int i = 0; i < expectedLines.Count; i++)
-        {
-            Assert.Equal(expectedLines[i], deserialized.Lines[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingID
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingID
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        ValueItemTextGroundingID copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingIDLineTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-        List<ValueItemTextGroundingIDLineWord> expectedWords =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedBbox, model.Bbox);
-        Assert.Equal(expectedSpan.Count, model.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
-        }
-        Assert.NotNull(model.Words);
-        Assert.Equal(expectedWords.Count, model.Words.Count);
-        for (int i = 0; i < expectedWords.Count; i++)
-        {
-            Assert.Equal(expectedWords[i], model.Words[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingIDLine>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingIDLine>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-        List<ValueItemTextGroundingIDLineWord> expectedWords =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedBbox, deserialized.Bbox);
-        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
-        }
-        Assert.NotNull(deserialized.Words);
-        Assert.Equal(expectedWords.Count, deserialized.Words.Count);
-        for (int i = 0; i < expectedWords.Count; i++)
-        {
-            Assert.Equal(expectedWords[i], deserialized.Words[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        Assert.Null(model.Words);
-        Assert.False(model.RawData.ContainsKey("words"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-
-            Words = null,
-        };
-
-        Assert.Null(model.Words);
-        Assert.True(model.RawData.ContainsKey("words"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-
-            Words = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingIDLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        ValueItemTextGroundingIDLine copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingIDLineWordTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingIDLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-
-        Assert.Equal(expectedBbox, model.Bbox);
-        Assert.Equal(expectedSpan.Count, model.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingIDLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingIDLineWord>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingIDLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingIDLineWord>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-
-        Assert.Equal(expectedBbox, deserialized.Bbox);
-        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingIDLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingIDLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        ValueItemTextGroundingIDLineWord copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingLabelTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingLabel
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        List<ValueItemTextGroundingLabelLine> expectedLines =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-                Words =
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                    },
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedLines.Count, model.Lines.Count);
-        for (int i = 0; i < expectedLines.Count; i++)
-        {
-            Assert.Equal(expectedLines[i], model.Lines[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingLabel
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingLabel>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingLabel
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingLabel>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        List<ValueItemTextGroundingLabelLine> expectedLines =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-                Words =
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                    },
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
-        for (int i = 0; i < expectedLines.Count; i++)
-        {
-            Assert.Equal(expectedLines[i], deserialized.Lines[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingLabel
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingLabel
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        ValueItemTextGroundingLabel copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingLabelLineTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-        List<ValueItemTextGroundingLabelLineWord> expectedWords =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedBbox, model.Bbox);
-        Assert.Equal(expectedSpan.Count, model.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
-        }
-        Assert.NotNull(model.Words);
-        Assert.Equal(expectedWords.Count, model.Words.Count);
-        for (int i = 0; i < expectedWords.Count; i++)
-        {
-            Assert.Equal(expectedWords[i], model.Words[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingLabelLine>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingLabelLine>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-        List<ValueItemTextGroundingLabelLineWord> expectedWords =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedBbox, deserialized.Bbox);
-        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
-        }
-        Assert.NotNull(deserialized.Words);
-        Assert.Equal(expectedWords.Count, deserialized.Words.Count);
-        for (int i = 0; i < expectedWords.Count; i++)
-        {
-            Assert.Equal(expectedWords[i], deserialized.Words[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        Assert.Null(model.Words);
-        Assert.False(model.RawData.ContainsKey("words"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-
-            Words = null,
-        };
-
-        Assert.Null(model.Words);
-        Assert.True(model.RawData.ContainsKey("words"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-
-            Words = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        ValueItemTextGroundingLabelLine copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingLabelLineWordTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-
-        Assert.Equal(expectedBbox, model.Bbox);
-        Assert.Equal(expectedSpan.Count, model.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingLabelLineWord>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingLabelLineWord>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-
-        Assert.Equal(expectedBbox, deserialized.Bbox);
-        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingLabelLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        ValueItemTextGroundingLabelLineWord copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingValueTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingValue
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        List<ValueItemTextGroundingValueLine> expectedLines =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-                Words =
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                    },
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedLines.Count, model.Lines.Count);
-        for (int i = 0; i < expectedLines.Count; i++)
-        {
-            Assert.Equal(expectedLines[i], model.Lines[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingValue
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingValue>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingValue
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingValue>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        List<ValueItemTextGroundingValueLine> expectedLines =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-                Words =
-                [
-                    new()
-                    {
-                        Bbox = new()
-                        {
-                            H = 0,
-                            W = 0,
-                            X = 0,
-                            Y = 0,
-                            Confidence = 0,
-                            EndIndex = 0,
-                            Label = "label",
-                            R = 0,
-                            StartIndex = 0,
-                        },
-                        Span =
-                        [
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                            JsonSerializer.Deserialize<JsonElement>("{}"),
-                        ],
-                    },
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
-        for (int i = 0; i < expectedLines.Count; i++)
-        {
-            Assert.Equal(expectedLines[i], deserialized.Lines[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingValue
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingValue
-        {
-            Lines =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                    Words =
-                    [
-                        new()
-                        {
-                            Bbox = new()
-                            {
-                                H = 0,
-                                W = 0,
-                                X = 0,
-                                Y = 0,
-                                Confidence = 0,
-                                EndIndex = 0,
-                                Label = "label",
-                                R = 0,
-                                StartIndex = 0,
-                            },
-                            Span =
-                            [
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                                JsonSerializer.Deserialize<JsonElement>("{}"),
-                            ],
-                        },
-                    ],
-                },
-            ],
-        };
-
-        ValueItemTextGroundingValue copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingValueLineTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-        List<ValueItemTextGroundingValueLineWord> expectedWords =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedBbox, model.Bbox);
-        Assert.Equal(expectedSpan.Count, model.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
-        }
-        Assert.NotNull(model.Words);
-        Assert.Equal(expectedWords.Count, model.Words.Count);
-        for (int i = 0; i < expectedWords.Count; i++)
-        {
-            Assert.Equal(expectedWords[i], model.Words[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingValueLine>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingValueLine>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-        List<ValueItemTextGroundingValueLineWord> expectedWords =
-        [
-            new()
-            {
-                Bbox = new()
-                {
-                    H = 0,
-                    W = 0,
-                    X = 0,
-                    Y = 0,
-                    Confidence = 0,
-                    EndIndex = 0,
-                    Label = "label",
-                    R = 0,
-                    StartIndex = 0,
-                },
-                Span =
-                [
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                    JsonSerializer.Deserialize<JsonElement>("{}"),
-                ],
-            },
-        ];
-
-        Assert.Equal(expectedBbox, deserialized.Bbox);
-        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
-        }
-        Assert.NotNull(deserialized.Words);
-        Assert.Equal(expectedWords.Count, deserialized.Words.Count);
-        for (int i = 0; i < expectedWords.Count; i++)
-        {
-            Assert.Equal(expectedWords[i], deserialized.Words[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        Assert.Null(model.Words);
-        Assert.False(model.RawData.ContainsKey("words"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-
-            Words = null,
-        };
-
-        Assert.Null(model.Words);
-        Assert.True(model.RawData.ContainsKey("words"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-
-            Words = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingValueLine
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-            Words =
-            [
-                new()
-                {
-                    Bbox = new()
-                    {
-                        H = 0,
-                        W = 0,
-                        X = 0,
-                        Y = 0,
-                        Confidence = 0,
-                        EndIndex = 0,
-                        Label = "label",
-                        R = 0,
-                        StartIndex = 0,
-                    },
-                    Span =
-                    [
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                        JsonSerializer.Deserialize<JsonElement>("{}"),
-                    ],
-                },
-            ],
-        };
-
-        ValueItemTextGroundingValueLine copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextGroundingValueLineWordTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingValueLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-
-        Assert.Equal(expectedBbox, model.Bbox);
-        Assert.Equal(expectedSpan.Count, model.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new ValueItemTextGroundingValueLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingValueLineWord>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new ValueItemTextGroundingValueLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ValueItemTextGroundingValueLineWord>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        BBox expectedBbox = new()
-        {
-            H = 0,
-            W = 0,
-            X = 0,
-            Y = 0,
-            Confidence = 0,
-            EndIndex = 0,
-            Label = "label",
-            R = 0,
-            StartIndex = 0,
-        };
-        List<JsonElement> expectedSpan =
-        [
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-            JsonSerializer.Deserialize<JsonElement>("{}"),
-        ];
-
-        Assert.Equal(expectedBbox, deserialized.Bbox);
-        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
-        for (int i = 0; i < expectedSpan.Count; i++)
-        {
-            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new ValueItemTextGroundingValueLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new ValueItemTextGroundingValueLineWord
-        {
-            Bbox = new()
-            {
-                H = 0,
-                W = 0,
-                X = 0,
-                Y = 0,
-                Confidence = 0,
-                EndIndex = 0,
-                Label = "label",
-                R = 0,
-                StartIndex = 0,
-            },
-            Span =
-            [
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-                JsonSerializer.Deserialize<JsonElement>("{}"),
-            ],
-        };
-
-        ValueItemTextGroundingValueLineWord copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ValueItemTextTypeTest : TestBase
-{
-    [Theory]
-    [InlineData(ValueItemTextType.Text)]
-    public void Validation_Works(ValueItemTextType rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ValueItemTextType> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, ValueItemTextType>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(ValueItemTextType.Text)]
-    public void SerializationRoundtrip_Works(ValueItemTextType rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ValueItemTextType> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ValueItemTextType>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, ValueItemTextType>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ValueItemTextType>>(
-            json,
             ModelBase.SerializerOptions
         );
 

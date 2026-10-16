@@ -34,6 +34,19 @@ public record class VerifyCreateParams : ParamsBase
         get { return this._rawBodyData.Freeze(); }
     }
 
+    /// <summary>
+    /// File ID of the document to analyze
+    /// </summary>
+    public required string FileInput
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNotNullClass<string>("file_input");
+        }
+        init { this._rawBodyData.Set("file_input", value); }
+    }
+
     public string? OrganizationID
     {
         get
@@ -65,33 +78,6 @@ public record class VerifyCreateParams : ParamsBase
             return this._rawBodyData.GetNullableClass<Configuration>("configuration");
         }
         init { this._rawBodyData.Set("configuration", value); }
-    }
-
-    /// <summary>
-    /// Deprecated: use file_input instead
-    /// </summary>
-    [Obsolete("deprecated")]
-    public string? FileID
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("file_id");
-        }
-        init { this._rawBodyData.Set("file_id", value); }
-    }
-
-    /// <summary>
-    /// File ID of the document to analyze
-    /// </summary>
-    public string? FileInput
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("file_input");
-        }
-        init { this._rawBodyData.Set("file_input", value); }
     }
 
     /// <summary>

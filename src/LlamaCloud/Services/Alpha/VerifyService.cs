@@ -36,7 +36,7 @@ public sealed class VerifyService : IVerifyService
 
     /// <inheritdoc/>
     public async Task<VerifyCreateResponse> Create(
-        VerifyCreateParams? parameters = null,
+        VerifyCreateParams parameters,
         CancellationToken cancellationToken = default
     )
     {
@@ -149,12 +149,10 @@ public sealed class VerifyServiceWithRawResponse : IVerifyServiceWithRawResponse
 
     /// <inheritdoc/>
     public async Task<HttpResponse<VerifyCreateResponse>> Create(
-        VerifyCreateParams? parameters = null,
+        VerifyCreateParams parameters,
         CancellationToken cancellationToken = default
     )
     {
-        parameters ??= new();
-
         HttpRequest<VerifyCreateParams> request = new()
         {
             Method = HttpMethod.Post,

@@ -210,6 +210,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
@@ -531,6 +532,7 @@ public class ConfigurationUpdateParamsParametersTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
