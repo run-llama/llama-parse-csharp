@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text.Json;
@@ -12,7 +13,8 @@ namespace LlamaCloud.Models.Classify;
 /// Get a classify job by ID.
 ///
 /// <para>Returns the job status, configuration, and classify result when complete.
-/// The result includes the matched document type, confidence score, and reasoning.</para>
+/// The result includes the matched document type, confidence score, and reasoning.
+/// Use `expand=usage` for credits billed against the job.</para>
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
@@ -21,6 +23,30 @@ namespace LlamaCloud.Models.Classify;
 public record class ClassifyGetParams : ParamsBase
 {
     public string? JobID { get; init; }
+
+    /// <summary>
+    /// Additional fields to include: usage
+    /// </summary>
+    public IReadOnlyList<string>? Expand
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<ImmutableArray<string>>("expand");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set<ImmutableArray<string>?>(
+                "expand",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
 
     public string? OrganizationID
     {

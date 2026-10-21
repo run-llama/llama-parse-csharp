@@ -54,6 +54,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
             NextPageToken = "next_page_token",
@@ -100,6 +101,7 @@ public class ClassifyListPageResponseTest : TestBase
                 },
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Usage = new() { Credits = 30, ParseCredits = 3 },
             },
         ];
         string expectedNextPageToken = "next_page_token";
@@ -160,6 +162,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
             NextPageToken = "next_page_token",
@@ -221,6 +224,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
             NextPageToken = "next_page_token",
@@ -274,6 +278,7 @@ public class ClassifyListPageResponseTest : TestBase
                 },
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Usage = new() { Credits = 30, ParseCredits = 3 },
             },
         ];
         string expectedNextPageToken = "next_page_token";
@@ -334,6 +339,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
             NextPageToken = "next_page_token",
@@ -389,6 +395,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
         };
@@ -445,6 +452,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
         };
@@ -498,6 +506,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
 
@@ -557,6 +566,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
 
@@ -613,6 +623,7 @@ public class ClassifyListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Usage = new() { Credits = 30, ParseCredits = 3 },
                 },
             ],
             NextPageToken = "next_page_token",

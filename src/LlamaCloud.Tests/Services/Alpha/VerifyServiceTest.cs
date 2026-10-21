@@ -8,7 +8,7 @@ public class VerifyServiceTest : TestBase
     public async Task Create_Works()
     {
         var verify = await this.client.Alpha.Verify.Create(
-            new(),
+            new() { FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" },
             TestContext.Current.CancellationToken
         );
         verify.Validate();

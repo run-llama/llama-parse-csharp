@@ -24,11 +24,11 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Family = "family",
                     Score = 0,
                     Tool = "tool",
-                    Data = new Dictionary<string, JsonElement>()
+                    Hard = true,
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
-                    Hard = true,
                 },
             ],
             Heatmaps =
@@ -80,11 +80,11 @@ public class VerifyGetDetailsResponseTest : TestBase
                 Family = "family",
                 Score = 0,
                 Tool = "tool",
-                Data = new Dictionary<string, JsonElement>()
+                Hard = true,
+                Metadata = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Hard = true,
             },
         ];
         List<Heatmap> expectedHeatmaps =
@@ -181,11 +181,11 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Family = "family",
                     Score = 0,
                     Tool = "tool",
-                    Data = new Dictionary<string, JsonElement>()
+                    Hard = true,
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
-                    Hard = true,
                 },
             ],
             Heatmaps =
@@ -251,11 +251,11 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Family = "family",
                     Score = 0,
                     Tool = "tool",
-                    Data = new Dictionary<string, JsonElement>()
+                    Hard = true,
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
-                    Hard = true,
                 },
             ],
             Heatmaps =
@@ -314,11 +314,11 @@ public class VerifyGetDetailsResponseTest : TestBase
                 Family = "family",
                 Score = 0,
                 Tool = "tool",
-                Data = new Dictionary<string, JsonElement>()
+                Hard = true,
+                Metadata = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Hard = true,
             },
         ];
         List<Heatmap> expectedHeatmaps =
@@ -415,11 +415,11 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Family = "family",
                     Score = 0,
                     Tool = "tool",
-                    Data = new Dictionary<string, JsonElement>()
+                    Hard = true,
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
-                    Hard = true,
                 },
             ],
             Heatmaps =
@@ -555,11 +555,11 @@ public class VerifyGetDetailsResponseTest : TestBase
                     Family = "family",
                     Score = 0,
                     Tool = "tool",
-                    Data = new Dictionary<string, JsonElement>()
+                    Hard = true,
+                    Metadata = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
                     },
-                    Hard = true,
                 },
             ],
             Heatmaps =
@@ -730,11 +730,11 @@ public class EvidenceTest : TestBase
             Family = "family",
             Score = 0,
             Tool = "tool",
-            Data = new Dictionary<string, JsonElement>()
+            Hard = true,
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
-            Hard = true,
         };
 
         string expectedCode = "code";
@@ -742,26 +742,26 @@ public class EvidenceTest : TestBase
         string expectedFamily = "family";
         double expectedScore = 0;
         string expectedTool = "tool";
-        Dictionary<string, JsonElement> expectedData = new()
+        bool expectedHard = true;
+        Dictionary<string, JsonElement> expectedMetadata = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
         };
-        bool expectedHard = true;
 
         Assert.Equal(expectedCode, model.Code);
         Assert.Equal(expectedDetail, model.Detail);
         Assert.Equal(expectedFamily, model.Family);
         Assert.Equal(expectedScore, model.Score);
         Assert.Equal(expectedTool, model.Tool);
-        Assert.NotNull(model.Data);
-        Assert.Equal(expectedData.Count, model.Data.Count);
-        foreach (var item in expectedData)
-        {
-            Assert.True(model.Data.TryGetValue(item.Key, out var value));
-
-            Assert.True(JsonElement.DeepEquals(value, model.Data[item.Key]));
-        }
         Assert.Equal(expectedHard, model.Hard);
+        Assert.NotNull(model.Metadata);
+        Assert.Equal(expectedMetadata.Count, model.Metadata.Count);
+        foreach (var item in expectedMetadata)
+        {
+            Assert.True(model.Metadata.TryGetValue(item.Key, out var value));
+
+            Assert.True(JsonElement.DeepEquals(value, model.Metadata[item.Key]));
+        }
     }
 
     [Fact]
@@ -774,11 +774,11 @@ public class EvidenceTest : TestBase
             Family = "family",
             Score = 0,
             Tool = "tool",
-            Data = new Dictionary<string, JsonElement>()
+            Hard = true,
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
-            Hard = true,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -797,11 +797,11 @@ public class EvidenceTest : TestBase
             Family = "family",
             Score = 0,
             Tool = "tool",
-            Data = new Dictionary<string, JsonElement>()
+            Hard = true,
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
-            Hard = true,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -816,26 +816,26 @@ public class EvidenceTest : TestBase
         string expectedFamily = "family";
         double expectedScore = 0;
         string expectedTool = "tool";
-        Dictionary<string, JsonElement> expectedData = new()
+        bool expectedHard = true;
+        Dictionary<string, JsonElement> expectedMetadata = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
         };
-        bool expectedHard = true;
 
         Assert.Equal(expectedCode, deserialized.Code);
         Assert.Equal(expectedDetail, deserialized.Detail);
         Assert.Equal(expectedFamily, deserialized.Family);
         Assert.Equal(expectedScore, deserialized.Score);
         Assert.Equal(expectedTool, deserialized.Tool);
-        Assert.NotNull(deserialized.Data);
-        Assert.Equal(expectedData.Count, deserialized.Data.Count);
-        foreach (var item in expectedData)
-        {
-            Assert.True(deserialized.Data.TryGetValue(item.Key, out var value));
-
-            Assert.True(JsonElement.DeepEquals(value, deserialized.Data[item.Key]));
-        }
         Assert.Equal(expectedHard, deserialized.Hard);
+        Assert.NotNull(deserialized.Metadata);
+        Assert.Equal(expectedMetadata.Count, deserialized.Metadata.Count);
+        foreach (var item in expectedMetadata)
+        {
+            Assert.True(deserialized.Metadata.TryGetValue(item.Key, out var value));
+
+            Assert.True(JsonElement.DeepEquals(value, deserialized.Metadata[item.Key]));
+        }
     }
 
     [Fact]
@@ -848,11 +848,11 @@ public class EvidenceTest : TestBase
             Family = "family",
             Score = 0,
             Tool = "tool",
-            Data = new Dictionary<string, JsonElement>()
+            Hard = true,
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
-            Hard = true,
         };
 
         model.Validate();
@@ -870,10 +870,10 @@ public class EvidenceTest : TestBase
             Tool = "tool",
         };
 
-        Assert.Null(model.Data);
-        Assert.False(model.RawData.ContainsKey("data"));
         Assert.Null(model.Hard);
         Assert.False(model.RawData.ContainsKey("hard"));
+        Assert.Null(model.Metadata);
+        Assert.False(model.RawData.ContainsKey("metadata"));
     }
 
     [Fact]
@@ -903,14 +903,14 @@ public class EvidenceTest : TestBase
             Tool = "tool",
 
             // Null should be interpreted as omitted for these properties
-            Data = null,
             Hard = null,
+            Metadata = null,
         };
 
-        Assert.Null(model.Data);
-        Assert.False(model.RawData.ContainsKey("data"));
         Assert.Null(model.Hard);
         Assert.False(model.RawData.ContainsKey("hard"));
+        Assert.Null(model.Metadata);
+        Assert.False(model.RawData.ContainsKey("metadata"));
     }
 
     [Fact]
@@ -925,8 +925,8 @@ public class EvidenceTest : TestBase
             Tool = "tool",
 
             // Null should be interpreted as omitted for these properties
-            Data = null,
             Hard = null,
+            Metadata = null,
         };
 
         model.Validate();
@@ -942,11 +942,11 @@ public class EvidenceTest : TestBase
             Family = "family",
             Score = 0,
             Tool = "tool",
-            Data = new Dictionary<string, JsonElement>()
+            Hard = true,
+            Metadata = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
             },
-            Hard = true,
         };
 
         Evidence copied = new(model);

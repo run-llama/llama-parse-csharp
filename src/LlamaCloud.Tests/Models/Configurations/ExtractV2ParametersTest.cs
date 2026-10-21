@@ -25,6 +25,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -54,6 +55,7 @@ public class ExtractV2ParametersTest : TestBase
             },
         };
         JsonElement expectedProductType = JsonSerializer.SerializeToElement("extract_v2");
+        bool expectedAdvancedCitations = false;
         bool expectedCiteSources = true;
         bool expectedConfidenceScores = true;
         bool expectedDisableCache = true;
@@ -78,6 +80,7 @@ public class ExtractV2ParametersTest : TestBase
             Assert.Equal(value, model.DataSchema[item.Key]);
         }
         Assert.True(JsonElement.DeepEquals(expectedProductType, model.ProductType));
+        Assert.Equal(expectedAdvancedCitations, model.AdvancedCitations);
         Assert.Equal(expectedCiteSources, model.CiteSources);
         Assert.Equal(expectedConfidenceScores, model.ConfidenceScores);
         Assert.Equal(expectedDisableCache, model.DisableCache);
@@ -115,6 +118,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -157,6 +161,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -193,6 +198,7 @@ public class ExtractV2ParametersTest : TestBase
             },
         };
         JsonElement expectedProductType = JsonSerializer.SerializeToElement("extract_v2");
+        bool expectedAdvancedCitations = false;
         bool expectedCiteSources = true;
         bool expectedConfidenceScores = true;
         bool expectedDisableCache = true;
@@ -217,6 +223,7 @@ public class ExtractV2ParametersTest : TestBase
             Assert.Equal(value, deserialized.DataSchema[item.Key]);
         }
         Assert.True(JsonElement.DeepEquals(expectedProductType, deserialized.ProductType));
+        Assert.Equal(expectedAdvancedCitations, deserialized.AdvancedCitations);
         Assert.Equal(expectedCiteSources, deserialized.CiteSources);
         Assert.Equal(expectedConfidenceScores, deserialized.ConfidenceScores);
         Assert.Equal(expectedDisableCache, deserialized.DisableCache);
@@ -254,6 +261,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -299,6 +307,8 @@ public class ExtractV2ParametersTest : TestBase
             TargetPages = "1,3,5-7",
         };
 
+        Assert.Null(model.AdvancedCitations);
+        Assert.False(model.RawData.ContainsKey("advanced_citations"));
         Assert.Null(model.CiteSources);
         Assert.False(model.RawData.ContainsKey("cite_sources"));
         Assert.Null(model.ConfidenceScores);
@@ -370,6 +380,7 @@ public class ExtractV2ParametersTest : TestBase
             TargetPages = "1,3,5-7",
 
             // Null should be interpreted as omitted for these properties
+            AdvancedCitations = null,
             CiteSources = null,
             ConfidenceScores = null,
             DisableCache = null,
@@ -379,6 +390,8 @@ public class ExtractV2ParametersTest : TestBase
             Version = null,
         };
 
+        Assert.Null(model.AdvancedCitations);
+        Assert.False(model.RawData.ContainsKey("advanced_citations"));
         Assert.Null(model.CiteSources);
         Assert.False(model.RawData.ContainsKey("cite_sources"));
         Assert.Null(model.ConfidenceScores);
@@ -421,6 +434,7 @@ public class ExtractV2ParametersTest : TestBase
             TargetPages = "1,3,5-7",
 
             // Null should be interpreted as omitted for these properties
+            AdvancedCitations = null,
             CiteSources = null,
             ConfidenceScores = null,
             DisableCache = null,
@@ -450,6 +464,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -490,6 +505,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -519,6 +535,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -566,6 +583,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
@@ -602,6 +620,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            AdvancedCitations = false,
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,

@@ -179,7 +179,7 @@ public record class FormSectionItem : ModelBase
                 formField: (x) => x.ID,
                 formSection: (x) => x.ID,
                 formTable: (x) => x.ID,
-                text: (_) => null
+                formText: (_) => null
             );
         }
     }
@@ -192,7 +192,7 @@ public record class FormSectionItem : ModelBase
                 formField: (x) => x.Label,
                 formSection: (x) => x.Label,
                 formTable: (x) => x.Label,
-                text: (_) => null
+                formText: (_) => null
             );
         }
     }
@@ -215,7 +215,7 @@ public record class FormSectionItem : ModelBase
         this._element = element;
     }
 
-    public FormSectionItem(FormSectionItemText value, JsonElement? element = null)
+    public FormSectionItem(FormText value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
@@ -291,22 +291,22 @@ public record class FormSectionItem : ModelBase
 
     /// <summary>
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
-    /// type <see cref="FormSectionItemText"/>.
+    /// type <see cref="FormText"/>.
     ///
     /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
-    /// if (instance.TryPickText(out var value)) {
-    ///     // `value` is of type `FormSectionItemText`
+    /// if (instance.TryPickFormText(out var value)) {
+    ///     // `value` is of type `FormText`
     ///     Console.WriteLine(value);
     /// }
     /// </code>
     /// </example>
     /// </summary>
-    public bool TryPickText([NotNullWhen(true)] out FormSectionItemText? value)
+    public bool TryPickFormText([NotNullWhen(true)] out FormText? value)
     {
-        value = this.Value as FormSectionItemText;
+        value = this.Value as FormText;
         return value != null;
     }
 
@@ -327,7 +327,7 @@ public record class FormSectionItem : ModelBase
     ///     (FormField value) =&gt; {...},
     ///     (FormSection value) =&gt; {...},
     ///     (FormTable value) =&gt; {...},
-    ///     (FormSectionItemText value) =&gt; {...}
+    ///     (FormText value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -336,7 +336,7 @@ public record class FormSectionItem : ModelBase
         System::Action<FormField> formField,
         System::Action<FormSection> formSection,
         System::Action<FormTable> formTable,
-        System::Action<FormSectionItemText> text
+        System::Action<FormText> formText
     )
     {
         switch (this.Value)
@@ -350,8 +350,8 @@ public record class FormSectionItem : ModelBase
             case FormTable value:
                 formTable(value);
                 break;
-            case FormSectionItemText value:
-                text(value);
+            case FormText value:
+                formText(value);
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
@@ -378,7 +378,7 @@ public record class FormSectionItem : ModelBase
     ///     (FormField value) =&gt; {...},
     ///     (FormSection value) =&gt; {...},
     ///     (FormTable value) =&gt; {...},
-    ///     (FormSectionItemText value) =&gt; {...}
+    ///     (FormText value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -387,7 +387,7 @@ public record class FormSectionItem : ModelBase
         System::Func<FormField, T> formField,
         System::Func<FormSection, T> formSection,
         System::Func<FormTable, T> formTable,
-        System::Func<FormSectionItemText, T> text
+        System::Func<FormText, T> formText
     )
     {
         return this.Value switch
@@ -395,7 +395,7 @@ public record class FormSectionItem : ModelBase
             FormField value => formField(value),
             FormSection value => formSection(value),
             FormTable value => formTable(value),
-            FormSectionItemText value => text(value),
+            FormText value => formText(value),
             _ => throw new LlamaCloudInvalidDataException(
                 "Data did not match any variant of FormSectionItem"
             ),
@@ -408,7 +408,7 @@ public record class FormSectionItem : ModelBase
 
     public static implicit operator FormSectionItem(FormTable value) => new(value);
 
-    public static implicit operator FormSectionItem(FormSectionItemText value) => new(value);
+    public static implicit operator FormSectionItem(FormText value) => new(value);
 
     /// <summary>
     /// Validates that the instance was constructed with a known variant and that this variant is valid
@@ -432,7 +432,7 @@ public record class FormSectionItem : ModelBase
             (formField) => formField.Validate(),
             (formSection) => formSection.Validate(),
             (formTable) => formTable.Validate(),
-            (text) => text.Validate()
+            (formText) => formText.Validate()
         );
     }
 
@@ -459,7 +459,7 @@ public record class FormSectionItem : ModelBase
             FormField _ => 0,
             FormSection _ => 1,
             FormTable _ => 2,
-            FormSectionItemText _ => 3,
+            FormText _ => 3,
             _ => -1,
         };
     }
@@ -541,10 +541,7 @@ sealed class FormSectionItemConverter : JsonConverter<FormSectionItem>
             {
                 try
                 {
-                    var deserialized = JsonSerializer.Deserialize<FormSectionItemText>(
-                        element,
-                        options
-                    );
+                    var deserialized = JsonSerializer.Deserialize<FormText>(element, options);
                     if (deserialized != null)
                     {
                         return new(deserialized, element);
@@ -571,1167 +568,6 @@ sealed class FormSectionItemConverter : JsonConverter<FormSectionItem>
     )
     {
         JsonSerializer.Serialize(writer, value.Json, options);
-    }
-}
-
-/// <summary>
-/// Printed text that is not part of a field, section heading or table: a title, an
-/// instruction, a note. With it the form JSON holds every printed word of its region.
-/// </summary>
-[JsonConverter(typeof(JsonModelConverter<FormSectionItemText, FormSectionItemTextFromRaw>))]
-public sealed record class FormSectionItemText : JsonModel
-{
-    /// <summary>
-    /// The printed text, verbatim
-    /// </summary>
-    public required string Value
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("value");
-        }
-        init { this._rawData.Set("value", value); }
-    }
-
-    /// <summary>
-    /// Bounding boxes of the text on the page, if attributed.
-    /// </summary>
-    public IReadOnlyList<BBox>? Bbox
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<ImmutableArray<BBox>>("bbox");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<BBox>?>(
-                "bbox",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <summary>
-    /// Optional grounding for a field's printed text; boolean states have no text spans.
-    /// </summary>
-    public FormSectionItemTextGrounding? Grounding
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<FormSectionItemTextGrounding>("grounding");
-        }
-        init { this._rawData.Set("grounding", value); }
-    }
-
-    /// <summary>
-    /// Form text node
-    /// </summary>
-    public ApiEnum<string, FormSectionItemTextType>? Type
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<ApiEnum<string, FormSectionItemTextType>>("type");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("type", value);
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.Value;
-        foreach (var item in this.Bbox ?? [])
-        {
-            item.Validate();
-        }
-        this.Grounding?.Validate();
-        this.Type?.Validate();
-    }
-
-    public FormSectionItemText() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemText(FormSectionItemText formSectionItemText)
-        : base(formSectionItemText) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemText(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemText(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemText FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public FormSectionItemText(string value)
-        : this()
-    {
-        this.Value = value;
-    }
-}
-
-class FormSectionItemTextFromRaw : IFromRawJson<FormSectionItemText>
-{
-    /// <inheritdoc/>
-    public FormSectionItemText FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        FormSectionItemText.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Optional grounding for a field's printed text; boolean states have no text spans.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<FormSectionItemTextGrounding, FormSectionItemTextGroundingFromRaw>)
-)]
-public sealed record class FormSectionItemTextGrounding : JsonModel
-{
-    /// <summary>
-    /// Supported text with half-open UTF-8 byte spans into the complete property string.
-    /// </summary>
-    public FormSectionItemTextGroundingID? ID
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<FormSectionItemTextGroundingID>("id");
-        }
-        init { this._rawData.Set("id", value); }
-    }
-
-    /// <summary>
-    /// Supported text with half-open UTF-8 byte spans into the complete property string.
-    /// </summary>
-    public FormSectionItemTextGroundingLabel? Label
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<FormSectionItemTextGroundingLabel>("label");
-        }
-        init { this._rawData.Set("label", value); }
-    }
-
-    /// <summary>
-    /// Supported text with half-open UTF-8 byte spans into the complete property string.
-    /// </summary>
-    public FormSectionItemTextGroundingValue? Value
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<FormSectionItemTextGroundingValue>("value");
-        }
-        init { this._rawData.Set("value", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.ID?.Validate();
-        this.Label?.Validate();
-        this.Value?.Validate();
-    }
-
-    public FormSectionItemTextGrounding() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGrounding(FormSectionItemTextGrounding formSectionItemTextGrounding)
-        : base(formSectionItemTextGrounding) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGrounding(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGrounding(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGrounding FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class FormSectionItemTextGroundingFromRaw : IFromRawJson<FormSectionItemTextGrounding>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGrounding FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGrounding.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Supported text with half-open UTF-8 byte spans into the complete property string.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingID,
-        FormSectionItemTextGroundingIDFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingID : JsonModel
-{
-    /// <summary>
-    /// Supported lines. Word requests include supported words; gaps are valid. Boxes
-    /// use final page coordinates and optional local rotation r.
-    /// </summary>
-    public required IReadOnlyList<FormSectionItemTextGroundingIDLine> Lines
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<
-                ImmutableArray<FormSectionItemTextGroundingIDLine>
-            >("lines");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<FormSectionItemTextGroundingIDLine>>(
-                "lines",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        foreach (var item in this.Lines)
-        {
-            item.Validate();
-        }
-    }
-
-    public FormSectionItemTextGroundingID() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingID(
-        FormSectionItemTextGroundingID formSectionItemTextGroundingID
-    )
-        : base(formSectionItemTextGroundingID) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingID(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingID(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingIDFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingID FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingID(IReadOnlyList<FormSectionItemTextGroundingIDLine> lines)
-        : this()
-    {
-        this.Lines = lines;
-    }
-}
-
-class FormSectionItemTextGroundingIDFromRaw : IFromRawJson<FormSectionItemTextGroundingID>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingID FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingID.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// One grounded line of text with an optional per-word breakdown.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingIDLine,
-        FormSectionItemTextGroundingIDLineFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingIDLine : JsonModel
-{
-    /// <summary>
-    /// Line bounding box
-    /// </summary>
-    public required BBox Bbox
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<BBox>("bbox");
-        }
-        init { this._rawData.Set("bbox", value); }
-    }
-
-    /// <summary>
-    /// `[start, end)` UTF-8 byte span in the complete source property string
-    /// </summary>
-    public required IReadOnlyList<JsonElement> Span
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<JsonElement>>(
-                "span",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <summary>
-    /// Per-word grounding within the line, when available
-    /// </summary>
-    public IReadOnlyList<FormSectionItemTextGroundingIDLineWord>? Words
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<
-                ImmutableArray<FormSectionItemTextGroundingIDLineWord>
-            >("words");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<FormSectionItemTextGroundingIDLineWord>?>(
-                "words",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Bbox.Validate();
-        _ = this.Span;
-        foreach (var item in this.Words ?? [])
-        {
-            item.Validate();
-        }
-    }
-
-    public FormSectionItemTextGroundingIDLine() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingIDLine(
-        FormSectionItemTextGroundingIDLine formSectionItemTextGroundingIDLine
-    )
-        : base(formSectionItemTextGroundingIDLine) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingIDLine(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingIDLine(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingIDLineFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingIDLine FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class FormSectionItemTextGroundingIDLineFromRaw : IFromRawJson<FormSectionItemTextGroundingIDLine>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingIDLine FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingIDLine.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// One grounded word: a `[start, end)` span in the source text and its bbox.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingIDLineWord,
-        FormSectionItemTextGroundingIDLineWordFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingIDLineWord : JsonModel
-{
-    /// <summary>
-    /// Word bounding box
-    /// </summary>
-    public required BBox Bbox
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<BBox>("bbox");
-        }
-        init { this._rawData.Set("bbox", value); }
-    }
-
-    /// <summary>
-    /// `[start, end)` UTF-8 byte span in the complete source property string
-    /// </summary>
-    public required IReadOnlyList<JsonElement> Span
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<JsonElement>>(
-                "span",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Bbox.Validate();
-        _ = this.Span;
-    }
-
-    public FormSectionItemTextGroundingIDLineWord() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingIDLineWord(
-        FormSectionItemTextGroundingIDLineWord formSectionItemTextGroundingIDLineWord
-    )
-        : base(formSectionItemTextGroundingIDLineWord) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingIDLineWord(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingIDLineWord(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingIDLineWordFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingIDLineWord FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class FormSectionItemTextGroundingIDLineWordFromRaw
-    : IFromRawJson<FormSectionItemTextGroundingIDLineWord>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingIDLineWord FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingIDLineWord.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Supported text with half-open UTF-8 byte spans into the complete property string.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingLabel,
-        FormSectionItemTextGroundingLabelFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingLabel : JsonModel
-{
-    /// <summary>
-    /// Supported lines. Word requests include supported words; gaps are valid. Boxes
-    /// use final page coordinates and optional local rotation r.
-    /// </summary>
-    public required IReadOnlyList<FormSectionItemTextGroundingLabelLine> Lines
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<
-                ImmutableArray<FormSectionItemTextGroundingLabelLine>
-            >("lines");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<FormSectionItemTextGroundingLabelLine>>(
-                "lines",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        foreach (var item in this.Lines)
-        {
-            item.Validate();
-        }
-    }
-
-    public FormSectionItemTextGroundingLabel() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingLabel(
-        FormSectionItemTextGroundingLabel formSectionItemTextGroundingLabel
-    )
-        : base(formSectionItemTextGroundingLabel) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingLabel(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingLabel(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingLabelFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingLabel FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingLabel(
-        IReadOnlyList<FormSectionItemTextGroundingLabelLine> lines
-    )
-        : this()
-    {
-        this.Lines = lines;
-    }
-}
-
-class FormSectionItemTextGroundingLabelFromRaw : IFromRawJson<FormSectionItemTextGroundingLabel>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingLabel FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingLabel.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// One grounded line of text with an optional per-word breakdown.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingLabelLine,
-        FormSectionItemTextGroundingLabelLineFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingLabelLine : JsonModel
-{
-    /// <summary>
-    /// Line bounding box
-    /// </summary>
-    public required BBox Bbox
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<BBox>("bbox");
-        }
-        init { this._rawData.Set("bbox", value); }
-    }
-
-    /// <summary>
-    /// `[start, end)` UTF-8 byte span in the complete source property string
-    /// </summary>
-    public required IReadOnlyList<JsonElement> Span
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<JsonElement>>(
-                "span",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <summary>
-    /// Per-word grounding within the line, when available
-    /// </summary>
-    public IReadOnlyList<FormSectionItemTextGroundingLabelLineWord>? Words
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<
-                ImmutableArray<FormSectionItemTextGroundingLabelLineWord>
-            >("words");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<FormSectionItemTextGroundingLabelLineWord>?>(
-                "words",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Bbox.Validate();
-        _ = this.Span;
-        foreach (var item in this.Words ?? [])
-        {
-            item.Validate();
-        }
-    }
-
-    public FormSectionItemTextGroundingLabelLine() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingLabelLine(
-        FormSectionItemTextGroundingLabelLine formSectionItemTextGroundingLabelLine
-    )
-        : base(formSectionItemTextGroundingLabelLine) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingLabelLine(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingLabelLine(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingLabelLineFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingLabelLine FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class FormSectionItemTextGroundingLabelLineFromRaw
-    : IFromRawJson<FormSectionItemTextGroundingLabelLine>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingLabelLine FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingLabelLine.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// One grounded word: a `[start, end)` span in the source text and its bbox.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingLabelLineWord,
-        FormSectionItemTextGroundingLabelLineWordFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingLabelLineWord : JsonModel
-{
-    /// <summary>
-    /// Word bounding box
-    /// </summary>
-    public required BBox Bbox
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<BBox>("bbox");
-        }
-        init { this._rawData.Set("bbox", value); }
-    }
-
-    /// <summary>
-    /// `[start, end)` UTF-8 byte span in the complete source property string
-    /// </summary>
-    public required IReadOnlyList<JsonElement> Span
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<JsonElement>>(
-                "span",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Bbox.Validate();
-        _ = this.Span;
-    }
-
-    public FormSectionItemTextGroundingLabelLineWord() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingLabelLineWord(
-        FormSectionItemTextGroundingLabelLineWord formSectionItemTextGroundingLabelLineWord
-    )
-        : base(formSectionItemTextGroundingLabelLineWord) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingLabelLineWord(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingLabelLineWord(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingLabelLineWordFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingLabelLineWord FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class FormSectionItemTextGroundingLabelLineWordFromRaw
-    : IFromRawJson<FormSectionItemTextGroundingLabelLineWord>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingLabelLineWord FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingLabelLineWord.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Supported text with half-open UTF-8 byte spans into the complete property string.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingValue,
-        FormSectionItemTextGroundingValueFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingValue : JsonModel
-{
-    /// <summary>
-    /// Supported lines. Word requests include supported words; gaps are valid. Boxes
-    /// use final page coordinates and optional local rotation r.
-    /// </summary>
-    public required IReadOnlyList<FormSectionItemTextGroundingValueLine> Lines
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<
-                ImmutableArray<FormSectionItemTextGroundingValueLine>
-            >("lines");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<FormSectionItemTextGroundingValueLine>>(
-                "lines",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        foreach (var item in this.Lines)
-        {
-            item.Validate();
-        }
-    }
-
-    public FormSectionItemTextGroundingValue() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingValue(
-        FormSectionItemTextGroundingValue formSectionItemTextGroundingValue
-    )
-        : base(formSectionItemTextGroundingValue) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingValue(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingValue(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingValueFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingValue FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingValue(
-        IReadOnlyList<FormSectionItemTextGroundingValueLine> lines
-    )
-        : this()
-    {
-        this.Lines = lines;
-    }
-}
-
-class FormSectionItemTextGroundingValueFromRaw : IFromRawJson<FormSectionItemTextGroundingValue>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingValue FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingValue.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// One grounded line of text with an optional per-word breakdown.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingValueLine,
-        FormSectionItemTextGroundingValueLineFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingValueLine : JsonModel
-{
-    /// <summary>
-    /// Line bounding box
-    /// </summary>
-    public required BBox Bbox
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<BBox>("bbox");
-        }
-        init { this._rawData.Set("bbox", value); }
-    }
-
-    /// <summary>
-    /// `[start, end)` UTF-8 byte span in the complete source property string
-    /// </summary>
-    public required IReadOnlyList<JsonElement> Span
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<JsonElement>>(
-                "span",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <summary>
-    /// Per-word grounding within the line, when available
-    /// </summary>
-    public IReadOnlyList<FormSectionItemTextGroundingValueLineWord>? Words
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<
-                ImmutableArray<FormSectionItemTextGroundingValueLineWord>
-            >("words");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<FormSectionItemTextGroundingValueLineWord>?>(
-                "words",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Bbox.Validate();
-        _ = this.Span;
-        foreach (var item in this.Words ?? [])
-        {
-            item.Validate();
-        }
-    }
-
-    public FormSectionItemTextGroundingValueLine() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingValueLine(
-        FormSectionItemTextGroundingValueLine formSectionItemTextGroundingValueLine
-    )
-        : base(formSectionItemTextGroundingValueLine) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingValueLine(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingValueLine(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingValueLineFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingValueLine FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class FormSectionItemTextGroundingValueLineFromRaw
-    : IFromRawJson<FormSectionItemTextGroundingValueLine>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingValueLine FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingValueLine.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// One grounded word: a `[start, end)` span in the source text and its bbox.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        FormSectionItemTextGroundingValueLineWord,
-        FormSectionItemTextGroundingValueLineWordFromRaw
-    >)
-)]
-public sealed record class FormSectionItemTextGroundingValueLineWord : JsonModel
-{
-    /// <summary>
-    /// Word bounding box
-    /// </summary>
-    public required BBox Bbox
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<BBox>("bbox");
-        }
-        init { this._rawData.Set("bbox", value); }
-    }
-
-    /// <summary>
-    /// `[start, end)` UTF-8 byte span in the complete source property string
-    /// </summary>
-    public required IReadOnlyList<JsonElement> Span
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<JsonElement>>(
-                "span",
-                ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Bbox.Validate();
-        _ = this.Span;
-    }
-
-    public FormSectionItemTextGroundingValueLineWord() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public FormSectionItemTextGroundingValueLineWord(
-        FormSectionItemTextGroundingValueLineWord formSectionItemTextGroundingValueLineWord
-    )
-        : base(formSectionItemTextGroundingValueLineWord) { }
-#pragma warning restore CS8618
-
-    public FormSectionItemTextGroundingValueLineWord(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    FormSectionItemTextGroundingValueLineWord(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="FormSectionItemTextGroundingValueLineWordFromRaw.FromRawUnchecked"/>
-    public static FormSectionItemTextGroundingValueLineWord FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class FormSectionItemTextGroundingValueLineWordFromRaw
-    : IFromRawJson<FormSectionItemTextGroundingValueLineWord>
-{
-    /// <inheritdoc/>
-    public FormSectionItemTextGroundingValueLineWord FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => FormSectionItemTextGroundingValueLineWord.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Form text node
-/// </summary>
-[JsonConverter(typeof(FormSectionItemTextTypeConverter))]
-public enum FormSectionItemTextType
-{
-    Text,
-}
-
-sealed class FormSectionItemTextTypeConverter : JsonConverter<FormSectionItemTextType>
-{
-    public override FormSectionItemTextType Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "text" => FormSectionItemTextType.Text,
-            _ => (FormSectionItemTextType)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        FormSectionItemTextType value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                FormSectionItemTextType.Text => "text",
-                _ => throw new LlamaCloudInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
     }
 }
 

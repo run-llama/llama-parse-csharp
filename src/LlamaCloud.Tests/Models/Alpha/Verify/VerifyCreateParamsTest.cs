@@ -14,11 +14,10 @@ public class VerifyCreateParamsTest : TestBase
     {
         var parameters = new VerifyCreateParams
         {
+            FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Configuration = new() { TargetPages = "1,3,5-7", Tier = Tier.Agentic },
-            FileID = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
-            FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             TransactionID = "tx-unique-idempotency-key",
             WebhookConfigurationIds = ["whc-...", "whc-..."],
             WebhookConfigurations =
@@ -37,6 +36,7 @@ public class VerifyCreateParamsTest : TestBase
             ],
         };
 
+        string expectedFileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee";
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         Configuration expectedConfiguration = new()
@@ -44,8 +44,6 @@ public class VerifyCreateParamsTest : TestBase
             TargetPages = "1,3,5-7",
             Tier = Tier.Agentic,
         };
-        string expectedFileID = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee";
-        string expectedFileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee";
         string expectedTransactionID = "tx-unique-idempotency-key";
         List<string> expectedWebhookConfigurationIds = ["whc-...", "whc-..."];
         List<WebhookConfiguration> expectedWebhookConfigurations =
@@ -63,11 +61,10 @@ public class VerifyCreateParamsTest : TestBase
             },
         ];
 
+        Assert.Equal(expectedFileInput, parameters.FileInput);
         Assert.Equal(expectedOrganizationID, parameters.OrganizationID);
         Assert.Equal(expectedProjectID, parameters.ProjectID);
         Assert.Equal(expectedConfiguration, parameters.Configuration);
-        Assert.Equal(expectedFileID, parameters.FileID);
-        Assert.Equal(expectedFileInput, parameters.FileInput);
         Assert.Equal(expectedTransactionID, parameters.TransactionID);
         Assert.NotNull(parameters.WebhookConfigurationIds);
         Assert.Equal(
@@ -89,7 +86,10 @@ public class VerifyCreateParamsTest : TestBase
     [Fact]
     public void OptionalNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new VerifyCreateParams { };
+        var parameters = new VerifyCreateParams
+        {
+            FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+        };
 
         Assert.Null(parameters.OrganizationID);
         Assert.False(parameters.RawQueryData.ContainsKey("organization_id"));
@@ -97,10 +97,6 @@ public class VerifyCreateParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Configuration);
         Assert.False(parameters.RawBodyData.ContainsKey("configuration"));
-        Assert.Null(parameters.FileID);
-        Assert.False(parameters.RawBodyData.ContainsKey("file_id"));
-        Assert.Null(parameters.FileInput);
-        Assert.False(parameters.RawBodyData.ContainsKey("file_input"));
         Assert.Null(parameters.TransactionID);
         Assert.False(parameters.RawBodyData.ContainsKey("transaction_id"));
         Assert.Null(parameters.WebhookConfigurationIds);
@@ -114,11 +110,11 @@ public class VerifyCreateParamsTest : TestBase
     {
         var parameters = new VerifyCreateParams
         {
+            FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+
             OrganizationID = null,
             ProjectID = null,
             Configuration = null,
-            FileID = null,
-            FileInput = null,
             TransactionID = null,
             WebhookConfigurationIds = null,
             WebhookConfigurations = null,
@@ -130,10 +126,6 @@ public class VerifyCreateParamsTest : TestBase
         Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
         Assert.Null(parameters.Configuration);
         Assert.True(parameters.RawBodyData.ContainsKey("configuration"));
-        Assert.Null(parameters.FileID);
-        Assert.True(parameters.RawBodyData.ContainsKey("file_id"));
-        Assert.Null(parameters.FileInput);
-        Assert.True(parameters.RawBodyData.ContainsKey("file_input"));
         Assert.Null(parameters.TransactionID);
         Assert.True(parameters.RawBodyData.ContainsKey("transaction_id"));
         Assert.Null(parameters.WebhookConfigurationIds);
@@ -147,6 +139,7 @@ public class VerifyCreateParamsTest : TestBase
     {
         VerifyCreateParams parameters = new()
         {
+            FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
@@ -168,11 +161,10 @@ public class VerifyCreateParamsTest : TestBase
     {
         var parameters = new VerifyCreateParams
         {
+            FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Configuration = new() { TargetPages = "1,3,5-7", Tier = Tier.Agentic },
-            FileID = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
-            FileInput = "dfl-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             TransactionID = "tx-unique-idempotency-key",
             WebhookConfigurationIds = ["whc-...", "whc-..."],
             WebhookConfigurations =

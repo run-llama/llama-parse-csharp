@@ -447,6 +447,7 @@ public class ConfigurationResponseParametersTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
@@ -768,6 +769,7 @@ public class ConfigurationResponseParametersTest : TestBase
                         )
                     },
                 },
+                AdvancedCitations = false,
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,

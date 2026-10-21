@@ -1622,9 +1622,7 @@ public class ParsingGetResponseTest : TestBase
                 }
             },
         };
-        Parsing::ParsingGetResponseText expectedText = new(
-            [new() { PageNumber = 0, Text = "text" }]
-        );
+        Parsing::Text expectedText = new([new() { PageNumber = 0, Text = "text" }]);
         string expectedTextFull = "text_full";
 
         Assert.Equal(expectedJob, model.Job);
@@ -4104,9 +4102,7 @@ public class ParsingGetResponseTest : TestBase
                 }
             },
         };
-        Parsing::ParsingGetResponseText expectedText = new(
-            [new() { PageNumber = 0, Text = "text" }]
-        );
+        Parsing::Text expectedText = new([new() { PageNumber = 0, Text = "text" }]);
         string expectedTextFull = "text_full";
 
         Assert.Equal(expectedJob, deserialized.Job);
@@ -24444,20 +24440,14 @@ public class ResultContentMetadataItemTest : TestBase
     }
 }
 
-public class ParsingGetResponseTextTest : TestBase
+public class TextTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Parsing::ParsingGetResponseText
-        {
-            Pages = [new() { PageNumber = 0, Text = "text" }],
-        };
+        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
 
-        List<Parsing::ParsingGetResponseTextPage> expectedPages =
-        [
-            new() { PageNumber = 0, Text = "text" },
-        ];
+        List<Parsing::TextPage> expectedPages = [new() { PageNumber = 0, Text = "text" }];
 
         Assert.Equal(expectedPages.Count, model.Pages.Count);
         for (int i = 0; i < expectedPages.Count; i++)
@@ -24469,13 +24459,10 @@ public class ParsingGetResponseTextTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Parsing::ParsingGetResponseText
-        {
-            Pages = [new() { PageNumber = 0, Text = "text" }],
-        };
+        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseText>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::Text>(
             json,
             ModelBase.SerializerOptions
         );
@@ -24486,22 +24473,16 @@ public class ParsingGetResponseTextTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Parsing::ParsingGetResponseText
-        {
-            Pages = [new() { PageNumber = 0, Text = "text" }],
-        };
+        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseText>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::Text>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        List<Parsing::ParsingGetResponseTextPage> expectedPages =
-        [
-            new() { PageNumber = 0, Text = "text" },
-        ];
+        List<Parsing::TextPage> expectedPages = [new() { PageNumber = 0, Text = "text" }];
 
         Assert.Equal(expectedPages.Count, deserialized.Pages.Count);
         for (int i = 0; i < expectedPages.Count; i++)
@@ -24513,10 +24494,7 @@ public class ParsingGetResponseTextTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Parsing::ParsingGetResponseText
-        {
-            Pages = [new() { PageNumber = 0, Text = "text" }],
-        };
+        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
 
         model.Validate();
     }
@@ -24524,23 +24502,20 @@ public class ParsingGetResponseTextTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Parsing::ParsingGetResponseText
-        {
-            Pages = [new() { PageNumber = 0, Text = "text" }],
-        };
+        var model = new Parsing::Text { Pages = [new() { PageNumber = 0, Text = "text" }] };
 
-        Parsing::ParsingGetResponseText copied = new(model);
+        Parsing::Text copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class ParsingGetResponseTextPageTest : TestBase
+public class TextPageTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
 
         long expectedPageNumber = 0;
         string expectedText = "text";
@@ -24552,10 +24527,10 @@ public class ParsingGetResponseTextPageTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseTextPage>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::TextPage>(
             json,
             ModelBase.SerializerOptions
         );
@@ -24566,10 +24541,10 @@ public class ParsingGetResponseTextPageTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Parsing::ParsingGetResponseTextPage>(
+        var deserialized = JsonSerializer.Deserialize<Parsing::TextPage>(
             element,
             ModelBase.SerializerOptions
         );
@@ -24585,7 +24560,7 @@ public class ParsingGetResponseTextPageTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
 
         model.Validate();
     }
@@ -24593,9 +24568,9 @@ public class ParsingGetResponseTextPageTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Parsing::ParsingGetResponseTextPage { PageNumber = 0, Text = "text" };
+        var model = new Parsing::TextPage { PageNumber = 0, Text = "text" };
 
-        Parsing::ParsingGetResponseTextPage copied = new(model);
+        Parsing::TextPage copied = new(model);
 
         Assert.Equal(model, copied);
     }

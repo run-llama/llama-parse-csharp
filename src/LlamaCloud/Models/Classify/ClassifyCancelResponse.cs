@@ -201,6 +201,23 @@ public sealed record class ClassifyCancelResponse : JsonModel
         init { this._rawData.Set("updated_at", value); }
     }
 
+    /// <summary>
+    /// Usage recorded against a classify job.
+    ///
+    /// <para>Classify bills through the parse job it runs on a file input, so that
+    /// parse job's credits are the whole total. A job run on a parse job you created
+    /// bills nothing of its own: ``parse_credits`` is null and ``credits`` is 0.</para>
+    /// </summary>
+    public ClassifyCancelResponseUsage? Usage
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ClassifyCancelResponseUsage>("usage");
+        }
+        init { this._rawData.Set("usage", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -218,6 +235,7 @@ public sealed record class ClassifyCancelResponse : JsonModel
         this.Result?.Validate();
         _ = this.TransactionID;
         _ = this.UpdatedAt;
+        this.Usage?.Validate();
     }
 
     public ClassifyCancelResponse() { }
@@ -363,4 +381,87 @@ sealed class ClassifyCancelResponseStatusConverter : JsonConverter<ClassifyCance
             options
         );
     }
+}
+
+/// <summary>
+/// Usage recorded against a classify job.
+///
+/// <para>Classify bills through the parse job it runs on a file input, so that parse
+/// job's credits are the whole total. A job run on a parse job you created bills
+/// nothing of its own: ``parse_credits`` is null and ``credits`` is 0.</para>
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<ClassifyCancelResponseUsage, ClassifyCancelResponseUsageFromRaw>)
+)]
+public sealed record class ClassifyCancelResponseUsage : JsonModel
+{
+    /// <summary>
+    /// Total credits billed against this job. Null until billing has recorded it.
+    /// </summary>
+    public double? Credits
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<double>("credits");
+        }
+        init { this._rawData.Set("credits", value); }
+    }
+
+    /// <summary>
+    /// Credits billed against the parse job Classify ran on the input file
+    /// </summary>
+    public double? ParseCredits
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<double>("parse_credits");
+        }
+        init { this._rawData.Set("parse_credits", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Credits;
+        _ = this.ParseCredits;
+    }
+
+    public ClassifyCancelResponseUsage() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ClassifyCancelResponseUsage(ClassifyCancelResponseUsage classifyCancelResponseUsage)
+        : base(classifyCancelResponseUsage) { }
+#pragma warning restore CS8618
+
+    public ClassifyCancelResponseUsage(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ClassifyCancelResponseUsage(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ClassifyCancelResponseUsageFromRaw.FromRawUnchecked"/>
+    public static ClassifyCancelResponseUsage FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ClassifyCancelResponseUsageFromRaw : IFromRawJson<ClassifyCancelResponseUsage>
+{
+    /// <inheritdoc/>
+    public ClassifyCancelResponseUsage FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => ClassifyCancelResponseUsage.FromRawUnchecked(rawData);
 }

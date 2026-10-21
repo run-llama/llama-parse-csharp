@@ -52,6 +52,28 @@ public sealed record class ExtractV2Parameters : JsonModel
     }
 
     /// <summary>
+    /// More precise citation bounding boxes. Set to false for faster extraction with
+    /// less precise boxes.
+    /// </summary>
+    public bool? AdvancedCitations
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("advanced_citations");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("advanced_citations", value);
+        }
+    }
+
+    /// <summary>
     /// Include citations in results. Returned under `extract_metadata` (auto-included
     /// when set). Text-level on `turbo` (no bounding boxes).
     /// </summary>
@@ -320,6 +342,7 @@ public sealed record class ExtractV2Parameters : JsonModel
         {
             throw new LlamaCloudInvalidDataException("Invalid value given for constant");
         }
+        _ = this.AdvancedCitations;
         _ = this.CiteSources;
         _ = this.ConfidenceScores;
         _ = this.DisableCache;
