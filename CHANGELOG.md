@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.10.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.9.0...v1.10.0) (2026-10-21)
+
+
+### Features
+
+* **classify:** add expand=usage to GET /api/v2/classify/{job_id} ([#29577](https://github.com/run-llama/llama-parse-csharp/issues/29577)) ([f98a24f](https://github.com/run-llama/llama-parse-csharp/commit/f98a24fa27d8205bf1f49cc7facf8585fbb0b3dd))
+
+
+### Bug Fixes
+
+* **parse:** apply watermark and wrapped-word rules to Lite fallbacks ([#30128](https://github.com/run-llama/llama-parse-csharp/issues/30128)) ([8edd798](https://github.com/run-llama/llama-parse-csharp/commit/8edd798f17910b5fd9975c573d90643cc23d87f2))
+* **sdk:** one FormText model for the forms text node (PROD-10339) ([02562bf](https://github.com/run-llama/llama-parse-csharp/commit/02562bf3527e11c05ede7cad78b58c60ecf91636))
+* **split:** refuse to delete a non-terminal job ([#29785](https://github.com/run-llama/llama-parse-csharp/issues/29785)) ([cf79740](https://github.com/run-llama/llama-parse-csharp/commit/cf7974095bc4ddfb5442ff93b7f7c52679fd72a3))
+
 ## [1.9.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.8.0...v1.9.0) (2026-10-09)
 
 
