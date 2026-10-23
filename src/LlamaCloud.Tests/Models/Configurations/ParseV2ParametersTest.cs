@@ -2368,6 +2368,7 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Version.Latest)]
+    [InlineData(Version.V2026_10_20)]
     [InlineData(Version.V2026_10_16)]
     [InlineData(Version.V2026_09_28)]
     [InlineData(Version.V2026_06_15)]
@@ -2392,6 +2393,7 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Version.Latest)]
+    [InlineData(Version.V2026_10_20)]
     [InlineData(Version.V2026_10_16)]
     [InlineData(Version.V2026_09_28)]
     [InlineData(Version.V2026_06_15)]
@@ -8799,6 +8801,7 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
+    [InlineData(ParsingConfVersion.V2026_10_20)]
     [InlineData(ParsingConfVersion.V2026_10_16)]
     [InlineData(ParsingConfVersion.V2026_09_28)]
     [InlineData(ParsingConfVersion.V2026_06_15)]
@@ -8823,6 +8826,7 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
+    [InlineData(ParsingConfVersion.V2026_10_20)]
     [InlineData(ParsingConfVersion.V2026_10_16)]
     [InlineData(ParsingConfVersion.V2026_09_28)]
     [InlineData(ParsingConfVersion.V2026_06_15)]
