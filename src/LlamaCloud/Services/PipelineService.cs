@@ -143,7 +143,7 @@ public sealed class PipelineService : IPipelineService
 
     /// <inheritdoc/>
     [Obsolete("deprecated")]
-    public async Task<List<Pipeline>> List(
+    public async Task<List<PipelineListResponse>> List(
         PipelineListParams? parameters = null,
         CancellationToken cancellationToken = default
     )
@@ -434,7 +434,7 @@ public sealed class PipelineServiceWithRawResponse : IPipelineServiceWithRawResp
 
     /// <inheritdoc/>
     [Obsolete("deprecated")]
-    public async Task<HttpResponse<List<Pipeline>>> List(
+    public async Task<HttpResponse<List<PipelineListResponse>>> List(
         PipelineListParams? parameters = null,
         CancellationToken cancellationToken = default
     )
@@ -452,7 +452,7 @@ public sealed class PipelineServiceWithRawResponse : IPipelineServiceWithRawResp
             async (token) =>
             {
                 var pipelines = await response
-                    .Deserialize<List<Pipeline>>(token)
+                    .Deserialize<List<PipelineListResponse>>(token)
                     .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {

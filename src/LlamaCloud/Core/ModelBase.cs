@@ -267,6 +267,15 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Pipelines::ModelType>(),
             new ApiEnumConverter<string, Pipelines::VertexAIEmbeddingConfigType>(),
             new ApiEnumConverter<string, Pipelines::EmbedMode>(),
+            new ApiEnumConverter<
+                string,
+                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+            >(),
+            new ApiEnumConverter<
+                string,
+                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
+            >(),
+            new ApiEnumConverter<string, Pipelines::PipelineListResponseStatus>(),
             new ApiEnumConverter<string, Pipelines::PipelineListPaginatedResponsePipelineType>(),
             new ApiEnumConverter<string, Pipelines::PipelineListPaginatedResponseStatus>(),
             new ApiEnumConverter<string, Pipelines::PipelineType>(),
