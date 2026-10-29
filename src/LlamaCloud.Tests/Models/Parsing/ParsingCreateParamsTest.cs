@@ -1296,7 +1296,7 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::Version.Latest)]
-    [InlineData(Parsing::Version.V2026_10_26)]
+    [InlineData(Parsing::Version.V2026_10_28)]
     [InlineData(Parsing::Version.V2026_10_16)]
     [InlineData(Parsing::Version.V2026_09_28)]
     [InlineData(Parsing::Version.V2026_06_15)]
@@ -1321,7 +1321,7 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::Version.Latest)]
-    [InlineData(Parsing::Version.V2026_10_26)]
+    [InlineData(Parsing::Version.V2026_10_28)]
     [InlineData(Parsing::Version.V2026_10_16)]
     [InlineData(Parsing::Version.V2026_09_28)]
     [InlineData(Parsing::Version.V2026_06_15)]
@@ -7853,7 +7853,7 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_10_26)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_10_28)]
     [InlineData(Parsing::ParsingConfVersion.V2026_10_16)]
     [InlineData(Parsing::ParsingConfVersion.V2026_09_28)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
@@ -7878,7 +7878,7 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_10_26)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_10_28)]
     [InlineData(Parsing::ParsingConfVersion.V2026_10_16)]
     [InlineData(Parsing::ParsingConfVersion.V2026_09_28)]
     [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
