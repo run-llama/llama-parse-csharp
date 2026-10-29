@@ -381,8 +381,7 @@ public record class ParsingCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// Webhook endpoints for job status notifications. Multiple webhooks can be
-    /// configured for different events or services
+    /// Webhook endpoints for job notifications. Maximum 10 total, including webhook_configuration_ids.
     /// </summary>
     public IReadOnlyList<WebhookConfiguration>? WebhookConfigurations
     {
