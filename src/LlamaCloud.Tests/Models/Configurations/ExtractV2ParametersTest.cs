@@ -29,6 +29,7 @@ public class ExtractV2ParametersTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Effort.Max,
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -59,6 +60,7 @@ public class ExtractV2ParametersTest : TestBase
         bool expectedCiteSources = true;
         bool expectedConfidenceScores = true;
         bool expectedDisableCache = true;
+        ApiEnum<string, Effort> expectedEffort = Effort.Max;
         ApiEnum<string, ExtractionTarget> expectedExtractionTarget = ExtractionTarget.PerDoc;
         long expectedMaxPages = 10;
         string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
@@ -84,6 +86,7 @@ public class ExtractV2ParametersTest : TestBase
         Assert.Equal(expectedCiteSources, model.CiteSources);
         Assert.Equal(expectedConfidenceScores, model.ConfidenceScores);
         Assert.Equal(expectedDisableCache, model.DisableCache);
+        Assert.Equal(expectedEffort, model.Effort);
         Assert.Equal(expectedExtractionTarget, model.ExtractionTarget);
         Assert.Equal(expectedMaxPages, model.MaxPages);
         Assert.Equal(expectedParseConfigID, model.ParseConfigID);
@@ -122,6 +125,7 @@ public class ExtractV2ParametersTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Effort.Max,
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -165,6 +169,7 @@ public class ExtractV2ParametersTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Effort.Max,
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -202,6 +207,7 @@ public class ExtractV2ParametersTest : TestBase
         bool expectedCiteSources = true;
         bool expectedConfidenceScores = true;
         bool expectedDisableCache = true;
+        ApiEnum<string, Effort> expectedEffort = Effort.Max;
         ApiEnum<string, ExtractionTarget> expectedExtractionTarget = ExtractionTarget.PerDoc;
         long expectedMaxPages = 10;
         string expectedParseConfigID = "cfg-11111111-2222-3333-4444-555555555555";
@@ -227,6 +233,7 @@ public class ExtractV2ParametersTest : TestBase
         Assert.Equal(expectedCiteSources, deserialized.CiteSources);
         Assert.Equal(expectedConfidenceScores, deserialized.ConfidenceScores);
         Assert.Equal(expectedDisableCache, deserialized.DisableCache);
+        Assert.Equal(expectedEffort, deserialized.Effort);
         Assert.Equal(expectedExtractionTarget, deserialized.ExtractionTarget);
         Assert.Equal(expectedMaxPages, deserialized.MaxPages);
         Assert.Equal(expectedParseConfigID, deserialized.ParseConfigID);
@@ -265,6 +272,7 @@ public class ExtractV2ParametersTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Effort.Max,
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -298,6 +306,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            Effort = Effort.Max,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = ParseTier.Fast,
@@ -342,6 +351,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            Effort = Effort.Max,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = ParseTier.Fast,
@@ -371,6 +381,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            Effort = Effort.Max,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = ParseTier.Fast,
@@ -425,6 +436,7 @@ public class ExtractV2ParametersTest : TestBase
                     )
                 },
             },
+            Effort = Effort.Max,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
             ParseTier = ParseTier.Fast,
@@ -474,6 +486,8 @@ public class ExtractV2ParametersTest : TestBase
             Version = "latest",
         };
 
+        Assert.Null(model.Effort);
+        Assert.False(model.RawData.ContainsKey("effort"));
         Assert.Null(model.MaxPages);
         Assert.False(model.RawData.ContainsKey("max_pages"));
         Assert.Null(model.ParseConfigID);
@@ -544,6 +558,7 @@ public class ExtractV2ParametersTest : TestBase
             Tier = ExtractV2ParametersTier.CostEffective,
             Version = "latest",
 
+            Effort = null,
             MaxPages = null,
             ParseConfigID = null,
             ParseTier = null,
@@ -552,6 +567,8 @@ public class ExtractV2ParametersTest : TestBase
             TargetPages = null,
         };
 
+        Assert.Null(model.Effort);
+        Assert.True(model.RawData.ContainsKey("effort"));
         Assert.Null(model.MaxPages);
         Assert.True(model.RawData.ContainsKey("max_pages"));
         Assert.Null(model.ParseConfigID);
@@ -592,6 +609,7 @@ public class ExtractV2ParametersTest : TestBase
             Tier = ExtractV2ParametersTier.CostEffective,
             Version = "latest",
 
+            Effort = null,
             MaxPages = null,
             ParseConfigID = null,
             ParseTier = null,
@@ -624,6 +642,7 @@ public class ExtractV2ParametersTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Effort.Max,
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -749,6 +768,62 @@ public class DataSchemaTest : TestBase
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<DataSchema>(
             element,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EffortTest : TestBase
+{
+    [Theory]
+    [InlineData(Effort.Max)]
+    public void Validation_Works(Effort rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Effort> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Effort>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Effort.Max)]
+    public void SerializationRoundtrip_Works(Effort rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Effort> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Effort>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Effort>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Effort>>(
+            json,
             ModelBase.SerializerOptions
         );
 

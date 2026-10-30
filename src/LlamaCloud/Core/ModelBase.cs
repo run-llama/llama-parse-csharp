@@ -115,6 +115,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Parsing::ProcessingOptionsSpecializedChartParsing>(),
             new ApiEnumConverter<string, Parsing::WebhookOutputFormat>(),
             new ApiEnumConverter<string, Parsing::Status>(),
+            new ApiEnumConverter<string, Extract::Effort>(),
             new ApiEnumConverter<string, Extract::ExtractionTarget>(),
             new ApiEnumConverter<string, Extract::ParseTier>(),
             new ApiEnumConverter<string, Extract::Tier>(),
@@ -173,6 +174,7 @@ public abstract record class ModelBase
                 Configurations::ConfigurationResponseParametersSpreadsheetV1Tier
             >(),
             new ApiEnumConverter<string, Configurations::ConfigurationResponseProductType>(),
+            new ApiEnumConverter<string, Configurations::Effort>(),
             new ApiEnumConverter<string, Configurations::ExtractionTarget>(),
             new ApiEnumConverter<string, Configurations::ParseTier>(),
             new ApiEnumConverter<string, Configurations::ExtractV2ParametersTier>(),
