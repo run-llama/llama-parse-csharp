@@ -1311,8 +1311,9 @@ sealed class ManagedOpenAIEmbeddingTypeConverter : JsonConverter<ManagedOpenAIEm
 public sealed record class ConfigHash : JsonModel
 {
     /// <summary>
-    /// Hash of the embedding config.
+    /// Hash of the embedding config. Null in API responses.
     /// </summary>
+    [System::Obsolete("deprecated")]
     public string? EmbeddingConfigHash
     {
         get
@@ -1324,8 +1325,9 @@ public sealed record class ConfigHash : JsonModel
     }
 
     /// <summary>
-    /// Hash of the llama parse parameters.
+    /// Hash of the llama parse parameters. Null in API responses.
     /// </summary>
+    [System::Obsolete("deprecated")]
     public string? ParsingConfigHash
     {
         get

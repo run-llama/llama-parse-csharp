@@ -93,10 +93,18 @@ public interface IPipelineService
     /// <summary>
     /// Search for pipelines by name, type, or project.
     ///
+    /// <para>Legacy pipelines with unavailable embedding configurations return
+    /// `embedding_config: null`.</para>
+    ///
+    /// <para>Unavailable linked model configurations return `embedding_model_config:
+    /// null`, retaining their IDs. A stored-config fallback in this list does not
+    /// repair the pipeline; detail reads and retrieval still require valid
+    /// configuration.</para>
+    ///
     /// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
     /// </summary>
     [Obsolete("deprecated")]
-    Task<List<Pipeline>> List(
+    Task<List<PipelineListItem>> List(
         PipelineListParams? parameters = null,
         CancellationToken cancellationToken = default
     );
@@ -249,7 +257,7 @@ public interface IPipelineServiceWithRawResponse
     /// same as <see cref="IPipelineService.List(PipelineListParams?, CancellationToken)"/>.
     /// </summary>
     [Obsolete("deprecated")]
-    Task<HttpResponse<List<Pipeline>>> List(
+    Task<HttpResponse<List<PipelineListItem>>> List(
         PipelineListParams? parameters = null,
         CancellationToken cancellationToken = default
     );

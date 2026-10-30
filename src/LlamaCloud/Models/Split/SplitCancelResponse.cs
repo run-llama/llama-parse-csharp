@@ -117,6 +117,19 @@ public sealed record class SplitCancelResponse : JsonModel
     }
 
     /// <summary>
+    /// Split version used for this job.
+    /// </summary>
+    public required string Version
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("version");
+        }
+        init { this._rawData.Set("version", value); }
+    }
+
+    /// <summary>
     /// Split configuration ID used for this job.
     /// </summary>
     public string? ConfigurationID
@@ -269,6 +282,7 @@ public sealed record class SplitCancelResponse : JsonModel
         _ = this.ProjectID;
         _ = this.Status;
         _ = this.UserID;
+        _ = this.Version;
         _ = this.ConfigurationID;
         _ = this.CreatedAt;
         _ = this.ErrorMessage;
