@@ -104,7 +104,7 @@ public interface IPipelineService
     /// <para>Deprecated: use `GET /api/v2/pipelines`, which is paginated.</para>
     /// </summary>
     [Obsolete("deprecated")]
-    Task<List<PipelineListResponse>> List(
+    Task<List<PipelineListItem>> List(
         PipelineListParams? parameters = null,
         CancellationToken cancellationToken = default
     );
@@ -257,7 +257,7 @@ public interface IPipelineServiceWithRawResponse
     /// same as <see cref="IPipelineService.List(PipelineListParams?, CancellationToken)"/>.
     /// </summary>
     [Obsolete("deprecated")]
-    Task<HttpResponse<List<PipelineListResponse>>> List(
+    Task<HttpResponse<List<PipelineListItem>>> List(
         PipelineListParams? parameters = null,
         CancellationToken cancellationToken = default
     );

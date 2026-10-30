@@ -13,8 +13,8 @@ namespace LlamaCloud.Models.Pipelines;
 /// <summary>
 /// A pipeline returned by the legacy list endpoint.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<PipelineListResponse, PipelineListResponseFromRaw>))]
-public sealed record class PipelineListResponse : JsonModel
+[JsonConverter(typeof(JsonModelConverter<PipelineListItem, PipelineListItemFromRaw>))]
+public sealed record class PipelineListItem : JsonModel
 {
     /// <summary>
     /// Unique identifier
@@ -32,12 +32,12 @@ public sealed record class PipelineListResponse : JsonModel
     /// <summary>
     /// Embedding configuration, or null when unavailable for a legacy pipeline.
     /// </summary>
-    public required PipelineListResponseEmbeddingConfig? EmbeddingConfig
+    public required PipelineListItemEmbeddingConfig? EmbeddingConfig
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<PipelineListResponseEmbeddingConfig>(
+            return this._rawData.GetNullableClass<PipelineListItemEmbeddingConfig>(
                 "embedding_config"
             );
         }
@@ -67,12 +67,12 @@ public sealed record class PipelineListResponse : JsonModel
     /// <summary>
     /// Hashes for the configuration of a pipeline.
     /// </summary>
-    public PipelineListResponseConfigHash? ConfigHash
+    public PipelineListItemConfigHash? ConfigHash
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<PipelineListResponseConfigHash>("config_hash");
+            return this._rawData.GetNullableClass<PipelineListItemConfigHash>("config_hash");
         }
         init { this._rawData.Set("config_hash", value); }
     }
@@ -106,12 +106,12 @@ public sealed record class PipelineListResponse : JsonModel
     /// <summary>
     /// Schema for an embedding model config.
     /// </summary>
-    public PipelineListResponseEmbeddingModelConfig? EmbeddingModelConfig
+    public PipelineListItemEmbeddingModelConfig? EmbeddingModelConfig
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<PipelineListResponseEmbeddingModelConfig>(
+            return this._rawData.GetNullableClass<PipelineListItemEmbeddingModelConfig>(
                 "embedding_model_config"
             );
         }
@@ -236,12 +236,12 @@ public sealed record class PipelineListResponse : JsonModel
     /// <summary>
     /// Status of the pipeline.
     /// </summary>
-    public ApiEnum<string, PipelineListResponseStatus>? Status
+    public ApiEnum<string, PipelineListItemStatus>? Status
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<ApiEnum<string, PipelineListResponseStatus>>(
+            return this._rawData.GetNullableClass<ApiEnum<string, PipelineListItemStatus>>(
                 "status"
             );
         }
@@ -251,12 +251,12 @@ public sealed record class PipelineListResponse : JsonModel
     /// <summary>
     /// Configuration for the transformation.
     /// </summary>
-    public PipelineListResponseTransformConfig? TransformConfig
+    public PipelineListItemTransformConfig? TransformConfig
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<PipelineListResponseTransformConfig>(
+            return this._rawData.GetNullableClass<PipelineListItemTransformConfig>(
                 "transform_config"
             );
         }
@@ -307,29 +307,29 @@ public sealed record class PipelineListResponse : JsonModel
         _ = this.UpdatedAt;
     }
 
-    public PipelineListResponse() { }
+    public PipelineListItem() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public PipelineListResponse(PipelineListResponse pipelineListResponse)
-        : base(pipelineListResponse) { }
+    public PipelineListItem(PipelineListItem pipelineListItem)
+        : base(pipelineListItem) { }
 #pragma warning restore CS8618
 
-    public PipelineListResponse(IReadOnlyDictionary<string, JsonElement> rawData)
+    public PipelineListItem(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    PipelineListResponse(FrozenDictionary<string, JsonElement> rawData)
+    PipelineListItem(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="PipelineListResponseFromRaw.FromRawUnchecked"/>
-    public static PipelineListResponse FromRawUnchecked(
+    /// <inheritdoc cref="PipelineListItemFromRaw.FromRawUnchecked"/>
+    public static PipelineListItem FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -337,19 +337,18 @@ public sealed record class PipelineListResponse : JsonModel
     }
 }
 
-class PipelineListResponseFromRaw : IFromRawJson<PipelineListResponse>
+class PipelineListItemFromRaw : IFromRawJson<PipelineListItem>
 {
     /// <inheritdoc/>
-    public PipelineListResponse FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => PipelineListResponse.FromRawUnchecked(rawData);
+    public PipelineListItem FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        PipelineListItem.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// Embedding configuration, or null when unavailable for a legacy pipeline.
 /// </summary>
-[JsonConverter(typeof(PipelineListResponseEmbeddingConfigConverter))]
-public record class PipelineListResponseEmbeddingConfig : ModelBase
+[JsonConverter(typeof(PipelineListItemEmbeddingConfigConverter))]
+public record class PipelineListItemEmbeddingConfig : ModelBase
 {
     public object? Value { get; } = null;
 
@@ -366,7 +365,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         }
     }
 
-    public PipelineListResponseEmbeddingConfig(
+    public PipelineListItemEmbeddingConfig(
         AzureOpenAIEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -375,7 +374,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(
+    public PipelineListItemEmbeddingConfig(
         BedrockEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -384,25 +383,19 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(
-        CohereEmbeddingConfig value,
-        JsonElement? element = null
-    )
+    public PipelineListItemEmbeddingConfig(CohereEmbeddingConfig value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(
-        GeminiEmbeddingConfig value,
-        JsonElement? element = null
-    )
+    public PipelineListItemEmbeddingConfig(GeminiEmbeddingConfig value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(
+    public PipelineListItemEmbeddingConfig(
         HuggingFaceInferenceApiEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -411,8 +404,8 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding value,
+    public PipelineListItemEmbeddingConfig(
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbedding value,
         JsonElement? element = null
     )
     {
@@ -420,16 +413,13 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(
-        OpenAIEmbeddingConfig value,
-        JsonElement? element = null
-    )
+    public PipelineListItemEmbeddingConfig(OpenAIEmbeddingConfig value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(
+    public PipelineListItemEmbeddingConfig(
         VertexAIEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -438,7 +428,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingConfig(JsonElement element)
+    public PipelineListItemEmbeddingConfig(JsonElement element)
     {
         this._element = element;
     }
@@ -552,24 +542,24 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
 
     /// <summary>
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
-    /// type <see cref="PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding"/>.
+    /// type <see cref="PipelineListItemEmbeddingConfigManagedOpenAIEmbedding"/>.
     ///
     /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
     /// if (instance.TryPickManagedOpenAIEmbedding(out var value)) {
-    ///     // `value` is of type `PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding`
+    ///     // `value` is of type `PipelineListItemEmbeddingConfigManagedOpenAIEmbedding`
     ///     Console.WriteLine(value);
     /// }
     /// </code>
     /// </example>
     /// </summary>
     public bool TryPickManagedOpenAIEmbedding(
-        [NotNullWhen(true)] out PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding? value
+        [NotNullWhen(true)] out PipelineListItemEmbeddingConfigManagedOpenAIEmbedding? value
     )
     {
-        value = this.Value as PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding;
+        value = this.Value as PipelineListItemEmbeddingConfigManagedOpenAIEmbedding;
         return value != null;
     }
 
@@ -634,7 +624,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
     ///     (CohereEmbeddingConfig value) =&gt; {...},
     ///     (GeminiEmbeddingConfig value) =&gt; {...},
     ///     (HuggingFaceInferenceApiEmbeddingConfig value) =&gt; {...},
-    ///     (PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding value) =&gt; {...},
+    ///     (PipelineListItemEmbeddingConfigManagedOpenAIEmbedding value) =&gt; {...},
     ///     (OpenAIEmbeddingConfig value) =&gt; {...},
     ///     (VertexAIEmbeddingConfig value) =&gt; {...}
     /// );
@@ -647,7 +637,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         System::Action<CohereEmbeddingConfig> cohere,
         System::Action<GeminiEmbeddingConfig> gemini,
         System::Action<HuggingFaceInferenceApiEmbeddingConfig> huggingFaceInferenceApi,
-        System::Action<PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding> managedOpenAIEmbedding,
+        System::Action<PipelineListItemEmbeddingConfigManagedOpenAIEmbedding> managedOpenAIEmbedding,
         System::Action<OpenAIEmbeddingConfig> openai,
         System::Action<VertexAIEmbeddingConfig> vertexAI
     )
@@ -669,7 +659,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
             case HuggingFaceInferenceApiEmbeddingConfig value:
                 huggingFaceInferenceApi(value);
                 break;
-            case PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding value:
+            case PipelineListItemEmbeddingConfigManagedOpenAIEmbedding value:
                 managedOpenAIEmbedding(value);
                 break;
             case OpenAIEmbeddingConfig value:
@@ -680,7 +670,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
-                    "Data did not match any variant of PipelineListResponseEmbeddingConfig"
+                    "Data did not match any variant of PipelineListItemEmbeddingConfig"
                 );
         }
     }
@@ -705,7 +695,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
     ///     (CohereEmbeddingConfig value) =&gt; {...},
     ///     (GeminiEmbeddingConfig value) =&gt; {...},
     ///     (HuggingFaceInferenceApiEmbeddingConfig value) =&gt; {...},
-    ///     (PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding value) =&gt; {...},
+    ///     (PipelineListItemEmbeddingConfigManagedOpenAIEmbedding value) =&gt; {...},
     ///     (OpenAIEmbeddingConfig value) =&gt; {...},
     ///     (VertexAIEmbeddingConfig value) =&gt; {...}
     /// );
@@ -719,7 +709,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         System::Func<GeminiEmbeddingConfig, T> gemini,
         System::Func<HuggingFaceInferenceApiEmbeddingConfig, T> huggingFaceInferenceApi,
         System::Func<
-            PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding,
+            PipelineListItemEmbeddingConfigManagedOpenAIEmbedding,
             T
         > managedOpenAIEmbedding,
         System::Func<OpenAIEmbeddingConfig, T> openai,
@@ -733,45 +723,42 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
             CohereEmbeddingConfig value => cohere(value),
             GeminiEmbeddingConfig value => gemini(value),
             HuggingFaceInferenceApiEmbeddingConfig value => huggingFaceInferenceApi(value),
-            PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding value =>
-                managedOpenAIEmbedding(value),
+            PipelineListItemEmbeddingConfigManagedOpenAIEmbedding value => managedOpenAIEmbedding(
+                value
+            ),
             OpenAIEmbeddingConfig value => openai(value),
             VertexAIEmbeddingConfig value => vertexAI(value),
             _ => throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of PipelineListResponseEmbeddingConfig"
+                "Data did not match any variant of PipelineListItemEmbeddingConfig"
             ),
         };
     }
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingConfig(
         AzureOpenAIEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
-        BedrockEmbeddingConfig value
-    ) => new(value);
+    public static implicit operator PipelineListItemEmbeddingConfig(BedrockEmbeddingConfig value) =>
+        new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
-        CohereEmbeddingConfig value
-    ) => new(value);
+    public static implicit operator PipelineListItemEmbeddingConfig(CohereEmbeddingConfig value) =>
+        new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
-        GeminiEmbeddingConfig value
-    ) => new(value);
+    public static implicit operator PipelineListItemEmbeddingConfig(GeminiEmbeddingConfig value) =>
+        new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingConfig(
         HuggingFaceInferenceApiEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding value
+    public static implicit operator PipelineListItemEmbeddingConfig(
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbedding value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
-        OpenAIEmbeddingConfig value
-    ) => new(value);
+    public static implicit operator PipelineListItemEmbeddingConfig(OpenAIEmbeddingConfig value) =>
+        new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingConfig(
         VertexAIEmbeddingConfig value
     ) => new(value);
 
@@ -790,7 +777,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         if (this.Value == null)
         {
             throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of PipelineListResponseEmbeddingConfig"
+                "Data did not match any variant of PipelineListItemEmbeddingConfig"
             );
         }
         this.Switch(
@@ -805,7 +792,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
         );
     }
 
-    public virtual bool Equals(PipelineListResponseEmbeddingConfig? other) =>
+    public virtual bool Equals(PipelineListItemEmbeddingConfig? other) =>
         other != null
         && this.VariantIndex() == other.VariantIndex()
         && JsonElement.DeepEquals(this.Json, other.Json);
@@ -830,7 +817,7 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
             CohereEmbeddingConfig _ => 2,
             GeminiEmbeddingConfig _ => 3,
             HuggingFaceInferenceApiEmbeddingConfig _ => 4,
-            PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding _ => 5,
+            PipelineListItemEmbeddingConfigManagedOpenAIEmbedding _ => 5,
             OpenAIEmbeddingConfig _ => 6,
             VertexAIEmbeddingConfig _ => 7,
             _ => -1,
@@ -838,10 +825,10 @@ public record class PipelineListResponseEmbeddingConfig : ModelBase
     }
 }
 
-sealed class PipelineListResponseEmbeddingConfigConverter
-    : JsonConverter<PipelineListResponseEmbeddingConfig?>
+sealed class PipelineListItemEmbeddingConfigConverter
+    : JsonConverter<PipelineListItemEmbeddingConfig?>
 {
-    public override PipelineListResponseEmbeddingConfig? Read(
+    public override PipelineListItemEmbeddingConfig? Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -966,7 +953,7 @@ sealed class PipelineListResponseEmbeddingConfigConverter
                 try
                 {
                     var deserialized =
-                        JsonSerializer.Deserialize<PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding>(
+                        JsonSerializer.Deserialize<PipelineListItemEmbeddingConfigManagedOpenAIEmbedding>(
                             element,
                             options
                         );
@@ -1024,14 +1011,14 @@ sealed class PipelineListResponseEmbeddingConfigConverter
             }
             default:
             {
-                return new PipelineListResponseEmbeddingConfig(element);
+                return new PipelineListItemEmbeddingConfig(element);
             }
         }
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        PipelineListResponseEmbeddingConfig? value,
+        PipelineListItemEmbeddingConfig? value,
         JsonSerializerOptions options
     )
     {
@@ -1041,21 +1028,21 @@ sealed class PipelineListResponseEmbeddingConfigConverter
 
 [JsonConverter(
     typeof(JsonModelConverter<
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding,
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingFromRaw
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbedding,
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingFromRaw
     >)
 )]
-public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding : JsonModel
+public sealed record class PipelineListItemEmbeddingConfigManagedOpenAIEmbedding : JsonModel
 {
     /// <summary>
     /// Configuration for the Managed OpenAI embedding model.
     /// </summary>
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent? Component
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent? Component
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent>(
+            return this._rawData.GetNullableClass<PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent>(
                 "component"
             );
         }
@@ -1073,13 +1060,13 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
     /// <summary>
     /// Type of the embedding model.
     /// </summary>
-    public ApiEnum<string, PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType>? Type
+    public ApiEnum<string, PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType>? Type
     {
         get
         {
             this._rawData.Freeze();
             return this._rawData.GetNullableClass<
-                ApiEnum<string, PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType>
+                ApiEnum<string, PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType>
             >("type");
         }
         init
@@ -1100,17 +1087,17 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
         this.Type?.Validate();
     }
 
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding() { }
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbedding() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding(
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding pipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbedding(
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbedding pipelineListItemEmbeddingConfigManagedOpenAIEmbedding
     )
-        : base(pipelineListResponseEmbeddingConfigManagedOpenAIEmbedding) { }
+        : base(pipelineListItemEmbeddingConfigManagedOpenAIEmbedding) { }
 #pragma warning restore CS8618
 
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding(
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbedding(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -1119,7 +1106,7 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding(
+    PipelineListItemEmbeddingConfigManagedOpenAIEmbedding(
         FrozenDictionary<string, JsonElement> rawData
     )
     {
@@ -1127,8 +1114,8 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingFromRaw.FromRawUnchecked"/>
-    public static PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding FromRawUnchecked(
+    /// <inheritdoc cref="PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingFromRaw.FromRawUnchecked"/>
+    public static PipelineListItemEmbeddingConfigManagedOpenAIEmbedding FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -1136,13 +1123,13 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
     }
 }
 
-class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingFromRaw
-    : IFromRawJson<PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding>
+class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingFromRaw
+    : IFromRawJson<PipelineListItemEmbeddingConfigManagedOpenAIEmbedding>
 {
     /// <inheritdoc/>
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding FromRawUnchecked(
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbedding FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding.FromRawUnchecked(rawData);
+    ) => PipelineListItemEmbeddingConfigManagedOpenAIEmbedding.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -1150,11 +1137,11 @@ class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingFromRaw
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent,
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentFromRaw
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent,
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentFromRaw
     >)
 )]
-public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
+public sealed record class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
     : JsonModel
 {
     public string? ClassName
@@ -1201,7 +1188,7 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
     /// </summary>
     public ApiEnum<
         string,
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
     >? ModelName
     {
         get
@@ -1210,7 +1197,7 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
             return this._rawData.GetNullableClass<
                 ApiEnum<
                     string,
-                    PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+                    PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
                 >
             >("model_name");
         }
@@ -1247,17 +1234,17 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
         _ = this.NumWorkers;
     }
 
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent() { }
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent(
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent pipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent(
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent pipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
     )
-        : base(pipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent) { }
+        : base(pipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent) { }
 #pragma warning restore CS8618
 
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent(
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -1266,7 +1253,7 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent(
+    PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent(
         FrozenDictionary<string, JsonElement> rawData
     )
     {
@@ -1274,8 +1261,8 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentFromRaw.FromRawUnchecked"/>
-    public static PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent FromRawUnchecked(
+    /// <inheritdoc cref="PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentFromRaw.FromRawUnchecked"/>
+    public static PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -1283,33 +1270,30 @@ public sealed record class PipelineListResponseEmbeddingConfigManagedOpenAIEmbed
     }
 }
 
-class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentFromRaw
-    : IFromRawJson<PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent>
+class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentFromRaw
+    : IFromRawJson<PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent>
 {
     /// <inheritdoc/>
-    public PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent FromRawUnchecked(
+    public PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) =>
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent.FromRawUnchecked(
-            rawData
-        );
+    ) => PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// The name of the OpenAI embedding model.
 /// </summary>
 [JsonConverter(
-    typeof(PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelNameConverter)
+    typeof(PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelNameConverter)
 )]
-public enum PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+public enum PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
 {
     OpenAITextEmbedding3Small,
 }
 
-sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelNameConverter
-    : JsonConverter<PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName>
+sealed class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelNameConverter
+    : JsonConverter<PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName>
 {
-    public override PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName Read(
+    public override PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -1318,14 +1302,14 @@ sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentM
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "openai-text-embedding-3-small" =>
-                PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-            _ => (PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName)(-1),
+                PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+            _ => (PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName value,
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName value,
         JsonSerializerOptions options
     )
     {
@@ -1333,7 +1317,7 @@ sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentM
             writer,
             value switch
             {
-                PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small =>
+                PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small =>
                     "openai-text-embedding-3-small",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -1347,16 +1331,16 @@ sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentM
 /// <summary>
 /// Type of the embedding model.
 /// </summary>
-[JsonConverter(typeof(PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeConverter))]
-public enum PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
+[JsonConverter(typeof(PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingTypeConverter))]
+public enum PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType
 {
     ManagedOpenAIEmbedding,
 }
 
-sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeConverter
-    : JsonConverter<PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType>
+sealed class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingTypeConverter
+    : JsonConverter<PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType>
 {
-    public override PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType Read(
+    public override PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -1365,14 +1349,14 @@ sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeConver
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "MANAGED_OPENAI_EMBEDDING" =>
-                PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
-            _ => (PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType)(-1),
+                PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+            _ => (PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType value,
+        PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType value,
         JsonSerializerOptions options
     )
     {
@@ -1380,7 +1364,7 @@ sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeConver
             writer,
             value switch
             {
-                PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding =>
+                PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding =>
                     "MANAGED_OPENAI_EMBEDDING",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -1395,12 +1379,9 @@ sealed class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeConver
 /// Hashes for the configuration of a pipeline.
 /// </summary>
 [JsonConverter(
-    typeof(JsonModelConverter<
-        PipelineListResponseConfigHash,
-        PipelineListResponseConfigHashFromRaw
-    >)
+    typeof(JsonModelConverter<PipelineListItemConfigHash, PipelineListItemConfigHashFromRaw>)
 )]
-public sealed record class PipelineListResponseConfigHash : JsonModel
+public sealed record class PipelineListItemConfigHash : JsonModel
 {
     /// <summary>
     /// Hash of the embedding config. Null in API responses.
@@ -1451,31 +1432,29 @@ public sealed record class PipelineListResponseConfigHash : JsonModel
         _ = this.TransformConfigHash;
     }
 
-    public PipelineListResponseConfigHash() { }
+    public PipelineListItemConfigHash() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public PipelineListResponseConfigHash(
-        PipelineListResponseConfigHash pipelineListResponseConfigHash
-    )
-        : base(pipelineListResponseConfigHash) { }
+    public PipelineListItemConfigHash(PipelineListItemConfigHash pipelineListItemConfigHash)
+        : base(pipelineListItemConfigHash) { }
 #pragma warning restore CS8618
 
-    public PipelineListResponseConfigHash(IReadOnlyDictionary<string, JsonElement> rawData)
+    public PipelineListItemConfigHash(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    PipelineListResponseConfigHash(FrozenDictionary<string, JsonElement> rawData)
+    PipelineListItemConfigHash(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="PipelineListResponseConfigHashFromRaw.FromRawUnchecked"/>
-    public static PipelineListResponseConfigHash FromRawUnchecked(
+    /// <inheritdoc cref="PipelineListItemConfigHashFromRaw.FromRawUnchecked"/>
+    public static PipelineListItemConfigHash FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -1483,12 +1462,12 @@ public sealed record class PipelineListResponseConfigHash : JsonModel
     }
 }
 
-class PipelineListResponseConfigHashFromRaw : IFromRawJson<PipelineListResponseConfigHash>
+class PipelineListItemConfigHashFromRaw : IFromRawJson<PipelineListItemConfigHash>
 {
     /// <inheritdoc/>
-    public PipelineListResponseConfigHash FromRawUnchecked(
+    public PipelineListItemConfigHash FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => PipelineListResponseConfigHash.FromRawUnchecked(rawData);
+    ) => PipelineListItemConfigHash.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -1496,11 +1475,11 @@ class PipelineListResponseConfigHashFromRaw : IFromRawJson<PipelineListResponseC
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<
-        PipelineListResponseEmbeddingModelConfig,
-        PipelineListResponseEmbeddingModelConfigFromRaw
+        PipelineListItemEmbeddingModelConfig,
+        PipelineListItemEmbeddingModelConfigFromRaw
     >)
 )]
-public sealed record class PipelineListResponseEmbeddingModelConfig : JsonModel
+public sealed record class PipelineListItemEmbeddingModelConfig : JsonModel
 {
     /// <summary>
     /// Unique identifier
@@ -1518,12 +1497,12 @@ public sealed record class PipelineListResponseEmbeddingModelConfig : JsonModel
     /// <summary>
     /// The embedding configuration for the embedding model config.
     /// </summary>
-    public required PipelineListResponseEmbeddingModelConfigEmbeddingConfig EmbeddingConfig
+    public required PipelineListItemEmbeddingModelConfigEmbeddingConfig EmbeddingConfig
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            return this._rawData.GetNotNullClass<PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 "embedding_config"
             );
         }
@@ -1590,33 +1569,31 @@ public sealed record class PipelineListResponseEmbeddingModelConfig : JsonModel
         _ = this.UpdatedAt;
     }
 
-    public PipelineListResponseEmbeddingModelConfig() { }
+    public PipelineListItemEmbeddingModelConfig() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public PipelineListResponseEmbeddingModelConfig(
-        PipelineListResponseEmbeddingModelConfig pipelineListResponseEmbeddingModelConfig
+    public PipelineListItemEmbeddingModelConfig(
+        PipelineListItemEmbeddingModelConfig pipelineListItemEmbeddingModelConfig
     )
-        : base(pipelineListResponseEmbeddingModelConfig) { }
+        : base(pipelineListItemEmbeddingModelConfig) { }
 #pragma warning restore CS8618
 
-    public PipelineListResponseEmbeddingModelConfig(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
+    public PipelineListItemEmbeddingModelConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    PipelineListResponseEmbeddingModelConfig(FrozenDictionary<string, JsonElement> rawData)
+    PipelineListItemEmbeddingModelConfig(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="PipelineListResponseEmbeddingModelConfigFromRaw.FromRawUnchecked"/>
-    public static PipelineListResponseEmbeddingModelConfig FromRawUnchecked(
+    /// <inheritdoc cref="PipelineListItemEmbeddingModelConfigFromRaw.FromRawUnchecked"/>
+    public static PipelineListItemEmbeddingModelConfig FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -1624,20 +1601,20 @@ public sealed record class PipelineListResponseEmbeddingModelConfig : JsonModel
     }
 }
 
-class PipelineListResponseEmbeddingModelConfigFromRaw
-    : IFromRawJson<PipelineListResponseEmbeddingModelConfig>
+class PipelineListItemEmbeddingModelConfigFromRaw
+    : IFromRawJson<PipelineListItemEmbeddingModelConfig>
 {
     /// <inheritdoc/>
-    public PipelineListResponseEmbeddingModelConfig FromRawUnchecked(
+    public PipelineListItemEmbeddingModelConfig FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => PipelineListResponseEmbeddingModelConfig.FromRawUnchecked(rawData);
+    ) => PipelineListItemEmbeddingModelConfig.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// The embedding configuration for the embedding model config.
 /// </summary>
-[JsonConverter(typeof(PipelineListResponseEmbeddingModelConfigEmbeddingConfigConverter))]
-public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : ModelBase
+[JsonConverter(typeof(PipelineListItemEmbeddingModelConfigEmbeddingConfigConverter))]
+public record class PipelineListItemEmbeddingModelConfigEmbeddingConfig : ModelBase
 {
     public object? Value { get; } = null;
 
@@ -1654,7 +1631,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         }
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         AzureOpenAIEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -1663,7 +1640,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         BedrockEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -1672,7 +1649,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         CohereEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -1681,7 +1658,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         GeminiEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -1690,7 +1667,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         HuggingFaceInferenceApiEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -1699,7 +1676,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         OpenAIEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -1708,7 +1685,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         VertexAIEmbeddingConfig value,
         JsonElement? element = null
     )
@@ -1717,7 +1694,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         this._element = element;
     }
 
-    public PipelineListResponseEmbeddingModelConfigEmbeddingConfig(JsonElement element)
+    public PipelineListItemEmbeddingModelConfigEmbeddingConfig(JsonElement element)
     {
         this._element = element;
     }
@@ -1931,7 +1908,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
-                    "Data did not match any variant of PipelineListResponseEmbeddingModelConfigEmbeddingConfig"
+                    "Data did not match any variant of PipelineListItemEmbeddingModelConfigEmbeddingConfig"
                 );
         }
     }
@@ -1982,36 +1959,36 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
             OpenAIEmbeddingConfig value => openai(value),
             VertexAIEmbeddingConfig value => vertexAI(value),
             _ => throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of PipelineListResponseEmbeddingModelConfigEmbeddingConfig"
+                "Data did not match any variant of PipelineListItemEmbeddingModelConfigEmbeddingConfig"
             ),
         };
     }
 
-    public static implicit operator PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         AzureOpenAIEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         BedrockEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         CohereEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         GeminiEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         HuggingFaceInferenceApiEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         OpenAIEmbeddingConfig value
     ) => new(value);
 
-    public static implicit operator PipelineListResponseEmbeddingModelConfigEmbeddingConfig(
+    public static implicit operator PipelineListItemEmbeddingModelConfigEmbeddingConfig(
         VertexAIEmbeddingConfig value
     ) => new(value);
 
@@ -2030,7 +2007,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         if (this.Value == null)
         {
             throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of PipelineListResponseEmbeddingModelConfigEmbeddingConfig"
+                "Data did not match any variant of PipelineListItemEmbeddingModelConfigEmbeddingConfig"
             );
         }
         this.Switch(
@@ -2044,7 +2021,7 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
         );
     }
 
-    public virtual bool Equals(PipelineListResponseEmbeddingModelConfigEmbeddingConfig? other) =>
+    public virtual bool Equals(PipelineListItemEmbeddingModelConfigEmbeddingConfig? other) =>
         other != null
         && this.VariantIndex() == other.VariantIndex()
         && JsonElement.DeepEquals(this.Json, other.Json);
@@ -2076,10 +2053,10 @@ public record class PipelineListResponseEmbeddingModelConfigEmbeddingConfig : Mo
     }
 }
 
-sealed class PipelineListResponseEmbeddingModelConfigEmbeddingConfigConverter
-    : JsonConverter<PipelineListResponseEmbeddingModelConfigEmbeddingConfig>
+sealed class PipelineListItemEmbeddingModelConfigEmbeddingConfigConverter
+    : JsonConverter<PipelineListItemEmbeddingModelConfigEmbeddingConfig>
 {
-    public override PipelineListResponseEmbeddingModelConfigEmbeddingConfig? Read(
+    public override PipelineListItemEmbeddingModelConfigEmbeddingConfig? Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -2241,14 +2218,14 @@ sealed class PipelineListResponseEmbeddingModelConfigEmbeddingConfigConverter
             }
             default:
             {
-                return new PipelineListResponseEmbeddingModelConfigEmbeddingConfig(element);
+                return new PipelineListItemEmbeddingModelConfigEmbeddingConfig(element);
             }
         }
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        PipelineListResponseEmbeddingModelConfigEmbeddingConfig value,
+        PipelineListItemEmbeddingModelConfigEmbeddingConfig value,
         JsonSerializerOptions options
     )
     {
@@ -2259,16 +2236,16 @@ sealed class PipelineListResponseEmbeddingModelConfigEmbeddingConfigConverter
 /// <summary>
 /// Status of the pipeline.
 /// </summary>
-[JsonConverter(typeof(PipelineListResponseStatusConverter))]
-public enum PipelineListResponseStatus
+[JsonConverter(typeof(PipelineListItemStatusConverter))]
+public enum PipelineListItemStatus
 {
     Created,
     Deleting,
 }
 
-sealed class PipelineListResponseStatusConverter : JsonConverter<PipelineListResponseStatus>
+sealed class PipelineListItemStatusConverter : JsonConverter<PipelineListItemStatus>
 {
-    public override PipelineListResponseStatus Read(
+    public override PipelineListItemStatus Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -2276,15 +2253,15 @@ sealed class PipelineListResponseStatusConverter : JsonConverter<PipelineListRes
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "CREATED" => PipelineListResponseStatus.Created,
-            "DELETING" => PipelineListResponseStatus.Deleting,
-            _ => (PipelineListResponseStatus)(-1),
+            "CREATED" => PipelineListItemStatus.Created,
+            "DELETING" => PipelineListItemStatus.Deleting,
+            _ => (PipelineListItemStatus)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        PipelineListResponseStatus value,
+        PipelineListItemStatus value,
         JsonSerializerOptions options
     )
     {
@@ -2292,8 +2269,8 @@ sealed class PipelineListResponseStatusConverter : JsonConverter<PipelineListRes
             writer,
             value switch
             {
-                PipelineListResponseStatus.Created => "CREATED",
-                PipelineListResponseStatus.Deleting => "DELETING",
+                PipelineListItemStatus.Created => "CREATED",
+                PipelineListItemStatus.Deleting => "DELETING",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -2306,8 +2283,8 @@ sealed class PipelineListResponseStatusConverter : JsonConverter<PipelineListRes
 /// <summary>
 /// Configuration for the transformation.
 /// </summary>
-[JsonConverter(typeof(PipelineListResponseTransformConfigConverter))]
-public record class PipelineListResponseTransformConfig : ModelBase
+[JsonConverter(typeof(PipelineListItemTransformConfigConverter))]
+public record class PipelineListItemTransformConfig : ModelBase
 {
     public object? Value { get; } = null;
 
@@ -2324,16 +2301,13 @@ public record class PipelineListResponseTransformConfig : ModelBase
         }
     }
 
-    public PipelineListResponseTransformConfig(
-        AutoTransformConfig value,
-        JsonElement? element = null
-    )
+    public PipelineListItemTransformConfig(AutoTransformConfig value, JsonElement? element = null)
     {
         this.Value = value;
         this._element = element;
     }
 
-    public PipelineListResponseTransformConfig(
+    public PipelineListItemTransformConfig(
         AdvancedModeTransformConfig value,
         JsonElement? element = null
     )
@@ -2342,7 +2316,7 @@ public record class PipelineListResponseTransformConfig : ModelBase
         this._element = element;
     }
 
-    public PipelineListResponseTransformConfig(JsonElement element)
+    public PipelineListItemTransformConfig(JsonElement element)
     {
         this._element = element;
     }
@@ -2424,7 +2398,7 @@ public record class PipelineListResponseTransformConfig : ModelBase
                 break;
             default:
                 throw new LlamaCloudInvalidDataException(
-                    "Data did not match any variant of PipelineListResponseTransformConfig"
+                    "Data did not match any variant of PipelineListItemTransformConfig"
                 );
         }
     }
@@ -2460,16 +2434,15 @@ public record class PipelineListResponseTransformConfig : ModelBase
             AutoTransformConfig value => auto(value),
             AdvancedModeTransformConfig value => advancedMode(value),
             _ => throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of PipelineListResponseTransformConfig"
+                "Data did not match any variant of PipelineListItemTransformConfig"
             ),
         };
     }
 
-    public static implicit operator PipelineListResponseTransformConfig(
-        AutoTransformConfig value
-    ) => new(value);
+    public static implicit operator PipelineListItemTransformConfig(AutoTransformConfig value) =>
+        new(value);
 
-    public static implicit operator PipelineListResponseTransformConfig(
+    public static implicit operator PipelineListItemTransformConfig(
         AdvancedModeTransformConfig value
     ) => new(value);
 
@@ -2488,13 +2461,13 @@ public record class PipelineListResponseTransformConfig : ModelBase
         if (this.Value == null)
         {
             throw new LlamaCloudInvalidDataException(
-                "Data did not match any variant of PipelineListResponseTransformConfig"
+                "Data did not match any variant of PipelineListItemTransformConfig"
             );
         }
         this.Switch((auto) => auto.Validate(), (advancedMode) => advancedMode.Validate());
     }
 
-    public virtual bool Equals(PipelineListResponseTransformConfig? other) =>
+    public virtual bool Equals(PipelineListItemTransformConfig? other) =>
         other != null
         && this.VariantIndex() == other.VariantIndex()
         && JsonElement.DeepEquals(this.Json, other.Json);
@@ -2521,10 +2494,10 @@ public record class PipelineListResponseTransformConfig : ModelBase
     }
 }
 
-sealed class PipelineListResponseTransformConfigConverter
-    : JsonConverter<PipelineListResponseTransformConfig>
+sealed class PipelineListItemTransformConfigConverter
+    : JsonConverter<PipelineListItemTransformConfig>
 {
-    public override PipelineListResponseTransformConfig? Read(
+    public override PipelineListItemTransformConfig? Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -2567,7 +2540,7 @@ sealed class PipelineListResponseTransformConfigConverter
 
     public override void Write(
         Utf8JsonWriter writer,
-        PipelineListResponseTransformConfig value,
+        PipelineListItemTransformConfig value,
         JsonSerializerOptions options
     )
     {

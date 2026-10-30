@@ -9,12 +9,12 @@ using Pipelines = LlamaCloud.Models.Pipelines;
 
 namespace LlamaCloud.Tests.Models.Pipelines;
 
-public class PipelineListResponseTest : TestBase
+public class PipelineListItemTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -299,7 +299,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             TransformConfig = new Pipelines::AutoTransformConfig()
             {
                 ChunkOverlap = 0,
@@ -310,7 +310,7 @@ public class PipelineListResponseTest : TestBase
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Pipelines::PipelineListResponseEmbeddingConfig expectedEmbeddingConfig =
+        Pipelines::PipelineListItemEmbeddingConfig expectedEmbeddingConfig =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -338,7 +338,7 @@ public class PipelineListResponseTest : TestBase
             };
         string expectedName = "name";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Pipelines::PipelineListResponseConfigHash expectedConfigHash = new()
+        Pipelines::PipelineListItemConfigHash expectedConfigHash = new()
         {
             EmbeddingConfigHash = "embedding_config_hash",
             ParsingConfigHash = "parsing_config_hash",
@@ -360,7 +360,7 @@ public class PipelineListResponseTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
-        Pipelines::PipelineListResponseEmbeddingModelConfig expectedEmbeddingModelConfig = new()
+        Pipelines::PipelineListItemEmbeddingModelConfig expectedEmbeddingModelConfig = new()
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -594,9 +594,9 @@ public class PipelineListResponseTest : TestBase
             ClassName = "class_name",
             ModelType = Pipelines::ModelType.Auto,
         };
-        ApiEnum<string, Pipelines::PipelineListResponseStatus> expectedStatus =
-            Pipelines::PipelineListResponseStatus.Created;
-        Pipelines::PipelineListResponseTransformConfig expectedTransformConfig =
+        ApiEnum<string, Pipelines::PipelineListItemStatus> expectedStatus =
+            Pipelines::PipelineListItemStatus.Created;
+        Pipelines::PipelineListItemTransformConfig expectedTransformConfig =
             new Pipelines::AutoTransformConfig()
             {
                 ChunkOverlap = 0,
@@ -628,7 +628,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -913,7 +913,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             TransformConfig = new Pipelines::AutoTransformConfig()
             {
                 ChunkOverlap = 0,
@@ -924,7 +924,7 @@ public class PipelineListResponseTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListResponse>(
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItem>(
             json,
             ModelBase.SerializerOptions
         );
@@ -935,7 +935,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -1220,7 +1220,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             TransformConfig = new Pipelines::AutoTransformConfig()
             {
                 ChunkOverlap = 0,
@@ -1231,14 +1231,14 @@ public class PipelineListResponseTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListResponse>(
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItem>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Pipelines::PipelineListResponseEmbeddingConfig expectedEmbeddingConfig =
+        Pipelines::PipelineListItemEmbeddingConfig expectedEmbeddingConfig =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -1266,7 +1266,7 @@ public class PipelineListResponseTest : TestBase
             };
         string expectedName = "name";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Pipelines::PipelineListResponseConfigHash expectedConfigHash = new()
+        Pipelines::PipelineListItemConfigHash expectedConfigHash = new()
         {
             EmbeddingConfigHash = "embedding_config_hash",
             ParsingConfigHash = "parsing_config_hash",
@@ -1288,7 +1288,7 @@ public class PipelineListResponseTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
-        Pipelines::PipelineListResponseEmbeddingModelConfig expectedEmbeddingModelConfig = new()
+        Pipelines::PipelineListItemEmbeddingModelConfig expectedEmbeddingModelConfig = new()
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -1522,9 +1522,9 @@ public class PipelineListResponseTest : TestBase
             ClassName = "class_name",
             ModelType = Pipelines::ModelType.Auto,
         };
-        ApiEnum<string, Pipelines::PipelineListResponseStatus> expectedStatus =
-            Pipelines::PipelineListResponseStatus.Created;
-        Pipelines::PipelineListResponseTransformConfig expectedTransformConfig =
+        ApiEnum<string, Pipelines::PipelineListItemStatus> expectedStatus =
+            Pipelines::PipelineListItemStatus.Created;
+        Pipelines::PipelineListItemTransformConfig expectedTransformConfig =
             new Pipelines::AutoTransformConfig()
             {
                 ChunkOverlap = 0,
@@ -1556,7 +1556,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -1841,7 +1841,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             TransformConfig = new Pipelines::AutoTransformConfig()
             {
                 ChunkOverlap = 0,
@@ -1857,7 +1857,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -2098,7 +2098,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -2113,7 +2113,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -2354,7 +2354,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -2364,7 +2364,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -2605,7 +2605,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -2625,7 +2625,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -2866,7 +2866,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -2881,7 +2881,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -2990,7 +2990,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -3078,7 +3078,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -3199,7 +3199,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -3299,7 +3299,7 @@ public class PipelineListResponseTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Pipelines::PipelineListResponse
+        var model = new Pipelines::PipelineListItem
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -3584,7 +3584,7 @@ public class PipelineListResponseTest : TestBase
                 ClassName = "class_name",
                 ModelType = Pipelines::ModelType.Auto,
             },
-            Status = Pipelines::PipelineListResponseStatus.Created,
+            Status = Pipelines::PipelineListItemStatus.Created,
             TransformConfig = new Pipelines::AutoTransformConfig()
             {
                 ChunkOverlap = 0,
@@ -3594,18 +3594,18 @@ public class PipelineListResponseTest : TestBase
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        Pipelines::PipelineListResponse copied = new(model);
+        Pipelines::PipelineListItem copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class PipelineListResponseEmbeddingConfigTest : TestBase
+public class PipelineListItemEmbeddingConfigTest : TestBase
 {
     [Fact]
     public void AzureOpenAIValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingConfig value =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -3637,82 +3637,79 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void BedrockValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::BedrockEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::BedrockEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
+                AdditionalKwargs = new Dictionary<string, JsonElement>()
                 {
-                    AdditionalKwargs = new Dictionary<string, JsonElement>()
-                    {
-                        { "foo", JsonSerializer.SerializeToElement("bar") },
-                    },
-                    AwsAccessKeyID = "aws_access_key_id",
-                    AwsSecretAccessKey = "aws_secret_access_key",
-                    AwsSessionToken = "aws_session_token",
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    MaxRetries = 1,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    ProfileName = "profile_name",
-                    RegionName = "region_name",
-                    Timeout = 0,
+                    { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Type = Pipelines::BedrockEmbeddingConfigType.BedrockEmbedding,
-            };
+                AwsAccessKeyID = "aws_access_key_id",
+                AwsSecretAccessKey = "aws_secret_access_key",
+                AwsSessionToken = "aws_session_token",
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                MaxRetries = 1,
+                ModelName = "model_name",
+                NumWorkers = 0,
+                ProfileName = "profile_name",
+                RegionName = "region_name",
+                Timeout = 0,
+            },
+            Type = Pipelines::BedrockEmbeddingConfigType.BedrockEmbedding,
+        };
         value.Validate();
     }
 
     [Fact]
     public void CohereValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::CohereEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::CohereEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
-                {
-                    ApiKey = "api_key",
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    EmbeddingType = "embedding_type",
-                    InputType = "input_type",
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    Truncate = "truncate",
-                },
-                Type = Pipelines::CohereEmbeddingConfigType.CohereEmbedding,
-            };
+                ApiKey = "api_key",
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                EmbeddingType = "embedding_type",
+                InputType = "input_type",
+                ModelName = "model_name",
+                NumWorkers = 0,
+                Truncate = "truncate",
+            },
+            Type = Pipelines::CohereEmbeddingConfigType.CohereEmbedding,
+        };
         value.Validate();
     }
 
     [Fact]
     public void GeminiValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::GeminiEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::GeminiEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
-                {
-                    ApiBase = "api_base",
-                    ApiKey = "api_key",
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    OutputDimensionality = 0,
-                    TaskType = "task_type",
-                    Title = "title",
-                    Transport = "transport",
-                },
-                Type = Pipelines::GeminiEmbeddingConfigType.GeminiEmbedding,
-            };
+                ApiBase = "api_base",
+                ApiKey = "api_key",
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                ModelName = "model_name",
+                NumWorkers = 0,
+                OutputDimensionality = 0,
+                TaskType = "task_type",
+                Title = "title",
+                Transport = "transport",
+            },
+            Type = Pipelines::GeminiEmbeddingConfigType.GeminiEmbedding,
+        };
         value.Validate();
     }
 
     [Fact]
     public void HuggingFaceInferenceApiValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingConfig value =
             new Pipelines::HuggingFaceInferenceApiEmbeddingConfig()
             {
                 Component = new()
@@ -3739,19 +3736,19 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void ManagedOpenAIEmbeddingValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding()
+        Pipelines::PipelineListItemEmbeddingConfig value =
+            new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding()
             {
                 Component = new()
                 {
                     ClassName = "class_name",
                     EmbedBatchSize = 1,
                     ModelName =
-                        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                     NumWorkers = 0,
                 },
                 Type =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
             };
         value.Validate();
     }
@@ -3759,66 +3756,64 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void OpenAIValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::OpenAIEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::OpenAIEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
+                AdditionalKwargs = new Dictionary<string, JsonElement>()
                 {
-                    AdditionalKwargs = new Dictionary<string, JsonElement>()
-                    {
-                        { "foo", JsonSerializer.SerializeToElement("bar") },
-                    },
-                    ApiBase = "api_base",
-                    ApiKey = "api_key",
-                    ApiVersion = "api_version",
-                    ClassName = "class_name",
-                    DefaultHeaders = new Dictionary<string, string>() { { "foo", "string" } },
-                    Dimensions = 0,
-                    EmbedBatchSize = 1,
-                    MaxRetries = 0,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    ReuseClient = true,
-                    Timeout = 0,
+                    { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Type = Pipelines::OpenAIEmbeddingConfigType.OpenAIEmbedding,
-            };
+                ApiBase = "api_base",
+                ApiKey = "api_key",
+                ApiVersion = "api_version",
+                ClassName = "class_name",
+                DefaultHeaders = new Dictionary<string, string>() { { "foo", "string" } },
+                Dimensions = 0,
+                EmbedBatchSize = 1,
+                MaxRetries = 0,
+                ModelName = "model_name",
+                NumWorkers = 0,
+                ReuseClient = true,
+                Timeout = 0,
+            },
+            Type = Pipelines::OpenAIEmbeddingConfigType.OpenAIEmbedding,
+        };
         value.Validate();
     }
 
     [Fact]
     public void VertexAIValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::VertexAIEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::VertexAIEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
+                ClientEmail = "client_email",
+                Location = "location",
+                PrivateKey = "private_key",
+                PrivateKeyID = "private_key_id",
+                Project = "project",
+                TokenUri = "token_uri",
+                AdditionalKwargs = new Dictionary<string, JsonElement>()
                 {
-                    ClientEmail = "client_email",
-                    Location = "location",
-                    PrivateKey = "private_key",
-                    PrivateKeyID = "private_key_id",
-                    Project = "project",
-                    TokenUri = "token_uri",
-                    AdditionalKwargs = new Dictionary<string, JsonElement>()
-                    {
-                        { "foo", JsonSerializer.SerializeToElement("bar") },
-                    },
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    EmbedMode = Pipelines::EmbedMode.Classification,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
+                    { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Type = Pipelines::VertexAIEmbeddingConfigType.VertexaiEmbedding,
-            };
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                EmbedMode = Pipelines::EmbedMode.Classification,
+                ModelName = "model_name",
+                NumWorkers = 0,
+            },
+            Type = Pipelines::VertexAIEmbeddingConfigType.VertexaiEmbedding,
+        };
         value.Validate();
     }
 
     [Fact]
     public void AzureOpenAISerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingConfig value =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -3845,11 +3840,10 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
                 Type = Pipelines::Type.AzureEmbedding,
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -3857,35 +3851,33 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void BedrockSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::BedrockEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::BedrockEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
+                AdditionalKwargs = new Dictionary<string, JsonElement>()
                 {
-                    AdditionalKwargs = new Dictionary<string, JsonElement>()
-                    {
-                        { "foo", JsonSerializer.SerializeToElement("bar") },
-                    },
-                    AwsAccessKeyID = "aws_access_key_id",
-                    AwsSecretAccessKey = "aws_secret_access_key",
-                    AwsSessionToken = "aws_session_token",
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    MaxRetries = 1,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    ProfileName = "profile_name",
-                    RegionName = "region_name",
-                    Timeout = 0,
+                    { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Type = Pipelines::BedrockEmbeddingConfigType.BedrockEmbedding,
-            };
+                AwsAccessKeyID = "aws_access_key_id",
+                AwsSecretAccessKey = "aws_secret_access_key",
+                AwsSessionToken = "aws_session_token",
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                MaxRetries = 1,
+                ModelName = "model_name",
+                NumWorkers = 0,
+                ProfileName = "profile_name",
+                RegionName = "region_name",
+                Timeout = 0,
+            },
+            Type = Pipelines::BedrockEmbeddingConfigType.BedrockEmbedding,
+        };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -3893,28 +3885,26 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void CohereSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::CohereEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::CohereEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
-                {
-                    ApiKey = "api_key",
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    EmbeddingType = "embedding_type",
-                    InputType = "input_type",
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    Truncate = "truncate",
-                },
-                Type = Pipelines::CohereEmbeddingConfigType.CohereEmbedding,
-            };
+                ApiKey = "api_key",
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                EmbeddingType = "embedding_type",
+                InputType = "input_type",
+                ModelName = "model_name",
+                NumWorkers = 0,
+                Truncate = "truncate",
+            },
+            Type = Pipelines::CohereEmbeddingConfigType.CohereEmbedding,
+        };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -3922,30 +3912,28 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void GeminiSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::GeminiEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::GeminiEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
-                {
-                    ApiBase = "api_base",
-                    ApiKey = "api_key",
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    OutputDimensionality = 0,
-                    TaskType = "task_type",
-                    Title = "title",
-                    Transport = "transport",
-                },
-                Type = Pipelines::GeminiEmbeddingConfigType.GeminiEmbedding,
-            };
+                ApiBase = "api_base",
+                ApiKey = "api_key",
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                ModelName = "model_name",
+                NumWorkers = 0,
+                OutputDimensionality = 0,
+                TaskType = "task_type",
+                Title = "title",
+                Transport = "transport",
+            },
+            Type = Pipelines::GeminiEmbeddingConfigType.GeminiEmbedding,
+        };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -3953,7 +3941,7 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void HuggingFaceInferenceApiSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingConfig value =
             new Pipelines::HuggingFaceInferenceApiEmbeddingConfig()
             {
                 Component = new()
@@ -3975,11 +3963,10 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
                     Pipelines::HuggingFaceInferenceApiEmbeddingConfigType.HuggingfaceApiEmbedding,
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -3987,26 +3974,25 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void ManagedOpenAIEmbeddingSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding()
+        Pipelines::PipelineListItemEmbeddingConfig value =
+            new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding()
             {
                 Component = new()
                 {
                     ClassName = "class_name",
                     EmbedBatchSize = 1,
                     ModelName =
-                        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                     NumWorkers = 0,
                 },
                 Type =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -4014,36 +4000,34 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void OpenAISerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::OpenAIEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::OpenAIEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
+                AdditionalKwargs = new Dictionary<string, JsonElement>()
                 {
-                    AdditionalKwargs = new Dictionary<string, JsonElement>()
-                    {
-                        { "foo", JsonSerializer.SerializeToElement("bar") },
-                    },
-                    ApiBase = "api_base",
-                    ApiKey = "api_key",
-                    ApiVersion = "api_version",
-                    ClassName = "class_name",
-                    DefaultHeaders = new Dictionary<string, string>() { { "foo", "string" } },
-                    Dimensions = 0,
-                    EmbedBatchSize = 1,
-                    MaxRetries = 0,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
-                    ReuseClient = true,
-                    Timeout = 0,
+                    { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Type = Pipelines::OpenAIEmbeddingConfigType.OpenAIEmbedding,
-            };
+                ApiBase = "api_base",
+                ApiKey = "api_key",
+                ApiVersion = "api_version",
+                ClassName = "class_name",
+                DefaultHeaders = new Dictionary<string, string>() { { "foo", "string" } },
+                Dimensions = 0,
+                EmbedBatchSize = 1,
+                MaxRetries = 0,
+                ModelName = "model_name",
+                NumWorkers = 0,
+                ReuseClient = true,
+                Timeout = 0,
+            },
+            Type = Pipelines::OpenAIEmbeddingConfigType.OpenAIEmbedding,
+        };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -4051,73 +4035,71 @@ public class PipelineListResponseEmbeddingConfigTest : TestBase
     [Fact]
     public void VertexAISerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingConfig value =
-            new Pipelines::VertexAIEmbeddingConfig()
+        Pipelines::PipelineListItemEmbeddingConfig value = new Pipelines::VertexAIEmbeddingConfig()
+        {
+            Component = new()
             {
-                Component = new()
+                ClientEmail = "client_email",
+                Location = "location",
+                PrivateKey = "private_key",
+                PrivateKeyID = "private_key_id",
+                Project = "project",
+                TokenUri = "token_uri",
+                AdditionalKwargs = new Dictionary<string, JsonElement>()
                 {
-                    ClientEmail = "client_email",
-                    Location = "location",
-                    PrivateKey = "private_key",
-                    PrivateKeyID = "private_key_id",
-                    Project = "project",
-                    TokenUri = "token_uri",
-                    AdditionalKwargs = new Dictionary<string, JsonElement>()
-                    {
-                        { "foo", JsonSerializer.SerializeToElement("bar") },
-                    },
-                    ClassName = "class_name",
-                    EmbedBatchSize = 1,
-                    EmbedMode = Pipelines::EmbedMode.Classification,
-                    ModelName = "model_name",
-                    NumWorkers = 0,
+                    { "foo", JsonSerializer.SerializeToElement("bar") },
                 },
-                Type = Pipelines::VertexAIEmbeddingConfigType.VertexaiEmbedding,
-            };
+                ClassName = "class_name",
+                EmbedBatchSize = 1,
+                EmbedMode = Pipelines::EmbedMode.Classification,
+                ModelName = "model_name",
+                NumWorkers = 0,
+            },
+            Type = Pipelines::VertexAIEmbeddingConfigType.VertexaiEmbedding,
+        };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
 }
 
-public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : TestBase
+public class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding
         {
             Component = new()
             {
                 ClassName = "class_name",
                 EmbedBatchSize = 1,
                 ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                 NumWorkers = 0,
             },
             Type =
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
         };
 
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent expectedComponent =
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent expectedComponent =
             new()
             {
                 ClassName = "class_name",
                 EmbedBatchSize = 1,
                 ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                 NumWorkers = 0,
             };
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType
         > expectedType =
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding;
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding;
 
         Assert.Equal(expectedComponent, model.Component);
         Assert.Equal(expectedType, model.Type);
@@ -4126,23 +4108,23 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding
         {
             Component = new()
             {
                 ClassName = "class_name",
                 EmbedBatchSize = 1,
                 ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                 NumWorkers = 0,
             },
             Type =
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -4153,42 +4135,42 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding
         {
             Component = new()
             {
                 ClassName = "class_name",
                 EmbedBatchSize = 1,
                 ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                 NumWorkers = 0,
             },
             Type =
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding>(
                 element,
                 ModelBase.SerializerOptions
             );
         Assert.NotNull(deserialized);
 
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent expectedComponent =
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent expectedComponent =
             new()
             {
                 ClassName = "class_name",
                 EmbedBatchSize = 1,
                 ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                 NumWorkers = 0,
             };
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType
         > expectedType =
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding;
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding;
 
         Assert.Equal(expectedComponent, deserialized.Component);
         Assert.Equal(expectedType, deserialized.Type);
@@ -4197,18 +4179,18 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void Validation_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding
         {
             Component = new()
             {
                 ClassName = "class_name",
                 EmbedBatchSize = 1,
                 ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                 NumWorkers = 0,
             },
             Type =
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
         };
 
         model.Validate();
@@ -4217,7 +4199,7 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding { };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding { };
 
         Assert.Null(model.Component);
         Assert.False(model.RawData.ContainsKey("component"));
@@ -4228,7 +4210,7 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding { };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding { };
 
         model.Validate();
     }
@@ -4236,7 +4218,7 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding
         {
             // Null should be interpreted as omitted for these properties
             Component = null,
@@ -4252,7 +4234,7 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding
         {
             // Null should be interpreted as omitted for these properties
             Component = null,
@@ -4265,48 +4247,47 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTest : Tes
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding
         {
             Component = new()
             {
                 ClassName = "class_name",
                 EmbedBatchSize = 1,
                 ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+                    Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
                 NumWorkers = 0,
             },
             Type =
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding,
         };
 
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbedding copied = new(model);
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbedding copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentTest : TestBase
+public class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-                NumWorkers = 0,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+            NumWorkers = 0,
+        };
 
         string expectedClassName = "class_name";
         long expectedEmbedBatchSize = 1;
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
         > expectedModelName =
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small;
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small;
         long expectedNumWorkers = 0;
 
         Assert.Equal(expectedClassName, model.ClassName);
@@ -4318,19 +4299,18 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-                NumWorkers = 0,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+            NumWorkers = 0,
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -4341,19 +4321,18 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-                NumWorkers = 0,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+            NumWorkers = 0,
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -4363,9 +4342,9 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
         long expectedEmbedBatchSize = 1;
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
         > expectedModelName =
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small;
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small;
         long expectedNumWorkers = 0;
 
         Assert.Equal(expectedClassName, deserialized.ClassName);
@@ -4377,15 +4356,14 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void Validation_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-                NumWorkers = 0,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+            NumWorkers = 0,
+        };
 
         model.Validate();
     }
@@ -4393,11 +4371,10 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                NumWorkers = 0,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            NumWorkers = 0,
+        };
 
         Assert.Null(model.ClassName);
         Assert.False(model.RawData.ContainsKey("class_name"));
@@ -4410,11 +4387,10 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                NumWorkers = 0,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            NumWorkers = 0,
+        };
 
         model.Validate();
     }
@@ -4422,16 +4398,15 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                NumWorkers = 0,
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            NumWorkers = 0,
 
-                // Null should be interpreted as omitted for these properties
-                ClassName = null,
-                EmbedBatchSize = null,
-                ModelName = null,
-            };
+            // Null should be interpreted as omitted for these properties
+            ClassName = null,
+            EmbedBatchSize = null,
+            ModelName = null,
+        };
 
         Assert.Null(model.ClassName);
         Assert.False(model.RawData.ContainsKey("class_name"));
@@ -4444,16 +4419,15 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                NumWorkers = 0,
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            NumWorkers = 0,
 
-                // Null should be interpreted as omitted for these properties
-                ClassName = null,
-                EmbedBatchSize = null,
-                ModelName = null,
-            };
+            // Null should be interpreted as omitted for these properties
+            ClassName = null,
+            EmbedBatchSize = null,
+            ModelName = null,
+        };
 
         model.Validate();
     }
@@ -4461,14 +4435,13 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+        };
 
         Assert.Null(model.NumWorkers);
         Assert.False(model.RawData.ContainsKey("num_workers"));
@@ -4477,14 +4450,13 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+        };
 
         model.Validate();
     }
@@ -4492,16 +4464,15 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
 
-                NumWorkers = null,
-            };
+            NumWorkers = null,
+        };
 
         Assert.Null(model.NumWorkers);
         Assert.True(model.RawData.ContainsKey("num_workers"));
@@ -4510,16 +4481,15 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
 
-                NumWorkers = null,
-            };
+            NumWorkers = null,
+        };
 
         model.Validate();
     }
@@ -4527,17 +4497,16 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model =
-            new Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent
-            {
-                ClassName = "class_name",
-                EmbedBatchSize = 1,
-                ModelName =
-                    Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
-                NumWorkers = 0,
-            };
+        var model = new Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent
+        {
+            ClassName = "class_name",
+            EmbedBatchSize = 1,
+            ModelName =
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small,
+            NumWorkers = 0,
+        };
 
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponent copied = new(
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponent copied = new(
             model
         );
 
@@ -4545,21 +4514,20 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentT
     }
 }
 
-public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelNameTest
-    : TestBase
+public class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelNameTest : TestBase
 {
     [Theory]
     [InlineData(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small
     )]
     public void Validation_Works(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName rawValue
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName rawValue
     )
     {
         // force implicit conversion because Theory can't do that for us
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
         > value = rawValue;
         value.Validate();
     }
@@ -4570,7 +4538,7 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentM
         var value = JsonSerializer.Deserialize<
             ApiEnum<
                 string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
             >
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
@@ -4580,23 +4548,23 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentM
 
     [Theory]
     [InlineData(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName.OpenAITextEmbedding3Small
     )]
     public void SerializationRoundtrip_Works(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName rawValue
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName rawValue
     )
     {
         // force implicit conversion because Theory can't do that for us
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
         > value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<
                 string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
             >
         >(json, ModelBase.SerializerOptions);
 
@@ -4609,14 +4577,14 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentM
         var value = JsonSerializer.Deserialize<
             ApiEnum<
                 string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
             >
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<
                 string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
             >
         >(json, ModelBase.SerializerOptions);
 
@@ -4624,20 +4592,20 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentM
     }
 }
 
-public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeTest : TestBase
+public class PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingTypeTest : TestBase
 {
     [Theory]
     [InlineData(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding
     )]
     public void Validation_Works(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType rawValue
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType rawValue
     )
     {
         // force implicit conversion because Theory can't do that for us
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType
         > value = rawValue;
         value.Validate();
     }
@@ -4646,10 +4614,7 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeTest :
     public void InvalidEnumValidationThrows_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<
-                string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
-            >
+            ApiEnum<string, Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
@@ -4658,24 +4623,21 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeTest :
 
     [Theory]
     [InlineData(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType.ManagedOpenAIEmbedding
     )]
     public void SerializationRoundtrip_Works(
-        Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType rawValue
+        Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType rawValue
     )
     {
         // force implicit conversion because Theory can't do that for us
         ApiEnum<
             string,
-            Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
+            Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType
         > value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<
-                string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
-            >
+            ApiEnum<string, Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -4685,29 +4647,23 @@ public class PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingTypeTest :
     public void InvalidEnumSerializationRoundtrip_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<
-                string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
-            >
+            ApiEnum<string, Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<
-                string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
-            >
+            ApiEnum<string, Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }
 }
 
-public class PipelineListResponseConfigHashTest : TestBase
+public class PipelineListItemConfigHashTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash
+        var model = new Pipelines::PipelineListItemConfigHash
         {
             EmbeddingConfigHash = "embedding_config_hash",
             ParsingConfigHash = "parsing_config_hash",
@@ -4726,7 +4682,7 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash
+        var model = new Pipelines::PipelineListItemConfigHash
         {
             EmbeddingConfigHash = "embedding_config_hash",
             ParsingConfigHash = "parsing_config_hash",
@@ -4734,7 +4690,7 @@ public class PipelineListResponseConfigHashTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListResponseConfigHash>(
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemConfigHash>(
             json,
             ModelBase.SerializerOptions
         );
@@ -4745,7 +4701,7 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash
+        var model = new Pipelines::PipelineListItemConfigHash
         {
             EmbeddingConfigHash = "embedding_config_hash",
             ParsingConfigHash = "parsing_config_hash",
@@ -4753,7 +4709,7 @@ public class PipelineListResponseConfigHashTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListResponseConfigHash>(
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemConfigHash>(
             element,
             ModelBase.SerializerOptions
         );
@@ -4771,7 +4727,7 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash
+        var model = new Pipelines::PipelineListItemConfigHash
         {
             EmbeddingConfigHash = "embedding_config_hash",
             ParsingConfigHash = "parsing_config_hash",
@@ -4784,7 +4740,7 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash { };
+        var model = new Pipelines::PipelineListItemConfigHash { };
 
         Assert.Null(model.EmbeddingConfigHash);
         Assert.False(model.RawData.ContainsKey("embedding_config_hash"));
@@ -4797,7 +4753,7 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash { };
+        var model = new Pipelines::PipelineListItemConfigHash { };
 
         model.Validate();
     }
@@ -4805,7 +4761,7 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash
+        var model = new Pipelines::PipelineListItemConfigHash
         {
             EmbeddingConfigHash = null,
             ParsingConfigHash = null,
@@ -4823,7 +4779,7 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash
+        var model = new Pipelines::PipelineListItemConfigHash
         {
             EmbeddingConfigHash = null,
             ParsingConfigHash = null,
@@ -4836,25 +4792,25 @@ public class PipelineListResponseConfigHashTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Pipelines::PipelineListResponseConfigHash
+        var model = new Pipelines::PipelineListItemConfigHash
         {
             EmbeddingConfigHash = "embedding_config_hash",
             ParsingConfigHash = "parsing_config_hash",
             TransformConfigHash = "transform_config_hash",
         };
 
-        Pipelines::PipelineListResponseConfigHash copied = new(model);
+        Pipelines::PipelineListItemConfigHash copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class PipelineListResponseEmbeddingModelConfigTest : TestBase
+public class PipelineListItemEmbeddingModelConfigTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -4889,7 +4845,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig expectedEmbeddingConfig =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig expectedEmbeddingConfig =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -4931,7 +4887,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -4967,7 +4923,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfig>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -4978,7 +4934,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -5014,14 +4970,14 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
         Assert.NotNull(deserialized);
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig expectedEmbeddingConfig =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig expectedEmbeddingConfig =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -5063,7 +5019,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -5103,7 +5059,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -5144,7 +5100,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -5182,7 +5138,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -5226,7 +5182,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void OptionalNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -5267,7 +5223,7 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Pipelines::PipelineListResponseEmbeddingModelConfig
+        var model = new Pipelines::PipelineListItemEmbeddingModelConfig
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             EmbeddingConfig = new Pipelines::AzureOpenAIEmbeddingConfig()
@@ -5301,18 +5257,18 @@ public class PipelineListResponseEmbeddingModelConfigTest : TestBase
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        Pipelines::PipelineListResponseEmbeddingModelConfig copied = new(model);
+        Pipelines::PipelineListItemEmbeddingModelConfig copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestBase
+public class PipelineListItemEmbeddingModelConfigEmbeddingConfigTest : TestBase
 {
     [Fact]
     public void AzureOpenAIValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -5344,7 +5300,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void BedrockValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::BedrockEmbeddingConfig()
             {
                 Component = new()
@@ -5373,7 +5329,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void CohereValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::CohereEmbeddingConfig()
             {
                 Component = new()
@@ -5395,7 +5351,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void GeminiValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::GeminiEmbeddingConfig()
             {
                 Component = new()
@@ -5419,7 +5375,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void HuggingFaceInferenceApiValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::HuggingFaceInferenceApiEmbeddingConfig()
             {
                 Component = new()
@@ -5446,7 +5402,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void OpenAIValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::OpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -5476,7 +5432,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void VertexAIValidationWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::VertexAIEmbeddingConfig()
             {
                 Component = new()
@@ -5505,7 +5461,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void AzureOpenAISerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::AzureOpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -5533,7 +5489,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -5544,7 +5500,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void BedrockSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::BedrockEmbeddingConfig()
             {
                 Component = new()
@@ -5569,7 +5525,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -5580,7 +5536,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void CohereSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::CohereEmbeddingConfig()
             {
                 Component = new()
@@ -5598,7 +5554,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -5609,7 +5565,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void GeminiSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::GeminiEmbeddingConfig()
             {
                 Component = new()
@@ -5629,7 +5585,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -5640,7 +5596,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void HuggingFaceInferenceApiSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::HuggingFaceInferenceApiEmbeddingConfig()
             {
                 Component = new()
@@ -5663,7 +5619,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -5674,7 +5630,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void OpenAISerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::OpenAIEmbeddingConfig()
             {
                 Component = new()
@@ -5700,7 +5656,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -5711,7 +5667,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     [Fact]
     public void VertexAISerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig value =
+        Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig value =
             new Pipelines::VertexAIEmbeddingConfig()
             {
                 Component = new()
@@ -5736,7 +5692,7 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseEmbeddingModelConfigEmbeddingConfig>(
+            JsonSerializer.Deserialize<Pipelines::PipelineListItemEmbeddingModelConfigEmbeddingConfig>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -5745,40 +5701,41 @@ public class PipelineListResponseEmbeddingModelConfigEmbeddingConfigTest : TestB
     }
 }
 
-public class PipelineListResponseStatusTest : TestBase
+public class PipelineListItemStatusTest : TestBase
 {
     [Theory]
-    [InlineData(Pipelines::PipelineListResponseStatus.Created)]
-    [InlineData(Pipelines::PipelineListResponseStatus.Deleting)]
-    public void Validation_Works(Pipelines::PipelineListResponseStatus rawValue)
+    [InlineData(Pipelines::PipelineListItemStatus.Created)]
+    [InlineData(Pipelines::PipelineListItemStatus.Deleting)]
+    public void Validation_Works(Pipelines::PipelineListItemStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Pipelines::PipelineListResponseStatus> value = rawValue;
+        ApiEnum<string, Pipelines::PipelineListItemStatus> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Pipelines::PipelineListResponseStatus>
-        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Pipelines::PipelineListItemStatus>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
 
         Assert.NotNull(value);
         Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
     }
 
     [Theory]
-    [InlineData(Pipelines::PipelineListResponseStatus.Created)]
-    [InlineData(Pipelines::PipelineListResponseStatus.Deleting)]
-    public void SerializationRoundtrip_Works(Pipelines::PipelineListResponseStatus rawValue)
+    [InlineData(Pipelines::PipelineListItemStatus.Created)]
+    [InlineData(Pipelines::PipelineListItemStatus.Deleting)]
+    public void SerializationRoundtrip_Works(Pipelines::PipelineListItemStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Pipelines::PipelineListResponseStatus> value = rawValue;
+        ApiEnum<string, Pipelines::PipelineListItemStatus> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Pipelines::PipelineListResponseStatus>
+            ApiEnum<string, Pipelines::PipelineListItemStatus>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -5787,24 +5744,25 @@ public class PipelineListResponseStatusTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Pipelines::PipelineListResponseStatus>
-        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Pipelines::PipelineListItemStatus>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Pipelines::PipelineListResponseStatus>
+            ApiEnum<string, Pipelines::PipelineListItemStatus>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }
 }
 
-public class PipelineListResponseTransformConfigTest : TestBase
+public class PipelineListItemTransformConfigTest : TestBase
 {
     [Fact]
     public void AutoValidationWorks()
     {
-        Pipelines::PipelineListResponseTransformConfig value = new Pipelines::AutoTransformConfig()
+        Pipelines::PipelineListItemTransformConfig value = new Pipelines::AutoTransformConfig()
         {
             ChunkOverlap = 0,
             ChunkSize = 1,
@@ -5816,7 +5774,7 @@ public class PipelineListResponseTransformConfigTest : TestBase
     [Fact]
     public void AdvancedModeValidationWorks()
     {
-        Pipelines::PipelineListResponseTransformConfig value =
+        Pipelines::PipelineListItemTransformConfig value =
             new Pipelines::AdvancedModeTransformConfig()
             {
                 ChunkingConfig = new Pipelines::NoneChunkingConfig()
@@ -5835,18 +5793,17 @@ public class PipelineListResponseTransformConfigTest : TestBase
     [Fact]
     public void AutoSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseTransformConfig value = new Pipelines::AutoTransformConfig()
+        Pipelines::PipelineListItemTransformConfig value = new Pipelines::AutoTransformConfig()
         {
             ChunkOverlap = 0,
             ChunkSize = 1,
             Mode = Pipelines::AutoTransformConfigMode.Auto,
         };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseTransformConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemTransformConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -5854,7 +5811,7 @@ public class PipelineListResponseTransformConfigTest : TestBase
     [Fact]
     public void AdvancedModeSerializationRoundtripWorks()
     {
-        Pipelines::PipelineListResponseTransformConfig value =
+        Pipelines::PipelineListItemTransformConfig value =
             new Pipelines::AdvancedModeTransformConfig()
             {
                 ChunkingConfig = new Pipelines::NoneChunkingConfig()
@@ -5868,11 +5825,10 @@ public class PipelineListResponseTransformConfigTest : TestBase
                 },
             };
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Pipelines::PipelineListResponseTransformConfig>(
-                element,
-                ModelBase.SerializerOptions
-            );
+        var deserialized = JsonSerializer.Deserialize<Pipelines::PipelineListItemTransformConfig>(
+            element,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }

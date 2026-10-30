@@ -262,20 +262,20 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Pipelines::ManagedOpenAIEmbeddingComponentModelName>(),
             new ApiEnumConverter<string, Pipelines::ManagedOpenAIEmbeddingType>(),
             new ApiEnumConverter<string, Pipelines::PipelineStatus>(),
+            new ApiEnumConverter<
+                string,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+            >(),
+            new ApiEnumConverter<
+                string,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType
+            >(),
+            new ApiEnumConverter<string, Pipelines::PipelineListItemStatus>(),
             new ApiEnumConverter<string, Pipelines::PipelinePipelineType>(),
             new ApiEnumConverter<string, Pipelines::RetrievalMode>(),
             new ApiEnumConverter<string, Pipelines::ModelType>(),
             new ApiEnumConverter<string, Pipelines::VertexAIEmbeddingConfigType>(),
             new ApiEnumConverter<string, Pipelines::EmbedMode>(),
-            new ApiEnumConverter<
-                string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
-            >(),
-            new ApiEnumConverter<
-                string,
-                Pipelines::PipelineListResponseEmbeddingConfigManagedOpenAIEmbeddingType
-            >(),
-            new ApiEnumConverter<string, Pipelines::PipelineListResponseStatus>(),
             new ApiEnumConverter<string, Pipelines::PipelineListPaginatedResponsePipelineType>(),
             new ApiEnumConverter<string, Pipelines::PipelineListPaginatedResponseStatus>(),
             new ApiEnumConverter<string, Pipelines::PipelineType>(),
