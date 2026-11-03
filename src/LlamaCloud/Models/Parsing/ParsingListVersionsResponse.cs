@@ -366,6 +366,7 @@ sealed class AgenticConverter : JsonConverter<Agentic>
 [JsonConverter(typeof(AgenticPlusConverter))]
 public enum AgenticPlus
 {
+    V2026_11_02,
     V2026_10_28,
     V2026_10_26,
     V2026_10_20,
@@ -424,6 +425,7 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-02" => AgenticPlus.V2026_11_02,
             "2026-10-28" => AgenticPlus.V2026_10_28,
             "2026-10-26" => AgenticPlus.V2026_10_26,
             "2026-10-20" => AgenticPlus.V2026_10_20,
@@ -484,6 +486,7 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
             writer,
             value switch
             {
+                AgenticPlus.V2026_11_02 => "2026-11-02",
                 AgenticPlus.V2026_10_28 => "2026-10-28",
                 AgenticPlus.V2026_10_26 => "2026-10-26",
                 AgenticPlus.V2026_10_20 => "2026-10-20",
