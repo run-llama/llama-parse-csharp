@@ -2368,9 +2368,8 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Version.Latest)]
+    [InlineData(Version.V2026_10_30)]
     [InlineData(Version.V2026_10_28)]
-    [InlineData(Version.V2026_10_16)]
-    [InlineData(Version.V2026_09_28)]
     [InlineData(Version.V2026_06_15)]
     public void Validation_Works(Version rawValue)
     {
@@ -2393,9 +2392,8 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Version.Latest)]
+    [InlineData(Version.V2026_10_30)]
     [InlineData(Version.V2026_10_28)]
-    [InlineData(Version.V2026_10_16)]
-    [InlineData(Version.V2026_09_28)]
     [InlineData(Version.V2026_06_15)]
     public void SerializationRoundtrip_Works(Version rawValue)
     {
@@ -8801,9 +8799,8 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
+    [InlineData(ParsingConfVersion.V2026_10_30)]
     [InlineData(ParsingConfVersion.V2026_10_28)]
-    [InlineData(ParsingConfVersion.V2026_10_16)]
-    [InlineData(ParsingConfVersion.V2026_09_28)]
     [InlineData(ParsingConfVersion.V2026_06_15)]
     public void Validation_Works(ParsingConfVersion rawValue)
     {
@@ -8826,9 +8823,8 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
+    [InlineData(ParsingConfVersion.V2026_10_30)]
     [InlineData(ParsingConfVersion.V2026_10_28)]
-    [InlineData(ParsingConfVersion.V2026_10_16)]
-    [InlineData(ParsingConfVersion.V2026_09_28)]
     [InlineData(ParsingConfVersion.V2026_06_15)]
     public void SerializationRoundtrip_Works(ParsingConfVersion rawValue)
     {

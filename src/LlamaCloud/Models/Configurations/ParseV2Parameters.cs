@@ -52,7 +52,7 @@ public sealed record class ParseV2Parameters : JsonModel
     /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-09-28` - `agentic`: `2026-10-16` - `agentic_plus`: `2026-10-28`</para>
+    /// `2026-10-30` - `agentic`: `2026-10-30` - `agentic_plus`: `2026-10-28`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -432,8 +432,8 @@ sealed class ParseV2ParametersTierConverter : JsonConverter<ParseV2ParametersTie
 /// <summary>
 /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
-/// - `agentic`: `2026-10-16` - `agentic_plus`: `2026-10-28`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-10-30`
+/// - `agentic`: `2026-10-30` - `agentic_plus`: `2026-10-28`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -441,9 +441,8 @@ sealed class ParseV2ParametersTierConverter : JsonConverter<ParseV2ParametersTie
 public enum Version
 {
     Latest,
+    V2026_10_30,
     V2026_10_28,
-    V2026_10_16,
-    V2026_09_28,
     V2026_06_15,
 }
 
@@ -458,9 +457,8 @@ sealed class VersionConverter : JsonConverter<global::LlamaCloud.Models.Configur
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => global::LlamaCloud.Models.Configurations.Version.Latest,
+            "2026-10-30" => global::LlamaCloud.Models.Configurations.Version.V2026_10_30,
             "2026-10-28" => global::LlamaCloud.Models.Configurations.Version.V2026_10_28,
-            "2026-10-16" => global::LlamaCloud.Models.Configurations.Version.V2026_10_16,
-            "2026-09-28" => global::LlamaCloud.Models.Configurations.Version.V2026_09_28,
             "2026-06-15" => global::LlamaCloud.Models.Configurations.Version.V2026_06_15,
             _ => (global::LlamaCloud.Models.Configurations.Version)(-1),
         };
@@ -477,9 +475,8 @@ sealed class VersionConverter : JsonConverter<global::LlamaCloud.Models.Configur
             value switch
             {
                 global::LlamaCloud.Models.Configurations.Version.Latest => "latest",
+                global::LlamaCloud.Models.Configurations.Version.V2026_10_30 => "2026-10-30",
                 global::LlamaCloud.Models.Configurations.Version.V2026_10_28 => "2026-10-28",
-                global::LlamaCloud.Models.Configurations.Version.V2026_10_16 => "2026-10-16",
-                global::LlamaCloud.Models.Configurations.Version.V2026_09_28 => "2026-09-28",
                 global::LlamaCloud.Models.Configurations.Version.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -3364,7 +3361,7 @@ public sealed record class ParsingConf : JsonModel
     /// or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-09-28` - `agentic`: `2026-10-16` - `agentic_plus`: `2026-10-28`</para>
+    /// `2026-10-30` - `agentic`: `2026-10-30` - `agentic_plus`: `2026-10-28`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -3885,8 +3882,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin
 /// one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
-/// - `agentic`: `2026-10-16` - `agentic_plus`: `2026-10-28`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-10-30`
+/// - `agentic`: `2026-10-30` - `agentic_plus`: `2026-10-28`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -3894,9 +3891,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 public enum ParsingConfVersion
 {
     Latest,
+    V2026_10_30,
     V2026_10_28,
-    V2026_10_16,
-    V2026_09_28,
     V2026_06_15,
 }
 
@@ -3911,9 +3907,8 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => ParsingConfVersion.Latest,
+            "2026-10-30" => ParsingConfVersion.V2026_10_30,
             "2026-10-28" => ParsingConfVersion.V2026_10_28,
-            "2026-10-16" => ParsingConfVersion.V2026_10_16,
-            "2026-09-28" => ParsingConfVersion.V2026_09_28,
             "2026-06-15" => ParsingConfVersion.V2026_06_15,
             _ => (ParsingConfVersion)(-1),
         };
@@ -3930,9 +3925,8 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
             value switch
             {
                 ParsingConfVersion.Latest => "latest",
+                ParsingConfVersion.V2026_10_30 => "2026-10-30",
                 ParsingConfVersion.V2026_10_28 => "2026-10-28",
-                ParsingConfVersion.V2026_10_16 => "2026-10-16",
-                ParsingConfVersion.V2026_09_28 => "2026-09-28",
                 ParsingConfVersion.V2026_06_15 => "2026-06-15",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
