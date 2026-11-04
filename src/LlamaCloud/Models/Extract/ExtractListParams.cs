@@ -14,9 +14,12 @@ namespace LlamaCloud.Models.Extract;
 /// <summary>
 /// List extraction jobs with optional filtering and pagination.
 ///
-/// <para>Filter by `configuration_id`, `status`, `file_input`, or creation date
-/// range. Results are returned newest-first. Use `expand=configuration` to include
-/// the full configuration used, and `expand=extract_metadata` for per-field metadata.</para>
+/// <para>Filter by `configuration_id`, `status`, `file_input`, `review_status`,
+/// or creation date range. Results are returned newest-first. `review_status=pending`
+/// lists completed jobs waiting for review, unless `status` names another. A review
+/// stays pending when its job fails or is cancelled, so pass that `status` to list
+/// those. Use `expand=configuration` to include the full configuration used, and
+/// `expand=extract_metadata` for per-field metadata.</para>
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
@@ -193,6 +196,21 @@ public record class ExtractListParams : ParamsBase
     }
 
     /// <summary>
+    /// Filter by review status; none is a job without a review
+    /// </summary>
+    public ApiEnum<string, ReviewStatus>? ReviewStatus
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<ApiEnum<string, ReviewStatus>>(
+                "review_status"
+            );
+        }
+        init { this._rawQueryData.Set("review_status", value); }
+    }
+
+    /// <summary>
     /// Filter by status
     /// </summary>
     public ApiEnum<string, Status>? Status
@@ -292,6 +310,59 @@ public record class ExtractListParams : ParamsBase
     public override int GetHashCode()
     {
         return 0;
+    }
+}
+
+/// <summary>
+/// Filter by review status; none is a job without a review
+/// </summary>
+[JsonConverter(typeof(ReviewStatusConverter))]
+public enum ReviewStatus
+{
+    Approved,
+    None,
+    Pending,
+    Rejected,
+}
+
+sealed class ReviewStatusConverter : JsonConverter<ReviewStatus>
+{
+    public override ReviewStatus Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "approved" => ReviewStatus.Approved,
+            "none" => ReviewStatus.None,
+            "pending" => ReviewStatus.Pending,
+            "rejected" => ReviewStatus.Rejected,
+            _ => (ReviewStatus)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ReviewStatus value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ReviewStatus.Approved => "approved",
+                ReviewStatus.None => "none",
+                ReviewStatus.Pending => "pending",
+                ReviewStatus.Rejected => "rejected",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }
 

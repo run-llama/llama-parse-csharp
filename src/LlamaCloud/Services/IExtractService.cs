@@ -55,10 +55,12 @@ public interface IExtractService
     /// <summary>
     /// List extraction jobs with optional filtering and pagination.
     ///
-    /// <para>Filter by `configuration_id`, `status`, `file_input`, or creation date
-    /// range. Results are returned newest-first. Use `expand=configuration` to include
-    /// the full configuration used, and `expand=extract_metadata` for per-field
-    /// metadata.</para>
+    /// <para>Filter by `configuration_id`, `status`, `file_input`, `review_status`, or
+    /// creation date range. Results are returned newest-first. `review_status=pending`
+    /// lists completed jobs waiting for review, unless `status` names another. A review
+    /// stays pending when its job fails or is cancelled, so pass that `status` to list
+    /// those. Use `expand=configuration` to include the full configuration used, and
+    /// `expand=extract_metadata` for per-field metadata.</para>
     /// </summary>
     Task<ExtractListPage> List(
         ExtractListParams? parameters = null,

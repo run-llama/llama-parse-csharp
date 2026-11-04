@@ -124,6 +124,7 @@ public abstract record class ModelBase
                 Extract::ExtractV2JobCreateWebhookConfigurationWebhookEvent
             >(),
             new ApiEnumConverter<string, Extract::WebhookEvent>(),
+            new ApiEnumConverter<string, Extract::ReviewStatus>(),
             new ApiEnumConverter<string, Extract::Status>(),
             new ApiEnumConverter<string, Mode>(),
             new ApiEnumConverter<string, Batches::BatchCreateResponseConfigJobType>(),
