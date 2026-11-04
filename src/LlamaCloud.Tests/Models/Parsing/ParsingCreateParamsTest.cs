@@ -3075,6 +3075,7 @@ public class GranularBboxTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::GranularBbox.Cell)]
+    [InlineData(Parsing::GranularBbox.Char)]
     [InlineData(Parsing::GranularBbox.Line)]
     [InlineData(Parsing::GranularBbox.Word)]
     public void Validation_Works(Parsing::GranularBbox rawValue)
@@ -3098,6 +3099,7 @@ public class GranularBboxTest : TestBase
 
     [Theory]
     [InlineData(Parsing::GranularBbox.Cell)]
+    [InlineData(Parsing::GranularBbox.Char)]
     [InlineData(Parsing::GranularBbox.Line)]
     [InlineData(Parsing::GranularBbox.Word)]
     public void SerializationRoundtrip_Works(Parsing::GranularBbox rawValue)
