@@ -7,6 +7,7 @@ using LlamaCloud.Core;
 using LlamaCloud.Exceptions;
 using LlamaCloud.Models.Configurations;
 using LlamaCloud.Models.Extract;
+using LlamaCloud.Services.Extract;
 
 namespace LlamaCloud.Services;
 
@@ -34,6 +35,13 @@ public sealed class ExtractService : IExtractService
         _client = client;
 
         _withRawResponse = new(() => new ExtractServiceWithRawResponse(client.WithRawResponse));
+        _review = new(() => new ReviewService(client));
+    }
+
+    readonly Lazy<IReviewService> _review;
+    public IReviewService Review
+    {
+        get { return _review.Value; }
     }
 
     /// <inheritdoc/>
@@ -171,6 +179,14 @@ public sealed class ExtractServiceWithRawResponse : IExtractServiceWithRawRespon
     public ExtractServiceWithRawResponse(ILlamaCloudClientWithRawResponse client)
     {
         _client = client;
+
+        _review = new(() => new ReviewServiceWithRawResponse(client));
+    }
+
+    readonly Lazy<IReviewServiceWithRawResponse> _review;
+    public IReviewServiceWithRawResponse Review
+    {
+        get { return _review.Value; }
     }
 
     /// <inheritdoc/>

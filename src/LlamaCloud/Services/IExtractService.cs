@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LlamaCloud.Core;
 using LlamaCloud.Models.Configurations;
 using LlamaCloud.Models.Extract;
+using LlamaCloud.Services.Extract;
 
 namespace LlamaCloud.Services;
 
@@ -27,6 +28,8 @@ public interface IExtractService
     /// <para>The original service is not modified.</para>
     /// </summary>
     IExtractService WithOptions(Func<ClientOptions, ClientOptions> modifier);
+
+    IReviewService Review { get; }
 
     /// <summary>
     /// Create an extraction job.
@@ -151,6 +154,8 @@ public interface IExtractServiceWithRawResponse
     /// <para>The original service is not modified.</para>
     /// </summary>
     IExtractServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
+
+    IReviewServiceWithRawResponse Review { get; }
 
     /// <summary>
     /// Returns a raw HTTP response for <c>post /api/v2/extract</c>, but is otherwise the

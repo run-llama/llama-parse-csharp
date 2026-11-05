@@ -23,6 +23,7 @@ using Indexes = LlamaCloud.Models.Beta.Indexes;
 using Parsing = LlamaCloud.Models.Parsing;
 using Pipelines = LlamaCloud.Models.Pipelines;
 using Retrieval = LlamaCloud.Models.Beta.Retrieval;
+using Review = LlamaCloud.Models.Extract.Review;
 using Split = LlamaCloud.Models.Beta.Split;
 using Verify = LlamaCloud.Models.Alpha.Verify;
 using WebhookConfigs = LlamaCloud.Models.WebhookConfigs;
@@ -126,6 +127,12 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Extract::WebhookEvent>(),
             new ApiEnumConverter<string, Extract::ReviewStatus>(),
             new ApiEnumConverter<string, Extract::Status>(),
+            new ApiEnumConverter<string, Review::Action>(),
+            new ApiEnumConverter<string, Review::Reason>(),
+            new ApiEnumConverter<string, Review::Status>(),
+            new ApiEnumConverter<string, Review::Kind>(),
+            new ApiEnumConverter<string, Review::Origin>(),
+            new ApiEnumConverter<string, Review::ChangeChange>(),
             new ApiEnumConverter<string, Mode>(),
             new ApiEnumConverter<string, Batches::BatchCreateResponseConfigJobType>(),
             new ApiEnumConverter<string, Batches::BatchCreateResponseStatus>(),
