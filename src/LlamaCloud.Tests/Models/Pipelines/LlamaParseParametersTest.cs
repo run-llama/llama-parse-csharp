@@ -140,6 +140,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -285,6 +286,7 @@ public class LlamaParseParametersTest : TestBase
         [
             new()
             {
+                ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                 WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                 WebhookHeaders = new Dictionary<string, string>()
                 {
@@ -600,6 +602,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -753,6 +756,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -905,6 +909,7 @@ public class LlamaParseParametersTest : TestBase
         [
             new()
             {
+                ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                 WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                 WebhookHeaders = new Dictionary<string, string>()
                 {
@@ -1247,6 +1252,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -1393,6 +1399,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -1540,6 +1547,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -1686,6 +1694,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -1836,6 +1845,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -2750,6 +2760,7 @@ public class LlamaParseParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
                     WebhookHeaders = new Dictionary<string, string>()
                     {
@@ -2898,6 +2909,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
             WebhookHeaders = new Dictionary<string, string>()
             {
@@ -2908,6 +2920,7 @@ public class WebhookConfigurationTest : TestBase
             WebhookUrl = "https://example.com/webhooks/llamacloud",
         };
 
+        string expectedID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6";
         List<ApiEnum<string, WebhookEvent>> expectedWebhookEvents =
         [
             WebhookEvent.ParseSuccess,
@@ -2921,6 +2934,7 @@ public class WebhookConfigurationTest : TestBase
         string expectedWebhookSigningSecret = "whsec_...";
         string expectedWebhookUrl = "https://example.com/webhooks/llamacloud";
 
+        Assert.Equal(expectedID, model.ID);
         Assert.NotNull(model.WebhookEvents);
         Assert.Equal(expectedWebhookEvents.Count, model.WebhookEvents.Count);
         for (int i = 0; i < expectedWebhookEvents.Count; i++)
@@ -2945,6 +2959,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
             WebhookHeaders = new Dictionary<string, string>()
             {
@@ -2969,6 +2984,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
             WebhookHeaders = new Dictionary<string, string>()
             {
@@ -2986,6 +3002,7 @@ public class WebhookConfigurationTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        string expectedID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6";
         List<ApiEnum<string, WebhookEvent>> expectedWebhookEvents =
         [
             WebhookEvent.ParseSuccess,
@@ -2999,6 +3016,7 @@ public class WebhookConfigurationTest : TestBase
         string expectedWebhookSigningSecret = "whsec_...";
         string expectedWebhookUrl = "https://example.com/webhooks/llamacloud";
 
+        Assert.Equal(expectedID, deserialized.ID);
         Assert.NotNull(deserialized.WebhookEvents);
         Assert.Equal(expectedWebhookEvents.Count, deserialized.WebhookEvents.Count);
         for (int i = 0; i < expectedWebhookEvents.Count; i++)
@@ -3023,6 +3041,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
             WebhookHeaders = new Dictionary<string, string>()
             {
@@ -3041,6 +3060,8 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration { };
 
+        Assert.Null(model.ID);
+        Assert.False(model.RawData.ContainsKey("id"));
         Assert.Null(model.WebhookEvents);
         Assert.False(model.RawData.ContainsKey("webhook_events"));
         Assert.Null(model.WebhookHeaders);
@@ -3066,6 +3087,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = null,
             WebhookEvents = null,
             WebhookHeaders = null,
             WebhookOutputFormat = null,
@@ -3073,6 +3095,8 @@ public class WebhookConfigurationTest : TestBase
             WebhookUrl = null,
         };
 
+        Assert.Null(model.ID);
+        Assert.True(model.RawData.ContainsKey("id"));
         Assert.Null(model.WebhookEvents);
         Assert.True(model.RawData.ContainsKey("webhook_events"));
         Assert.Null(model.WebhookHeaders);
@@ -3090,6 +3114,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = null,
             WebhookEvents = null,
             WebhookHeaders = null,
             WebhookOutputFormat = null,
@@ -3105,6 +3130,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = [WebhookEvent.ParseSuccess, WebhookEvent.ParseError],
             WebhookHeaders = new Dictionary<string, string>()
             {

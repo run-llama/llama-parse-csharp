@@ -657,6 +657,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 [
                     new()
                     {
+                        ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                         WebhookEvents = ["parse.success", "parse.error"],
                         WebhookHeaders = new Dictionary<string, JsonElement>()
                         {
@@ -987,6 +988,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 [
                     new()
                     {
+                        ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                         WebhookEvents = ["parse.success", "parse.error"],
                         WebhookHeaders = new Dictionary<string, JsonElement>()
                         {

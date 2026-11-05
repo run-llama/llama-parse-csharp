@@ -1562,11 +1562,25 @@ sealed class PriorityConverter : JsonConverter<Priority>
 }
 
 /// <summary>
-/// Configuration for a single outbound webhook endpoint.
+/// A webhook endpoint kept in a saved configuration or pipeline.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<WebhookConfiguration, WebhookConfigurationFromRaw>))]
 public sealed record class WebhookConfiguration : JsonModel
 {
+    /// <summary>
+    /// Webhook ID, set by the server. Send it back unchanged so a masked credential
+    /// keeps this webhook's saved value.
+    /// </summary>
+    public string? ID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("id");
+        }
+        init { this._rawData.Set("id", value); }
+    }
+
     /// <summary>
     /// Events to subscribe to (e.g. 'parse.success', 'extract.error'). If null, all
     /// events are delivered.
@@ -1655,6 +1669,7 @@ public sealed record class WebhookConfiguration : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.ID;
         foreach (var item in this.WebhookEvents ?? [])
         {
             item.Validate();

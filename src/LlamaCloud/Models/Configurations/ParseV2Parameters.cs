@@ -9718,14 +9718,25 @@ sealed class ProcessingOptionsSpecializedChartParsingConverter
 }
 
 /// <summary>
-/// Webhook configuration for receiving parsing job notifications.
-///
-/// <para>Webhooks are called when specified events occur during job processing.
-/// Configure multiple webhook configurations to send to different endpoints.</para>
+/// A webhook endpoint kept in a saved Parse configuration.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<WebhookConfiguration, WebhookConfigurationFromRaw>))]
 public sealed record class WebhookConfiguration : JsonModel
 {
+    /// <summary>
+    /// Webhook ID, set by the server. Send it back unchanged so a masked credential
+    /// keeps this webhook's saved value.
+    /// </summary>
+    public string? ID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("id");
+        }
+        init { this._rawData.Set("id", value); }
+    }
+
     /// <summary>
     /// Events that trigger this webhook. Options: 'parse.success' (job completed),
     /// 'parse.error' (job failed), 'parse.partial_success' (some pages failed),
@@ -9818,6 +9829,7 @@ public sealed record class WebhookConfiguration : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.ID;
         _ = this.WebhookEvents;
         _ = this.WebhookHeaders;
         this.WebhookOutputFormat?.Validate();
