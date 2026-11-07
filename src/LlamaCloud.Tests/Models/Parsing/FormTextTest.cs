@@ -73,6 +73,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -120,6 +143,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -166,6 +212,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -236,6 +305,29 @@ public class FormTextTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -283,6 +375,29 @@ public class FormTextTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -329,6 +444,29 @@ public class FormTextTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -414,6 +552,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -461,6 +622,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -507,6 +691,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -588,6 +795,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -635,6 +865,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -681,6 +934,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -758,6 +1034,29 @@ public class FormTextTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -805,6 +1104,29 @@ public class FormTextTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -851,6 +1173,29 @@ public class FormTextTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -936,6 +1281,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -983,6 +1351,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1029,6 +1420,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -1107,6 +1521,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1154,6 +1591,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1200,6 +1660,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -1278,6 +1761,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1325,6 +1831,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1371,6 +1900,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -1448,6 +2000,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1495,6 +2070,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1541,6 +2139,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -1622,6 +2243,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1669,6 +2313,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1715,6 +2382,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -1847,6 +2537,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1894,6 +2607,29 @@ public class FormTextTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1940,6 +2676,29 @@ public class FormTextTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -2005,6 +2764,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2052,6 +2834,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2098,6 +2903,29 @@ public class GroundingModelTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -2148,6 +2976,29 @@ public class GroundingModelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -2195,6 +3046,29 @@ public class GroundingModelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -2241,6 +3115,29 @@ public class GroundingModelTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -2300,6 +3197,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2347,6 +3267,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2393,6 +3336,29 @@ public class GroundingModelTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -2457,6 +3423,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2504,6 +3493,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2550,6 +3562,29 @@ public class GroundingModelTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -2607,6 +3642,29 @@ public class GroundingModelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -2654,6 +3712,29 @@ public class GroundingModelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -2700,6 +3781,29 @@ public class GroundingModelTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -2759,6 +3863,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2806,6 +3933,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2852,6 +4002,29 @@ public class GroundingModelTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -2962,6 +4135,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3009,6 +4205,29 @@ public class GroundingModelTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3055,6 +4274,29 @@ public class GroundingModelTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -3118,6 +4360,29 @@ public class GroundingModelIDTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -3165,6 +4430,29 @@ public class GroundingModelIDTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -3224,6 +4512,29 @@ public class GroundingModelIDTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -3287,6 +4598,29 @@ public class GroundingModelIDTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -3341,6 +4675,29 @@ public class GroundingModelIDTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -3401,6 +4758,29 @@ public class GroundingModelIDTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -3456,6 +4836,29 @@ public class GroundingModelIDTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -3514,6 +4917,29 @@ public class GroundingModelIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -3555,6 +4981,29 @@ public class GroundingModelIDLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -3616,6 +5065,29 @@ public class GroundingModelIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -3672,6 +5144,29 @@ public class GroundingModelIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -3720,6 +5215,29 @@ public class GroundingModelIDLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -3780,6 +5298,29 @@ public class GroundingModelIDLineTest : TestBase
                     [
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
                     ],
                 },
             ],
@@ -3945,6 +5486,29 @@ public class GroundingModelIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -3961,6 +5525,492 @@ public class GroundingModelIDLineWordTest : TestBase
     public void FieldRoundtrip_Works()
     {
         var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<GroundingModelIDLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, model.Bbox);
+        Assert.Equal(expectedSpan.Count, model.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
+        }
+        Assert.NotNull(model.Chars);
+        Assert.Equal(expectedChars.Count, model.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], model.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<GroundingModelIDLineWord>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<GroundingModelIDLineWord>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<GroundingModelIDLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, deserialized.Bbox);
+        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
+        }
+        Assert.NotNull(deserialized.Chars);
+        Assert.Equal(expectedChars.Count, deserialized.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], deserialized.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        Assert.Null(model.Chars);
+        Assert.False(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        Assert.Null(model.Chars);
+        Assert.True(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new GroundingModelIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        GroundingModelIDLineWord copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class GroundingModelIDLineWordCharTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new GroundingModelIDLineWordChar
         {
             Bbox = new()
             {
@@ -4010,7 +6060,7 @@ public class GroundingModelIDLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new GroundingModelIDLineWord
+        var model = new GroundingModelIDLineWordChar
         {
             Bbox = new()
             {
@@ -4032,7 +6082,7 @@ public class GroundingModelIDLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<GroundingModelIDLineWord>(
+        var deserialized = JsonSerializer.Deserialize<GroundingModelIDLineWordChar>(
             json,
             ModelBase.SerializerOptions
         );
@@ -4043,7 +6093,7 @@ public class GroundingModelIDLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new GroundingModelIDLineWord
+        var model = new GroundingModelIDLineWordChar
         {
             Bbox = new()
             {
@@ -4065,7 +6115,7 @@ public class GroundingModelIDLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<GroundingModelIDLineWord>(
+        var deserialized = JsonSerializer.Deserialize<GroundingModelIDLineWordChar>(
             element,
             ModelBase.SerializerOptions
         );
@@ -4100,7 +6150,7 @@ public class GroundingModelIDLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new GroundingModelIDLineWord
+        var model = new GroundingModelIDLineWordChar
         {
             Bbox = new()
             {
@@ -4127,7 +6177,7 @@ public class GroundingModelIDLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new GroundingModelIDLineWord
+        var model = new GroundingModelIDLineWordChar
         {
             Bbox = new()
             {
@@ -4148,7 +6198,7 @@ public class GroundingModelIDLineWordTest : TestBase
             ],
         };
 
-        GroundingModelIDLineWord copied = new(model);
+        GroundingModelIDLineWordChar copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -4203,6 +6253,29 @@ public class GroundingModelLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -4250,6 +6323,29 @@ public class GroundingModelLabelTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -4310,6 +6406,29 @@ public class GroundingModelLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -4372,6 +6491,29 @@ public class GroundingModelLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -4426,6 +6568,29 @@ public class GroundingModelLabelTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -4486,6 +6651,29 @@ public class GroundingModelLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -4541,6 +6729,29 @@ public class GroundingModelLabelTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -4599,6 +6810,29 @@ public class GroundingModelLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -4640,6 +6874,29 @@ public class GroundingModelLabelLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -4701,6 +6958,29 @@ public class GroundingModelLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -4757,6 +7037,29 @@ public class GroundingModelLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -4805,6 +7108,29 @@ public class GroundingModelLabelLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -4865,6 +7191,29 @@ public class GroundingModelLabelLineTest : TestBase
                     [
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
                     ],
                 },
             ],
@@ -5030,6 +7379,29 @@ public class GroundingModelLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -5046,6 +7418,492 @@ public class GroundingModelLabelLineWordTest : TestBase
     public void FieldRoundtrip_Works()
     {
         var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<GroundingModelLabelLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, model.Bbox);
+        Assert.Equal(expectedSpan.Count, model.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
+        }
+        Assert.NotNull(model.Chars);
+        Assert.Equal(expectedChars.Count, model.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], model.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<GroundingModelLabelLineWord>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<GroundingModelLabelLineWord>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<GroundingModelLabelLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, deserialized.Bbox);
+        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
+        }
+        Assert.NotNull(deserialized.Chars);
+        Assert.Equal(expectedChars.Count, deserialized.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], deserialized.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        Assert.Null(model.Chars);
+        Assert.False(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        Assert.Null(model.Chars);
+        Assert.True(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new GroundingModelLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        GroundingModelLabelLineWord copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class GroundingModelLabelLineWordCharTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new GroundingModelLabelLineWordChar
         {
             Bbox = new()
             {
@@ -5095,7 +7953,7 @@ public class GroundingModelLabelLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new GroundingModelLabelLineWord
+        var model = new GroundingModelLabelLineWordChar
         {
             Bbox = new()
             {
@@ -5117,7 +7975,7 @@ public class GroundingModelLabelLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<GroundingModelLabelLineWord>(
+        var deserialized = JsonSerializer.Deserialize<GroundingModelLabelLineWordChar>(
             json,
             ModelBase.SerializerOptions
         );
@@ -5128,7 +7986,7 @@ public class GroundingModelLabelLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new GroundingModelLabelLineWord
+        var model = new GroundingModelLabelLineWordChar
         {
             Bbox = new()
             {
@@ -5150,7 +8008,7 @@ public class GroundingModelLabelLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<GroundingModelLabelLineWord>(
+        var deserialized = JsonSerializer.Deserialize<GroundingModelLabelLineWordChar>(
             element,
             ModelBase.SerializerOptions
         );
@@ -5185,7 +8043,7 @@ public class GroundingModelLabelLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new GroundingModelLabelLineWord
+        var model = new GroundingModelLabelLineWordChar
         {
             Bbox = new()
             {
@@ -5212,7 +8070,7 @@ public class GroundingModelLabelLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new GroundingModelLabelLineWord
+        var model = new GroundingModelLabelLineWordChar
         {
             Bbox = new()
             {
@@ -5233,7 +8091,7 @@ public class GroundingModelLabelLineWordTest : TestBase
             ],
         };
 
-        GroundingModelLabelLineWord copied = new(model);
+        GroundingModelLabelLineWordChar copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -5288,6 +8146,29 @@ public class GroundingModelValueTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -5335,6 +8216,29 @@ public class GroundingModelValueTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -5395,6 +8299,29 @@ public class GroundingModelValueTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -5457,6 +8384,29 @@ public class GroundingModelValueTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -5511,6 +8461,29 @@ public class GroundingModelValueTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -5571,6 +8544,29 @@ public class GroundingModelValueTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -5626,6 +8622,29 @@ public class GroundingModelValueTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -5684,6 +8703,29 @@ public class GroundingModelValueLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -5725,6 +8767,29 @@ public class GroundingModelValueLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -5786,6 +8851,29 @@ public class GroundingModelValueLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -5842,6 +8930,29 @@ public class GroundingModelValueLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -5890,6 +9001,29 @@ public class GroundingModelValueLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -5950,6 +9084,29 @@ public class GroundingModelValueLineTest : TestBase
                     [
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
                     ],
                 },
             ],
@@ -6115,6 +9272,29 @@ public class GroundingModelValueLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -6131,6 +9311,492 @@ public class GroundingModelValueLineWordTest : TestBase
     public void FieldRoundtrip_Works()
     {
         var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<GroundingModelValueLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, model.Bbox);
+        Assert.Equal(expectedSpan.Count, model.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
+        }
+        Assert.NotNull(model.Chars);
+        Assert.Equal(expectedChars.Count, model.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], model.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<GroundingModelValueLineWord>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<GroundingModelValueLineWord>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<GroundingModelValueLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, deserialized.Bbox);
+        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
+        }
+        Assert.NotNull(deserialized.Chars);
+        Assert.Equal(expectedChars.Count, deserialized.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], deserialized.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        Assert.Null(model.Chars);
+        Assert.False(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        Assert.Null(model.Chars);
+        Assert.True(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new GroundingModelValueLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        GroundingModelValueLineWord copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class GroundingModelValueLineWordCharTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new GroundingModelValueLineWordChar
         {
             Bbox = new()
             {
@@ -6180,7 +9846,7 @@ public class GroundingModelValueLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new GroundingModelValueLineWord
+        var model = new GroundingModelValueLineWordChar
         {
             Bbox = new()
             {
@@ -6202,7 +9868,7 @@ public class GroundingModelValueLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<GroundingModelValueLineWord>(
+        var deserialized = JsonSerializer.Deserialize<GroundingModelValueLineWordChar>(
             json,
             ModelBase.SerializerOptions
         );
@@ -6213,7 +9879,7 @@ public class GroundingModelValueLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new GroundingModelValueLineWord
+        var model = new GroundingModelValueLineWordChar
         {
             Bbox = new()
             {
@@ -6235,7 +9901,7 @@ public class GroundingModelValueLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<GroundingModelValueLineWord>(
+        var deserialized = JsonSerializer.Deserialize<GroundingModelValueLineWordChar>(
             element,
             ModelBase.SerializerOptions
         );
@@ -6270,7 +9936,7 @@ public class GroundingModelValueLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new GroundingModelValueLineWord
+        var model = new GroundingModelValueLineWordChar
         {
             Bbox = new()
             {
@@ -6297,7 +9963,7 @@ public class GroundingModelValueLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new GroundingModelValueLineWord
+        var model = new GroundingModelValueLineWordChar
         {
             Bbox = new()
             {
@@ -6318,7 +9984,7 @@ public class GroundingModelValueLineWordTest : TestBase
             ],
         };
 
-        GroundingModelValueLineWord copied = new(model);
+        GroundingModelValueLineWordChar copied = new(model);
 
         Assert.Equal(model, copied);
     }

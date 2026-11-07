@@ -26,6 +26,7 @@ public class ExtractListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ReviewStatus = ReviewStatus.Approved,
             Status = Status.Cancelled,
         };
 
@@ -45,6 +46,7 @@ public class ExtractListParamsTest : TestBase
         long expectedPageSize = 1;
         string expectedPageToken = "page_token";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        ApiEnum<string, ReviewStatus> expectedReviewStatus = ReviewStatus.Approved;
         ApiEnum<string, Status> expectedStatus = Status.Cancelled;
 
         Assert.Equal(expectedConfigurationID, parameters.ConfigurationID);
@@ -69,6 +71,7 @@ public class ExtractListParamsTest : TestBase
         Assert.Equal(expectedPageSize, parameters.PageSize);
         Assert.Equal(expectedPageToken, parameters.PageToken);
         Assert.Equal(expectedProjectID, parameters.ProjectID);
+        Assert.Equal(expectedReviewStatus, parameters.ReviewStatus);
         Assert.Equal(expectedStatus, parameters.Status);
     }
 
@@ -88,6 +91,7 @@ public class ExtractListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ReviewStatus = ReviewStatus.Approved,
             Status = Status.Cancelled,
         };
 
@@ -111,6 +115,7 @@ public class ExtractListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ReviewStatus = ReviewStatus.Approved,
             Status = Status.Cancelled,
 
             // Null should be interpreted as omitted for these properties
@@ -148,6 +153,8 @@ public class ExtractListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("page_token"));
         Assert.Null(parameters.ProjectID);
         Assert.False(parameters.RawQueryData.ContainsKey("project_id"));
+        Assert.Null(parameters.ReviewStatus);
+        Assert.False(parameters.RawQueryData.ContainsKey("review_status"));
         Assert.Null(parameters.Status);
         Assert.False(parameters.RawQueryData.ContainsKey("status"));
     }
@@ -170,6 +177,7 @@ public class ExtractListParamsTest : TestBase
             PageSize = null,
             PageToken = null,
             ProjectID = null,
+            ReviewStatus = null,
             Status = null,
         };
 
@@ -195,6 +203,8 @@ public class ExtractListParamsTest : TestBase
         Assert.True(parameters.RawQueryData.ContainsKey("page_token"));
         Assert.Null(parameters.ProjectID);
         Assert.True(parameters.RawQueryData.ContainsKey("project_id"));
+        Assert.Null(parameters.ReviewStatus);
+        Assert.True(parameters.RawQueryData.ContainsKey("review_status"));
         Assert.Null(parameters.Status);
         Assert.True(parameters.RawQueryData.ContainsKey("status"));
     }
@@ -216,6 +226,7 @@ public class ExtractListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ReviewStatus = ReviewStatus.Approved,
             Status = Status.Cancelled,
         };
 
@@ -224,7 +235,7 @@ public class ExtractListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v2/extract?configuration_id=cfg-11111111-2222-3333-4444-555555555555&created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&document_input_type=document_input_type&document_input_value=document_input_value&expand=string&file_input=file_input&job_ids=string&job_ids=string&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&status=CANCELLED"
+                    "https://api.cloud.llamaindex.ai/api/v2/extract?configuration_id=cfg-11111111-2222-3333-4444-555555555555&created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&document_input_type=document_input_type&document_input_value=document_input_value&expand=string&file_input=file_input&job_ids=string&job_ids=string&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&review_status=approved&status=CANCELLED"
                 ),
                 url
             )
@@ -248,12 +259,75 @@ public class ExtractListParamsTest : TestBase
             PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ReviewStatus = ReviewStatus.Approved,
             Status = Status.Cancelled,
         };
 
         ExtractListParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
+    }
+}
+
+public class ReviewStatusTest : TestBase
+{
+    [Theory]
+    [InlineData(ReviewStatus.Approved)]
+    [InlineData(ReviewStatus.None)]
+    [InlineData(ReviewStatus.Pending)]
+    [InlineData(ReviewStatus.Rejected)]
+    public void Validation_Works(ReviewStatus rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ReviewStatus> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ReviewStatus>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ReviewStatus.Approved)]
+    [InlineData(ReviewStatus.None)]
+    [InlineData(ReviewStatus.Pending)]
+    [InlineData(ReviewStatus.Rejected)]
+    public void SerializationRoundtrip_Works(ReviewStatus rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ReviewStatus> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ReviewStatus>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ReviewStatus>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ReviewStatus>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 

@@ -126,6 +126,21 @@ public sealed record class ExtractConfiguration : JsonModel
     }
 
     /// <summary>
+    /// Use 'max' for additional processing effort on agentic_plus. Bills by model
+    /// usage with the page charge as a minimum. Omit or set to null for the tier's
+    /// default behavior.
+    /// </summary>
+    public ApiEnum<string, Effort>? Effort
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, Effort>>("effort");
+        }
+        init { this._rawData.Set("effort", value); }
+    }
+
+    /// <summary>
     /// Deprecated. Applies only to Agentic and Cost Effective versions 2.0 or earlier.
     /// Granularity of extraction: per_doc returns one object per document, per_page
     /// returns one object per page, per_table_row returns one object per table row.
@@ -216,12 +231,9 @@ public sealed record class ExtractConfiguration : JsonModel
     }
 
     /// <summary>
-    /// Beta. When true, extract structured data directly from a spreadsheet workbook
-    /// (.xlsx/.xls/.csv) — the agent reads cells straight from the workbook instead
-    /// of the standard document path. Off by default (spreadsheets keep the standard
-    /// path). Requires the agentic_plus tier. Billed on the standard per-page extract
-    /// rate, against a page count derived from workbook size. Citations and confidence
-    /// scores are not available in this mode.
+    /// Extract structured data directly from spreadsheet cells (.xlsx/.xls/.csv).
+    /// Billed at the standard per-page Extract rate, with page count derived from
+    /// workbook size.
     /// </summary>
     public bool? SpreadsheetMode
     {
@@ -324,6 +336,7 @@ public sealed record class ExtractConfiguration : JsonModel
         _ = this.CiteSources;
         _ = this.ConfidenceScores;
         _ = this.DisableCache;
+        this.Effort?.Validate();
         this.ExtractionTarget?.Validate();
         _ = this.MaxPages;
         _ = this.ParseConfigID;
@@ -792,6 +805,47 @@ sealed class ExtractConfigurationDataSchemaConverter
     )
     {
         JsonSerializer.Serialize(writer, value?.Json, options);
+    }
+}
+
+/// <summary>
+/// Use 'max' for additional processing effort on agentic_plus. Bills by model usage
+/// with the page charge as a minimum. Omit or set to null for the tier's default behavior.
+/// </summary>
+[JsonConverter(typeof(EffortConverter))]
+public enum Effort
+{
+    Max,
+}
+
+sealed class EffortConverter : JsonConverter<Effort>
+{
+    public override Effort Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "max" => Effort.Max,
+            _ => (Effort)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Effort value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Effort.Max => "max",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }
 

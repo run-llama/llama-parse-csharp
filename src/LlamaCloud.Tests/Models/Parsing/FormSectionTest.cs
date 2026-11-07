@@ -78,6 +78,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -125,6 +152,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -171,6 +225,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -263,6 +344,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -320,6 +428,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -375,6 +510,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -433,6 +595,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -496,6 +685,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -546,6 +762,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -604,6 +847,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -650,6 +916,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -726,6 +1015,29 @@ public class FormSectionTest : TestBase
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                         ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
+                                        ],
                                     },
                                 ],
                             },
@@ -773,6 +1085,29 @@ public class FormSectionTest : TestBase
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                         ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
+                                        ],
                                     },
                                 ],
                             },
@@ -819,6 +1154,29 @@ public class FormSectionTest : TestBase
                                         [
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
                                         ],
                                     },
                                 ],
@@ -907,6 +1265,33 @@ public class FormSectionTest : TestBase
                                                                 "{}"
                                                             ),
                                                         ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
+                                                        ],
                                                     },
                                                 ],
                                             },
@@ -964,6 +1349,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -1015,6 +1427,33 @@ public class FormSectionTest : TestBase
                                                             JsonSerializer.Deserialize<JsonElement>(
                                                                 "{}"
                                                             ),
+                                                        ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
                                                         ],
                                                     },
                                                 ],
@@ -1074,6 +1513,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -1132,6 +1598,33 @@ public class FormSectionTest : TestBase
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 ],
+                                                Chars =
+                                                [
+                                                    new()
+                                                    {
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                        Span =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
+                                                    },
+                                                ],
                                             },
                                         ],
                                     },
@@ -1178,6 +1671,33 @@ public class FormSectionTest : TestBase
                                                 [
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                                Chars =
+                                                [
+                                                    new()
+                                                    {
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                        Span =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
+                                                    },
                                                 ],
                                             },
                                         ],
@@ -1236,6 +1756,29 @@ public class FormSectionTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -1282,6 +1825,29 @@ public class FormSectionTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -1373,6 +1939,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -1420,6 +2013,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -1466,6 +2086,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -1558,6 +2205,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -1615,6 +2289,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -1670,6 +2371,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -1728,6 +2456,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -1791,6 +2546,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -1841,6 +2623,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -1899,6 +2708,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -1945,6 +2777,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -2035,6 +2890,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -2082,6 +2964,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -2128,6 +3037,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -2220,6 +3156,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -2277,6 +3240,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -2332,6 +3322,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -2390,6 +3407,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -2453,6 +3497,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -2503,6 +3574,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -2561,6 +3659,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -2607,6 +3728,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -2690,6 +3834,29 @@ public class FormSectionTest : TestBase
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                         ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
+                                        ],
                                     },
                                 ],
                             },
@@ -2737,6 +3904,29 @@ public class FormSectionTest : TestBase
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                         ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
+                                        ],
                                     },
                                 ],
                             },
@@ -2783,6 +3973,29 @@ public class FormSectionTest : TestBase
                                         [
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
                                         ],
                                     },
                                 ],
@@ -2871,6 +4084,33 @@ public class FormSectionTest : TestBase
                                                                 "{}"
                                                             ),
                                                         ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
+                                                        ],
                                                     },
                                                 ],
                                             },
@@ -2928,6 +4168,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -2979,6 +4246,33 @@ public class FormSectionTest : TestBase
                                                             JsonSerializer.Deserialize<JsonElement>(
                                                                 "{}"
                                                             ),
+                                                        ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
                                                         ],
                                                     },
                                                 ],
@@ -3038,6 +4332,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -3096,6 +4417,33 @@ public class FormSectionTest : TestBase
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 ],
+                                                Chars =
+                                                [
+                                                    new()
+                                                    {
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                        Span =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
+                                                    },
+                                                ],
                                             },
                                         ],
                                     },
@@ -3142,6 +4490,33 @@ public class FormSectionTest : TestBase
                                                 [
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                                Chars =
+                                                [
+                                                    new()
+                                                    {
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                        Span =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
+                                                    },
                                                 ],
                                             },
                                         ],
@@ -3200,6 +4575,29 @@ public class FormSectionTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3246,6 +4644,29 @@ public class FormSectionTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -3337,6 +4758,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -3384,6 +4832,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -3430,6 +4905,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -3522,6 +5024,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -3579,6 +5108,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -3634,6 +5190,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -3692,6 +5275,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -3755,6 +5365,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -3805,6 +5442,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -3863,6 +5527,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -3909,6 +5596,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -3993,6 +5703,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -4040,6 +5777,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -4086,6 +5850,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -4178,6 +5969,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -4235,6 +6053,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -4290,6 +6135,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -4348,6 +6220,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -4411,6 +6310,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -4461,6 +6387,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -4519,6 +6472,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -4565,6 +6541,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -4649,6 +6648,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -4696,6 +6722,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -4742,6 +6795,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -4834,6 +6914,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -4891,6 +6998,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -4946,6 +7080,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -5004,6 +7165,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -5067,6 +7255,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -5117,6 +7332,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -5175,6 +7417,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -5221,6 +7486,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -5304,6 +7592,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -5351,6 +7666,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -5397,6 +7739,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -5489,6 +7858,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -5546,6 +7942,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -5601,6 +8024,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -5659,6 +8109,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -5722,6 +8199,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -5772,6 +8276,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -5830,6 +8361,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -5876,6 +8430,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -5963,6 +8540,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -6010,6 +8614,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -6056,6 +8687,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -6148,6 +8806,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -6205,6 +8890,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -6260,6 +8972,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -6318,6 +9057,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -6381,6 +9147,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -6431,6 +9224,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -6489,6 +9309,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -6535,6 +9378,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -6621,6 +9487,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -6668,6 +9561,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -6714,6 +9634,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -6806,6 +9753,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -6863,6 +9837,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -6918,6 +9919,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -6976,6 +10004,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -7039,6 +10094,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -7089,6 +10171,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -7183,6 +10292,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -7230,6 +10366,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -7276,6 +10439,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -7368,6 +10558,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -7425,6 +10642,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -7480,6 +10724,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -7538,6 +10809,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -7601,6 +10899,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -7651,6 +10976,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -7740,6 +11092,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -7787,6 +11166,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -7833,6 +11239,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -7925,6 +11358,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -7982,6 +11442,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -8037,6 +11524,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -8095,6 +11609,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -8158,6 +11699,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -8208,6 +11776,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -8306,6 +11901,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -8353,6 +11975,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -8399,6 +12048,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -8491,6 +12167,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -8548,6 +12251,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -8603,6 +12333,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -8661,6 +12418,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -8724,6 +12508,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -8774,6 +12585,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -8867,6 +12705,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -8914,6 +12779,33 @@ public class FormSectionTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -8960,6 +12852,33 @@ public class FormSectionTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -9052,6 +12971,33 @@ public class FormSectionTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -9109,6 +13055,33 @@ public class FormSectionTest : TestBase
                                                                         "{}"
                                                                     ),
                                                                 ],
+                                                                Chars =
+                                                                [
+                                                                    new()
+                                                                    {
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                        Span =
+                                                                        [
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                                "{}"
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
                                                             },
                                                         ],
                                                     },
@@ -9164,6 +13137,33 @@ public class FormSectionTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -9222,6 +13222,33 @@ public class FormSectionTest : TestBase
                                                                         JsonSerializer.Deserialize<JsonElement>(
                                                                             "{}"
                                                                         ),
+                                                                    ],
+                                                                    Chars =
+                                                                    [
+                                                                        new()
+                                                                        {
+                                                                            Bbox = new()
+                                                                            {
+                                                                                H = 0,
+                                                                                W = 0,
+                                                                                X = 0,
+                                                                                Y = 0,
+                                                                                Confidence = 0,
+                                                                                EndIndex = 0,
+                                                                                Label = "label",
+                                                                                R = 0,
+                                                                                StartIndex = 0,
+                                                                            },
+                                                                            Span =
+                                                                            [
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                                    "{}"
+                                                                                ),
+                                                                            ],
+                                                                        },
                                                                     ],
                                                                 },
                                                             ],
@@ -9285,6 +13312,33 @@ public class FormSectionTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -9335,6 +13389,33 @@ public class FormSectionTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -9393,6 +13474,29 @@ public class FormSectionTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -9439,6 +13543,29 @@ public class FormSectionTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -9524,6 +13651,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -9571,6 +13721,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -9617,6 +13790,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -9705,6 +13901,33 @@ public class FormSectionItemTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -9758,6 +13981,33 @@ public class FormSectionItemTest : TestBase
                                                                 "{}"
                                                             ),
                                                         ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
+                                                        ],
                                                     },
                                                 ],
                                             },
@@ -9809,6 +14059,33 @@ public class FormSectionItemTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -9868,6 +14145,33 @@ public class FormSectionItemTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -9926,6 +14230,33 @@ public class FormSectionItemTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -9972,6 +14303,33 @@ public class FormSectionItemTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -10057,6 +14415,33 @@ public class FormSectionItemTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -10104,6 +14489,33 @@ public class FormSectionItemTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -10150,6 +14562,33 @@ public class FormSectionItemTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -10234,6 +14673,33 @@ public class FormSectionItemTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -10287,6 +14753,33 @@ public class FormSectionItemTest : TestBase
                                                                 "{}"
                                                             ),
                                                         ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
+                                                        ],
                                                     },
                                                 ],
                                             },
@@ -10338,6 +14831,33 @@ public class FormSectionItemTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -10396,6 +14916,33 @@ public class FormSectionItemTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -10457,6 +15004,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -10503,6 +15073,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -10586,6 +15179,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -10635,6 +15251,29 @@ public class FormSectionItemTest : TestBase
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                         ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
+                                        ],
                                     },
                                 ],
                             },
@@ -10682,6 +15321,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -10732,6 +15394,33 @@ public class FormSectionItemTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -10813,6 +15502,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -10860,6 +15572,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -10906,6 +15641,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -10984,6 +15742,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -11031,6 +15812,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -11077,6 +15881,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -11165,6 +15992,33 @@ public class FormSectionItemTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -11218,6 +16072,33 @@ public class FormSectionItemTest : TestBase
                                                                 "{}"
                                                             ),
                                                         ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
+                                                        ],
                                                     },
                                                 ],
                                             },
@@ -11269,6 +16150,33 @@ public class FormSectionItemTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -11328,6 +16236,33 @@ public class FormSectionItemTest : TestBase
                                                                     "{}"
                                                                 ),
                                                             ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
+                                                            ],
                                                         },
                                                     ],
                                                 },
@@ -11386,6 +16321,33 @@ public class FormSectionItemTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -11432,6 +16394,33 @@ public class FormSectionItemTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -11523,6 +16512,33 @@ public class FormSectionItemTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -11570,6 +16586,33 @@ public class FormSectionItemTest : TestBase
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                             ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
+                                            ],
                                         },
                                     ],
                                 },
@@ -11616,6 +16659,33 @@ public class FormSectionItemTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -11700,6 +16770,33 @@ public class FormSectionItemTest : TestBase
                                                             "{}"
                                                         ),
                                                     ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
                                                 },
                                             ],
                                         },
@@ -11753,6 +16850,33 @@ public class FormSectionItemTest : TestBase
                                                                 "{}"
                                                             ),
                                                         ],
+                                                        Chars =
+                                                        [
+                                                            new()
+                                                            {
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                                Span =
+                                                                [
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                    JsonSerializer.Deserialize<JsonElement>(
+                                                                        "{}"
+                                                                    ),
+                                                                ],
+                                                            },
+                                                        ],
                                                     },
                                                 ],
                                             },
@@ -11804,6 +16928,33 @@ public class FormSectionItemTest : TestBase
                                                         JsonSerializer.Deserialize<JsonElement>(
                                                             "{}"
                                                         ),
+                                                    ],
+                                                    Chars =
+                                                    [
+                                                        new()
+                                                        {
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                            Span =
+                                                            [
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                                JsonSerializer.Deserialize<JsonElement>(
+                                                                    "{}"
+                                                                ),
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],
@@ -11862,6 +17013,33 @@ public class FormSectionItemTest : TestBase
                                                                 JsonSerializer.Deserialize<JsonElement>(
                                                                     "{}"
                                                                 ),
+                                                            ],
+                                                            Chars =
+                                                            [
+                                                                new()
+                                                                {
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                    Span =
+                                                                    [
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                                            "{}"
+                                                                        ),
+                                                                    ],
+                                                                },
                                                             ],
                                                         },
                                                     ],
@@ -11923,6 +17101,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -11969,6 +17170,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -12058,6 +17282,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -12107,6 +17354,29 @@ public class FormSectionItemTest : TestBase
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                             JsonSerializer.Deserialize<JsonElement>("{}"),
                                         ],
+                                        Chars =
+                                        [
+                                            new()
+                                            {
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                                Span =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
+                                            },
+                                        ],
                                     },
                                 ],
                             },
@@ -12154,6 +17424,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -12204,6 +17497,33 @@ public class FormSectionItemTest : TestBase
                                             [
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                            Chars =
+                                            [
+                                                new()
+                                                {
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                    Span =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
+                                                },
                                             ],
                                         },
                                     ],
@@ -12291,6 +17611,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -12338,6 +17681,29 @@ public class FormSectionItemTest : TestBase
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                     ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
+                                    ],
                                 },
                             ],
                         },
@@ -12384,6 +17750,29 @@ public class FormSectionItemTest : TestBase
                                     [
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
                                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    Chars =
+                                    [
+                                        new()
+                                        {
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                            Span =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
+                                        },
                                     ],
                                 },
                             ],
@@ -12452,6 +17841,29 @@ public class FormSectionGroundingTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -12498,6 +17910,29 @@ public class FormSectionGroundingTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -12548,6 +17983,29 @@ public class FormSectionGroundingTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -12594,6 +18052,29 @@ public class FormSectionGroundingTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -12652,6 +18133,29 @@ public class FormSectionGroundingTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -12698,6 +18202,29 @@ public class FormSectionGroundingTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -12762,6 +18289,29 @@ public class FormSectionGroundingTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -12808,6 +18358,29 @@ public class FormSectionGroundingTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -12865,6 +18438,29 @@ public class FormSectionGroundingTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -12911,6 +18507,29 @@ public class FormSectionGroundingTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -12969,6 +18588,29 @@ public class FormSectionGroundingTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -13015,6 +18657,29 @@ public class FormSectionGroundingTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -13111,6 +18776,29 @@ public class FormSectionGroundingTest : TestBase
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                 ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -13157,6 +18845,29 @@ public class FormSectionGroundingTest : TestBase
                                 [
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
                                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                Chars =
+                                [
+                                    new()
+                                    {
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                        Span =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -13220,6 +18931,29 @@ public class FormSectionGroundingIDTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -13267,6 +19001,29 @@ public class FormSectionGroundingIDTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -13326,6 +19083,29 @@ public class FormSectionGroundingIDTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -13389,6 +19169,29 @@ public class FormSectionGroundingIDTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -13443,6 +19246,29 @@ public class FormSectionGroundingIDTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -13503,6 +19329,29 @@ public class FormSectionGroundingIDTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -13558,6 +19407,29 @@ public class FormSectionGroundingIDTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -13616,6 +19488,29 @@ public class FormSectionGroundingIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -13657,6 +19552,29 @@ public class FormSectionGroundingIDLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -13718,6 +19636,29 @@ public class FormSectionGroundingIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -13774,6 +19715,29 @@ public class FormSectionGroundingIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -13822,6 +19786,29 @@ public class FormSectionGroundingIDLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -13882,6 +19869,29 @@ public class FormSectionGroundingIDLineTest : TestBase
                     [
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
                     ],
                 },
             ],
@@ -14047,6 +20057,29 @@ public class FormSectionGroundingIDLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -14063,6 +20096,492 @@ public class FormSectionGroundingIDLineWordTest : TestBase
     public void FieldRoundtrip_Works()
     {
         var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<FormSectionGroundingIDLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, model.Bbox);
+        Assert.Equal(expectedSpan.Count, model.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
+        }
+        Assert.NotNull(model.Chars);
+        Assert.Equal(expectedChars.Count, model.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], model.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingIDLineWord>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingIDLineWord>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<FormSectionGroundingIDLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, deserialized.Bbox);
+        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
+        }
+        Assert.NotNull(deserialized.Chars);
+        Assert.Equal(expectedChars.Count, deserialized.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], deserialized.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        Assert.Null(model.Chars);
+        Assert.False(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        Assert.Null(model.Chars);
+        Assert.True(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FormSectionGroundingIDLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        FormSectionGroundingIDLineWord copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class FormSectionGroundingIDLineWordCharTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new FormSectionGroundingIDLineWordChar
         {
             Bbox = new()
             {
@@ -14112,7 +20631,7 @@ public class FormSectionGroundingIDLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormSectionGroundingIDLineWord
+        var model = new FormSectionGroundingIDLineWordChar
         {
             Bbox = new()
             {
@@ -14134,7 +20653,7 @@ public class FormSectionGroundingIDLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingIDLineWord>(
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingIDLineWordChar>(
             json,
             ModelBase.SerializerOptions
         );
@@ -14145,7 +20664,7 @@ public class FormSectionGroundingIDLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormSectionGroundingIDLineWord
+        var model = new FormSectionGroundingIDLineWordChar
         {
             Bbox = new()
             {
@@ -14167,7 +20686,7 @@ public class FormSectionGroundingIDLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingIDLineWord>(
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingIDLineWordChar>(
             element,
             ModelBase.SerializerOptions
         );
@@ -14202,7 +20721,7 @@ public class FormSectionGroundingIDLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormSectionGroundingIDLineWord
+        var model = new FormSectionGroundingIDLineWordChar
         {
             Bbox = new()
             {
@@ -14229,7 +20748,7 @@ public class FormSectionGroundingIDLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormSectionGroundingIDLineWord
+        var model = new FormSectionGroundingIDLineWordChar
         {
             Bbox = new()
             {
@@ -14250,7 +20769,7 @@ public class FormSectionGroundingIDLineWordTest : TestBase
             ],
         };
 
-        FormSectionGroundingIDLineWord copied = new(model);
+        FormSectionGroundingIDLineWordChar copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -14305,6 +20824,29 @@ public class FormSectionGroundingLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -14352,6 +20894,29 @@ public class FormSectionGroundingLabelTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -14412,6 +20977,29 @@ public class FormSectionGroundingLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -14474,6 +21062,29 @@ public class FormSectionGroundingLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -14528,6 +21139,29 @@ public class FormSectionGroundingLabelTest : TestBase
                         [
                             JsonSerializer.Deserialize<JsonElement>("{}"),
                             JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        Chars =
+                        [
+                            new()
+                            {
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                                Span =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                            },
                         ],
                     },
                 ],
@@ -14588,6 +21222,29 @@ public class FormSectionGroundingLabelTest : TestBase
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                             ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
                         },
                     ],
                 },
@@ -14643,6 +21300,29 @@ public class FormSectionGroundingLabelTest : TestBase
                             [
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
                                 JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
                             ],
                         },
                     ],
@@ -14701,6 +21381,29 @@ public class FormSectionGroundingLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -14742,6 +21445,29 @@ public class FormSectionGroundingLabelLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -14803,6 +21529,29 @@ public class FormSectionGroundingLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -14859,6 +21608,29 @@ public class FormSectionGroundingLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -14907,6 +21679,29 @@ public class FormSectionGroundingLabelLineTest : TestBase
                 [
                     JsonSerializer.Deserialize<JsonElement>("{}"),
                     JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+                Chars =
+                [
+                    new()
+                    {
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                        Span =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                    },
                 ],
             },
         ];
@@ -14967,6 +21762,29 @@ public class FormSectionGroundingLabelLineTest : TestBase
                     [
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
                     ],
                 },
             ],
@@ -15132,6 +21950,29 @@ public class FormSectionGroundingLabelLineTest : TestBase
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                         JsonSerializer.Deserialize<JsonElement>("{}"),
                     ],
+                    Chars =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                        },
+                    ],
                 },
             ],
         };
@@ -15148,6 +21989,492 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
     public void FieldRoundtrip_Works()
     {
         var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<FormSectionGroundingLabelLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, model.Bbox);
+        Assert.Equal(expectedSpan.Count, model.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], model.Span[i]));
+        }
+        Assert.NotNull(model.Chars);
+        Assert.Equal(expectedChars.Count, model.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], model.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingLabelLineWord>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingLabelLineWord>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
+        List<JsonElement> expectedSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
+        List<FormSectionGroundingLabelLineWordChar> expectedChars =
+        [
+            new()
+            {
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+                Span =
+                [
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                ],
+            },
+        ];
+
+        Assert.Equal(expectedBbox, deserialized.Bbox);
+        Assert.Equal(expectedSpan.Count, deserialized.Span.Count);
+        for (int i = 0; i < expectedSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedSpan[i], deserialized.Span[i]));
+        }
+        Assert.NotNull(deserialized.Chars);
+        Assert.Equal(expectedChars.Count, deserialized.Chars.Count);
+        for (int i = 0; i < expectedChars.Count; i++)
+        {
+            Assert.Equal(expectedChars[i], deserialized.Chars[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        Assert.Null(model.Chars);
+        Assert.False(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        Assert.Null(model.Chars);
+        Assert.True(model.RawData.ContainsKey("chars"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+
+            Chars = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWord
+        {
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+            Span =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
+            Chars =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                },
+            ],
+        };
+
+        FormSectionGroundingLabelLineWord copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class FormSectionGroundingLabelLineWordCharTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new FormSectionGroundingLabelLineWordChar
         {
             Bbox = new()
             {
@@ -15197,7 +22524,7 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new FormSectionGroundingLabelLineWord
+        var model = new FormSectionGroundingLabelLineWordChar
         {
             Bbox = new()
             {
@@ -15219,7 +22546,7 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingLabelLineWord>(
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingLabelLineWordChar>(
             json,
             ModelBase.SerializerOptions
         );
@@ -15230,7 +22557,7 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new FormSectionGroundingLabelLineWord
+        var model = new FormSectionGroundingLabelLineWordChar
         {
             Bbox = new()
             {
@@ -15252,7 +22579,7 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingLabelLineWord>(
+        var deserialized = JsonSerializer.Deserialize<FormSectionGroundingLabelLineWordChar>(
             element,
             ModelBase.SerializerOptions
         );
@@ -15287,7 +22614,7 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new FormSectionGroundingLabelLineWord
+        var model = new FormSectionGroundingLabelLineWordChar
         {
             Bbox = new()
             {
@@ -15314,7 +22641,7 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new FormSectionGroundingLabelLineWord
+        var model = new FormSectionGroundingLabelLineWordChar
         {
             Bbox = new()
             {
@@ -15335,7 +22662,7 @@ public class FormSectionGroundingLabelLineWordTest : TestBase
             ],
         };
 
-        FormSectionGroundingLabelLineWord copied = new(model);
+        FormSectionGroundingLabelLineWordChar copied = new(model);
 
         Assert.Equal(model, copied);
     }

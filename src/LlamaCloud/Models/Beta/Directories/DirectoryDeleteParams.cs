@@ -9,7 +9,8 @@ using LlamaCloud.Core;
 namespace LlamaCloud.Models.Beta.Directories;
 
 /// <summary>
-/// Permanently delete a directory.
+/// Permanently delete a directory, and the files in it that no other directory or
+/// index uses.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
