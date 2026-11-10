@@ -141,6 +141,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -324,6 +325,7 @@ public class ParseV2ParametersTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -542,6 +544,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -742,6 +745,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -932,6 +936,7 @@ public class ParseV2ParametersTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -1156,6 +1161,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -1458,6 +1464,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -1656,6 +1663,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -1845,6 +1853,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -2049,6 +2058,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -2248,6 +2258,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -5667,6 +5678,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -5751,6 +5763,7 @@ public class ProcessingOptionsTest : TestBase
                 ImageInPage = true,
                 LayoutElementInPage = "layout_element_in_page",
                 LayoutElementInPageConfidenceThreshold = 0,
+                MinComplexity = MinComplexity.High,
                 PageContainsAtLeastNCharts = 0,
                 PageContainsAtLeastNImages = 0,
                 PageContainsAtLeastNLayoutElements = 0,
@@ -5857,6 +5870,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -5955,6 +5969,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6046,6 +6061,7 @@ public class ProcessingOptionsTest : TestBase
                 ImageInPage = true,
                 LayoutElementInPage = "layout_element_in_page",
                 LayoutElementInPageConfidenceThreshold = 0,
+                MinComplexity = MinComplexity.High,
                 PageContainsAtLeastNCharts = 0,
                 PageContainsAtLeastNImages = 0,
                 PageContainsAtLeastNLayoutElements = 0,
@@ -6152,6 +6168,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6244,6 +6261,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6332,6 +6350,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6417,6 +6436,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6509,6 +6529,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6708,6 +6729,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6800,6 +6822,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -6865,6 +6888,7 @@ public class AutoModeConfigurationTest : TestBase
         bool expectedImageInPage = true;
         string expectedLayoutElementInPage = "layout_element_in_page";
         LayoutElementInPageConfidenceThreshold expectedLayoutElementInPageConfidenceThreshold = 0;
+        ApiEnum<string, MinComplexity> expectedMinComplexity = MinComplexity.High;
         PageContainsAtLeastNCharts expectedPageContainsAtLeastNCharts = 0;
         PageContainsAtLeastNImages expectedPageContainsAtLeastNImages = 0;
         PageContainsAtLeastNLayoutElements expectedPageContainsAtLeastNLayoutElements = 0;
@@ -6910,6 +6934,7 @@ public class AutoModeConfigurationTest : TestBase
             expectedLayoutElementInPageConfidenceThreshold,
             model.LayoutElementInPageConfidenceThreshold
         );
+        Assert.Equal(expectedMinComplexity, model.MinComplexity);
         Assert.Equal(expectedPageContainsAtLeastNCharts, model.PageContainsAtLeastNCharts);
         Assert.Equal(expectedPageContainsAtLeastNImages, model.PageContainsAtLeastNImages);
         Assert.Equal(
@@ -6992,6 +7017,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -7071,6 +7097,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -7143,6 +7170,7 @@ public class AutoModeConfigurationTest : TestBase
         bool expectedImageInPage = true;
         string expectedLayoutElementInPage = "layout_element_in_page";
         LayoutElementInPageConfidenceThreshold expectedLayoutElementInPageConfidenceThreshold = 0;
+        ApiEnum<string, MinComplexity> expectedMinComplexity = MinComplexity.High;
         PageContainsAtLeastNCharts expectedPageContainsAtLeastNCharts = 0;
         PageContainsAtLeastNImages expectedPageContainsAtLeastNImages = 0;
         PageContainsAtLeastNLayoutElements expectedPageContainsAtLeastNLayoutElements = 0;
@@ -7191,6 +7219,7 @@ public class AutoModeConfigurationTest : TestBase
             expectedLayoutElementInPageConfidenceThreshold,
             deserialized.LayoutElementInPageConfidenceThreshold
         );
+        Assert.Equal(expectedMinComplexity, deserialized.MinComplexity);
         Assert.Equal(expectedPageContainsAtLeastNCharts, deserialized.PageContainsAtLeastNCharts);
         Assert.Equal(expectedPageContainsAtLeastNImages, deserialized.PageContainsAtLeastNImages);
         Assert.Equal(
@@ -7273,6 +7302,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -7357,6 +7387,8 @@ public class AutoModeConfigurationTest : TestBase
         Assert.False(model.RawData.ContainsKey("layout_element_in_page"));
         Assert.Null(model.LayoutElementInPageConfidenceThreshold);
         Assert.False(model.RawData.ContainsKey("layout_element_in_page_confidence_threshold"));
+        Assert.Null(model.MinComplexity);
+        Assert.False(model.RawData.ContainsKey("min_complexity"));
         Assert.Null(model.PageContainsAtLeastNCharts);
         Assert.False(model.RawData.ContainsKey("page_contains_at_least_n_charts"));
         Assert.Null(model.PageContainsAtLeastNImages);
@@ -7492,6 +7524,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = null,
             LayoutElementInPage = null,
             LayoutElementInPageConfidenceThreshold = null,
+            MinComplexity = null,
             PageContainsAtLeastNCharts = null,
             PageContainsAtLeastNImages = null,
             PageContainsAtLeastNLayoutElements = null,
@@ -7538,6 +7571,8 @@ public class AutoModeConfigurationTest : TestBase
         Assert.True(model.RawData.ContainsKey("layout_element_in_page"));
         Assert.Null(model.LayoutElementInPageConfidenceThreshold);
         Assert.True(model.RawData.ContainsKey("layout_element_in_page_confidence_threshold"));
+        Assert.Null(model.MinComplexity);
+        Assert.True(model.RawData.ContainsKey("min_complexity"));
         Assert.Null(model.PageContainsAtLeastNCharts);
         Assert.True(model.RawData.ContainsKey("page_contains_at_least_n_charts"));
         Assert.Null(model.PageContainsAtLeastNImages);
@@ -7635,6 +7670,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = null,
             LayoutElementInPage = null,
             LayoutElementInPageConfidenceThreshold = null,
+            MinComplexity = null,
             PageContainsAtLeastNCharts = null,
             PageContainsAtLeastNImages = null,
             PageContainsAtLeastNLayoutElements = null,
@@ -7708,6 +7744,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -8949,6 +8986,64 @@ public class LayoutElementInPageConfidenceThresholdTest : TestBase
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<LayoutElementInPageConfidenceThreshold>(
             element,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class MinComplexityTest : TestBase
+{
+    [Theory]
+    [InlineData(MinComplexity.High)]
+    [InlineData(MinComplexity.Medium)]
+    public void Validation_Works(MinComplexity rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, MinComplexity> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(MinComplexity.High)]
+    [InlineData(MinComplexity.Medium)]
+    public void SerializationRoundtrip_Works(MinComplexity rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, MinComplexity> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            json,
             ModelBase.SerializerOptions
         );
 

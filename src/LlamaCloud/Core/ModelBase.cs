@@ -111,6 +111,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Parsing::SpecializedChartParsing>(),
             new ApiEnumConverter<string, Parsing::ParsingConfTier>(),
             new ApiEnumConverter<string, Parsing::ParsingConfVersion>(),
+            new ApiEnumConverter<string, Parsing::MinComplexity>(),
             new ApiEnumConverter<string, Parsing::ConfidenceScoreEffort>(),
             new ApiEnumConverter<string, Parsing::Forms>(),
             new ApiEnumConverter<string, Parsing::ProcessingOptionsSpecializedChartParsing>(),
@@ -194,6 +195,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Configurations::SpecializedChartParsing>(),
             new ApiEnumConverter<string, Configurations::ParsingConfTier>(),
             new ApiEnumConverter<string, Configurations::ParsingConfVersion>(),
+            new ApiEnumConverter<string, Configurations::MinComplexity>(),
             new ApiEnumConverter<string, Configurations::ConfidenceScoreEffort>(),
             new ApiEnumConverter<string, Configurations::Forms>(),
             new ApiEnumConverter<

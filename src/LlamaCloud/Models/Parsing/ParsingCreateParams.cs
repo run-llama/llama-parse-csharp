@@ -2855,6 +2855,20 @@ public sealed record class AutoModeConfiguration : JsonModel
     }
 
     /// <summary>
+    /// Trigger on pages at least this complex. high: pages whose tables look wrong.
+    /// medium: also pages that are mostly scanned text.
+    /// </summary>
+    public ApiEnum<string, MinComplexity>? MinComplexity
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, MinComplexity>>("min_complexity");
+        }
+        init { this._rawData.Set("min_complexity", value); }
+    }
+
+    /// <summary>
     /// Trigger if page has more than N charts
     /// </summary>
     public PageContainsAtLeastNCharts? PageContainsAtLeastNCharts
@@ -3244,6 +3258,7 @@ public sealed record class AutoModeConfiguration : JsonModel
         _ = this.ImageInPage;
         _ = this.LayoutElementInPage;
         this.LayoutElementInPageConfidenceThreshold?.Validate();
+        this.MinComplexity?.Validate();
         this.PageContainsAtLeastNCharts?.Validate();
         this.PageContainsAtLeastNImages?.Validate();
         this.PageContainsAtLeastNLayoutElements?.Validate();
@@ -4565,6 +4580,54 @@ sealed class LayoutElementInPageConfidenceThresholdConverter
     )
     {
         JsonSerializer.Serialize(writer, value?.Json, options);
+    }
+}
+
+/// <summary>
+/// Trigger on pages at least this complex. high: pages whose tables look wrong. medium:
+/// also pages that are mostly scanned text.
+/// </summary>
+[JsonConverter(typeof(MinComplexityConverter))]
+public enum MinComplexity
+{
+    High,
+    Medium,
+}
+
+sealed class MinComplexityConverter : JsonConverter<MinComplexity>
+{
+    public override MinComplexity Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "high" => MinComplexity.High,
+            "medium" => MinComplexity.Medium,
+            _ => (MinComplexity)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        MinComplexity value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                MinComplexity.High => "high",
+                MinComplexity.Medium => "medium",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }
 
