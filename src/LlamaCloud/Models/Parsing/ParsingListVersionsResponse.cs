@@ -655,6 +655,7 @@ sealed class CostEffectiveConverter : JsonConverter<CostEffective>
 [JsonConverter(typeof(FastConverter))]
 public enum Fast
 {
+    V2026_11_12,
     V2026_06_15,
     V2025_12_11,
 }
@@ -669,6 +670,7 @@ sealed class FastConverter : JsonConverter<Fast>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-12" => Fast.V2026_11_12,
             "2026-06-15" => Fast.V2026_06_15,
             "2025-12-11" => Fast.V2025_12_11,
             _ => (Fast)(-1),
@@ -681,6 +683,7 @@ sealed class FastConverter : JsonConverter<Fast>
             writer,
             value switch
             {
+                Fast.V2026_11_12 => "2026-11-12",
                 Fast.V2026_06_15 => "2026-06-15",
                 Fast.V2025_12_11 => "2025-12-11",
                 _ => throw new LlamaCloudInvalidDataException(

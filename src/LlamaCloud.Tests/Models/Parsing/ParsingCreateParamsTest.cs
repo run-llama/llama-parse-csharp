@@ -1301,9 +1301,9 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::Version.Latest)]
+    [InlineData(Parsing::Version.V2026_11_12)]
     [InlineData(Parsing::Version.V2026_11_11)]
     [InlineData(Parsing::Version.V2026_11_09)]
-    [InlineData(Parsing::Version.V2026_06_15)]
     public void Validation_Works(Parsing::Version rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1325,9 +1325,9 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::Version.Latest)]
+    [InlineData(Parsing::Version.V2026_11_12)]
     [InlineData(Parsing::Version.V2026_11_11)]
     [InlineData(Parsing::Version.V2026_11_09)]
-    [InlineData(Parsing::Version.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::Version rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -7884,9 +7884,9 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_11_12)]
     [InlineData(Parsing::ParsingConfVersion.V2026_11_11)]
     [InlineData(Parsing::ParsingConfVersion.V2026_11_09)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void Validation_Works(Parsing::ParsingConfVersion rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -7908,9 +7908,9 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(Parsing::ParsingConfVersion.Latest)]
+    [InlineData(Parsing::ParsingConfVersion.V2026_11_12)]
     [InlineData(Parsing::ParsingConfVersion.V2026_11_11)]
     [InlineData(Parsing::ParsingConfVersion.V2026_11_09)]
-    [InlineData(Parsing::ParsingConfVersion.V2026_06_15)]
     public void SerializationRoundtrip_Works(Parsing::ParsingConfVersion rawValue)
     {
         // force implicit conversion because Theory can't do that for us
