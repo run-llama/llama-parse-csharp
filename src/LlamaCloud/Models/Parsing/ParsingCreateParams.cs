@@ -2855,8 +2855,9 @@ public sealed record class AutoModeConfiguration : JsonModel
     }
 
     /// <summary>
-    /// Trigger on pages at least this complex. high: pages whose tables look wrong.
-    /// medium: also pages that are mostly scanned text.
+    /// Trigger on pages with at least 100 source words. low: table warnings or at
+    /// least 50% OCR words. medium: at least 3 table concerns or missed tables. high:
+    /// medium plus at least 2 detected tables.
     /// </summary>
     public ApiEnum<string, MinComplexity>? MinComplexity
     {
@@ -4584,13 +4585,15 @@ sealed class LayoutElementInPageConfidenceThresholdConverter
 }
 
 /// <summary>
-/// Trigger on pages at least this complex. high: pages whose tables look wrong. medium:
-/// also pages that are mostly scanned text.
+/// Trigger on pages with at least 100 source words. low: table warnings or at least
+/// 50% OCR words. medium: at least 3 table concerns or missed tables. high: medium
+/// plus at least 2 detected tables.
 /// </summary>
 [JsonConverter(typeof(MinComplexityConverter))]
 public enum MinComplexity
 {
     High,
+    Low,
     Medium,
 }
 
@@ -4605,6 +4608,7 @@ sealed class MinComplexityConverter : JsonConverter<MinComplexity>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "high" => MinComplexity.High,
+            "low" => MinComplexity.Low,
             "medium" => MinComplexity.Medium,
             _ => (MinComplexity)(-1),
         };
@@ -4621,6 +4625,7 @@ sealed class MinComplexityConverter : JsonConverter<MinComplexity>
             value switch
             {
                 MinComplexity.High => "high",
+                MinComplexity.Low => "low",
                 MinComplexity.Medium => "medium",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

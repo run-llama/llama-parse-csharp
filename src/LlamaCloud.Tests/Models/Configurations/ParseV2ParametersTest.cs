@@ -8997,6 +8997,7 @@ public class MinComplexityTest : TestBase
 {
     [Theory]
     [InlineData(MinComplexity.High)]
+    [InlineData(MinComplexity.Low)]
     [InlineData(MinComplexity.Medium)]
     public void Validation_Works(MinComplexity rawValue)
     {
@@ -9019,6 +9020,7 @@ public class MinComplexityTest : TestBase
 
     [Theory]
     [InlineData(MinComplexity.High)]
+    [InlineData(MinComplexity.Low)]
     [InlineData(MinComplexity.Medium)]
     public void SerializationRoundtrip_Works(MinComplexity rawValue)
     {

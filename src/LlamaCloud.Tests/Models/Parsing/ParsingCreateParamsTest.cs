@@ -8034,6 +8034,7 @@ public class MinComplexityTest : TestBase
 {
     [Theory]
     [InlineData(Parsing::MinComplexity.High)]
+    [InlineData(Parsing::MinComplexity.Low)]
     [InlineData(Parsing::MinComplexity.Medium)]
     public void Validation_Works(Parsing::MinComplexity rawValue)
     {
@@ -8056,6 +8057,7 @@ public class MinComplexityTest : TestBase
 
     [Theory]
     [InlineData(Parsing::MinComplexity.High)]
+    [InlineData(Parsing::MinComplexity.Low)]
     [InlineData(Parsing::MinComplexity.Medium)]
     public void SerializationRoundtrip_Works(Parsing::MinComplexity rawValue)
     {
