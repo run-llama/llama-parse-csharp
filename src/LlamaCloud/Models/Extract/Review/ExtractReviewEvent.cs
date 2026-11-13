@@ -30,14 +30,14 @@ public sealed record class ExtractReviewEvent : JsonModel
     }
 
     /// <summary>
-    /// ID of the user who acted.
+    /// ID of the user who acted; null when a review policy turned review on.
     /// </summary>
-    public required string ActorID
+    public required string? ActorID
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("actor_id");
+            return this._rawData.GetNullableClass<string>("actor_id");
         }
         init { this._rawData.Set("actor_id", value); }
     }
@@ -619,7 +619,8 @@ public sealed record class ExtractReviewCreatedDetail : JsonModel
     }
 
     /// <summary>
-    /// Turned on as the job ran, from History, by a first edit, or by the API.
+    /// Turned on as the job ran, from History, by a first edit, by the API, or by
+    /// the configuration's review policy as the job completed.
     /// </summary>
     public required ApiEnum<string, Origin> Origin
     {
@@ -698,7 +699,8 @@ class ExtractReviewCreatedDetailFromRaw : IFromRawJson<ExtractReviewCreatedDetai
 }
 
 /// <summary>
-/// Turned on as the job ran, from History, by a first edit, or by the API.
+/// Turned on as the job ran, from History, by a first edit, by the API, or by the
+/// configuration's review policy as the job completed.
 /// </summary>
 [JsonConverter(typeof(OriginConverter))]
 public enum Origin
@@ -706,6 +708,7 @@ public enum Origin
     Api,
     Edit,
     History,
+    Policy,
     Run,
 }
 
@@ -722,6 +725,7 @@ sealed class OriginConverter : JsonConverter<Origin>
             "api" => Origin.Api,
             "edit" => Origin.Edit,
             "history" => Origin.History,
+            "policy" => Origin.Policy,
             "run" => Origin.Run,
             _ => (Origin)(-1),
         };
@@ -736,6 +740,7 @@ sealed class OriginConverter : JsonConverter<Origin>
                 Origin.Api => "api",
                 Origin.Edit => "edit",
                 Origin.History => "history",
+                Origin.Policy => "policy",
                 Origin.Run => "run",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

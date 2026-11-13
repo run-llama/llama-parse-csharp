@@ -637,6 +637,7 @@ public class OriginTest : TestBase
     [InlineData(Origin.Api)]
     [InlineData(Origin.Edit)]
     [InlineData(Origin.History)]
+    [InlineData(Origin.Policy)]
     [InlineData(Origin.Run)]
     public void Validation_Works(Origin rawValue)
     {
@@ -661,6 +662,7 @@ public class OriginTest : TestBase
     [InlineData(Origin.Api)]
     [InlineData(Origin.Edit)]
     [InlineData(Origin.History)]
+    [InlineData(Origin.Policy)]
     [InlineData(Origin.Run)]
     public void SerializationRoundtrip_Works(Origin rawValue)
     {
