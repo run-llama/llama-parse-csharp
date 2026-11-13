@@ -2748,9 +2748,11 @@ public sealed record class AutoModeConfiguration : JsonModel
     }
 
     /// <summary>
-    /// Trigger on pages with at least 100 source words. low: table warnings or at
-    /// least 50% OCR words. medium: at least 3 table concerns or missed tables. high:
-    /// medium plus at least 2 detected tables.
+    /// All levels trigger when at least 50% of grounded words inside detected table
+    /// regions lack table-cell grounding, regardless of word count. Pages with at
+    /// least 100 source words also trigger by level: low: table warnings or at least
+    /// 50% OCR words. medium: at least 3 table concerns or missed tables. high: medium
+    /// plus at least 2 detected tables.
     /// </summary>
     public ApiEnum<string, MinComplexity>? MinComplexity
     {
@@ -4480,9 +4482,11 @@ sealed class LayoutElementInPageConfidenceThresholdConverter
 }
 
 /// <summary>
-/// Trigger on pages with at least 100 source words. low: table warnings or at least
-/// 50% OCR words. medium: at least 3 table concerns or missed tables. high: medium
-/// plus at least 2 detected tables.
+/// All levels trigger when at least 50% of grounded words inside detected table regions
+/// lack table-cell grounding, regardless of word count. Pages with at least 100
+/// source words also trigger by level: low: table warnings or at least 50% OCR words.
+/// medium: at least 3 table concerns or missed tables. high: medium plus at least
+/// 2 detected tables.
 /// </summary>
 [JsonConverter(typeof(MinComplexityConverter))]
 public enum MinComplexity
