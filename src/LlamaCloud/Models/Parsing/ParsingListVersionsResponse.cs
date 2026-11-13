@@ -176,6 +176,9 @@ class ParsingListVersionsResponseFromRaw : IFromRawJson<ParsingListVersionsRespo
 [JsonConverter(typeof(AgenticConverter))]
 public enum Agentic
 {
+    V2026_11_09,
+    V2026_11_05,
+    V2026_10_30,
     V2026_10_16,
     V2026_10_15,
     V2026_09_29,
@@ -239,6 +242,9 @@ sealed class AgenticConverter : JsonConverter<Agentic>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-09" => Agentic.V2026_11_09,
+            "2026-11-05" => Agentic.V2026_11_05,
+            "2026-10-30" => Agentic.V2026_10_30,
             "2026-10-16" => Agentic.V2026_10_16,
             "2026-10-15" => Agentic.V2026_10_15,
             "2026-09-29" => Agentic.V2026_09_29,
@@ -300,6 +306,9 @@ sealed class AgenticConverter : JsonConverter<Agentic>
             writer,
             value switch
             {
+                Agentic.V2026_11_09 => "2026-11-09",
+                Agentic.V2026_11_05 => "2026-11-05",
+                Agentic.V2026_10_30 => "2026-10-30",
                 Agentic.V2026_10_16 => "2026-10-16",
                 Agentic.V2026_10_15 => "2026-10-15",
                 Agentic.V2026_09_29 => "2026-09-29",
@@ -363,6 +372,13 @@ sealed class AgenticConverter : JsonConverter<Agentic>
 [JsonConverter(typeof(AgenticPlusConverter))]
 public enum AgenticPlus
 {
+    V2026_11_11,
+    V2026_11_10,
+    V2026_11_07,
+    V2026_11_02,
+    V2026_10_28,
+    V2026_10_26,
+    V2026_10_20,
     V2026_09_28,
     V2026_09_24,
     V2026_09_11,
@@ -418,6 +434,13 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-11" => AgenticPlus.V2026_11_11,
+            "2026-11-10" => AgenticPlus.V2026_11_10,
+            "2026-11-07" => AgenticPlus.V2026_11_07,
+            "2026-11-02" => AgenticPlus.V2026_11_02,
+            "2026-10-28" => AgenticPlus.V2026_10_28,
+            "2026-10-26" => AgenticPlus.V2026_10_26,
+            "2026-10-20" => AgenticPlus.V2026_10_20,
             "2026-09-28" => AgenticPlus.V2026_09_28,
             "2026-09-24" => AgenticPlus.V2026_09_24,
             "2026-09-11" => AgenticPlus.V2026_09_11,
@@ -475,6 +498,13 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
             writer,
             value switch
             {
+                AgenticPlus.V2026_11_11 => "2026-11-11",
+                AgenticPlus.V2026_11_10 => "2026-11-10",
+                AgenticPlus.V2026_11_07 => "2026-11-07",
+                AgenticPlus.V2026_11_02 => "2026-11-02",
+                AgenticPlus.V2026_10_28 => "2026-10-28",
+                AgenticPlus.V2026_10_26 => "2026-10-26",
+                AgenticPlus.V2026_10_20 => "2026-10-20",
                 AgenticPlus.V2026_09_28 => "2026-09-28",
                 AgenticPlus.V2026_09_24 => "2026-09-24",
                 AgenticPlus.V2026_09_11 => "2026-09-11",
@@ -530,6 +560,9 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
 [JsonConverter(typeof(CostEffectiveConverter))]
 public enum CostEffective
 {
+    V2026_11_09,
+    V2026_11_05,
+    V2026_10_30,
     V2026_09_28,
     V2026_08_19,
     V2026_08_11,
@@ -558,6 +591,9 @@ sealed class CostEffectiveConverter : JsonConverter<CostEffective>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-09" => CostEffective.V2026_11_09,
+            "2026-11-05" => CostEffective.V2026_11_05,
+            "2026-10-30" => CostEffective.V2026_10_30,
             "2026-09-28" => CostEffective.V2026_09_28,
             "2026-08-19" => CostEffective.V2026_08_19,
             "2026-08-11" => CostEffective.V2026_08_11,
@@ -588,6 +624,9 @@ sealed class CostEffectiveConverter : JsonConverter<CostEffective>
             writer,
             value switch
             {
+                CostEffective.V2026_11_09 => "2026-11-09",
+                CostEffective.V2026_11_05 => "2026-11-05",
+                CostEffective.V2026_10_30 => "2026-10-30",
                 CostEffective.V2026_09_28 => "2026-09-28",
                 CostEffective.V2026_08_19 => "2026-08-19",
                 CostEffective.V2026_08_11 => "2026-08-11",
@@ -616,6 +655,7 @@ sealed class CostEffectiveConverter : JsonConverter<CostEffective>
 [JsonConverter(typeof(FastConverter))]
 public enum Fast
 {
+    V2026_11_12,
     V2026_06_15,
     V2025_12_11,
 }
@@ -630,6 +670,7 @@ sealed class FastConverter : JsonConverter<Fast>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-12" => Fast.V2026_11_12,
             "2026-06-15" => Fast.V2026_06_15,
             "2025-12-11" => Fast.V2025_12_11,
             _ => (Fast)(-1),
@@ -642,6 +683,7 @@ sealed class FastConverter : JsonConverter<Fast>
             writer,
             value switch
             {
+                Fast.V2026_11_12 => "2026-11-12",
                 Fast.V2026_06_15 => "2026-06-15",
                 Fast.V2025_12_11 => "2025-12-11",
                 _ => throw new LlamaCloudInvalidDataException(

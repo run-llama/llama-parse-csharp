@@ -132,6 +132,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -141,6 +143,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -187,6 +190,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -314,6 +318,8 @@ public class ParseV2ParametersTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -323,6 +329,7 @@ public class ParseV2ParametersTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -369,6 +376,7 @@ public class ParseV2ParametersTest : TestBase
         [
             new()
             {
+                ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                 WebhookEvents = ["parse.success", "parse.error"],
                 WebhookHeaders = new Dictionary<string, JsonElement>()
                 {
@@ -531,6 +539,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -540,6 +550,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -586,6 +597,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -730,6 +742,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -739,6 +753,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -785,6 +800,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -919,6 +935,8 @@ public class ParseV2ParametersTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -928,6 +946,7 @@ public class ParseV2ParametersTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -974,6 +993,7 @@ public class ParseV2ParametersTest : TestBase
         [
             new()
             {
+                ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                 WebhookEvents = ["parse.success", "parse.error"],
                 WebhookHeaders = new Dictionary<string, JsonElement>()
                 {
@@ -1142,6 +1162,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -1151,6 +1173,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -1197,6 +1220,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -1443,6 +1467,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -1452,6 +1478,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -1497,6 +1524,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -1640,6 +1668,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -1649,6 +1679,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -1694,6 +1725,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -1828,6 +1860,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -1837,6 +1871,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -1882,6 +1917,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -2031,6 +2067,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -2040,6 +2078,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -2085,6 +2124,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -2229,6 +2269,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -2238,6 +2280,7 @@ public class ParseV2ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -2284,6 +2327,7 @@ public class ParseV2ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -2368,9 +2412,9 @@ public class VersionTest : TestBase
 {
     [Theory]
     [InlineData(Version.Latest)]
-    [InlineData(Version.V2026_10_16)]
-    [InlineData(Version.V2026_09_28)]
-    [InlineData(Version.V2026_06_15)]
+    [InlineData(Version.V2026_11_12)]
+    [InlineData(Version.V2026_11_11)]
+    [InlineData(Version.V2026_11_09)]
     public void Validation_Works(Version rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2392,9 +2436,9 @@ public class VersionTest : TestBase
 
     [Theory]
     [InlineData(Version.Latest)]
-    [InlineData(Version.V2026_10_16)]
-    [InlineData(Version.V2026_09_28)]
-    [InlineData(Version.V2026_06_15)]
+    [InlineData(Version.V2026_11_12)]
+    [InlineData(Version.V2026_11_11)]
+    [InlineData(Version.V2026_11_09)]
     public void SerializationRoundtrip_Works(Version rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -4079,6 +4123,7 @@ public class GranularBboxTest : TestBase
 {
     [Theory]
     [InlineData(GranularBbox.Cell)]
+    [InlineData(GranularBbox.Char)]
     [InlineData(GranularBbox.Line)]
     [InlineData(GranularBbox.Word)]
     public void Validation_Works(GranularBbox rawValue)
@@ -4102,6 +4147,7 @@ public class GranularBboxTest : TestBase
 
     [Theory]
     [InlineData(GranularBbox.Cell)]
+    [InlineData(GranularBbox.Char)]
     [InlineData(GranularBbox.Line)]
     [InlineData(GranularBbox.Word)]
     public void SerializationRoundtrip_Works(GranularBbox rawValue)
@@ -5645,6 +5691,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -5654,6 +5702,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -5729,6 +5778,8 @@ public class ProcessingOptionsTest : TestBase
                     Tier = ParsingConfTier.Agentic,
                     Version = ParsingConfVersion.Latest,
                 },
+                DocumentLongerThanNPages = 5,
+                DocumentShorterThanNPages = 5,
                 FilenameMatchGlob = "*.txt",
                 FilenameMatchGlobList = ["string"],
                 FilenameRegexp = "filename_regexp",
@@ -5738,6 +5789,7 @@ public class ProcessingOptionsTest : TestBase
                 ImageInPage = true,
                 LayoutElementInPage = "layout_element_in_page",
                 LayoutElementInPageConfidenceThreshold = 0,
+                MinComplexity = MinComplexity.High,
                 PageContainsAtLeastNCharts = 0,
                 PageContainsAtLeastNImages = 0,
                 PageContainsAtLeastNLayoutElements = 0,
@@ -5835,6 +5887,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -5844,6 +5898,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -5933,6 +5988,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -5942,6 +5999,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6024,6 +6082,8 @@ public class ProcessingOptionsTest : TestBase
                     Tier = ParsingConfTier.Agentic,
                     Version = ParsingConfVersion.Latest,
                 },
+                DocumentLongerThanNPages = 5,
+                DocumentShorterThanNPages = 5,
                 FilenameMatchGlob = "*.txt",
                 FilenameMatchGlobList = ["string"],
                 FilenameRegexp = "filename_regexp",
@@ -6033,6 +6093,7 @@ public class ProcessingOptionsTest : TestBase
                 ImageInPage = true,
                 LayoutElementInPage = "layout_element_in_page",
                 LayoutElementInPageConfidenceThreshold = 0,
+                MinComplexity = MinComplexity.High,
                 PageContainsAtLeastNCharts = 0,
                 PageContainsAtLeastNImages = 0,
                 PageContainsAtLeastNLayoutElements = 0,
@@ -6130,6 +6191,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6139,6 +6202,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6222,6 +6286,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6231,6 +6297,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6310,6 +6377,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6319,6 +6388,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6395,6 +6465,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6404,6 +6476,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6487,6 +6560,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6496,6 +6571,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6686,6 +6762,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6695,6 +6773,7 @@ public class ProcessingOptionsTest : TestBase
                     ImageInPage = true,
                     LayoutElementInPage = "layout_element_in_page",
                     LayoutElementInPageConfidenceThreshold = 0,
+                    MinComplexity = MinComplexity.High,
                     PageContainsAtLeastNCharts = 0,
                     PageContainsAtLeastNImages = 0,
                     PageContainsAtLeastNLayoutElements = 0,
@@ -6778,6 +6857,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -6787,6 +6868,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -6843,6 +6925,8 @@ public class AutoModeConfigurationTest : TestBase
             Tier = ParsingConfTier.Agentic,
             Version = ParsingConfVersion.Latest,
         };
+        long expectedDocumentLongerThanNPages = 5;
+        long expectedDocumentShorterThanNPages = 5;
         string expectedFilenameMatchGlob = "*.txt";
         List<string> expectedFilenameMatchGlobList = ["string"];
         string expectedFilenameRegexp = "filename_regexp";
@@ -6852,6 +6936,7 @@ public class AutoModeConfigurationTest : TestBase
         bool expectedImageInPage = true;
         string expectedLayoutElementInPage = "layout_element_in_page";
         LayoutElementInPageConfidenceThreshold expectedLayoutElementInPageConfidenceThreshold = 0;
+        ApiEnum<string, MinComplexity> expectedMinComplexity = MinComplexity.High;
         PageContainsAtLeastNCharts expectedPageContainsAtLeastNCharts = 0;
         PageContainsAtLeastNImages expectedPageContainsAtLeastNImages = 0;
         PageContainsAtLeastNLayoutElements expectedPageContainsAtLeastNLayoutElements = 0;
@@ -6880,6 +6965,8 @@ public class AutoModeConfigurationTest : TestBase
         string expectedTriggerMode = "trigger_mode";
 
         Assert.Equal(expectedParsingConf, model.ParsingConf);
+        Assert.Equal(expectedDocumentLongerThanNPages, model.DocumentLongerThanNPages);
+        Assert.Equal(expectedDocumentShorterThanNPages, model.DocumentShorterThanNPages);
         Assert.Equal(expectedFilenameMatchGlob, model.FilenameMatchGlob);
         Assert.NotNull(model.FilenameMatchGlobList);
         Assert.Equal(expectedFilenameMatchGlobList.Count, model.FilenameMatchGlobList.Count);
@@ -6897,6 +6984,7 @@ public class AutoModeConfigurationTest : TestBase
             expectedLayoutElementInPageConfidenceThreshold,
             model.LayoutElementInPageConfidenceThreshold
         );
+        Assert.Equal(expectedMinComplexity, model.MinComplexity);
         Assert.Equal(expectedPageContainsAtLeastNCharts, model.PageContainsAtLeastNCharts);
         Assert.Equal(expectedPageContainsAtLeastNImages, model.PageContainsAtLeastNImages);
         Assert.Equal(
@@ -6970,6 +7058,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -6979,6 +7069,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -7049,6 +7140,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -7058,6 +7151,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -7121,6 +7215,8 @@ public class AutoModeConfigurationTest : TestBase
             Tier = ParsingConfTier.Agentic,
             Version = ParsingConfVersion.Latest,
         };
+        long expectedDocumentLongerThanNPages = 5;
+        long expectedDocumentShorterThanNPages = 5;
         string expectedFilenameMatchGlob = "*.txt";
         List<string> expectedFilenameMatchGlobList = ["string"];
         string expectedFilenameRegexp = "filename_regexp";
@@ -7130,6 +7226,7 @@ public class AutoModeConfigurationTest : TestBase
         bool expectedImageInPage = true;
         string expectedLayoutElementInPage = "layout_element_in_page";
         LayoutElementInPageConfidenceThreshold expectedLayoutElementInPageConfidenceThreshold = 0;
+        ApiEnum<string, MinComplexity> expectedMinComplexity = MinComplexity.High;
         PageContainsAtLeastNCharts expectedPageContainsAtLeastNCharts = 0;
         PageContainsAtLeastNImages expectedPageContainsAtLeastNImages = 0;
         PageContainsAtLeastNLayoutElements expectedPageContainsAtLeastNLayoutElements = 0;
@@ -7158,6 +7255,8 @@ public class AutoModeConfigurationTest : TestBase
         string expectedTriggerMode = "trigger_mode";
 
         Assert.Equal(expectedParsingConf, deserialized.ParsingConf);
+        Assert.Equal(expectedDocumentLongerThanNPages, deserialized.DocumentLongerThanNPages);
+        Assert.Equal(expectedDocumentShorterThanNPages, deserialized.DocumentShorterThanNPages);
         Assert.Equal(expectedFilenameMatchGlob, deserialized.FilenameMatchGlob);
         Assert.NotNull(deserialized.FilenameMatchGlobList);
         Assert.Equal(expectedFilenameMatchGlobList.Count, deserialized.FilenameMatchGlobList.Count);
@@ -7178,6 +7277,7 @@ public class AutoModeConfigurationTest : TestBase
             expectedLayoutElementInPageConfidenceThreshold,
             deserialized.LayoutElementInPageConfidenceThreshold
         );
+        Assert.Equal(expectedMinComplexity, deserialized.MinComplexity);
         Assert.Equal(expectedPageContainsAtLeastNCharts, deserialized.PageContainsAtLeastNCharts);
         Assert.Equal(expectedPageContainsAtLeastNImages, deserialized.PageContainsAtLeastNImages);
         Assert.Equal(
@@ -7251,6 +7351,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -7260,6 +7362,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -7326,6 +7429,10 @@ public class AutoModeConfigurationTest : TestBase
             },
         };
 
+        Assert.Null(model.DocumentLongerThanNPages);
+        Assert.False(model.RawData.ContainsKey("document_longer_than_n_pages"));
+        Assert.Null(model.DocumentShorterThanNPages);
+        Assert.False(model.RawData.ContainsKey("document_shorter_than_n_pages"));
         Assert.Null(model.FilenameMatchGlob);
         Assert.False(model.RawData.ContainsKey("filename_match_glob"));
         Assert.Null(model.FilenameMatchGlobList);
@@ -7344,6 +7451,8 @@ public class AutoModeConfigurationTest : TestBase
         Assert.False(model.RawData.ContainsKey("layout_element_in_page"));
         Assert.Null(model.LayoutElementInPageConfidenceThreshold);
         Assert.False(model.RawData.ContainsKey("layout_element_in_page_confidence_threshold"));
+        Assert.Null(model.MinComplexity);
+        Assert.False(model.RawData.ContainsKey("min_complexity"));
         Assert.Null(model.PageContainsAtLeastNCharts);
         Assert.False(model.RawData.ContainsKey("page_contains_at_least_n_charts"));
         Assert.Null(model.PageContainsAtLeastNImages);
@@ -7470,6 +7579,8 @@ public class AutoModeConfigurationTest : TestBase
                 Version = ParsingConfVersion.Latest,
             },
 
+            DocumentLongerThanNPages = null,
+            DocumentShorterThanNPages = null,
             FilenameMatchGlob = null,
             FilenameMatchGlobList = null,
             FilenameRegexp = null,
@@ -7479,6 +7590,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = null,
             LayoutElementInPage = null,
             LayoutElementInPageConfidenceThreshold = null,
+            MinComplexity = null,
             PageContainsAtLeastNCharts = null,
             PageContainsAtLeastNImages = null,
             PageContainsAtLeastNLayoutElements = null,
@@ -7507,6 +7619,10 @@ public class AutoModeConfigurationTest : TestBase
             TriggerMode = null,
         };
 
+        Assert.Null(model.DocumentLongerThanNPages);
+        Assert.True(model.RawData.ContainsKey("document_longer_than_n_pages"));
+        Assert.Null(model.DocumentShorterThanNPages);
+        Assert.True(model.RawData.ContainsKey("document_shorter_than_n_pages"));
         Assert.Null(model.FilenameMatchGlob);
         Assert.True(model.RawData.ContainsKey("filename_match_glob"));
         Assert.Null(model.FilenameMatchGlobList);
@@ -7525,6 +7641,8 @@ public class AutoModeConfigurationTest : TestBase
         Assert.True(model.RawData.ContainsKey("layout_element_in_page"));
         Assert.Null(model.LayoutElementInPageConfidenceThreshold);
         Assert.True(model.RawData.ContainsKey("layout_element_in_page_confidence_threshold"));
+        Assert.Null(model.MinComplexity);
+        Assert.True(model.RawData.ContainsKey("min_complexity"));
         Assert.Null(model.PageContainsAtLeastNCharts);
         Assert.True(model.RawData.ContainsKey("page_contains_at_least_n_charts"));
         Assert.Null(model.PageContainsAtLeastNImages);
@@ -7613,6 +7731,8 @@ public class AutoModeConfigurationTest : TestBase
                 Version = ParsingConfVersion.Latest,
             },
 
+            DocumentLongerThanNPages = null,
+            DocumentShorterThanNPages = null,
             FilenameMatchGlob = null,
             FilenameMatchGlobList = null,
             FilenameRegexp = null,
@@ -7622,6 +7742,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = null,
             LayoutElementInPage = null,
             LayoutElementInPageConfidenceThreshold = null,
+            MinComplexity = null,
             PageContainsAtLeastNCharts = null,
             PageContainsAtLeastNImages = null,
             PageContainsAtLeastNLayoutElements = null,
@@ -7686,6 +7807,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -7695,6 +7818,7 @@ public class AutoModeConfigurationTest : TestBase
             ImageInPage = true,
             LayoutElementInPage = "layout_element_in_page",
             LayoutElementInPageConfidenceThreshold = 0,
+            MinComplexity = MinComplexity.High,
             PageContainsAtLeastNCharts = 0,
             PageContainsAtLeastNImages = 0,
             PageContainsAtLeastNLayoutElements = 0,
@@ -8799,9 +8923,9 @@ public class ParsingConfVersionTest : TestBase
 {
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
-    [InlineData(ParsingConfVersion.V2026_10_16)]
-    [InlineData(ParsingConfVersion.V2026_09_28)]
-    [InlineData(ParsingConfVersion.V2026_06_15)]
+    [InlineData(ParsingConfVersion.V2026_11_12)]
+    [InlineData(ParsingConfVersion.V2026_11_11)]
+    [InlineData(ParsingConfVersion.V2026_11_09)]
     public void Validation_Works(ParsingConfVersion rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -8823,9 +8947,9 @@ public class ParsingConfVersionTest : TestBase
 
     [Theory]
     [InlineData(ParsingConfVersion.Latest)]
-    [InlineData(ParsingConfVersion.V2026_10_16)]
-    [InlineData(ParsingConfVersion.V2026_09_28)]
-    [InlineData(ParsingConfVersion.V2026_06_15)]
+    [InlineData(ParsingConfVersion.V2026_11_12)]
+    [InlineData(ParsingConfVersion.V2026_11_11)]
+    [InlineData(ParsingConfVersion.V2026_11_09)]
     public void SerializationRoundtrip_Works(ParsingConfVersion rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -8936,6 +9060,66 @@ public class LayoutElementInPageConfidenceThresholdTest : TestBase
         string element = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<LayoutElementInPageConfidenceThreshold>(
             element,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class MinComplexityTest : TestBase
+{
+    [Theory]
+    [InlineData(MinComplexity.High)]
+    [InlineData(MinComplexity.Low)]
+    [InlineData(MinComplexity.Medium)]
+    public void Validation_Works(MinComplexity rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, MinComplexity> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(MinComplexity.High)]
+    [InlineData(MinComplexity.Low)]
+    [InlineData(MinComplexity.Medium)]
+    public void SerializationRoundtrip_Works(MinComplexity rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, MinComplexity> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, MinComplexity>>(
+            json,
             ModelBase.SerializerOptions
         );
 
@@ -10335,6 +10519,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = ["parse.success", "parse.error"],
             WebhookHeaders = new Dictionary<string, JsonElement>()
             {
@@ -10345,6 +10530,7 @@ public class WebhookConfigurationTest : TestBase
             WebhookUrl = "https:",
         };
 
+        string expectedID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6";
         List<string> expectedWebhookEvents = ["parse.success", "parse.error"];
         Dictionary<string, JsonElement> expectedWebhookHeaders = new()
         {
@@ -10354,6 +10540,7 @@ public class WebhookConfigurationTest : TestBase
         string expectedWebhookSigningSecret = "webhook_signing_secret";
         string expectedWebhookUrl = "https:";
 
+        Assert.Equal(expectedID, model.ID);
         Assert.NotNull(model.WebhookEvents);
         Assert.Equal(expectedWebhookEvents.Count, model.WebhookEvents.Count);
         for (int i = 0; i < expectedWebhookEvents.Count; i++)
@@ -10378,6 +10565,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = ["parse.success", "parse.error"],
             WebhookHeaders = new Dictionary<string, JsonElement>()
             {
@@ -10402,6 +10590,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = ["parse.success", "parse.error"],
             WebhookHeaders = new Dictionary<string, JsonElement>()
             {
@@ -10419,6 +10608,7 @@ public class WebhookConfigurationTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        string expectedID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6";
         List<string> expectedWebhookEvents = ["parse.success", "parse.error"];
         Dictionary<string, JsonElement> expectedWebhookHeaders = new()
         {
@@ -10428,6 +10618,7 @@ public class WebhookConfigurationTest : TestBase
         string expectedWebhookSigningSecret = "webhook_signing_secret";
         string expectedWebhookUrl = "https:";
 
+        Assert.Equal(expectedID, deserialized.ID);
         Assert.NotNull(deserialized.WebhookEvents);
         Assert.Equal(expectedWebhookEvents.Count, deserialized.WebhookEvents.Count);
         for (int i = 0; i < expectedWebhookEvents.Count; i++)
@@ -10452,6 +10643,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = ["parse.success", "parse.error"],
             WebhookHeaders = new Dictionary<string, JsonElement>()
             {
@@ -10470,6 +10662,8 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration { };
 
+        Assert.Null(model.ID);
+        Assert.False(model.RawData.ContainsKey("id"));
         Assert.Null(model.WebhookEvents);
         Assert.False(model.RawData.ContainsKey("webhook_events"));
         Assert.Null(model.WebhookHeaders);
@@ -10495,6 +10689,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = null,
             WebhookEvents = null,
             WebhookHeaders = null,
             WebhookOutputFormat = null,
@@ -10502,6 +10697,8 @@ public class WebhookConfigurationTest : TestBase
             WebhookUrl = null,
         };
 
+        Assert.Null(model.ID);
+        Assert.True(model.RawData.ContainsKey("id"));
         Assert.Null(model.WebhookEvents);
         Assert.True(model.RawData.ContainsKey("webhook_events"));
         Assert.Null(model.WebhookHeaders);
@@ -10519,6 +10716,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = null,
             WebhookEvents = null,
             WebhookHeaders = null,
             WebhookOutputFormat = null,
@@ -10534,6 +10732,7 @@ public class WebhookConfigurationTest : TestBase
     {
         var model = new WebhookConfiguration
         {
+            ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
             WebhookEvents = ["parse.success", "parse.error"],
             WebhookHeaders = new Dictionary<string, JsonElement>()
             {

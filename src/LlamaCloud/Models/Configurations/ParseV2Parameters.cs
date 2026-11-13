@@ -51,8 +51,8 @@ public sealed record class ParseV2Parameters : JsonModel
     /// <summary>
     /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
     ///
-    /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-09-28` - `agentic`: `2026-10-16` - `agentic_plus`: `2026-09-28`</para>
+    /// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`:
+    /// `2026-11-09` - `agentic`: `2026-11-09` - `agentic_plus`: `2026-11-11`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -280,8 +280,7 @@ public sealed record class ParseV2Parameters : JsonModel
     }
 
     /// <summary>
-    /// Webhook endpoints for job status notifications. Multiple webhooks can be
-    /// configured for different events or services
+    /// Webhook endpoints for job notifications. Maximum 10 total, including webhook_configuration_ids.
     /// </summary>
     public IReadOnlyList<WebhookConfiguration>? WebhookConfigurations
     {
@@ -433,8 +432,8 @@ sealed class ParseV2ParametersTierConverter : JsonConverter<ParseV2ParametersTie
 /// <summary>
 /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
-/// - `agentic`: `2026-10-16` - `agentic_plus`: `2026-09-28`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`: `2026-11-09`
+/// - `agentic`: `2026-11-09` - `agentic_plus`: `2026-11-11`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -442,9 +441,9 @@ sealed class ParseV2ParametersTierConverter : JsonConverter<ParseV2ParametersTie
 public enum Version
 {
     Latest,
-    V2026_10_16,
-    V2026_09_28,
-    V2026_06_15,
+    V2026_11_12,
+    V2026_11_11,
+    V2026_11_09,
 }
 
 sealed class VersionConverter : JsonConverter<global::LlamaCloud.Models.Configurations.Version>
@@ -458,9 +457,9 @@ sealed class VersionConverter : JsonConverter<global::LlamaCloud.Models.Configur
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => global::LlamaCloud.Models.Configurations.Version.Latest,
-            "2026-10-16" => global::LlamaCloud.Models.Configurations.Version.V2026_10_16,
-            "2026-09-28" => global::LlamaCloud.Models.Configurations.Version.V2026_09_28,
-            "2026-06-15" => global::LlamaCloud.Models.Configurations.Version.V2026_06_15,
+            "2026-11-12" => global::LlamaCloud.Models.Configurations.Version.V2026_11_12,
+            "2026-11-11" => global::LlamaCloud.Models.Configurations.Version.V2026_11_11,
+            "2026-11-09" => global::LlamaCloud.Models.Configurations.Version.V2026_11_09,
             _ => (global::LlamaCloud.Models.Configurations.Version)(-1),
         };
     }
@@ -476,9 +475,9 @@ sealed class VersionConverter : JsonConverter<global::LlamaCloud.Models.Configur
             value switch
             {
                 global::LlamaCloud.Models.Configurations.Version.Latest => "latest",
-                global::LlamaCloud.Models.Configurations.Version.V2026_10_16 => "2026-10-16",
-                global::LlamaCloud.Models.Configurations.Version.V2026_09_28 => "2026-09-28",
-                global::LlamaCloud.Models.Configurations.Version.V2026_06_15 => "2026-06-15",
+                global::LlamaCloud.Models.Configurations.Version.V2026_11_12 => "2026-11-12",
+                global::LlamaCloud.Models.Configurations.Version.V2026_11_11 => "2026-11-11",
+                global::LlamaCloud.Models.Configurations.Version.V2026_11_09 => "2026-11-09",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1209,12 +1208,14 @@ public sealed record class OutputOptions : JsonModel
     /// <summary>
     /// Bounding-box granularity levels to compute for the parse. 'word' computes
     /// one bounding box per detected word; 'line' computes one per text line; 'cell'
-    /// computes one per table cell. Multiple levels can be requested. Empty list
-    /// (default) disables granular bboxes — only item-level layout boxes are returned
-    /// on the result. When set, the computed boxes are not inlined on the result
-    /// items; they are written to a separate `grounded_items` sidecar (JSONL, one
-    /// row per page) and exposed as `result_content_metadata.grounded_items` (a presigned
-    /// download URL) on the parse result. Each row matches the `GroundedJsonItem` shape.
+    /// computes one per table cell; 'char' adds one box per character inside each
+    /// grounded word (`chars` on each word), available on the `agentic_plus` tier
+    /// only. Multiple levels can be requested. Empty list (default) disables granular
+    /// bboxes — only item-level layout boxes are returned on the result. When set,
+    /// the computed boxes are not inlined on the result items; they are written
+    /// to a separate `grounded_items` sidecar (JSONL, one row per page) and exposed
+    /// as `result_content_metadata.grounded_items` (a presigned download URL) on
+    /// the parse result. Each row matches the `GroundedJsonItem` shape.
     /// </summary>
     public IReadOnlyList<ApiEnum<string, GranularBbox>>? GranularBboxes
     {
@@ -1419,6 +1420,7 @@ class OutputOptionsFromRaw : IFromRawJson<OutputOptions>
 public enum GranularBbox
 {
     Cell,
+    Char,
     Line,
     Word,
 }
@@ -1434,6 +1436,7 @@ sealed class GranularBboxConverter : JsonConverter<GranularBbox>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "cell" => GranularBbox.Cell,
+            "char" => GranularBbox.Char,
             "line" => GranularBbox.Line,
             "word" => GranularBbox.Word,
             _ => (GranularBbox)(-1),
@@ -1451,6 +1454,7 @@ sealed class GranularBboxConverter : JsonConverter<GranularBbox>
             value switch
             {
                 GranularBbox.Cell => "cell",
+                GranularBbox.Char => "char",
                 GranularBbox.Line => "line",
                 GranularBbox.Word => "word",
                 _ => throw new LlamaCloudInvalidDataException(
@@ -2589,6 +2593,32 @@ public sealed record class AutoModeConfiguration : JsonModel
     }
 
     /// <summary>
+    /// Match every page when the document has more than N pages
+    /// </summary>
+    public long? DocumentLongerThanNPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("document_longer_than_n_pages");
+        }
+        init { this._rawData.Set("document_longer_than_n_pages", value); }
+    }
+
+    /// <summary>
+    /// Match every page when the document has fewer than N pages
+    /// </summary>
+    public long? DocumentShorterThanNPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("document_shorter_than_n_pages");
+        }
+        init { this._rawData.Set("document_shorter_than_n_pages", value); }
+    }
+
+    /// <summary>
     /// Single glob pattern to match against filename
     /// </summary>
     public string? FilenameMatchGlob
@@ -2715,6 +2745,20 @@ public sealed record class AutoModeConfiguration : JsonModel
             );
         }
         init { this._rawData.Set("layout_element_in_page_confidence_threshold", value); }
+    }
+
+    /// <summary>
+    /// Minimum page complexity that sends a page to the escalation tier. Lower levels
+    /// escalate more pages: low escalates the most, high only the most complex pages.
+    /// </summary>
+    public ApiEnum<string, MinComplexity>? MinComplexity
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, MinComplexity>>("min_complexity");
+        }
+        init { this._rawData.Set("min_complexity", value); }
     }
 
     /// <summary>
@@ -3098,6 +3142,8 @@ public sealed record class AutoModeConfiguration : JsonModel
     public override void Validate()
     {
         this.ParsingConf.Validate();
+        _ = this.DocumentLongerThanNPages;
+        _ = this.DocumentShorterThanNPages;
         _ = this.FilenameMatchGlob;
         _ = this.FilenameMatchGlobList;
         _ = this.FilenameRegexp;
@@ -3107,6 +3153,7 @@ public sealed record class AutoModeConfiguration : JsonModel
         _ = this.ImageInPage;
         _ = this.LayoutElementInPage;
         this.LayoutElementInPageConfidenceThreshold?.Validate();
+        this.MinComplexity?.Validate();
         this.PageContainsAtLeastNCharts?.Validate();
         this.PageContainsAtLeastNImages?.Validate();
         this.PageContainsAtLeastNLayoutElements?.Validate();
@@ -3361,8 +3408,8 @@ public sealed record class ParsingConf : JsonModel
     /// Version for the override tier. Required when `tier` is set. Use `latest`,
     /// or pin one of that tier's dated versions.
     ///
-    /// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`:
-    /// `2026-09-28` - `agentic`: `2026-10-16` - `agentic_plus`: `2026-09-28`</para>
+    /// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`:
+    /// `2026-11-09` - `agentic`: `2026-11-09` - `agentic_plus`: `2026-11-11`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -3883,8 +3930,8 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 /// Version for the override tier. Required when `tier` is set. Use `latest`, or pin
 /// one of that tier's dated versions.
 ///
-/// <para>Current `latest` by tier: - `fast`: `2026-06-15` - `cost_effective`: `2026-09-28`
-/// - `agentic`: `2026-10-16` - `agentic_plus`: `2026-09-28`</para>
+/// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`: `2026-11-09`
+/// - `agentic`: `2026-11-09` - `agentic_plus`: `2026-11-11`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -3892,9 +3939,9 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 public enum ParsingConfVersion
 {
     Latest,
-    V2026_10_16,
-    V2026_09_28,
-    V2026_06_15,
+    V2026_11_12,
+    V2026_11_11,
+    V2026_11_09,
 }
 
 sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
@@ -3908,9 +3955,9 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => ParsingConfVersion.Latest,
-            "2026-10-16" => ParsingConfVersion.V2026_10_16,
-            "2026-09-28" => ParsingConfVersion.V2026_09_28,
-            "2026-06-15" => ParsingConfVersion.V2026_06_15,
+            "2026-11-12" => ParsingConfVersion.V2026_11_12,
+            "2026-11-11" => ParsingConfVersion.V2026_11_11,
+            "2026-11-09" => ParsingConfVersion.V2026_11_09,
             _ => (ParsingConfVersion)(-1),
         };
     }
@@ -3926,9 +3973,9 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
             value switch
             {
                 ParsingConfVersion.Latest => "latest",
-                ParsingConfVersion.V2026_10_16 => "2026-10-16",
-                ParsingConfVersion.V2026_09_28 => "2026-09-28",
-                ParsingConfVersion.V2026_06_15 => "2026-06-15",
+                ParsingConfVersion.V2026_11_12 => "2026-11-12",
+                ParsingConfVersion.V2026_11_11 => "2026-11-11",
+                ParsingConfVersion.V2026_11_09 => "2026-11-09",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -4428,6 +4475,57 @@ sealed class LayoutElementInPageConfidenceThresholdConverter
     )
     {
         JsonSerializer.Serialize(writer, value?.Json, options);
+    }
+}
+
+/// <summary>
+/// Minimum page complexity that sends a page to the escalation tier. Lower levels
+/// escalate more pages: low escalates the most, high only the most complex pages.
+/// </summary>
+[JsonConverter(typeof(MinComplexityConverter))]
+public enum MinComplexity
+{
+    High,
+    Low,
+    Medium,
+}
+
+sealed class MinComplexityConverter : JsonConverter<MinComplexity>
+{
+    public override MinComplexity Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "high" => MinComplexity.High,
+            "low" => MinComplexity.Low,
+            "medium" => MinComplexity.Medium,
+            _ => (MinComplexity)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        MinComplexity value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                MinComplexity.High => "high",
+                MinComplexity.Low => "low",
+                MinComplexity.Medium => "medium",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }
 
@@ -9714,14 +9812,25 @@ sealed class ProcessingOptionsSpecializedChartParsingConverter
 }
 
 /// <summary>
-/// Webhook configuration for receiving parsing job notifications.
-///
-/// <para>Webhooks are called when specified events occur during job processing.
-/// Configure multiple webhook configurations to send to different endpoints.</para>
+/// A webhook endpoint kept in a saved Parse configuration.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<WebhookConfiguration, WebhookConfigurationFromRaw>))]
 public sealed record class WebhookConfiguration : JsonModel
 {
+    /// <summary>
+    /// Webhook ID, set by the server. Send it back unchanged so a masked credential
+    /// keeps this webhook's saved value.
+    /// </summary>
+    public string? ID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("id");
+        }
+        init { this._rawData.Set("id", value); }
+    }
+
     /// <summary>
     /// Events that trigger this webhook. Options: 'parse.success' (job completed),
     /// 'parse.error' (job failed), 'parse.partial_success' (some pages failed),
@@ -9814,6 +9923,7 @@ public sealed record class WebhookConfiguration : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.ID;
         _ = this.WebhookEvents;
         _ = this.WebhookHeaders;
         this.WebhookOutputFormat?.Validate();

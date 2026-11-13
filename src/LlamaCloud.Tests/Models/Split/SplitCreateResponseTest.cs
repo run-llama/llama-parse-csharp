@@ -22,6 +22,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -55,6 +56,7 @@ public class SplitCreateResponseTest : TestBase
         string expectedProjectID = "project_id";
         string expectedStatus = "status";
         string expectedUserID = "user_id";
+        string expectedVersion = "1.1.0";
         string expectedConfigurationID = "configuration_id";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedErrorMessage = "error_message";
@@ -91,6 +93,7 @@ public class SplitCreateResponseTest : TestBase
         Assert.Equal(expectedProjectID, model.ProjectID);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedUserID, model.UserID);
+        Assert.Equal(expectedVersion, model.Version);
         Assert.Equal(expectedConfigurationID, model.ConfigurationID);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedErrorMessage, model.ErrorMessage);
@@ -115,6 +118,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -162,6 +166,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -202,6 +207,7 @@ public class SplitCreateResponseTest : TestBase
         string expectedProjectID = "project_id";
         string expectedStatus = "status";
         string expectedUserID = "user_id";
+        string expectedVersion = "1.1.0";
         string expectedConfigurationID = "configuration_id";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedErrorMessage = "error_message";
@@ -238,6 +244,7 @@ public class SplitCreateResponseTest : TestBase
         Assert.Equal(expectedProjectID, deserialized.ProjectID);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedUserID, deserialized.UserID);
+        Assert.Equal(expectedVersion, deserialized.Version);
         Assert.Equal(expectedConfigurationID, deserialized.ConfigurationID);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedErrorMessage, deserialized.ErrorMessage);
@@ -262,6 +269,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -303,6 +311,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -339,6 +348,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -374,6 +384,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -413,6 +424,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",
@@ -451,6 +463,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
@@ -491,6 +504,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
@@ -514,6 +528,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
@@ -564,6 +579,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             SplittingStrategy = new()
             {
                 AllowUncategorized = SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid,
@@ -597,6 +613,7 @@ public class SplitCreateResponseTest : TestBase
             ProjectID = "project_id",
             Status = "status",
             UserID = "user_id",
+            Version = "1.1.0",
             ConfigurationID = "configuration_id",
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ErrorMessage = "error_message",

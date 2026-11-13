@@ -451,6 +451,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
+                Effort = Configurations::Effort.Max,
                 ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -600,6 +601,8 @@ public class ConfigurationResponseParametersTest : TestBase
                                 Tier = Configurations::ParsingConfTier.Agentic,
                                 Version = Configurations::ParsingConfVersion.Latest,
                             },
+                            DocumentLongerThanNPages = 5,
+                            DocumentShorterThanNPages = 5,
                             FilenameMatchGlob = "*.txt",
                             FilenameMatchGlobList = ["string"],
                             FilenameRegexp = "filename_regexp",
@@ -609,6 +612,7 @@ public class ConfigurationResponseParametersTest : TestBase
                             ImageInPage = true,
                             LayoutElementInPage = "layout_element_in_page",
                             LayoutElementInPageConfidenceThreshold = 0,
+                            MinComplexity = Configurations::MinComplexity.High,
                             PageContainsAtLeastNCharts = 0,
                             PageContainsAtLeastNImages = 0,
                             PageContainsAtLeastNLayoutElements = 0,
@@ -656,6 +660,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 [
                     new()
                     {
+                        ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                         WebhookEvents = ["parse.success", "parse.error"],
                         WebhookHeaders = new Dictionary<string, JsonElement>()
                         {
@@ -773,6 +778,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
+                Effort = Configurations::Effort.Max,
                 ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -929,6 +935,8 @@ public class ConfigurationResponseParametersTest : TestBase
                                 Tier = Configurations::ParsingConfTier.Agentic,
                                 Version = Configurations::ParsingConfVersion.Latest,
                             },
+                            DocumentLongerThanNPages = 5,
+                            DocumentShorterThanNPages = 5,
                             FilenameMatchGlob = "*.txt",
                             FilenameMatchGlobList = ["string"],
                             FilenameRegexp = "filename_regexp",
@@ -938,6 +946,7 @@ public class ConfigurationResponseParametersTest : TestBase
                             ImageInPage = true,
                             LayoutElementInPage = "layout_element_in_page",
                             LayoutElementInPageConfidenceThreshold = 0,
+                            MinComplexity = Configurations::MinComplexity.High,
                             PageContainsAtLeastNCharts = 0,
                             PageContainsAtLeastNImages = 0,
                             PageContainsAtLeastNLayoutElements = 0,
@@ -985,6 +994,7 @@ public class ConfigurationResponseParametersTest : TestBase
                 [
                     new()
                     {
+                        ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                         WebhookEvents = ["parse.success", "parse.error"],
                         WebhookHeaders = new Dictionary<string, JsonElement>()
                         {

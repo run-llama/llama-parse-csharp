@@ -838,11 +838,38 @@ public sealed record class FormTableGroundingIDLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<FormTableGroundingIDLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<FormTableGroundingIDLineWordChar>
+            >("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<FormTableGroundingIDLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public FormTableGroundingIDLineWord() { }
@@ -881,6 +908,96 @@ class FormTableGroundingIDLineWordFromRaw : IFromRawJson<FormTableGroundingIDLin
     public FormTableGroundingIDLineWord FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => FormTableGroundingIDLineWord.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        FormTableGroundingIDLineWordChar,
+        FormTableGroundingIDLineWordCharFromRaw
+    >)
+)]
+public sealed record class FormTableGroundingIDLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public FormTableGroundingIDLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FormTableGroundingIDLineWordChar(
+        FormTableGroundingIDLineWordChar formTableGroundingIDLineWordChar
+    )
+        : base(formTableGroundingIDLineWordChar) { }
+#pragma warning restore CS8618
+
+    public FormTableGroundingIDLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FormTableGroundingIDLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FormTableGroundingIDLineWordCharFromRaw.FromRawUnchecked"/>
+    public static FormTableGroundingIDLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FormTableGroundingIDLineWordCharFromRaw : IFromRawJson<FormTableGroundingIDLineWordChar>
+{
+    /// <inheritdoc/>
+    public FormTableGroundingIDLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => FormTableGroundingIDLineWordChar.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -1101,11 +1218,36 @@ public sealed record class ColumnLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<ColumnLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<ColumnLineWordChar>>("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<ColumnLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public ColumnLineWord() { }
@@ -1141,6 +1283,88 @@ class ColumnLineWordFromRaw : IFromRawJson<ColumnLineWord>
     /// <inheritdoc/>
     public ColumnLineWord FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         ColumnLineWord.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<ColumnLineWordChar, ColumnLineWordCharFromRaw>))]
+public sealed record class ColumnLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public ColumnLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ColumnLineWordChar(ColumnLineWordChar columnLineWordChar)
+        : base(columnLineWordChar) { }
+#pragma warning restore CS8618
+
+    public ColumnLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ColumnLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ColumnLineWordCharFromRaw.FromRawUnchecked"/>
+    public static ColumnLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ColumnLineWordCharFromRaw : IFromRawJson<ColumnLineWordChar>
+{
+    /// <inheritdoc/>
+    public ColumnLineWordChar FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ColumnLineWordChar.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -1378,11 +1602,38 @@ public sealed record class FormTableGroundingLabelLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<FormTableGroundingLabelLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<FormTableGroundingLabelLineWordChar>
+            >("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<FormTableGroundingLabelLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public FormTableGroundingLabelLineWord() { }
@@ -1423,6 +1674,96 @@ class FormTableGroundingLabelLineWordFromRaw : IFromRawJson<FormTableGroundingLa
     public FormTableGroundingLabelLineWord FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => FormTableGroundingLabelLineWord.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        FormTableGroundingLabelLineWordChar,
+        FormTableGroundingLabelLineWordCharFromRaw
+    >)
+)]
+public sealed record class FormTableGroundingLabelLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public FormTableGroundingLabelLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FormTableGroundingLabelLineWordChar(
+        FormTableGroundingLabelLineWordChar formTableGroundingLabelLineWordChar
+    )
+        : base(formTableGroundingLabelLineWordChar) { }
+#pragma warning restore CS8618
+
+    public FormTableGroundingLabelLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FormTableGroundingLabelLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FormTableGroundingLabelLineWordCharFromRaw.FromRawUnchecked"/>
+    public static FormTableGroundingLabelLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FormTableGroundingLabelLineWordCharFromRaw : IFromRawJson<FormTableGroundingLabelLineWordChar>
+{
+    /// <inheritdoc/>
+    public FormTableGroundingLabelLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => FormTableGroundingLabelLineWordChar.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -1652,11 +1993,38 @@ public sealed record class FormTextGroundingLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<FormTextGroundingLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<FormTextGroundingLineWordChar>>(
+                "chars"
+            );
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<FormTextGroundingLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public FormTextGroundingLineWord() { }
@@ -1695,6 +2063,93 @@ class FormTextGroundingLineWordFromRaw : IFromRawJson<FormTextGroundingLineWord>
     public FormTextGroundingLineWord FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => FormTextGroundingLineWord.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<FormTextGroundingLineWordChar, FormTextGroundingLineWordCharFromRaw>)
+)]
+public sealed record class FormTextGroundingLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public FormTextGroundingLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FormTextGroundingLineWordChar(
+        FormTextGroundingLineWordChar formTextGroundingLineWordChar
+    )
+        : base(formTextGroundingLineWordChar) { }
+#pragma warning restore CS8618
+
+    public FormTextGroundingLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FormTextGroundingLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FormTextGroundingLineWordCharFromRaw.FromRawUnchecked"/>
+    public static FormTextGroundingLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FormTextGroundingLineWordCharFromRaw : IFromRawJson<FormTextGroundingLineWordChar>
+{
+    /// <inheritdoc/>
+    public FormTextGroundingLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => FormTextGroundingLineWordChar.FromRawUnchecked(rawData);
 }
 
 /// <summary>

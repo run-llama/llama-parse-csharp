@@ -323,6 +323,7 @@ public enum ExtractV2JobCreateWebhookConfigurationWebhookEvent
     ExtractError,
     ExtractPartialSuccess,
     ExtractPending,
+    ExtractRunning,
     ExtractSuccess,
     ParseCancelled,
     ParseError,
@@ -381,6 +382,7 @@ sealed class ExtractV2JobCreateWebhookConfigurationWebhookEventConverter
             "extract.partial_success" =>
                 ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractPartialSuccess,
             "extract.pending" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractPending,
+            "extract.running" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractRunning,
             "extract.success" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractSuccess,
             "parse.cancelled" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.ParseCancelled,
             "parse.error" => ExtractV2JobCreateWebhookConfigurationWebhookEvent.ParseError,
@@ -448,6 +450,8 @@ sealed class ExtractV2JobCreateWebhookConfigurationWebhookEventConverter
                     "extract.partial_success",
                 ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractPending =>
                     "extract.pending",
+                ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractRunning =>
+                    "extract.running",
                 ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractSuccess =>
                     "extract.success",
                 ExtractV2JobCreateWebhookConfigurationWebhookEvent.ParseCancelled =>
