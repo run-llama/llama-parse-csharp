@@ -2726,6 +2726,32 @@ public sealed record class AutoModeConfiguration : JsonModel
     }
 
     /// <summary>
+    /// Match every page when the document has more than N pages
+    /// </summary>
+    public long? DocumentLongerThanNPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("document_longer_than_n_pages");
+        }
+        init { this._rawData.Set("document_longer_than_n_pages", value); }
+    }
+
+    /// <summary>
+    /// Match every page when the document has fewer than N pages
+    /// </summary>
+    public long? DocumentShorterThanNPages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("document_shorter_than_n_pages");
+        }
+        init { this._rawData.Set("document_shorter_than_n_pages", value); }
+    }
+
+    /// <summary>
     /// Single glob pattern to match against filename
     /// </summary>
     public string? FilenameMatchGlob
@@ -3250,6 +3276,8 @@ public sealed record class AutoModeConfiguration : JsonModel
     public override void Validate()
     {
         this.ParsingConf.Validate();
+        _ = this.DocumentLongerThanNPages;
+        _ = this.DocumentShorterThanNPages;
         _ = this.FilenameMatchGlob;
         _ = this.FilenameMatchGlobList;
         _ = this.FilenameRegexp;

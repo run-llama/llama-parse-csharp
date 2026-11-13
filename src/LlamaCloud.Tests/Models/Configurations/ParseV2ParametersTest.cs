@@ -132,6 +132,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -316,6 +318,8 @@ public class ParseV2ParametersTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -535,6 +539,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -736,6 +742,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -927,6 +935,8 @@ public class ParseV2ParametersTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -1152,6 +1162,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -1455,6 +1467,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -1654,6 +1668,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -1844,6 +1860,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -2049,6 +2067,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -2249,6 +2269,8 @@ public class ParseV2ParametersTest : TestBase
                             Tier = ParsingConfTier.Agentic,
                             Version = ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -5669,6 +5691,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -5754,6 +5778,8 @@ public class ProcessingOptionsTest : TestBase
                     Tier = ParsingConfTier.Agentic,
                     Version = ParsingConfVersion.Latest,
                 },
+                DocumentLongerThanNPages = 5,
+                DocumentShorterThanNPages = 5,
                 FilenameMatchGlob = "*.txt",
                 FilenameMatchGlobList = ["string"],
                 FilenameRegexp = "filename_regexp",
@@ -5861,6 +5887,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -5960,6 +5988,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6052,6 +6082,8 @@ public class ProcessingOptionsTest : TestBase
                     Tier = ParsingConfTier.Agentic,
                     Version = ParsingConfVersion.Latest,
                 },
+                DocumentLongerThanNPages = 5,
+                DocumentShorterThanNPages = 5,
                 FilenameMatchGlob = "*.txt",
                 FilenameMatchGlobList = ["string"],
                 FilenameRegexp = "filename_regexp",
@@ -6159,6 +6191,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6252,6 +6286,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6341,6 +6377,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6427,6 +6465,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6520,6 +6560,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6720,6 +6762,8 @@ public class ProcessingOptionsTest : TestBase
                         Tier = ParsingConfTier.Agentic,
                         Version = ParsingConfVersion.Latest,
                     },
+                    DocumentLongerThanNPages = 5,
+                    DocumentShorterThanNPages = 5,
                     FilenameMatchGlob = "*.txt",
                     FilenameMatchGlobList = ["string"],
                     FilenameRegexp = "filename_regexp",
@@ -6813,6 +6857,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -6879,6 +6925,8 @@ public class AutoModeConfigurationTest : TestBase
             Tier = ParsingConfTier.Agentic,
             Version = ParsingConfVersion.Latest,
         };
+        long expectedDocumentLongerThanNPages = 5;
+        long expectedDocumentShorterThanNPages = 5;
         string expectedFilenameMatchGlob = "*.txt";
         List<string> expectedFilenameMatchGlobList = ["string"];
         string expectedFilenameRegexp = "filename_regexp";
@@ -6917,6 +6965,8 @@ public class AutoModeConfigurationTest : TestBase
         string expectedTriggerMode = "trigger_mode";
 
         Assert.Equal(expectedParsingConf, model.ParsingConf);
+        Assert.Equal(expectedDocumentLongerThanNPages, model.DocumentLongerThanNPages);
+        Assert.Equal(expectedDocumentShorterThanNPages, model.DocumentShorterThanNPages);
         Assert.Equal(expectedFilenameMatchGlob, model.FilenameMatchGlob);
         Assert.NotNull(model.FilenameMatchGlobList);
         Assert.Equal(expectedFilenameMatchGlobList.Count, model.FilenameMatchGlobList.Count);
@@ -7008,6 +7058,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -7088,6 +7140,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -7161,6 +7215,8 @@ public class AutoModeConfigurationTest : TestBase
             Tier = ParsingConfTier.Agentic,
             Version = ParsingConfVersion.Latest,
         };
+        long expectedDocumentLongerThanNPages = 5;
+        long expectedDocumentShorterThanNPages = 5;
         string expectedFilenameMatchGlob = "*.txt";
         List<string> expectedFilenameMatchGlobList = ["string"];
         string expectedFilenameRegexp = "filename_regexp";
@@ -7199,6 +7255,8 @@ public class AutoModeConfigurationTest : TestBase
         string expectedTriggerMode = "trigger_mode";
 
         Assert.Equal(expectedParsingConf, deserialized.ParsingConf);
+        Assert.Equal(expectedDocumentLongerThanNPages, deserialized.DocumentLongerThanNPages);
+        Assert.Equal(expectedDocumentShorterThanNPages, deserialized.DocumentShorterThanNPages);
         Assert.Equal(expectedFilenameMatchGlob, deserialized.FilenameMatchGlob);
         Assert.NotNull(deserialized.FilenameMatchGlobList);
         Assert.Equal(expectedFilenameMatchGlobList.Count, deserialized.FilenameMatchGlobList.Count);
@@ -7293,6 +7351,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
@@ -7369,6 +7429,10 @@ public class AutoModeConfigurationTest : TestBase
             },
         };
 
+        Assert.Null(model.DocumentLongerThanNPages);
+        Assert.False(model.RawData.ContainsKey("document_longer_than_n_pages"));
+        Assert.Null(model.DocumentShorterThanNPages);
+        Assert.False(model.RawData.ContainsKey("document_shorter_than_n_pages"));
         Assert.Null(model.FilenameMatchGlob);
         Assert.False(model.RawData.ContainsKey("filename_match_glob"));
         Assert.Null(model.FilenameMatchGlobList);
@@ -7515,6 +7579,8 @@ public class AutoModeConfigurationTest : TestBase
                 Version = ParsingConfVersion.Latest,
             },
 
+            DocumentLongerThanNPages = null,
+            DocumentShorterThanNPages = null,
             FilenameMatchGlob = null,
             FilenameMatchGlobList = null,
             FilenameRegexp = null,
@@ -7553,6 +7619,10 @@ public class AutoModeConfigurationTest : TestBase
             TriggerMode = null,
         };
 
+        Assert.Null(model.DocumentLongerThanNPages);
+        Assert.True(model.RawData.ContainsKey("document_longer_than_n_pages"));
+        Assert.Null(model.DocumentShorterThanNPages);
+        Assert.True(model.RawData.ContainsKey("document_shorter_than_n_pages"));
         Assert.Null(model.FilenameMatchGlob);
         Assert.True(model.RawData.ContainsKey("filename_match_glob"));
         Assert.Null(model.FilenameMatchGlobList);
@@ -7661,6 +7731,8 @@ public class AutoModeConfigurationTest : TestBase
                 Version = ParsingConfVersion.Latest,
             },
 
+            DocumentLongerThanNPages = null,
+            DocumentShorterThanNPages = null,
             FilenameMatchGlob = null,
             FilenameMatchGlobList = null,
             FilenameRegexp = null,
@@ -7735,6 +7807,8 @@ public class AutoModeConfigurationTest : TestBase
                 Tier = ParsingConfTier.Agentic,
                 Version = ParsingConfVersion.Latest,
             },
+            DocumentLongerThanNPages = 5,
+            DocumentShorterThanNPages = 5,
             FilenameMatchGlob = "*.txt",
             FilenameMatchGlobList = ["string"],
             FilenameRegexp = "filename_regexp",
