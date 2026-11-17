@@ -50,6 +50,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -93,6 +102,15 @@ public class SplitListPageResponseTest : TestBase
                 TargetPages = "target_pages",
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Warnings =
+                [
+                    new()
+                    {
+                        CategoryNames = ["string"],
+                        Code = SplitListResponseWarningCode.CatchAllCategory,
+                        Message = "message",
+                    },
+                ],
             },
         ];
         string expectedNextPageToken = "next_page_token";
@@ -149,6 +167,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -206,6 +233,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -256,6 +292,15 @@ public class SplitListPageResponseTest : TestBase
                 TargetPages = "target_pages",
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Warnings =
+                [
+                    new()
+                    {
+                        CategoryNames = ["string"],
+                        Code = SplitListResponseWarningCode.CatchAllCategory,
+                        Message = "message",
+                    },
+                ],
             },
         ];
         string expectedNextPageToken = "next_page_token";
@@ -312,6 +357,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -363,6 +417,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
         };
@@ -415,6 +478,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
         };
@@ -464,6 +536,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
 
@@ -519,6 +600,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
 
@@ -571,6 +661,15 @@ public class SplitListPageResponseTest : TestBase
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",

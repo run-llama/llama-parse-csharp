@@ -271,6 +271,32 @@ public sealed record class SplitListResponse : JsonModel
         init { this._rawData.Set("updated_at", value); }
     }
 
+    /// <summary>
+    /// Advisory findings about the categories this job uses; empty when none.
+    /// </summary>
+    public IReadOnlyList<SplitListResponseWarning>? Warnings
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<SplitListResponseWarning>>(
+                "warnings"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<SplitListResponseWarning>?>(
+                "warnings",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -295,6 +321,10 @@ public sealed record class SplitListResponse : JsonModel
         _ = this.TargetPages;
         _ = this.TransactionID;
         _ = this.UpdatedAt;
+        foreach (var item in this.Warnings ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public SplitListResponse() { }
@@ -550,6 +580,161 @@ sealed class SplitListResponseSplittingStrategyAllowUncategorizedConverter
                 SplitListResponseSplittingStrategyAllowUncategorized.Forbid => "forbid",
                 SplitListResponseSplittingStrategyAllowUncategorized.Include => "include",
                 SplitListResponseSplittingStrategyAllowUncategorized.Omit => "omit",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Advisory finding about split categories; the job still runs.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<SplitListResponseWarning, SplitListResponseWarningFromRaw>)
+)]
+public sealed record class SplitListResponseWarning : JsonModel
+{
+    /// <summary>
+    /// Names of the categories the warning concerns.
+    /// </summary>
+    public required IReadOnlyList<string> CategoryNames
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<string>>("category_names");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<string>>(
+                "category_names",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// Rule that produced the warning.
+    /// </summary>
+    public required ApiEnum<string, SplitListResponseWarningCode> Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, SplitListResponseWarningCode>>(
+                "code"
+            );
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <summary>
+    /// What is ambiguous and how to fix it.
+    /// </summary>
+    public required string Message
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("message");
+        }
+        init { this._rawData.Set("message", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.CategoryNames;
+        this.Code.Validate();
+        _ = this.Message;
+    }
+
+    public SplitListResponseWarning() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SplitListResponseWarning(SplitListResponseWarning splitListResponseWarning)
+        : base(splitListResponseWarning) { }
+#pragma warning restore CS8618
+
+    public SplitListResponseWarning(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SplitListResponseWarning(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SplitListResponseWarningFromRaw.FromRawUnchecked"/>
+    public static SplitListResponseWarning FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SplitListResponseWarningFromRaw : IFromRawJson<SplitListResponseWarning>
+{
+    /// <inheritdoc/>
+    public SplitListResponseWarning FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => SplitListResponseWarning.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Rule that produced the warning.
+/// </summary>
+[JsonConverter(typeof(SplitListResponseWarningCodeConverter))]
+public enum SplitListResponseWarningCode
+{
+    CatchAllCategory,
+    MissingDescription,
+    NearDuplicateDescription,
+    NearDuplicateName,
+}
+
+sealed class SplitListResponseWarningCodeConverter : JsonConverter<SplitListResponseWarningCode>
+{
+    public override SplitListResponseWarningCode Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "catch_all_category" => SplitListResponseWarningCode.CatchAllCategory,
+            "missing_description" => SplitListResponseWarningCode.MissingDescription,
+            "near_duplicate_description" => SplitListResponseWarningCode.NearDuplicateDescription,
+            "near_duplicate_name" => SplitListResponseWarningCode.NearDuplicateName,
+            _ => (SplitListResponseWarningCode)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SplitListResponseWarningCode value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SplitListResponseWarningCode.CatchAllCategory => "catch_all_category",
+                SplitListResponseWarningCode.MissingDescription => "missing_description",
+                SplitListResponseWarningCode.NearDuplicateDescription =>
+                    "near_duplicate_description",
+                SplitListResponseWarningCode.NearDuplicateName => "near_duplicate_name",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

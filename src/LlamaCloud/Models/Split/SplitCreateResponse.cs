@@ -271,6 +271,30 @@ public sealed record class SplitCreateResponse : JsonModel
         init { this._rawData.Set("updated_at", value); }
     }
 
+    /// <summary>
+    /// Advisory findings about the categories this job uses; empty when none.
+    /// </summary>
+    public IReadOnlyList<Warning>? Warnings
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<Warning>>("warnings");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<Warning>?>(
+                "warnings",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -295,6 +319,10 @@ public sealed record class SplitCreateResponse : JsonModel
         _ = this.TargetPages;
         _ = this.TransactionID;
         _ = this.UpdatedAt;
+        foreach (var item in this.Warnings ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public SplitCreateResponse() { }
@@ -553,6 +581,149 @@ sealed class SplitCreateResponseSplittingStrategyAllowUncategorizedConverter
                 SplitCreateResponseSplittingStrategyAllowUncategorized.Forbid => "forbid",
                 SplitCreateResponseSplittingStrategyAllowUncategorized.Include => "include",
                 SplitCreateResponseSplittingStrategyAllowUncategorized.Omit => "omit",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Advisory finding about split categories; the job still runs.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Warning, WarningFromRaw>))]
+public sealed record class Warning : JsonModel
+{
+    /// <summary>
+    /// Names of the categories the warning concerns.
+    /// </summary>
+    public required IReadOnlyList<string> CategoryNames
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<string>>("category_names");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<string>>(
+                "category_names",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// Rule that produced the warning.
+    /// </summary>
+    public required ApiEnum<string, Code> Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Code>>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <summary>
+    /// What is ambiguous and how to fix it.
+    /// </summary>
+    public required string Message
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("message");
+        }
+        init { this._rawData.Set("message", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.CategoryNames;
+        this.Code.Validate();
+        _ = this.Message;
+    }
+
+    public Warning() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Warning(Warning warning)
+        : base(warning) { }
+#pragma warning restore CS8618
+
+    public Warning(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Warning(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="WarningFromRaw.FromRawUnchecked"/>
+    public static Warning FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class WarningFromRaw : IFromRawJson<Warning>
+{
+    /// <inheritdoc/>
+    public Warning FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Warning.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Rule that produced the warning.
+/// </summary>
+[JsonConverter(typeof(CodeConverter))]
+public enum Code
+{
+    CatchAllCategory,
+    MissingDescription,
+    NearDuplicateDescription,
+    NearDuplicateName,
+}
+
+sealed class CodeConverter : JsonConverter<Code>
+{
+    public override Code Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "catch_all_category" => Code.CatchAllCategory,
+            "missing_description" => Code.MissingDescription,
+            "near_duplicate_description" => Code.NearDuplicateDescription,
+            "near_duplicate_name" => Code.NearDuplicateName,
+            _ => (Code)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Code value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Code.CatchAllCategory => "catch_all_category",
+                Code.MissingDescription => "missing_description",
+                Code.NearDuplicateDescription => "near_duplicate_description",
+                Code.NearDuplicateName => "near_duplicate_name",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -47,6 +47,15 @@ public class SplitGetResponseTest : TestBase
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
         };
 
         string expectedID = "id";
@@ -82,6 +91,15 @@ public class SplitGetResponseTest : TestBase
         string expectedTargetPages = "target_pages";
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        List<SplitGetResponseWarning> expectedWarnings =
+        [
+            new()
+            {
+                CategoryNames = ["string"],
+                Code = SplitGetResponseWarningCode.CatchAllCategory,
+                Message = "message",
+            },
+        ];
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedCategories.Count, model.Categories.Count);
@@ -105,6 +123,12 @@ public class SplitGetResponseTest : TestBase
         Assert.Equal(expectedTargetPages, model.TargetPages);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
+        Assert.NotNull(model.Warnings);
+        Assert.Equal(expectedWarnings.Count, model.Warnings.Count);
+        for (int i = 0; i < expectedWarnings.Count; i++)
+        {
+            Assert.Equal(expectedWarnings[i], model.Warnings[i]);
+        }
     }
 
     [Fact]
@@ -144,6 +168,15 @@ public class SplitGetResponseTest : TestBase
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -192,6 +225,15 @@ public class SplitGetResponseTest : TestBase
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -234,6 +276,15 @@ public class SplitGetResponseTest : TestBase
         string expectedTargetPages = "target_pages";
         string expectedTransactionID = "transaction_id";
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        List<SplitGetResponseWarning> expectedWarnings =
+        [
+            new()
+            {
+                CategoryNames = ["string"],
+                Code = SplitGetResponseWarningCode.CatchAllCategory,
+                Message = "message",
+            },
+        ];
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedCategories.Count, deserialized.Categories.Count);
@@ -257,6 +308,12 @@ public class SplitGetResponseTest : TestBase
         Assert.Equal(expectedTargetPages, deserialized.TargetPages);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
+        Assert.NotNull(deserialized.Warnings);
+        Assert.Equal(expectedWarnings.Count, deserialized.Warnings.Count);
+        for (int i = 0; i < expectedWarnings.Count; i++)
+        {
+            Assert.Equal(expectedWarnings[i], deserialized.Warnings[i]);
+        }
     }
 
     [Fact]
@@ -296,6 +353,15 @@ public class SplitGetResponseTest : TestBase
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
         };
 
         model.Validate();
@@ -336,6 +402,8 @@ public class SplitGetResponseTest : TestBase
 
         Assert.Null(model.SplittingStrategy);
         Assert.False(model.RawData.ContainsKey("splitting_strategy"));
+        Assert.Null(model.Warnings);
+        Assert.False(model.RawData.ContainsKey("warnings"));
     }
 
     [Fact]
@@ -408,10 +476,13 @@ public class SplitGetResponseTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
+            Warnings = null,
         };
 
         Assert.Null(model.SplittingStrategy);
         Assert.False(model.RawData.ContainsKey("splitting_strategy"));
+        Assert.Null(model.Warnings);
+        Assert.False(model.RawData.ContainsKey("warnings"));
     }
 
     [Fact]
@@ -448,6 +519,7 @@ public class SplitGetResponseTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             SplittingStrategy = null,
+            Warnings = null,
         };
 
         model.Validate();
@@ -472,6 +544,15 @@ public class SplitGetResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
         };
 
         Assert.Null(model.ConfigurationID);
@@ -513,6 +594,15 @@ public class SplitGetResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
         };
 
         model.Validate();
@@ -537,6 +627,15 @@ public class SplitGetResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
 
             ConfigurationID = null,
             CreatedAt = null,
@@ -588,6 +687,15 @@ public class SplitGetResponseTest : TestBase
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
             },
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
 
             ConfigurationID = null,
             CreatedAt = null,
@@ -640,6 +748,15 @@ public class SplitGetResponseTest : TestBase
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Warnings =
+            [
+                new()
+                {
+                    CategoryNames = ["string"],
+                    Code = SplitGetResponseWarningCode.CatchAllCategory,
+                    Message = "message",
+                },
+            ],
         };
 
         SplitGetResponse copied = new(model);
@@ -972,6 +1089,173 @@ public class SplitGetResponseSplittingStrategyAllowUncategorizedTest : TestBase
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, SplitGetResponseSplittingStrategyAllowUncategorized>
         >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class SplitGetResponseWarningTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new SplitGetResponseWarning
+        {
+            CategoryNames = ["string"],
+            Code = SplitGetResponseWarningCode.CatchAllCategory,
+            Message = "message",
+        };
+
+        List<string> expectedCategoryNames = ["string"];
+        ApiEnum<string, SplitGetResponseWarningCode> expectedCode =
+            SplitGetResponseWarningCode.CatchAllCategory;
+        string expectedMessage = "message";
+
+        Assert.Equal(expectedCategoryNames.Count, model.CategoryNames.Count);
+        for (int i = 0; i < expectedCategoryNames.Count; i++)
+        {
+            Assert.Equal(expectedCategoryNames[i], model.CategoryNames[i]);
+        }
+        Assert.Equal(expectedCode, model.Code);
+        Assert.Equal(expectedMessage, model.Message);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new SplitGetResponseWarning
+        {
+            CategoryNames = ["string"],
+            Code = SplitGetResponseWarningCode.CatchAllCategory,
+            Message = "message",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SplitGetResponseWarning>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new SplitGetResponseWarning
+        {
+            CategoryNames = ["string"],
+            Code = SplitGetResponseWarningCode.CatchAllCategory,
+            Message = "message",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SplitGetResponseWarning>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        List<string> expectedCategoryNames = ["string"];
+        ApiEnum<string, SplitGetResponseWarningCode> expectedCode =
+            SplitGetResponseWarningCode.CatchAllCategory;
+        string expectedMessage = "message";
+
+        Assert.Equal(expectedCategoryNames.Count, deserialized.CategoryNames.Count);
+        for (int i = 0; i < expectedCategoryNames.Count; i++)
+        {
+            Assert.Equal(expectedCategoryNames[i], deserialized.CategoryNames[i]);
+        }
+        Assert.Equal(expectedCode, deserialized.Code);
+        Assert.Equal(expectedMessage, deserialized.Message);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new SplitGetResponseWarning
+        {
+            CategoryNames = ["string"],
+            Code = SplitGetResponseWarningCode.CatchAllCategory,
+            Message = "message",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SplitGetResponseWarning
+        {
+            CategoryNames = ["string"],
+            Code = SplitGetResponseWarningCode.CatchAllCategory,
+            Message = "message",
+        };
+
+        SplitGetResponseWarning copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SplitGetResponseWarningCodeTest : TestBase
+{
+    [Theory]
+    [InlineData(SplitGetResponseWarningCode.CatchAllCategory)]
+    [InlineData(SplitGetResponseWarningCode.MissingDescription)]
+    [InlineData(SplitGetResponseWarningCode.NearDuplicateDescription)]
+    [InlineData(SplitGetResponseWarningCode.NearDuplicateName)]
+    public void Validation_Works(SplitGetResponseWarningCode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SplitGetResponseWarningCode> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SplitGetResponseWarningCode>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(SplitGetResponseWarningCode.CatchAllCategory)]
+    [InlineData(SplitGetResponseWarningCode.MissingDescription)]
+    [InlineData(SplitGetResponseWarningCode.NearDuplicateDescription)]
+    [InlineData(SplitGetResponseWarningCode.NearDuplicateName)]
+    public void SerializationRoundtrip_Works(SplitGetResponseWarningCode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SplitGetResponseWarningCode> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, SplitGetResponseWarningCode>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SplitGetResponseWarningCode>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, SplitGetResponseWarningCode>>(
+            json,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
