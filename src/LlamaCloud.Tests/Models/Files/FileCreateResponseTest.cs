@@ -24,6 +24,7 @@ public class FileCreateResponseTest : TestBase
             },
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalFileID = "ext-12345",
+            FileSize = 482113,
             FileType = "pdf",
             LastModifiedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Purpose = "parse",
@@ -40,6 +41,7 @@ public class FileCreateResponseTest : TestBase
         };
         DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedExternalFileID = "ext-12345";
+        long expectedFileSize = 482113;
         string expectedFileType = "pdf";
         DateTimeOffset expectedLastModifiedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedPurpose = "parse";
@@ -50,6 +52,7 @@ public class FileCreateResponseTest : TestBase
         Assert.Equal(expectedDownloadUrl, model.DownloadUrl);
         Assert.Equal(expectedExpiresAt, model.ExpiresAt);
         Assert.Equal(expectedExternalFileID, model.ExternalFileID);
+        Assert.Equal(expectedFileSize, model.FileSize);
         Assert.Equal(expectedFileType, model.FileType);
         Assert.Equal(expectedLastModifiedAt, model.LastModifiedAt);
         Assert.Equal(expectedPurpose, model.Purpose);
@@ -71,6 +74,7 @@ public class FileCreateResponseTest : TestBase
             },
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalFileID = "ext-12345",
+            FileSize = 482113,
             FileType = "pdf",
             LastModifiedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Purpose = "parse",
@@ -101,6 +105,7 @@ public class FileCreateResponseTest : TestBase
             },
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalFileID = "ext-12345",
+            FileSize = 482113,
             FileType = "pdf",
             LastModifiedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Purpose = "parse",
@@ -124,6 +129,7 @@ public class FileCreateResponseTest : TestBase
         };
         DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedExternalFileID = "ext-12345";
+        long expectedFileSize = 482113;
         string expectedFileType = "pdf";
         DateTimeOffset expectedLastModifiedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedPurpose = "parse";
@@ -134,6 +140,7 @@ public class FileCreateResponseTest : TestBase
         Assert.Equal(expectedDownloadUrl, deserialized.DownloadUrl);
         Assert.Equal(expectedExpiresAt, deserialized.ExpiresAt);
         Assert.Equal(expectedExternalFileID, deserialized.ExternalFileID);
+        Assert.Equal(expectedFileSize, deserialized.FileSize);
         Assert.Equal(expectedFileType, deserialized.FileType);
         Assert.Equal(expectedLastModifiedAt, deserialized.LastModifiedAt);
         Assert.Equal(expectedPurpose, deserialized.Purpose);
@@ -155,6 +162,7 @@ public class FileCreateResponseTest : TestBase
             },
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalFileID = "ext-12345",
+            FileSize = 482113,
             FileType = "pdf",
             LastModifiedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Purpose = "parse",
@@ -179,6 +187,8 @@ public class FileCreateResponseTest : TestBase
         Assert.False(model.RawData.ContainsKey("expires_at"));
         Assert.Null(model.ExternalFileID);
         Assert.False(model.RawData.ContainsKey("external_file_id"));
+        Assert.Null(model.FileSize);
+        Assert.False(model.RawData.ContainsKey("file_size"));
         Assert.Null(model.FileType);
         Assert.False(model.RawData.ContainsKey("file_type"));
         Assert.Null(model.LastModifiedAt);
@@ -212,6 +222,7 @@ public class FileCreateResponseTest : TestBase
             DownloadUrl = null,
             ExpiresAt = null,
             ExternalFileID = null,
+            FileSize = null,
             FileType = null,
             LastModifiedAt = null,
             Purpose = null,
@@ -223,6 +234,8 @@ public class FileCreateResponseTest : TestBase
         Assert.True(model.RawData.ContainsKey("expires_at"));
         Assert.Null(model.ExternalFileID);
         Assert.True(model.RawData.ContainsKey("external_file_id"));
+        Assert.Null(model.FileSize);
+        Assert.True(model.RawData.ContainsKey("file_size"));
         Assert.Null(model.FileType);
         Assert.True(model.RawData.ContainsKey("file_type"));
         Assert.Null(model.LastModifiedAt);
@@ -243,6 +256,7 @@ public class FileCreateResponseTest : TestBase
             DownloadUrl = null,
             ExpiresAt = null,
             ExternalFileID = null,
+            FileSize = null,
             FileType = null,
             LastModifiedAt = null,
             Purpose = null,
@@ -267,6 +281,7 @@ public class FileCreateResponseTest : TestBase
             },
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalFileID = "ext-12345",
+            FileSize = 482113,
             FileType = "pdf",
             LastModifiedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Purpose = "parse",
