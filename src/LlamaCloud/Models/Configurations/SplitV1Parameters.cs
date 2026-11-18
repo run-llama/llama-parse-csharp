@@ -18,7 +18,8 @@ namespace LlamaCloud.Models.Configurations;
 public sealed record class SplitV1Parameters : JsonModel
 {
     /// <summary>
-    /// Categories to split documents into.
+    /// Categories to split documents into. Names must be unique; 'uncategorized'
+    /// is reserved unless allow_uncategorized is 'forbid'.
     /// </summary>
     public required IReadOnlyList<SplitCategory> Categories
     {
