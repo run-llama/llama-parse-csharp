@@ -9167,6 +9167,7 @@ public class FormsTest : TestBase
     [Theory]
     [InlineData(Parsing::Forms.Default)]
     [InlineData(Parsing::Forms.Enrich)]
+    [InlineData(Parsing::Forms.EnrichPro)]
     public void Validation_Works(Parsing::Forms rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -9189,6 +9190,7 @@ public class FormsTest : TestBase
     [Theory]
     [InlineData(Parsing::Forms.Default)]
     [InlineData(Parsing::Forms.Enrich)]
+    [InlineData(Parsing::Forms.EnrichPro)]
     public void SerializationRoundtrip_Works(Parsing::Forms rawValue)
     {
         // force implicit conversion because Theory can't do that for us

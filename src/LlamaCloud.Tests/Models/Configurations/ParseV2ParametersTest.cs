@@ -10144,6 +10144,7 @@ public class FormsTest : TestBase
     [Theory]
     [InlineData(Forms.Default)]
     [InlineData(Forms.Enrich)]
+    [InlineData(Forms.EnrichPro)]
     public void Validation_Works(Forms rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -10166,6 +10167,7 @@ public class FormsTest : TestBase
     [Theory]
     [InlineData(Forms.Default)]
     [InlineData(Forms.Enrich)]
+    [InlineData(Forms.EnrichPro)]
     public void SerializationRoundtrip_Works(Forms rawValue)
     {
         // force implicit conversion because Theory can't do that for us
