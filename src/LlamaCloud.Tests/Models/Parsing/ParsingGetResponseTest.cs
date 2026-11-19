@@ -62,7 +62,9 @@ public class ParsingGetResponseTest : TestBase
                                         ],
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -142,9 +144,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Label = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -224,9 +240,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Value = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Value = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -306,8 +336,20 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         },
                                         IsEmpty = true,
                                         Label = "label",
@@ -354,7 +396,9 @@ public class ParsingGetResponseTest : TestBase
                                                         Columns = ["string"],
                                                         Grounding = new()
                                                         {
-                                                            ID = new(
+                                                            ID = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -438,11 +482,25 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Columns =
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -536,10 +594,24 @@ public class ParsingGetResponseTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
-                                                            Label = new(
+                                                            Label = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -623,12 +695,26 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Rows =
                                                             [
                                                                 [
-                                                                    new(
+                                                                    new()
+                                                                    {
+                                                                        Lines =
                                                                         [
                                                                             new()
                                                                             {
@@ -722,8 +808,20 @@ public class ParsingGetResponseTest : TestBase
                                                                                     },
                                                                                 ],
                                                                             },
-                                                                        ]
-                                                                    ),
+                                                                        ],
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                    },
                                                                 ],
                                                             ],
                                                         },
@@ -744,7 +842,9 @@ public class ParsingGetResponseTest : TestBase
                                                 ID = "id",
                                                 Grounding = new()
                                                 {
-                                                    ID = new(
+                                                    ID = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -824,9 +924,23 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
-                                                    Label = new(
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
+                                                    Label = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -906,8 +1020,20 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 },
                                                 Label = "label",
                                                 MarkdownSpan =
@@ -1165,7 +1291,9 @@ public class ParsingGetResponseTest : TestBase
                                     ],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -1245,9 +1373,23 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -1327,9 +1469,23 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Value = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Value = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -1409,8 +1565,20 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     IsEmpty = true,
                                     Label = "label",
@@ -1457,7 +1625,9 @@ public class ParsingGetResponseTest : TestBase
                                                     Columns = ["string"],
                                                     Grounding = new()
                                                     {
-                                                        ID = new(
+                                                        ID = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -1541,11 +1711,25 @@ public class ParsingGetResponseTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Columns =
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -1629,10 +1813,24 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
-                                                        Label = new(
+                                                        Label = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -1716,12 +1914,26 @@ public class ParsingGetResponseTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Rows =
                                                         [
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -1815,8 +2027,20 @@ public class ParsingGetResponseTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
                                                         ],
                                                     },
@@ -1837,7 +2061,9 @@ public class ParsingGetResponseTest : TestBase
                                             ID = "id",
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -1917,9 +2143,23 @@ public class ParsingGetResponseTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
-                                                Label = new(
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -1999,8 +2239,20 @@ public class ParsingGetResponseTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             },
                                             Label = "label",
                                             MarkdownSpan =
@@ -2297,7 +2549,9 @@ public class ParsingGetResponseTest : TestBase
                                         ],
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2377,9 +2631,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Label = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2459,9 +2727,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Value = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Value = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2541,8 +2823,20 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         },
                                         IsEmpty = true,
                                         Label = "label",
@@ -2589,7 +2883,9 @@ public class ParsingGetResponseTest : TestBase
                                                         Columns = ["string"],
                                                         Grounding = new()
                                                         {
-                                                            ID = new(
+                                                            ID = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -2673,11 +2969,25 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Columns =
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -2771,10 +3081,24 @@ public class ParsingGetResponseTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
-                                                            Label = new(
+                                                            Label = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -2858,12 +3182,26 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Rows =
                                                             [
                                                                 [
-                                                                    new(
+                                                                    new()
+                                                                    {
+                                                                        Lines =
                                                                         [
                                                                             new()
                                                                             {
@@ -2957,8 +3295,20 @@ public class ParsingGetResponseTest : TestBase
                                                                                     },
                                                                                 ],
                                                                             },
-                                                                        ]
-                                                                    ),
+                                                                        ],
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                    },
                                                                 ],
                                                             ],
                                                         },
@@ -2979,7 +3329,9 @@ public class ParsingGetResponseTest : TestBase
                                                 ID = "id",
                                                 Grounding = new()
                                                 {
-                                                    ID = new(
+                                                    ID = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -3059,9 +3411,23 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
-                                                    Label = new(
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
+                                                    Label = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -3141,8 +3507,20 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 },
                                                 Label = "label",
                                                 MarkdownSpan =
@@ -3414,7 +3792,9 @@ public class ParsingGetResponseTest : TestBase
                                         ],
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -3494,9 +3874,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Label = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -3576,9 +3970,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Value = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Value = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -3658,8 +4066,20 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         },
                                         IsEmpty = true,
                                         Label = "label",
@@ -3706,7 +4126,9 @@ public class ParsingGetResponseTest : TestBase
                                                         Columns = ["string"],
                                                         Grounding = new()
                                                         {
-                                                            ID = new(
+                                                            ID = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -3790,11 +4212,25 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Columns =
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -3888,10 +4324,24 @@ public class ParsingGetResponseTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
-                                                            Label = new(
+                                                            Label = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -3975,12 +4425,26 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Rows =
                                                             [
                                                                 [
-                                                                    new(
+                                                                    new()
+                                                                    {
+                                                                        Lines =
                                                                         [
                                                                             new()
                                                                             {
@@ -4074,8 +4538,20 @@ public class ParsingGetResponseTest : TestBase
                                                                                     },
                                                                                 ],
                                                                             },
-                                                                        ]
-                                                                    ),
+                                                                        ],
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                    },
                                                                 ],
                                                             ],
                                                         },
@@ -4096,7 +4572,9 @@ public class ParsingGetResponseTest : TestBase
                                                 ID = "id",
                                                 Grounding = new()
                                                 {
-                                                    ID = new(
+                                                    ID = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -4176,9 +4654,23 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
-                                                    Label = new(
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
+                                                    Label = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -4258,8 +4750,20 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 },
                                                 Label = "label",
                                                 MarkdownSpan =
@@ -4524,7 +5028,9 @@ public class ParsingGetResponseTest : TestBase
                                     ],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4604,9 +5110,23 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4686,9 +5206,23 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Value = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Value = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4768,8 +5302,20 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     IsEmpty = true,
                                     Label = "label",
@@ -4816,7 +5362,9 @@ public class ParsingGetResponseTest : TestBase
                                                     Columns = ["string"],
                                                     Grounding = new()
                                                     {
-                                                        ID = new(
+                                                        ID = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -4900,11 +5448,25 @@ public class ParsingGetResponseTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Columns =
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -4988,10 +5550,24 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
-                                                        Label = new(
+                                                        Label = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -5075,12 +5651,26 @@ public class ParsingGetResponseTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Rows =
                                                         [
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -5174,8 +5764,20 @@ public class ParsingGetResponseTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
                                                         ],
                                                     },
@@ -5196,7 +5798,9 @@ public class ParsingGetResponseTest : TestBase
                                             ID = "id",
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -5276,9 +5880,23 @@ public class ParsingGetResponseTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
-                                                Label = new(
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -5358,8 +5976,20 @@ public class ParsingGetResponseTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             },
                                             Label = "label",
                                             MarkdownSpan =
@@ -5656,7 +6286,9 @@ public class ParsingGetResponseTest : TestBase
                                         ],
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -5736,9 +6368,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Label = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -5818,9 +6464,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Value = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Value = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -5900,8 +6560,20 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         },
                                         IsEmpty = true,
                                         Label = "label",
@@ -5948,7 +6620,9 @@ public class ParsingGetResponseTest : TestBase
                                                         Columns = ["string"],
                                                         Grounding = new()
                                                         {
-                                                            ID = new(
+                                                            ID = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -6032,11 +6706,25 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Columns =
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -6130,10 +6818,24 @@ public class ParsingGetResponseTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
-                                                            Label = new(
+                                                            Label = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -6217,12 +6919,26 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Rows =
                                                             [
                                                                 [
-                                                                    new(
+                                                                    new()
+                                                                    {
+                                                                        Lines =
                                                                         [
                                                                             new()
                                                                             {
@@ -6316,8 +7032,20 @@ public class ParsingGetResponseTest : TestBase
                                                                                     },
                                                                                 ],
                                                                             },
-                                                                        ]
-                                                                    ),
+                                                                        ],
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                    },
                                                                 ],
                                                             ],
                                                         },
@@ -6338,7 +7066,9 @@ public class ParsingGetResponseTest : TestBase
                                                 ID = "id",
                                                 Grounding = new()
                                                 {
-                                                    ID = new(
+                                                    ID = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -6418,9 +7148,23 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
-                                                    Label = new(
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
+                                                    Label = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -6500,8 +7244,20 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 },
                                                 Label = "label",
                                                 MarkdownSpan =
@@ -6941,7 +7697,9 @@ public class ParsingGetResponseTest : TestBase
                                         ],
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -7021,9 +7779,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Label = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -7103,9 +7875,23 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Value = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Value = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -7185,8 +7971,20 @@ public class ParsingGetResponseTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         },
                                         IsEmpty = true,
                                         Label = "label",
@@ -7233,7 +8031,9 @@ public class ParsingGetResponseTest : TestBase
                                                         Columns = ["string"],
                                                         Grounding = new()
                                                         {
-                                                            ID = new(
+                                                            ID = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -7317,11 +8117,25 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Columns =
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -7415,10 +8229,24 @@ public class ParsingGetResponseTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
-                                                            Label = new(
+                                                            Label = new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -7502,12 +8330,26 @@ public class ParsingGetResponseTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                             Rows =
                                                             [
                                                                 [
-                                                                    new(
+                                                                    new()
+                                                                    {
+                                                                        Lines =
                                                                         [
                                                                             new()
                                                                             {
@@ -7601,8 +8443,20 @@ public class ParsingGetResponseTest : TestBase
                                                                                     },
                                                                                 ],
                                                                             },
-                                                                        ]
-                                                                    ),
+                                                                        ],
+                                                                        Bbox = new()
+                                                                        {
+                                                                            H = 0,
+                                                                            W = 0,
+                                                                            X = 0,
+                                                                            Y = 0,
+                                                                            Confidence = 0,
+                                                                            EndIndex = 0,
+                                                                            Label = "label",
+                                                                            R = 0,
+                                                                            StartIndex = 0,
+                                                                        },
+                                                                    },
                                                                 ],
                                                             ],
                                                         },
@@ -7623,7 +8477,9 @@ public class ParsingGetResponseTest : TestBase
                                                 ID = "id",
                                                 Grounding = new()
                                                 {
-                                                    ID = new(
+                                                    ID = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -7703,9 +8559,23 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
-                                                    Label = new(
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
+                                                    Label = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -7785,8 +8655,20 @@ public class ParsingGetResponseTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 },
                                                 Label = "label",
                                                 MarkdownSpan =
@@ -8494,7 +9376,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                     ],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -8574,9 +9458,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -8656,9 +9554,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Value = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Value = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -8738,8 +9650,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     IsEmpty = true,
                                     Label = "label",
@@ -8786,7 +9710,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     Columns = ["string"],
                                                     Grounding = new()
                                                     {
-                                                        ID = new(
+                                                        ID = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -8870,11 +9796,25 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Columns =
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -8958,10 +9898,24 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
-                                                        Label = new(
+                                                        Label = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -9045,12 +9999,26 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Rows =
                                                         [
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -9144,8 +10112,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
                                                         ],
                                                     },
@@ -9166,7 +10146,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                             ID = "id",
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -9246,9 +10228,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
-                                                Label = new(
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -9328,8 +10324,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             },
                                             Label = "label",
                                             MarkdownSpan =
@@ -9398,7 +10406,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                 ],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -9474,9 +10484,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
-                                    Label = new(
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -9552,9 +10576,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
-                                    Value = new(
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
+                                    Value = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -9630,8 +10668,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 },
                                 IsEmpty = true,
                                 Label = "label",
@@ -9678,7 +10728,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 Columns = ["string"],
                                                 Grounding = new()
                                                 {
-                                                    ID = new(
+                                                    ID = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -9758,11 +10810,25 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                     Columns =
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -9846,10 +10912,24 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
-                                                    Label = new(
+                                                    Label = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -9929,12 +11009,26 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                     Rows =
                                                     [
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -10018,8 +11112,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
                                                     ],
                                                 },
@@ -10036,7 +11142,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                         ID = "id",
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -10116,9 +11224,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Label = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -10198,8 +11320,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         },
                                         Label = "label",
                                         MarkdownSpan =
@@ -10279,7 +11413,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                     ],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -10359,9 +11495,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -10441,9 +11591,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Value = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Value = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -10523,8 +11687,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     IsEmpty = true,
                                     Label = "label",
@@ -10571,7 +11747,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     Columns = ["string"],
                                                     Grounding = new()
                                                     {
-                                                        ID = new(
+                                                        ID = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -10655,11 +11833,25 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Columns =
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -10743,10 +11935,24 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
-                                                        Label = new(
+                                                        Label = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -10830,12 +12036,26 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Rows =
                                                         [
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -10929,8 +12149,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
                                                         ],
                                                     },
@@ -10951,7 +12183,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                             ID = "id",
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -11031,9 +12265,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
-                                                Label = new(
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -11113,8 +12361,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             },
                                             Label = "label",
                                             MarkdownSpan =
@@ -11197,7 +12457,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                     ],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -11277,9 +12539,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -11359,9 +12635,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Value = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Value = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -11441,8 +12731,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     IsEmpty = true,
                                     Label = "label",
@@ -11489,7 +12791,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     Columns = ["string"],
                                                     Grounding = new()
                                                     {
-                                                        ID = new(
+                                                        ID = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -11573,11 +12877,25 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Columns =
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -11661,10 +12979,24 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
-                                                        Label = new(
+                                                        Label = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -11748,12 +13080,26 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Rows =
                                                         [
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -11847,8 +13193,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
                                                         ],
                                                     },
@@ -11869,7 +13227,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                             ID = "id",
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -11949,9 +13309,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
-                                                Label = new(
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -12031,8 +13405,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             },
                                             Label = "label",
                                             MarkdownSpan =
@@ -12108,7 +13494,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                 ],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -12184,9 +13572,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
-                                    Label = new(
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -12262,9 +13664,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
-                                    Value = new(
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
+                                    Value = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -12340,8 +13756,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 },
                                 IsEmpty = true,
                                 Label = "label",
@@ -12388,7 +13816,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 Columns = ["string"],
                                                 Grounding = new()
                                                 {
-                                                    ID = new(
+                                                    ID = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -12468,11 +13898,25 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                     Columns =
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -12556,10 +14000,24 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
-                                                    Label = new(
+                                                    Label = new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -12639,12 +14097,26 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                     Rows =
                                                     [
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -12728,8 +14200,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
                                                     ],
                                                 },
@@ -12746,7 +14230,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                         ID = "id",
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -12826,9 +14312,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
-                                            Label = new(
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -12908,8 +14408,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         },
                                         Label = "label",
                                         MarkdownSpan =
@@ -12989,7 +14501,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                     ],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -13069,9 +14583,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -13151,9 +14679,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Value = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Value = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -13233,8 +14775,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     IsEmpty = true,
                                     Label = "label",
@@ -13281,7 +14835,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     Columns = ["string"],
                                                     Grounding = new()
                                                     {
-                                                        ID = new(
+                                                        ID = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -13365,11 +14921,25 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Columns =
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -13453,10 +15023,24 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
-                                                        Label = new(
+                                                        Label = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -13540,12 +15124,26 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Rows =
                                                         [
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -13639,8 +15237,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
                                                         ],
                                                     },
@@ -13661,7 +15271,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                             ID = "id",
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -13741,9 +15353,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
-                                                Label = new(
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -13823,8 +15449,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             },
                                             Label = "label",
                                             MarkdownSpan =
@@ -13901,7 +15539,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                     ],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -13981,9 +15621,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -14063,9 +15717,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Value = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Value = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -14145,8 +15813,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     IsEmpty = true,
                                     Label = "label",
@@ -14193,7 +15873,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     Columns = ["string"],
                                                     Grounding = new()
                                                     {
-                                                        ID = new(
+                                                        ID = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -14277,11 +15959,25 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Columns =
                                                         [
-                                                            new(
+                                                            new()
+                                                            {
+                                                                Lines =
                                                                 [
                                                                     new()
                                                                     {
@@ -14365,10 +16061,24 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                             },
                                                                         ],
                                                                     },
-                                                                ]
-                                                            ),
+                                                                ],
+                                                                Bbox = new()
+                                                                {
+                                                                    H = 0,
+                                                                    W = 0,
+                                                                    X = 0,
+                                                                    Y = 0,
+                                                                    Confidence = 0,
+                                                                    EndIndex = 0,
+                                                                    Label = "label",
+                                                                    R = 0,
+                                                                    StartIndex = 0,
+                                                                },
+                                                            },
                                                         ],
-                                                        Label = new(
+                                                        Label = new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -14452,12 +16162,26 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                         Rows =
                                                         [
                                                             [
-                                                                new(
+                                                                new()
+                                                                {
+                                                                    Lines =
                                                                     [
                                                                         new()
                                                                         {
@@ -14551,8 +16275,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                                 },
                                                                             ],
                                                                         },
-                                                                    ]
-                                                                ),
+                                                                    ],
+                                                                    Bbox = new()
+                                                                    {
+                                                                        H = 0,
+                                                                        W = 0,
+                                                                        X = 0,
+                                                                        Y = 0,
+                                                                        Confidence = 0,
+                                                                        EndIndex = 0,
+                                                                        Label = "label",
+                                                                        R = 0,
+                                                                        StartIndex = 0,
+                                                                    },
+                                                                },
                                                             ],
                                                         ],
                                                     },
@@ -14573,7 +16309,9 @@ public class ParsingGetResponseFormsTest : TestBase
                                             ID = "id",
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -14653,9 +16391,23 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
-                                                Label = new(
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -14735,8 +16487,20 @@ public class ParsingGetResponseFormsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             },
                                             Label = "label",
                                             MarkdownSpan =
@@ -14814,7 +16578,9 @@ public class PageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -14890,9 +16656,23 @@ public class PageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -14968,9 +16748,23 @@ public class PageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -15046,8 +16840,20 @@ public class PageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -15094,7 +16900,9 @@ public class PageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -15174,11 +16982,25 @@ public class PageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -15258,10 +17080,24 @@ public class PageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -15341,12 +17177,26 @@ public class PageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -15430,8 +17280,20 @@ public class PageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -15448,7 +17310,9 @@ public class PageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -15528,9 +17392,23 @@ public class PageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -15610,8 +17488,20 @@ public class PageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -15688,7 +17578,9 @@ public class PageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -15764,9 +17656,23 @@ public class PageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -15842,9 +17748,23 @@ public class PageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -15920,8 +17840,20 @@ public class PageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -15968,7 +17900,9 @@ public class PageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -16048,11 +17982,25 @@ public class PageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -16132,10 +18080,24 @@ public class PageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -16215,12 +18177,26 @@ public class PageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -16304,8 +18280,20 @@ public class PageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -16322,7 +18310,9 @@ public class PageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -16402,9 +18392,23 @@ public class PageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -16484,8 +18488,20 @@ public class PageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -16577,7 +18593,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -16653,9 +18671,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -16731,9 +18763,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -16809,8 +18855,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -16857,7 +18915,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -16937,11 +18997,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -17021,10 +19095,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -17104,12 +19192,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -17193,8 +19295,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -17211,7 +19325,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -17291,9 +19407,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -17373,8 +19503,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -17437,7 +19579,9 @@ public class FormsResultPageTest : TestBase
                         ],
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -17509,9 +19653,23 @@ public class FormsResultPageTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -17583,9 +19741,23 @@ public class FormsResultPageTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Value = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Value = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -17657,8 +19829,20 @@ public class FormsResultPageTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         IsEmpty = true,
                         Label = "label",
@@ -17705,7 +19889,9 @@ public class FormsResultPageTest : TestBase
                                         Columns = ["string"],
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -17785,11 +19971,25 @@ public class FormsResultPageTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                             Columns =
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -17869,10 +20069,24 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
-                                            Label = new(
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -17952,12 +20166,26 @@ public class FormsResultPageTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                             Rows =
                                             [
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -18037,8 +20265,20 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
                                             ],
                                         },
@@ -18055,7 +20295,9 @@ public class FormsResultPageTest : TestBase
                                 ID = "id",
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -18131,9 +20373,23 @@ public class FormsResultPageTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
-                                    Label = new(
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -18209,8 +20465,20 @@ public class FormsResultPageTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 },
                                 Label = "label",
                                 MarkdownSpan =
@@ -18295,7 +20563,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -18371,9 +20641,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -18449,9 +20733,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -18527,8 +20825,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -18575,7 +20885,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -18655,11 +20967,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -18739,10 +21065,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -18822,12 +21162,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -18911,8 +21265,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -18929,7 +21295,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -19009,9 +21377,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -19091,8 +21473,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -19169,7 +21563,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -19245,9 +21641,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -19323,9 +21733,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -19401,8 +21825,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -19449,7 +21885,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -19529,11 +21967,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -19613,10 +22065,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -19696,12 +22162,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -19785,8 +22265,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -19803,7 +22295,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -19883,9 +22377,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -19965,8 +22473,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -20036,7 +22556,9 @@ public class FormsResultPageTest : TestBase
                         ],
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -20108,9 +22630,23 @@ public class FormsResultPageTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -20182,9 +22718,23 @@ public class FormsResultPageTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Value = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Value = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -20256,8 +22806,20 @@ public class FormsResultPageTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         IsEmpty = true,
                         Label = "label",
@@ -20304,7 +22866,9 @@ public class FormsResultPageTest : TestBase
                                         Columns = ["string"],
                                         Grounding = new()
                                         {
-                                            ID = new(
+                                            ID = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -20384,11 +22948,25 @@ public class FormsResultPageTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                             Columns =
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -20468,10 +23046,24 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
-                                            Label = new(
+                                            Label = new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -20551,12 +23143,26 @@ public class FormsResultPageTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                             Rows =
                                             [
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -20636,8 +23242,20 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
                                             ],
                                         },
@@ -20654,7 +23272,9 @@ public class FormsResultPageTest : TestBase
                                 ID = "id",
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -20730,9 +23350,23 @@ public class FormsResultPageTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
-                                    Label = new(
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -20808,8 +23442,20 @@ public class FormsResultPageTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 },
                                 Label = "label",
                                 MarkdownSpan =
@@ -20894,7 +23540,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -20970,9 +23618,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -21048,9 +23710,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -21126,8 +23802,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -21174,7 +23862,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -21254,11 +23944,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -21338,10 +24042,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -21421,12 +24139,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -21510,8 +24242,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -21528,7 +24272,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -21608,9 +24354,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -21690,8 +24450,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -21762,7 +24534,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -21838,9 +24612,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -21916,9 +24704,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -21994,8 +24796,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -22042,7 +24856,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -22122,11 +24938,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -22206,10 +25036,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -22289,12 +25133,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -22378,8 +25236,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -22396,7 +25266,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -22476,9 +25348,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -22558,8 +25444,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -22632,7 +25530,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -22708,9 +25608,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -22786,9 +25700,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -22864,8 +25792,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -22912,7 +25852,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -22992,11 +25934,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -23076,10 +26032,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -23159,12 +26129,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -23248,8 +26232,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -23266,7 +26262,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -23346,9 +26344,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -23428,8 +26440,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -23497,7 +26521,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -23573,9 +26599,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -23651,9 +26691,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -23729,8 +26783,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -23777,7 +26843,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -23857,11 +26925,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -23941,10 +27023,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -24024,12 +27120,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -24113,8 +27223,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -24131,7 +27253,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -24211,9 +27335,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -24293,8 +27431,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -24371,7 +27521,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -24447,9 +27599,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -24525,9 +27691,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -24603,8 +27783,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -24651,7 +27843,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -24731,11 +27925,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -24815,10 +28023,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -24898,12 +28120,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -24987,8 +28223,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -25005,7 +28253,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -25085,9 +28335,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -25167,8 +28431,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =
@@ -25240,7 +28516,9 @@ public class FormsResultPageTest : TestBase
                             ],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -25316,9 +28594,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -25394,9 +28686,23 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Value = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Value = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -25472,8 +28778,20 @@ public class FormsResultPageTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             IsEmpty = true,
                             Label = "label",
@@ -25520,7 +28838,9 @@ public class FormsResultPageTest : TestBase
                                             Columns = ["string"],
                                             Grounding = new()
                                             {
-                                                ID = new(
+                                                ID = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -25600,11 +28920,25 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Columns =
                                                 [
-                                                    new(
+                                                    new()
+                                                    {
+                                                        Lines =
                                                         [
                                                             new()
                                                             {
@@ -25684,10 +29018,24 @@ public class FormsResultPageTest : TestBase
                                                                     },
                                                                 ],
                                                             },
-                                                        ]
-                                                    ),
+                                                        ],
+                                                        Bbox = new()
+                                                        {
+                                                            H = 0,
+                                                            W = 0,
+                                                            X = 0,
+                                                            Y = 0,
+                                                            Confidence = 0,
+                                                            EndIndex = 0,
+                                                            Label = "label",
+                                                            R = 0,
+                                                            StartIndex = 0,
+                                                        },
+                                                    },
                                                 ],
-                                                Label = new(
+                                                Label = new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -25767,12 +29115,26 @@ public class FormsResultPageTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                                 Rows =
                                                 [
                                                     [
-                                                        new(
+                                                        new()
+                                                        {
+                                                            Lines =
                                                             [
                                                                 new()
                                                                 {
@@ -25856,8 +29218,20 @@ public class FormsResultPageTest : TestBase
                                                                         },
                                                                     ],
                                                                 },
-                                                            ]
-                                                        ),
+                                                            ],
+                                                            Bbox = new()
+                                                            {
+                                                                H = 0,
+                                                                W = 0,
+                                                                X = 0,
+                                                                Y = 0,
+                                                                Confidence = 0,
+                                                                EndIndex = 0,
+                                                                Label = "label",
+                                                                R = 0,
+                                                                StartIndex = 0,
+                                                            },
+                                                        },
                                                     ],
                                                 ],
                                             },
@@ -25874,7 +29248,9 @@ public class FormsResultPageTest : TestBase
                                     ID = "id",
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -25954,9 +29330,23 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
-                                        Label = new(
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -26036,8 +29426,20 @@ public class FormsResultPageTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     },
                                     Label = "label",
                                     MarkdownSpan =

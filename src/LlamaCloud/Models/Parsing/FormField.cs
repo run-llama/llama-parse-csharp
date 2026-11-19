@@ -432,6 +432,19 @@ public sealed record class ID : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -439,6 +452,7 @@ public sealed record class ID : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public ID() { }
@@ -797,6 +811,19 @@ public sealed record class Label : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -804,6 +831,7 @@ public sealed record class Label : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public Label() { }
@@ -1164,6 +1192,19 @@ public sealed record class Value : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1171,6 +1212,7 @@ public sealed record class Value : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public Value() { }

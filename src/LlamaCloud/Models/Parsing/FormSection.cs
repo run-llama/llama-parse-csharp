@@ -698,6 +698,19 @@ public sealed record class FormSectionGroundingID : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -705,6 +718,7 @@ public sealed record class FormSectionGroundingID : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public FormSectionGroundingID() { }
@@ -1099,6 +1113,19 @@ public sealed record class FormSectionGroundingLabel : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1106,6 +1133,7 @@ public sealed record class FormSectionGroundingLabel : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public FormSectionGroundingLabel() { }

@@ -36,7 +36,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -104,11 +106,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -176,10 +192,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -247,12 +277,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -324,8 +368,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -362,7 +418,9 @@ public class FormTableTest : TestBase
         List<string> expectedColumns = ["string"];
         FormTableGrounding expectedGrounding = new()
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -430,11 +488,25 @@ public class FormTableTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Columns =
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -502,10 +574,24 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
-            Label = new(
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -573,12 +659,26 @@ public class FormTableTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Rows =
             [
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -646,8 +746,20 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
             ],
         };
@@ -722,7 +834,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -790,11 +904,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -862,10 +990,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -933,12 +1075,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1010,8 +1166,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -1059,7 +1227,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1127,11 +1297,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1199,10 +1383,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1270,12 +1468,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1347,8 +1559,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -1392,7 +1616,9 @@ public class FormTableTest : TestBase
         List<string> expectedColumns = ["string"];
         FormTableGrounding expectedGrounding = new()
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1460,11 +1686,25 @@ public class FormTableTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Columns =
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1532,10 +1772,24 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
-            Label = new(
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1603,12 +1857,26 @@ public class FormTableTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Rows =
             [
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1676,8 +1944,20 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
             ],
         };
@@ -1754,7 +2034,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1822,11 +2104,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1894,10 +2190,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1965,12 +2275,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2042,8 +2366,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -2088,7 +2424,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2156,11 +2494,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -2228,10 +2580,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2299,12 +2665,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2376,8 +2756,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -2422,7 +2814,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2490,11 +2884,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -2562,10 +2970,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2633,12 +3055,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2710,8 +3146,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -2755,7 +3203,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2823,11 +3273,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -2895,10 +3359,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2966,12 +3444,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -3043,8 +3535,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -3092,7 +3596,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -3160,11 +3666,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3232,10 +3752,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -3303,12 +3837,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -3380,8 +3928,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -3530,7 +4090,9 @@ public class FormTableTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -3598,11 +4160,25 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3670,10 +4246,24 @@ public class FormTableTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -3741,12 +4331,26 @@ public class FormTableTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -3818,8 +4422,20 @@ public class FormTableTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -3874,7 +4490,9 @@ public class RowTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -3946,9 +4564,23 @@ public class RowTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4020,9 +4652,23 @@ public class RowTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4094,8 +4740,20 @@ public class RowTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -4142,7 +4800,9 @@ public class RowTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4222,11 +4882,25 @@ public class RowTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -4306,10 +4980,24 @@ public class RowTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4389,12 +5077,26 @@ public class RowTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -4474,8 +5176,20 @@ public class RowTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -4492,7 +5206,9 @@ public class RowTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4568,9 +5284,23 @@ public class RowTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4646,8 +5376,20 @@ public class RowTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -4700,7 +5442,9 @@ public class RowTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4772,9 +5516,23 @@ public class RowTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4846,9 +5604,23 @@ public class RowTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4920,8 +5692,20 @@ public class RowTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -4968,7 +5752,9 @@ public class RowTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -5048,11 +5834,25 @@ public class RowTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -5132,10 +5932,24 @@ public class RowTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -5215,12 +6029,26 @@ public class RowTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -5300,8 +6128,20 @@ public class RowTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -5318,7 +6158,9 @@ public class RowTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -5394,9 +6236,23 @@ public class RowTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -5472,8 +6328,20 @@ public class RowTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -5501,7 +6369,9 @@ public class FormTableGroundingTest : TestBase
     {
         var model = new FormTableGrounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -5569,11 +6439,25 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Columns =
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5641,10 +6525,24 @@ public class FormTableGroundingTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
-            Label = new(
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -5712,12 +6610,26 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Rows =
             [
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -5785,13 +6697,27 @@ public class FormTableGroundingTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
             ],
         };
 
-        FormTableGroundingID expectedID = new(
+        FormTableGroundingID expectedID = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -5859,11 +6785,25 @@ public class FormTableGroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
         List<Column> expectedColumns =
         [
-            new(
+            new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -5931,10 +6871,24 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         ];
-        FormTableGroundingLabel expectedLabel = new(
+        FormTableGroundingLabel expectedLabel = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -6002,12 +6956,26 @@ public class FormTableGroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
         List<List<FormTextGrounding>> expectedRows =
         [
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6075,8 +7043,20 @@ public class FormTableGroundingTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
         ];
 
@@ -6105,7 +7085,9 @@ public class FormTableGroundingTest : TestBase
     {
         var model = new FormTableGrounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -6173,11 +7155,25 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Columns =
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6245,10 +7241,24 @@ public class FormTableGroundingTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
-            Label = new(
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -6316,12 +7326,26 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Rows =
             [
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -6389,8 +7413,20 @@ public class FormTableGroundingTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
             ],
         };
@@ -6409,7 +7445,9 @@ public class FormTableGroundingTest : TestBase
     {
         var model = new FormTableGrounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -6477,11 +7515,25 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Columns =
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6549,10 +7601,24 @@ public class FormTableGroundingTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
-            Label = new(
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -6620,12 +7686,26 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Rows =
             [
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -6693,8 +7773,20 @@ public class FormTableGroundingTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
             ],
         };
@@ -6706,7 +7798,9 @@ public class FormTableGroundingTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        FormTableGroundingID expectedID = new(
+        FormTableGroundingID expectedID = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -6774,11 +7868,25 @@ public class FormTableGroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
         List<Column> expectedColumns =
         [
-            new(
+            new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -6846,10 +7954,24 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         ];
-        FormTableGroundingLabel expectedLabel = new(
+        FormTableGroundingLabel expectedLabel = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -6917,12 +8039,26 @@ public class FormTableGroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
         List<List<FormTextGrounding>> expectedRows =
         [
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6990,8 +8126,20 @@ public class FormTableGroundingTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
         ];
 
@@ -7020,7 +8168,9 @@ public class FormTableGroundingTest : TestBase
     {
         var model = new FormTableGrounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -7088,11 +8238,25 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Columns =
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7160,10 +8324,24 @@ public class FormTableGroundingTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
-            Label = new(
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -7231,12 +8409,26 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Rows =
             [
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -7304,8 +8496,20 @@ public class FormTableGroundingTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
             ],
         };
@@ -7376,7 +8580,9 @@ public class FormTableGroundingTest : TestBase
     {
         var model = new FormTableGrounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -7444,11 +8650,25 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Columns =
             [
-                new(
+                new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7516,10 +8736,24 @@ public class FormTableGroundingTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             ],
-            Label = new(
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -7587,12 +8821,26 @@ public class FormTableGroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
             Rows =
             [
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -7660,8 +8908,20 @@ public class FormTableGroundingTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
             ],
         };
@@ -7748,6 +9008,18 @@ public class FormTableGroundingIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<FormTableGroundingIDLine> expectedLines =
@@ -7819,12 +9091,25 @@ public class FormTableGroundingIDTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -7901,6 +9186,18 @@ public class FormTableGroundingIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -7986,6 +9283,18 @@ public class FormTableGroundingIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -8064,12 +9373,25 @@ public class FormTableGroundingIDTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -8146,6 +9468,340 @@ public class FormTableGroundingIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new FormTableGroundingID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new FormTableGroundingID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new FormTableGroundingID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new FormTableGroundingID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -8225,6 +9881,18 @@ public class FormTableGroundingIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         FormTableGroundingID copied = new(model);
@@ -9641,6 +11309,18 @@ public class ColumnTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<ColumnLine> expectedLines =
@@ -9712,12 +11392,25 @@ public class ColumnTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -9794,6 +11487,18 @@ public class ColumnTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -9876,6 +11581,18 @@ public class ColumnTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -9951,12 +11668,25 @@ public class ColumnTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -10033,6 +11763,340 @@ public class ColumnTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Column
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Column
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new Column
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Column
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -10112,6 +12176,18 @@ public class ColumnTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         Column copied = new(model);
@@ -11528,6 +13604,18 @@ public class FormTableGroundingLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<FormTableGroundingLabelLine> expectedLines =
@@ -11599,12 +13687,25 @@ public class FormTableGroundingLabelTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -11681,6 +13782,18 @@ public class FormTableGroundingLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -11766,6 +13879,18 @@ public class FormTableGroundingLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -11844,12 +13969,25 @@ public class FormTableGroundingLabelTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -11926,6 +14064,340 @@ public class FormTableGroundingLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new FormTableGroundingLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new FormTableGroundingLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new FormTableGroundingLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new FormTableGroundingLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -12005,6 +14477,18 @@ public class FormTableGroundingLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         FormTableGroundingLabel copied = new(model);
@@ -13421,6 +15905,18 @@ public class FormTextGroundingTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<FormTextGroundingLine> expectedLines =
@@ -13492,12 +15988,25 @@ public class FormTextGroundingTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -13574,6 +16083,18 @@ public class FormTextGroundingTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -13659,6 +16180,18 @@ public class FormTextGroundingTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -13737,12 +16270,25 @@ public class FormTextGroundingTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -13819,6 +16365,340 @@ public class FormTextGroundingTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new FormTextGrounding
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new FormTextGrounding
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new FormTextGrounding
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new FormTextGrounding
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -13898,6 +16778,18 @@ public class FormTextGroundingTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         FormTextGrounding copied = new(model);

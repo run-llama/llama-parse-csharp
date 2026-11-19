@@ -35,7 +35,9 @@ public class FormTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -107,9 +109,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -181,9 +197,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -255,8 +285,20 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -303,7 +345,9 @@ public class FormTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -383,11 +427,25 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -467,10 +525,24 @@ public class FormTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -550,12 +622,26 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -635,8 +721,20 @@ public class FormTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -653,7 +751,9 @@ public class FormTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -729,9 +829,23 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -807,8 +921,20 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -861,7 +987,9 @@ public class FormTest : TestBase
                 ],
                 Grounding = new()
                 {
-                    ID = new(
+                    ID = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -929,9 +1057,23 @@ public class FormTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Label = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Label = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -999,9 +1141,23 @@ public class FormTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Value = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Value = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1069,8 +1225,20 @@ public class FormTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 },
                 IsEmpty = true,
                 Label = "label",
@@ -1117,7 +1285,9 @@ public class FormTest : TestBase
                                 Columns = ["string"],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -1193,11 +1363,25 @@ public class FormTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Columns =
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -1277,10 +1461,24 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
-                                    Label = new(
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -1356,12 +1554,26 @@ public class FormTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Rows =
                                     [
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -1441,8 +1653,20 @@ public class FormTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
                                     ],
                                 },
@@ -1459,7 +1683,9 @@ public class FormTest : TestBase
                         ID = "id",
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -1531,9 +1757,23 @@ public class FormTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -1605,8 +1845,20 @@ public class FormTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         Label = "label",
                         MarkdownSpan =
@@ -1671,7 +1923,9 @@ public class FormTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1743,9 +1997,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1817,9 +2085,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1891,8 +2173,20 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -1939,7 +2233,9 @@ public class FormTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2019,11 +2315,25 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2103,10 +2413,24 @@ public class FormTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2186,12 +2510,26 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -2271,8 +2609,20 @@ public class FormTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -2289,7 +2639,9 @@ public class FormTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -2365,9 +2717,23 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -2443,8 +2809,20 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -2508,7 +2886,9 @@ public class FormTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2580,9 +2960,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2654,9 +3048,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2728,8 +3136,20 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -2776,7 +3196,9 @@ public class FormTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2856,11 +3278,25 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2940,10 +3376,24 @@ public class FormTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -3023,12 +3473,26 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -3108,8 +3572,20 @@ public class FormTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -3126,7 +3602,9 @@ public class FormTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -3202,9 +3680,23 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -3280,8 +3772,20 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -3338,7 +3842,9 @@ public class FormTest : TestBase
                 ],
                 Grounding = new()
                 {
-                    ID = new(
+                    ID = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3406,9 +3912,23 @@ public class FormTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Label = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Label = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3476,9 +3996,23 @@ public class FormTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Value = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Value = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3546,8 +4080,20 @@ public class FormTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 },
                 IsEmpty = true,
                 Label = "label",
@@ -3594,7 +4140,9 @@ public class FormTest : TestBase
                                 Columns = ["string"],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -3670,11 +4218,25 @@ public class FormTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Columns =
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -3754,10 +4316,24 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
-                                    Label = new(
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -3833,12 +4409,26 @@ public class FormTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Rows =
                                     [
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -3918,8 +4508,20 @@ public class FormTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
                                     ],
                                 },
@@ -3936,7 +4538,9 @@ public class FormTest : TestBase
                         ID = "id",
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -4008,9 +4612,23 @@ public class FormTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -4082,8 +4700,20 @@ public class FormTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         Label = "label",
                         MarkdownSpan =
@@ -4148,7 +4778,9 @@ public class FormTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4220,9 +4852,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4294,9 +4940,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4368,8 +5028,20 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -4416,7 +5088,9 @@ public class FormTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4496,11 +5170,25 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -4580,10 +5268,24 @@ public class FormTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4663,12 +5365,26 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -4748,8 +5464,20 @@ public class FormTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -4766,7 +5494,9 @@ public class FormTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4842,9 +5572,23 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4920,8 +5664,20 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -4982,7 +5738,9 @@ public class FormTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5054,9 +5812,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5128,9 +5900,23 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5202,8 +5988,20 @@ public class FormTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -5250,7 +6048,9 @@ public class FormTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -5330,11 +6130,25 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -5414,10 +6228,24 @@ public class FormTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -5497,12 +6325,26 @@ public class FormTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -5582,8 +6424,20 @@ public class FormTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -5600,7 +6454,9 @@ public class FormTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -5676,9 +6532,23 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -5754,8 +6624,20 @@ public class FormTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -5817,7 +6699,9 @@ public class FormJsonTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5885,9 +6769,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5955,9 +6853,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6025,8 +6937,20 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -6073,7 +6997,9 @@ public class FormJsonTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6149,11 +7075,25 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -6229,10 +7169,24 @@ public class FormJsonTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6308,12 +7262,26 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -6393,8 +7361,20 @@ public class FormJsonTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -6411,7 +7391,9 @@ public class FormJsonTest : TestBase
                     ID = "id",
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6483,9 +7465,23 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6557,8 +7553,20 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     Label = "label",
                     MarkdownSpan =
@@ -6601,7 +7609,9 @@ public class FormJsonTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6673,9 +7683,23 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6747,9 +7771,23 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6821,8 +7859,20 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -6865,7 +7915,9 @@ public class FormJsonTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6941,11 +7993,25 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -7021,10 +8087,24 @@ public class FormJsonTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -7100,12 +8180,26 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -7185,8 +8279,20 @@ public class FormJsonTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -7205,7 +8311,9 @@ public class FormJsonTest : TestBase
             ID = "id",
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7273,9 +8381,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7343,8 +8465,20 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Label = "label",
             MarkdownSpan =
@@ -7385,7 +8519,9 @@ public class FormJsonTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7453,11 +8589,25 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -7525,10 +8675,24 @@ public class FormJsonTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7596,12 +8760,26 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -7673,8 +8851,20 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -7713,7 +8903,9 @@ public class FormJsonTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7781,9 +8973,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7851,9 +9057,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7921,8 +9141,20 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -7953,7 +9185,9 @@ public class FormJsonTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -8021,9 +9255,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -8091,9 +9339,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -8161,8 +9423,20 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -8209,7 +9483,9 @@ public class FormJsonTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -8285,11 +9561,25 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -8365,10 +9655,24 @@ public class FormJsonTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -8444,12 +9748,26 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -8529,8 +9847,20 @@ public class FormJsonTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -8547,7 +9877,9 @@ public class FormJsonTest : TestBase
                     ID = "id",
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8619,9 +9951,23 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8693,8 +10039,20 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     Label = "label",
                     MarkdownSpan =
@@ -8743,7 +10101,9 @@ public class FormJsonTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8815,9 +10175,23 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8889,9 +10263,23 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8963,8 +10351,20 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -9007,7 +10407,9 @@ public class FormJsonTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -9083,11 +10485,25 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -9163,10 +10579,24 @@ public class FormJsonTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -9242,12 +10672,26 @@ public class FormJsonTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -9327,8 +10771,20 @@ public class FormJsonTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -9347,7 +10803,9 @@ public class FormJsonTest : TestBase
             ID = "id",
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9415,9 +10873,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9485,8 +10957,20 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Label = "label",
             MarkdownSpan =
@@ -9533,7 +11017,9 @@ public class FormJsonTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9601,11 +11087,25 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -9673,10 +11173,24 @@ public class FormJsonTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9744,12 +11258,26 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -9821,8 +11349,20 @@ public class FormJsonTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -9867,7 +11407,9 @@ public class FormJsonTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9935,9 +11477,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -10005,9 +11561,23 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -10075,8 +11645,20 @@ public class FormJsonTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };

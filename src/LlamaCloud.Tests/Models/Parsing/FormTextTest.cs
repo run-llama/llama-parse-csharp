@@ -31,7 +31,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -99,9 +101,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -169,9 +185,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -239,8 +269,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -263,7 +305,9 @@ public class FormTextTest : TestBase
         ];
         GroundingModel expectedGrounding = new()
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -331,9 +375,23 @@ public class FormTextTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -401,9 +459,23 @@ public class FormTextTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -471,8 +543,20 @@ public class FormTextTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
         ApiEnum<string, FormTextType> expectedType = FormTextType.Text;
 
@@ -510,7 +594,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -578,9 +664,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -648,9 +748,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -718,8 +832,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -753,7 +879,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -821,9 +949,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -891,9 +1033,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -961,8 +1117,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -992,7 +1160,9 @@ public class FormTextTest : TestBase
         ];
         GroundingModel expectedGrounding = new()
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1060,9 +1230,23 @@ public class FormTextTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1130,9 +1314,23 @@ public class FormTextTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1200,8 +1398,20 @@ public class FormTextTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
         ApiEnum<string, FormTextType> expectedType = FormTextType.Text;
 
@@ -1239,7 +1449,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1307,9 +1519,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1377,9 +1603,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1447,8 +1687,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -1479,7 +1731,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1547,9 +1801,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1617,9 +1885,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1687,8 +1969,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
         };
 
@@ -1719,7 +2013,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1787,9 +2083,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1857,9 +2167,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -1927,8 +2251,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
         };
 
@@ -1958,7 +2294,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2026,9 +2364,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2096,9 +2448,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2166,8 +2532,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
 
             // Null should be interpreted as omitted for these properties
@@ -2201,7 +2579,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2269,9 +2649,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2339,9 +2733,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2409,8 +2817,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
 
             // Null should be interpreted as omitted for these properties
@@ -2495,7 +2915,9 @@ public class FormTextTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2563,9 +2985,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2633,9 +3069,23 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2703,8 +3153,20 @@ public class FormTextTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -2722,7 +3184,9 @@ public class GroundingModelTest : TestBase
     {
         var model = new GroundingModel
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -2790,9 +3254,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -2860,9 +3338,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -2930,11 +3422,25 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
-        GroundingModelID expectedID = new(
+        GroundingModelID expectedID = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -3002,9 +3508,23 @@ public class GroundingModelTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        GroundingModelLabel expectedLabel = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        GroundingModelLabel expectedLabel = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -3072,9 +3592,23 @@ public class GroundingModelTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        GroundingModelValue expectedValue = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        GroundingModelValue expectedValue = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -3142,8 +3676,20 @@ public class GroundingModelTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedLabel, model.Label);
@@ -3155,7 +3701,9 @@ public class GroundingModelTest : TestBase
     {
         var model = new GroundingModel
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3223,9 +3771,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3293,9 +3855,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3363,8 +3939,20 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3381,7 +3969,9 @@ public class GroundingModelTest : TestBase
     {
         var model = new GroundingModel
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3449,9 +4039,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3519,9 +4123,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3589,8 +4207,20 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3600,7 +4230,9 @@ public class GroundingModelTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        GroundingModelID expectedID = new(
+        GroundingModelID expectedID = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -3668,9 +4300,23 @@ public class GroundingModelTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        GroundingModelLabel expectedLabel = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        GroundingModelLabel expectedLabel = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -3738,9 +4384,23 @@ public class GroundingModelTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        GroundingModelValue expectedValue = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        GroundingModelValue expectedValue = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -3808,8 +4468,20 @@ public class GroundingModelTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedLabel, deserialized.Label);
@@ -3821,7 +4493,9 @@ public class GroundingModelTest : TestBase
     {
         var model = new GroundingModel
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3889,9 +4563,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -3959,9 +4647,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -4029,8 +4731,20 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         model.Validate();
@@ -4093,7 +4807,9 @@ public class GroundingModelTest : TestBase
     {
         var model = new GroundingModel
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -4161,9 +4877,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -4231,9 +4961,23 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -4301,8 +5045,20 @@ public class GroundingModelTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         GroundingModel copied = new(model);
@@ -4387,6 +5143,18 @@ public class GroundingModelIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<GroundingModelIDLine> expectedLines =
@@ -4458,12 +5226,25 @@ public class GroundingModelIDTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -4540,6 +5321,18 @@ public class GroundingModelIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -4625,6 +5418,18 @@ public class GroundingModelIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -4703,12 +5508,25 @@ public class GroundingModelIDTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -4785,6 +5603,340 @@ public class GroundingModelIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new GroundingModelID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new GroundingModelID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new GroundingModelID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new GroundingModelID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -4864,6 +6016,18 @@ public class GroundingModelIDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         GroundingModelID copied = new(model);
@@ -6280,6 +7444,18 @@ public class GroundingModelLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<GroundingModelLabelLine> expectedLines =
@@ -6351,12 +7527,25 @@ public class GroundingModelLabelTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -6433,6 +7622,18 @@ public class GroundingModelLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -6518,6 +7719,18 @@ public class GroundingModelLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -6596,12 +7809,25 @@ public class GroundingModelLabelTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -6678,6 +7904,340 @@ public class GroundingModelLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new GroundingModelLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new GroundingModelLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new GroundingModelLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new GroundingModelLabel
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -6757,6 +8317,18 @@ public class GroundingModelLabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         GroundingModelLabel copied = new(model);
@@ -8173,6 +9745,18 @@ public class GroundingModelValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<GroundingModelValueLine> expectedLines =
@@ -8244,12 +9828,25 @@ public class GroundingModelValueTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -8326,6 +9923,18 @@ public class GroundingModelValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -8411,6 +10020,18 @@ public class GroundingModelValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -8489,12 +10110,25 @@ public class GroundingModelValueTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -8571,6 +10205,340 @@ public class GroundingModelValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new GroundingModelValue
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new GroundingModelValue
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new GroundingModelValue
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new GroundingModelValue
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -8650,6 +10618,18 @@ public class GroundingModelValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         GroundingModelValue copied = new(model);

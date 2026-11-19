@@ -251,6 +251,19 @@ public sealed record class GroundingModelID : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -258,6 +271,7 @@ public sealed record class GroundingModelID : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public GroundingModelID() { }
@@ -635,6 +649,19 @@ public sealed record class GroundingModelLabel : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -642,6 +669,7 @@ public sealed record class GroundingModelLabel : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public GroundingModelLabel() { }
@@ -1024,6 +1052,19 @@ public sealed record class GroundingModelValue : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1031,6 +1072,7 @@ public sealed record class GroundingModelValue : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public GroundingModelValue() { }

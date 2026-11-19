@@ -35,7 +35,9 @@ public class FormTableCellItemsTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -107,9 +109,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -181,9 +197,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -255,8 +285,20 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -303,7 +345,9 @@ public class FormTableCellItemsTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -383,11 +427,25 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -467,10 +525,24 @@ public class FormTableCellItemsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -550,12 +622,26 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -635,8 +721,20 @@ public class FormTableCellItemsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -653,7 +751,9 @@ public class FormTableCellItemsTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -729,9 +829,23 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -807,8 +921,20 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -846,7 +972,9 @@ public class FormTableCellItemsTest : TestBase
                 ],
                 Grounding = new()
                 {
-                    ID = new(
+                    ID = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -914,9 +1042,23 @@ public class FormTableCellItemsTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Label = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Label = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -984,9 +1126,23 @@ public class FormTableCellItemsTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Value = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Value = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1054,8 +1210,20 @@ public class FormTableCellItemsTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 },
                 IsEmpty = true,
                 Label = "label",
@@ -1102,7 +1270,9 @@ public class FormTableCellItemsTest : TestBase
                                 Columns = ["string"],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -1178,11 +1348,25 @@ public class FormTableCellItemsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Columns =
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -1262,10 +1446,24 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
-                                    Label = new(
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -1341,12 +1539,26 @@ public class FormTableCellItemsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Rows =
                                     [
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -1426,8 +1638,20 @@ public class FormTableCellItemsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
                                     ],
                                 },
@@ -1444,7 +1668,9 @@ public class FormTableCellItemsTest : TestBase
                         ID = "id",
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -1516,9 +1742,23 @@ public class FormTableCellItemsTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -1590,8 +1830,20 @@ public class FormTableCellItemsTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         Label = "label",
                         MarkdownSpan =
@@ -1640,7 +1892,9 @@ public class FormTableCellItemsTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1712,9 +1966,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1786,9 +2054,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -1860,8 +2142,20 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -1908,7 +2202,9 @@ public class FormTableCellItemsTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -1988,11 +2284,25 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2072,10 +2382,24 @@ public class FormTableCellItemsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2155,12 +2479,26 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -2240,8 +2578,20 @@ public class FormTableCellItemsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -2258,7 +2608,9 @@ public class FormTableCellItemsTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -2334,9 +2686,23 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -2412,8 +2778,20 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -2465,7 +2843,9 @@ public class FormTableCellItemsTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2537,9 +2917,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2611,9 +3005,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2685,8 +3093,20 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -2733,7 +3153,9 @@ public class FormTableCellItemsTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2813,11 +3235,25 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2897,10 +3333,24 @@ public class FormTableCellItemsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2980,12 +3430,26 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -3065,8 +3529,20 @@ public class FormTableCellItemsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -3083,7 +3559,9 @@ public class FormTableCellItemsTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -3159,9 +3637,23 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -3237,8 +3729,20 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -3283,7 +3787,9 @@ public class FormTableCellItemsTest : TestBase
                 ],
                 Grounding = new()
                 {
-                    ID = new(
+                    ID = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3351,9 +3857,23 @@ public class FormTableCellItemsTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Label = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Label = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3421,9 +3941,23 @@ public class FormTableCellItemsTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Value = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Value = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -3491,8 +4025,20 @@ public class FormTableCellItemsTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 },
                 IsEmpty = true,
                 Label = "label",
@@ -3539,7 +4085,9 @@ public class FormTableCellItemsTest : TestBase
                                 Columns = ["string"],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -3615,11 +4163,25 @@ public class FormTableCellItemsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Columns =
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -3699,10 +4261,24 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
-                                    Label = new(
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -3778,12 +4354,26 @@ public class FormTableCellItemsTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Rows =
                                     [
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -3863,8 +4453,20 @@ public class FormTableCellItemsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
                                     ],
                                 },
@@ -3881,7 +4483,9 @@ public class FormTableCellItemsTest : TestBase
                         ID = "id",
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -3953,9 +4557,23 @@ public class FormTableCellItemsTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -4027,8 +4645,20 @@ public class FormTableCellItemsTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         Label = "label",
                         MarkdownSpan =
@@ -4077,7 +4707,9 @@ public class FormTableCellItemsTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4149,9 +4781,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4223,9 +4869,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4297,8 +4957,20 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -4345,7 +5017,9 @@ public class FormTableCellItemsTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4425,11 +5099,25 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -4509,10 +5197,24 @@ public class FormTableCellItemsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4592,12 +5294,26 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -4677,8 +5393,20 @@ public class FormTableCellItemsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -4695,7 +5423,9 @@ public class FormTableCellItemsTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4771,9 +5501,23 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4849,8 +5593,20 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -4896,7 +5652,9 @@ public class FormTableCellItemsTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -4968,9 +5726,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5042,9 +5814,23 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5116,8 +5902,20 @@ public class FormTableCellItemsTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -5164,7 +5962,9 @@ public class FormTableCellItemsTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -5244,11 +6044,25 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -5328,10 +6142,24 @@ public class FormTableCellItemsTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -5411,12 +6239,26 @@ public class FormTableCellItemsTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -5496,8 +6338,20 @@ public class FormTableCellItemsTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -5514,7 +6368,9 @@ public class FormTableCellItemsTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -5590,9 +6446,23 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -5668,8 +6538,20 @@ public class FormTableCellItemsTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -5716,7 +6598,9 @@ public class FormTableCellItemsItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5784,9 +6668,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5854,9 +6752,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5924,8 +6836,20 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -5972,7 +6896,9 @@ public class FormTableCellItemsItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6048,11 +6974,25 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -6128,10 +7068,24 @@ public class FormTableCellItemsItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6207,12 +7161,26 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -6292,8 +7260,20 @@ public class FormTableCellItemsItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -6310,7 +7290,9 @@ public class FormTableCellItemsItemTest : TestBase
                     ID = "id",
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6382,9 +7364,23 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6456,8 +7452,20 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     Label = "label",
                     MarkdownSpan =
@@ -6500,7 +7508,9 @@ public class FormTableCellItemsItemTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6572,9 +7582,23 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6646,9 +7670,23 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6720,8 +7758,20 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -6764,7 +7814,9 @@ public class FormTableCellItemsItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6840,11 +7892,25 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -6920,10 +7986,24 @@ public class FormTableCellItemsItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6999,12 +8079,26 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -7084,8 +8178,20 @@ public class FormTableCellItemsItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -7104,7 +8210,9 @@ public class FormTableCellItemsItemTest : TestBase
             ID = "id",
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7172,9 +8280,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7242,8 +8364,20 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Label = "label",
             MarkdownSpan =
@@ -7284,7 +8418,9 @@ public class FormTableCellItemsItemTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7352,11 +8488,25 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -7424,10 +8574,24 @@ public class FormTableCellItemsItemTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7495,12 +8659,26 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -7572,8 +8750,20 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -7612,7 +8802,9 @@ public class FormTableCellItemsItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7680,9 +8872,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7750,9 +8956,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7820,8 +9040,20 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -7852,7 +9084,9 @@ public class FormTableCellItemsItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7920,9 +9154,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7990,9 +9238,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -8060,8 +9322,20 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -8108,7 +9382,9 @@ public class FormTableCellItemsItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -8184,11 +9460,25 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -8264,10 +9554,24 @@ public class FormTableCellItemsItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -8343,12 +9647,26 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -8428,8 +9746,20 @@ public class FormTableCellItemsItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -8446,7 +9776,9 @@ public class FormTableCellItemsItemTest : TestBase
                     ID = "id",
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8518,9 +9850,23 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8592,8 +9938,20 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     Label = "label",
                     MarkdownSpan =
@@ -8642,7 +10000,9 @@ public class FormTableCellItemsItemTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8714,9 +10074,23 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8788,9 +10162,23 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8862,8 +10250,20 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -8906,7 +10306,9 @@ public class FormTableCellItemsItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -8982,11 +10384,25 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -9062,10 +10478,24 @@ public class FormTableCellItemsItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -9141,12 +10571,26 @@ public class FormTableCellItemsItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -9226,8 +10670,20 @@ public class FormTableCellItemsItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -9246,7 +10702,9 @@ public class FormTableCellItemsItemTest : TestBase
             ID = "id",
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9314,9 +10772,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9384,8 +10856,20 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Label = "label",
             MarkdownSpan =
@@ -9432,7 +10916,9 @@ public class FormTableCellItemsItemTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9500,11 +10986,25 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -9572,10 +11072,24 @@ public class FormTableCellItemsItemTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9643,12 +11157,26 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -9720,8 +11248,20 @@ public class FormTableCellItemsItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -9766,7 +11306,9 @@ public class FormTableCellItemsItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9834,9 +11376,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9904,9 +11460,23 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9974,8 +11544,20 @@ public class FormTableCellItemsItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };

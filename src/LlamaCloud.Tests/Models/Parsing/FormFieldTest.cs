@@ -32,7 +32,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -100,9 +102,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -170,9 +186,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -240,8 +270,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -280,7 +322,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -352,9 +396,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -426,9 +484,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -500,8 +572,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -548,7 +632,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -628,11 +714,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -712,10 +812,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -795,12 +909,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -880,8 +1008,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -898,7 +1038,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -974,9 +1116,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -1052,8 +1208,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -1087,7 +1255,9 @@ public class FormFieldTest : TestBase
         ];
         Grounding expectedGrounding = new()
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1155,9 +1325,23 @@ public class FormFieldTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1225,9 +1409,23 @@ public class FormFieldTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -1295,8 +1493,20 @@ public class FormFieldTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
         bool expectedIsEmpty = true;
         string expectedLabel = "label";
@@ -1335,7 +1545,9 @@ public class FormFieldTest : TestBase
                 ],
                 Grounding = new()
                 {
-                    ID = new(
+                    ID = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1403,9 +1615,23 @@ public class FormFieldTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Label = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Label = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1473,9 +1699,23 @@ public class FormFieldTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Value = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Value = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -1543,8 +1783,20 @@ public class FormFieldTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 },
                 IsEmpty = true,
                 Label = "label",
@@ -1591,7 +1843,9 @@ public class FormFieldTest : TestBase
                                 Columns = ["string"],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -1667,11 +1921,25 @@ public class FormFieldTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Columns =
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -1751,10 +2019,24 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
-                                    Label = new(
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -1830,12 +2112,26 @@ public class FormFieldTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Rows =
                                     [
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -1915,8 +2211,20 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
                                     ],
                                 },
@@ -1933,7 +2241,9 @@ public class FormFieldTest : TestBase
                         ID = "id",
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -2005,9 +2315,23 @@ public class FormFieldTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -2079,8 +2403,20 @@ public class FormFieldTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         Label = "label",
                         MarkdownSpan =
@@ -2153,7 +2489,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2221,9 +2559,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2291,9 +2643,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -2361,8 +2727,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -2401,7 +2779,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2473,9 +2853,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2547,9 +2941,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -2621,8 +3029,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -2669,7 +3089,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2749,11 +3171,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -2833,10 +3269,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -2916,12 +3366,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -3001,8 +3465,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -3019,7 +3495,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -3095,9 +3573,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -3173,8 +3665,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -3219,7 +3723,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -3287,9 +3793,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -3357,9 +3877,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -3427,8 +3961,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -3467,7 +4013,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -3539,9 +4087,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -3613,9 +4175,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -3687,8 +4263,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -3735,7 +4323,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -3815,11 +4405,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -3899,10 +4503,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -3982,12 +4600,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -4067,8 +4699,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -4085,7 +4729,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4161,9 +4807,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -4239,8 +4899,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -4281,7 +4953,9 @@ public class FormFieldTest : TestBase
         ];
         Grounding expectedGrounding = new()
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -4349,9 +5023,23 @@ public class FormFieldTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -4419,9 +5107,23 @@ public class FormFieldTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -4489,8 +5191,20 @@ public class FormFieldTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
         bool expectedIsEmpty = true;
         string expectedLabel = "label";
@@ -4529,7 +5243,9 @@ public class FormFieldTest : TestBase
                 ],
                 Grounding = new()
                 {
-                    ID = new(
+                    ID = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -4597,9 +5313,23 @@ public class FormFieldTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Label = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Label = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -4667,9 +5397,23 @@ public class FormFieldTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
-                    Value = new(
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
+                    Value = new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -4737,8 +5481,20 @@ public class FormFieldTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 },
                 IsEmpty = true,
                 Label = "label",
@@ -4785,7 +5541,9 @@ public class FormFieldTest : TestBase
                                 Columns = ["string"],
                                 Grounding = new()
                                 {
-                                    ID = new(
+                                    ID = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -4861,11 +5619,25 @@ public class FormFieldTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Columns =
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -4945,10 +5717,24 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
-                                    Label = new(
+                                    Label = new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -5024,12 +5810,26 @@ public class FormFieldTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                     Rows =
                                     [
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -5109,8 +5909,20 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
                                     ],
                                 },
@@ -5127,7 +5939,9 @@ public class FormFieldTest : TestBase
                         ID = "id",
                         Grounding = new()
                         {
-                            ID = new(
+                            ID = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -5199,9 +6013,23 @@ public class FormFieldTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
-                            Label = new(
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
+                            Label = new()
+                            {
+                                Lines =
                                 [
                                     new()
                                     {
@@ -5273,8 +6101,20 @@ public class FormFieldTest : TestBase
                                             },
                                         ],
                                     },
-                                ]
-                            ),
+                                ],
+                                Bbox = new()
+                                {
+                                    H = 0,
+                                    W = 0,
+                                    X = 0,
+                                    Y = 0,
+                                    Confidence = 0,
+                                    EndIndex = 0,
+                                    Label = "label",
+                                    R = 0,
+                                    StartIndex = 0,
+                                },
+                            },
                         },
                         Label = "label",
                         MarkdownSpan =
@@ -5352,7 +6192,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5420,9 +6262,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5490,9 +6346,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -5560,8 +6430,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -5600,7 +6482,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5672,9 +6556,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5746,9 +6644,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -5820,8 +6732,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -5868,7 +6792,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -5948,11 +6874,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -6032,10 +6972,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -6115,12 +7069,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -6200,8 +7168,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -6218,7 +7198,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6294,9 +7276,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -6372,8 +7368,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -6415,7 +7423,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6483,9 +7493,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6553,9 +7577,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -6623,8 +7661,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -6662,7 +7712,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6734,9 +7786,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6808,9 +7874,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -6882,8 +7962,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -6930,7 +8022,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -7010,11 +8104,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -7094,10 +8202,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -7177,12 +8299,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -7262,8 +8398,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -7280,7 +8428,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -7356,9 +8506,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -7434,8 +8598,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -7478,7 +8654,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7546,9 +8724,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7616,9 +8808,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -7686,8 +8892,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -7725,7 +8943,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -7797,9 +9017,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -7871,9 +9105,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -7945,8 +9193,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -7993,7 +9253,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -8073,11 +9335,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -8157,10 +9433,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -8240,12 +9530,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -8325,8 +9629,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -8343,7 +9659,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -8419,9 +9737,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -8497,8 +9829,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -8540,7 +9884,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -8608,9 +9954,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -8678,9 +10038,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -8748,8 +10122,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -8787,7 +10173,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8859,9 +10247,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -8933,9 +10335,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -9007,8 +10423,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -9055,7 +10483,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -9135,11 +10565,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -9219,10 +10663,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -9302,12 +10760,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -9387,8 +10859,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -9405,7 +10889,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -9481,9 +10967,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -9559,8 +11059,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -9606,7 +11118,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9674,9 +11188,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9744,9 +11272,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -9814,8 +11356,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -9853,7 +11407,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -9925,9 +11481,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -9999,9 +11569,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -10073,8 +11657,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -10121,7 +11717,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -10201,11 +11799,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -10285,10 +11897,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -10368,12 +11994,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -10453,8 +12093,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -10471,7 +12123,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -10547,9 +12201,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -10625,8 +12293,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -10765,7 +12445,9 @@ public class FormFieldTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -10833,9 +12515,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -10903,9 +12599,23 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -10973,8 +12683,20 @@ public class FormFieldTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -11013,7 +12735,9 @@ public class FormFieldTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -11085,9 +12809,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -11159,9 +12897,23 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -11233,8 +12985,20 @@ public class FormFieldTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -11281,7 +13045,9 @@ public class FormFieldTest : TestBase
                                     Columns = ["string"],
                                     Grounding = new()
                                     {
-                                        ID = new(
+                                        ID = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -11361,11 +13127,25 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Columns =
                                         [
-                                            new(
+                                            new()
+                                            {
+                                                Lines =
                                                 [
                                                     new()
                                                     {
@@ -11445,10 +13225,24 @@ public class FormFieldTest : TestBase
                                                             },
                                                         ],
                                                     },
-                                                ]
-                                            ),
+                                                ],
+                                                Bbox = new()
+                                                {
+                                                    H = 0,
+                                                    W = 0,
+                                                    X = 0,
+                                                    Y = 0,
+                                                    Confidence = 0,
+                                                    EndIndex = 0,
+                                                    Label = "label",
+                                                    R = 0,
+                                                    StartIndex = 0,
+                                                },
+                                            },
                                         ],
-                                        Label = new(
+                                        Label = new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -11528,12 +13322,26 @@ public class FormFieldTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                         Rows =
                                         [
                                             [
-                                                new(
+                                                new()
+                                                {
+                                                    Lines =
                                                     [
                                                         new()
                                                         {
@@ -11613,8 +13421,20 @@ public class FormFieldTest : TestBase
                                                                 },
                                                             ],
                                                         },
-                                                    ]
-                                                ),
+                                                    ],
+                                                    Bbox = new()
+                                                    {
+                                                        H = 0,
+                                                        W = 0,
+                                                        X = 0,
+                                                        Y = 0,
+                                                        Confidence = 0,
+                                                        EndIndex = 0,
+                                                        Label = "label",
+                                                        R = 0,
+                                                        StartIndex = 0,
+                                                    },
+                                                },
                                             ],
                                         ],
                                     },
@@ -11631,7 +13451,9 @@ public class FormFieldTest : TestBase
                             ID = "id",
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -11707,9 +13529,23 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
-                                Label = new(
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -11785,8 +13621,20 @@ public class FormFieldTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                             },
                             Label = "label",
                             MarkdownSpan =
@@ -11878,7 +13726,9 @@ public class GroundingTest : TestBase
     {
         var model = new Grounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -11946,9 +13796,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12016,9 +13880,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12086,11 +13964,25 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
-        ID expectedID = new(
+        ID expectedID = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -12158,9 +14050,23 @@ public class GroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        Label expectedLabel = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        Label expectedLabel = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -12228,9 +14134,23 @@ public class GroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        Value expectedValue = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        Value expectedValue = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -12298,8 +14218,20 @@ public class GroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedLabel, model.Label);
@@ -12311,7 +14243,9 @@ public class GroundingTest : TestBase
     {
         var model = new Grounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12379,9 +14313,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12449,9 +14397,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12519,8 +14481,20 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -12534,7 +14508,9 @@ public class GroundingTest : TestBase
     {
         var model = new Grounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12602,9 +14578,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12672,9 +14662,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -12742,8 +14746,20 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -12753,7 +14769,9 @@ public class GroundingTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        ID expectedID = new(
+        ID expectedID = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -12821,9 +14839,23 @@ public class GroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        Label expectedLabel = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        Label expectedLabel = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -12891,9 +14923,23 @@ public class GroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
-        Value expectedValue = new(
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+        Value expectedValue = new()
+        {
+            Lines =
             [
                 new()
                 {
@@ -12961,8 +15007,20 @@ public class GroundingTest : TestBase
                         },
                     ],
                 },
-            ]
-        );
+            ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedLabel, deserialized.Label);
@@ -12974,7 +15032,9 @@ public class GroundingTest : TestBase
     {
         var model = new Grounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -13042,9 +15102,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -13112,9 +15186,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -13182,8 +15270,20 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         model.Validate();
@@ -13246,7 +15346,9 @@ public class GroundingTest : TestBase
     {
         var model = new Grounding
         {
-            ID = new(
+            ID = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -13314,9 +15416,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Label = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Label = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -13384,9 +15500,23 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
-            Value = new(
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
+            Value = new()
+            {
+                Lines =
                 [
                     new()
                     {
@@ -13454,8 +15584,20 @@ public class GroundingTest : TestBase
                             },
                         ],
                     },
-                ]
-            ),
+                ],
+                Bbox = new()
+                {
+                    H = 0,
+                    W = 0,
+                    X = 0,
+                    Y = 0,
+                    Confidence = 0,
+                    EndIndex = 0,
+                    Label = "label",
+                    R = 0,
+                    StartIndex = 0,
+                },
+            },
         };
 
         Grounding copied = new(model);
@@ -13540,6 +15682,18 @@ public class IDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<Line> expectedLines =
@@ -13611,12 +15765,25 @@ public class IDTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -13693,6 +15860,18 @@ public class IDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -13775,6 +15954,18 @@ public class IDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -13850,12 +16041,25 @@ public class IDTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -13932,6 +16136,340 @@ public class IDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new ID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new ID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new ID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new ID
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -14011,6 +16549,18 @@ public class IDTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         ID copied = new(model);
@@ -15409,6 +17959,18 @@ public class LabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<LabelLine> expectedLines =
@@ -15480,12 +18042,25 @@ public class LabelTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -15562,6 +18137,18 @@ public class LabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -15644,6 +18231,18 @@ public class LabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -15719,12 +18318,25 @@ public class LabelTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -15801,6 +18413,340 @@ public class LabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Label
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Label
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new Label
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Label
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -15880,6 +18826,18 @@ public class LabelTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         Label copied = new(model);
@@ -17293,6 +20251,18 @@ public class ValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         List<ValueLine> expectedLines =
@@ -17364,12 +20334,25 @@ public class ValueTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, model.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], model.Lines[i]);
         }
+        Assert.Equal(expectedBbox, model.Bbox);
     }
 
     [Fact]
@@ -17446,6 +20429,18 @@ public class ValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -17528,6 +20523,18 @@ public class ValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -17603,12 +20610,25 @@ public class ValueTest : TestBase
                 ],
             },
         ];
+        BBox expectedBbox = new()
+        {
+            H = 0,
+            W = 0,
+            X = 0,
+            Y = 0,
+            Confidence = 0,
+            EndIndex = 0,
+            Label = "label",
+            R = 0,
+            StartIndex = 0,
+        };
 
         Assert.Equal(expectedLines.Count, deserialized.Lines.Count);
         for (int i = 0; i < expectedLines.Count; i++)
         {
             Assert.Equal(expectedLines[i], deserialized.Lines[i]);
         }
+        Assert.Equal(expectedBbox, deserialized.Bbox);
     }
 
     [Fact]
@@ -17685,6 +20705,340 @@ public class ValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Value
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.False(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Value
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new Value
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
+        };
+
+        Assert.Null(model.Bbox);
+        Assert.True(model.RawData.ContainsKey("bbox"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Value
+        {
+            Lines =
+            [
+                new()
+                {
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                    Span =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    Words =
+                    [
+                        new()
+                        {
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                            Span =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            Chars =
+                            [
+                                new()
+                                {
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                    Span =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+
+            Bbox = null,
         };
 
         model.Validate();
@@ -17764,6 +21118,18 @@ public class ValueTest : TestBase
                     ],
                 },
             ],
+            Bbox = new()
+            {
+                H = 0,
+                W = 0,
+                X = 0,
+                Y = 0,
+                Confidence = 0,
+                EndIndex = 0,
+                Label = "label",
+                R = 0,
+                StartIndex = 0,
+            },
         };
 
         Value copied = new(model);
@@ -19226,7 +22592,9 @@ public class ValueItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -19294,9 +22662,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -19364,9 +22746,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -19434,8 +22830,20 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -19482,7 +22890,9 @@ public class ValueItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -19558,11 +22968,25 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -19638,10 +23062,24 @@ public class ValueItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -19717,12 +23155,26 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -19802,8 +23254,20 @@ public class ValueItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -19820,7 +23284,9 @@ public class ValueItemTest : TestBase
                     ID = "id",
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -19892,9 +23358,23 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -19966,8 +23446,20 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     Label = "label",
                     MarkdownSpan =
@@ -20010,7 +23502,9 @@ public class ValueItemTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -20082,9 +23576,23 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -20156,9 +23664,23 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -20230,8 +23752,20 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -20274,7 +23808,9 @@ public class ValueItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -20350,11 +23886,25 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -20430,10 +23980,24 @@ public class ValueItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -20509,12 +24073,26 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -20594,8 +24172,20 @@ public class ValueItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -20614,7 +24204,9 @@ public class ValueItemTest : TestBase
             ID = "id",
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -20682,9 +24274,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -20752,8 +24358,20 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Label = "label",
             MarkdownSpan =
@@ -20794,7 +24412,9 @@ public class ValueItemTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -20862,11 +24482,25 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -20934,10 +24568,24 @@ public class ValueItemTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -21005,12 +24653,26 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -21082,8 +24744,20 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -21122,7 +24796,9 @@ public class ValueItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -21190,9 +24866,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -21260,9 +24950,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -21330,8 +25034,20 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };
@@ -21362,7 +25078,9 @@ public class ValueItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -21430,9 +25148,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -21500,9 +25232,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -21570,8 +25316,20 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             IsEmpty = true,
             Label = "label",
@@ -21618,7 +25376,9 @@ public class ValueItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -21694,11 +25454,25 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -21774,10 +25548,24 @@ public class ValueItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -21853,12 +25641,26 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -21938,8 +25740,20 @@ public class ValueItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -21956,7 +25770,9 @@ public class ValueItemTest : TestBase
                     ID = "id",
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -22028,9 +25844,23 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -22102,8 +25932,20 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     Label = "label",
                     MarkdownSpan =
@@ -22152,7 +25994,9 @@ public class ValueItemTest : TestBase
                     ],
                     Grounding = new()
                     {
-                        ID = new(
+                        ID = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -22224,9 +26068,23 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Label = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Label = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -22298,9 +26156,23 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
-                        Value = new(
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
+                        Value = new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -22372,8 +26244,20 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     },
                     IsEmpty = true,
                     Label = "label",
@@ -22416,7 +26300,9 @@ public class ValueItemTest : TestBase
                             Columns = ["string"],
                             Grounding = new()
                             {
-                                ID = new(
+                                ID = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -22492,11 +26378,25 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Columns =
                                 [
-                                    new(
+                                    new()
+                                    {
+                                        Lines =
                                         [
                                             new()
                                             {
@@ -22572,10 +26472,24 @@ public class ValueItemTest : TestBase
                                                     },
                                                 ],
                                             },
-                                        ]
-                                    ),
+                                        ],
+                                        Bbox = new()
+                                        {
+                                            H = 0,
+                                            W = 0,
+                                            X = 0,
+                                            Y = 0,
+                                            Confidence = 0,
+                                            EndIndex = 0,
+                                            Label = "label",
+                                            R = 0,
+                                            StartIndex = 0,
+                                        },
+                                    },
                                 ],
-                                Label = new(
+                                Label = new()
+                                {
+                                    Lines =
                                     [
                                         new()
                                         {
@@ -22651,12 +26565,26 @@ public class ValueItemTest : TestBase
                                                 },
                                             ],
                                         },
-                                    ]
-                                ),
+                                    ],
+                                    Bbox = new()
+                                    {
+                                        H = 0,
+                                        W = 0,
+                                        X = 0,
+                                        Y = 0,
+                                        Confidence = 0,
+                                        EndIndex = 0,
+                                        Label = "label",
+                                        R = 0,
+                                        StartIndex = 0,
+                                    },
+                                },
                                 Rows =
                                 [
                                     [
-                                        new(
+                                        new()
+                                        {
+                                            Lines =
                                             [
                                                 new()
                                                 {
@@ -22736,8 +26664,20 @@ public class ValueItemTest : TestBase
                                                         },
                                                     ],
                                                 },
-                                            ]
-                                        ),
+                                            ],
+                                            Bbox = new()
+                                            {
+                                                H = 0,
+                                                W = 0,
+                                                X = 0,
+                                                Y = 0,
+                                                Confidence = 0,
+                                                EndIndex = 0,
+                                                Label = "label",
+                                                R = 0,
+                                                StartIndex = 0,
+                                            },
+                                        },
                                     ],
                                 ],
                             },
@@ -22756,7 +26696,9 @@ public class ValueItemTest : TestBase
             ID = "id",
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -22824,9 +26766,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -22894,8 +26850,20 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Label = "label",
             MarkdownSpan =
@@ -22942,7 +26910,9 @@ public class ValueItemTest : TestBase
             Columns = ["string"],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -23010,11 +26980,25 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Columns =
                 [
-                    new(
+                    new()
+                    {
+                        Lines =
                         [
                             new()
                             {
@@ -23082,10 +27066,24 @@ public class ValueItemTest : TestBase
                                     },
                                 ],
                             },
-                        ]
-                    ),
+                        ],
+                        Bbox = new()
+                        {
+                            H = 0,
+                            W = 0,
+                            X = 0,
+                            Y = 0,
+                            Confidence = 0,
+                            EndIndex = 0,
+                            Label = "label",
+                            R = 0,
+                            StartIndex = 0,
+                        },
+                    },
                 ],
-                Label = new(
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -23153,12 +27151,26 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
                 Rows =
                 [
                     [
-                        new(
+                        new()
+                        {
+                            Lines =
                             [
                                 new()
                                 {
@@ -23230,8 +27242,20 @@ public class ValueItemTest : TestBase
                                         },
                                     ],
                                 },
-                            ]
-                        ),
+                            ],
+                            Bbox = new()
+                            {
+                                H = 0,
+                                W = 0,
+                                X = 0,
+                                Y = 0,
+                                Confidence = 0,
+                                EndIndex = 0,
+                                Label = "label",
+                                R = 0,
+                                StartIndex = 0,
+                            },
+                        },
                     ],
                 ],
             },
@@ -23276,7 +27300,9 @@ public class ValueItemTest : TestBase
             ],
             Grounding = new()
             {
-                ID = new(
+                ID = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -23344,9 +27370,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Label = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Label = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -23414,9 +27454,23 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
-                Value = new(
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
+                Value = new()
+                {
+                    Lines =
                     [
                         new()
                         {
@@ -23484,8 +27538,20 @@ public class ValueItemTest : TestBase
                                 },
                             ],
                         },
-                    ]
-                ),
+                    ],
+                    Bbox = new()
+                    {
+                        H = 0,
+                        W = 0,
+                        X = 0,
+                        Y = 0,
+                        Confidence = 0,
+                        EndIndex = 0,
+                        Label = "label",
+                        R = 0,
+                        StartIndex = 0,
+                    },
+                },
             },
             Type = FormTextType.Text,
         };

@@ -656,6 +656,19 @@ public sealed record class FormTableGroundingID : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -663,6 +676,7 @@ public sealed record class FormTableGroundingID : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public FormTableGroundingID() { }
@@ -1048,6 +1062,19 @@ public sealed record class Column : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1055,6 +1082,7 @@ public sealed record class Column : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public Column() { }
@@ -1417,6 +1445,19 @@ public sealed record class FormTableGroundingLabel : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1424,6 +1465,7 @@ public sealed record class FormTableGroundingLabel : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public FormTableGroundingLabel() { }
@@ -1814,6 +1856,19 @@ public sealed record class FormTextGrounding : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1821,6 +1876,7 @@ public sealed record class FormTextGrounding : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public FormTextGrounding() { }
