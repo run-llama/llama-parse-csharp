@@ -2577,9 +2577,7 @@ public sealed record class ProcessingOptions : JsonModel
     /// detected as forms, producing a structured tree of the form's sections, fields,
     /// and fillable grids. Retrieve the result with expand=forms. 'default' (the
     /// default) applies standard parsing with no extra pass. Not available on the
-    /// fast tier. 'enrich_pro' reads forms with higher accuracy than 'enrich' and
-    /// returns the same expand=forms tree; it is available on tier='agentic_plus'
-    /// with version 'latest' or 2026-11-17 or later
+    /// fast tier
     /// </summary>
     public ApiEnum<string, Forms>? Forms
     {
@@ -9684,17 +9682,13 @@ class CostOptimizerFromRaw : IFromRawJson<CostOptimizer>
 /// Beta: set to 'enrich' to run an additional AI form-analysis pass on pages detected
 /// as forms, producing a structured tree of the form's sections, fields, and fillable
 /// grids. Retrieve the result with expand=forms. 'default' (the default) applies
-/// standard parsing with no extra pass. Not available on the fast tier. 'enrich_pro'
-/// reads forms with higher accuracy than 'enrich' and returns the same expand=forms
-/// tree; it is available on tier='agentic_plus' with version 'latest' or 2026-11-17
-/// or later
+/// standard parsing with no extra pass. Not available on the fast tier
 /// </summary>
 [JsonConverter(typeof(FormsConverter))]
 public enum Forms
 {
     Default,
     Enrich,
-    EnrichPro,
 }
 
 sealed class FormsConverter : JsonConverter<Forms>
@@ -9709,7 +9703,6 @@ sealed class FormsConverter : JsonConverter<Forms>
         {
             "default" => Forms.Default,
             "enrich" => Forms.Enrich,
-            "enrich_pro" => Forms.EnrichPro,
             _ => (Forms)(-1),
         };
     }
@@ -9722,7 +9715,6 @@ sealed class FormsConverter : JsonConverter<Forms>
             {
                 Forms.Default => "default",
                 Forms.Enrich => "enrich",
-                Forms.EnrichPro => "enrich_pro",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

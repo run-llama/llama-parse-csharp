@@ -103,8 +103,9 @@ public sealed record class FormField : JsonModel
 
     /// <summary>
     /// `[start, end)` UTF-8 byte offsets of the field's printed caption (a table
-    /// cell's column header) in its page's `markdown` string (forms=enrich_pro only).
-    /// Absent when it has no place in the markdown
+    /// cell's column header) in its page's `markdown` string, on some Agentic Plus
+    /// jobs from version 2026-11-19. Absent on other jobs and when it has no place
+    /// in the markdown
     /// </summary>
     public IReadOnlyList<JsonElement>? LabelMarkdownSpan
     {
@@ -126,9 +127,9 @@ public sealed record class FormField : JsonModel
 
     /// <summary>
     /// `[start, end)` UTF-8 byte offsets of the field's value in its page's `markdown`
-    /// string (forms=enrich_pro only). A checkbox covers its `[x]` or `[ ]`, and
-    /// a blank table cell covers the whole cell. Absent when the value has no place
-    /// in the markdown
+    /// string, on some Agentic Plus jobs from version 2026-11-19. A checkbox covers
+    /// its `[x]` or `[ ]`, and a blank table cell covers the whole cell. Absent
+    /// on other jobs and when the value has no place in the markdown
     /// </summary>
     public IReadOnlyList<JsonElement>? MarkdownSpan
     {
