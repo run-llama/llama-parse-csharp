@@ -75,6 +75,26 @@ public sealed record class FormSection : JsonModel
     }
 
     /// <summary>
+    /// `[start, end)` UTF-8 byte offsets of the section heading in its page's `markdown`
+    /// string (forms=enrich_pro only). Absent when it has no place in the markdown
+    /// </summary>
+    public IReadOnlyList<JsonElement>? MarkdownSpan
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<JsonElement>>("markdown_span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>?>(
+                "markdown_span",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Form section node
     /// </summary>
     public ApiEnum<string, FormSectionType>? Type
@@ -105,6 +125,7 @@ public sealed record class FormSection : JsonModel
         _ = this.ID;
         this.Grounding?.Validate();
         _ = this.Label;
+        _ = this.MarkdownSpan;
         this.Type?.Validate();
     }
 

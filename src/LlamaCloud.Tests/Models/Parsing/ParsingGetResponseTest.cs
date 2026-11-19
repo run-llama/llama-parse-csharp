@@ -311,6 +311,16 @@ public class ParsingGetResponseTest : TestBase
                                         },
                                         IsEmpty = true,
                                         Label = "label",
+                                        LabelMarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormFieldType.Field,
                                         Value = "string",
                                         ValueItems =
@@ -719,6 +729,15 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                         Html = "html",
                                                         Label = "label",
+                                                        MarkdownSpan =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
                                                         Type = Parsing::FormTableType.Table,
                                                     },
                                                 ],
@@ -891,6 +910,11 @@ public class ParsingGetResponseTest : TestBase
                                                     ),
                                                 },
                                                 Label = "label",
+                                                MarkdownSpan =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
                                                 Type = Parsing::FormSectionType.Section,
                                             },
                                         ],
@@ -1390,6 +1414,16 @@ public class ParsingGetResponseTest : TestBase
                                     },
                                     IsEmpty = true,
                                     Label = "label",
+                                    LabelMarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormFieldType.Field,
                                     Value = "string",
                                     ValueItems =
@@ -1788,6 +1822,15 @@ public class ParsingGetResponseTest : TestBase
                                                     },
                                                     Html = "html",
                                                     Label = "label",
+                                                    MarkdownSpan =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
                                                     Type = Parsing::FormTableType.Table,
                                                 },
                                             ],
@@ -1960,6 +2003,11 @@ public class ParsingGetResponseTest : TestBase
                                                 ),
                                             },
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormSectionType.Section,
                                         },
                                     ],
@@ -2498,6 +2546,16 @@ public class ParsingGetResponseTest : TestBase
                                         },
                                         IsEmpty = true,
                                         Label = "label",
+                                        LabelMarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormFieldType.Field,
                                         Value = "string",
                                         ValueItems =
@@ -2906,6 +2964,15 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                         Html = "html",
                                                         Label = "label",
+                                                        MarkdownSpan =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
                                                         Type = Parsing::FormTableType.Table,
                                                     },
                                                 ],
@@ -3078,6 +3145,11 @@ public class ParsingGetResponseTest : TestBase
                                                     ),
                                                 },
                                                 Label = "label",
+                                                MarkdownSpan =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
                                                 Type = Parsing::FormSectionType.Section,
                                             },
                                         ],
@@ -3591,6 +3663,16 @@ public class ParsingGetResponseTest : TestBase
                                         },
                                         IsEmpty = true,
                                         Label = "label",
+                                        LabelMarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormFieldType.Field,
                                         Value = "string",
                                         ValueItems =
@@ -3999,6 +4081,15 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                         Html = "html",
                                                         Label = "label",
+                                                        MarkdownSpan =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
                                                         Type = Parsing::FormTableType.Table,
                                                     },
                                                 ],
@@ -4171,6 +4262,11 @@ public class ParsingGetResponseTest : TestBase
                                                     ),
                                                 },
                                                 Label = "label",
+                                                MarkdownSpan =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
                                                 Type = Parsing::FormSectionType.Section,
                                             },
                                         ],
@@ -4677,6 +4773,16 @@ public class ParsingGetResponseTest : TestBase
                                     },
                                     IsEmpty = true,
                                     Label = "label",
+                                    LabelMarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormFieldType.Field,
                                     Value = "string",
                                     ValueItems =
@@ -5075,6 +5181,15 @@ public class ParsingGetResponseTest : TestBase
                                                     },
                                                     Html = "html",
                                                     Label = "label",
+                                                    MarkdownSpan =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
                                                     Type = Parsing::FormTableType.Table,
                                                 },
                                             ],
@@ -5247,6 +5362,11 @@ public class ParsingGetResponseTest : TestBase
                                                 ),
                                             },
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormSectionType.Section,
                                         },
                                     ],
@@ -5785,6 +5905,16 @@ public class ParsingGetResponseTest : TestBase
                                         },
                                         IsEmpty = true,
                                         Label = "label",
+                                        LabelMarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormFieldType.Field,
                                         Value = "string",
                                         ValueItems =
@@ -6193,6 +6323,15 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                         Html = "html",
                                                         Label = "label",
+                                                        MarkdownSpan =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
                                                         Type = Parsing::FormTableType.Table,
                                                     },
                                                 ],
@@ -6365,6 +6504,11 @@ public class ParsingGetResponseTest : TestBase
                                                     ),
                                                 },
                                                 Label = "label",
+                                                MarkdownSpan =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
                                                 Type = Parsing::FormSectionType.Section,
                                             },
                                         ],
@@ -7046,6 +7190,16 @@ public class ParsingGetResponseTest : TestBase
                                         },
                                         IsEmpty = true,
                                         Label = "label",
+                                        LabelMarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormFieldType.Field,
                                         Value = "string",
                                         ValueItems =
@@ -7454,6 +7608,15 @@ public class ParsingGetResponseTest : TestBase
                                                         },
                                                         Html = "html",
                                                         Label = "label",
+                                                        MarkdownSpan =
+                                                        [
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                            JsonSerializer.Deserialize<JsonElement>(
+                                                                "{}"
+                                                            ),
+                                                        ],
                                                         Type = Parsing::FormTableType.Table,
                                                     },
                                                 ],
@@ -7626,6 +7789,11 @@ public class ParsingGetResponseTest : TestBase
                                                     ),
                                                 },
                                                 Label = "label",
+                                                MarkdownSpan =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
                                                 Type = Parsing::FormSectionType.Section,
                                             },
                                         ],
@@ -8575,6 +8743,16 @@ public class ParsingGetResponseFormsTest : TestBase
                                     },
                                     IsEmpty = true,
                                     Label = "label",
+                                    LabelMarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormFieldType.Field,
                                     Value = "string",
                                     ValueItems =
@@ -8973,6 +9151,15 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                     Html = "html",
                                                     Label = "label",
+                                                    MarkdownSpan =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
                                                     Type = Parsing::FormTableType.Table,
                                                 },
                                             ],
@@ -9145,6 +9332,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 ),
                                             },
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormSectionType.Section,
                                         },
                                     ],
@@ -9443,6 +9635,16 @@ public class ParsingGetResponseFormsTest : TestBase
                                 },
                                 IsEmpty = true,
                                 Label = "label",
+                                LabelMarkdownSpan =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                MarkdownSpan =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
                                 Type = Parsing::FormFieldType.Field,
                                 Value = "string",
                                 ValueItems =
@@ -9823,6 +10025,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 },
                                                 Html = "html",
                                                 Label = "label",
+                                                MarkdownSpan =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
                                                 Type = Parsing::FormTableType.Table,
                                             },
                                         ],
@@ -9995,6 +10202,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                             ),
                                         },
                                         Label = "label",
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormSectionType.Section,
                                     },
                                 ],
@@ -10316,6 +10528,16 @@ public class ParsingGetResponseFormsTest : TestBase
                                     },
                                     IsEmpty = true,
                                     Label = "label",
+                                    LabelMarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormFieldType.Field,
                                     Value = "string",
                                     ValueItems =
@@ -10714,6 +10936,15 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                     Html = "html",
                                                     Label = "label",
+                                                    MarkdownSpan =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
                                                     Type = Parsing::FormTableType.Table,
                                                 },
                                             ],
@@ -10886,6 +11117,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 ),
                                             },
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormSectionType.Section,
                                         },
                                     ],
@@ -11210,6 +11446,16 @@ public class ParsingGetResponseFormsTest : TestBase
                                     },
                                     IsEmpty = true,
                                     Label = "label",
+                                    LabelMarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormFieldType.Field,
                                     Value = "string",
                                     ValueItems =
@@ -11608,6 +11854,15 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                     Html = "html",
                                                     Label = "label",
+                                                    MarkdownSpan =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
                                                     Type = Parsing::FormTableType.Table,
                                                 },
                                             ],
@@ -11780,6 +12035,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 ),
                                             },
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormSectionType.Section,
                                         },
                                     ],
@@ -12085,6 +12345,16 @@ public class ParsingGetResponseFormsTest : TestBase
                                 },
                                 IsEmpty = true,
                                 Label = "label",
+                                LabelMarkdownSpan =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
+                                MarkdownSpan =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
                                 Type = Parsing::FormFieldType.Field,
                                 Value = "string",
                                 ValueItems =
@@ -12465,6 +12735,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 },
                                                 Html = "html",
                                                 Label = "label",
+                                                MarkdownSpan =
+                                                [
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                ],
                                                 Type = Parsing::FormTableType.Table,
                                             },
                                         ],
@@ -12637,6 +12912,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                             ),
                                         },
                                         Label = "label",
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormSectionType.Section,
                                     },
                                 ],
@@ -12958,6 +13238,16 @@ public class ParsingGetResponseFormsTest : TestBase
                                     },
                                     IsEmpty = true,
                                     Label = "label",
+                                    LabelMarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormFieldType.Field,
                                     Value = "string",
                                     ValueItems =
@@ -13356,6 +13646,15 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                     Html = "html",
                                                     Label = "label",
+                                                    MarkdownSpan =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
                                                     Type = Parsing::FormTableType.Table,
                                                 },
                                             ],
@@ -13528,6 +13827,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 ),
                                             },
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormSectionType.Section,
                                         },
                                     ],
@@ -13846,6 +14150,16 @@ public class ParsingGetResponseFormsTest : TestBase
                                     },
                                     IsEmpty = true,
                                     Label = "label",
+                                    LabelMarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormFieldType.Field,
                                     Value = "string",
                                     ValueItems =
@@ -14244,6 +14558,15 @@ public class ParsingGetResponseFormsTest : TestBase
                                                     },
                                                     Html = "html",
                                                     Label = "label",
+                                                    MarkdownSpan =
+                                                    [
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                        JsonSerializer.Deserialize<JsonElement>(
+                                                            "{}"
+                                                        ),
+                                                    ],
                                                     Type = Parsing::FormTableType.Table,
                                                 },
                                             ],
@@ -14416,6 +14739,11 @@ public class ParsingGetResponseFormsTest : TestBase
                                                 ),
                                             },
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormSectionType.Section,
                                         },
                                     ],
@@ -14723,6 +15051,16 @@ public class PageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -15099,6 +15437,11 @@ public class PageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -15271,6 +15614,11 @@ public class PageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -15577,6 +15925,16 @@ public class PageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -15953,6 +16311,11 @@ public class PageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -16125,6 +16488,11 @@ public class PageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -16446,6 +16814,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -16822,6 +17200,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -16994,6 +17377,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -17274,6 +17662,16 @@ public class FormsResultPageTest : TestBase
                         },
                         IsEmpty = true,
                         Label = "label",
+                        LabelMarkdownSpan =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        MarkdownSpan =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
                         Type = Parsing::FormFieldType.Field,
                         Value = "string",
                         ValueItems =
@@ -17646,6 +18044,11 @@ public class FormsResultPageTest : TestBase
                                         },
                                         Html = "html",
                                         Label = "label",
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormTableType.Table,
                                     },
                                 ],
@@ -17810,6 +18213,11 @@ public class FormsResultPageTest : TestBase
                                     ),
                                 },
                                 Label = "label",
+                                MarkdownSpan =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
                                 Type = Parsing::FormSectionType.Section,
                             },
                         ],
@@ -18124,6 +18532,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -18500,6 +18918,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -18672,6 +19095,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -18978,6 +19406,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -19354,6 +19792,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -19526,6 +19969,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -19813,6 +20261,16 @@ public class FormsResultPageTest : TestBase
                         },
                         IsEmpty = true,
                         Label = "label",
+                        LabelMarkdownSpan =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
+                        MarkdownSpan =
+                        [
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                        ],
                         Type = Parsing::FormFieldType.Field,
                         Value = "string",
                         ValueItems =
@@ -20185,6 +20643,11 @@ public class FormsResultPageTest : TestBase
                                         },
                                         Html = "html",
                                         Label = "label",
+                                        MarkdownSpan =
+                                        [
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        ],
                                         Type = Parsing::FormTableType.Table,
                                     },
                                 ],
@@ -20349,6 +20812,11 @@ public class FormsResultPageTest : TestBase
                                     ),
                                 },
                                 Label = "label",
+                                MarkdownSpan =
+                                [
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    JsonSerializer.Deserialize<JsonElement>("{}"),
+                                ],
                                 Type = Parsing::FormSectionType.Section,
                             },
                         ],
@@ -20663,6 +21131,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -21039,6 +21517,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -21211,6 +21694,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -21511,6 +21999,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -21887,6 +22385,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -22059,6 +22562,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -22361,6 +22869,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -22737,6 +23255,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -22909,6 +23432,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -23206,6 +23734,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -23582,6 +24120,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -23754,6 +24297,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -24060,6 +24608,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -24436,6 +24994,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -24608,6 +25171,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],
@@ -24909,6 +25477,16 @@ public class FormsResultPageTest : TestBase
                             },
                             IsEmpty = true,
                             Label = "label",
+                            LabelMarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = Parsing::FormFieldType.Field,
                             Value = "string",
                             ValueItems =
@@ -25285,6 +25863,11 @@ public class FormsResultPageTest : TestBase
                                             },
                                             Html = "html",
                                             Label = "label",
+                                            MarkdownSpan =
+                                            [
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                            ],
                                             Type = Parsing::FormTableType.Table,
                                         },
                                     ],
@@ -25457,6 +26040,11 @@ public class FormsResultPageTest : TestBase
                                         ),
                                     },
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = Parsing::FormSectionType.Section,
                                 },
                             ],

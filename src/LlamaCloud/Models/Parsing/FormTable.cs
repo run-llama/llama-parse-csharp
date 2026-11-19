@@ -135,6 +135,26 @@ public sealed record class FormTable : JsonModel
     }
 
     /// <summary>
+    /// `[start, end)` UTF-8 byte offsets of the table caption in its page's `markdown`
+    /// string (forms=enrich_pro only). Absent when it has no place in the markdown
+    /// </summary>
+    public IReadOnlyList<JsonElement>? MarkdownSpan
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<JsonElement>>("markdown_span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>?>(
+                "markdown_span",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Form table node
     /// </summary>
     public ApiEnum<string, FormTableType>? Type
@@ -174,6 +194,7 @@ public sealed record class FormTable : JsonModel
         this.Grounding?.Validate();
         _ = this.Html;
         _ = this.Label;
+        _ = this.MarkdownSpan;
         this.Type?.Validate();
     }
 

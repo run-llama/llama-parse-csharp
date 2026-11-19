@@ -102,6 +102,51 @@ public sealed record class FormField : JsonModel
     }
 
     /// <summary>
+    /// `[start, end)` UTF-8 byte offsets of the field's printed caption (a table
+    /// cell's column header) in its page's `markdown` string (forms=enrich_pro only).
+    /// Absent when it has no place in the markdown
+    /// </summary>
+    public IReadOnlyList<JsonElement>? LabelMarkdownSpan
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<JsonElement>>(
+                "label_markdown_span"
+            );
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>?>(
+                "label_markdown_span",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte offsets of the field's value in its page's `markdown`
+    /// string (forms=enrich_pro only). A checkbox covers its `[x]` or `[ ]`, and
+    /// a blank table cell covers the whole cell. Absent when the value has no place
+    /// in the markdown
+    /// </summary>
+    public IReadOnlyList<JsonElement>? MarkdownSpan
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<JsonElement>>("markdown_span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>?>(
+                "markdown_span",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Form field node
     /// </summary>
     public ApiEnum<string, FormFieldType>? Type
@@ -167,6 +212,8 @@ public sealed record class FormField : JsonModel
         this.Grounding?.Validate();
         _ = this.IsEmpty;
         _ = this.Label;
+        _ = this.LabelMarkdownSpan;
+        _ = this.MarkdownSpan;
         this.Type?.Validate();
         this.Value?.Validate();
         foreach (var item in this.ValueItems ?? [])

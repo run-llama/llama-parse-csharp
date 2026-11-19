@@ -331,6 +331,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
             Type = FormTableType.Table,
         };
 
@@ -648,6 +653,11 @@ public class FormTableTest : TestBase
         };
         string expectedHtml = "html";
         string expectedLabel = "label";
+        List<JsonElement> expectedMarkdownSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
         ApiEnum<string, FormTableType> expectedType = FormTableType.Table;
 
         Assert.Equal(expectedRows.Count, model.Rows.Count);
@@ -675,6 +685,12 @@ public class FormTableTest : TestBase
         Assert.Equal(expectedGrounding, model.Grounding);
         Assert.Equal(expectedHtml, model.Html);
         Assert.Equal(expectedLabel, model.Label);
+        Assert.NotNull(model.MarkdownSpan);
+        Assert.Equal(expectedMarkdownSpan.Count, model.MarkdownSpan.Count);
+        for (int i = 0; i < expectedMarkdownSpan.Count; i++)
+        {
+            Assert.True(JsonElement.DeepEquals(expectedMarkdownSpan[i], model.MarkdownSpan[i]));
+        }
         Assert.Equal(expectedType, model.Type);
     }
 
@@ -1001,6 +1017,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
             Type = FormTableType.Table,
         };
 
@@ -1333,6 +1354,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
             Type = FormTableType.Table,
         };
 
@@ -1657,6 +1683,11 @@ public class FormTableTest : TestBase
         };
         string expectedHtml = "html";
         string expectedLabel = "label";
+        List<JsonElement> expectedMarkdownSpan =
+        [
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+            JsonSerializer.Deserialize<JsonElement>("{}"),
+        ];
         ApiEnum<string, FormTableType> expectedType = FormTableType.Table;
 
         Assert.Equal(expectedRows.Count, deserialized.Rows.Count);
@@ -1684,6 +1715,14 @@ public class FormTableTest : TestBase
         Assert.Equal(expectedGrounding, deserialized.Grounding);
         Assert.Equal(expectedHtml, deserialized.Html);
         Assert.Equal(expectedLabel, deserialized.Label);
+        Assert.NotNull(deserialized.MarkdownSpan);
+        Assert.Equal(expectedMarkdownSpan.Count, deserialized.MarkdownSpan.Count);
+        for (int i = 0; i < expectedMarkdownSpan.Count; i++)
+        {
+            Assert.True(
+                JsonElement.DeepEquals(expectedMarkdownSpan[i], deserialized.MarkdownSpan[i])
+            );
+        }
         Assert.Equal(expectedType, deserialized.Type);
     }
 
@@ -2010,6 +2049,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
             Type = FormTableType.Table,
         };
 
@@ -2339,6 +2383,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
         };
 
         Assert.Null(model.Type);
@@ -2668,6 +2717,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
         };
 
         model.Validate();
@@ -2996,6 +3050,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
 
             // Null should be interpreted as omitted for these properties
             Type = null,
@@ -3328,6 +3387,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
 
             // Null should be interpreted as omitted for these properties
             Type = null,
@@ -3360,6 +3424,8 @@ public class FormTableTest : TestBase
         Assert.False(model.RawData.ContainsKey("html"));
         Assert.Null(model.Label);
         Assert.False(model.RawData.ContainsKey("label"));
+        Assert.Null(model.MarkdownSpan);
+        Assert.False(model.RawData.ContainsKey("markdown_span"));
     }
 
     [Fact]
@@ -3394,6 +3460,7 @@ public class FormTableTest : TestBase
             Grounding = null,
             Html = null,
             Label = null,
+            MarkdownSpan = null,
         };
 
         Assert.Null(model.ID);
@@ -3408,6 +3475,8 @@ public class FormTableTest : TestBase
         Assert.True(model.RawData.ContainsKey("html"));
         Assert.Null(model.Label);
         Assert.True(model.RawData.ContainsKey("label"));
+        Assert.Null(model.MarkdownSpan);
+        Assert.True(model.RawData.ContainsKey("markdown_span"));
     }
 
     [Fact]
@@ -3427,6 +3496,7 @@ public class FormTableTest : TestBase
             Grounding = null,
             Html = null,
             Label = null,
+            MarkdownSpan = null,
         };
 
         model.Validate();
@@ -3755,6 +3825,11 @@ public class FormTableTest : TestBase
             },
             Html = "html",
             Label = "label",
+            MarkdownSpan =
+            [
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+                JsonSerializer.Deserialize<JsonElement>("{}"),
+            ],
             Type = FormTableType.Table,
         };
 
@@ -4024,6 +4099,16 @@ public class RowTest : TestBase
                     },
                     IsEmpty = true,
                     Label = "label",
+                    LabelMarkdownSpan =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    MarkdownSpan =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
                     Type = FormFieldType.Field,
                     Value = "string",
                     ValueItems =
@@ -4396,6 +4481,11 @@ public class RowTest : TestBase
                                     },
                                     Html = "html",
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = FormTableType.Table,
                                 },
                             ],
@@ -4560,6 +4650,11 @@ public class RowTest : TestBase
                                 ),
                             },
                             Label = "label",
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = FormSectionType.Section,
                         },
                     ],
@@ -4830,6 +4925,16 @@ public class RowTest : TestBase
                     },
                     IsEmpty = true,
                     Label = "label",
+                    LabelMarkdownSpan =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
+                    MarkdownSpan =
+                    [
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                    ],
                     Type = FormFieldType.Field,
                     Value = "string",
                     ValueItems =
@@ -5202,6 +5307,11 @@ public class RowTest : TestBase
                                     },
                                     Html = "html",
                                     Label = "label",
+                                    MarkdownSpan =
+                                    [
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                        JsonSerializer.Deserialize<JsonElement>("{}"),
+                                    ],
                                     Type = FormTableType.Table,
                                 },
                             ],
@@ -5366,6 +5476,11 @@ public class RowTest : TestBase
                                 ),
                             },
                             Label = "label",
+                            MarkdownSpan =
+                            [
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                                JsonSerializer.Deserialize<JsonElement>("{}"),
+                            ],
                             Type = FormSectionType.Section,
                         },
                     ],
