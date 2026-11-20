@@ -102,6 +102,52 @@ public sealed record class FormField : JsonModel
     }
 
     /// <summary>
+    /// `[start, end)` UTF-8 byte offsets of the field's printed caption (a table
+    /// cell's column header) in its page's `markdown` string, on some Agentic Plus
+    /// jobs from version 2026-11-19. Absent on other jobs and when it has no place
+    /// in the markdown
+    /// </summary>
+    public IReadOnlyList<JsonElement>? LabelMarkdownSpan
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<JsonElement>>(
+                "label_markdown_span"
+            );
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>?>(
+                "label_markdown_span",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte offsets of the field's value in its page's `markdown`
+    /// string, on some Agentic Plus jobs from version 2026-11-19. A checkbox covers
+    /// its `[x]` or `[ ]`, and a blank table cell covers the whole cell. Absent
+    /// on other jobs and when the value has no place in the markdown
+    /// </summary>
+    public IReadOnlyList<JsonElement>? MarkdownSpan
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<JsonElement>>("markdown_span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>?>(
+                "markdown_span",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Form field node
     /// </summary>
     public ApiEnum<string, FormFieldType>? Type
@@ -167,6 +213,8 @@ public sealed record class FormField : JsonModel
         this.Grounding?.Validate();
         _ = this.IsEmpty;
         _ = this.Label;
+        _ = this.LabelMarkdownSpan;
+        _ = this.MarkdownSpan;
         this.Type?.Validate();
         this.Value?.Validate();
         foreach (var item in this.ValueItems ?? [])
@@ -384,6 +432,19 @@ public sealed record class ID : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -391,6 +452,7 @@ public sealed record class ID : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public ID() { }
@@ -576,11 +638,36 @@ public sealed record class Word : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<Char>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<Char>>("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<Char>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public Word() { }
@@ -619,6 +706,86 @@ class WordFromRaw : IFromRawJson<Word>
 }
 
 /// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Char, CharFromRaw>))]
+public sealed record class Char : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public Char() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Char(Char char_)
+        : base(char_) { }
+#pragma warning restore CS8618
+
+    public Char(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Char(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CharFromRaw.FromRawUnchecked"/>
+    public static Char FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CharFromRaw : IFromRawJson<Char>
+{
+    /// <inheritdoc/>
+    public Char FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Char.FromRawUnchecked(rawData);
+}
+
+/// <summary>
 /// Supported text with half-open UTF-8 byte spans into the complete property string.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Label, LabelFromRaw>))]
@@ -644,6 +811,19 @@ public sealed record class Label : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -651,6 +831,7 @@ public sealed record class Label : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public Label() { }
@@ -836,11 +1017,36 @@ public sealed record class LabelLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<LabelLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<LabelLineWordChar>>("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<LabelLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public LabelLineWord() { }
@@ -879,6 +1085,88 @@ class LabelLineWordFromRaw : IFromRawJson<LabelLineWord>
 }
 
 /// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<LabelLineWordChar, LabelLineWordCharFromRaw>))]
+public sealed record class LabelLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public LabelLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public LabelLineWordChar(LabelLineWordChar labelLineWordChar)
+        : base(labelLineWordChar) { }
+#pragma warning restore CS8618
+
+    public LabelLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    LabelLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="LabelLineWordCharFromRaw.FromRawUnchecked"/>
+    public static LabelLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class LabelLineWordCharFromRaw : IFromRawJson<LabelLineWordChar>
+{
+    /// <inheritdoc/>
+    public LabelLineWordChar FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        LabelLineWordChar.FromRawUnchecked(rawData);
+}
+
+/// <summary>
 /// Supported text with half-open UTF-8 byte spans into the complete property string.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Value, ValueFromRaw>))]
@@ -904,6 +1192,19 @@ public sealed record class Value : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -911,6 +1212,7 @@ public sealed record class Value : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public Value() { }
@@ -1096,11 +1398,36 @@ public sealed record class ValueLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<ValueLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<ValueLineWordChar>>("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<ValueLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public ValueLineWord() { }
@@ -1136,6 +1463,88 @@ class ValueLineWordFromRaw : IFromRawJson<ValueLineWord>
     /// <inheritdoc/>
     public ValueLineWord FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         ValueLineWord.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<ValueLineWordChar, ValueLineWordCharFromRaw>))]
+public sealed record class ValueLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public ValueLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ValueLineWordChar(ValueLineWordChar valueLineWordChar)
+        : base(valueLineWordChar) { }
+#pragma warning restore CS8618
+
+    public ValueLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ValueLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ValueLineWordCharFromRaw.FromRawUnchecked"/>
+    public static ValueLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ValueLineWordCharFromRaw : IFromRawJson<ValueLineWordChar>
+{
+    /// <inheritdoc/>
+    public ValueLineWordChar FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ValueLineWordChar.FromRawUnchecked(rawData);
 }
 
 /// <summary>

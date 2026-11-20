@@ -75,6 +75,27 @@ public sealed record class FormSection : JsonModel
     }
 
     /// <summary>
+    /// `[start, end)` UTF-8 byte offsets of the section heading in its page's `markdown`
+    /// string, on some Agentic Plus jobs from version 2026-11-19. Absent on other
+    /// jobs and when it has no place in the markdown
+    /// </summary>
+    public IReadOnlyList<JsonElement>? MarkdownSpan
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<JsonElement>>("markdown_span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>?>(
+                "markdown_span",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Form section node
     /// </summary>
     public ApiEnum<string, FormSectionType>? Type
@@ -105,6 +126,7 @@ public sealed record class FormSection : JsonModel
         _ = this.ID;
         this.Grounding?.Validate();
         _ = this.Label;
+        _ = this.MarkdownSpan;
         this.Type?.Validate();
     }
 
@@ -676,6 +698,19 @@ public sealed record class FormSectionGroundingID : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -683,6 +718,7 @@ public sealed record class FormSectionGroundingID : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public FormSectionGroundingID() { }
@@ -883,11 +919,38 @@ public sealed record class FormSectionGroundingIDLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<FormSectionGroundingIDLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<FormSectionGroundingIDLineWordChar>
+            >("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<FormSectionGroundingIDLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public FormSectionGroundingIDLineWord() { }
@@ -931,6 +994,96 @@ class FormSectionGroundingIDLineWordFromRaw : IFromRawJson<FormSectionGroundingI
 }
 
 /// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        FormSectionGroundingIDLineWordChar,
+        FormSectionGroundingIDLineWordCharFromRaw
+    >)
+)]
+public sealed record class FormSectionGroundingIDLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public FormSectionGroundingIDLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FormSectionGroundingIDLineWordChar(
+        FormSectionGroundingIDLineWordChar formSectionGroundingIDLineWordChar
+    )
+        : base(formSectionGroundingIDLineWordChar) { }
+#pragma warning restore CS8618
+
+    public FormSectionGroundingIDLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FormSectionGroundingIDLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FormSectionGroundingIDLineWordCharFromRaw.FromRawUnchecked"/>
+    public static FormSectionGroundingIDLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FormSectionGroundingIDLineWordCharFromRaw : IFromRawJson<FormSectionGroundingIDLineWordChar>
+{
+    /// <inheritdoc/>
+    public FormSectionGroundingIDLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => FormSectionGroundingIDLineWordChar.FromRawUnchecked(rawData);
+}
+
+/// <summary>
 /// Supported text with half-open UTF-8 byte spans into the complete property string.
 /// </summary>
 [JsonConverter(
@@ -960,6 +1113,19 @@ public sealed record class FormSectionGroundingLabel : JsonModel
         }
     }
 
+    /// <summary>
+    /// Bounding box with coordinates and optional metadata.
+    /// </summary>
+    public BBox? Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -967,6 +1133,7 @@ public sealed record class FormSectionGroundingLabel : JsonModel
         {
             item.Validate();
         }
+        this.Bbox?.Validate();
     }
 
     public FormSectionGroundingLabel() { }
@@ -1169,11 +1336,38 @@ public sealed record class FormSectionGroundingLabelLineWord : JsonModel
         }
     }
 
+    /// <summary>
+    /// Per-character grounding within the word, present when `granular_bboxes` includes
+    /// 'char' (Agentic Plus only). Each box is an even split of the word box across
+    /// the word's characters.
+    /// </summary>
+    public IReadOnlyList<FormSectionGroundingLabelLineWordChar>? Chars
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<FormSectionGroundingLabelLineWordChar>
+            >("chars");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<FormSectionGroundingLabelLineWordChar>?>(
+                "chars",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Bbox.Validate();
         _ = this.Span;
+        foreach (var item in this.Chars ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public FormSectionGroundingLabelLineWord() { }
@@ -1214,6 +1408,97 @@ class FormSectionGroundingLabelLineWordFromRaw : IFromRawJson<FormSectionGroundi
     public FormSectionGroundingLabelLineWord FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => FormSectionGroundingLabelLineWord.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// One grounded character: a `[start, end)` span in the source text and its bbox.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        FormSectionGroundingLabelLineWordChar,
+        FormSectionGroundingLabelLineWordCharFromRaw
+    >)
+)]
+public sealed record class FormSectionGroundingLabelLineWordChar : JsonModel
+{
+    /// <summary>
+    /// Character bounding box
+    /// </summary>
+    public required BBox Bbox
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<BBox>("bbox");
+        }
+        init { this._rawData.Set("bbox", value); }
+    }
+
+    /// <summary>
+    /// `[start, end)` UTF-8 byte span in the complete source property string
+    /// </summary>
+    public required IReadOnlyList<JsonElement> Span
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<JsonElement>>("span");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<JsonElement>>(
+                "span",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Bbox.Validate();
+        _ = this.Span;
+    }
+
+    public FormSectionGroundingLabelLineWordChar() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FormSectionGroundingLabelLineWordChar(
+        FormSectionGroundingLabelLineWordChar formSectionGroundingLabelLineWordChar
+    )
+        : base(formSectionGroundingLabelLineWordChar) { }
+#pragma warning restore CS8618
+
+    public FormSectionGroundingLabelLineWordChar(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FormSectionGroundingLabelLineWordChar(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FormSectionGroundingLabelLineWordCharFromRaw.FromRawUnchecked"/>
+    public static FormSectionGroundingLabelLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FormSectionGroundingLabelLineWordCharFromRaw
+    : IFromRawJson<FormSectionGroundingLabelLineWordChar>
+{
+    /// <inheritdoc/>
+    public FormSectionGroundingLabelLineWordChar FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => FormSectionGroundingLabelLineWordChar.FromRawUnchecked(rawData);
 }
 
 /// <summary>

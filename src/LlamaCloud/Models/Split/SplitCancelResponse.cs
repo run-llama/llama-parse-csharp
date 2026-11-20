@@ -117,6 +117,19 @@ public sealed record class SplitCancelResponse : JsonModel
     }
 
     /// <summary>
+    /// Split version used for this job.
+    /// </summary>
+    public required string Version
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("version");
+        }
+        init { this._rawData.Set("version", value); }
+    }
+
+    /// <summary>
     /// Split configuration ID used for this job.
     /// </summary>
     public string? ConfigurationID
@@ -256,6 +269,32 @@ public sealed record class SplitCancelResponse : JsonModel
         init { this._rawData.Set("updated_at", value); }
     }
 
+    /// <summary>
+    /// Advisory findings about the categories this job uses; empty when none.
+    /// </summary>
+    public IReadOnlyList<SplitCancelResponseWarning>? Warnings
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<SplitCancelResponseWarning>>(
+                "warnings"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<SplitCancelResponseWarning>?>(
+                "warnings",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -269,6 +308,7 @@ public sealed record class SplitCancelResponse : JsonModel
         _ = this.ProjectID;
         _ = this.Status;
         _ = this.UserID;
+        _ = this.Version;
         _ = this.ConfigurationID;
         _ = this.CreatedAt;
         _ = this.ErrorMessage;
@@ -279,6 +319,10 @@ public sealed record class SplitCancelResponse : JsonModel
         _ = this.TargetPages;
         _ = this.TransactionID;
         _ = this.UpdatedAt;
+        foreach (var item in this.Warnings ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public SplitCancelResponse() { }
@@ -444,12 +488,30 @@ public sealed record class SplitCancelResponseSplittingStrategy : JsonModel
         }
     }
 
+    /// <summary>
+    /// Where a new segment starts: document at each new document, category wherever
+    /// the category changes. Unset means document. category requires version 1.3.0
+    /// or later.
+    /// </summary>
+    public ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>? SegmentBoundary
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>
+            >("segment_boundary");
+        }
+        init { this._rawData.Set("segment_boundary", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.AllowUncategorized?.Validate();
         _ = this.CustomInstructions;
         _ = this.MinPagesPerSplit;
+        this.SegmentBoundary?.Validate();
     }
 
     public SplitCancelResponseSplittingStrategy() { }
@@ -538,6 +600,210 @@ sealed class SplitCancelResponseSplittingStrategyAllowUncategorizedConverter
                 SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid => "forbid",
                 SplitCancelResponseSplittingStrategyAllowUncategorized.Include => "include",
                 SplitCancelResponseSplittingStrategyAllowUncategorized.Omit => "omit",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Where a new segment starts: document at each new document, category wherever
+/// the category changes. Unset means document. category requires version 1.3.0 or later.
+/// </summary>
+[JsonConverter(typeof(SplitCancelResponseSplittingStrategySegmentBoundaryConverter))]
+public enum SplitCancelResponseSplittingStrategySegmentBoundary
+{
+    Category,
+    Document,
+}
+
+sealed class SplitCancelResponseSplittingStrategySegmentBoundaryConverter
+    : JsonConverter<SplitCancelResponseSplittingStrategySegmentBoundary>
+{
+    public override SplitCancelResponseSplittingStrategySegmentBoundary Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "category" => SplitCancelResponseSplittingStrategySegmentBoundary.Category,
+            "document" => SplitCancelResponseSplittingStrategySegmentBoundary.Document,
+            _ => (SplitCancelResponseSplittingStrategySegmentBoundary)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SplitCancelResponseSplittingStrategySegmentBoundary value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SplitCancelResponseSplittingStrategySegmentBoundary.Category => "category",
+                SplitCancelResponseSplittingStrategySegmentBoundary.Document => "document",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Advisory finding about split categories; the job still runs.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<SplitCancelResponseWarning, SplitCancelResponseWarningFromRaw>)
+)]
+public sealed record class SplitCancelResponseWarning : JsonModel
+{
+    /// <summary>
+    /// Names of the categories the warning concerns.
+    /// </summary>
+    public required IReadOnlyList<string> CategoryNames
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<string>>("category_names");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<string>>(
+                "category_names",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// Rule that produced the warning.
+    /// </summary>
+    public required ApiEnum<string, SplitCancelResponseWarningCode> Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, SplitCancelResponseWarningCode>>(
+                "code"
+            );
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <summary>
+    /// What is ambiguous and how to fix it.
+    /// </summary>
+    public required string Message
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("message");
+        }
+        init { this._rawData.Set("message", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.CategoryNames;
+        this.Code.Validate();
+        _ = this.Message;
+    }
+
+    public SplitCancelResponseWarning() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SplitCancelResponseWarning(SplitCancelResponseWarning splitCancelResponseWarning)
+        : base(splitCancelResponseWarning) { }
+#pragma warning restore CS8618
+
+    public SplitCancelResponseWarning(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SplitCancelResponseWarning(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SplitCancelResponseWarningFromRaw.FromRawUnchecked"/>
+    public static SplitCancelResponseWarning FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SplitCancelResponseWarningFromRaw : IFromRawJson<SplitCancelResponseWarning>
+{
+    /// <inheritdoc/>
+    public SplitCancelResponseWarning FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => SplitCancelResponseWarning.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Rule that produced the warning.
+/// </summary>
+[JsonConverter(typeof(SplitCancelResponseWarningCodeConverter))]
+public enum SplitCancelResponseWarningCode
+{
+    CatchAllCategory,
+    MissingDescription,
+    NearDuplicateDescription,
+    NearDuplicateName,
+}
+
+sealed class SplitCancelResponseWarningCodeConverter : JsonConverter<SplitCancelResponseWarningCode>
+{
+    public override SplitCancelResponseWarningCode Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "catch_all_category" => SplitCancelResponseWarningCode.CatchAllCategory,
+            "missing_description" => SplitCancelResponseWarningCode.MissingDescription,
+            "near_duplicate_description" => SplitCancelResponseWarningCode.NearDuplicateDescription,
+            "near_duplicate_name" => SplitCancelResponseWarningCode.NearDuplicateName,
+            _ => (SplitCancelResponseWarningCode)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SplitCancelResponseWarningCode value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SplitCancelResponseWarningCode.CatchAllCategory => "catch_all_category",
+                SplitCancelResponseWarningCode.MissingDescription => "missing_description",
+                SplitCancelResponseWarningCode.NearDuplicateDescription =>
+                    "near_duplicate_description",
+                SplitCancelResponseWarningCode.NearDuplicateName => "near_duplicate_name",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

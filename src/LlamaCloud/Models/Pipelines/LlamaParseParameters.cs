@@ -1562,11 +1562,25 @@ sealed class PriorityConverter : JsonConverter<Priority>
 }
 
 /// <summary>
-/// Configuration for a single outbound webhook endpoint.
+/// A webhook endpoint kept in a saved configuration or pipeline.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<WebhookConfiguration, WebhookConfigurationFromRaw>))]
 public sealed record class WebhookConfiguration : JsonModel
 {
+    /// <summary>
+    /// Webhook ID, set by the server. Send it back unchanged so a masked credential
+    /// keeps this webhook's saved value.
+    /// </summary>
+    public string? ID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("id");
+        }
+        init { this._rawData.Set("id", value); }
+    }
+
     /// <summary>
     /// Events to subscribe to (e.g. 'parse.success', 'extract.error'). If null, all
     /// events are delivered.
@@ -1655,6 +1669,7 @@ public sealed record class WebhookConfiguration : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.ID;
         foreach (var item in this.WebhookEvents ?? [])
         {
             item.Validate();
@@ -1721,6 +1736,7 @@ public enum WebhookEvent
     ExtractError,
     ExtractPartialSuccess,
     ExtractPending,
+    ExtractRunning,
     ExtractSuccess,
     ParseCancelled,
     ParseError,
@@ -1771,6 +1787,7 @@ sealed class WebhookEventConverter : JsonConverter<WebhookEvent>
             "extract.error" => WebhookEvent.ExtractError,
             "extract.partial_success" => WebhookEvent.ExtractPartialSuccess,
             "extract.pending" => WebhookEvent.ExtractPending,
+            "extract.running" => WebhookEvent.ExtractRunning,
             "extract.success" => WebhookEvent.ExtractSuccess,
             "parse.cancelled" => WebhookEvent.ParseCancelled,
             "parse.error" => WebhookEvent.ParseError,
@@ -1823,6 +1840,7 @@ sealed class WebhookEventConverter : JsonConverter<WebhookEvent>
                 WebhookEvent.ExtractError => "extract.error",
                 WebhookEvent.ExtractPartialSuccess => "extract.partial_success",
                 WebhookEvent.ExtractPending => "extract.pending",
+                WebhookEvent.ExtractRunning => "extract.running",
                 WebhookEvent.ExtractSuccess => "extract.success",
                 WebhookEvent.ParseCancelled => "parse.cancelled",
                 WebhookEvent.ParseError => "parse.error",

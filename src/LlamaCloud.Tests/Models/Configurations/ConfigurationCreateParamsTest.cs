@@ -254,6 +254,7 @@ public class ParametersTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Configurations::Effort.Max,
             ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -398,6 +399,8 @@ public class ParametersTest : TestBase
                             Tier = Configurations::ParsingConfTier.Agentic,
                             Version = Configurations::ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -407,6 +410,7 @@ public class ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = Configurations::MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -454,6 +458,7 @@ public class ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -481,6 +486,7 @@ public class ParametersTest : TestBase
                 AllowUncategorized = Configurations::AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = Configurations::SegmentBoundary.Category,
             },
             TargetPages = "1,3,5-7",
             Version = "latest",
@@ -564,6 +570,7 @@ public class ParametersTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Configurations::Effort.Max,
             ExtractionTarget = Configurations::ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -714,6 +721,8 @@ public class ParametersTest : TestBase
                             Tier = Configurations::ParsingConfTier.Agentic,
                             Version = Configurations::ParsingConfVersion.Latest,
                         },
+                        DocumentLongerThanNPages = 5,
+                        DocumentShorterThanNPages = 5,
                         FilenameMatchGlob = "*.txt",
                         FilenameMatchGlobList = ["string"],
                         FilenameRegexp = "filename_regexp",
@@ -723,6 +732,7 @@ public class ParametersTest : TestBase
                         ImageInPage = true,
                         LayoutElementInPage = "layout_element_in_page",
                         LayoutElementInPageConfidenceThreshold = 0,
+                        MinComplexity = Configurations::MinComplexity.High,
                         PageContainsAtLeastNCharts = 0,
                         PageContainsAtLeastNImages = 0,
                         PageContainsAtLeastNLayoutElements = 0,
@@ -770,6 +780,7 @@ public class ParametersTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents = ["parse.success", "parse.error"],
                     WebhookHeaders = new Dictionary<string, JsonElement>()
                     {
@@ -803,6 +814,7 @@ public class ParametersTest : TestBase
                 AllowUncategorized = Configurations::AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = Configurations::SegmentBoundary.Category,
             },
             TargetPages = "1,3,5-7",
             Version = "latest",

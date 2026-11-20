@@ -24,6 +24,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -45,10 +46,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -66,6 +78,7 @@ public class SplitListPageResponseTest : TestBase
                 ProjectID = "project_id",
                 Status = "status",
                 UserID = "user_id",
+                Version = "1.1.0",
                 ConfigurationID = "configuration_id",
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 ErrorMessage = "error_message",
@@ -87,10 +100,20 @@ public class SplitListPageResponseTest : TestBase
                         SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
+                    SegmentBoundary = SplitListResponseSplittingStrategySegmentBoundary.Category,
                 },
                 TargetPages = "target_pages",
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Warnings =
+                [
+                    new()
+                    {
+                        CategoryNames = ["string"],
+                        Code = SplitListResponseWarningCode.CatchAllCategory,
+                        Message = "message",
+                    },
+                ],
             },
         ];
         string expectedNextPageToken = "next_page_token";
@@ -121,6 +144,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -142,10 +166,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -177,6 +212,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -198,10 +234,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -226,6 +273,7 @@ public class SplitListPageResponseTest : TestBase
                 ProjectID = "project_id",
                 Status = "status",
                 UserID = "user_id",
+                Version = "1.1.0",
                 ConfigurationID = "configuration_id",
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 ErrorMessage = "error_message",
@@ -247,10 +295,20 @@ public class SplitListPageResponseTest : TestBase
                         SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
+                    SegmentBoundary = SplitListResponseSplittingStrategySegmentBoundary.Category,
                 },
                 TargetPages = "target_pages",
                 TransactionID = "transaction_id",
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Warnings =
+                [
+                    new()
+                    {
+                        CategoryNames = ["string"],
+                        Code = SplitListResponseWarningCode.CatchAllCategory,
+                        Message = "message",
+                    },
+                ],
             },
         ];
         string expectedNextPageToken = "next_page_token";
@@ -281,6 +339,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -302,10 +361,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",
@@ -331,6 +401,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -352,10 +423,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
         };
@@ -382,6 +464,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -403,10 +486,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
         };
@@ -430,6 +524,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -451,10 +546,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
 
@@ -484,6 +590,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -505,10 +612,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
 
@@ -535,6 +653,7 @@ public class SplitListPageResponseTest : TestBase
                     ProjectID = "project_id",
                     Status = "status",
                     UserID = "user_id",
+                    Version = "1.1.0",
                     ConfigurationID = "configuration_id",
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ErrorMessage = "error_message",
@@ -556,10 +675,21 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Warnings =
+                    [
+                        new()
+                        {
+                            CategoryNames = ["string"],
+                            Code = SplitListResponseWarningCode.CatchAllCategory,
+                            Message = "message",
+                        },
+                    ],
                 },
             ],
             NextPageToken = "next_page_token",

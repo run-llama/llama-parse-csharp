@@ -366,6 +366,7 @@ public enum ClassifyCreateRequestWebhookConfigurationWebhookEvent
     ExtractError,
     ExtractPartialSuccess,
     ExtractPending,
+    ExtractRunning,
     ExtractSuccess,
     ParseCancelled,
     ParseError,
@@ -426,6 +427,8 @@ sealed class ClassifyCreateRequestWebhookConfigurationWebhookEventConverter
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.ExtractPartialSuccess,
             "extract.pending" =>
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.ExtractPending,
+            "extract.running" =>
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.ExtractRunning,
             "extract.success" =>
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.ExtractSuccess,
             "parse.cancelled" =>
@@ -500,6 +503,8 @@ sealed class ClassifyCreateRequestWebhookConfigurationWebhookEventConverter
                     "extract.partial_success",
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.ExtractPending =>
                     "extract.pending",
+                ClassifyCreateRequestWebhookConfigurationWebhookEvent.ExtractRunning =>
+                    "extract.running",
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.ExtractSuccess =>
                     "extract.success",
                 ClassifyCreateRequestWebhookConfigurationWebhookEvent.ParseCancelled =>

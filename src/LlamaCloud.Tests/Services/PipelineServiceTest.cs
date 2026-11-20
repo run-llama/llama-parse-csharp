@@ -39,11 +39,11 @@ public class PipelineServiceTest : TestBase
     [Fact(Skip = "Mock server tests are disabled")]
     public async Task List_Works()
     {
-        var pipelines = await this.client.Pipelines.List(
+        var pipelineListItems = await this.client.Pipelines.List(
             new(),
             TestContext.Current.CancellationToken
         );
-        foreach (var item in pipelines)
+        foreach (var item in pipelineListItems)
         {
             item.Validate();
         }

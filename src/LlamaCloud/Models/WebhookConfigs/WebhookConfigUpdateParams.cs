@@ -270,6 +270,7 @@ public enum WebhookConfigUpdateParamsWebhookEvent
     ExtractError,
     ExtractPartialSuccess,
     ExtractPending,
+    ExtractRunning,
     ExtractSuccess,
     ParseCancelled,
     ParseError,
@@ -323,6 +324,7 @@ sealed class WebhookConfigUpdateParamsWebhookEventConverter
             "extract.partial_success" =>
                 WebhookConfigUpdateParamsWebhookEvent.ExtractPartialSuccess,
             "extract.pending" => WebhookConfigUpdateParamsWebhookEvent.ExtractPending,
+            "extract.running" => WebhookConfigUpdateParamsWebhookEvent.ExtractRunning,
             "extract.success" => WebhookConfigUpdateParamsWebhookEvent.ExtractSuccess,
             "parse.cancelled" => WebhookConfigUpdateParamsWebhookEvent.ParseCancelled,
             "parse.error" => WebhookConfigUpdateParamsWebhookEvent.ParseError,
@@ -377,6 +379,7 @@ sealed class WebhookConfigUpdateParamsWebhookEventConverter
                 WebhookConfigUpdateParamsWebhookEvent.ExtractPartialSuccess =>
                     "extract.partial_success",
                 WebhookConfigUpdateParamsWebhookEvent.ExtractPending => "extract.pending",
+                WebhookConfigUpdateParamsWebhookEvent.ExtractRunning => "extract.running",
                 WebhookConfigUpdateParamsWebhookEvent.ExtractSuccess => "extract.success",
                 WebhookConfigUpdateParamsWebhookEvent.ParseCancelled => "parse.cancelled",
                 WebhookConfigUpdateParamsWebhookEvent.ParseError => "parse.error",

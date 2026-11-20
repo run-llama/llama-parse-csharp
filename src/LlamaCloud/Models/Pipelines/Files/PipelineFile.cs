@@ -43,7 +43,8 @@ public sealed record class PipelineFile : JsonModel
     }
 
     /// <summary>
-    /// Hashes for the configuration of the pipeline.
+    /// Hashes for the configuration of the pipeline. Every hash but `transform_config_hash`
+    /// is null.
     /// </summary>
     public IReadOnlyDictionary<string, ConfigHash?>? ConfigHash
     {

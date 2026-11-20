@@ -11,13 +11,13 @@ public class ChatListParamsTest : TestBase
         var parameters = new ChatListParams
         {
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        long expectedPageSize = 0;
+        long expectedPageSize = 1;
         string expectedPageToken = "page_token";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
@@ -69,7 +69,7 @@ public class ChatListParamsTest : TestBase
         ChatListParams parameters = new()
         {
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
@@ -79,7 +79,7 @@ public class ChatListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/chat?organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=0&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                    "https://api.cloud.llamaindex.ai/api/v1/chat?organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
                 ),
                 url
             )
@@ -92,7 +92,7 @@ public class ChatListParamsTest : TestBase
         var parameters = new ChatListParams
         {
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };

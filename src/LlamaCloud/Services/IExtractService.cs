@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LlamaCloud.Core;
 using LlamaCloud.Models.Configurations;
 using LlamaCloud.Models.Extract;
+using LlamaCloud.Services.Extract;
 
 namespace LlamaCloud.Services;
 
@@ -27,6 +28,8 @@ public interface IExtractService
     /// <para>The original service is not modified.</para>
     /// </summary>
     IExtractService WithOptions(Func<ClientOptions, ClientOptions> modifier);
+
+    IReviewService Review { get; }
 
     /// <summary>
     /// Create an extraction job.
@@ -55,10 +58,12 @@ public interface IExtractService
     /// <summary>
     /// List extraction jobs with optional filtering and pagination.
     ///
-    /// <para>Filter by `configuration_id`, `status`, `file_input`, or creation date
-    /// range. Results are returned newest-first. Use `expand=configuration` to include
-    /// the full configuration used, and `expand=extract_metadata` for per-field
-    /// metadata.</para>
+    /// <para>Filter by `configuration_id`, `status`, `file_input`, `review_status`, or
+    /// creation date range. Results are returned newest-first. `review_status=pending`
+    /// lists completed jobs waiting for review, unless `status` names another. A review
+    /// stays pending when its job fails or is cancelled, so pass that `status` to list
+    /// those. Use `expand=configuration` to include the full configuration used, and
+    /// `expand=extract_metadata` for per-field metadata.</para>
     /// </summary>
     Task<ExtractListPage> List(
         ExtractListParams? parameters = null,
@@ -149,6 +154,8 @@ public interface IExtractServiceWithRawResponse
     /// <para>The original service is not modified.</para>
     /// </summary>
     IExtractServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
+
+    IReviewServiceWithRawResponse Review { get; }
 
     /// <summary>
     /// Returns a raw HTTP response for <c>post /api/v2/extract</c>, but is otherwise the

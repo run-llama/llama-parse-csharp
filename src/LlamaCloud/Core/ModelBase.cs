@@ -23,6 +23,7 @@ using Indexes = LlamaCloud.Models.Beta.Indexes;
 using Parsing = LlamaCloud.Models.Parsing;
 using Pipelines = LlamaCloud.Models.Pipelines;
 using Retrieval = LlamaCloud.Models.Beta.Retrieval;
+using Review = LlamaCloud.Models.Extract.Review;
 using Split = LlamaCloud.Models.Beta.Split;
 using Verify = LlamaCloud.Models.Alpha.Verify;
 using WebhookConfigs = LlamaCloud.Models.WebhookConfigs;
@@ -61,14 +62,23 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, VectorType>(),
             new ApiEnumConverter<string, DocumentInputType>(),
             new ApiEnumConverter<string, SplitCreateResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, SplitCreateResponseSplittingStrategySegmentBoundary>(),
+            new ApiEnumConverter<string, Code>(),
             new ApiEnumConverter<string, SplitListResponseDocumentInputType>(),
             new ApiEnumConverter<string, SplitListResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, SplitListResponseSplittingStrategySegmentBoundary>(),
+            new ApiEnumConverter<string, SplitListResponseWarningCode>(),
             new ApiEnumConverter<string, SplitCancelResponseDocumentInputType>(),
             new ApiEnumConverter<string, SplitCancelResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, SplitCancelResponseSplittingStrategySegmentBoundary>(),
+            new ApiEnumConverter<string, SplitCancelResponseWarningCode>(),
             new ApiEnumConverter<string, SplitGetResponseDocumentInputType>(),
             new ApiEnumConverter<string, SplitGetResponseSplittingStrategyAllowUncategorized>(),
+            new ApiEnumConverter<string, SplitGetResponseSplittingStrategySegmentBoundary>(),
+            new ApiEnumConverter<string, SplitGetResponseWarningCode>(),
             new ApiEnumConverter<string, ParseTier>(),
             new ApiEnumConverter<string, AllowUncategorized>(),
+            new ApiEnumConverter<string, SegmentBoundary>(),
             new ApiEnumConverter<string, WebhookEvent>(),
             new ApiEnumConverter<string, Status>(),
             new ApiEnumConverter<string, Parsing::Type>(),
@@ -110,11 +120,13 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Parsing::SpecializedChartParsing>(),
             new ApiEnumConverter<string, Parsing::ParsingConfTier>(),
             new ApiEnumConverter<string, Parsing::ParsingConfVersion>(),
+            new ApiEnumConverter<string, Parsing::MinComplexity>(),
             new ApiEnumConverter<string, Parsing::ConfidenceScoreEffort>(),
             new ApiEnumConverter<string, Parsing::Forms>(),
             new ApiEnumConverter<string, Parsing::ProcessingOptionsSpecializedChartParsing>(),
             new ApiEnumConverter<string, Parsing::WebhookOutputFormat>(),
             new ApiEnumConverter<string, Parsing::Status>(),
+            new ApiEnumConverter<string, Extract::Effort>(),
             new ApiEnumConverter<string, Extract::ExtractionTarget>(),
             new ApiEnumConverter<string, Extract::ParseTier>(),
             new ApiEnumConverter<string, Extract::Tier>(),
@@ -123,7 +135,14 @@ public abstract record class ModelBase
                 Extract::ExtractV2JobCreateWebhookConfigurationWebhookEvent
             >(),
             new ApiEnumConverter<string, Extract::WebhookEvent>(),
+            new ApiEnumConverter<string, Extract::ReviewStatus>(),
             new ApiEnumConverter<string, Extract::Status>(),
+            new ApiEnumConverter<string, Review::Action>(),
+            new ApiEnumConverter<string, Review::Reason>(),
+            new ApiEnumConverter<string, Review::Status>(),
+            new ApiEnumConverter<string, Review::Kind>(),
+            new ApiEnumConverter<string, Review::Origin>(),
+            new ApiEnumConverter<string, Review::ChangeChange>(),
             new ApiEnumConverter<string, Mode>(),
             new ApiEnumConverter<string, Batches::BatchCreateResponseConfigJobType>(),
             new ApiEnumConverter<string, Batches::BatchCreateResponseStatus>(),
@@ -173,6 +192,7 @@ public abstract record class ModelBase
                 Configurations::ConfigurationResponseParametersSpreadsheetV1Tier
             >(),
             new ApiEnumConverter<string, Configurations::ConfigurationResponseProductType>(),
+            new ApiEnumConverter<string, Configurations::Effort>(),
             new ApiEnumConverter<string, Configurations::ExtractionTarget>(),
             new ApiEnumConverter<string, Configurations::ParseTier>(),
             new ApiEnumConverter<string, Configurations::ExtractV2ParametersTier>(),
@@ -184,6 +204,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Configurations::SpecializedChartParsing>(),
             new ApiEnumConverter<string, Configurations::ParsingConfTier>(),
             new ApiEnumConverter<string, Configurations::ParsingConfVersion>(),
+            new ApiEnumConverter<string, Configurations::MinComplexity>(),
             new ApiEnumConverter<string, Configurations::ConfidenceScoreEffort>(),
             new ApiEnumConverter<string, Configurations::Forms>(),
             new ApiEnumConverter<
@@ -193,6 +214,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Configurations::WebhookOutputFormat>(),
             new ApiEnumConverter<string, Configurations::SplitV1ParametersParseTier>(),
             new ApiEnumConverter<string, Configurations::AllowUncategorized>(),
+            new ApiEnumConverter<string, Configurations::SegmentBoundary>(),
             new ApiEnumConverter<string, Configurations::TableMergeSensitivity>(),
             new ApiEnumConverter<string, Configurations::Tier>(),
             new ApiEnumConverter<
@@ -262,6 +284,15 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Pipelines::ManagedOpenAIEmbeddingComponentModelName>(),
             new ApiEnumConverter<string, Pipelines::ManagedOpenAIEmbeddingType>(),
             new ApiEnumConverter<string, Pipelines::PipelineStatus>(),
+            new ApiEnumConverter<
+                string,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingComponentModelName
+            >(),
+            new ApiEnumConverter<
+                string,
+                Pipelines::PipelineListItemEmbeddingConfigManagedOpenAIEmbeddingType
+            >(),
+            new ApiEnumConverter<string, Pipelines::PipelineListItemStatus>(),
             new ApiEnumConverter<string, Pipelines::PipelinePipelineType>(),
             new ApiEnumConverter<string, Pipelines::RetrievalMode>(),
             new ApiEnumConverter<string, Pipelines::ModelType>(),
@@ -323,6 +354,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Directories::DirectoryListParamsType>(),
             new ApiEnumConverter<string, Directories::TypeModel>(),
             new ApiEnumConverter<string, Split::AllowUncategorized>(),
+            new ApiEnumConverter<string, Split::SegmentBoundary>(),
             new ApiEnumConverter<string, Split::Status>(),
             new ApiEnumConverter<string, Verify::VerifyCreateResponseConfigurationTier>(),
             new ApiEnumConverter<string, Verify::DocumentInputType>(),

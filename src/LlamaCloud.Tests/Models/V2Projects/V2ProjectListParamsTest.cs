@@ -12,13 +12,13 @@ public class V2ProjectListParamsTest : TestBase
         {
             Name = "name",
             OrganizationID = "organization_id",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
         };
 
         string expectedName = "name";
         string expectedOrganizationID = "organization_id";
-        long expectedPageSize = 0;
+        long expectedPageSize = 1;
         string expectedPageToken = "page_token";
 
         Assert.Equal(expectedName, parameters.Name);
@@ -70,7 +70,7 @@ public class V2ProjectListParamsTest : TestBase
         {
             Name = "name",
             OrganizationID = "organization_id",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
         };
 
@@ -79,7 +79,7 @@ public class V2ProjectListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v2/projects?name=name&organization_id=organization_id&page_size=0&page_token=page_token"
+                    "https://api.cloud.llamaindex.ai/api/v2/projects?name=name&organization_id=organization_id&page_size=1&page_token=page_token"
                 ),
                 url
             )
@@ -93,7 +93,7 @@ public class V2ProjectListParamsTest : TestBase
         {
             Name = "name",
             OrganizationID = "organization_id",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
         };
 

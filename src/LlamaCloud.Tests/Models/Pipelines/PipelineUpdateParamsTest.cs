@@ -182,6 +182,7 @@ public class PipelineUpdateParamsTest : TestBase
                 [
                     new()
                     {
+                        ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                         WebhookEvents =
                         [
                             Pipelines::WebhookEvent.ParseSuccess,
@@ -431,6 +432,7 @@ public class PipelineUpdateParamsTest : TestBase
             [
                 new()
                 {
+                    ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                     WebhookEvents =
                     [
                         Pipelines::WebhookEvent.ParseSuccess,
@@ -807,6 +809,7 @@ public class PipelineUpdateParamsTest : TestBase
                 [
                     new()
                     {
+                        ID = "cwh-8f3k2m9q1x7v4b6n0p5r2t8y1w3z6",
                         WebhookEvents =
                         [
                             Pipelines::WebhookEvent.ParseSuccess,

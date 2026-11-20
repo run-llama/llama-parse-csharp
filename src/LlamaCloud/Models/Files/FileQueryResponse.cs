@@ -202,6 +202,19 @@ public sealed record class Item : JsonModel
     }
 
     /// <summary>
+    /// Recorded file size in bytes. Null means no size was recorded.
+    /// </summary>
+    public long? FileSize
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("file_size");
+        }
+        init { this._rawData.Set("file_size", value); }
+    }
+
+    /// <summary>
     /// File extension (pdf, docx, png, etc.)
     /// </summary>
     public string? FileType
@@ -250,6 +263,7 @@ public sealed record class Item : JsonModel
         this.DownloadUrl?.Validate();
         _ = this.ExpiresAt;
         _ = this.ExternalFileID;
+        _ = this.FileSize;
         _ = this.FileType;
         _ = this.LastModifiedAt;
         _ = this.Purpose;

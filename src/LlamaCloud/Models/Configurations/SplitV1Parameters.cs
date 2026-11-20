@@ -18,7 +18,8 @@ namespace LlamaCloud.Models.Configurations;
 public sealed record class SplitV1Parameters : JsonModel
 {
     /// <summary>
-    /// Categories to split documents into.
+    /// Categories to split documents into. Names must be unique; 'uncategorized'
+    /// is reserved unless allow_uncategorized is 'forbid'.
     /// </summary>
     public required IReadOnlyList<SplitCategory> Categories
     {
@@ -332,12 +333,33 @@ public sealed record class SplittingStrategy : JsonModel
         }
     }
 
+    /// <summary>
+    /// Where a new segment starts: document at each new document, category wherever
+    /// the category changes. Unset means document. category requires version 1.3.0
+    /// or later.
+    /// </summary>
+    public ApiEnum<
+        string,
+        global::LlamaCloud.Models.Configurations.SegmentBoundary
+    >? SegmentBoundary
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, global::LlamaCloud.Models.Configurations.SegmentBoundary>
+            >("segment_boundary");
+        }
+        init { this._rawData.Set("segment_boundary", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.AllowUncategorized?.Validate();
         _ = this.CustomInstructions;
         _ = this.MinPagesPerSplit;
+        this.SegmentBoundary?.Validate();
     }
 
     public SplittingStrategy() { }
@@ -426,6 +448,55 @@ sealed class AllowUncategorizedConverter
                 global::LlamaCloud.Models.Configurations.AllowUncategorized.Forbid => "forbid",
                 global::LlamaCloud.Models.Configurations.AllowUncategorized.Include => "include",
                 global::LlamaCloud.Models.Configurations.AllowUncategorized.Omit => "omit",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Where a new segment starts: document at each new document, category wherever
+/// the category changes. Unset means document. category requires version 1.3.0 or later.
+/// </summary>
+[JsonConverter(typeof(global::LlamaCloud.Models.Configurations.SegmentBoundaryConverter))]
+public enum SegmentBoundary
+{
+    Category,
+    Document,
+}
+
+sealed class SegmentBoundaryConverter
+    : JsonConverter<global::LlamaCloud.Models.Configurations.SegmentBoundary>
+{
+    public override global::LlamaCloud.Models.Configurations.SegmentBoundary Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "category" => global::LlamaCloud.Models.Configurations.SegmentBoundary.Category,
+            "document" => global::LlamaCloud.Models.Configurations.SegmentBoundary.Document,
+            _ => (global::LlamaCloud.Models.Configurations.SegmentBoundary)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        global::LlamaCloud.Models.Configurations.SegmentBoundary value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                global::LlamaCloud.Models.Configurations.SegmentBoundary.Category => "category",
+                global::LlamaCloud.Models.Configurations.SegmentBoundary.Document => "document",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -16,7 +16,7 @@ public class BatchListParamsTest : TestBase
             CreatedAtOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             CreatedAtOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SourceDirectoryID = "source_directory_id",
@@ -30,7 +30,7 @@ public class BatchListParamsTest : TestBase
             "2019-12-27T18:11:19.117Z"
         );
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        long expectedPageSize = 0;
+        long expectedPageSize = 1;
         string expectedPageToken = "page_token";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedSourceDirectoryID = "source_directory_id";
@@ -110,7 +110,7 @@ public class BatchListParamsTest : TestBase
             CreatedAtOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             CreatedAtOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SourceDirectoryID = "source_directory_id",
@@ -122,7 +122,7 @@ public class BatchListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v2/batches?created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=0&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&source_directory_id=source_directory_id&status=CANCELLED"
+                    "https://api.cloud.llamaindex.ai/api/v2/batches?created_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&source_directory_id=source_directory_id&status=CANCELLED"
                 ),
                 url
             )
@@ -137,7 +137,7 @@ public class BatchListParamsTest : TestBase
             CreatedAtOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             CreatedAtOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             SourceDirectoryID = "source_directory_id",

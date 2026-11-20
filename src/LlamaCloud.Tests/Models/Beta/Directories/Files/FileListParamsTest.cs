@@ -18,7 +18,7 @@ public class FileListParamsTest : TestBase
             FileID = "file_id",
             IncludeDeleted = true,
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UniqueID = "unique_id",
@@ -33,7 +33,7 @@ public class FileListParamsTest : TestBase
         string expectedFileID = "file_id";
         bool expectedIncludeDeleted = true;
         string expectedOrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        long expectedPageSize = 0;
+        long expectedPageSize = 1;
         string expectedPageToken = "page_token";
         string expectedProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         string expectedUniqueID = "unique_id";
@@ -75,7 +75,7 @@ public class FileListParamsTest : TestBase
             Expand = ["string", "string"],
             FileID = "file_id",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UniqueID = "unique_id",
@@ -98,7 +98,7 @@ public class FileListParamsTest : TestBase
             Expand = ["string", "string"],
             FileID = "file_id",
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UniqueID = "unique_id",
@@ -199,7 +199,7 @@ public class FileListParamsTest : TestBase
             FileID = "file_id",
             IncludeDeleted = true,
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UniqueID = "unique_id",
@@ -212,7 +212,7 @@ public class FileListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.cloud.llamaindex.ai/api/v1/beta/directories/directory_id/files?display_name=display_name&display_name_contains=display_name_contains&expand=string&expand=string&file_id=file_id&include_deleted=true&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=0&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&unique_id=unique_id&updated_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&updated_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00"
+                    "https://api.cloud.llamaindex.ai/api/v1/beta/directories/directory_id/files?display_name=display_name&display_name_contains=display_name_contains&expand=string&expand=string&file_id=file_id&include_deleted=true&organization_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_size=1&page_token=page_token&project_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&unique_id=unique_id&updated_at_on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&updated_at_on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00"
                 ),
                 url
             )
@@ -231,7 +231,7 @@ public class FileListParamsTest : TestBase
             FileID = "file_id",
             IncludeDeleted = true,
             OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PageSize = 0,
+            PageSize = 1,
             PageToken = "page_token",
             ProjectID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UniqueID = "unique_id",

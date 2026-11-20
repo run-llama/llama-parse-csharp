@@ -43,6 +43,7 @@ public class ExtractV2JobCreateTest : TestBase
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
+                Effort = Effort.Max,
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -107,6 +108,7 @@ public class ExtractV2JobCreateTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Effort.Max,
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -192,6 +194,7 @@ public class ExtractV2JobCreateTest : TestBase
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
+                Effort = Effort.Max,
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -270,6 +273,7 @@ public class ExtractV2JobCreateTest : TestBase
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
+                Effort = Effort.Max,
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -341,6 +345,7 @@ public class ExtractV2JobCreateTest : TestBase
             CiteSources = true,
             ConfidenceScores = true,
             DisableCache = true,
+            Effort = Effort.Max,
             ExtractionTarget = ExtractionTarget.PerDoc,
             MaxPages = 10,
             ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -432,6 +437,7 @@ public class ExtractV2JobCreateTest : TestBase
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
+                Effort = Effort.Max,
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -572,6 +578,7 @@ public class ExtractV2JobCreateTest : TestBase
                 CiteSources = true,
                 ConfidenceScores = true,
                 DisableCache = true,
+                Effort = Effort.Max,
                 ExtractionTarget = ExtractionTarget.PerDoc,
                 MaxPages = 10,
                 ParseConfigID = "cfg-11111111-2222-3333-4444-555555555555",
@@ -884,6 +891,7 @@ public class ExtractV2JobCreateWebhookConfigurationWebhookEventTest : TestBase
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractError)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractPartialSuccess)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractPending)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractRunning)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractSuccess)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ParseCancelled)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ParseError)]
@@ -941,6 +949,7 @@ public class ExtractV2JobCreateWebhookConfigurationWebhookEventTest : TestBase
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractError)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractPartialSuccess)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractPending)]
+    [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractRunning)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ExtractSuccess)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ParseCancelled)]
     [InlineData(ExtractV2JobCreateWebhookConfigurationWebhookEvent.ParseError)]
