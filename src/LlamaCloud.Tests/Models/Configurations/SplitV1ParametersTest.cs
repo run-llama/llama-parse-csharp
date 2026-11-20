@@ -22,6 +22,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
             TargetPages = "1,3,5-7",
             Version = "latest",
@@ -37,6 +38,7 @@ public class SplitV1ParametersTest : TestBase
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SegmentBoundary.Category,
         };
         string expectedTargetPages = "1,3,5-7";
         string expectedVersion = "latest";
@@ -67,6 +69,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
             TargetPages = "1,3,5-7",
             Version = "latest",
@@ -94,6 +97,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
             TargetPages = "1,3,5-7",
             Version = "latest",
@@ -116,6 +120,7 @@ public class SplitV1ParametersTest : TestBase
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SegmentBoundary.Category,
         };
         string expectedTargetPages = "1,3,5-7";
         string expectedVersion = "latest";
@@ -146,6 +151,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
             TargetPages = "1,3,5-7",
             Version = "latest",
@@ -233,6 +239,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
         };
 
@@ -257,6 +264,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
         };
 
@@ -274,6 +282,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
 
             ParseConfigID = null,
@@ -303,6 +312,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
 
             ParseConfigID = null,
@@ -327,6 +337,7 @@ public class SplitV1ParametersTest : TestBase
                 AllowUncategorized = AllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SegmentBoundary.Category,
             },
             TargetPages = "1,3,5-7",
             Version = "latest",
@@ -410,15 +421,18 @@ public class SplittingStrategyTest : TestBase
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SegmentBoundary.Category,
         };
 
         ApiEnum<string, AllowUncategorized> expectedAllowUncategorized = AllowUncategorized.Forbid;
         string expectedCustomInstructions = "Start a new segment at every signature page.";
         long expectedMinPagesPerSplit = 1;
+        ApiEnum<string, SegmentBoundary> expectedSegmentBoundary = SegmentBoundary.Category;
 
         Assert.Equal(expectedAllowUncategorized, model.AllowUncategorized);
         Assert.Equal(expectedCustomInstructions, model.CustomInstructions);
         Assert.Equal(expectedMinPagesPerSplit, model.MinPagesPerSplit);
+        Assert.Equal(expectedSegmentBoundary, model.SegmentBoundary);
     }
 
     [Fact]
@@ -429,6 +443,7 @@ public class SplittingStrategyTest : TestBase
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SegmentBoundary.Category,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -448,6 +463,7 @@ public class SplittingStrategyTest : TestBase
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SegmentBoundary.Category,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -460,10 +476,12 @@ public class SplittingStrategyTest : TestBase
         ApiEnum<string, AllowUncategorized> expectedAllowUncategorized = AllowUncategorized.Forbid;
         string expectedCustomInstructions = "Start a new segment at every signature page.";
         long expectedMinPagesPerSplit = 1;
+        ApiEnum<string, SegmentBoundary> expectedSegmentBoundary = SegmentBoundary.Category;
 
         Assert.Equal(expectedAllowUncategorized, deserialized.AllowUncategorized);
         Assert.Equal(expectedCustomInstructions, deserialized.CustomInstructions);
         Assert.Equal(expectedMinPagesPerSplit, deserialized.MinPagesPerSplit);
+        Assert.Equal(expectedSegmentBoundary, deserialized.SegmentBoundary);
     }
 
     [Fact]
@@ -474,6 +492,7 @@ public class SplittingStrategyTest : TestBase
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SegmentBoundary.Category,
         };
 
         model.Validate();
@@ -485,6 +504,7 @@ public class SplittingStrategyTest : TestBase
         var model = new SplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SegmentBoundary.Category,
         };
 
         Assert.Null(model.AllowUncategorized);
@@ -499,6 +519,7 @@ public class SplittingStrategyTest : TestBase
         var model = new SplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SegmentBoundary.Category,
         };
 
         model.Validate();
@@ -510,6 +531,7 @@ public class SplittingStrategyTest : TestBase
         var model = new SplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SegmentBoundary.Category,
 
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
@@ -528,6 +550,7 @@ public class SplittingStrategyTest : TestBase
         var model = new SplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SegmentBoundary.Category,
 
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
@@ -548,6 +571,8 @@ public class SplittingStrategyTest : TestBase
 
         Assert.Null(model.CustomInstructions);
         Assert.False(model.RawData.ContainsKey("custom_instructions"));
+        Assert.Null(model.SegmentBoundary);
+        Assert.False(model.RawData.ContainsKey("segment_boundary"));
     }
 
     [Fact]
@@ -571,10 +596,13 @@ public class SplittingStrategyTest : TestBase
             MinPagesPerSplit = 1,
 
             CustomInstructions = null,
+            SegmentBoundary = null,
         };
 
         Assert.Null(model.CustomInstructions);
         Assert.True(model.RawData.ContainsKey("custom_instructions"));
+        Assert.Null(model.SegmentBoundary);
+        Assert.True(model.RawData.ContainsKey("segment_boundary"));
     }
 
     [Fact]
@@ -586,6 +614,7 @@ public class SplittingStrategyTest : TestBase
             MinPagesPerSplit = 1,
 
             CustomInstructions = null,
+            SegmentBoundary = null,
         };
 
         model.Validate();
@@ -599,6 +628,7 @@ public class SplittingStrategyTest : TestBase
             AllowUncategorized = AllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SegmentBoundary.Category,
         };
 
         SplittingStrategy copied = new(model);
@@ -659,6 +689,64 @@ public class AllowUncategorizedTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, AllowUncategorized>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class SegmentBoundaryTest : TestBase
+{
+    [Theory]
+    [InlineData(SegmentBoundary.Category)]
+    [InlineData(SegmentBoundary.Document)]
+    public void Validation_Works(SegmentBoundary rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SegmentBoundary> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SegmentBoundary>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(SegmentBoundary.Category)]
+    [InlineData(SegmentBoundary.Document)]
+    public void SerializationRoundtrip_Works(SegmentBoundary rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SegmentBoundary> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, SegmentBoundary>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SegmentBoundary>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, SegmentBoundary>>(
             json,
             ModelBase.SerializerOptions
         );

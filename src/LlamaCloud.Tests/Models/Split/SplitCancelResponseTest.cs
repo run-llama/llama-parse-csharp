@@ -43,6 +43,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
@@ -87,6 +88,7 @@ public class SplitCancelResponseTest : TestBase
             AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
         string expectedTargetPages = "target_pages";
         string expectedTransactionID = "transaction_id";
@@ -164,6 +166,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
@@ -221,6 +224,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
@@ -272,6 +276,7 @@ public class SplitCancelResponseTest : TestBase
             AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
         string expectedTargetPages = "target_pages";
         string expectedTransactionID = "transaction_id";
@@ -349,6 +354,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
@@ -543,6 +549,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             Warnings =
             [
@@ -593,6 +600,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             Warnings =
             [
@@ -626,6 +634,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             Warnings =
             [
@@ -686,6 +695,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             Warnings =
             [
@@ -744,6 +754,7 @@ public class SplitCancelResponseTest : TestBase
                 AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
                 CustomInstructions = "Start a new segment at every signature page.",
                 MinPagesPerSplit = 1,
+                SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
             },
             TargetPages = "target_pages",
             TransactionID = "transaction_id",
@@ -831,6 +842,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
 
         ApiEnum<
@@ -840,10 +852,15 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid;
         string expectedCustomInstructions = "Start a new segment at every signature page.";
         long expectedMinPagesPerSplit = 1;
+        ApiEnum<
+            string,
+            SplitCancelResponseSplittingStrategySegmentBoundary
+        > expectedSegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category;
 
         Assert.Equal(expectedAllowUncategorized, model.AllowUncategorized);
         Assert.Equal(expectedCustomInstructions, model.CustomInstructions);
         Assert.Equal(expectedMinPagesPerSplit, model.MinPagesPerSplit);
+        Assert.Equal(expectedSegmentBoundary, model.SegmentBoundary);
     }
 
     [Fact]
@@ -854,6 +871,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -873,6 +891,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -889,10 +908,15 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid;
         string expectedCustomInstructions = "Start a new segment at every signature page.";
         long expectedMinPagesPerSplit = 1;
+        ApiEnum<
+            string,
+            SplitCancelResponseSplittingStrategySegmentBoundary
+        > expectedSegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category;
 
         Assert.Equal(expectedAllowUncategorized, deserialized.AllowUncategorized);
         Assert.Equal(expectedCustomInstructions, deserialized.CustomInstructions);
         Assert.Equal(expectedMinPagesPerSplit, deserialized.MinPagesPerSplit);
+        Assert.Equal(expectedSegmentBoundary, deserialized.SegmentBoundary);
     }
 
     [Fact]
@@ -903,6 +927,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
 
         model.Validate();
@@ -914,6 +939,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
         var model = new SplitCancelResponseSplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
 
         Assert.Null(model.AllowUncategorized);
@@ -928,6 +954,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
         var model = new SplitCancelResponseSplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
 
         model.Validate();
@@ -939,6 +966,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
         var model = new SplitCancelResponseSplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
 
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
@@ -957,6 +985,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
         var model = new SplitCancelResponseSplittingStrategy
         {
             CustomInstructions = "Start a new segment at every signature page.",
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
 
             // Null should be interpreted as omitted for these properties
             AllowUncategorized = null,
@@ -977,6 +1006,8 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
 
         Assert.Null(model.CustomInstructions);
         Assert.False(model.RawData.ContainsKey("custom_instructions"));
+        Assert.Null(model.SegmentBoundary);
+        Assert.False(model.RawData.ContainsKey("segment_boundary"));
     }
 
     [Fact]
@@ -1000,10 +1031,13 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             MinPagesPerSplit = 1,
 
             CustomInstructions = null,
+            SegmentBoundary = null,
         };
 
         Assert.Null(model.CustomInstructions);
         Assert.True(model.RawData.ContainsKey("custom_instructions"));
+        Assert.Null(model.SegmentBoundary);
+        Assert.True(model.RawData.ContainsKey("segment_boundary"));
     }
 
     [Fact]
@@ -1015,6 +1049,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             MinPagesPerSplit = 1,
 
             CustomInstructions = null,
+            SegmentBoundary = null,
         };
 
         model.Validate();
@@ -1028,6 +1063,7 @@ public class SplitCancelResponseSplittingStrategyTest : TestBase
             AllowUncategorized = SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid,
             CustomInstructions = "Start a new segment at every signature page.",
             MinPagesPerSplit = 1,
+            SegmentBoundary = SplitCancelResponseSplittingStrategySegmentBoundary.Category,
         };
 
         SplitCancelResponseSplittingStrategy copied = new(model);
@@ -1088,6 +1124,62 @@ public class SplitCancelResponseSplittingStrategyAllowUncategorizedTest : TestBa
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, SplitCancelResponseSplittingStrategyAllowUncategorized>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class SplitCancelResponseSplittingStrategySegmentBoundaryTest : TestBase
+{
+    [Theory]
+    [InlineData(SplitCancelResponseSplittingStrategySegmentBoundary.Category)]
+    [InlineData(SplitCancelResponseSplittingStrategySegmentBoundary.Document)]
+    public void Validation_Works(SplitCancelResponseSplittingStrategySegmentBoundary rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<LlamaCloudInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(SplitCancelResponseSplittingStrategySegmentBoundary.Category)]
+    [InlineData(SplitCancelResponseSplittingStrategySegmentBoundary.Document)]
+    public void SerializationRoundtrip_Works(
+        SplitCancelResponseSplittingStrategySegmentBoundary rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

@@ -46,6 +46,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -98,6 +100,7 @@ public class SplitListPageResponseTest : TestBase
                         SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
+                    SegmentBoundary = SplitListResponseSplittingStrategySegmentBoundary.Category,
                 },
                 TargetPages = "target_pages",
                 TransactionID = "transaction_id",
@@ -163,6 +166,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -229,6 +234,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -288,6 +295,7 @@ public class SplitListPageResponseTest : TestBase
                         SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                     CustomInstructions = "Start a new segment at every signature page.",
                     MinPagesPerSplit = 1,
+                    SegmentBoundary = SplitListResponseSplittingStrategySegmentBoundary.Category,
                 },
                 TargetPages = "target_pages",
                 TransactionID = "transaction_id",
@@ -353,6 +361,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -413,6 +423,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -474,6 +486,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -532,6 +546,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -596,6 +612,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",
@@ -657,6 +675,8 @@ public class SplitListPageResponseTest : TestBase
                             SplitListResponseSplittingStrategyAllowUncategorized.Forbid,
                         CustomInstructions = "Start a new segment at every signature page.",
                         MinPagesPerSplit = 1,
+                        SegmentBoundary =
+                            SplitListResponseSplittingStrategySegmentBoundary.Category,
                     },
                     TargetPages = "target_pages",
                     TransactionID = "transaction_id",

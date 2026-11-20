@@ -377,12 +377,30 @@ public sealed record class SplittingStrategy : JsonModel
         }
     }
 
+    /// <summary>
+    /// Where a new segment starts: document at each new document, category wherever
+    /// the category changes. Unset means document. category requires version 1.3.0
+    /// or later.
+    /// </summary>
+    public ApiEnum<string, SegmentBoundary>? SegmentBoundary
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, SegmentBoundary>>(
+                "segment_boundary"
+            );
+        }
+        init { this._rawData.Set("segment_boundary", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.AllowUncategorized?.Validate();
         _ = this.CustomInstructions;
         _ = this.MinPagesPerSplit;
+        this.SegmentBoundary?.Validate();
     }
 
     public SplittingStrategy() { }
@@ -466,6 +484,54 @@ sealed class AllowUncategorizedConverter : JsonConverter<AllowUncategorized>
                 AllowUncategorized.Forbid => "forbid",
                 AllowUncategorized.Include => "include",
                 AllowUncategorized.Omit => "omit",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Where a new segment starts: document at each new document, category wherever
+/// the category changes. Unset means document. category requires version 1.3.0 or later.
+/// </summary>
+[JsonConverter(typeof(SegmentBoundaryConverter))]
+public enum SegmentBoundary
+{
+    Category,
+    Document,
+}
+
+sealed class SegmentBoundaryConverter : JsonConverter<SegmentBoundary>
+{
+    public override SegmentBoundary Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "category" => SegmentBoundary.Category,
+            "document" => SegmentBoundary.Document,
+            _ => (SegmentBoundary)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SegmentBoundary value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SegmentBoundary.Category => "category",
+                SegmentBoundary.Document => "document",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

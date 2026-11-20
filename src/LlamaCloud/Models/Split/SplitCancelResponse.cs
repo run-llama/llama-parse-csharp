@@ -488,12 +488,30 @@ public sealed record class SplitCancelResponseSplittingStrategy : JsonModel
         }
     }
 
+    /// <summary>
+    /// Where a new segment starts: document at each new document, category wherever
+    /// the category changes. Unset means document. category requires version 1.3.0
+    /// or later.
+    /// </summary>
+    public ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>? SegmentBoundary
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, SplitCancelResponseSplittingStrategySegmentBoundary>
+            >("segment_boundary");
+        }
+        init { this._rawData.Set("segment_boundary", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.AllowUncategorized?.Validate();
         _ = this.CustomInstructions;
         _ = this.MinPagesPerSplit;
+        this.SegmentBoundary?.Validate();
     }
 
     public SplitCancelResponseSplittingStrategy() { }
@@ -582,6 +600,55 @@ sealed class SplitCancelResponseSplittingStrategyAllowUncategorizedConverter
                 SplitCancelResponseSplittingStrategyAllowUncategorized.Forbid => "forbid",
                 SplitCancelResponseSplittingStrategyAllowUncategorized.Include => "include",
                 SplitCancelResponseSplittingStrategyAllowUncategorized.Omit => "omit",
+                _ => throw new LlamaCloudInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Where a new segment starts: document at each new document, category wherever
+/// the category changes. Unset means document. category requires version 1.3.0 or later.
+/// </summary>
+[JsonConverter(typeof(SplitCancelResponseSplittingStrategySegmentBoundaryConverter))]
+public enum SplitCancelResponseSplittingStrategySegmentBoundary
+{
+    Category,
+    Document,
+}
+
+sealed class SplitCancelResponseSplittingStrategySegmentBoundaryConverter
+    : JsonConverter<SplitCancelResponseSplittingStrategySegmentBoundary>
+{
+    public override SplitCancelResponseSplittingStrategySegmentBoundary Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "category" => SplitCancelResponseSplittingStrategySegmentBoundary.Category,
+            "document" => SplitCancelResponseSplittingStrategySegmentBoundary.Document,
+            _ => (SplitCancelResponseSplittingStrategySegmentBoundary)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SplitCancelResponseSplittingStrategySegmentBoundary value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SplitCancelResponseSplittingStrategySegmentBoundary.Category => "category",
+                SplitCancelResponseSplittingStrategySegmentBoundary.Document => "document",
                 _ => throw new LlamaCloudInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
