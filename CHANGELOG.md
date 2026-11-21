@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.11.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.10.0...v1.11.0) (2026-11-20)
+
+
+### Features
+
+* **extract:** expose Max effort in the public API ([#30756](https://github.com/run-llama/llama-parse-csharp/issues/30756)) ([df59994](https://github.com/run-llama/llama-parse-csharp/commit/df59994d1a480319409bd5da431e0d0e0fe937ee))
+* **extract:** send a saved configuration's completed jobs to review by policy ([#34124](https://github.com/run-llama/llama-parse-csharp/issues/34124)) ([a23dfb8](https://github.com/run-llama/llama-parse-csharp/commit/a23dfb89323a5e71e0fb6c93b7b9d19f9103a16e))
+* **parse-eval:** keep ground truth in Evaluate-owned storage ([#33781](https://github.com/run-llama/llama-parse-csharp/issues/33781)) ([885be2b](https://github.com/run-llama/llama-parse-csharp/commit/885be2ba7d235848c25b0bb84178f1a41a329582))
+* **parse-eval:** let Parse delete ground-truth jobs like any other job ([#35004](https://github.com/run-llama/llama-parse-csharp/issues/35004)) ([3cb593a](https://github.com/run-llama/llama-parse-csharp/commit/3cb593a46464b72e7d570bcd66630ef95283e325))
+* **parse:** add document page count bounds ([#34227](https://github.com/run-llama/llama-parse-csharp/issues/34227)) ([56eecd0](https://github.com/run-llama/llama-parse-csharp/commit/56eecd0a090575f9654652b565b34ddffaf82f45))
+* **parse:** Agentic and Cost Effective 2026-11-09 lead with OCRIA 1.5 ([#33718](https://github.com/run-llama/llama-parse-csharp/issues/33718)) ([4796f5e](https://github.com/run-llama/llama-parse-csharp/commit/4796f5e6194c4163796729f3baf1906c917c61b6))
+* **parse:** optional `bbox` on form text grounding in the public API schema ([#35073](https://github.com/run-llama/llama-parse-csharp/issues/35073)) ([6ac8517](https://github.com/run-llama/llama-parse-csharp/commit/6ac85177d33ae1852962021cf940616d665f1bb3))
+* **split:** advisory warnings for ambiguous category configs ([#34714](https://github.com/run-llama/llama-parse-csharp/issues/34714)) ([7514c52](https://github.com/run-llama/llama-parse-csharp/commit/7514c52c8c48730cc89a8cf4a27c4727af3b4589))
+* **split:** category segment boundary in 1.3.0 ([#35081](https://github.com/run-llama/llama-parse-csharp/issues/35081)) ([acca181](https://github.com/run-llama/llama-parse-csharp/commit/acca181ed74d6e1423090198b5726190e0f7e5e9))
+* **split:** report the job's Split version on v1 SplitJobResponse ([#30318](https://github.com/run-llama/llama-parse-csharp/issues/30318)) ([31dd5aa](https://github.com/run-llama/llama-parse-csharp/commit/31dd5aa8515aaaac461440b709dccc4cac93f13c))
+* **webhooks:** keep a saved webhook's masked credentials by its id ([#32736](https://github.com/run-llama/llama-parse-csharp/issues/32736)) ([677cd96](https://github.com/run-llama/llama-parse-csharp/commit/677cd967cf6b8bcbd9613e32252e4c4c463fe97b))
+
+
+### Bug Fixes
+
+* **api:** reject a page_size below 1 on every list route's pagination query (PROD-10603) ([#30406](https://github.com/run-llama/llama-parse-csharp/issues/30406)) ([45de8f2](https://github.com/run-llama/llama-parse-csharp/commit/45de8f2152a9095f155c28f3c0ef78436db51f8c))
+* keep legacy pipelines with empty embedding configs listable ([#31282](https://github.com/run-llama/llama-parse-csharp/issues/31282)) ([2786972](https://github.com/run-llama/llama-parse-csharp/commit/2786972ae6b359695a23b07388d86c76ac5c9282))
+* **split:** reject category names that make segment labels ambiguous (PROD-10501) ([#29963](https://github.com/run-llama/llama-parse-csharp/issues/29963)) ([69e62a0](https://github.com/run-llama/llama-parse-csharp/commit/69e62a0163b58f5f4c504803025c5518c7a37a04))
+
+
+### Documentation
+
+* **extract:** describe Max effort pricing by the processing each document needs ([#33403](https://github.com/run-llama/llama-parse-csharp/issues/33403)) ([b535fe8](https://github.com/run-llama/llama-parse-csharp/commit/b535fe807474fdce89ca50ad17561be81b887346))
+* **split:** PPTX segment pages count visible slides only (PROD-10504) ([#29972](https://github.com/run-llama/llama-parse-csharp/issues/29972)) ([a135cfb](https://github.com/run-llama/llama-parse-csharp/commit/a135cfb1f1230cced06d8a0c545a2409e7862ba3))
+
 ## [1.10.0](https://github.com/run-llama/llama-parse-csharp/compare/v1.9.0...v1.10.0) (2026-10-21)
 
 
