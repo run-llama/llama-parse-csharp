@@ -176,6 +176,7 @@ class ParsingListVersionsResponseFromRaw : IFromRawJson<ParsingListVersionsRespo
 [JsonConverter(typeof(AgenticConverter))]
 public enum Agentic
 {
+    V2026_11_22,
     V2026_11_09,
     V2026_11_05,
     V2026_10_30,
@@ -242,6 +243,7 @@ sealed class AgenticConverter : JsonConverter<Agentic>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-22" => Agentic.V2026_11_22,
             "2026-11-09" => Agentic.V2026_11_09,
             "2026-11-05" => Agentic.V2026_11_05,
             "2026-10-30" => Agentic.V2026_10_30,
@@ -306,6 +308,7 @@ sealed class AgenticConverter : JsonConverter<Agentic>
             writer,
             value switch
             {
+                Agentic.V2026_11_22 => "2026-11-22",
                 Agentic.V2026_11_09 => "2026-11-09",
                 Agentic.V2026_11_05 => "2026-11-05",
                 Agentic.V2026_10_30 => "2026-10-30",
@@ -572,6 +575,7 @@ sealed class AgenticPlusConverter : JsonConverter<AgenticPlus>
 [JsonConverter(typeof(CostEffectiveConverter))]
 public enum CostEffective
 {
+    V2026_11_22,
     V2026_11_09,
     V2026_11_05,
     V2026_10_30,
@@ -603,6 +607,7 @@ sealed class CostEffectiveConverter : JsonConverter<CostEffective>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "2026-11-22" => CostEffective.V2026_11_22,
             "2026-11-09" => CostEffective.V2026_11_09,
             "2026-11-05" => CostEffective.V2026_11_05,
             "2026-10-30" => CostEffective.V2026_10_30,
@@ -636,6 +641,7 @@ sealed class CostEffectiveConverter : JsonConverter<CostEffective>
             writer,
             value switch
             {
+                CostEffective.V2026_11_22 => "2026-11-22",
                 CostEffective.V2026_11_09 => "2026-11-09",
                 CostEffective.V2026_11_05 => "2026-11-05",
                 CostEffective.V2026_10_30 => "2026-10-30",
