@@ -59,7 +59,7 @@ public record class ParsingCreateParams : ParamsBase
     /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`:
-    /// `2026-11-24` - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-26`</para>
+    /// `2026-11-24` - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-27`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -570,7 +570,7 @@ sealed class TierConverter : JsonConverter<Tier>
 /// Version for the selected tier. Use `latest`, or pin one of that tier's dated versions.
 ///
 /// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`: `2026-11-24`
-/// - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-26`</para>
+/// - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-27`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -578,7 +578,7 @@ sealed class TierConverter : JsonConverter<Tier>
 public enum Version
 {
     Latest,
-    V2026_11_26,
+    V2026_11_27,
     V2026_11_24,
     V2026_11_22,
     V2026_11_12,
@@ -595,7 +595,7 @@ sealed class VersionConverter : JsonConverter<Version>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => Version.Latest,
-            "2026-11-26" => Version.V2026_11_26,
+            "2026-11-27" => Version.V2026_11_27,
             "2026-11-24" => Version.V2026_11_24,
             "2026-11-22" => Version.V2026_11_22,
             "2026-11-12" => Version.V2026_11_12,
@@ -610,7 +610,7 @@ sealed class VersionConverter : JsonConverter<Version>
             value switch
             {
                 Version.Latest => "latest",
-                Version.V2026_11_26 => "2026-11-26",
+                Version.V2026_11_27 => "2026-11-27",
                 Version.V2026_11_24 => "2026-11-24",
                 Version.V2026_11_22 => "2026-11-22",
                 Version.V2026_11_12 => "2026-11-12",
@@ -3545,7 +3545,7 @@ public sealed record class ParsingConf : JsonModel
     /// or pin one of that tier's dated versions.
     ///
     /// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`:
-    /// `2026-11-24` - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-26`</para>
+    /// `2026-11-24` - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-27`</para>
     ///
     /// <para>Full list: `GET /api/v2/parse/versions`.</para>
     /// </summary>
@@ -4067,7 +4067,7 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 /// one of that tier's dated versions.
 ///
 /// <para>Current `latest` by tier: - `fast`: `2026-11-12` - `cost_effective`: `2026-11-24`
-/// - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-26`</para>
+/// - `agentic`: `2026-11-22` - `agentic_plus`: `2026-11-27`</para>
 ///
 /// <para>Full list: `GET /api/v2/parse/versions`.</para>
 /// </summary>
@@ -4075,7 +4075,7 @@ sealed class ParsingConfTierConverter : JsonConverter<ParsingConfTier>
 public enum ParsingConfVersion
 {
     Latest,
-    V2026_11_26,
+    V2026_11_27,
     V2026_11_24,
     V2026_11_22,
     V2026_11_12,
@@ -4092,7 +4092,7 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "latest" => ParsingConfVersion.Latest,
-            "2026-11-26" => ParsingConfVersion.V2026_11_26,
+            "2026-11-27" => ParsingConfVersion.V2026_11_27,
             "2026-11-24" => ParsingConfVersion.V2026_11_24,
             "2026-11-22" => ParsingConfVersion.V2026_11_22,
             "2026-11-12" => ParsingConfVersion.V2026_11_12,
@@ -4111,7 +4111,7 @@ sealed class ParsingConfVersionConverter : JsonConverter<ParsingConfVersion>
             value switch
             {
                 ParsingConfVersion.Latest => "latest",
-                ParsingConfVersion.V2026_11_26 => "2026-11-26",
+                ParsingConfVersion.V2026_11_27 => "2026-11-27",
                 ParsingConfVersion.V2026_11_24 => "2026-11-24",
                 ParsingConfVersion.V2026_11_22 => "2026-11-22",
                 ParsingConfVersion.V2026_11_12 => "2026-11-12",
