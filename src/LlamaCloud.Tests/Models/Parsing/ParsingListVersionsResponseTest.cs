@@ -13,9 +13,9 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_11_09],
-            AgenticPlus = [AgenticPlus.V2026_11_19],
-            CostEffective = [CostEffective.V2026_11_09],
+            Agentic = [Agentic.V2026_11_22],
+            AgenticPlus = [AgenticPlus.V2026_11_27],
+            CostEffective = [CostEffective.V2026_11_24],
             Fast = [Fast.V2026_11_12],
             Latest = new()
             {
@@ -26,9 +26,9 @@ public class ParsingListVersionsResponseTest : TestBase
             },
         };
 
-        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_11_09];
-        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_11_19];
-        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_11_09];
+        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_11_22];
+        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_11_27];
+        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_11_24];
         List<ApiEnum<string, Fast>> expectedFast = [Fast.V2026_11_12];
         Latest expectedLatest = new()
         {
@@ -66,9 +66,9 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_11_09],
-            AgenticPlus = [AgenticPlus.V2026_11_19],
-            CostEffective = [CostEffective.V2026_11_09],
+            Agentic = [Agentic.V2026_11_22],
+            AgenticPlus = [AgenticPlus.V2026_11_27],
+            CostEffective = [CostEffective.V2026_11_24],
             Fast = [Fast.V2026_11_12],
             Latest = new()
             {
@@ -93,9 +93,9 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_11_09],
-            AgenticPlus = [AgenticPlus.V2026_11_19],
-            CostEffective = [CostEffective.V2026_11_09],
+            Agentic = [Agentic.V2026_11_22],
+            AgenticPlus = [AgenticPlus.V2026_11_27],
+            CostEffective = [CostEffective.V2026_11_24],
             Fast = [Fast.V2026_11_12],
             Latest = new()
             {
@@ -113,9 +113,9 @@ public class ParsingListVersionsResponseTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_11_09];
-        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_11_19];
-        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_11_09];
+        List<ApiEnum<string, Agentic>> expectedAgentic = [Agentic.V2026_11_22];
+        List<ApiEnum<string, AgenticPlus>> expectedAgenticPlus = [AgenticPlus.V2026_11_27];
+        List<ApiEnum<string, CostEffective>> expectedCostEffective = [CostEffective.V2026_11_24];
         List<ApiEnum<string, Fast>> expectedFast = [Fast.V2026_11_12];
         Latest expectedLatest = new()
         {
@@ -153,9 +153,9 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_11_09],
-            AgenticPlus = [AgenticPlus.V2026_11_19],
-            CostEffective = [CostEffective.V2026_11_09],
+            Agentic = [Agentic.V2026_11_22],
+            AgenticPlus = [AgenticPlus.V2026_11_27],
+            CostEffective = [CostEffective.V2026_11_24],
             Fast = [Fast.V2026_11_12],
             Latest = new()
             {
@@ -174,9 +174,9 @@ public class ParsingListVersionsResponseTest : TestBase
     {
         var model = new ParsingListVersionsResponse
         {
-            Agentic = [Agentic.V2026_11_09],
-            AgenticPlus = [AgenticPlus.V2026_11_19],
-            CostEffective = [CostEffective.V2026_11_09],
+            Agentic = [Agentic.V2026_11_22],
+            AgenticPlus = [AgenticPlus.V2026_11_27],
+            CostEffective = [CostEffective.V2026_11_24],
             Fast = [Fast.V2026_11_12],
             Latest = new()
             {
@@ -196,6 +196,7 @@ public class ParsingListVersionsResponseTest : TestBase
 public class AgenticTest : TestBase
 {
     [Theory]
+    [InlineData(Agentic.V2026_11_22)]
     [InlineData(Agentic.V2026_11_09)]
     [InlineData(Agentic.V2026_11_05)]
     [InlineData(Agentic.V2026_10_30)]
@@ -270,6 +271,7 @@ public class AgenticTest : TestBase
     }
 
     [Theory]
+    [InlineData(Agentic.V2026_11_22)]
     [InlineData(Agentic.V2026_11_09)]
     [InlineData(Agentic.V2026_11_05)]
     [InlineData(Agentic.V2026_10_30)]
@@ -358,6 +360,8 @@ public class AgenticTest : TestBase
 public class AgenticPlusTest : TestBase
 {
     [Theory]
+    [InlineData(AgenticPlus.V2026_11_27)]
+    [InlineData(AgenticPlus.V2026_11_26)]
     [InlineData(AgenticPlus.V2026_11_19)]
     [InlineData(AgenticPlus.V2026_11_18)]
     [InlineData(AgenticPlus.V2026_11_17)]
@@ -432,6 +436,8 @@ public class AgenticPlusTest : TestBase
     }
 
     [Theory]
+    [InlineData(AgenticPlus.V2026_11_27)]
+    [InlineData(AgenticPlus.V2026_11_26)]
     [InlineData(AgenticPlus.V2026_11_19)]
     [InlineData(AgenticPlus.V2026_11_18)]
     [InlineData(AgenticPlus.V2026_11_17)]
@@ -520,6 +526,8 @@ public class AgenticPlusTest : TestBase
 public class CostEffectiveTest : TestBase
 {
     [Theory]
+    [InlineData(CostEffective.V2026_11_24)]
+    [InlineData(CostEffective.V2026_11_22)]
     [InlineData(CostEffective.V2026_11_09)]
     [InlineData(CostEffective.V2026_11_05)]
     [InlineData(CostEffective.V2026_10_30)]
@@ -559,6 +567,8 @@ public class CostEffectiveTest : TestBase
     }
 
     [Theory]
+    [InlineData(CostEffective.V2026_11_24)]
+    [InlineData(CostEffective.V2026_11_22)]
     [InlineData(CostEffective.V2026_11_09)]
     [InlineData(CostEffective.V2026_11_05)]
     [InlineData(CostEffective.V2026_10_30)]

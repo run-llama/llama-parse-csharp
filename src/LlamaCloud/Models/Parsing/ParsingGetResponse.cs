@@ -1326,6 +1326,20 @@ public sealed record class ImagesContentMetadataImage : JsonModel
     }
 
     /// <summary>
+    /// Layout class of the region a layout image was cut from: 'chart', 'table',
+    /// 'image' or 'seal'. Null for other images.
+    /// </summary>
+    public string? Label
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("label");
+        }
+        init { this._rawData.Set("label", value); }
+    }
+
+    /// <summary>
     /// Presigned URL to download the image
     /// </summary>
     public string? PresignedUrl
@@ -1352,6 +1366,27 @@ public sealed record class ImagesContentMetadataImage : JsonModel
         init { this._rawData.Set("size_bytes", value); }
     }
 
+    /// <summary>
+    /// Figure classes of the region a layout image was cut from, e.g. ['line_chart']
+    /// or ['logo']; empty when the region has no figure classification. Null for
+    /// other images.
+    /// </summary>
+    public IReadOnlyList<string>? Sublabels
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<string>>("sublabels");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<string>?>(
+                "sublabels",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -1360,8 +1395,10 @@ public sealed record class ImagesContentMetadataImage : JsonModel
         this.Bbox?.Validate();
         this.Category?.Validate();
         _ = this.ContentType;
+        _ = this.Label;
         _ = this.PresignedUrl;
         _ = this.SizeBytes;
+        _ = this.Sublabels;
     }
 
     public ImagesContentMetadataImage() { }

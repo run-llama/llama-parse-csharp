@@ -17,6 +17,7 @@ public class BBoxTest : TestBase
             Y = 0,
             Confidence = 0,
             EndIndex = 0,
+            ImageFilename = "image_filename",
             Label = "label",
             R = 0,
             StartIndex = 0,
@@ -28,6 +29,7 @@ public class BBoxTest : TestBase
         double expectedY = 0;
         double expectedConfidence = 0;
         long expectedEndIndex = 0;
+        string expectedImageFilename = "image_filename";
         string expectedLabel = "label";
         double expectedR = 0;
         long expectedStartIndex = 0;
@@ -38,6 +40,7 @@ public class BBoxTest : TestBase
         Assert.Equal(expectedY, model.Y);
         Assert.Equal(expectedConfidence, model.Confidence);
         Assert.Equal(expectedEndIndex, model.EndIndex);
+        Assert.Equal(expectedImageFilename, model.ImageFilename);
         Assert.Equal(expectedLabel, model.Label);
         Assert.Equal(expectedR, model.R);
         Assert.Equal(expectedStartIndex, model.StartIndex);
@@ -54,6 +57,7 @@ public class BBoxTest : TestBase
             Y = 0,
             Confidence = 0,
             EndIndex = 0,
+            ImageFilename = "image_filename",
             Label = "label",
             R = 0,
             StartIndex = 0,
@@ -76,6 +80,7 @@ public class BBoxTest : TestBase
             Y = 0,
             Confidence = 0,
             EndIndex = 0,
+            ImageFilename = "image_filename",
             Label = "label",
             R = 0,
             StartIndex = 0,
@@ -91,6 +96,7 @@ public class BBoxTest : TestBase
         double expectedY = 0;
         double expectedConfidence = 0;
         long expectedEndIndex = 0;
+        string expectedImageFilename = "image_filename";
         string expectedLabel = "label";
         double expectedR = 0;
         long expectedStartIndex = 0;
@@ -101,6 +107,7 @@ public class BBoxTest : TestBase
         Assert.Equal(expectedY, deserialized.Y);
         Assert.Equal(expectedConfidence, deserialized.Confidence);
         Assert.Equal(expectedEndIndex, deserialized.EndIndex);
+        Assert.Equal(expectedImageFilename, deserialized.ImageFilename);
         Assert.Equal(expectedLabel, deserialized.Label);
         Assert.Equal(expectedR, deserialized.R);
         Assert.Equal(expectedStartIndex, deserialized.StartIndex);
@@ -117,6 +124,7 @@ public class BBoxTest : TestBase
             Y = 0,
             Confidence = 0,
             EndIndex = 0,
+            ImageFilename = "image_filename",
             Label = "label",
             R = 0,
             StartIndex = 0,
@@ -140,6 +148,8 @@ public class BBoxTest : TestBase
         Assert.False(model.RawData.ContainsKey("confidence"));
         Assert.Null(model.EndIndex);
         Assert.False(model.RawData.ContainsKey("end_index"));
+        Assert.Null(model.ImageFilename);
+        Assert.False(model.RawData.ContainsKey("image_filename"));
         Assert.Null(model.Label);
         Assert.False(model.RawData.ContainsKey("label"));
         Assert.Null(model.R);
@@ -174,6 +184,7 @@ public class BBoxTest : TestBase
 
             Confidence = null,
             EndIndex = null,
+            ImageFilename = null,
             Label = null,
             R = null,
             StartIndex = null,
@@ -183,6 +194,8 @@ public class BBoxTest : TestBase
         Assert.True(model.RawData.ContainsKey("confidence"));
         Assert.Null(model.EndIndex);
         Assert.True(model.RawData.ContainsKey("end_index"));
+        Assert.Null(model.ImageFilename);
+        Assert.True(model.RawData.ContainsKey("image_filename"));
         Assert.Null(model.Label);
         Assert.True(model.RawData.ContainsKey("label"));
         Assert.Null(model.R);
@@ -203,6 +216,7 @@ public class BBoxTest : TestBase
 
             Confidence = null,
             EndIndex = null,
+            ImageFilename = null,
             Label = null,
             R = null,
             StartIndex = null,
@@ -222,6 +236,7 @@ public class BBoxTest : TestBase
             Y = 0,
             Confidence = 0,
             EndIndex = 0,
+            ImageFilename = "image_filename",
             Label = "label",
             R = 0,
             StartIndex = 0,

@@ -92,6 +92,20 @@ public sealed record class BBox : JsonModel
     }
 
     /// <summary>
+    /// Filename of the saved layout image cut from this region; equals `filename`
+    /// of an `images_content_metadata` entry.
+    /// </summary>
+    public string? ImageFilename
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("image_filename");
+        }
+        init { this._rawData.Set("image_filename", value); }
+    }
+
+    /// <summary>
     /// Label for the bounding box
     /// </summary>
     public string? Label
@@ -139,6 +153,7 @@ public sealed record class BBox : JsonModel
         _ = this.Y;
         _ = this.Confidence;
         _ = this.EndIndex;
+        _ = this.ImageFilename;
         _ = this.Label;
         _ = this.R;
         _ = this.StartIndex;
